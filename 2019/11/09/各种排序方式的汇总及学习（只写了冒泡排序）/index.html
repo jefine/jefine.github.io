@@ -59,13 +59,11 @@
 <meta property="og:site_name" content="jefine">
 <meta property="og:description" content="首先了解排序：排序的定义">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;.com&#x2F;&#x2F;F:%5Cblog%5Chexo%5Csource_posts%5C640.gif">
-<meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;.com&#x2F;&#x2F;F:%5Cblog%5Chexo%5Csource_posts%5C640-1573276249126.gif">
-<meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;.com&#x2F;&#x2F;F:%5Cblog%5Chexo%5Csource_posts%5C640.webp">
-<meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;.com&#x2F;&#x2F;C:%5CUsers%5Cfanfanfan%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20191108194658601.png">
-<meta property="og:updated_time" content="2019-11-09T05:50:14.286Z">
+<meta property="og:image" content="https:&#x2F;&#x2F;img-blog.csdnimg.cn&#x2F;20191109144007487.png?x-oss-process=image&#x2F;watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ1NTcyNDA0,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https:&#x2F;&#x2F;img-blog.csdnimg.cn&#x2F;20191109144459488.gif">
+<meta property="og:updated_time" content="2019-11-09T06:50:56.857Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;.com&#x2F;&#x2F;F:%5Cblog%5Chexo%5Csource_posts%5C640.gif">
+<meta name="twitter:image" content="https:&#x2F;&#x2F;img-blog.csdnimg.cn&#x2F;20191109144007487.png?x-oss-process=image&#x2F;watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ1NTcyNDA0,size_16,color_FFFFFF,t_70">
 
 <link rel="canonical" href="http://yoursite.com/2019/11/09/%E5%90%84%E7%A7%8D%E6%8E%92%E5%BA%8F%E6%96%B9%E5%BC%8F%E7%9A%84%E6%B1%87%E6%80%BB%E5%8F%8A%E5%AD%A6%E4%B9%A0%EF%BC%88%E5%8F%AA%E5%86%99%E4%BA%86%E5%86%92%E6%B3%A1%E6%8E%92%E5%BA%8F%EF%BC%89/">
 
@@ -220,7 +218,7 @@
               <span class="post-meta-item-text">发表于</span>
               
 
-              <time title="创建时间：2019-11-09 12:58:00 / 修改时间：13:50:14" itemprop="dateCreated datePublished" datetime="2019-11-09T12:58:00+08:00">2019-11-09</time>
+              <time title="创建时间：2019-11-09 12:58:00 / 修改时间：14:50:56" itemprop="dateCreated datePublished" datetime="2019-11-09T12:58:00+08:00">2019-11-09</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -267,8 +265,7 @@
 <h6 id="时间和空间复杂度"><a href="#时间和空间复杂度" class="headerlink" title="时间和空间复杂度"></a><strong>时间和空间复杂度</strong></h6><ul>
 <li><p><strong>时间复杂度</strong>：对排序数据的总的操作次数。反应当n变化时，操作次数呈现什么规律</p>
 </li>
-<li><p><strong>空间复杂度</strong>：算法在计算机内执行时所需要的存储空间的容量，它也是数据规模n的函数。</p>
-<p>！<a href="各种排序方式的汇总及学习（只写了冒泡排序）/image-20191109130804738.png">image</a></p>
+<li><p><strong>空间复杂度</strong>：算法在计算机内执行时所需要的存储空间的容量，它也是数据规模n的函数。<br><img src="https://img-blog.csdnimg.cn/20191109144007487.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ1NTcyNDA0,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
 </li>
 </ul>
 <h2 id="1-冒泡排序（Bubble-Sort）："><a href="#1-冒泡排序（Bubble-Sort）：" class="headerlink" title="1. 冒泡排序（Bubble Sort）："></a>1. 冒泡排序<strong>（Bubble Sort）</strong>：</h2><h4 id="1-1-一般的冒泡排序："><a href="#1-1-一般的冒泡排序：" class="headerlink" title="1.1 一般的冒泡排序："></a>1.1 一般的冒泡排序：</h4><p><strong>基本思想</strong></p>
@@ -290,8 +287,7 @@
 </ol>
 <p>比如有n个元素，那么第一次比较迭代，需要比较n-1次（因为是相邻成对比较，最后一个元素没有与下一个相邻比较的对象，所以是n-1次），此次迭代完成后确定了最后一个元素为最大值；第二次比较迭代，需要比较n-2次，因为第一次迭代已经确定好了最后一个元素，所以不再需要比较；…；第 i次比较迭代，需要比较n-i次，此时确定后面i个元素是有序的较大元素；…；第n-1次比较迭代，需要比较n-(n-1)次，此时完成冒泡排序操作。</p>
 <p>原始的冒泡排序是<strong>稳定排序</strong>。由于该排序算法的每一轮要遍历所有元素，轮转的次数和元素数量相当，所以时间复杂度是 o(n^2) = (n-1)*(n-1)</p>
-<p><img src="/.com//F:%5Cblog%5Chexo%5Csource_posts%5C640.gif" alt="640"></p>
-<p><img src="/.com//F:%5Cblog%5Chexo%5Csource_posts%5C640-1573276249126.gif" alt="img"> </p>
+<p><img src="https://img-blog.csdnimg.cn/20191109144459488.gif" alt="在这里插入图片描述"></p>
 <p>代码使用双循环来进行排序。外部循环控制所有的回合，内部循环代表每一轮的冒泡处理，先进行元素比较，再进行元素交换。</p>
 <h4 id="1-2优化版冒泡排序："><a href="#1-2优化版冒泡排序：" class="headerlink" title="1.2优化版冒泡排序："></a>1.2优化版冒泡排序：</h4><p>优化结果：<strong>解决了在已经调整好顺序后继续循环的问题。</strong></p>
 <p>优化方向：如果我们能<strong>判断出数列已经有序（最后几个数字），并且做出标记（但仅仅标记了数列是有序的）</strong>，剩下的几轮排序就可以不必执行，提早结束工作。</p>
@@ -300,13 +296,14 @@
 
 
 
-<h4 id="1-3再次优化版冒泡排序："><a href="#1-3再次优化版冒泡排序：" class="headerlink" title="1.3再次优化版冒泡排序："></a>1.3再次优化版冒泡排序：</h4><p><img src="/.com//F:%5Cblog%5Chexo%5Csource_posts%5C640.webp" alt="img"> </p>
-<p>这个问题的关键点在哪里呢？关键在于对数列<strong>有序区</strong>的界定。</p>
+<h4 id="1-3再次优化版冒泡排序："><a href="#1-3再次优化版冒泡排序：" class="headerlink" title="1.3再次优化版冒泡排序："></a>1.3再次优化版冒泡排序：</h4><p>这个问题的关键点在哪里呢？关键在于对数列<strong>有序区</strong>的界定。</p>
 <p><strong>按照现有一般的逻辑</strong>，有序区的长度和排序的轮数是相等的。比如第一轮排序过后的有序区长度是1（为最后一个），第二轮排序过后的有序区长度是2 ….</p>
 <p>实际上，数列真正的有序区可能会大于这个长度，比如如果后面5个元素实际都已经属于有序区。因此后面的许多次元素比较（这里是指在大循环）是没有意义的。</p>
 <p>如何避免这种情况呢？我们可以在每一轮排序的最后，<strong>记录下最后一次元素交换的位置，那个位置也就是无序数列的边界，再往后就是有序区了</strong>。</p>
-<p><img src="/.com//C:%5CUsers%5Cfanfanfan%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20191108194658601.png" alt="image-20191108194658601"></p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> n,i,j;</span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;n);</span><br><span class="line">	<span class="keyword">int</span> a[n]; </span><br><span class="line">	<span class="comment">//input</span></span><br><span class="line">	<span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;n;i++)&#123;</span><br><span class="line">		<span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;a[i]);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="comment">//bubble sort </span></span><br><span class="line">	<span class="keyword">int</span> issort=<span class="number">0</span>;</span><br><span class="line">	<span class="keyword">int</span> tem=n<span class="number">-1</span>;</span><br><span class="line">	<span class="keyword">int</span> border=n<span class="number">-1</span>;</span><br><span class="line">	<span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;n<span class="number">-1</span>;i++)&#123;</span><br><span class="line">		<span class="keyword">for</span>(j=<span class="number">0</span>;j&lt;border;j++)&#123; <span class="comment">//此次更改的是小循环的结束条件。</span></span><br><span class="line">			<span class="keyword">if</span>(a[j]&gt;a[j+<span class="number">1</span>])&#123;</span><br><span class="line">				<span class="keyword">int</span> t=a[j];</span><br><span class="line">				a[j]=a[j+<span class="number">1</span>];</span><br><span class="line">				a[j+<span class="number">1</span>]=t;</span><br><span class="line">				issort=<span class="number">1</span>; </span><br><span class="line">				tem=j;<span class="comment">//此时tem记录的是小循环里的最后一次交换	</span></span><br><span class="line">					<span class="comment">//极有可能与大循环冲突。 	</span></span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		border=tem;</span><br><span class="line">		<span class="keyword">if</span>(issort==<span class="number">0</span>)<span class="keyword">break</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="comment">//output</span></span><br><span class="line">	<span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;n;i++)&#123;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"%d "</span>,a[i]);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <p><strong>总结：此次优化是将大循环，小循环的结束条件进行修正。</strong></p>
+<p>本文来自一些微信公众号与csdn和自己的总结与修改（抱歉，我找不到文章链接了），在此表示感谢，如有侵权，联系立删。</p>
 
     </div>
 
@@ -331,9 +328,6 @@
             <span class="post-nav-divider"></span>
 
             <div class="post-nav-prev post-nav-item">
-                <a href="/2019/11/09/%E5%90%84%E7%A7%8D%E6%8E%92%E5%BA%8F%E6%96%B9%E5%BC%8F%E6%B1%87%E6%80%BB/" rel="prev" title="各种排序方式的汇总">
-                  各种排序方式的汇总 <i class="fa fa-chevron-right"></i>
-                </a>
             </div>
           </div>
       </footer>
@@ -388,7 +382,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">4</span>
+          <span class="site-state-item-count">3</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
