@@ -195,7 +195,7 @@
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
       <meta itemprop="name" content="jefine">
-      <meta itemprop="description" content="努力使每个人的生活多一份美好。">
+      <meta itemprop="description" content="使每个人的生活多一份美好。">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -231,6 +231,20 @@
               <span class="post-meta-item-text">阅读次数：</span>
               <span class="leancloud-visitors-count"></span>
             </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/2019/11/06/%E8%AE%B0%E5%BD%95%E4%B8%8E%E5%8F%91%E7%8E%B0/#comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2019/11/06/%E8%AE%B0%E5%BD%95%E4%B8%8E%E5%8F%91%E7%8E%B0/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
 
         </div>
       </header>
@@ -276,6 +290,7 @@
 
           </div>
           
+    <div class="comments" id="comments"></div>
 
         </div>
           
@@ -309,7 +324,7 @@
   <img class="site-author-image" itemprop="image" alt="jefine"
     src="/images/avatar.gif">
   <p class="site-author-name" itemprop="name">jefine</p>
-  <div class="site-description" itemprop="description">努力使每个人的生活多一份美好。</div>
+  <div class="site-description" itemprop="description">使每个人的生活多一份美好。</div>
 </div>
 <div class="site-state-wrap motion-element">
   <nav class="site-state">
@@ -511,6 +526,33 @@
   
 
   
+
+
+<script>
+NexT.utils.getScript('//unpkg.com/valine/dist/Valine.min.js', () => {
+  var GUEST = ['nick', 'mail', 'link'];
+  var guest = 'nick,mail,link';
+  guest = guest.split(',').filter(item => {
+    return GUEST.includes(item);
+  });
+  new Valine({
+    el: '#comments',
+    verify: false,
+    notify: false,
+    appId: 'P6wp1XWlawXLj33BOylRsu8k-gzGzoHsz',
+    appKey: '1UHlSmySq6dvSx3RUHJ60WhG',
+    placeholder: "Just go go",
+    avatar: 'mm',
+    meta: guest,
+    pageSize: '10' || 10,
+    visitor: false,
+    lang: '' || 'zh-cn',
+    path: location.pathname,
+    recordIP: false,
+    serverURLs: ''
+  });
+}, window.Valine);
+</script>
 
 </body>
 </html>

@@ -51,12 +51,12 @@
   };
 </script>
 
-  <meta name="description" content="努力使每个人的生活多一份美好。">
+  <meta name="description" content="使每个人的生活多一份美好。">
 <meta property="og:type" content="website">
 <meta property="og:title" content="jefine">
 <meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;archives&#x2F;index.html">
 <meta property="og:site_name" content="jefine">
-<meta property="og:description" content="努力使每个人的生活多一份美好。">
+<meta property="og:description" content="使每个人的生活多一份美好。">
 <meta property="og:locale" content="zh-CN">
 <meta name="twitter:card" content="summary">
 
@@ -363,7 +363,7 @@
   <img class="site-author-image" itemprop="image" alt="jefine"
     src="/images/avatar.gif">
   <p class="site-author-name" itemprop="name">jefine</p>
-  <div class="site-description" itemprop="description">努力使每个人的生活多一份美好。</div>
+  <div class="site-description" itemprop="description">使每个人的生活多一份美好。</div>
 </div>
 <div class="site-state-wrap motion-element">
   <nav class="site-state">
@@ -565,6 +565,33 @@
   
 
   
+
+
+<script>
+NexT.utils.getScript('//unpkg.com/valine/dist/Valine.min.js', () => {
+  var GUEST = ['nick', 'mail', 'link'];
+  var guest = 'nick,mail,link';
+  guest = guest.split(',').filter(item => {
+    return GUEST.includes(item);
+  });
+  new Valine({
+    el: '#comments',
+    verify: false,
+    notify: false,
+    appId: 'P6wp1XWlawXLj33BOylRsu8k-gzGzoHsz',
+    appKey: '1UHlSmySq6dvSx3RUHJ60WhG',
+    placeholder: "Just go go",
+    avatar: 'mm',
+    meta: guest,
+    pageSize: '10' || 10,
+    visitor: false,
+    lang: '' || 'zh-cn',
+    path: location.pathname,
+    recordIP: false,
+    serverURLs: ''
+  });
+}, window.Valine);
+</script>
 
 </body>
 </html>
