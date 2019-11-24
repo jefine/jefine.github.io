@@ -234,20 +234,6 @@
               <span class="post-meta-item-text">阅读次数：</span>
               <span class="leancloud-visitors-count"></span>
             </span>
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="fa fa-comment-o"></i>
-      </span>
-      <span class="post-meta-item-text">Valine：</span>
-    
-    <a title="valine" href="/2019/11/12/%E6%96%B9%E9%98%B5%E5%BE%AA%E7%8E%AF%E5%8F%B3%E7%A7%BB%E4%BA%8E%E5%85%B6%E5%90%84%E7%A7%8D%E8%B8%A9bug23333/#comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2019/11/12/%E6%96%B9%E9%98%B5%E5%BE%AA%E7%8E%AF%E5%8F%B3%E7%A7%BB%E4%BA%8E%E5%85%B6%E5%90%84%E7%A7%8D%E8%B8%A9bug23333/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
 
         </div>
       </header>
@@ -314,7 +300,6 @@
 
           </div>
           
-    <div class="comments" id="comments"></div>
 
         </div>
           
@@ -549,33 +534,6 @@
   
 
   
-
-
-<script>
-NexT.utils.getScript('//unpkg.com/valine/dist/Valine.min.js', () => {
-  var GUEST = ['nick', 'mail', 'link'];
-  var guest = 'nick,mail,link';
-  guest = guest.split(',').filter(item => {
-    return GUEST.includes(item);
-  });
-  new Valine({
-    el: '#comments',
-    verify: false,
-    notify: false,
-    appId: 'P6wp1XWlawXLj33BOylRsu8k-gzGzoHsz',
-    appKey: '1UHlSmySq6dvSx3RUHJ60WhG',
-    placeholder: "Just go go",
-    avatar: 'mm',
-    meta: guest,
-    pageSize: '10' || 10,
-    visitor: false,
-    lang: '' || 'zh-cn',
-    path: location.pathname,
-    recordIP: false,
-    serverURLs: ''
-  });
-}, window.Valine);
-</script>
 
 </body>
 </html>
