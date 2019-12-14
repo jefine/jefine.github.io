@@ -59,7 +59,7 @@
 <meta property="og:site_name" content="jefine">
 <meta property="og:description" content="6-15 查找子串 (20分)">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-12-12T10:33:11.594Z">
+<meta property="og:updated_time" content="2019-12-14T03:03:50.148Z">
 <meta name="twitter:card" content="summary">
 
 <link rel="canonical" href="http://yoursite.com/2019/12/12/%E6%9F%A5%E6%89%BE%E5%AD%90%E4%B8%B2/">
@@ -213,10 +213,16 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              
 
-              <time title="创建时间：2019-12-12 18:29:36 / 修改时间：18:33:11" itemprop="dateCreated datePublished" datetime="2019-12-12T18:29:36+08:00">2019-12-12</time>
+              <time title="创建时间：2019-12-12 18:29:36" itemprop="dateCreated datePublished" datetime="2019-12-12T18:29:36+08:00">2019-12-12</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2019-12-14 11:03:50" itemprop="dateModified" datetime="2019-12-14T11:03:50+08:00">2019-12-14</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
@@ -241,52 +247,12 @@
 
       
         <h2 id="6-15-查找子串-20分"><a href="#6-15-查找子串-20分" class="headerlink" title="6-15 查找子串 (20分)"></a>6-15 查找子串 (20分)</h2><a id="more"></a><p>本题要求实现一个字符串查找的简单函数。</p>
-<h1 id="函数接口定义："><a href="#函数接口定义：" class="headerlink" title="函数接口定义："></a>函数接口定义：</h1><p>|char *search( char *s, char *t );|<br>|–|–|<br>函数search在字符串s中查找子串t，返回子串t在s中的首地址。若未找到，则返回NULL。</p>
+<h1 id="函数接口定义："><a href="#函数接口定义：" class="headerlink" title="函数接口定义："></a>函数接口定义：</h1><p>char *search( char *s, char *t );<br>函数search在字符串s中查找子串t，返回子串t在s中的首地址。若未找到，则返回NULL。</p>
 <h1 id="裁判测试程序样例："><a href="#裁判测试程序样例：" class="headerlink" title="裁判测试程序样例："></a>裁判测试程序样例：</h1><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> MAXS 30</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">char</span> *<span class="title">search</span><span class="params">(<span class="keyword">char</span> *s, <span class="keyword">char</span> *t)</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">ReadString</span><span class="params">( <span class="keyword">char</span> s[] )</span></span>; <span class="comment">/* 裁判提供，细节不表 */</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">char</span> s[MAXS], t[MAXS], *pos;</span><br><span class="line"></span><br><span class="line">    ReadString(s);</span><br><span class="line">    ReadString(t);</span><br><span class="line">    pos = search(s, t);</span><br><span class="line">    <span class="keyword">if</span> ( pos != <span class="literal">NULL</span> )</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"%d\n"</span>, pos - s);</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"-1\n"</span>);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* 你的代码将被嵌在这里 */</span></span><br></pre></td></tr></table></figure>
-<h1 id="输入样例1："><a href="#输入样例1：" class="headerlink" title="输入样例1："></a>输入样例1：</h1><table>
-<thead>
-<tr>
-<th>The C Programming Language</th>
-<th></th>
-<th></th>
-</tr>
-</thead>
-<tbody><tr>
-<td>ram</td>
-<td></td>
-<td></td>
-</tr>
-</tbody></table>
-<h1 id="输出样例1："><a href="#输出样例1：" class="headerlink" title="输出样例1："></a>输出样例1：</h1><table>
-<thead>
-<tr>
-<th>10</th>
-</tr>
-</thead>
-<tbody><tr>
-<td></td>
-</tr>
-</tbody></table>
-<h1 id="输入样例2："><a href="#输入样例2：" class="headerlink" title="输入样例2："></a>输入样例2：</h1><table>
-<thead>
-<tr>
-<th>The C Programming Language</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>bored</td>
-</tr>
-</tbody></table>
-<h1 id="输出样例2："><a href="#输出样例2：" class="headerlink" title="输出样例2："></a>输出样例2：</h1><table>
-<thead>
-<tr>
-<th>-1</th>
-</tr>
-</thead>
-<tbody><tr>
-<td></td>
-</tr>
-</tbody></table>
+<h1 id="输入样例1："><a href="#输入样例1：" class="headerlink" title="输入样例1："></a>输入样例1：</h1><p>The C Programming Language<br>ram </p>
+<h1 id="输出样例1："><a href="#输出样例1：" class="headerlink" title="输出样例1："></a>输出样例1：</h1><p>10</p>
+<h1 id="输入样例2："><a href="#输入样例2：" class="headerlink" title="输入样例2："></a>输入样例2：</h1><p>The C Programming Language<br>bored</p>
+<h1 id="输出样例2："><a href="#输出样例2：" class="headerlink" title="输出样例2："></a>输出样例2：</h1><p>-1</p>
 <h1 id="思路："><a href="#思路：" class="headerlink" title="思路："></a>思路：</h1><p>利用循环寻找到第一个相符合的字符，然后去判断是否为子字符串。<br>但此题目不可使用string.h较为麻烦，考验我们更多的是原理部分。</p>
 <h1 id="代码如下："><a href="#代码如下：" class="headerlink" title="代码如下："></a>代码如下：</h1><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">char</span> *<span class="title">search</span><span class="params">(<span class="keyword">char</span> *s, <span class="keyword">char</span> *t)</span></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> n,i,j,m;</span><br><span class="line">	<span class="keyword">int</span> flag = <span class="number">-1</span>;</span><br><span class="line">	<span class="keyword">for</span>(i=<span class="number">0</span>;s[i]!=<span class="string">'\0'</span>;i++)<span class="comment">//等效n = strlen(s)</span></span><br><span class="line">	n=i;</span><br><span class="line">	<span class="keyword">for</span>(i=<span class="number">0</span>;t[i]!=<span class="string">'\0'</span>;i++)<span class="comment">//等效m = strlen(t)</span></span><br><span class="line">	m=i;</span><br><span class="line">	<span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;n;i++)&#123;<span class="comment">//i控制字符串s</span></span><br><span class="line">		<span class="keyword">if</span>(t[<span class="number">0</span>]==s[i])&#123;<span class="comment">//循环找到第一个相符合的字符</span></span><br><span class="line">			flag = <span class="number">1</span>;<span class="comment">//1代表找到了</span></span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">if</span>(flag = <span class="number">1</span>)&#123;<span class="comment">//如果找到第一个匹配的字符</span></span><br><span class="line">			<span class="keyword">for</span>(j=<span class="number">1</span>;j&lt;=m;j++)&#123;<span class="comment">//j控制字符串t</span></span><br><span class="line">				<span class="keyword">if</span>(t[j]==s[i+j])&#123;<span class="comment">//从第二个开始判断（第一个已经判断成功）</span></span><br><span class="line">					flag =<span class="number">1</span>;</span><br><span class="line">				&#125;<span class="keyword">else</span> &#123;</span><br><span class="line">					flag =<span class="number">-1</span>;<span class="comment">//判断不成立时</span></span><br><span class="line">				<span class="keyword">break</span>;	</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="keyword">if</span>(flag ==<span class="number">1</span>)<span class="keyword">return</span> &amp;s[i];<span class="comment">//（在匹配成功的情况下）</span></span><br><span class="line">		&#125;</span><br><span class="line">	&#125;<span class="keyword">return</span> <span class="literal">NULL</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
     </div>
