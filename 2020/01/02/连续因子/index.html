@@ -51,20 +51,18 @@
   };
 </script>
 
-  <meta name="description" content="又是元气满满地踩bug。。">
+  <meta name="description" content="一个正整数 N 的因子中可能存在若干连续的数字。例如 630 可以分解为 3×5×6×7，其中 5、6、7 就是 3 个连续的数字。给定任一正整数 N，要求编写程序求出最长连续因子的个数，并输出最小的连续因子序列。">
 <meta name="keywords" content="pta">
 <meta property="og:type" content="article">
-<meta property="og:title" content="方阵循环右移于其各种踩bug23333">
-<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;11&#x2F;12&#x2F;%E6%96%B9%E9%98%B5%E5%BE%AA%E7%8E%AF%E5%8F%B3%E7%A7%BB%E4%BA%8E%E5%85%B6%E5%90%84%E7%A7%8D%E8%B8%A9bug23333&#x2F;index.html">
+<meta property="og:title" content="L1-006 连续因子">
+<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;01&#x2F;02&#x2F;%E8%BF%9E%E7%BB%AD%E5%9B%A0%E5%AD%90&#x2F;index.html">
 <meta property="og:site_name" content="jefine">
-<meta property="og:description" content="又是元气满满地踩bug。。">
+<meta property="og:description" content="一个正整数 N 的因子中可能存在若干连续的数字。例如 630 可以分解为 3×5×6×7，其中 5、6、7 就是 3 个连续的数字。给定任一正整数 N，要求编写程序求出最长连续因子的个数，并输出最小的连续因子序列。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;.com&#x2F;&#x2F;timg.jpg">
-<meta property="og:updated_time" content="2019-11-12T23:33:42.120Z">
+<meta property="og:updated_time" content="2020-01-02T08:13:16.429Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;.com&#x2F;&#x2F;timg.jpg">
 
-<link rel="canonical" href="http://yoursite.com/2019/11/12/%E6%96%B9%E9%98%B5%E5%BE%AA%E7%8E%AF%E5%8F%B3%E7%A7%BB%E4%BA%8E%E5%85%B6%E5%90%84%E7%A7%8D%E8%B8%A9bug23333/">
+<link rel="canonical" href="http://yoursite.com/2020/01/02/%E8%BF%9E%E7%BB%AD%E5%9B%A0%E5%AD%90/">
 
 
 <script id="page-configurations">
@@ -78,7 +76,7 @@
   };
 </script>
 
-  <title>方阵循环右移于其各种踩bug23333 | jefine</title>
+  <title>L1-006 连续因子 | jefine</title>
   
 
 
@@ -193,7 +191,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/11/12/%E6%96%B9%E9%98%B5%E5%BE%AA%E7%8E%AF%E5%8F%B3%E7%A7%BB%E4%BA%8E%E5%85%B6%E5%90%84%E7%A7%8D%E8%B8%A9bug23333/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/01/02/%E8%BF%9E%E7%BB%AD%E5%9B%A0%E5%AD%90/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -206,7 +204,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          方阵循环右移于其各种踩bug23333
+          L1-006 连续因子
         </h1>
 
         <div class="post-meta">
@@ -215,16 +213,10 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
+              
 
-              <time title="创建时间：2019-11-12 21:33:24" itemprop="dateCreated datePublished" datetime="2019-11-12T21:33:24+08:00">2019-11-12</time>
+              <time title="创建时间：2020-01-02 16:09:01 / 修改时间：16:13:16" itemprop="dateCreated datePublished" datetime="2020-01-02T16:09:01+08:00">2020-01-02</time>
             </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2019-11-13 07:33:42" itemprop="dateModified" datetime="2019-11-13T07:33:42+08:00">2019-11-13</time>
-              </span>
 
           
 
@@ -237,21 +229,14 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>又是元气满满地踩bug。。</p><a id="more"></a>
-<p>开始：思路是依照题意交换即可</p>
-<p>然后：发现初始值会因其交换而改变，决定做两个二维数组一个储存一个赋值</p>
-<p>接着：遇到溢出现象，猛然发现大bug，程序是从新数组中间的跑出来的，也就是说临界值之前的没有赋值。。。决定以if判断是否为最后一个，那么从头开始赋值。</p>
-<p>最后：看似正确（看错了）其实是换位错位，和题目要求的结果都不一样。。。</p>
-<p><img src="/.com//timg.jpg" alt="a"></p>
-<p>陷入沉思！</p>
-<p>然后打开百度。。</p>
-<p>发现更改为%即可解决多次”进位”（姑且这么称作吧）。于是又修改了几次for循环的条件得以解决所有问题</p>
-<p>我太难了。</p>
-<p>下面是更改了许多次的代码。。。</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> m,n,i,k,j;</span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">"%d %d"</span>,&amp;m,&amp;n);</span><br><span class="line">	<span class="keyword">int</span> a[n][n];</span><br><span class="line">	<span class="keyword">int</span> b[n][n];</span><br><span class="line">	<span class="comment">//intput</span></span><br><span class="line">	<span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;n;i++)&#123;</span><br><span class="line">		<span class="keyword">for</span>(j=<span class="number">0</span>;j&lt;n;j++)&#123;</span><br><span class="line">		<span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;a[i][j]);	</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="comment">//nswitch</span></span><br><span class="line">	<span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;n;i++)&#123;</span><br><span class="line">		<span class="keyword">for</span>(j=<span class="number">0</span>;j&lt;n;j++)&#123;<span class="comment">//控制a数组从第一个开始输出。 </span></span><br><span class="line">			<span class="comment">//其中，n-m+j是被赋值的列的位置，当其等于n-1时应为复制到该列最后一个，应切换！ </span></span><br><span class="line">		</span><br><span class="line">	</span><br><span class="line">		b[i][(j+m)%n]=a[i][j];<span class="comment">//for临界及其之后的 </span></span><br><span class="line">			</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="comment">//output</span></span><br><span class="line">	<span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;n;i++)&#123;</span><br><span class="line">		<span class="keyword">for</span>(j=<span class="number">0</span>;j&lt;n;j++)&#123;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"%d"</span>,b[i][j]);</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">" "</span>);	</span><br><span class="line">		<span class="keyword">if</span>(j==n<span class="number">-1</span>)<span class="built_in">printf</span>(<span class="string">"\n"</span>);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+        <p>一个正整数 N 的因子中可能存在若干连续的数字。例如 630 可以分解为 3×5×6×7，其中 5、6、7 就是 3 个连续的数字。给定任一正整数 N，要求编写程序求出最长连续因子的个数，并输出最小的连续因子序列。</p><a id="more"></a>
+<h3 id="输入格式："><a href="#输入格式：" class="headerlink" title="输入格式："></a>输入格式：</h3><p>输入在一行中给出一个正整数 N（1&lt;N&lt;231）。</p>
+<h3 id="输出格式："><a href="#输出格式：" class="headerlink" title="输出格式："></a>输出格式：</h3><p>首先在第 1 行输出最长连续因子的个数；然后在第 2 行中按 <code>因子1*因子2*……*因子k</code> 的格式输出最小的连续因子序列，其中因子按递增顺序输出，1 不算在内。</p>
+<h3 id="输入样例："><a href="#输入样例：" class="headerlink" title="输入样例："></a>输入样例：</h3><p>630</p>
+<h3 id="输出样例："><a href="#输出样例：" class="headerlink" title="输出样例："></a>输出样例：</h3><p>3<br>5<em>6</em>7</p>
+<p>思路为从2开始累乘（加1），紧接着就判断是否乘积是其因子<br>如果是，那么记录下来长度，开始的i；<br>一直到乘积大于n停止；<br>然后使乘积（prd）等于1；i++； </p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> ll;<span class="comment">//简写 ，使用long long更好 </span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	ll n;</span><br><span class="line">	<span class="built_in">cin</span>&gt;&gt;n;</span><br><span class="line">	ll prd;<span class="comment">//是乘积（product） </span></span><br><span class="line">	<span class="keyword">int</span> start=<span class="number">0</span>,len=<span class="number">0</span>;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">2</span>;i&lt;=<span class="built_in">sqrt</span>(n);i++)&#123;<span class="comment">//sqrt是为了最后一个点过去（减少计算量） </span></span><br><span class="line">		prd=<span class="number">1</span>;</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> j=i;prd&lt;n;j++)&#123;</span><br><span class="line">			prd*=j;</span><br><span class="line">			<span class="keyword">if</span>(n%prd==<span class="number">0</span>&amp;&amp;j-i+<span class="number">1</span>&gt;len)&#123;</span><br><span class="line">				start=i;</span><br><span class="line">				len=j-i+<span class="number">1</span>;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">if</span>(start==<span class="number">0</span>)&#123;<span class="comment">//等于0的话就意味着它是一个质数！那么排去1.他的因子就只有本身了。 </span></span><br><span class="line">		start=n;</span><br><span class="line">		len = <span class="number">1</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">cout</span>&lt;&lt;len&lt;&lt;<span class="built_in">endl</span>&lt;&lt;start;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=start+<span class="number">1</span>;i&lt;start+len;i++)</span><br><span class="line">	<span class="built_in">cout</span>&lt;&lt;<span class="string">"*"</span>&lt;&lt;i;</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<p>得出：做题要多思考其逻辑顺序，不要人云亦云，将题目分解为自己已知，与未知，将其一步一步的以案例分析，从一到一百，通过实际例子，分析其规律于变化情况，进而改变过程。不断修正。</p>
-<p>一定要搞清楚所有的过程，不能似是而非，否则一定会出现难以想象的bug。</p>
 
     </div>
 
@@ -268,17 +253,14 @@
 
           <div class="post-nav">
             <div class="post-nav-next post-nav-item">
-                <a href="/2019/11/12/%E7%AE%80%E5%8C%96%E7%9A%84%E6%8F%92%E5%85%A5%E6%8E%92%E5%BA%8F-%E8%AF%A6%E8%A7%A3%E9%99%84%E5%B8%A6%E4%B8%80%E4%BA%9B%E5%9F%BA%E7%A1%80%E8%AE%B2%E8%A7%A3/" rel="next" title="简化的插入排序,详解附带一些基础讲解">
-                  <i class="fa fa-chevron-left"></i> 简化的插入排序,详解附带一些基础讲解
+                <a href="/2020/01/02/2020/" rel="next" title="2020">
+                  <i class="fa fa-chevron-left"></i> 2020
                 </a>
             </div>
 
             <span class="post-nav-divider"></span>
 
             <div class="post-nav-prev post-nav-item">
-                <a href="/2019/11/24/pta%E7%BB%9F%E8%AE%A1%E4%B8%80%E8%A1%8C%E6%96%87%E6%9C%AC%E7%9A%84%E5%8D%95%E8%AF%8D%E4%B8%AA%E6%95%B0/" rel="prev" title="pta统计一行文本的单词个数">
-                  pta统计一行文本的单词个数 <i class="fa fa-chevron-right"></i>
-                </a>
             </div>
           </div>
       </footer>
@@ -317,6 +299,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#输入格式："><span class="nav-number">1.</span> <span class="nav-text">输入格式：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#输出格式："><span class="nav-number">2.</span> <span class="nav-text">输出格式：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#输入样例："><span class="nav-number">3.</span> <span class="nav-text">输入样例：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#输出样例："><span class="nav-number">4.</span> <span class="nav-text">输出样例：</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
