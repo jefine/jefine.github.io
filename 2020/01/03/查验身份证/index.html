@@ -51,18 +51,18 @@
   };
 </script>
 
-  <meta name="description" content="一个正整数 N 的因子中可能存在若干连续的数字。例如 630 可以分解为 3×5×6×7，其中 5、6、7 就是 3 个连续的数字。给定任一正整数 N，要求编写程序求出最长连续因子的个数，并输出最小的连续因子序列。">
+  <meta name="description" content="使每个人的生活多一份美好。">
 <meta name="keywords" content="pta">
 <meta property="og:type" content="article">
-<meta property="og:title" content="L1-006 连续因子">
-<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;01&#x2F;02&#x2F;%E8%BF%9E%E7%BB%AD%E5%9B%A0%E5%AD%90&#x2F;index.html">
+<meta property="og:title" content="查验身份证">
+<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;01&#x2F;03&#x2F;%E6%9F%A5%E9%AA%8C%E8%BA%AB%E4%BB%BD%E8%AF%81&#x2F;index.html">
 <meta property="og:site_name" content="jefine">
-<meta property="og:description" content="一个正整数 N 的因子中可能存在若干连续的数字。例如 630 可以分解为 3×5×6×7，其中 5、6、7 就是 3 个连续的数字。给定任一正整数 N，要求编写程序求出最长连续因子的个数，并输出最小的连续因子序列。">
+<meta property="og:description" content="使每个人的生活多一份美好。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2020-01-02T08:13:16.429Z">
+<meta property="og:updated_time" content="2020-01-03T08:37:09.614Z">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="http://yoursite.com/2020/01/02/%E8%BF%9E%E7%BB%AD%E5%9B%A0%E5%AD%90/">
+<link rel="canonical" href="http://yoursite.com/2020/01/03/%E6%9F%A5%E9%AA%8C%E8%BA%AB%E4%BB%BD%E8%AF%81/">
 
 
 <script id="page-configurations">
@@ -76,7 +76,7 @@
   };
 </script>
 
-  <title>L1-006 连续因子 | jefine</title>
+  <title>查验身份证 | jefine</title>
   
 
 
@@ -191,7 +191,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/01/02/%E8%BF%9E%E7%BB%AD%E5%9B%A0%E5%AD%90/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/01/03/%E6%9F%A5%E9%AA%8C%E8%BA%AB%E4%BB%BD%E8%AF%81/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -204,7 +204,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          L1-006 连续因子
+          查验身份证
         </h1>
 
         <div class="post-meta">
@@ -215,7 +215,18 @@
               <span class="post-meta-item-text">发表于</span>
               
 
-              <time title="创建时间：2020-01-02 16:09:01 / 修改时间：16:13:16" itemprop="dateCreated datePublished" datetime="2020-01-02T16:09:01+08:00">2020-01-02</time>
+              <time title="创建时间：2020-01-03 16:28:34 / 修改时间：16:37:09" itemprop="dateCreated datePublished" datetime="2020-01-03T16:28:34+08:00">2020-01-03</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%BC%96%E7%A8%8B/" itemprop="url" rel="index">
+                    <span itemprop="name">编程</span>
+                  </a>
+                </span>
             </span>
 
           
@@ -229,15 +240,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>一个正整数 N 的因子中可能存在若干连续的数字。例如 630 可以分解为 3×5×6×7，其中 5、6、7 就是 3 个连续的数字。给定任一正整数 N，要求编写程序求出最长连续因子的个数，并输出最小的连续因子序列。</p><a id="more"></a>
-<h3 id="输入格式："><a href="#输入格式：" class="headerlink" title="输入格式："></a>输入格式：</h3><p>输入在一行中给出一个正整数 N（1&lt;N&lt;231）。</p>
-<h3 id="输出格式："><a href="#输出格式：" class="headerlink" title="输出格式："></a>输出格式：</h3><p>首先在第 1 行输出最长连续因子的个数；然后在第 2 行中按 <code>因子1*因子2*……*因子k</code> 的格式输出最小的连续因子序列，其中因子按递增顺序输出，1 不算在内。</p>
-<h3 id="输入样例："><a href="#输入样例：" class="headerlink" title="输入样例："></a>输入样例：</h3><p>630</p>
-<h3 id="输出样例："><a href="#输出样例：" class="headerlink" title="输出样例："></a>输出样例：</h3><p>3<br>5<em>6</em>7</p>
-<p>思路为从2开始累乘（加1），紧接着就判断是否乘积是其因子<br>如果是，那么记录下来长度，开始的i；<br>一直到乘积大于n停止；<br>然后使乘积（prd）等于1；i++； </p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> ll;<span class="comment">//简写 ，使用long long更好 </span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	ll n;</span><br><span class="line">	<span class="built_in">cin</span>&gt;&gt;n;</span><br><span class="line">	ll prd;<span class="comment">//是乘积（product） </span></span><br><span class="line">	<span class="keyword">int</span> start=<span class="number">0</span>,len=<span class="number">0</span>;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">2</span>;i&lt;=<span class="built_in">sqrt</span>(n);i++)&#123;<span class="comment">//sqrt是为了最后一个点过去（减少计算量） </span></span><br><span class="line">		prd=<span class="number">1</span>;</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> j=i;prd&lt;n;j++)&#123;</span><br><span class="line">			prd*=j;</span><br><span class="line">			<span class="keyword">if</span>(n%prd==<span class="number">0</span>&amp;&amp;j-i+<span class="number">1</span>&gt;len)&#123;</span><br><span class="line">				start=i;</span><br><span class="line">				len=j-i+<span class="number">1</span>;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">if</span>(start==<span class="number">0</span>)&#123;<span class="comment">//等于0的话就意味着它是一个质数！那么排去1.他的因子就只有本身了。 </span></span><br><span class="line">		start=n;</span><br><span class="line">		len = <span class="number">1</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">cout</span>&lt;&lt;len&lt;&lt;<span class="built_in">endl</span>&lt;&lt;start;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=start+<span class="number">1</span>;i&lt;start+len;i++)</span><br><span class="line">	<span class="built_in">cout</span>&lt;&lt;<span class="string">"*"</span>&lt;&lt;i;</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
+        
     </div>
 
     
@@ -253,17 +256,14 @@
 
           <div class="post-nav">
             <div class="post-nav-next post-nav-item">
-                <a href="/2020/01/02/2020/" rel="next" title="2020">
-                  <i class="fa fa-chevron-left"></i> 2020
+                <a href="/2020/01/02/%E8%BF%9E%E7%BB%AD%E5%9B%A0%E5%AD%90/" rel="next" title="L1-006 连续因子">
+                  <i class="fa fa-chevron-left"></i> L1-006 连续因子
                 </a>
             </div>
 
             <span class="post-nav-divider"></span>
 
             <div class="post-nav-prev post-nav-item">
-                <a href="/2020/01/03/%E6%9F%A5%E9%AA%8C%E8%BA%AB%E4%BB%BD%E8%AF%81/" rel="prev" title="查验身份证">
-                  查验身份证 <i class="fa fa-chevron-right"></i>
-                </a>
             </div>
           </div>
       </footer>
@@ -302,7 +302,6 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#输入格式："><span class="nav-number">1.</span> <span class="nav-text">输入格式：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#输出格式："><span class="nav-number">2.</span> <span class="nav-text">输出格式：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#输入样例："><span class="nav-number">3.</span> <span class="nav-text">输入样例：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#输出样例："><span class="nav-number">4.</span> <span class="nav-text">输出样例：</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
