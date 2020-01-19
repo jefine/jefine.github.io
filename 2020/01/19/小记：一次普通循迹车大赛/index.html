@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.0.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+  <link rel="alternate" href="/atom.xml" title="jefine" type="application/atom+xml">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+
+
+<script id="hexo-configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '7.5.0',
+    exturl: false,
+    sidebar: {"position":"left","display":"hide","offset":12,"onmobile":false},
+    copycode: {"enable":true,"show_result":true,"style":null},
+    back2top: {"enable":true,"sidebar":false,"scrollpercent":false},
+    bookmark: {"enable":false,"color":"#222","save":"auto"},
+    fancybox: false,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
+    algolia: {
+      appID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":0},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    localsearch: {"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    path: '',
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    translation: {
+      copy_button: '复制',
+      copy_success: '复制成功',
+      copy_failure: '复制失败'
+    },
+    sidebarPadding: 40
+  };
+</script>
+
+  <meta name="description" content="记录点滴大赛。起初，从一个小白走向机器人大赛，经过不少人的推荐（传说*有奖*），（瞎）报名了循迹机器人大赛。">
+<meta name="keywords" content="xcu">
+<meta property="og:type" content="article">
+<meta property="og:title" content="小记：一次普通循迹车大赛">
+<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;01&#x2F;19&#x2F;%E5%B0%8F%E8%AE%B0%EF%BC%9A%E4%B8%80%E6%AC%A1%E6%99%AE%E9%80%9A%E5%BE%AA%E8%BF%B9%E8%BD%A6%E5%A4%A7%E8%B5%9B&#x2F;index.html">
+<meta property="og:site_name" content="jefine">
+<meta property="og:description" content="记录点滴大赛。起初，从一个小白走向机器人大赛，经过不少人的推荐（传说*有奖*），（瞎）报名了循迹机器人大赛。">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https:&#x2F;&#x2F;mmbiz.qpic.cn&#x2F;mmbiz_png&#x2F;kFArLCjLq1eaFFgM5TlQdIdmpeibIjYQStLjOAN0q0tUzjdwZMhiaTUg8eibLuV9ZeLcfoy6ZgBm2hUumGPtGQm9Q&#x2F;640?wx_fmt=png">
+<meta property="og:image" content="https:&#x2F;&#x2F;mmbiz.qpic.cn&#x2F;mmbiz_png&#x2F;kFArLCjLq1eaFFgM5TlQdIdmpeibIjYQS6YSftqaw4OTggnXct5ic7pvSYGEKHuGsLgQYBRtOkvhZlPuDYrUD13Q&#x2F;640?wx_fmt=png">
+<meta property="og:image" content="https:&#x2F;&#x2F;mmbiz.qpic.cn&#x2F;mmbiz_png&#x2F;kFArLCjLq1eaFFgM5TlQdIdmpeibIjYQSC2snc9vvYt6gJvHDGf2lPFeSNymRnlTqgPWBwYSj6JEWj39mibYbp7g&#x2F;640?wx_fmt=png">
+<meta property="og:image" content="https:&#x2F;&#x2F;mmbiz.qpic.cn&#x2F;mmbiz_png&#x2F;kFArLCjLq1eaFFgM5TlQdIdmpeibIjYQSXzmMsicAoVu4C3WOH2h4ITdKagvXuaQicIoLibgBzhbs8Oqvjpyt241FQ&#x2F;640?wx_fmt=png">
+<meta property="og:image" content="https:&#x2F;&#x2F;mmbiz.qlogo.cn&#x2F;mmbiz_jpg&#x2F;kFArLCjLq1fN8C7N047nhegURNr64icazFpanW15jI0Q1B5BL0J22I82TqbCDm3VCddeb5PGmySiaY6dF1PNib2nA&#x2F;0?wx_fmt=jpeg">
+<meta property="og:image" content="https:&#x2F;&#x2F;res.wx.qq.com&#x2F;mpres&#x2F;htmledition&#x2F;images&#x2F;icon&#x2F;common&#x2F;emotion_panel&#x2F;emoji_wx&#x2F;2_04.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;mmbiz.qpic.cn&#x2F;mmbiz_jpg&#x2F;kFArLCjLq1eaFFgM5TlQdIdmpeibIjYQSHCG4nDTZYvLAwmGDHmlv53UTdZgutLVichvh2pZRzyxmMdvIjgmhpAQ&#x2F;640?wx_fmt=jpeg">
+<meta property="og:image" content="https:&#x2F;&#x2F;mmbiz.qpic.cn&#x2F;mmbiz_jpg&#x2F;kFArLCjLq1eaFFgM5TlQdIdmpeibIjYQSz2y4OUGuWjtQdRvgib4iasc8Jhg7G62DbG7qT0apUc69NNgniasI26U7A&#x2F;640?wx_fmt=jpeg">
+<meta property="og:image" content="https:&#x2F;&#x2F;mmbiz.qpic.cn&#x2F;mmbiz_jpg&#x2F;kFArLCjLq1eaFFgM5TlQdIdmpeibIjYQShwQCyr1ggu9V3MG2qSs2icuNs7QU4YtZCibWOJzQiaLicibN2QZ542TotMQ&#x2F;640?wx_fmt=jpeg">
+<meta property="og:image" content="https:&#x2F;&#x2F;mmbiz.qpic.cn&#x2F;mmbiz_jpg&#x2F;kFArLCjLq1eaFFgM5TlQdIdmpeibIjYQSMMzdbibicBelZUsbUfZGcbVwiaJIvcJu2xWbibORLr1Ekwa43B692xRSsA&#x2F;640?wx_fmt=jpeg">
+<meta property="og:image" content="https:&#x2F;&#x2F;mmbiz.qpic.cn&#x2F;mmbiz_jpg&#x2F;kFArLCjLq1eaFFgM5TlQdIdmpeibIjYQSFK4h66gt8BPcFGgXQl6gtgz4QOicXiab5G1Vg7eMPbAke2khA5w8WFmw&#x2F;640?wx_fmt=jpeg">
+<meta property="og:image" content="https:&#x2F;&#x2F;res.wx.qq.com&#x2F;mpres&#x2F;htmledition&#x2F;images&#x2F;icon&#x2F;common&#x2F;emotion_panel&#x2F;emoji_ios&#x2F;u1F602.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;mmbiz.qpic.cn&#x2F;mmbiz_jpg&#x2F;kFArLCjLq1eaFFgM5TlQdIdmpeibIjYQSw5wnVVDib8YicribokHcKriaTv9YlPRsjbicnhibmILnDcLOqnXowYfRucMw&#x2F;640?wx_fmt=jpeg">
+<meta property="og:image" content="https:&#x2F;&#x2F;mmbiz.qpic.cn&#x2F;mmbiz_jpg&#x2F;kFArLCjLq1eaFFgM5TlQdIdmpeibIjYQSb3VOWmHneibcxzgy4F5jJ2vdg8JXfLXibDG5qutiarWMyfPZ3Xnk87U2Q&#x2F;640?wx_fmt=jpeg">
+<meta property="og:image" content="https:&#x2F;&#x2F;mmbiz.qpic.cn&#x2F;mmbiz_jpg&#x2F;kFArLCjLq1eaFFgM5TlQdIdmpeibIjYQStnej6xSnmyFcnXSvw8grXkcWibDGqBYjWNgIbicz7icriasBOg6vRoGicNA&#x2F;640?wx_fmt=jpeg">
+<meta property="og:image" content="https:&#x2F;&#x2F;mmbiz.qpic.cn&#x2F;mmbiz_jpg&#x2F;kFArLCjLq1eaFFgM5TlQdIdmpeibIjYQShLVQttIgomuib0MM5DyfzY8aeTic1Ttpm39SsKXk7Rnn4QAln6dbibk2Q&#x2F;640?wx_fmt=jpeg">
+<meta property="og:image" content="https:&#x2F;&#x2F;mmbiz.qpic.cn&#x2F;mmbiz_jpg&#x2F;kFArLCjLq1eaFFgM5TlQdIdmpeibIjYQSxlD2pKDmqFQqmpfscKxIQJspB3ubhvO6mVUEgHWPXHgVsuVApO7CpQ&#x2F;640?wx_fmt=jpeg">
+<meta property="og:updated_time" content="2020-01-19T09:44:15.714Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https:&#x2F;&#x2F;mmbiz.qpic.cn&#x2F;mmbiz_png&#x2F;kFArLCjLq1eaFFgM5TlQdIdmpeibIjYQStLjOAN0q0tUzjdwZMhiaTUg8eibLuV9ZeLcfoy6ZgBm2hUumGPtGQm9Q&#x2F;640?wx_fmt=png">
+
+<link rel="canonical" href="http://yoursite.com/2020/01/19/%E5%B0%8F%E8%AE%B0%EF%BC%9A%E4%B8%80%E6%AC%A1%E6%99%AE%E9%80%9A%E5%BE%AA%E8%BF%B9%E8%BD%A6%E5%A4%A7%E8%B5%9B/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: false,
+    isPost: true,
+    isPage: false,
+    isArchive: false
+  };
+</script>
+
+  <title>小记：一次普通循迹车大赛 | jefine</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-meta">
+
+    <div>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">jefine</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+        <p class="site-subtitle">小小的梦呓</p>
+  </div>
+
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-fw fa-user"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档</a>
+
+  </li>
+  </ul>
+
+</nav>
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content">
+            
+
+  <div class="posts-expand">
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/01/19/%E5%B0%8F%E8%AE%B0%EF%BC%9A%E4%B8%80%E6%AC%A1%E6%99%AE%E9%80%9A%E5%BE%AA%E8%BF%B9%E8%BD%A6%E5%A4%A7%E8%B5%9B/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="jefine">
+      <meta itemprop="description" content="使每个人的生活多一份美好。">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="jefine">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          小记：一次普通循迹车大赛
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2020-01-19 17:42:12 / 修改时间：17:44:15" itemprop="dateCreated datePublished" datetime="2020-01-19T17:42:12+08:00">2020-01-19</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/record/" itemprop="url" rel="index">
+                    <span itemprop="name">record</span>
+                  </a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>记录点滴大赛。</p><p>起初，从一个小白走向机器人大赛，经过不少人的推荐（<em>传说*</em>有奖*），（瞎）报名了循迹机器人大赛。</p><a id="more"></a>
+
+<p>循迹机器人（要做的）是：利用红外线感知黑色线路，并沿着其行进，赛道设计的有弯道，且需要考虑速度，因为时间越短越好。</p>
+<p>嗯，需要硬件加算法呀。<em>要好好学习一下呀（笑）</em></p>
+<p>然而，半个月后报名结束，通知由于项目人数过多，主办方不再提供材料，由学生自行购买。。。</p>
+<p>根据一份不完全清单在淘宝搜寻一段时间后，得到130的价格。</p>
+<p>之后了解到要学习五一单片机，于是开始学习了解（其实以我们的比赛程度和技术，不用了解也是完全可以的2333）。</p>
+<p>了解到有朋友已经用电烙铁烧坏一个小车了，而我们还没买材料，什么都不知道，还有点慌呢。</p>
+<p>开始买买买！</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/kFArLCjLq1eaFFgM5TlQdIdmpeibIjYQStLjOAN0q0tUzjdwZMhiaTUg8eibLuV9ZeLcfoy6ZgBm2hUumGPtGQm9Q/640?wx_fmt=png" alt="img"></p>
+<p>与此同时，开始学习51单片机（下载资料。。。）</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/kFArLCjLq1eaFFgM5TlQdIdmpeibIjYQS6YSftqaw4OTggnXct5ic7pvSYGEKHuGsLgQYBRtOkvhZlPuDYrUD13Q/640?wx_fmt=png" alt="img"></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/kFArLCjLq1eaFFgM5TlQdIdmpeibIjYQSC2snc9vvYt6gJvHDGf2lPFeSNymRnlTqgPWBwYSj6JEWj39mibYbp7g/640?wx_fmt=png" alt="img"></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/kFArLCjLq1eaFFgM5TlQdIdmpeibIjYQSXzmMsicAoVu4C3WOH2h4ITdKagvXuaQicIoLibgBzhbs8Oqvjpyt241FQ/640?wx_fmt=png" alt="img"></p>
+<p>对了，我甚至还在b站打开了经典影片（十天放弃单片机）：</p>
+<p><img src="https://mmbiz.qlogo.cn/mmbiz_jpg/kFArLCjLq1fN8C7N047nhegURNr64icazFpanW15jI0Q1B5BL0J22I82TqbCDm3VCddeb5PGmySiaY6dF1PNib2nA/0?wx_fmt=jpeg" alt="img"></p>
+<p>如你们所愿（截止发稿日期，我还没有打开看。。。：)）</p>
+<p>数日后：部分零件到位：(赶在了双十一之前哦<img src="https://res.wx.qq.com/mpres/htmledition/images/icon/common/emotion_panel/emoji_wx/2_04.png" alt="img">）</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_jpg/kFArLCjLq1eaFFgM5TlQdIdmpeibIjYQSHCG4nDTZYvLAwmGDHmlv53UTdZgutLVichvh2pZRzyxmMdvIjgmhpAQ/640?wx_fmt=jpeg" alt="img"></p>
+<p>当然：学校也试图让我们懂一些什么。。。（不过，他好像失败了）</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_jpg/kFArLCjLq1eaFFgM5TlQdIdmpeibIjYQSz2y4OUGuWjtQdRvgib4iasc8Jhg7G62DbG7qT0apUc69NNgniasI26U7A/640?wx_fmt=jpeg" alt="img"></p>
+<p>第一次去自己尝试拼板子，当然有很多差错，会有许多奇奇妙妙的出现，如发现少了一只紧固件（一个透明的小片，用来固定马达和板子的），结果最后一个马达就很难安装固定好，就（灵机一动）使用纸板来固定，从而引出无数bug。（但是第二天扒拉到了紧固件，就解决了，哎！）</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_jpg/kFArLCjLq1eaFFgM5TlQdIdmpeibIjYQShwQCyr1ggu9V3MG2qSs2icuNs7QU4YtZCibWOJzQiaLicibN2QZ542TotMQ/640?wx_fmt=jpeg" alt="img">)<img src="https://mmbiz.qpic.cn/mmbiz_jpg/kFArLCjLq1eaFFgM5TlQdIdmpeibIjYQSMMzdbibicBelZUsbUfZGcbVwiaJIvcJu2xWbibORLr1Ekwa43B692xRSsA/640?wx_fmt=jpeg" alt="img"></p>
+<p>最后因为小车是双层的（一般可以做单层的就足够了），就在安装好第二层后发现没有在第一层安装东西，于是又拆掉了（打算第二层为一个盖子）（内心很尴尬）。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_jpg/kFArLCjLq1eaFFgM5TlQdIdmpeibIjYQSFK4h66gt8BPcFGgXQl6gtgz4QOicXiab5G1Vg7eMPbAke2khA5w8WFmw/640?wx_fmt=jpeg" alt="img"></p>
+<p>中间有太多别的事情（好吧，是懒），小车在装线阶段，卡住了，一直没有进展，就放了好久（因为比赛日期还有一个月，全力向着deadline前进！）</p>
+<p>然后小车单片机无法下载程序。。。</p>
+<p>（检测不到单片机）（我一直担心是不是插反了，导致我的单片机烧毁了，最后发现还好不是~~<img src="https://res.wx.qq.com/mpres/htmledition/images/icon/common/emotion_panel/emoji_ios/u1F602.png" alt="img">）</p>
+<p>询问学长才发现所购买的单片机的晶振消失了，淘宝商家又补拍给我。。（但是晶振太便宜，于是自己又下单4元（一半是运费）买了20个，庆幸，时间和双十一紧挨着）</p>
+<p>小车代码阶段：在硬件拼装完成后，代码从网络上copy，但是出现了许多不适配的问题，紧接着经过不断地爆肝调试，在这个过程中也对代码不断理解。但是依次出现了小车的各种问题，但一步步在变好。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_jpg/kFArLCjLq1eaFFgM5TlQdIdmpeibIjYQSw5wnVVDib8YicribokHcKriaTv9YlPRsjbicnhibmILnDcLOqnXowYfRucMw/640?wx_fmt=jpeg" alt="img"></p>
+<p>从只能原地转圈（四个轮子的驱动指令反了）；这个好搞！！！（许多小车因为这个原因，总是自动原地，爱的魔力转圈圈）</p>
+<p>再到有一个轮子是反转的（原因同上）；</p>
+<p>再到只能走直线（红外感应器的代码对应的接口写错了）；</p>
+<p>到只能够走弧度较大的弯道，到能够走直角（但此时不会走弧度较大的弯道了，因采用的是增加转向时的延迟，所以这个很难控制）；</p>
+<p>最后比赛前夕，发现其他队伍都是参考学长们的代码，我们也就临时copy了一份，发现代码逻辑确实有很大的变化，思路更为清晰，解决了不少我们的一些困惑和更好的理解了小车的运行原理。（后来比赛时才知道，代码这个事情大多参赛组都是祖传代码。。。）</p>
+<p>但copy的代码又有了一个新的问题，借来的代码（读书人的事情，对吧）是单驱动的，而我们的循迹小车采用的是双驱动，在面临这个问题时，我陷入了犹豫，是将循迹车的硬件（主要是接线）更改为单驱动，还是我自己多研究代码，将其改为双驱动呢？？？最后，在10min的漫长思考后，我打开了三份代码，打算突破一下自己，开始研究代码，半个小时后，增加了几个电机（驱动）的代码，将循迹的转向，偏移等进行了更改。最后将代码写入了小车，成功了。</p>
+<p>但是，我们在自己制作的小车赛道中（就是用电工胶带铺设的黑线），遇到了红外感应器过高，感应很不灵敏，于是我们又通过增设铜柱，使之近乎摩擦地面而前行。好在方案可行。</p>
+<p>最终能够实现跌跌撞撞的前行（过于灵敏），转向。此时已经是夜里12点多，8个多小时就要开始比赛了。（虽然还有很多队比我们的情况还要恶劣，但也有大神的）。</p>
+<p>完成制作了！！！撒花。（代码就不放了，因为写的太烂了）</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_jpg/kFArLCjLq1eaFFgM5TlQdIdmpeibIjYQSb3VOWmHneibcxzgy4F5jJ2vdg8JXfLXibDG5qutiarWMyfPZ3Xnk87U2Q/640?wx_fmt=jpeg" alt="img"></p>
+<p>后来：</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_jpg/kFArLCjLq1eaFFgM5TlQdIdmpeibIjYQStnej6xSnmyFcnXSvw8grXkcWibDGqBYjWNgIbicz7icriasBOg6vRoGicNA/640?wx_fmt=jpeg" alt="img"></p>
+<p>输了。</p>
+<p>是的。</p>
+<p>自己亲手制作的小车在赛道上向观众们展示了灵车漂移，在一惊一乍中，在经过第一个点后，脱离了赛道。。。第二次机会测试的时候，小车直接冲出赛道（红外传感器有一个失灵了），视黑线于无物。这就是我很尴尬了。。。</p>
+<p>当然，有不少小车真的很强，从他们小车的动作中，我看到了小车配件和组装的更多可能，以及小车代码的更多可优化方向。（其实就是我太菜了。。。哈哈！）</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_jpg/kFArLCjLq1eaFFgM5TlQdIdmpeibIjYQShLVQttIgomuib0MM5DyfzY8aeTic1Ttpm39SsKXk7Rnn4QAln6dbibk2Q/640?wx_fmt=jpeg" alt="img"></p>
+<p>最后，虽然输了比赛，但在比赛前，我们每天都坚持到午夜，经过一星期的努力（有些晚了，应该提前准备的），从无到有，将一堆没有灵魂的零件，通过自己的组装，写入代码，使其能够跌跌撞撞的跑下去，虽然他还是个憨憨，但是这不就像成长中的我们么？我们不也是像那个小车一样，在一次一次的失败，报错中，积累经验得到成长的吗？而且，在这次的准备中，我也积累和收获了不少的知识与感悟，在代码的思索中，更清楚的认识到面向过程的c语言是怎样的，在单片机编程方面应该注意些什么。自然，个人的收获是大于比赛的。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_jpg/kFArLCjLq1eaFFgM5TlQdIdmpeibIjYQSxlD2pKDmqFQqmpfscKxIQJspB3ubhvO6mVUEgHWPXHgVsuVApO7CpQ/640?wx_fmt=jpeg" alt="img"></p>
+<p>那么？回过头来：此类比赛的意义究竟是什么呢？它既不能使社会的财富大大增加，也不能使得相关技术得到突破，甚至说他还有一点点浪费学生的时间和社会的资源，是么？我们是为了证明我们自己优秀而特地来为了获得奖项来证明我们自己的么？不，不是，或者说不完全是。</p>
+<p><strong>在这类竞赛的过程中，更重要的是面向过程的，结果并不是出发的前提，我们选择了远方，不仅仅是因为目的地的美好，更是因为沿途的美丽风光不断地吸引着我们；同样，在acm，ccpc等的竞赛中获奖者并非多数，但能够有许多志同道合的朋友在一起，一起为了一个方向而努力，一个目标而前行，这样的奋斗过程才是幸福的吧。**</strong>他们往往称自己痛并快乐着。是呀，能够在青春最美好的时间段里，去勇敢的追逐梦想，过程本身就是一件令人振奋的事，不是么？恰同学少年，风华正茂；愿诸位不忘初心，方得始终。</p>
+<p>感谢阅读，欢迎交流哦！</p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/xcu/" rel="tag"># xcu</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-next post-nav-item">
+                <a href="/2020/01/16/2020%E5%AD%A6%E6%A0%A1%E5%90%84%E7%9B%B8%E5%85%B3%E6%AF%94%E8%B5%9B%EF%BC%8C%E8%B5%84%E6%A0%BC%E8%AF%81%E4%B9%A6%E7%9A%84%E6%97%B6%E9%97%B4/" rel="next" title="2020学校各相关比赛，资格证书的时间">
+                  <i class="fa fa-chevron-left"></i> 2020学校各相关比赛，资格证书的时间
+                </a>
+            </div>
+
+            <span class="post-nav-divider"></span>
+
+            <div class="post-nav-prev post-nav-item">
+            </div>
+          </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+  </div>
+
+
+          </div>
+          
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <img class="site-author-image" itemprop="image" alt="jefine"
+    src="/images/avatar.gif">
+  <p class="site-author-name" itemprop="name">jefine</p>
+  <div class="site-description" itemprop="description">使每个人的生活多一份美好。</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">19</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">5</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="feed-link motion-element">
+    <a href="/atom.xml" rel="alternate">
+      <i class="fa fa-rss"></i>RSS
+    </a>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">jefine</span>
+</div>
+
+        
+
+
+
+
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+<script src="/js/utils.js"></script><script src="/js/motion.js"></script>
+<script src="/js/schemes/muse.js"></script>
+<script src="/js/next-boot.js"></script>
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>
