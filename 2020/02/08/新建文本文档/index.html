@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.0.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+  <link rel="alternate" href="/atom.xml" title="jefine" type="application/atom+xml">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+
+
+<script id="hexo-configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '7.5.0',
+    exturl: false,
+    sidebar: {"position":"left","display":"hide","offset":12,"onmobile":false},
+    copycode: {"enable":true,"show_result":true,"style":null},
+    back2top: {"enable":true,"sidebar":false,"scrollpercent":false},
+    bookmark: {"enable":false,"color":"#222","save":"auto"},
+    fancybox: false,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
+    algolia: {
+      appID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":0},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    localsearch: {"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    path: '',
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    translation: {
+      copy_button: '复制',
+      copy_success: '复制成功',
+      copy_failure: '复制失败'
+    },
+    sidebarPadding: 40
+  };
+</script>
+
+  <meta name="description" content="⑴ 找出算法中的基本语句； 　算法中执行次数最多的那条语句就是基本语句，通常是最内层循环的循环体。 　⑵ 计算基本语句的执行次数的数量级； 　只需计算基本语句执行次数的数量级，这就意味着只要保证基本语句执行次数的函数中的最高次幂正确即可，可以忽略所有低次幂和最高次幂的系数。这样能够简化算法分析，并且使注意力集中在最重要的一点上：增长率。 　⑶ 用大Ο记号表示算法的时间性能。 　将基本语句执行次数的">
+<meta property="og:type" content="article">
+<meta property="og:title" content="新建文本文档">
+<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;02&#x2F;08&#x2F;%E6%96%B0%E5%BB%BA%E6%96%87%E6%9C%AC%E6%96%87%E6%A1%A3&#x2F;index.html">
+<meta property="og:site_name" content="jefine">
+<meta property="og:description" content="⑴ 找出算法中的基本语句； 　算法中执行次数最多的那条语句就是基本语句，通常是最内层循环的循环体。 　⑵ 计算基本语句的执行次数的数量级； 　只需计算基本语句执行次数的数量级，这就意味着只要保证基本语句执行次数的函数中的最高次幂正确即可，可以忽略所有低次幂和最高次幂的系数。这样能够简化算法分析，并且使注意力集中在最重要的一点上：增长率。 　⑶ 用大Ο记号表示算法的时间性能。 　将基本语句执行次数的">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2020-02-08T13:02:40.956Z">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="http://yoursite.com/2020/02/08/%E6%96%B0%E5%BB%BA%E6%96%87%E6%9C%AC%E6%96%87%E6%A1%A3/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: false,
+    isPost: true,
+    isPage: false,
+    isArchive: false
+  };
+</script>
+
+  <title>新建文本文档 | jefine</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-meta">
+
+    <div>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">jefine</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+        <p class="site-subtitle">小小的梦呓</p>
+  </div>
+
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-fw fa-user"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档</a>
+
+  </li>
+  </ul>
+
+</nav>
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content">
+            
+
+  <div class="posts-expand">
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/02/08/%E6%96%B0%E5%BB%BA%E6%96%87%E6%9C%AC%E6%96%87%E6%A1%A3/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="jefine">
+      <meta itemprop="description" content="使每个人的生活多一份美好。">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="jefine">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          新建文本文档
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2020-02-08 20:58:37 / 修改时间：21:02:40" itemprop="dateCreated datePublished" datetime="2020-02-08T20:58:37+08:00">2020-02-08</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>⑴ 找出算法中的基本语句；<br> 　算法中执行次数最多的那条语句就是基本语句，通常是最内层循环的循环体。<br> 　⑵ 计算基本语句的执行次数的数量级；<br> 　只需计算基本语句执行次数的数量级，这就意味着只要保证基本语句执行次数的函数中的最高次幂正确即可，可以忽略所有低次幂和最高次幂的系数。这样能够简化算法分析，并且使注意力集中在最重要的一点上：增长率。<br> 　⑶ 用大Ο记号表示算法的时间性能。<br> 　将基本语句执行次数的数量级放入大Ο记号中。<br> 　如果算法中包含嵌套的循环，则基本语句通常是最内层的循环体，如果算法中包含并列的循环，则将并列循环的时间复杂度相加。例如：</p><a id="more"></a>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (i=<span class="number">1</span>; i&lt;=n; i++)  </span><br><span class="line">     x++;  </span><br><span class="line"><span class="keyword">for</span> (i=<span class="number">1</span>; i&lt;=n; i++)  </span><br><span class="line">    　<span class="keyword">for</span> (j=<span class="number">1</span>; j&lt;=n; j++)  </span><br><span class="line">          x++;</span><br></pre></td></tr></table></figure>
+
+<p>第一个for循环的时间复杂度为Ο(n)，第二个for循环的时间复杂度为Ο(<em>n</em>2)，则整个算法的时间复杂度为Ο(n+<em>n</em>2)=Ο(<em>n</em>2)。<br> 　Ο(1)表示基本语句的执行次数是一个常数，一般来说，只要算法中不存在循环语句，其时间复杂度就是Ο(1)。其中<strong>Ο(log*2n<em>)、Ο(n)、 Ο(nlog*2n</em>)、Ο(<em>n</em>2)和Ο(<em>n</em>3)</strong>称为多项式时间，<strong>而Ο(<em>2</em>n<br> )和Ο(n!)称为指数时间</strong>。计算机科学家普遍认为前者（即多项式时间复杂度的算法）是有效算法，把这类问题称为<strong>P</strong>（Polynomial,多项式）<strong>类问题</strong>，而把后者（即指数时间复杂度的算法）称为<strong>NP（Non-Deterministic Polynomial, 非确定多项式）问题</strong>。<br> 一般来说多项式级的复杂度是可以接受的，很多问题都有多项式级的解——也就是说，这样的问题，对于一个规模是n的输入，在n^k的时间内得到结果，称为P问题。有些问题要复杂些，没有多项式时间的解，但是可以在多项式时间里验证某个猜测是不是正确。比如问4294967297是不是质数？如果要直接入手的话，那么要把小于4294967297的平方根的所有素数都拿出来，看看能不能整除。还好欧拉告诉我们，这个数等于641和6700417的乘积，不是素数，很好验证的，顺便麻烦转告费马他的猜想不成立。大数分解、Hamilton回路之类的问题，都是可以多项式时间内验证一个“解”是否正确，这类问题叫做NP问题。</p>
+<p><strong>**（4）</strong>在计算算法时间复杂度时有以下几个简单的程序分析法则:**</p>
+<p>(1).对于一些简单的输入输出语句或赋值语句,近似认为需要O(1)时间</p>
+<p>(2).对于顺序结构,需要依次执行一系列语句所用的时间可采用大O下”求和法则”<br> <strong>求和法则</strong>:是指若算法的2个部分时间复杂度分别为 T1(n)=O(f(n))和 T2(n)=O(g(n)),则 T1(n)+T2(n)=O(max(f(n), g(n)))<br> 特别地,若T1(m)=O(f(m)), T2(n)=O(g(n)),则 T1(m)+T2(n)=O(f(m) + g(n))</p>
+<p>(3).对于选择结构,如if语句,它的主要时间耗费是在执行then字句或else字句所用的时间,需注意的是检验条件也需要O(1)时间</p>
+<p>(4).对于循环结构,循环语句的运行时间主要体现在多次迭代中执行循环体以及检验循环条件的时间耗费,一般可用大O下”乘法法则”<br> <strong>乘法法则</strong>: 是指若算法的2个部分时间复杂度分别为 T1(n)=O(f(n))和 T2(n)=O(g(n)),则 T1<em>T2=O(f(n)</em>g(n))</p>
+<p>(5).对于复杂的算法,可以将它分成几个容易估算的部分,然后利用求和法则和乘法法则技术整个算法的时间复杂度<br> 另外还有以下2个运算法则:(1) 若g(n)=O(f(n)),则O(f(n))+ O(g(n))= O(f(n))；(2) O(Cf(n)) = O(f(n)),其中C是一个正常数</p>
+<p><strong>（5）下面分别对几个常见的时间复杂度进行示例说明：</strong></p>
+<p><strong>(1)、O(1)</strong></p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Temp=i; i=j; j=temp;</span><br></pre></td></tr></table></figure>
+
+<p>以上三条单个语句的频度均为1，该程序段的执行时间是一个与问题规模n无关的常数。算法的时间复杂度为常数阶，记作T(n)=O(1)。<strong>注意：如果算法的执行时间不随着问题规模n的增加而增长，即使算法中有上千条语句，其执行时间也不过是一个较大的常数。此类算法的时间复杂度是O(1)。</strong></p>
+<p><strong>(2)、</strong>O(<em>n</em>2)**<br> 2.1. 交换i和j的内容</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">sum=<span class="number">0</span>；                 （一次）  </span><br><span class="line"><span class="keyword">for</span>(i=<span class="number">1</span>;i&lt;=n;i++)     （n+<span class="number">1</span>次）  </span><br><span class="line"> <span class="keyword">for</span>(j=<span class="number">1</span>;j&lt;=n;j++) （n2次）  </span><br><span class="line">    sum++；            （n2次）</span><br></pre></td></tr></table></figure>
+
+<p>解：<strong>因为Θ(2*n<em>2<br> +n+1)=</em>n<em>2<br> （Θ即：去低阶项，去掉常数项，去掉高阶项的常参得到），所以T(n)= =O(</em>n*2)；</strong></p>
+<p>2.2.</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (i=<span class="number">1</span>;i&lt;n;i++)  </span><br><span class="line"> &#123;   </span><br><span class="line"> y=y+<span class="number">1</span>;         ①     </span><br><span class="line"> <span class="keyword">for</span> (j=<span class="number">0</span>;j&lt;=(<span class="number">2</span>*n);j++)      </span><br><span class="line">    x++;         ②        </span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
+
+<p>解： 语句1的频度是n-1          语句2的频度是(n-1)<em>(2n+1)=2**</em>n*2<br> <strong>-n-1          f(n)=2*</strong>n<em>2<br> *</em>-n-1+(n-1)=2<strong><em>n</em>2<br> **-2；<br> 又</strong>Θ(2<em>n</em>2-2)=<em>n</em>2<br> **          该程序的时间复杂度T(n)=O(<strong><em>n</em>2<br> *<em>).<br> 　一般情况下，对步进循环语句只需考虑循环体中语句的执行次数，忽略该语句中步长加1、终值判别、控制转移等成分，当有若干个循环语句时，算法的时间复杂度是由嵌套层数最多的循环语句中最内层语句的频度f(n)决定的。<br> *</em>(3)、O(n)</strong></p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">a=<span class="number">0</span>;  </span><br><span class="line">b=<span class="number">1</span>;                      ①  </span><br><span class="line"><span class="keyword">for</span> (i=<span class="number">1</span>;i&lt;=n;i++) ②  </span><br><span class="line">&#123;    </span><br><span class="line"> s=a+b;　　　　③  </span><br><span class="line"> b=a;　　　　　④    </span><br><span class="line"> a=s;　　　　　⑤  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>解： 语句1的频度：2,                   语句2的频度： n,                  语句3的频度： n-1,                  语句4的频度：n-1,              语句5的频度：n-1,                                            T(n)=2+n+3(n-1)=4n-1=O(n).</p>
+<p><strong>(4)、O(log*2n*)</strong></p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">i=<span class="number">1</span>;     ①  </span><br><span class="line">hile (i&lt;=n)  </span><br><span class="line">i=i*<span class="number">2</span>; ②</span><br></pre></td></tr></table></figure>
+
+<p>解： 语句1的频度是1,            设语句2的频度是f(n),   则：2^f(n)&lt;=n;f(n)&lt;=<strong>log*2n*</strong>              取最大值f(n)=<strong>log*2n*</strong>,<br> T(n)=O(<strong>log<em>2n</em></strong> )</p>
+<p><strong>(5)、O(*n*3)</strong></p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;n;i++)  </span><br><span class="line"> &#123;    </span><br><span class="line">  <span class="keyword">for</span>(j=<span class="number">0</span>;j&lt;i;j++)    </span><br><span class="line">  &#123;  </span><br><span class="line">     <span class="keyword">for</span>(k=<span class="number">0</span>;k&lt;j;k++)  </span><br><span class="line">        x=x+<span class="number">2</span>;    </span><br><span class="line">  &#125;  </span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
+
+<p>解：当i=m, j=k的时候,内层循环的次数为k当i=m时, j 可以取 0,1,…,m-1 , 所以这里最内循环共进行了0+1+…+m-1=(m-1)m/2次所以,i从0取到n, 则循环共进行了: 0+(1-1)<em>1/2+…+(n-1)n/2=n(n+1)(n-1)/6所以时间复杂度为O(**</em>n*3**</p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-next post-nav-item">
+                <a href="/2020/02/08/%E7%AE%97%E6%B3%95%E6%97%B6%E9%97%B4%E5%A4%8D%E6%9D%82%E5%BA%A6%E5%88%86%E6%9E%90d%E5%A4%A7o/" rel="next" title="算法时间复杂度分析">
+                  <i class="fa fa-chevron-left"></i> 算法时间复杂度分析
+                </a>
+            </div>
+
+            <span class="post-nav-divider"></span>
+
+            <div class="post-nav-prev post-nav-item">
+            </div>
+          </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+  </div>
+
+
+          </div>
+          
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <img class="site-author-image" itemprop="image" alt="jefine"
+    src="/images/avatar.gif">
+  <p class="site-author-name" itemprop="name">jefine</p>
+  <div class="site-description" itemprop="description">使每个人的生活多一份美好。</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">23</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">7</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="feed-link motion-element">
+    <a href="/atom.xml" rel="alternate">
+      <i class="fa fa-rss"></i>RSS
+    </a>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">jefine</span>
+</div>
+
+        
+
+
+
+
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+<script src="/js/utils.js"></script><script src="/js/motion.js"></script>
+<script src="/js/schemes/muse.js"></script>
+<script src="/js/next-boot.js"></script>
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>
