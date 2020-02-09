@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.0.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+  <link rel="alternate" href="/atom.xml" title="jefine" type="application/atom+xml">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+
+
+<script id="hexo-configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '7.5.0',
+    exturl: false,
+    sidebar: {"position":"left","display":"hide","offset":12,"onmobile":false},
+    copycode: {"enable":true,"show_result":true,"style":null},
+    back2top: {"enable":true,"sidebar":false,"scrollpercent":false},
+    bookmark: {"enable":false,"color":"#222","save":"auto"},
+    fancybox: false,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
+    algolia: {
+      appID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":0},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    localsearch: {"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    path: '',
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    translation: {
+      copy_button: '复制',
+      copy_success: '复制成功',
+      copy_failure: '复制失败'
+    },
+    sidebarPadding: 40
+  };
+</script>
+
+  <meta name="description" content="Object Oriented Programming (OOPs) Concept in Java - GeeksforGeeks">
+<meta name="keywords" content="面向对象的编程">
+<meta property="og:type" content="article">
+<meta property="og:title" content="java面向对象特性的阐述">
+<meta property="og:url" content="https:&#x2F;&#x2F;jefine.github.io&#x2F;2020&#x2F;02&#x2F;09&#x2F;java%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%89%B9%E6%80%A7%E7%9A%84%E9%98%90%E8%BF%B0&#x2F;index.html">
+<meta property="og:site_name" content="jefine">
+<meta property="og:description" content="Object Oriented Programming (OOPs) Concept in Java - GeeksforGeeks">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https:&#x2F;&#x2F;jefine.github.io&#x2F;2020&#x2F;02&#x2F;09&#x2F;java%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%89%B9%E6%80%A7%E7%9A%84%E9%98%90%E8%BF%B0&#x2F;1.png">
+<meta property="og:updated_time" content="2020-02-09T08:39:34.664Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https:&#x2F;&#x2F;jefine.github.io&#x2F;2020&#x2F;02&#x2F;09&#x2F;java%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%89%B9%E6%80%A7%E7%9A%84%E9%98%90%E8%BF%B0&#x2F;1.png">
+
+<link rel="canonical" href="https://jefine.github.io/2020/02/09/java%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%89%B9%E6%80%A7%E7%9A%84%E9%98%90%E8%BF%B0/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: false,
+    isPost: true,
+    isPage: false,
+    isArchive: false
+  };
+</script>
+
+  <title>java面向对象特性的阐述 | jefine</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-meta">
+
+    <div>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">jefine</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+        <p class="site-subtitle">小小的梦呓</p>
+  </div>
+
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-fw fa-user"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档</a>
+
+  </li>
+  </ul>
+
+</nav>
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content">
+            
+
+  <div class="posts-expand">
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://jefine.github.io/2020/02/09/java%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%89%B9%E6%80%A7%E7%9A%84%E9%98%90%E8%BF%B0/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="jefine">
+      <meta itemprop="description" content="使每个人的生活多一份美好。">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="jefine">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          java面向对象特性的阐述
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2020-02-09 16:34:41 / 修改时间：16:39:34" itemprop="dateCreated datePublished" datetime="2020-02-09T16:34:41+08:00">2020-02-09</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/java/" itemprop="url" rel="index">
+                    <span itemprop="name">java</span>
+                  </a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p><a href="https://www.geeksforgeeks.org/object-oriented-programming-oops-concept-in-java/" target="_blank" rel="noopener">Object Oriented Programming (OOPs) Concept in Java - GeeksforGeeks</a></p><a id="more"></a>
+<blockquote>
+<p>Object-oriented programming: As the name suggests, Object-Oriented Programming or OOPs refers to languages that uses objects in programming. Object-oriented programming aims to implement real-world entities like inheritance, hiding, polymorphism etc in programming. <strong>The main aim of OOP is to bind together the data and the functions that operate on them so that no other part of the code can access this data except that function.（OOP的主要目的是将数据和对其进行操作的功能绑定在一起，以便除该功能外，代码的其他任何部分都无法访问此数据。）</strong></p>
+</blockquote>
+<ol>
+<li>在这其中，指出oops（面向对象的编程）主要目的是将<strong>数据和函数</strong>结合在一起，bind说明两者是绑定。</li>
+<li>当然inheritance, hiding, polymorphism etc（继承，隐藏，多态等）等内容。。。</li>
+</ol>
+<p>下面学习一波面向对象的语言的特性：</p>
+<h2 id="面对对象的三大特征："><a href="#面对对象的三大特征：" class="headerlink" title="面对对象的三大特征："></a><strong>面对对象的三大特征：</strong></h2><h3 id="1-polymorphism多态："><a href="#1-polymorphism多态：" class="headerlink" title="1. polymorphism多态："></a>1. polymorphism多态：</h3><p><a href="https://www.geeksforgeeks.org/polymorphism-in-java/" target="_blank" rel="noopener">Polymorphism in Java - GeeksforGeeks</a></p>
+<p>. In other words, polymorphism allows you to define one interface and have multiple implementations</p>
+<ul>
+<li><a href="https://www.geeksforgeeks.org/overloading-in-java/" target="_blank" rel="noopener">Overloading in Java</a></li>
+</ul>
+<p>即一个函数名字有着许多不同的含义（根据传入值类型，数量的不同而改变），以实现更多。</p>
+<p><strong>也就是说可以创建多个同名的函数</strong></p>
+<p>在现实生活中：我们对于一个名字会有许多的不同的理解，这取决于环境的不同。同样的在面向对象的特性（多态）吧，便实现了这一真实世界中的现象，赋值给了编程。</p>
+<ul>
+<li><a href="https://www.geeksforgeeks.org/overriding-in-java/" target="_blank" rel="noopener">Overriding in Java</a></li>
+</ul>
+<p>所谓多态就是指一个类实例的相同方法在不同情形有不同表现形式。多态机制使具有不同内部结构的对象可以共享相同的外部接口。这意味着，虽然针对不同对象的具体操作不同，但通过一个公共的类，它们（那些操作）可以通过相同的方式予以调用。</p>
+<p>最常见的多态就是将子类传入父类参数中，运行时调用父类方法时通过传入的子类决定具体的内部结构或行为。</p>
+<h3 id="2-Inheritance-继承"><a href="#2-Inheritance-继承" class="headerlink" title="2. Inheritance:继承"></a>2. Inheritance:继承</h3><p>继承就是一个函数可以使用其他函数的内容（field和methods即函数和变量）。</p>
+<p>分为三类：</p>
+<ul>
+<li><strong>Super Class:</strong> The class whose features are inherited is known as superclass(or a base class or a parent class).超类：被其他类继承</li>
+<li><strong>Sub Class:</strong> The class that inherits the other class is known as subclass(or a derived class, extended class, or child class). The subclass can add its own fields and methods in addition to the superclass fields and methods.子类：继承其他类</li>
+<li><strong>Reusability:</strong> Inheritance supports the concept of “reusability”, i.e. when we want to create a new class and there is already a class that includes some of the code that we want, we can derive our new class from the existing class. By doing this, we are reusing the fields and methods of the existing class.体现了其可以重复利用代码，不必多次重复去编写重复的内容。</li>
+</ul>
+<p>关键词是 <strong>extends</strong></p>
+<h3 id="3-Encapsulation-封装"><a href="#3-Encapsulation-封装" class="headerlink" title="3. Encapsulation:封装"></a>3. Encapsulation:封装</h3><p>封装：就是将该类所操作的数据和类，封装在一起。这是一种保护机制，可以使得其他的代码无法获取到被封装起数据，以此保护了数据。</p>
+<h3 id="除了三大基本特征以外：其实共七大（有重复）特征"><a href="#除了三大基本特征以外：其实共七大（有重复）特征" class="headerlink" title="除了三大基本特征以外：其实共七大（有重复）特征"></a>除了三大基本特征以外：其实共七大（有重复）特征</h3><ul>
+<li><a href="https://www.geeksforgeeks.org/polymorphism-in-java/" target="_blank" rel="noopener">Polymorphism</a> 多态</li>
+<li><a href="https://www.geeksforgeeks.org/inheritance-in-java/" target="_blank" rel="noopener">Inheritance</a> 继承</li>
+<li><a href="https://www.geeksforgeeks.org/encapsulation-in-java/" target="_blank" rel="noopener">Encapsulation</a> 封装</li>
+<li><a href="https://www.geeksforgeeks.org/abstraction-in-java-2/" target="_blank" rel="noopener">Abstraction</a> 抽象：</li>
+</ul>
+<p>将数据简化，只提供需要的数据给用户</p>
+<p>抽象是通过接口和抽象类来实现的。我们可以使用接口实现100%的抽象。</p>
+<ul>
+<li><a href="https://www.geeksforgeeks.org/classes-objects-java/" target="_blank" rel="noopener">Class</a> 类（类是用户定义的蓝图或原型，从中可以创建对象）</li>
+<li><a href="https://www.geeksforgeeks.org/classes-objects-java/" target="_blank" rel="noopener">Object</a>  对象：<strong>State ，Behavior， Identity</strong></li>
+<li><a href="https://www.geeksforgeeks.org/methods-in-java/" target="_blank" rel="noopener">Method</a> ：函数如下图（但在java中，只能存在于类下面，不可以独立像c，cpp，python一样出现）</li>
+</ul>
+<p><img src="/2020/02/09/java%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%89%B9%E6%80%A7%E7%9A%84%E9%98%90%E8%BF%B0/1.png" alt="1"></p>
+<ul>
+<li><a href="https://www.geeksforgeeks.org/message-passing-in-java/" target="_blank" rel="noopener">Message Passing</a> 信息传递。</li>
+</ul>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%9A%84%E7%BC%96%E7%A8%8B/" rel="tag"># 面向对象的编程</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-next post-nav-item">
+                <a href="/2020/02/08/%E7%AE%97%E6%B3%95%E6%97%B6%E9%97%B4%E5%A4%8D%E6%9D%82%E5%BA%A6%E5%88%86%E6%9E%90d%E5%A4%A7o/" rel="next" title="算法时间复杂度分析">
+                  <i class="fa fa-chevron-left"></i> 算法时间复杂度分析
+                </a>
+            </div>
+
+            <span class="post-nav-divider"></span>
+
+            <div class="post-nav-prev post-nav-item">
+            </div>
+          </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+  </div>
+
+
+          </div>
+          
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#面对对象的三大特征："><span class="nav-number">1.</span> <span class="nav-text">面对对象的三大特征：</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-polymorphism多态："><span class="nav-number">1.1.</span> <span class="nav-text">1. polymorphism多态：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-Inheritance-继承"><span class="nav-number">1.2.</span> <span class="nav-text">2. Inheritance:继承</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-Encapsulation-封装"><span class="nav-number">1.3.</span> <span class="nav-text">3. Encapsulation:封装</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#除了三大基本特征以外：其实共七大（有重复）特征"><span class="nav-number">1.4.</span> <span class="nav-text">除了三大基本特征以外：其实共七大（有重复）特征</span></a></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <img class="site-author-image" itemprop="image" alt="jefine"
+    src="/images/avatar.gif">
+  <p class="site-author-name" itemprop="name">jefine</p>
+  <div class="site-description" itemprop="description">使每个人的生活多一份美好。</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">23</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">5</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">8</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="feed-link motion-element">
+    <a href="/atom.xml" rel="alternate">
+      <i class="fa fa-rss"></i>RSS
+    </a>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">jefine</span>
+</div>
+
+        
+
+
+
+
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+<script src="/js/utils.js"></script><script src="/js/motion.js"></script>
+<script src="/js/schemes/muse.js"></script>
+<script src="/js/next-boot.js"></script>
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>
