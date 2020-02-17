@@ -51,16 +51,20 @@
   };
 </script>
 
-  <meta name="description" content="使每个人的生活多一份美好。">
-<meta property="og:type" content="website">
-<meta property="og:title" content="jefine">
-<meta property="og:url" content="https:&#x2F;&#x2F;jefine.github.io&#x2F;categories&#x2F;%E7%BC%96%E7%A8%8B&#x2F;index.html">
+  <meta name="description" content="java中还是称之为“方法”好了。">
+<meta name="keywords" content="methods">
+<meta property="og:type" content="article">
+<meta property="og:title" content="java方法methods">
+<meta property="og:url" content="https:&#x2F;&#x2F;jefine.github.io&#x2F;2020&#x2F;02&#x2F;17&#x2F;java%E6%96%B9%E6%B3%95methods&#x2F;index.html">
 <meta property="og:site_name" content="jefine">
-<meta property="og:description" content="使每个人的生活多一份美好。">
+<meta property="og:description" content="java中还是称之为“方法”好了。">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https:&#x2F;&#x2F;jefine.github.io&#x2F;2020&#x2F;02&#x2F;17&#x2F;java%E6%96%B9%E6%B3%95methods&#x2F;Untitled.png">
+<meta property="og:updated_time" content="2020-02-17T12:49:55.135Z">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https:&#x2F;&#x2F;jefine.github.io&#x2F;2020&#x2F;02&#x2F;17&#x2F;java%E6%96%B9%E6%B3%95methods&#x2F;Untitled.png">
 
-<link rel="canonical" href="https://jefine.github.io/categories/%E7%BC%96%E7%A8%8B/">
+<link rel="canonical" href="https://jefine.github.io/2020/02/17/java%E6%96%B9%E6%B3%95methods/">
 
 
 <script id="page-configurations">
@@ -68,13 +72,13 @@
   CONFIG.page = {
     sidebar: "",
     isHome: false,
-    isPost: false,
+    isPost: true,
     isPage: false,
     isArchive: false
   };
 </script>
 
-  <title>分类: 编程 | jefine</title>
+  <title>java方法methods | jefine</title>
   
 
 
@@ -184,236 +188,168 @@
           <div class="content">
             
 
+  <div class="posts-expand">
+      
   
   
-  
-  <div class="post-block">
-    <div class="posts-collapse">
-      <div class="collection-title">
-        <h1 class="collection-header">编程
-          <small>分类</small>
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://jefine.github.io/2020/02/17/java%E6%96%B9%E6%B3%95methods/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="jefine">
+      <meta itemprop="description" content="使每个人的生活多一份美好。">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="jefine">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          java方法methods
         </h1>
-      </div>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2020-02-17 20:45:13 / 修改时间：20:49:55" itemprop="dateCreated datePublished" datetime="2020-02-17T20:45:13+08:00">2020-02-17</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/java/" itemprop="url" rel="index">
+                    <span itemprop="name">java</span>
+                  </a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-    <div class="collection-year">
-      <h1 class="collection-header">2020</h1>
+        <p>java中还是称之为“方法”好了。</p><a id="more"></a>
+<p>In general, method declarations has six components :</p>
+<p>包括这六部分：</p>
+<ul>
+<li><strong>Modifier</strong>-（标识符）: Defines <strong>access type</strong> of the method i.e. from where it can be accessed in your application. In Java, there 4 type of the access specifiers.<ul>
+<li>public: accessible in all class in your application.</li>
+<li>protected: accessible within the class in which it is defined and in its <strong>subclass(es)</strong></li>
+<li>private: accessible only within the class in which it is defined.</li>
+<li>default (declared/defined without using any modifier) : accessible<br>within same class and package within which its class is defined.</li>
+</ul>
+</li>
+<li><strong>The return type</strong>（返回值） : The data type of the value returned by the method or void if does not return a value.</li>
+<li><strong>Method Name</strong> （方法名）: the rules for field names apply to method names as well, but the convention is a little different.</li>
+<li><strong>Parameter list</strong>  （参数列表）: Comma separated list of the input parameters are defined, preceded with their data type, within the<br>enclosed parenthesis. If there are no parameters, you must use empty<br>parentheses ().</li>
+<li><strong>Exception list</strong>  （异常列表）: The exceptions you expect by the method can throw, you can specify these exception(s).可以列出方法可能的异常会被引发，在此列表中可以指定这些异常。</li>
+<li><strong>Method body</strong>  : it is enclosed between braces. The code you need to be executed to perform your intended operations.</li>
+</ul>
+<p><img src="/2020/02/17/java%E6%96%B9%E6%B3%95methods/Untitled.png" alt="Untitled"></p>
+<p><strong>How to name a Method?</strong></p>
+<p> A method name is typically a single word that should be a <strong>verb</strong>in lowercase or multi-word, that begins with a <strong>verb</strong> in lowercase followed by <strong>adjective, noun…..</strong> After the first word, first letter of each word should be capitalized. For example, findSum, computeMax, setX and get.</p>
+<p>方法的命名通常为动词（小写）后可跟一个名词（后面的单词首字母大写）。computeMax。</p>
+<pre><code>//自己写的
+import java.util.Scanner;
+class Addition{
+    int sum;
+    public int addTwoInt(int a,int b) {
+        sum = a + b;
+        return sum;
+    }
+}
+
+public class Main {
+    public  static void main(String args[]){
+        Addition add = new Addition();
+        int s = add.addTwoInt(1,2);
+        System.out.print(s);
+    }
+
+}
+
+// 标准版本
+//Program to illustrate methodsin java 
+import java.io.*; 
+
+class Addition { 
+
+    int sum = 0; 
+
+    public int addTwoInt(int a, int b){ 
+
+        // adding two integer value. 
+        sum = a + b; 
+
+        //returning summation of two values. 
+        return sum; 
+    } 
+
+} 
+
+class GFG { 
+    public static void main (String[] args) { 
+
+        // creating an instance of Addition class 
+        Addition add = new Addition(); 
+
+        // calling addTwoInt() method to add two integer using instance created 
+        // in above step. 
+        int s = add.addTwoInt(1,2); 
+        System.out.println(&quot;Sum of two integer values :&quot;+ s); 
+
+    } 
+}</code></pre>
     </div>
 
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+    
+    
+    
 
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2020-01-29T18:09:07+08:00"
-              content="2020-01-29">
-          01-29
-        </time>
-      </div>
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/methods/" rel="tag"># methods</a>
+          </div>
 
-      <h2 class="post-title">
-          <a class="post-title-link" href="/2020/01/29/P1149%E7%81%AB%E6%9F%B4%E6%A3%92%E7%AD%89%E5%BC%8F/" itemprop="url">
-            <span itemprop="name">P1149火柴棒等式</span>
-          </a>
-      </h2>
+        
 
-    </header>
+          <div class="post-nav">
+            <div class="post-nav-next post-nav-item">
+                <a href="/2020/02/11/javaconstructors%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0/" rel="next" title="javaconstructors构造函数">
+                  <i class="fa fa-chevron-left"></i> javaconstructors构造函数
+                </a>
+            </div>
+
+            <span class="post-nav-divider"></span>
+
+            <div class="post-nav-prev post-nav-item">
+                <a href="/2020/02/17/java%E5%AD%97%E7%AC%A6%E4%B8%B2string/" rel="prev" title="java字符串string">
+                  java字符串string <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+      </footer>
+    
   </article>
+  
+  
+  
 
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2020-01-06T22:01:17+08:00"
-              content="2020-01-06">
-          01-06
-        </time>
-      </div>
-
-      <h2 class="post-title">
-          <a class="post-title-link" href="/2020/01/06/L1-050%E5%80%92%E6%95%B0%E7%AC%ACN%E4%B8%AA%E5%AD%97%E7%AC%A6%E4%B8%B2/" itemprop="url">
-            <span itemprop="name">L1-050倒数第N个字符串</span>
-          </a>
-      </h2>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2020-01-06T14:40:05+08:00"
-              content="2020-01-06">
-          01-06
-        </time>
-      </div>
-
-      <h2 class="post-title">
-          <a class="post-title-link" href="/2020/01/06/L1-048%E7%9F%A9%E9%98%B5A%E4%B9%98%E4%BB%A5B/" itemprop="url">
-            <span itemprop="name">L1-048矩阵A乘以B</span>
-          </a>
-      </h2>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2020-01-05T22:30:58+08:00"
-              content="2020-01-05">
-          01-05
-        </time>
-      </div>
-
-      <h2 class="post-title">
-          <a class="post-title-link" href="/2020/01/05/L1-046%E6%95%B4%E9%99%A4%E5%85%89%E6%A3%8D%EF%BC%88%E6%A8%A1%E6%8B%9F%E5%A4%A7%E6%95%B0%E9%99%A4%E6%B3%95%EF%BC%89/" itemprop="url">
-            <span itemprop="name">L1-046整除光棍（模拟大数除法）</span>
-          </a>
-      </h2>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2020-01-04T21:08:22+08:00"
-              content="2020-01-04">
-          01-04
-        </time>
-      </div>
-
-      <h2 class="post-title">
-          <a class="post-title-link" href="/2020/01/04/%E6%89%93%E5%8D%B0%E6%B2%99%E6%BC%8F/" itemprop="url">
-            <span itemprop="name">打印沙漏（代码较详细）</span>
-          </a>
-      </h2>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2020-01-04T18:37:05+08:00"
-              content="2020-01-04">
-          01-04
-        </time>
-      </div>
-
-      <h2 class="post-title">
-          <a class="post-title-link" href="/2020/01/04/L1-033%E5%87%BA%E7%94%9F%E5%B9%B4/" itemprop="url">
-            <span itemprop="name">L1-033出生年</span>
-          </a>
-      </h2>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2020-01-03T16:28:34+08:00"
-              content="2020-01-03">
-          01-03
-        </time>
-      </div>
-
-      <h2 class="post-title">
-          <a class="post-title-link" href="/2020/01/03/%E6%9F%A5%E9%AA%8C%E8%BA%AB%E4%BB%BD%E8%AF%81/" itemprop="url">
-            <span itemprop="name">查验身份证</span>
-          </a>
-      </h2>
-
-    </header>
-  </article>
-    <div class="collection-year">
-      <h1 class="collection-header">2019</h1>
-    </div>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2019-12-21T10:39:43+08:00"
-              content="2019-12-21">
-          12-21
-        </time>
-      </div>
-
-      <h2 class="post-title">
-          <a class="post-title-link" href="/2019/12/21/%E7%BB%9F%E8%AE%A1%E5%8D%95%E8%AF%8D%E6%95%B0/" itemprop="url">
-            <span itemprop="name">统计单词数</span>
-          </a>
-      </h2>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2019-12-12T18:29:36+08:00"
-              content="2019-12-12">
-          12-12
-        </time>
-      </div>
-
-      <h2 class="post-title">
-          <a class="post-title-link" href="/2019/12/12/%E6%9F%A5%E6%89%BE%E5%AD%90%E4%B8%B2/" itemprop="url">
-            <span itemprop="name">查找子串</span>
-          </a>
-      </h2>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2019-11-24T11:07:18+08:00"
-              content="2019-11-24">
-          11-24
-        </time>
-      </div>
-
-      <h2 class="post-title">
-          <a class="post-title-link" href="/2019/11/24/pta%E7%BB%9F%E8%AE%A1%E4%B8%80%E8%A1%8C%E6%96%87%E6%9C%AC%E7%9A%84%E5%8D%95%E8%AF%8D%E4%B8%AA%E6%95%B0/" itemprop="url">
-            <span itemprop="name">pta统计一行文本的单词个数</span>
-          </a>
-      </h2>
-
-    </header>
-  </article>
-
-    </div>
   </div>
-  
-  
-  
-
-  
-  <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/categories/%E7%BC%96%E7%A8%8B/page/2/">2</a><a class="extend next" rel="next" href="/categories/%E7%BC%96%E7%A8%8B/page/2/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
-  </nav>
-
 
 
           </div>
