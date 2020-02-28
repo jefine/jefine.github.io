@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.0.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+  <link rel="alternate" href="/atom.xml" title="jefine" type="application/atom+xml">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+
+
+<script id="hexo-configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '7.5.0',
+    exturl: false,
+    sidebar: {"position":"left","display":"hide","offset":12,"onmobile":false},
+    copycode: {"enable":true,"show_result":true,"style":null},
+    back2top: {"enable":true,"sidebar":false,"scrollpercent":false},
+    bookmark: {"enable":false,"color":"#222","save":"auto"},
+    fancybox: false,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
+    algolia: {
+      appID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":0},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    localsearch: {"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    path: '',
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    translation: {
+      copy_button: '复制',
+      copy_success: '复制成功',
+      copy_failure: '复制失败'
+    },
+    sidebarPadding: 40
+  };
+</script>
+
+  <meta name="description" content="使用stl可以大大提高算法设计的效率和可靠性。">
+<meta name="keywords" content="stl">
+<meta property="og:type" content="article">
+<meta property="og:title" content="概述STL">
+<meta property="og:url" content="https:&#x2F;&#x2F;jefine.github.io&#x2F;2020&#x2F;02&#x2F;28&#x2F;%E6%A6%82%E8%BF%B0STL&#x2F;index.html">
+<meta property="og:site_name" content="jefine">
+<meta property="og:description" content="使用stl可以大大提高算法设计的效率和可靠性。">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2020-02-28T05:29:32.578Z">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="https://jefine.github.io/2020/02/28/%E6%A6%82%E8%BF%B0STL/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: false,
+    isPost: true,
+    isPage: false,
+    isArchive: false
+  };
+</script>
+
+  <title>概述STL | jefine</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-meta">
+
+    <div>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">jefine</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+        <p class="site-subtitle">小小的梦呓</p>
+  </div>
+
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-fw fa-user"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档</a>
+
+  </li>
+  </ul>
+
+</nav>
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content">
+            
+
+  <div class="posts-expand">
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://jefine.github.io/2020/02/28/%E6%A6%82%E8%BF%B0STL/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="jefine">
+      <meta itemprop="description" content="使每个人的生活多一份美好。">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="jefine">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          概述STL
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2020-02-28 13:27:31 / 修改时间：13:29:32" itemprop="dateCreated datePublished" datetime="2020-02-28T13:27:31+08:00">2020-02-28</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%AE%97%E6%B3%95/" itemprop="url" rel="index">
+                    <span itemprop="name">算法</span>
+                  </a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>使用stl可以大大提高算法设计的效率和可靠性。</p><a id="more"></a>
+<ol>
+<li>概述：</li>
+</ol>
+<p>STL 即Standard Template Library标准模板类库。</p>
+<p>是标准c++库的子集</p>
+<p>通用，强大</p>
+<ol>
+<li>构成：</li>
+</ol>
+<p>container：容器（储存元素）</p>
+<p>algorithm：算法（操作元素）</p>
+<p>iterator：迭代器（类似指针）</p>
+<p>容器container:是一种数据结构</p>
+<h2 id="顺序容器："><a href="#顺序容器：" class="headerlink" title="顺序容器："></a>顺序容器：</h2><p>1）</p>
+<p><a href="https://jefine.github.io/2020/02/27/stlvector/">vector向量容器</a></p>
+<p>2）</p>
+<p>string 类似于上面的函数，有个别的例外。</p>
+<p>3）</p>
+<p>Dequen双端队列容器</p>
+<p>是链表和字符串的调和产物，是多个连续的队列块。</p>
+<p>4）list链表容器</p>
+<p>是一个双链表类模板，只能使用++ - -来使用迭代器</p>
+<h2 id="2-关联容器："><a href="#2-关联容器：" class="headerlink" title="2. 关联容器："></a>2. 关联容器：</h2><p>关联容器中每个元素都有一个关键字（key），通过key来储存和读取原损失，这些关键词可能于元素在容器中的位置无关，所以关联容器中不提供顺序容器中的front(),push_front(),pop_back()等操作，可以实现快速搜索（运用了分类的数据结构）</p>
+<p>1）set（集合容器）/multiset（多重集合容器）</p>
+<p>区别：</p>
+<p>set中元素的关键字是唯一的，而multiset的关键字可以不唯一。<strong>默认情况下会对元素按照升序排列。</strong></p>
+<p>而如果需要集合中的元素可以重复那么可以使用multiset。</p>
+<p>又由于set没有重复的元素，所以如果添加的元素相同，那么不添加；而multiset可以有重复的元素，所以在删除的时候，会将其全部删除然后返回一个被删去元素个数。</p>
+<p>特殊的函数有：</p>
+<p>count（k）返回k在set中的次数。</p>
+<p>find（k)如存在返回该元素的迭代器，否则返回end（）；</p>
+<p>upper/lower_bound（k）返回关键字&gt;k或&gt;=k的第一个元素的迭代器</p>
+<p>2）map（映射容器）/multimap（多重映射容器）</p>
+<p>映射是实现关键字和值的各系的储存结构，可以用key来访问value</p>
+<p>实现关键字和值关系的对应，而map是一一对应；而multimap是</p>
+<p>同时map/multimap容器中的key和value是pair类型（不是像set一样两者都是key类型）pair是一个结构体声明如下：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">pair</span></span></span><br><span class="line"><span class="class">&#123;</span> T first;<span class="comment">//对应key值</span></span><br><span class="line">  T second;<span class="comment">//对应value值</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>按照key升序排列，以红黑树的形式。map支持【】；而multimap不允许【】（在使用map[key]的时侯如果不存在该key值那么就以其为关键字插入一个元素。</p>
+<p>三种方式插入：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="built_in">map</span>&lt;<span class="keyword">char</span>,<span class="keyword">int</span>&gt; mym;</span><br><span class="line">    mym[<span class="string">'a'</span>] = <span class="number">1</span>;</span><br><span class="line">    mym.insert(pair&lt;<span class="keyword">char</span>,<span class="keyword">int</span>&gt;(<span class="string">'b'</span>,<span class="number">2</span>));</span><br><span class="line">    mym.insert(<span class="built_in">map</span>&lt;<span class="keyword">char</span>,<span class="keyword">int</span>&gt;::value_type(<span class="string">'c'</span>,<span class="number">2</span>));</span><br><span class="line">    <span class="built_in">map</span>&lt;<span class="keyword">char</span>,<span class="keyword">int</span>&gt;::iterator it;</span><br><span class="line">    <span class="keyword">for</span>(it = mym.<span class="built_in">begin</span>();it!=mym.<span class="built_in">end</span>();++it)&#123;</span><br><span class="line">        <span class="built_in">cout</span>&lt;&lt;it-&gt;first&lt;&lt;it-&gt;second;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="适配器容器："><a href="#适配器容器：" class="headerlink" title="适配器容器："></a>适配器容器：</h2><p>是基于其他的容器实现的容器，在底层容器实现适配器容器的功能，实际上可以将其作为一个一般的容器去使用。后进后出（只能从顶部出入）</p>
+<p>1）stark 栈容器：</p>
+<p>后进后出默认的底层容器是deque，（当然也可以指定其他的容器作为stark的底层容器）</p>
+<p>只有简单的pop（）出栈；push（）入栈；empty（）；size（）</p>
+<p>2）queue队列容器：先进先出。</p>
+<p>插入的元素在队尾，pop（）出的元素在队首。</p>
+<p>3)priority_queue(优先队列容器）</p>
+<p>可随意顺序入队列但是一旦进入就会被排序（按照值的大小排序）</p>
+<p>在这个里面使用pop（）来找到队伍最前面的（也是最大值的）</p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/stl/" rel="tag"># stl</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-next post-nav-item">
+                <a href="/2020/02/27/stlvector/" rel="next" title="stlvector">
+                  <i class="fa fa-chevron-left"></i> stlvector
+                </a>
+            </div>
+
+            <span class="post-nav-divider"></span>
+
+            <div class="post-nav-prev post-nav-item">
+            </div>
+          </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+  </div>
+
+
+          </div>
+          
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#顺序容器："><span class="nav-number">1.</span> <span class="nav-text">顺序容器：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-关联容器："><span class="nav-number">2.</span> <span class="nav-text">2. 关联容器：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#适配器容器："><span class="nav-number">3.</span> <span class="nav-text">适配器容器：</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <img class="site-author-image" itemprop="image" alt="jefine"
+    src="/images/avatar.gif">
+  <p class="site-author-name" itemprop="name">jefine</p>
+  <div class="site-description" itemprop="description">使每个人的生活多一份美好。</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">31</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">5</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">14</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="feed-link motion-element">
+    <a href="/atom.xml" rel="alternate">
+      <i class="fa fa-rss"></i>RSS
+    </a>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">jefine</span>
+</div>
+
+        
+
+
+
+
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+<script src="/js/utils.js"></script><script src="/js/motion.js"></script>
+<script src="/js/schemes/muse.js"></script>
+<script src="/js/next-boot.js"></script>
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>
