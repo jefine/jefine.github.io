@@ -59,7 +59,7 @@
 <meta property="og:description" content="题目描述鲁宾逊先生有一只宠物猴，名叫多多。这天，他们两个正沿着乡间小路散步，突然发现路边的告示牌上贴着一张小小的纸条：“欢迎免费品尝我种的花生！――熊字”。">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https:&#x2F;&#x2F;jefine.github.io&#x2F;2020&#x2F;03&#x2F;21&#x2F;p1086%E8%8A%B1%E7%94%9F%E9%87%87%E6%91%98&#x2F;1182.png">
-<meta property="og:updated_time" content="2020-03-21T10:14:13.886Z">
+<meta property="og:updated_time" content="2020-03-21T10:34:00.660Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https:&#x2F;&#x2F;jefine.github.io&#x2F;2020&#x2F;03&#x2F;21&#x2F;p1086%E8%8A%B1%E7%94%9F%E9%87%87%E6%91%98&#x2F;1182.png">
 
@@ -216,7 +216,7 @@
               <span class="post-meta-item-text">发表于</span>
               
 
-              <time title="创建时间：2020-03-21 16:58:48 / 修改时间：18:14:13" itemprop="dateCreated datePublished" datetime="2020-03-21T16:58:48+08:00">2020-03-21</time>
+              <time title="创建时间：2020-03-21 16:58:48 / 修改时间：18:34:00" itemprop="dateCreated datePublished" datetime="2020-03-21T16:58:48+08:00">2020-03-21</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -258,34 +258,29 @@
 <p><img src="/2020/03/21/p1086%E8%8A%B1%E7%94%9F%E9%87%87%E6%91%98/1182.png" alt></p>
 <p>我们假定多多在每个单位时间内，可以做下列四件事情中的一件：</p>
 <ol>
-<li><pre><code> 从路边跳到最靠近路边（即第一行）的某棵花生植株；
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">2.</span><br></pre></td></tr></table></figure>
- 从一棵植株跳到前后左右与之相邻的另一棵植株；
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">3.</span><br></pre></td></tr></table></figure>
- 采摘一棵植株下的花生；
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">4.</span><br></pre></td></tr></table></figure>
- 从最靠近路边（即第一行）的某棵花生植株跳回路边。
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">现在给定一块花生田的大小和花生的分布，请问在限定时间内，多多最多可以采到多少个花生？注意可能只有部分植株下面长有花生，假设这些植株下的花生个数各不相同。</span><br><span class="line"></span><br><span class="line">例如在图2所示的花生田里，只有位于(2,5),(3,7),(4,2),(5,4)的植株下长有花生，个数分别为13,7,15,9。沿着图示的路线，多多在21个单位时间内，最多可以采到37个花生。</span><br><span class="line"></span><br><span class="line">## 输入格式</span><br><span class="line"></span><br><span class="line">第一行包括三个整数，M,N和K，用空格隔开；表示花生田的大小为MN（1≤M,N≤20），多多采花生的限定时间为K（0≤K≤1000）个单位时间。接下来的M行，每行包括N个非负整数，也用空格隔开；第i+1行的第j个整数Pij（0≤pij≤500）表示花生田里植株（i,j）下花生的数目，0表示该植株下没有花生。</span><br><span class="line"></span><br><span class="line">## 输出格式</span><br><span class="line"></span><br><span class="line">一个整数，即在限定时间内，多多最多可以采到花生的个数。</span><br><span class="line"></span><br><span class="line">## 输入输出样例</span><br><span class="line"></span><br><span class="line">**输入 #1**</span><br></pre></td></tr></table></figure>
-6 7 21
-0 0 0 0 0 0 0
-0 0 0 0 13 0 0
-0 0 0 0 0 0 7
-0 15 0 0 0 0 0
-0 0 0 9 0 0 0
-0 0 0 0 0 0 0
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">**输出 #1**</span><br></pre></td></tr></table></figure>
-37
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">**输入 #2**</span><br></pre></td></tr></table></figure>
-6 7 20
-0 0 0 0 0 0 0
-0 0 0 0 13 0 0
-0 0 0 0 0 0 7
-0 15 0 0 0 0 0
-0 0 0 9 0 0 0
-0 0 0 0 0 0 0
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">**输出 #2**</span><br></pre></td></tr></table></figure>
-28</code></pre></li>
+<li>从路边跳到最靠近路边（即第一行）的某棵花生植株；</li>
+<li>从一棵植株跳到前后左右与之相邻的另一棵植株</li>
+<li>采摘一棵植株下的花生：</li>
+<li>从最靠近路边（即第一行）的某棵花生植株跳回路边</li>
 </ol>
+<p>现在给定一块花生田的大小和花生的分布，请问在限定时间内，多多最多可以采到多少个花生？注意可能只有部分植株下面长有花生，假设这些植株下的花生个数各不相同。</p>
+<p>例如在图2所示的花生田里，只有位于(2,5),(3,7),(4,2),(5,4)的植株下长有花生，个数分别为13,7,15,9。沿着图示的路线，多多在21个单位时间内，最多可以采到37个花生。</p>
+<h2 id="输入格式"><a href="#输入格式" class="headerlink" title="输入格式"></a>输入格式</h2><p>第一行包括三个整数，M,N和K，用空格隔开；表示花生田的大小为MN（1≤M,N≤20），多多采花生的限定时间为K（0≤K≤1000）个单位时间。接下来的M行，每行包括N个非负整数，也用空格隔开；第i+1行的第j个整数Pij（0≤Pij≤500）表示花生田里植株（i,j）下花生的数目，0表示该植株下没有花生。</p>
+<h2 id="输出格式"><a href="#输出格式" class="headerlink" title="输出格式"></a>输出格式</h2><p>一个整数，即在限定时间内，多多最多可以采到花生的个数。</p>
+<h2 id="输入输出样例"><a href="#输入输出样例" class="headerlink" title="输入输出样例"></a>输入输出样例</h2><p><strong>输入 #1</strong> </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">6 7 21</span><br><span class="line">0 0 0 0 0 0 0</span><br><span class="line">0 0 0 0 13 0 0</span><br><span class="line">0 0 0 0 0 0 7</span><br><span class="line">0 15 0 0 0 0 0</span><br><span class="line">0 0 0 9 0 0 0</span><br><span class="line">0 0 0 0 0 0 0</span><br></pre></td></tr></table></figure>
+
+<p><strong>输出 #1</strong> </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">37</span><br></pre></td></tr></table></figure>
+
+<p><strong>输入 #2</strong> </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">6 7 20</span><br><span class="line">0 0 0 0 0 0 0</span><br><span class="line">0 0 0 0 13 0 0</span><br><span class="line">0 0 0 0 0 0 7</span><br><span class="line">0 15 0 0 0 0 0</span><br><span class="line">0 0 0 9 0 0 0</span><br><span class="line">0 0 0 0 0 0 0</span><br></pre></td></tr></table></figure>
+
+<p><strong>输出 #2</strong> </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">28</span><br></pre></td></tr></table></figure>
+
+
+
 <h2 id="解题思路："><a href="#解题思路：" class="headerlink" title="解题思路："></a>解题思路：</h2><p>刚开始急匆匆地一看题目（然后就陷入了一阵思考：“如何在有限的时间内拿到最多的花生呢？”哎，每个花生的个数还不一样，也就是先后顺序什么的都要去更改哎，动态规划？<del>（可是其实我不会动态规划哈哈）</del>那么怎么办呢，哎呦，然后发现了一个问题，这是一道普及题目那么不会那么难的吧？！</p>
 <p>又重新审题后，发现我原来看错题目了！在那段极长的唠叨中，<strong>它规定的摘取顺序是按照从大到小的顺序区去采摘，</strong>而不是向我之前所想的那样，这样一来就大大简化了自己的步骤。</p>
 <p>之后一开始打算使用一个二维数组来储存但是发现不太对，想起来结构体于是；</p>
@@ -355,7 +350,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#题目描述"><span class="nav-number">1.</span> <span class="nav-text">题目描述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#解题思路："><span class="nav-number">2.</span> <span class="nav-text">解题思路：</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#题目描述"><span class="nav-number">1.</span> <span class="nav-text">题目描述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#输入格式"><span class="nav-number">2.</span> <span class="nav-text">输入格式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#输出格式"><span class="nav-number">3.</span> <span class="nav-text">输出格式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#输入输出样例"><span class="nav-number">4.</span> <span class="nav-text">输入输出样例</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#解题思路："><span class="nav-number">5.</span> <span class="nav-text">解题思路：</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
