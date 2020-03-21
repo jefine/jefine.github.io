@@ -1,47 +1,1053 @@
-extends includes/base
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>jefine</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="使每个人的生活多一份美好。">
+<meta property="og:type" content="website">
+<meta property="og:title" content="jefine">
+<meta property="og:url" content="https:&#x2F;&#x2F;jefine.github.io&#x2F;page&#x2F;2&#x2F;index.html">
+<meta property="og:site_name" content="jefine">
+<meta property="og:description" content="使每个人的生活多一份美好。">
+<meta property="og:locale" content="zh-CN">
+<meta name="twitter:card" content="summary">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link type="text/css" href="//netdna.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.css" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/scrollUp/image.css">
+  <!--[if lt IE 9]><script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7/html5shiv.min.js"></script><![endif]-->
+  
+</head>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <div class="logo">
+        <img src="/logo.png" alt="Profile Picture">
+      </div>
+      <div id="title">jefine</div>
+      
+        <div id="subtitle">小小的梦呓</div>
+      
+       <ul class="my-socials">
+  
+ 
+</ul>
+    </div>
+  </div>
+  <div id="header-inner" class="">
+    <nav id="main-nav">
+      <a id="main-nav-toggle" class="nav-icon"></a>
+      <!--
+        
+          
+            <a class="main-nav-link" href="/">首页</a>
+          
+            <a class="main-nav-link" href="/categories/life">生活</a>
+          
+            <a class="main-nav-link" href="/archives">归档</a>
+          
+        
+      -->
+    </nav>
+    <nav id="title-nav" style="display:none">
+      <a href="/">jefine</a>
+      <img src="/logo.png" alt="Profile Picture">
+      <!--
+      <span id="title-nav-socials">
+        
+       
+     </span>
+      -->
+    </nav>
+    <nav id="sub-nav">
+      
+      <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+    </nav>
+    <div id="search-form-wrap">
+      <form action="http://www.baidu.com/baidu" method="get" accept-charset="utf-8" class="search-form">
+        <input type="search" name="word" maxlength="20" class="search-form-input" placeholder="搜索">
+        <input type="submit" value="" class="search-form-submit">
+        <input name=tn type=hidden value="bds">
+        <input name=cl type=hidden value="3">
+        <input name=ct type=hidden value="2097152">
+        <input type="hidden" name="si" value="jefine.github.io">
+      </form>
+    </div>
+  </div>
+  <div class="site-nav" style="display: none;">
+    <ul>
+      
+      
+        <li><a href="/">首页</a></li>
+      
+        <li><a href="/categories/life">生活</a></li>
+      
+        <li><a href="/archives">归档</a></li>
+      
+      
+    </ul>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main">
+  
 
-block content
-    div.al_index_background.dis_flex_center.al_full_cover
-        - var bio = config.bio || 'A Beautiful Text Site.'
-        - var firstBioChar = bio.substr(0, 1)
-        div.al_pos_ab.al_letter.al_index_background_letter= firstBioChar
-        h2.al_index_background_bio= bio
-    div.al_index_container
-        div.al_pos_ab.al_fake_background
-        div.al_main_container
-            div.al_section_container.dis_flex_jcenter
-                div.section_header= 'LATEST PAGES'
-            ur.al_post_list
-                each item in site.posts.sort('date', -1).toArray()
-                    - var postTitle = item.title || 'No Title'
-                    - var createDate = date(item.date, 'MMM DD')
-                    - var firstChar = postTitle.substr(0, 1)
-                    - var postURL = item.link || item.path
-                    - var excerpt = item.excerpt + '...' || 'No Excerpt'
-                    - var readLaterURL = 'https://getpocket.com/edit?url=' + encodeURIComponent(config.url + '/' + url_for(postURL))
-                    li.al_index_pageList_item.al_index_page_seperator
-                        div.al_index_post_title_cnt.dis_flex
-                            div.al_pos_ab.al_letter.al_index_post_title_letter= firstChar
-                            h2.al_index_post_title
-                                a(href=url_for(postURL))= postTitle
-                            div.al_index_post_extra.dis_flex
-                                div.al_index_post_date.al_index_post_extra_item= createDate
-                                div.al_index_post_read_time
-                                    |#{min2read(item.content)} Min Read
-                        div.al_index_post_excerpt_cnt
-                            p.al_index_post_excerpt= excerpt
-                        div.al_index_post_button_cnt.dis_flex
-                            a.al_button.al_button_theme.al_index_post_button(href=url_for(postURL))= 'READ ON'
-                            a.al_button.al_button_transparent.al_index_post_button(href=readLaterURL)= 'READ LATER'
+    
+    <article id="post-javaconstructors构造函数" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/02/11/javaconstructors%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0/" class="article-date">
+  <time datetime="2020-02-11T08:11:11.000Z" itemprop="datePublished">2020-02-11</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/java/">java</a>
+  </div>
 
-            nav.dis_flex.post-nav
-                span.prev
-                    if page.prev
-                        a(href=url_for(page.prev_link))
-                            span.arrow ←
-                            | Newer Posts
-                span.next
-                    if page.next
-                        a(href=url_for(page.next_link))
-                            | Older Posts
-                            span.arrow →
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/02/11/javaconstructors%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0/">javaconstructors构造函数</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <blockquote>
+<p>Constructors are used to assign values to the class variables at the time of object creation, either explicitly done by the programmer or by Java itself (default constructor).</p>
+</blockquote>
+<p>在创建对象时，可以使用构造函数将值分配给类变量，这些值可以由程序员显式完成，也可以由Java本身（默认构造函数）完成。</p>
+<p><a href="https://www.geeksforgeeks.org/constructors-in-java/" target="_blank" rel="noopener">Constructors in Java - GeeksforGeeks</a></p>
+<p><strong>Rules for writing Constructor:</strong></p>
+<ul>
+<li><p>Constructor(s) of a class must has same name as the class name in which it resides.</p>
+<p>构造函数的名字和类名必须一致。</p>
+</li>
+<li><p>A constructor in Java can not be abstract, final, static and Synchronized.</p>
+<p>java中的构造函数不能是抽象的，最终的，静态的和同步的。</p>
+</li>
+<li><p>Access modifiers can be used in constructor declaration to control its access i.e which other class can call the constructor.</p>
+<p>可以在构造函数声明中使用访问修饰符来控制其访问，即哪个其他类可以调用构造函数。</p>
+</li>
+</ul>
+<h3 id="构造函数的类型："><a href="#构造函数的类型：" class="headerlink" title="构造函数的类型："></a>构造函数的类型：</h3><ol>
+<li><p><strong>无参构造函数</strong>：</p>
+<p>没有参数的构造函数被认为时默认构造函数。若我们没有在类中定义构造函数，那么编译器会自己定义一个无参数的构造函数。Default constructor provides the default values to the object like 0, null, etc. depending on the type.（默认的构造函数提供默认的值给对象0，null，等，更具他们的类型不同）</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Java Program to illustrate calling a // no-argument constructor import [java.io](http://java.io).*;</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Geek</span> </span>&#123; <span class="keyword">int</span> num; String name;</span><br><span class="line"></span><br><span class="line"> <span class="comment">// this would be invoked while an object </span></span><br><span class="line"> <span class="comment">// of that class is created. </span></span><br><span class="line"> Geek() </span><br><span class="line"> &#123; </span><br><span class="line"> 	System.out.println(<span class="string">"Constructor called"</span>); </span><br><span class="line"> &#125; </span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">GFG</span> </span>&#123; <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span> <span class="params">(String[] args)</span> </span>&#123; <span class="comment">// this would invoke default constructor. Geek geek1 = new Geek();</span></span><br><span class="line"></span><br><span class="line"> 	<span class="comment">// Default constructor provides the default </span></span><br><span class="line"> 	<span class="comment">// values to the object like 0, null </span></span><br><span class="line"> 	System.out.println(geek1.name); </span><br><span class="line"> 	System.out.println(geek1.num); </span><br><span class="line"> &#125; </span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+</li>
+</ol>
+<p>0utput :</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Constructor called</span><br><span class="line">null</span><br><span class="line">0</span><br></pre></td></tr></table></figure>
+
+<p><strong>2. 有参构造函数：</strong></p>
+<p>If we want to initialize fields of the class with your own values, then use a parameterized constructor.如果我们想使用我们自己的值去给类中的变量赋值的话，那么使用参数化的构造函数（有参构造函数）。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Java Program to illustrate calling of </span></span><br><span class="line"><span class="comment">// parameterized constructor. </span></span><br><span class="line"><span class="keyword">import</span> java.io.*; </span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Geek</span> </span></span><br><span class="line"><span class="class"></span>&#123; </span><br><span class="line">	<span class="comment">// data members of the class. </span></span><br><span class="line">	String name; </span><br><span class="line">	<span class="keyword">int</span> id; </span><br><span class="line"></span><br><span class="line">	<span class="comment">// constructor would initialize data members </span></span><br><span class="line">	<span class="comment">// with the values of passed arguments while </span></span><br><span class="line">	<span class="comment">// object of that class created. </span></span><br><span class="line">	Geek(String name, <span class="keyword">int</span> id) </span><br><span class="line">	&#123; </span><br><span class="line">		<span class="keyword">this</span>.name = name; </span><br><span class="line">		<span class="keyword">this</span>.id = id; </span><br><span class="line">	&#125; </span><br><span class="line">&#125; </span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">GFG</span> </span></span><br><span class="line"><span class="class"></span>&#123; </span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span> <span class="params">(String[] args)</span> </span></span><br><span class="line"><span class="function">	</span>&#123; </span><br><span class="line">		<span class="comment">// this would invoke the parameterized constructor. </span></span><br><span class="line">		Geek geek1 = <span class="keyword">new</span> Geek(<span class="string">"adam"</span>, <span class="number">1</span>); </span><br><span class="line">		System.out.println(<span class="string">"GeekName :"</span> + geek1.name + </span><br><span class="line">						<span class="string">" and GeekId :"</span> + geek1.id); </span><br><span class="line">	&#125; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>Output:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">GeekName :adam and GeekId :1</span><br></pre></td></tr></table></figure>
+
+<p>也就是说<strong>每一个类里面都有一个构造函数用来给变量赋值</strong>。如果你自己不去写这个构造函数，那么编译器会写一个。这样就可以给你创建的所有变量默认赋值了。（如果构造函数有参数那么，就是你给定的值；如果没有参数，那么就是0或者时null)。对了，构造函数中也可以写其他的语句，可以夹带私货。</p>
+<h2 id="使用构造参数时的一些其他问题："><a href="#使用构造参数时的一些其他问题：" class="headerlink" title="使用构造参数时的一些其他问题："></a>使用构造参数时的一些其他问题：</h2><ul>
+<li><p><strong>Does constructor return any value?</strong> （有返回值么？没有，但可以写return）</p>
+<p>There are no “return value” statements in constructor, but constructor returns current class instance. We can write ‘return’ inside a constructor.</p>
+</li>
+<li><p><strong>Constructor Overloading.</strong>（我们同样将其视作函数【本来就是】，当然也可以像函数一样，通过参数的类型，数目和顺序的不同来区分不同的同名构造函数）</p>
+<p>Like methods, we can overload constructors for creating objects in different ways. Compiler differentiates constructors on the basis of numbers of parameters, types of the parameters and order of the parameters.</p>
+</li>
+</ul>
+<blockquote>
+<p><strong>How constructors are different from methods in Java?构造函数和函数的区别</strong></p>
+</blockquote>
+<ul>
+<li>Constructor(s) must have the same name as the class within which it defined while it is not necessary for the method in java.构造函数的名字只能和类名相同，而且也不是必要的。</li>
+<li>Constructor(s) do not return any type while method(s) have the return type or <strong>void</strong> if does not return any value.构造函数没有返回值</li>
+<li>Constructor is called only once at the time of Object creation while method(s) can be called any numbers of time.构造函数只有在对象被创建的时候调用一次，而函数可以无限次被调用。</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      
+        <a data-url="https://jefine.github.io/2020/02/11/javaconstructors%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0/" data-id="ck811m6jt000vegr08b3kd39i" class="article-share-link">分享到</a>
+      
+
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/java%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0/" rel="tag">java构造函数</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+    
+  
+
+    
+    <article id="post-汉诺塔的思考及解答" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/02/10/%E6%B1%89%E8%AF%BA%E5%A1%94%E7%9A%84%E6%80%9D%E8%80%83%E5%8F%8A%E8%A7%A3%E7%AD%94/" class="article-date">
+  <time datetime="2020-02-10T06:36:38.000Z" itemprop="datePublished">2020-02-10</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E7%AE%97%E6%B3%95/">算法</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/02/10/%E6%B1%89%E8%AF%BA%E5%A1%94%E7%9A%84%E6%80%9D%E8%80%83%E5%8F%8A%E8%A7%A3%E7%AD%94/">汉诺塔的思考及解答</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>其实在汉诺塔问题之前，斐波那契数列的问题是个比较好解决的问题。</p>
+<p>但是汉诺塔问题令我思考了一段时间。最后不断探索，有了一些思考。</p>
+<p>沉下心，我们需要有一个大的格局。不断分解为小的问题。</p>
+<p>递归问题么，不就是找到规律与出口么。</p>
+<p>汉诺塔（又称河内塔）问题：大梵天创造世界的时候做了三根金刚石柱子，在一根柱子上从下往上按照大小顺序摞着64片黄金圆盘。大梵天命令婆罗门把圆盘从下面开始按大小顺序重新摆放在另一根柱子上。并且规定，在小圆盘上不能放大圆盘，在三根柱子之间一次只能移动一个圆盘。</p>
+<p>我们不妨自己先试一试，如何将一个或三个盘子从a移动到c。</p>
+<p>好的，那么总结一下<strong>规律</strong>，<strong>假设有n个盘子，我们就是借助一个柱子c，把a上的n-1个盘子放到b上，再把b上的n-1个盘子通过a移动到c上即可</strong>。（下图较复杂，简单看看就好）</p>
+<p><img src="/2020/02/10/%E6%B1%89%E8%AF%BA%E5%A1%94%E7%9A%84%E6%80%9D%E8%80%83%E5%8F%8A%E8%A7%A3%E7%AD%94/Untitled.png" alt="Untitled">好的，那么这一步的代码该怎么写呢？？？</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hanoi(n<span class="number">-1</span>,a,c,b);<span class="comment">//我们就是借助一个柱子c，把a上的n-1个盘子放到b上，</span></span><br><span class="line"><span class="built_in">printf</span>(<span class="string">"将%c移动到%c\\n"</span>,a,b);</span><br><span class="line">hanoi(n<span class="number">-1</span>,b,a,c);<span class="comment">//再把b上的n-1个盘子通过a移动到c上即可。</span></span><br></pre></td></tr></table></figure>
+
+<p>这样是不是就可以理解了。</p>
+<p>好的，但是我们要给这个函数一个出口不然，他就会一直跑下去。。。（并且问我怎么知道的）</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span>(n==<span class="number">1</span>)&#123;<span class="comment">//终止条件。</span></span><br><span class="line"><span class="built_in">printf</span>(<span class="string">"将%c移动到%c\\n"</span>,a,c);<span class="comment">//最后不就是把a上的最后一个放到c上，就可以了吧。</span></span><br><span class="line"><span class="comment">//我们不考虑别的。嘿嘿</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>那么综合起来就是：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="keyword">int</span> cnt;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">hanoi</span><span class="params">(<span class="keyword">int</span> n,<span class="keyword">char</span> a,<span class="keyword">char</span> b,<span class="keyword">char</span> c)</span></span>&#123;</span><br><span class="line">cnt++;</span><br><span class="line"><span class="keyword">if</span>(n==<span class="number">1</span>)&#123;</span><br><span class="line"><span class="built_in">printf</span>(<span class="string">"将%c移动到%c\\n"</span>,a,c);</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">else</span> &#123;</span><br><span class="line">hanoi(n<span class="number">-1</span>,a,c,b);</span><br><span class="line"><span class="built_in">printf</span>(<span class="string">"将%c移动到%c\\n"</span>,a,b);</span><br><span class="line">hanoi(n<span class="number">-1</span>,b,a,c);</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line"><span class="keyword">int</span> n;</span><br><span class="line"><span class="keyword">char</span> a=<span class="string">'a'</span>,b=<span class="string">'b'</span>,c=<span class="string">'c'</span>;</span><br><span class="line"><span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;n);</span><br><span class="line">hanoi(n,a,b,c);</span><br><span class="line"><span class="built_in">printf</span>(<span class="string">"%d"</span>,cnt);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>注释可以参考上面的哦。</p>
+<p>链接：知乎上有一个有意思的答案，不妨一看：</p>
+<p><a href="https://www.zhihu.com/question/24385418/answer/257751077" target="_blank" rel="noopener">https://www.zhihu.com/question/24385418/answer/257751077</a></p>
+<p>bilibili也有一个不错的视频讲解：</p>
+<p><a href="https://www.bilibili.com/video/av9830115?from=search&amp;seid=9898738544530212324" target="_blank" rel="noopener">https://www.bilibili.com/video/av9830115?from=search&amp;seid=9898738544530212324</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      
+        <a data-url="https://jefine.github.io/2020/02/10/%E6%B1%89%E8%AF%BA%E5%A1%94%E7%9A%84%E6%80%9D%E8%80%83%E5%8F%8A%E8%A7%A3%E7%AD%94/" data-id="ck811m6m2002kegr0heex2fjs" class="article-share-link">分享到</a>
+      
+
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E9%80%92%E5%BD%92/" rel="tag">递归</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+    
+  
+
+    
+    <article id="post-java面向对象特性的阐述" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/02/09/java%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%89%B9%E6%80%A7%E7%9A%84%E9%98%90%E8%BF%B0/" class="article-date">
+  <time datetime="2020-02-09T08:34:41.000Z" itemprop="datePublished">2020-02-09</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/java/">java</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/02/09/java%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%89%B9%E6%80%A7%E7%9A%84%E9%98%90%E8%BF%B0/">java面向对象特性的阐述</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <blockquote>
+<p>Object-oriented programming: As the name suggests, Object-Oriented Programming or OOPs refers to languages that uses objects in programming. Object-oriented programming aims to implement real-world entities like inheritance, hiding, polymorphism etc in programming. <strong>The main aim of OOP is to bind together the data and the functions that operate on them so that no other part of the code can access this data except that function.（OOP的主要目的是将数据和对其进行操作的功能绑定在一起，以便除该功能外，代码的其他任何部分都无法访问此数据。）</strong></p>
+</blockquote>
+<p><a href="https://www.geeksforgeeks.org/object-oriented-programming-oops-concept-in-java/" target="_blank" rel="noopener">Object Oriented Programming (OOPs) Concept in Java - GeeksforGeeks</a></p>
+<ol>
+<li>在这其中，指出oops（面向对象的编程）主要目的是将<strong>数据和函数</strong>结合在一起，bind说明两者是绑定。</li>
+<li>当然inheritance, hiding, polymorphism etc（继承，隐藏，多态等）等内容。。。</li>
+</ol>
+<p>下面学习一波面向对象的语言的特性：</p>
+<h2 id="面对对象的三大特征："><a href="#面对对象的三大特征：" class="headerlink" title="面对对象的三大特征："></a><strong>面对对象的三大特征：</strong></h2><h3 id="1-polymorphism多态："><a href="#1-polymorphism多态：" class="headerlink" title="1. polymorphism多态："></a>1. polymorphism多态：</h3><p><a href="https://www.geeksforgeeks.org/polymorphism-in-java/" target="_blank" rel="noopener">Polymorphism in Java - GeeksforGeeks</a></p>
+<p>. In other words, polymorphism allows you to define one interface and have multiple implementations</p>
+<ul>
+<li><a href="https://www.geeksforgeeks.org/overloading-in-java/" target="_blank" rel="noopener">Overloading in Java</a></li>
+</ul>
+<p>即一个函数名字有着许多不同的含义（根据传入值类型，数量的不同而改变），以实现更多。</p>
+<p><strong>也就是说可以创建多个同名的函数</strong></p>
+<p>在现实生活中：我们对于一个名字会有许多的不同的理解，这取决于环境的不同。同样的在面向对象的特性（多态）吧，便实现了这一真实世界中的现象，赋值给了编程。</p>
+<ul>
+<li><a href="https://www.geeksforgeeks.org/overriding-in-java/" target="_blank" rel="noopener">Overriding in Java</a></li>
+</ul>
+<p>所谓多态就是指一个类实例的相同方法在不同情形有不同表现形式。多态机制使具有不同内部结构的对象可以共享相同的外部接口。这意味着，虽然针对不同对象的具体操作不同，但通过一个公共的类，它们（那些操作）可以通过相同的方式予以调用。</p>
+<p>最常见的多态就是将子类传入父类参数中，运行时调用父类方法时通过传入的子类决定具体的内部结构或行为。</p>
+<h3 id="2-Inheritance-继承"><a href="#2-Inheritance-继承" class="headerlink" title="2. Inheritance:继承"></a>2. Inheritance:继承</h3><p>继承就是一个函数可以使用其他函数的内容（field和methods即函数和变量）。</p>
+<p>分为三类：</p>
+<ul>
+<li><strong>Super Class:</strong> The class whose features are inherited is known as superclass(or a base class or a parent class).超类：被其他类继承</li>
+<li><strong>Sub Class:</strong> The class that inherits the other class is known as subclass(or a derived class, extended class, or child class). The subclass can add its own fields and methods in addition to the superclass fields and methods.子类：继承其他类</li>
+<li><strong>Reusability:</strong> Inheritance supports the concept of “reusability”, i.e. when we want to create a new class and there is already a class that includes some of the code that we want, we can derive our new class from the existing class. By doing this, we are reusing the fields and methods of the existing class.体现了其可以重复利用代码，不必多次重复去编写重复的内容。</li>
+</ul>
+<p>关键词是 <strong>extends</strong></p>
+<h3 id="3-Encapsulation-封装"><a href="#3-Encapsulation-封装" class="headerlink" title="3. Encapsulation:封装"></a>3. Encapsulation:封装</h3><p>封装：就是将该类所操作的数据和类，封装在一起。这是一种保护机制，可以使得其他的代码无法获取到被封装起数据，以此保护了数据。</p>
+<h3 id="除了三大基本特征以外：其实共七大（有重复）特征"><a href="#除了三大基本特征以外：其实共七大（有重复）特征" class="headerlink" title="除了三大基本特征以外：其实共七大（有重复）特征"></a>除了三大基本特征以外：其实共七大（有重复）特征</h3><ul>
+<li><a href="https://www.geeksforgeeks.org/polymorphism-in-java/" target="_blank" rel="noopener">Polymorphism</a> 多态</li>
+<li><a href="https://www.geeksforgeeks.org/inheritance-in-java/" target="_blank" rel="noopener">Inheritance</a> 继承</li>
+<li><a href="https://www.geeksforgeeks.org/encapsulation-in-java/" target="_blank" rel="noopener">Encapsulation</a> 封装</li>
+<li><a href="https://www.geeksforgeeks.org/abstraction-in-java-2/" target="_blank" rel="noopener">Abstraction</a> 抽象：</li>
+</ul>
+<p>将数据简化，只提供需要的数据给用户</p>
+<p>抽象是通过接口和抽象类来实现的。我们可以使用接口实现100%的抽象。</p>
+<ul>
+<li><a href="https://www.geeksforgeeks.org/classes-objects-java/" target="_blank" rel="noopener">Class</a> 类（类是用户定义的蓝图或原型，从中可以创建对象）</li>
+<li><a href="https://www.geeksforgeeks.org/classes-objects-java/" target="_blank" rel="noopener">Object</a>  对象：<strong>State ，Behavior， Identity</strong></li>
+<li><a href="https://www.geeksforgeeks.org/methods-in-java/" target="_blank" rel="noopener">Method</a> ：函数如下图（但在java中，只能存在于类下面，不可以独立像c，cpp，python一样出现）</li>
+</ul>
+<p><img src="/2020/02/09/java%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%89%B9%E6%80%A7%E7%9A%84%E9%98%90%E8%BF%B0/1.png" alt="1"></p>
+<ul>
+<li><a href="https://www.geeksforgeeks.org/message-passing-in-java/" target="_blank" rel="noopener">Message Passing</a> 信息传递。</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      
+        <a data-url="https://jefine.github.io/2020/02/09/java%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%89%B9%E6%80%A7%E7%9A%84%E9%98%90%E8%BF%B0/" data-id="ck811m6kf001begr027vmdka6" class="article-share-link">分享到</a>
+      
+
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%9A%84%E7%BC%96%E7%A8%8B/" rel="tag">面向对象的编程</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+    
+  
+
+    
+    <article id="post-算法时间复杂度分析d大o" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/02/08/%E7%AE%97%E6%B3%95%E6%97%B6%E9%97%B4%E5%A4%8D%E6%9D%82%E5%BA%A6%E5%88%86%E6%9E%90d%E5%A4%A7o/" class="article-date">
+  <time datetime="2020-02-08T11:40:05.000Z" itemprop="datePublished">2020-02-08</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E7%AE%97%E6%B3%95%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%88%86%E6%9E%90/">算法设计与分析</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/02/08/%E7%AE%97%E6%B3%95%E6%97%B6%E9%97%B4%E5%A4%8D%E6%9D%82%E5%BA%A6%E5%88%86%E6%9E%90d%E5%A4%A7o/">算法时间复杂度分析</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="1-2-算法分析"><a href="#1-2-算法分析" class="headerlink" title="1.2 算法分析:"></a>1.2 算法分析:</h1><p><img src="https://i.loli.net/2020/02/08/vLTN4YAGuk5enzZ.png" alt="Untitled.png"></p>
+<p>分为：事后统计法与事前分析估算法。</p>
+<p>当然，第一种需要执行程序。而且存在着其他的因素来干扰结果。（与硬件有关）</p>
+<p>所以采用<strong>事前分析评估法</strong>来分析算法的效率。</p>
+<h3 id="1-2-1算法时间复杂度分析："><a href="#1-2-1算法时间复杂度分析：" class="headerlink" title="1.2.1算法时间复杂度分析："></a>1.2.1算法时间复杂度分析：</h3><p>算法是由控制结构（顺序，分支，循环3种）和原操作（固有数据类型的操作）构成。</p>
+<p>算法的的运行时间取决于两者的综合效果。o</p>
+<p><img src="https://i.loli.net/2020/02/08/Y1yP4zWnVuaSC5K.png" alt="Untitled 1.png"></p>
+<p>设n为算法中的问题规模，通常用大O、大Ω或  等三种渐进符号表示算法的执行时间与n之间的一种增长关系。</p>
+<p><img src="https://i.loli.net/2020/02/08/lpOyIUejhMig8fS.png" alt="Untitled 2.png"></p>
+<p>算法的执行时间主要与问题规模有关（即数据的多少有关）不妨将数据规模设为n；</p>
+<p>分析问题规模n，找出<strong>基本语句</strong>，求出其运行次数f(n)。</p>
+<p><em>基本语句：算法中的基本语句是执行次数与整个算法的执行次数程正比的语句，他对算法执行时间的贡献最大（最费时间），是算法中最重要的操作。（</em>上文的例子中：s+=a[i][i]便是基本语句。）</p>
+<p>在此例子中：f(n)=n</p>
+<p>这种<strong>时间衡量方法得出的不是具体的时间，而是一种增长趋势的度量（即加速度）</strong>。换而言之，这是在n足够大的情况下算法中基本语句的执行次数在渐进意义下的<strong>阶</strong>（我们可以将其理解为高阶，低阶这样的概念）</p>
+<h3 id="大o表示法："><a href="#大o表示法：" class="headerlink" title="大o表示法："></a>大o表示法：</h3><p>大O表示法就是将算法的所有步骤转换为代数项，然后<strong>排除不会对问题的整体复杂度产生较大影响的较低阶常数和系数。</strong></p>
+<p>数学家可能会对我的“整体影响”假设有点沮丧，但是开发人员为了节省时间，这种方式更容易简化问题：</p>
+<p><code>规律 Big-O
+2 O(1) --&gt; 就是一个常数
+2n + 10 O(n) --&gt; n 对整体结果会产生最大影响
+5n^2 O(n^2) --&gt; n^2 具有最大影响</code></p>
+<p>简而言之，这个例子所要表达的就是：我们只关注表达式中对表达式最终结果会产生最大影响的因子。（当常数非常大而n很小的时候并不是这样的，但是我们现在不要担心这种情况）。</p>
+<p>下面是一些常用的时间复杂度以及简单的定义。更完整的定义可以翻阅<a href="https://en.wikipedia.org/wiki/Time_complexity" target="_blank" rel="noopener">维基百科</a>(英文）。</p>
+<ul>
+<li><strong>O(1)—</strong> 常量时间：给定一个大小为n的输入，概算法只需要一步就可以完成任务。</li>
+<li><strong>O(log n)—</strong>对数时间：给定大小为n的输入，该算法每执行一步，它完成任务所需要的步骤数目会以一定的因子减少。</li>
+<li><strong>O(n)—</strong>线性时间：给定大小为n的输入，该算法完成任务所需要的步骤直接和n相关（1对1的关系）。</li>
+<li><strong>O(n²)—</strong>二次方时间：给定大小为n的输入，完成任务所需要的步骤是n的平方。</li>
+<li><strong>O(C^n)—</strong>指数时间：给定大小为n的输入，完成任务所需要的步骤是一个常数的n次方（非常大的数字）。（c为常数）</li>
+</ul>
+<p><img src="https://i.loli.net/2020/02/08/TbekNSdj5A4lxhR.png" alt="Untitled 3.png"></p>
+<p>从图中我们也可以看到不同的效率对于事件的影响是极大的。</p>
+<p>在这个网站中我们也可以看到一些常见的算法效率：</p>
+<p><a href="https://www.bigocheatsheet.com/" target="_blank" rel="noopener">Know Thy Complexities!</a></p>
+<p>那么？<strong>什么才是大o表示法</strong>：下面的链接讲述的很详细。</p>
+<p><a href="https://www.geeksforgeeks.org/analysis-algorithms-big-o-analysis/" target="_blank" rel="noopener">Analysis of Algorithms | Big-O analysis - GeeksforGeeks</a></p>
+<p>综合来讲，大o表示法表示的是增长率的上界。</p>
+<p>而且需要的是紧凑上界！！！</p>
+<p><img src="https://i.loli.net/2020/02/08/w7SqJhMX29KZ45Y.jpg" alt="1 2.jpeg"></p>
+<h3 id="大Ω表示法："><a href="#大Ω表示法：" class="headerlink" title="大Ω表示法："></a>大Ω表示法：</h3><p>大Ω符号用来描述增长率的下界，表示f(n)的增长最少像g(n) 增长的那样快，也就是说，</p>
+<p>当输入规模为n时，算法消耗时间的最小值。 与大O符号对称，这个下界的阶越高，结果就越有价值，所以，对于10n~2+4n+2，Ω(n2)比Ω(n) 有价值。一个算法的时间用大Ω符号表示时，总是采用最有价值的g(n)表示，称之为“紧凑下界”或“紧确下界”。 </p>
+<h3 id="大-表示法："><a href="#大-表示法：" class="headerlink" title="大  表示法："></a>大  表示法：</h3><p>大?符号比大O符号和大Ω符号都精确，</p>
+<p>当且仅当g(n)既是f(n)的上界又是f(n)的下界。即当大o表示法和大Ω表示法相同时，即为该表示法。</p>
+<p>最后：如下：分别表示3种符号</p>
+<p><img src="https://i.loli.net/2020/02/08/1cKPxilrG96sEY2.png" alt="Untitled 4.png"></p>
+<p>另附以下特性：</p>
+<p><img src="https://i.loli.net/2020/02/08/oZBcmqPKAshu6UM.jpg" alt="1 2 1.jpeg"></p>
+<p>额。</p>
+<p>⑴ 找出算法中的基本语句；　算法中执行次数最多的那条语句就是基本语句，通常是最内层循环的循环体。　⑵ 计算基本语句的执行次数的数量级；　只需计算基本语句执行次数的数量级，这就意味着只要保证基本语句执行次数的函数中的最高次幂正确即可，可以忽略所有低次幂和最高次幂的系数。这样能够简化算法分析，并且使注意力集中在最重要的一点上：增长率。　⑶ 用大Ο记号表示算法的时间性能。　将基本语句执行次数的数量级放入大Ο记号中。　如果算法中包含嵌套的循环，则基本语句通常是最内层的循环体，如果算法中包含并列的循环，则将并列循环的时间复杂度相加。例如：</p>
+<pre><code>for (i=1; i&lt;=n; i++)       x++;  for (i=1; i&lt;=n; i++)      　for (j=1; j&lt;=n; j++)            x++;</code></pre><p>第一个for循环的时间复杂度为Ο(n)，第二个for循环的时间复杂度为Ο(<em>n</em>2)，则整个算法的时间复杂度为Ο(n+<em>n</em>2)=Ο(<em>n</em>2)。　Ο(1)表示基本语句的执行次数是一个常数，一般来说，只要算法中不存在循环语句，其时间复杂度就是Ο(1)。其中<strong>Ο(log<em>2n</em>)、Ο(n)、 Ο(nlog<em>2n</em>)、Ο(<em>n</em>2)和Ο(<em>n</em>3)</strong>称为多项式时间，<strong>而Ο(<em>2</em>n )和Ο(n!)称为指数时间</strong>。计算机科学家普遍认为前者（即多项式时间复杂度的算法）是有效算法，把这类问题称为<strong>P</strong>（Polynomial,多项式）<strong>类问题</strong>，而把后者（即指数时间复杂度的算法）称为<strong>NP（Non-Deterministic Polynomial, 非确定多项式）问题</strong>。 一般来说多项式级的复杂度是可以接受的，很多问题都有多项式级的解——也就是说，这样的问题，对于一个规模是n的输入，在n^k的时间内得到结果，称为P问题。有些问题要复杂些，没有多项式时间的解，但是可以在多项式时间里验证某个猜测是不是正确。比如问4294967297是不是质数？如果要直接入手的话，那么要把小于4294967297的平方根的所有素数都拿出来，看看能不能整除。还好欧拉告诉我们，这个数等于641和6700417的乘积，不是素数，很好验证的，顺便麻烦转告费马他的猜想不成立。大数分解、Hamilton回路之类的问题，都是可以多项式时间内验证一个“解”是否正确，这类问题叫做NP问题。</p>
+<p>（4）<strong>在计算算法时间复杂度时有以下几个简单的程序分析法则:</strong></p>
+<p>(1).对于一些简单的输入输出语句或赋值语句,近似认为需要O(1)时间</p>
+<p>(2).对于顺序结构,需要依次执行一系列语句所用的时间可采用大O下”求和法则” <strong>求和法则</strong>:是指若算法的2个部分时间复杂度分别为 T1(n)=O(f(n))和 T2(n)=O(g(n)),则 T1(n)+T2(n)=O(max(f(n), g(n))) 特别地,若T1(m)=O(f(m)), T2(n)=O(g(n)),则 T1(m)+T2(n)=O(f(m) + g(n))</p>
+<p>(3).对于选择结构,如if语句,它的主要时间耗费是在执行then字句或else字句所用的时间,需注意的是检验条件也需要O(1)时间</p>
+<p>(4).对于循环结构,循环语句的运行时间主要体现在多次迭代中执行循环体以及检验循环条件的时间耗费,一般可用大O下”乘法法则” <strong>乘法法则</strong>: 是指若算法的2个部分时间复杂度分别为 T1(n)=O(f(n))和 T2(n)=O(g(n)),则 T1<em>T2=O(f(n)</em>g(n))</p>
+<p>(5).对于复杂的算法,可以将它分成几个容易估算的部分,然后利用求和法则和乘法法则技术整个算法的时间复杂度 另外还有以下2个运算法则:(1) 若g(n)=O(f(n)),则O(f(n))+ O(g(n))= O(f(n))；(2) O(Cf(n)) = O(f(n)),其中C是一个正常数</p>
+<p><strong>（5）下面分别对几个常见的时间复杂度进行示例说明：</strong></p>
+<p><strong>(1)、O(1)</strong></p>
+<pre><code>Temp=i; i=j; j=temp;</code></pre><p>以上三条单个语句的频度均为1，该程序段的执行时间是一个与问题规模n无关的常数。算法的时间复杂度为常数阶，记作T(n)=O(1)。<strong>注意：如果算法的执行时间不随着问题规模n的增加而增长，即使算法中有上千条语句，其执行时间也不过是一个较大的常数。此类算法的时间复杂度是O(1)。</strong></p>
+<p><strong>(2)、</strong>O(<em>n</em>2)** 2.1. 交换i和j的内容</p>
+<pre><code>sum=0；                 （一次）  
+for(i=1;i&lt;=n;i++)     （n+1次）   
+for(j=1;j&lt;=n;j++) （n2次）      
+sum++；            （n2次）</code></pre><p>解：<strong>因为Θ(2<em>n</em>2 +n+1)=<em>n</em>2 （Θ即：去低阶项，去掉常数项，去掉高阶项的常参得到），所以T(n)= =O(<em>n</em>2)；</strong></p>
+<p>2.2.</p>
+<pre><code>for (i=1;i&lt;n;i++)   {    y=y+1;         ①      
+for (j=0;j&lt;=(2*n);j++)          x++;         ②    }</code></pre><p>解： 语句1的频度是n-1 语句2的频度是(n-1)<em>(2n+1)=2**</em>n<em>2*</em> -n-1 f(n)=2<strong><em>n</em>2</strong> -n-1+(n-1)=2<strong><em>n</em>2</strong> -2； 又<strong>Θ(2<em>n</em>2-2)=<em>n</em>2</strong>  该程序的时间复杂度T(n)=O(<strong><em>n</em>2</strong> ).　一般情况下，对步进循环语句只需考虑循环体中语句的执行次数，忽略该语句中步长加1、终值判别、控制转移等成分，当有若干个循环语句时，算法的时间复杂度是由嵌套层数最多的循环语句中最内层语句的频度f(n)决定的。 <strong>(3)、O(n)</strong></p>
+<pre><code>a=0;  b=1;                      ①  
+for (i=1;i&lt;=n;i++) ②  {     
+s=a+b;　　　　③   
+b=a;　　　　　④     
+a=s;　　　　　⑤  }</code></pre><p>解： 语句1的频度：2, 语句2的频度： n, 语句3的频度： n-1, 语句4的频度：n-1, 语句5的频度：n-1, T(n)=2+n+3(n-1)=4n-1=O(n).</p>
+<p><strong>(4)、O(log<em>2n</em>)</strong></p>
+<pre><code>i=1;     ①  
+hile (i&lt;=n)  i=i*2; ②</code></pre><p>解： 语句1的频度是1, 设语句2的频度是f(n), 则：2^f(n)&lt;=n;f(n)&lt;=<strong>log<em>2n</em></strong> 取最大值f(n)=<strong>log<em>2n</em></strong>, T(n)=O(<strong>log<em>2n</em></strong> )</p>
+<p><strong>(5)、O(<em>n</em>3)</strong></p>
+<pre><code>for(i=0;i&lt;n;i++)   {      
+for(j=0;j&lt;i;j++)      {       
+for(k=0;k&lt;j;k++)          
+x=x+2;      }   }</code></pre><p>解：当i=m, j=k的时候,内层循环的次数为k当i=m时, j 可以取 0,1,…,m-1 , 所以这里最内循环共进行了0+1+…+m-1=(m-1)m/2次所以,i从0取到n, 则循环共进行了: 0+(1-1)<em>1/2+…+(n-1)n/2=n(n+1)(n-1)/6所以时间复杂度为O(**</em>n<em>3)*</em></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      
+        <a data-url="https://jefine.github.io/2020/02/08/%E7%AE%97%E6%B3%95%E6%97%B6%E9%97%B4%E5%A4%8D%E6%9D%82%E5%BA%A6%E5%88%86%E6%9E%90d%E5%A4%A7o/" data-id="ck811m6m7002negr005gf8gbc" class="article-share-link">分享到</a>
+      
+
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%A4%A7o%E8%A1%A8%E7%A4%BA%E6%B3%95/" rel="tag">大o表示法</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+    
+  
+
+    
+    <article id="post-使用sort函数对结构体排序" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/01/31/%E4%BD%BF%E7%94%A8sort%E5%87%BD%E6%95%B0%E5%AF%B9%E7%BB%93%E6%9E%84%E4%BD%93%E6%8E%92%E5%BA%8F/" class="article-date">
+  <time datetime="2020-01-31T06:40:05.000Z" itemprop="datePublished">2020-01-31</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E7%AE%97%E6%B3%95/">算法</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/01/31/%E4%BD%BF%E7%94%A8sort%E5%87%BD%E6%95%B0%E5%AF%B9%E7%BB%93%E6%9E%84%E4%BD%93%E6%8E%92%E5%BA%8F/">使用sort函数对结构体排序</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>在使用sort函数排序的时候，遇到了一些问题（因为我们不只是排序数组呀）。</p>
+<p>比如我们只想利用结构体变量中的其中一个变量来对结构体排序；（比如实际应用中对学生的成绩排序并进行打印）</p>
+<p>那么经查阅，（简单的方法）大致为如下：</p>
+<h6 id="首先：sort函数的组成："><a href="#首先：sort函数的组成：" class="headerlink" title="首先：sort函数的组成："></a>首先：sort函数的组成：</h6><p>1、sort函数可以三个参数也可以两个参数，必须的头文件#include &lt; algorithm&gt;和using namespace std;<br>2、它使用的排序方法是类似于快排的方法，时间复杂度为n*log2(n)</p>
+<p>3、Sort函数有三个参数：（第三个参数可写，可不写）</p>
+<p>（1）第一个是要排序的数组的起始地址。</p>
+<p>（2）第二个是结束的地址（最后一位要排序的地址）</p>
+<p>（3）第三个参数是排序的方法（一般为一个函数），可以是从大到小也可是从小到大，还可以不写第三个参数，此时<strong>默认的排序方法是从小到大排序</strong>。</p>
+<h6 id="那么，开始排序："><a href="#那么，开始排序：" class="headerlink" title="那么，开始排序："></a>那么，开始排序：</h6><p>首先：写一下结构体的组成吧。较为简单：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">ss</span>&#123;</span></span><br><span class="line">	<span class="keyword">int</span> x;</span><br><span class="line">	<span class="keyword">int</span> y;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<p>对于第三个参数，即排序方式，自然是需要设置的。如下几种函数<del>（其实是一种）</del>均可：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">cmp</span><span class="params">(struct ss c, struct ss d)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">if</span>(c.y &lt; d.y)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">cmp</span><span class="params">(struct ss c, struct ss d)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">if</span>(c.y &lt; d.y)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">cmp</span><span class="params">(struct ss c, struct ss d)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">if</span>(c.y &lt; d.y)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>那么不妨测试一下：对第二个数据（y）排序升序（升降序通过第三个参数的符号即可）：</p>
+<h6 id="测试数据："><a href="#测试数据：" class="headerlink" title="测试数据："></a>测试数据：</h6><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">8 15</span><br><span class="line">20 130</span><br><span class="line">120 3</span><br><span class="line">150 2</span><br><span class="line">110 7</span><br><span class="line">180 1</span><br><span class="line">50 8</span><br><span class="line">200 0</span><br><span class="line">140 3</span><br><span class="line">120 2</span><br></pre></td></tr></table></figure>
+
+<h6 id="测试代码："><a href="#测试代码：" class="headerlink" title="测试代码："></a>测试代码：</h6><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">ss</span>&#123;</span></span><br><span class="line">	<span class="keyword">int</span> x;</span><br><span class="line">	<span class="keyword">int</span> y;</span><br><span class="line">&#125;; </span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">cmp</span><span class="params">(struct ss c, struct ss d)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">if</span>(c.y &lt; d.y)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	<span class="keyword">int</span> i,n,a,b,s,sum=<span class="number">0</span>;</span><br><span class="line">	<span class="built_in">cin</span>&gt;&gt;n&gt;&gt;s&gt;&gt;a&gt;&gt;b;</span><br><span class="line">	</span><br><span class="line">	<span class="class"><span class="keyword">struct</span> <span class="title">ss</span> <span class="title">apple</span>[<span class="title">n</span>];</span></span><br><span class="line">	</span><br><span class="line">	<span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;n;i++)</span><br><span class="line">	<span class="built_in">cin</span>&gt;&gt;apple[i].x&gt;&gt;apple[i].y;</span><br><span class="line">	sort(apple,apple+n<span class="number">-1</span>,cmp);<span class="comment">//对结构体排序 </span></span><br><span class="line">    <span class="built_in">cout</span>&lt;&lt;apple[<span class="number">0</span>].x&lt;&lt;<span class="string">"  "</span>&lt;&lt;apple[<span class="number">0</span>].y;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h6 id="测试结果：120-0"><a href="#测试结果：120-0" class="headerlink" title="测试结果：120  0"></a>测试结果：120  0</h6>
+      
+    </div>
+    <footer class="article-footer">
+      
+        <a data-url="https://jefine.github.io/2020/01/31/%E4%BD%BF%E7%94%A8sort%E5%87%BD%E6%95%B0%E5%AF%B9%E7%BB%93%E6%9E%84%E4%BD%93%E6%8E%92%E5%BA%8F/" data-id="ck811m6ky001segr0b7gah2s9" class="article-share-link">分享到</a>
+      
+
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/pta/" rel="tag">pta</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+    
+  
+
+    
+    <article id="post-P1149火柴棒等式" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/01/29/P1149%E7%81%AB%E6%9F%B4%E6%A3%92%E7%AD%89%E5%BC%8F/" class="article-date">
+  <time datetime="2020-01-29T10:09:07.000Z" itemprop="datePublished">2020-01-29</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E7%BC%96%E7%A8%8B/">编程</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/01/29/P1149%E7%81%AB%E6%9F%B4%E6%A3%92%E7%AD%89%E5%BC%8F/">P1149火柴棒等式</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><p> 给你n根火柴棍，你可以拼出多少个形如“A+B=C”的等式？等式中的A、B、C是用火柴棍拼出的整数（若该数非零，则最高位不能是0）。用火柴棍拼数字0−9的拼法如图所示： </p>
+<p> <img src="https://cdn.luogu.com.cn/upload/pic/49.png" alt="img"> </p>
+<p>注意：</p>
+<ol>
+<li>加号与等号各自需要两根火柴棍</li>
+<li>如果A≠B，则A+B=C与B+A=C视为不同的等式(A,B,C&gt;=0)</li>
+<li>n根火柴棍必须全部用上</li>
+</ol>
+<h2 id="输入格式"><a href="#输入格式" class="headerlink" title="输入格式"></a>输入格式</h2><p>一个整数n(n&lt;=24)</p>
+<h2 id="输出格式"><a href="#输出格式" class="headerlink" title="输出格式"></a>输出格式</h2><p>一个整数，能拼成的不同等式的数目。</p>
+<h2 id="输入输出样例"><a href="#输入输出样例" class="headerlink" title="输入输出样例"></a>输入输出样例</h2><p><strong>输入 #1</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">14</span><br></pre></td></tr></table></figure>
+
+<p><strong>输出 #1</strong> </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">2</span><br></pre></td></tr></table></figure>
+
+<p><strong>输入 #2</strong> </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">18</span><br></pre></td></tr></table></figure>
+
+<p><strong>输出 #2</strong> </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">9</span><br></pre></td></tr></table></figure>
+
+<h2 id="说明-提示"><a href="#说明-提示" class="headerlink" title="说明/提示"></a>说明/提示</h2><p>【输入输出样例1解释】</p>
+<p>2个等式为：</p>
+<p> 0+1=10和1+0=1。 </p>
+<p>【输入输出样例2解释】</p>
+<p>9个等式为：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">0+4=4</span><br><span class="line">0+11=11</span><br><span class="line">1+10=11</span><br><span class="line">2+2=4</span><br><span class="line">2+7=9</span><br><span class="line">4+0=4</span><br><span class="line">7+2=9</span><br><span class="line">10+1=11</span><br><span class="line">11+0=11</span><br></pre></td></tr></table></figure>
+
+<p><strong>思路</strong>：简单的参考了如下的答案并作出了一定的解释：其主要是将各个数字的所需个数计算出来，然后一一尝试是否符合即可。</p>
+<h3 id="代码如下"><a href="#代码如下" class="headerlink" title="代码如下:"></a><strong>代码如下</strong>:</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">int</span> n; </span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">      <span class="keyword">int</span> a[<span class="number">2001</span>]=&#123;<span class="number">6</span>&#125;,b,c[<span class="number">10</span>]=&#123;<span class="number">6</span>,<span class="number">2</span>,<span class="number">5</span>,<span class="number">5</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>,<span class="number">3</span>,<span class="number">7</span>,<span class="number">6</span>&#125;,s=<span class="number">0</span>,i,j;</span><br><span class="line">      <span class="comment">//a[2001]表示的是每个数字(eg.“1998”)所需的火柴棒个数； </span></span><br><span class="line">      <span class="comment">//而c是默认的0-9的所需火柴棒个数；以此为基础来计算a[2001];</span></span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;b);</span><br><span class="line">        <span class="keyword">for</span>(i=<span class="number">1</span>;i&lt;=<span class="number">2000</span>;i++)</span><br><span class="line">        &#123;</span><br><span class="line">                j=i;</span><br><span class="line">                <span class="keyword">while</span>(j&gt;=<span class="number">1</span>)<span class="comment">//求每个数所用的火柴棒</span></span><br><span class="line">                &#123;</span><br><span class="line">                    a[i]+=c[j%<span class="number">10</span>];</span><br><span class="line">                    j/=<span class="number">10</span>;</span><br><span class="line">                &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;=<span class="number">1000</span>;i++)</span><br><span class="line">        &#123;</span><br><span class="line">                <span class="keyword">for</span>(j=<span class="number">0</span>;j&lt;=<span class="number">1000</span>;j++)</span><br><span class="line">                <span class="keyword">if</span>(a[i]+a[j]+a[i+j]+<span class="number">4</span>==b)s++;<span class="comment">//还有加号与等号（4）;  </span></span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"%d"</span>,s);</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+    <footer class="article-footer">
+      
+        <a data-url="https://jefine.github.io/2020/01/29/P1149%E7%81%AB%E6%9F%B4%E6%A3%92%E7%AD%89%E5%BC%8F/" data-id="ck811m6jf000kegr016i2byln" class="article-share-link">分享到</a>
+      
+
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%B4%9B%E8%B0%B7/" rel="tag">洛谷</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+    
+  
+
+    
+    <article id="post-小记：一次普通循迹车大赛" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/01/19/%E5%B0%8F%E8%AE%B0%EF%BC%9A%E4%B8%80%E6%AC%A1%E6%99%AE%E9%80%9A%E5%BE%AA%E8%BF%B9%E8%BD%A6%E5%A4%A7%E8%B5%9B/" class="article-date">
+  <time datetime="2020-01-19T09:42:12.000Z" itemprop="datePublished">2020-01-19</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/record/">record</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/01/19/%E5%B0%8F%E8%AE%B0%EF%BC%9A%E4%B8%80%E6%AC%A1%E6%99%AE%E9%80%9A%E5%BE%AA%E8%BF%B9%E8%BD%A6%E5%A4%A7%E8%B5%9B/">小记：一次普通循迹车大赛</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>记录点滴大赛。</p>
+<p>起初，从一个小白走向机器人大赛，经过不少人的推荐（传说有奖），（瞎）报名了循迹机器人大赛。</p>
+<p>循迹机器人（要做的）是：利用红外线感知黑色线路，并沿着其行进，赛道设计的有弯道，且需要考虑速度，因为时间越短越好。</p>
+<p>嗯，需要硬件加算法呀。<em>要好好学习一下呀（笑）</em></p>
+<p>然而，半个月后报名结束，通知由于项目人数过多，主办方不再提供材料，由学生自行购买。。。</p>
+<p>根据一份不完全清单在淘宝搜寻一段时间后，得到130的价格。</p>
+<p>之后了解到要学习五一单片机，于是开始学习了解（其实以我们的比赛程度和技术，不用了解也是完全可以的2333）。</p>
+<p>了解到有朋友已经用电烙铁烧坏一个小车了，而我们还没买材料，什么都不知道，还有点慌呢。</p>
+<p>开始买买买！</p>
+<p><img src="https://i.loli.net/2020/01/19/Z3ljYCMdxv1AV8D.jpg" alt="img"></p>
+<p>与此同时，开始学习51单片机（下载资料。。。）</p>
+<p><img src="https://i.loli.net/2020/01/19/lZvtMxAEuoIbQKh.jpg" alt="资料截图.jpg"></p>
+<p><img src="https://i.loli.net/2020/01/19/hXLxk8vY2tNI6Rb.png" alt="Screenshot_2019-09-15-13-53-07-164_com.android.systemui.png"></p>
+<p><img src="https://i.loli.net/2020/01/19/K1bSe2t348dGIO9.jpg" alt="Screenshot_2019-10-13-23-37-06-063_com.mxtech.videoplayer.pro.png"></p>
+<p>对了，我甚至还在b站打开了经典影片（十天放弃单片机）：</p>
+<p><img src="https://i.loli.net/2020/01/19/KC8bzsmTJl3QfUA.jpg" alt="郭天祥视频截图.jpg"></p>
+<p>如你们所愿（截止发稿日期，我还没有打开看。。。：)）</p>
+<p>数日后：部分零件到位：(赶在了双十一之前哦<img src="https://res.wx.qq.com/mpres/htmledition/images/icon/common/emotion_panel/emoji_wx/2_04.png" alt="img">）</p>
+<p><img src="https://i.loli.net/2020/01/19/AEbFSlJD8O1CqUm.jpg" alt="到货截图.jpg"></p>
+<p>当然：学校也试图让我们懂一些什么。。。（不过，他好像失败了）</p>
+<p><img src="https://i.loli.net/2020/01/19/lS9NwO83GHemqbV.jpg" alt="学校授课.jpg"></p>
+<p>第一次去自己尝试拼板子，当然有很多差错，会有许多奇奇妙妙的出现，如发现少了一只紧固件（一个透明的小片，用来固定马达和板子的），结果最后一个马达就很难安装固定好，就（灵机一动）使用纸板来固定，从而引出无数bug。（但是第二天扒拉到了紧固件，就解决了，哎！）</p>
+<p><img src="https://i.loli.net/2020/01/19/X3rdLxipOk7qjB2.jpg" alt="IMG_20191029_001928.jpg.JPG">)<img src="https://i.loli.net/2020/01/19/cJ5K1mDlAT3znWZ.jpg" alt="IMG_20191029_002812.jpg.JPG"></p>
+<p>最后因为小车是双层的（一般可以做单层的就足够了），就在安装好第二层后发现没有在第一层安装东西，于是又拆掉了（打算第二层为一个盖子）（内心很尴尬）。</p>
+<p><img src="https://i.loli.net/2020/01/19/Zy9cJMQrzavUIig.jpg" alt="img"></p>
+<p>中间有太多别的事情（好吧，是懒），小车在装线阶段，卡住了，一直没有进展，就放了好久（因为比赛日期还有一个月，全力向着deadline前进！）</p>
+<p>然后小车单片机无法下载程序。。。</p>
+<p>（检测不到单片机）（我一直担心是不是插反了，导致我的单片机烧毁了，最后发现还好不是~~<img src="https://res.wx.qq.com/mpres/htmledition/images/icon/common/emotion_panel/emoji_ios/u1F602.png" alt="img">）</p>
+<p>询问学长才发现所购买的单片机的晶振消失了，淘宝商家又补拍给我。。（但是晶振太便宜，于是自己又下单4元（一半是运费）买了20个，庆幸，时间和双十一紧挨着）</p>
+<p>小车代码阶段：在硬件拼装完成后，代码从网络上copy，但是出现了许多不适配的问题，紧接着经过不断地爆肝调试，在这个过程中也对代码不断理解。但是依次出现了小车的各种问题，但一步步在变好。</p>
+<p><img src="https://i.loli.net/2020/01/19/gfGzL9QP2Vjw8Cp.jpg" alt="代码.jpg"></p>
+<p>从只能原地转圈（四个轮子的驱动指令反了）；这个好搞！！！（许多小车因为这个原因，总是自动原地，爱的魔力转圈圈）</p>
+<p><img src="https://i.loli.net/2020/01/19/5QJ36hz82GTcoX1.gif" alt="视频.gif"></p>
+<p>再到有一个轮子是反转的（原因同上）；</p>
+<p>再到只能走直线（红外感应器的代码对应的接口写错了）；</p>
+<p>到只能够走弧度较大的弯道，到能够走直角（但此时不会走弧度较大的弯道了，因采用的是增加转向时的延迟，所以这个很难控制）；</p>
+<p>最后比赛前夕，发现其他队伍都是参考学长们的代码，我们也就临时copy了一份，发现代码逻辑确实有很大的变化，思路更为清晰，解决了不少我们的一些困惑和更好的理解了小车的运行原理。（后来比赛时才知道，代码这个事情大多参赛组都是祖传代码。。。）</p>
+<p>但copy的代码又有了一个新的问题，借来的代码（读书人的事情，对吧）是单驱动的，而我们的循迹小车采用的是双驱动，在面临这个问题时，我陷入了犹豫，是将循迹车的硬件（主要是接线）更改为单驱动，还是我自己多研究代码，将其改为双驱动呢？？？最后，在10min的漫长思考后，我打开了三份代码，打算突破一下自己，开始研究代码，半个小时后，增加了几个电机（驱动）的代码，将循迹的转向，偏移等进行了更改。最后将代码写入了小车，成功了。</p>
+<p>但是，我们在自己制作的小车赛道中（就是用电工胶带铺设的黑线），遇到了红外感应器过高，感应很不灵敏，于是我们又通过增设铜柱，使之近乎摩擦地面而前行。好在方案可行。</p>
+<p>最终能够实现跌跌撞撞的前行（过于灵敏），转向。此时已经是夜里12点多，8个多小时就要开始比赛了。（虽然还有很多队比我们的情况还要恶劣，但也有大神的）。</p>
+<p>完成制作了！！！撒花。（代码就不放了，因为写的太烂了）</p>
+<p><img src="https://i.loli.net/2020/01/19/S4TgnUGryxPE1du.jpg" alt="小车雪藏.jpg"></p>
+<p>后来：</p>
+<p><img src="https://i.loli.net/2020/01/19/rzEysN8TI1WqMhv.jpg" alt="表情包0基础.jpg"></p>
+<p>输了。</p>
+<p>是的。</p>
+<p>自己亲手制作的小车在赛道上向观众们展示了灵车漂移，在一惊一乍中，在经过第一个点后，脱离了赛道。。。第二次机会测试的时候，小车直接冲出赛道（红外传感器有一个失灵了），视黑线于无物。这就是我很尴尬了。。。</p>
+<p>当然，有不少小车真的很强，从他们小车的动作中，我看到了小车配件和组装的更多可能，以及小车代码的更多可优化方向。（其实就是我太菜了。。。哈哈！）</p>
+<p><img src="https://i.loli.net/2020/01/19/Vo4QeY83bDFz1pL.jpg" alt="表情包太菜了.jpg"></p>
+<p>最后，虽然输了比赛，但在比赛前，我们每天都坚持到午夜，经过一星期的努力（有些晚了，应该提前准备的），从无到有，将一堆没有灵魂的零件，通过自己的组装，写入代码，使其能够跌跌撞撞的跑下去，虽然他还是个憨憨，但是这不就像成长中的我们么？我们不也是像那个小车一样，在一次一次的失败，报错中，积累经验得到成长的吗？而且，在这次的准备中，我也积累和收获了不少的知识与感悟，在代码的思索中，更清楚的认识到面向过程的c语言是怎样的，在单片机编程方面应该注意些什么。自然，个人的收获是大于比赛的。</p>
+<p><img src="https://i.loli.net/2020/01/19/ioVBnZK3uEmSb7G.jpg" alt="有收获"></p>
+<p>那么？回过头来：此类比赛的意义究竟是什么呢？它既不能使社会的财富大大增加，也不能使得相关技术得到突破，甚至说他还有一点点浪费学生的时间和社会的资源，是么？我们是为了证明我们自己优秀而特地来为了获得奖项来证明我们自己的么？不，不是，或者说不完全是。</p>
+<p><strong>在这类竞赛的过程中，更重要的是面向过程的，结果并不是出发的前提，我们选择了远方，不仅仅是因为目的地的美好，更是因为沿途的美丽风光不断地吸引着我们；同样，在acm，ccpc等的竞赛中获奖者并非多数，但能够有许多志同道合的朋友在一起，一起为了一个方向而努力，一个目标而前行，这样的奋斗过程才是幸福的吧。他们往往称自己痛并快乐着。是呀，能够在青春最美好的时间段里，去勇敢的追逐梦想，过程本身就是一件令人振奋的事，不是么？恰同学少年，风华正茂；愿诸位不忘初心，方得始终。</strong></p>
+<p>感谢阅读，欢迎交流哦！</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      
+        <a data-url="https://jefine.github.io/2020/01/19/%E5%B0%8F%E8%AE%B0%EF%BC%9A%E4%B8%80%E6%AC%A1%E6%99%AE%E9%80%9A%E5%BE%AA%E8%BF%B9%E8%BD%A6%E5%A4%A7%E8%B5%9B/" data-id="ck811m6l4001wegr0bqd867zu" class="article-share-link">分享到</a>
+      
+
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/xcu/" rel="tag">xcu</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+    
+  
+
+    
+    <article id="post-2020学校各相关比赛，资格证书的时间" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/01/16/2020%E5%AD%A6%E6%A0%A1%E5%90%84%E7%9B%B8%E5%85%B3%E6%AF%94%E8%B5%9B%EF%BC%8C%E8%B5%84%E6%A0%BC%E8%AF%81%E4%B9%A6%E7%9A%84%E6%97%B6%E9%97%B4/" class="article-date">
+  <time datetime="2020-01-16T13:37:08.000Z" itemprop="datePublished">2020-01-16</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/record/">record</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/01/16/2020%E5%AD%A6%E6%A0%A1%E5%90%84%E7%9B%B8%E5%85%B3%E6%AF%94%E8%B5%9B%EF%BC%8C%E8%B5%84%E6%A0%BC%E8%AF%81%E4%B9%A6%E7%9A%84%E6%97%B6%E9%97%B4/">2020学校各相关比赛，资格证书的时间</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>2020各大比赛，资格证书时间，例如蓝桥杯、挑战杯、ACM、互联网+大赛比赛报名时间，校固定的机器人大赛，学业规划大赛等时间，教资、计算机二级、四六级等职业资格证书报名时间</p>
+<ol>
+<li><p>蓝桥杯：</p>
+<p>报名截至日期为2019年12月13日</p>
+<p>初赛（省赛）2020年4月19日（星期日）</p>
+<p>决赛6月举行</p>
+<p>国际赛拟于2020年10月末至11月初在西班牙举行</p>
+</li>
+<li><p>挑战杯：</p>
+<p>a. 首先是校级创青春比赛：</p>
+<p> 1、立项报名 </p>
+<p>（1）创意立项（2019年12月1日—12月25日）</p>
+<p>各项目负责人填写立项申请表（见附件一），并将电子版和纸质版各1份交至所属学院。各学院汇总后将立项申请表和立项汇总表（见附件二）电子版和纸质版各1份上交至竞赛办公室，最晚提交时间为12月25日12：00。</p>
+<p>（2）立项审核（2019年12月25日—2020年1月3日）</p>
+<p>创意立项审核，审核通过的项目，予以立项。准予立项项目详细信息将通过荷花网进行公示，各学院负责通知本学院通过立项的参赛团队。</p>
+<p>（3）团队组建（2020年1月4日—1月9日）</p>
+<p>有意参赛的同学根据荷花网公示结果，自行联系项目负责人。项目负责人根据作品创作和运行需要进行团队组建。原则上应由不同学科背景、不同学院学生交叉组队（不超过7人）。各团队负责人将团队成员信息统计表（附件三）交至所在学院，各学院将统计表汇总后，于1月9日12:00之前将纸质版和电子版各1份交至竞赛办公室。</p>
+<p>2、初赛</p>
+<p>（1）组队创作培训阶段（2020年1月9日—2月20日）</p>
+<p>组织相关专家就计划书撰写、财务管理、法律法规、市场营销、人力资源管理等方面对参赛选手进行培训。学生完善选题，进行课题研究以及市场调研，撰写项目执行概要，编写创业计划书。</p>
+<p>（2）学院评审和作品上报阶段（2020年2月20日—2月23日）</p>
+<p>参赛者将项目执行概要（1500字）和创业计划书交至学院，经学院评审后，于2月23日12：00之前将执行概要和创业计划书电子版和纸质版各1份交至竞赛办公室。</p>
+<p>（3）学校评审阶段（2020年2月23日—3月2日）</p>
+<p>学校对各学院报送的优秀作品进行书面评审，评选出进入学校复赛的作品。</p>
+<p>3、复赛</p>
+<p>（1）项目完善阶段（2020年3月2日—4月7日）</p>
+<p>参赛团队对作品进行修改与完善，开展与项目相关的实践调研与项目论证。有条件的团队在学校指导下进行项目落地和公司注册。</p>
+<p>（2）项目提交阶段（2020年4月7日—4月10日）</p>
+<p>各学院组织参赛学生将修改好的作品再次提交至各学院，由各学院汇总后于4月10日12:00之前将创业计划书电子版和纸质版各1份上交至竞赛办公室。</p>
+<p>（3）学校审核阶段（2020年4月10日—4月18日）</p>
+<p>评审专家对上报作品进行书面评审。择优进入校内决赛。</p>
+<p>4、决赛</p>
+<p>答辩阶段（2020年4月底，具体时间另行通知）</p>
+<p>决赛团队就作品进行答辩。</p>
+<p>b. 国家级挑战杯报名时间待定</p>
+</li>
+<li><p>ACM(icpc)：</p>
+<p> 区域预赛：每年的 9-12 月在各大洲举行<br>全球总决赛：每年的 3-4 月举行 </p>
+</li>
+<li><p>互联网+大赛（2019全国大学生“互联网+” 创新大赛暨第七届“发现杯”全国大学生互联网软件设计大奖赛)：</p>
+<p>2019.09.10 - 2020.01.31<br>报名</p>
+<p>在大网站完成<a href="http://www.dajiangsai.org/loginAndRegist/regist.jsp" target="_blank" rel="noopener">报名注册</a></p>
+<p>2020.02.01-2020.03.09<br>提交作品</p>
+<p>按照大赛赛项，准备参赛作品/方案，参赛内容详见<a href="http://www.dajiangsai.org/static/about/matchcontent.html" target="_blank" rel="noopener">比赛内容</a></p>
+<p>2020.03.10 - 2020.04.15<br>区域赛</p>
+<p>区域赛评审，准备决赛</p>
+<p>2020.04.25<br>决赛</p>
+<p>现场答辩</p>
+</li>
+<li><p>学业规划大赛：</p>
+<p>（一）宣传动员和撰写学业规划书阶段（即日起至下学期开学初）</p>
+<p>（二）初赛及集训阶段(下学期开学第3周—第4周)</p>
+<p>（三）校级复赛及集训阶段（下学期第6周）</p>
+<p>（四）校级决赛及集训阶段（下学期第八周）</p>
+</li>
+<li><p>全国计算机等级考试（NCRE）：</p>
+<p>2020年全国计算机等级考试（NCRE）将举办四次考试：</p>
+<p>时间分别为：</p>
+<p>3月28日至30日（第58次）、</p>
+<p>5月30日（第59次）、</p>
+<p>9月26日至28日（第60次）</p>
+<p>12月5日（第61次）。</p>
+<p>其中3月和9月考试开考全部级别全部科目，5月和12月考试开考一、二级全部科目。各省级承办机构可根据实际情况决定是否开考5月和12月考试。 </p>
+</li>
+<li><p>教师资格证：</p>
+<p>（一）网上报名时间：2020年1月9日至11日17:00。</p>
+<p>（二）网上审核时间：2020年1月9日至12日17:00。</p>
+<p>（三）网上缴费时间：2020年1月9日至13日24:00。</p>
+<p>（四）全国统一考试日期2020年3月14日。</p>
+</li>
+<li><p>四六级（CET）：</p>
+<p>CET笔试每年开考两次，为每年的6月和12月，6月开考英语及非英语所有科目，12月仅开考英语科目。各语种的四级考试时间为上午，六级考试时间为下午。</p>
+<p>CET口试每年开考两次，为每年5月和11月，每次考试两个考试日，第一考试日科目为CET-SET4，第二考试日科目为CET-SET6。</p>
+</li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      
+        <a data-url="https://jefine.github.io/2020/01/16/2020%E5%AD%A6%E6%A0%A1%E5%90%84%E7%9B%B8%E5%85%B3%E6%AF%94%E8%B5%9B%EF%BC%8C%E8%B5%84%E6%A0%BC%E8%AF%81%E4%B9%A6%E7%9A%84%E6%97%B6%E9%97%B4/" data-id="ck811m6ib0006egr0ghpz0yvt" class="article-share-link">分享到</a>
+      
+
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/xcu/" rel="tag">xcu</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+    
+  
+
+    
+    <article id="post-L1-050倒数第N个字符串" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/01/06/L1-050%E5%80%92%E6%95%B0%E7%AC%ACN%E4%B8%AA%E5%AD%97%E7%AC%A6%E4%B8%B2/" class="article-date">
+  <time datetime="2020-01-06T14:01:17.000Z" itemprop="datePublished">2020-01-06</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E7%BC%96%E7%A8%8B/">编程</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/01/06/L1-050%E5%80%92%E6%95%B0%E7%AC%ACN%E4%B8%AA%E5%AD%97%E7%AC%A6%E4%B8%B2/">L1-050倒数第N个字符串</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>给定一个完全由小写英文字母组成的字符串等差递增序列，该序列中的每个字符串的长度固定为 L，从 L 个 a 开始，以 1 为步长递增。例如当 L 为 3 时，序列为 { aaa, aab, aac, …, aaz, aba, abb, …, abz, …, zzz  }。这个序列的倒数第27个字符串就是 zyz。对于任意给定的 L，本题要求你给出对应序列倒数第 N 个字符串。</p>
+<h3 id="输入格式："><a href="#输入格式：" class="headerlink" title="输入格式："></a>输入格式：</h3><p>输入在一行中给出两个正整数 L（2 ≤ L ≤ 6）和 N（≤105）。</p>
+<h3 id="输出格式："><a href="#输出格式：" class="headerlink" title="输出格式："></a>输出格式：</h3><p>在一行中输出对应序列倒数第 N 个字符串。题目保证这个字符串是存在的。</p>
+<h3 id="输入样例："><a href="#输入样例：" class="headerlink" title="输入样例："></a>输入样例：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">3 7417</span><br></pre></td></tr></table></figure>
+
+<h3 id="输出样例："><a href="#输出样例：" class="headerlink" title="输出样例："></a>输出样例：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pat</span><br></pre></td></tr></table></figure>
+
+<h2 id="首先："><a href="#首先：" class="headerlink" title="首先："></a>首先：</h2><p>我们发现下图的诡异场景第50题看似准确率不算很低，但是吧，做的人少呀。顿时比其他少了一半，给这道题目布满诡异的气氛。</p>
+<p><img src="https://i.loli.net/2020/01/07/IBXFH3viYGakNlS.png" alt="6i5tGebuBCwXaoE.png"></p>
+<p>开始做题时，发觉这应该是一道类似于进制转换的题目。</p>
+<p><strong>但是！</strong>做了题才发现有这么几个坑：</p>
+<ol>
+<li>英文字母26个谢谢。<del>不是24 。</del></li>
+<li>pow()函数中;pow返回值为double。此处强制转换为int了，应该是26的转换为25了 。所以在使用pow函数时要小心了。</li>
+<li>第一个数其实是第0个数，第二个是第一个，不是么？</li>
+</ol>
+<h3 id="代码部分："><a href="#代码部分：" class="headerlink" title="代码部分："></a>代码部分：</h3><h3 id="方一：递归："><a href="#方一：递归：" class="headerlink" title="方一：递归："></a>方一：递归：</h3><p>下面的递归应该是比较好理解的进制转换方法。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">int</span> n,l;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">f</span><span class="params">(<span class="keyword">int</span> a,<span class="keyword">int</span> b)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(a &gt; <span class="number">1</span>) f(a - <span class="number">1</span>,b / <span class="number">26</span>);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"%c"</span>,<span class="string">'z'</span> - (b % <span class="number">26</span>));</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="built_in">cin</span>&gt;&gt;n&gt;&gt;l;</span><br><span class="line">    f(n,l - <span class="number">1</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>如果我们想要使得的第二个输入的n为正序，那么我们可以将其与最大做差得到倒序的值（2333）当然，我们调一下代码也是可以的。</p>
+<p>将</p>
+<p>printf(“%c”,’z’ - (b % 26));</p>
+<p>调为</p>
+<p>printf(“%c”,’a’ + (b % 26));即可</p>
+<h3 id="方二："><a href="#方二：" class="headerlink" title="方二："></a>方二：</h3><p>当然我们也可以使用字符串将每个字符储存，最后输出即可。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> l,n,c;</span><br><span class="line">    <span class="keyword">char</span> s[<span class="number">7</span>];</span><br><span class="line">    <span class="built_in">cin</span>&gt;&gt;l&gt;&gt;n;</span><br><span class="line">    c = l - <span class="number">1</span>;</span><br><span class="line">    s[l] = <span class="string">'\0'</span>;</span><br><span class="line">    n --;</span><br><span class="line">    <span class="keyword">while</span>(n || c &gt;= <span class="number">0</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        s[c --] = <span class="string">'z'</span> - n % <span class="number">26</span>;</span><br><span class="line">        n /= <span class="number">26</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">cout</span>&lt;&lt;s;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+    <footer class="article-footer">
+      
+        <a data-url="https://jefine.github.io/2020/01/06/L1-050%E5%80%92%E6%95%B0%E7%AC%ACN%E4%B8%AA%E5%AD%97%E7%AC%A6%E4%B8%B2/" data-id="ck811m6j2000eegr0b4dv56or" class="article-share-link">分享到</a>
+      
+
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/pta/" rel="tag">pta</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+    
+  
+
+    
+    <article id="post-L1-048矩阵A乘以B" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/01/06/L1-048%E7%9F%A9%E9%98%B5A%E4%B9%98%E4%BB%A5B/" class="article-date">
+  <time datetime="2020-01-06T06:40:05.000Z" itemprop="datePublished">2020-01-06</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E7%BC%96%E7%A8%8B/">编程</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/01/06/L1-048%E7%9F%A9%E9%98%B5A%E4%B9%98%E4%BB%A5B/">L1-048矩阵A乘以B</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>给定两个矩阵A和B，要求你计算它们的乘积矩阵AB。需要注意的是，只有规模匹配的矩阵才可以相乘。即若A有Ra行、Ca列，B有Rb行、Cb列，则只有Ca与Rb相等时，两个矩阵才能相乘。</p>
+<h3 id="输入格式："><a href="#输入格式：" class="headerlink" title="输入格式："></a>输入格式：</h3><p>输入先后给出两个矩阵A和B。对于每个矩阵，首先在一行中给出其行数R和列数C，随后R行，每行给出C个整数，以1个空格分隔，且行首尾没有多余的空格。输入保证两个矩阵的R和C都是正数，并且所有整数的绝对值不超过100。</p>
+<h3 id="输出格式："><a href="#输出格式：" class="headerlink" title="输出格式："></a>输出格式：</h3><p>若输入的两个矩阵的规模是匹配的，则按照输入的格式输出乘积矩阵AB，否则输出<code>Error: Ca != Rb</code>，其中<code>Ca</code>是A的列数，<code>Rb</code>是B的行数。</p>
+<h3 id="输入样例1："><a href="#输入样例1：" class="headerlink" title="输入样例1："></a>输入样例1：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">2 3</span><br><span class="line">1 2 3</span><br><span class="line">4 5 6</span><br><span class="line">3 4</span><br><span class="line">7 8 9 0</span><br><span class="line">-1 -2 -3 -4</span><br><span class="line">5 6 7 8</span><br></pre></td></tr></table></figure>
+
+<h3 id="输出样例1："><a href="#输出样例1：" class="headerlink" title="输出样例1："></a>输出样例1：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">2 4</span><br><span class="line">20 22 24 16</span><br><span class="line">53 58 63 28</span><br></pre></td></tr></table></figure>
+
+<h3 id="输入样例2："><a href="#输入样例2：" class="headerlink" title="输入样例2："></a>输入样例2：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">3 2</span><br><span class="line">38 26</span><br><span class="line">43 -5</span><br><span class="line">0 17</span><br><span class="line">3 2</span><br><span class="line">-11 57</span><br><span class="line">99 68</span><br><span class="line">81 72</span><br></pre></td></tr></table></figure>
+
+<h3 id="输出样例2："><a href="#输出样例2：" class="headerlink" title="输出样例2："></a>输出样例2：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Error: 2 != 3</span><br></pre></td></tr></table></figure>
+
+<h3 id="题目思路："><a href="#题目思路：" class="headerlink" title="题目思路："></a>题目思路：</h3><p>一开始，一看题目。嗯！没有思路。。。</p>
+<p>什么是矩阵乘法呢？（此处可以百度了解以下）</p>
+<p><img src="https://i.loli.net/2020/01/07/drTUXefu1ItHyLm.png" alt="BWqSKunTFkLpziP.png"></p>
+<p>简单地说就是上述公式。百度词条中这样定义：</p>
+<p><img src="https://i.loli.net/2020/01/06/vBWcMO1TzVIKuPG.png" alt="图片.png"></p>
+<p>看完之后，我们就或许有了一点思路。</p>
+<p>于是如果符合条件，我们就依次计算输出即可。</p>
+<p>但是！！！</p>
+<p>这道题最最关键的就是各种不同的自定义字母所代表的含义。（比如上图中的是b  [1 ] [1]  其实在数组中是b [0] [0];谨慎呀！！！<del>（找这个bug找的脑壳疼）</del></p>
+<p>当然，也可以动态数组，但是这样更好理解一一些。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">int</span> c1,c2,r1,r2; </span><br><span class="line">	<span class="keyword">int</span> i,j;</span><br><span class="line">	<span class="built_in">cin</span>&gt;&gt;r1&gt;&gt;c1;	</span><br><span class="line">	<span class="keyword">int</span> m[r1][c1];<span class="comment">//定义并得到两个数组 </span></span><br><span class="line">	<span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;r1;i++)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">for</span>( j=<span class="number">0</span>;j&lt;c1;j++)</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="built_in">cin</span>&gt;&gt;m[i][j];</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;	</span><br><span class="line">	<span class="built_in">cin</span>&gt;&gt;r2&gt;&gt;c2;	</span><br><span class="line">	<span class="keyword">int</span> n[r2][c2];</span><br><span class="line">	<span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;r2;i++)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">for</span>( j=<span class="number">0</span>;j&lt;c2;j++)</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="built_in">cin</span>&gt;&gt;n[i][j];</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">if</span>(c1==r2)</span><br><span class="line">	&#123;<span class="comment">//首先排除不相等的情况 (规模是否相等） </span></span><br><span class="line">		<span class="built_in">cout</span>&lt;&lt;r1&lt;&lt;<span class="string">" "</span>&lt;&lt;c2&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">		<span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;r1;i++)&#123;<span class="comment">//前两个for得到n个item； </span></span><br><span class="line">			<span class="keyword">for</span>(j=<span class="number">0</span>;j&lt;c2;j++)</span><br><span class="line">			&#123;<span class="comment">//输出每一行； </span></span><br><span class="line">				<span class="keyword">int</span> sum=<span class="number">0</span>;</span><br><span class="line">				<span class="keyword">for</span>(<span class="keyword">int</span> k=<span class="number">0</span>;k&lt;c1;k++)&#123;<span class="comment">//（见公式）； </span></span><br><span class="line">				sum=sum+m[i][k]*n[k][j];</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="built_in">cout</span>&lt;&lt;sum;</span><br><span class="line">			<span class="keyword">if</span>(j!=c2<span class="number">-1</span>)</span><br><span class="line">			  <span class="built_in">cout</span>&lt;&lt;<span class="string">" "</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="built_in">cout</span>&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">else</span> <span class="built_in">cout</span>&lt;&lt;<span class="string">"Error: "</span>&lt;&lt;c2&lt;&lt;<span class="string">" != "</span>&lt;&lt;r2;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;	</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+    <footer class="article-footer">
+      
+        <a data-url="https://jefine.github.io/2020/01/06/L1-048%E7%9F%A9%E9%98%B5A%E4%B9%98%E4%BB%A5B/" data-id="ck811m6j9000iegr04kvacqq5" class="article-share-link">分享到</a>
+      
+
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/pta/" rel="tag">pta</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+    
+  
+  
+    <nav id="page-nav">
+      <a class="extend prev" rel="prev" href="/">上一页</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/3/">下一页</a>
+    </nav>
+  
+</section>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2020 jefine<br>
+      Theme <a href="https://github.com/henryhuang/oishi" target="_blank">Oishi</a>, Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <!--
+      <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">首页</a>
+  
+    <a href="/categories/life" class="mobile-nav-link">生活</a>
+  
+    <a href="/archives" class="mobile-nav-link">归档</a>
+  
+</nav>
+    -->
+    
+
+<!-- 百度分享 start -->
+
+<!-- 百度分享 end -->
+
+<script src="//cdn.bootcss.com/jquery/1.11.1/jquery.min.js"></script>
+
+
+
+<script src="/js/jquery.scrollUp.min.js"></script>
+<script src="/js/jquery.transform.js"></script>
+<script src="/js/menu.js"></script>
+
+<script src="/js/script.js"></script>
+<script src="/js/scrollUp.js"></script>
+
+  </div>
+</body>
+</html>

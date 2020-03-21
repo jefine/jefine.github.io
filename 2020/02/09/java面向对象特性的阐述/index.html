@@ -1,51 +1,259 @@
-extends includes/base
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>java面向对象特性的阐述 | jefine</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Object-oriented programming: As the name suggests, Object-Oriented Programming or OOPs refers to languages that uses objects in programming. Object-oriented programming aims to implement real-world e">
+<meta name="keywords" content="面向对象的编程">
+<meta property="og:type" content="article">
+<meta property="og:title" content="java面向对象特性的阐述">
+<meta property="og:url" content="https:&#x2F;&#x2F;jefine.github.io&#x2F;2020&#x2F;02&#x2F;09&#x2F;java%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%89%B9%E6%80%A7%E7%9A%84%E9%98%90%E8%BF%B0&#x2F;index.html">
+<meta property="og:site_name" content="jefine">
+<meta property="og:description" content="Object-oriented programming: As the name suggests, Object-Oriented Programming or OOPs refers to languages that uses objects in programming. Object-oriented programming aims to implement real-world e">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https:&#x2F;&#x2F;jefine.github.io&#x2F;2020&#x2F;02&#x2F;09&#x2F;java%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%89%B9%E6%80%A7%E7%9A%84%E9%98%90%E8%BF%B0&#x2F;1.png">
+<meta property="og:updated_time" content="2020-02-11T08:21:37.544Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https:&#x2F;&#x2F;jefine.github.io&#x2F;2020&#x2F;02&#x2F;09&#x2F;java%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%89%B9%E6%80%A7%E7%9A%84%E9%98%90%E8%BF%B0&#x2F;1.png">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link type="text/css" href="//netdna.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.css" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/scrollUp/image.css">
+  <!--[if lt IE 9]><script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7/html5shiv.min.js"></script><![endif]-->
+  
+</head>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <div class="logo">
+        <img src="/logo.png" alt="Profile Picture">
+      </div>
+      <div id="title">jefine</div>
+      
+        <div id="subtitle">小小的梦呓</div>
+      
+       <ul class="my-socials">
+  
+ 
+</ul>
+    </div>
+  </div>
+  <div id="header-inner" class="">
+    <nav id="main-nav">
+      <a id="main-nav-toggle" class="nav-icon"></a>
+      <!--
+        
+          
+            <a class="main-nav-link" href="/">首页</a>
+          
+            <a class="main-nav-link" href="/categories/life">生活</a>
+          
+            <a class="main-nav-link" href="/archives">归档</a>
+          
+        
+      -->
+    </nav>
+    <nav id="title-nav" style="display:none">
+      <a href="/">jefine</a>
+      <img src="/logo.png" alt="Profile Picture">
+      <!--
+      <span id="title-nav-socials">
+        
+       
+     </span>
+      -->
+    </nav>
+    <nav id="sub-nav">
+      
+      <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+    </nav>
+    <div id="search-form-wrap">
+      <form action="http://www.baidu.com/baidu" method="get" accept-charset="utf-8" class="search-form">
+        <input type="search" name="word" maxlength="20" class="search-form-input" placeholder="搜索">
+        <input type="submit" value="" class="search-form-submit">
+        <input name=tn type=hidden value="bds">
+        <input name=cl type=hidden value="3">
+        <input name=ct type=hidden value="2097152">
+        <input type="hidden" name="si" value="jefine.github.io">
+      </form>
+    </div>
+  </div>
+  <div class="site-nav" style="display: none;">
+    <ul>
+      
+      
+        <li><a href="/">首页</a></li>
+      
+        <li><a href="/categories/life">生活</a></li>
+      
+        <li><a href="/archives">归档</a></li>
+      
+      
+    </ul>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-java面向对象特性的阐述" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/02/09/java%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%89%B9%E6%80%A7%E7%9A%84%E9%98%90%E8%BF%B0/" class="article-date">
+  <time datetime="2020-02-09T08:34:41.000Z" itemprop="datePublished">2020-02-09</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/java/">java</a>
+  </div>
 
-block extra_style
-    if theme.gitalk.enable
-        link(rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css")
-    link(rel='stylesheet' href=url_for('./css/atom-one-dark.css'))
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      java面向对象特性的阐述
+    </h1>
+  
 
-block content
-    div.al_page_background.dis_flex_center.al_full_cover
-    div.al_page_container
-        div.al_pos_ab.al_fake_background
-        div.al_main_container.al_main_page_container
-            article.al_article
-                header
-                    h1.al_page_title= page.title
-                    div.al_page_info.dis_flex
-                        div.al_page_content_info
-                            |#{date(page.date, 'MMM DD, YYYY h:mm A')}
-                        div.al_page_content_info
-                            |#{wordcount(page.content)} words
-                        div.al_page_content_info
-                            |#{min2read(page.content)} minutes read
-                        span.tags
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <blockquote>
+<p>Object-oriented programming: As the name suggests, Object-Oriented Programming or OOPs refers to languages that uses objects in programming. Object-oriented programming aims to implement real-world entities like inheritance, hiding, polymorphism etc in programming. <strong>The main aim of OOP is to bind together the data and the functions that operate on them so that no other part of the code can access this data except that function.（OOP的主要目的是将数据和对其进行操作的功能绑定在一起，以便除该功能外，代码的其他任何部分都无法访问此数据。）</strong></p>
+</blockquote>
+<p><a href="https://www.geeksforgeeks.org/object-oriented-programming-oops-concept-in-java/" target="_blank" rel="noopener">Object Oriented Programming (OOPs) Concept in Java - GeeksforGeeks</a></p>
+<ol>
+<li>在这其中，指出oops（面向对象的编程）主要目的是将<strong>数据和函数</strong>结合在一起，bind说明两者是绑定。</li>
+<li>当然inheritance, hiding, polymorphism etc（继承，隐藏，多态等）等内容。。。</li>
+</ol>
+<p>下面学习一波面向对象的语言的特性：</p>
+<h2 id="面对对象的三大特征："><a href="#面对对象的三大特征：" class="headerlink" title="面对对象的三大特征："></a><strong>面对对象的三大特征：</strong></h2><h3 id="1-polymorphism多态："><a href="#1-polymorphism多态：" class="headerlink" title="1. polymorphism多态："></a>1. polymorphism多态：</h3><p><a href="https://www.geeksforgeeks.org/polymorphism-in-java/" target="_blank" rel="noopener">Polymorphism in Java - GeeksforGeeks</a></p>
+<p>. In other words, polymorphism allows you to define one interface and have multiple implementations</p>
+<ul>
+<li><a href="https://www.geeksforgeeks.org/overloading-in-java/" target="_blank" rel="noopener">Overloading in Java</a></li>
+</ul>
+<p>即一个函数名字有着许多不同的含义（根据传入值类型，数量的不同而改变），以实现更多。</p>
+<p><strong>也就是说可以创建多个同名的函数</strong></p>
+<p>在现实生活中：我们对于一个名字会有许多的不同的理解，这取决于环境的不同。同样的在面向对象的特性（多态）吧，便实现了这一真实世界中的现象，赋值给了编程。</p>
+<ul>
+<li><a href="https://www.geeksforgeeks.org/overriding-in-java/" target="_blank" rel="noopener">Overriding in Java</a></li>
+</ul>
+<p>所谓多态就是指一个类实例的相同方法在不同情形有不同表现形式。多态机制使具有不同内部结构的对象可以共享相同的外部接口。这意味着，虽然针对不同对象的具体操作不同，但通过一个公共的类，它们（那些操作）可以通过相同的方式予以调用。</p>
+<p>最常见的多态就是将子类传入父类参数中，运行时调用父类方法时通过传入的子类决定具体的内部结构或行为。</p>
+<h3 id="2-Inheritance-继承"><a href="#2-Inheritance-继承" class="headerlink" title="2. Inheritance:继承"></a>2. Inheritance:继承</h3><p>继承就是一个函数可以使用其他函数的内容（field和methods即函数和变量）。</p>
+<p>分为三类：</p>
+<ul>
+<li><strong>Super Class:</strong> The class whose features are inherited is known as superclass(or a base class or a parent class).超类：被其他类继承</li>
+<li><strong>Sub Class:</strong> The class that inherits the other class is known as subclass(or a derived class, extended class, or child class). The subclass can add its own fields and methods in addition to the superclass fields and methods.子类：继承其他类</li>
+<li><strong>Reusability:</strong> Inheritance supports the concept of “reusability”, i.e. when we want to create a new class and there is already a class that includes some of the code that we want, we can derive our new class from the existing class. By doing this, we are reusing the fields and methods of the existing class.体现了其可以重复利用代码，不必多次重复去编写重复的内容。</li>
+</ul>
+<p>关键词是 <strong>extends</strong></p>
+<h3 id="3-Encapsulation-封装"><a href="#3-Encapsulation-封装" class="headerlink" title="3. Encapsulation:封装"></a>3. Encapsulation:封装</h3><p>封装：就是将该类所操作的数据和类，封装在一起。这是一种保护机制，可以使得其他的代码无法获取到被封装起数据，以此保护了数据。</p>
+<h3 id="除了三大基本特征以外：其实共七大（有重复）特征"><a href="#除了三大基本特征以外：其实共七大（有重复）特征" class="headerlink" title="除了三大基本特征以外：其实共七大（有重复）特征"></a>除了三大基本特征以外：其实共七大（有重复）特征</h3><ul>
+<li><a href="https://www.geeksforgeeks.org/polymorphism-in-java/" target="_blank" rel="noopener">Polymorphism</a> 多态</li>
+<li><a href="https://www.geeksforgeeks.org/inheritance-in-java/" target="_blank" rel="noopener">Inheritance</a> 继承</li>
+<li><a href="https://www.geeksforgeeks.org/encapsulation-in-java/" target="_blank" rel="noopener">Encapsulation</a> 封装</li>
+<li><a href="https://www.geeksforgeeks.org/abstraction-in-java-2/" target="_blank" rel="noopener">Abstraction</a> 抽象：</li>
+</ul>
+<p>将数据简化，只提供需要的数据给用户</p>
+<p>抽象是通过接口和抽象类来实现的。我们可以使用接口实现100%的抽象。</p>
+<ul>
+<li><a href="https://www.geeksforgeeks.org/classes-objects-java/" target="_blank" rel="noopener">Class</a> 类（类是用户定义的蓝图或原型，从中可以创建对象）</li>
+<li><a href="https://www.geeksforgeeks.org/classes-objects-java/" target="_blank" rel="noopener">Object</a>  对象：<strong>State ，Behavior， Identity</strong></li>
+<li><a href="https://www.geeksforgeeks.org/methods-in-java/" target="_blank" rel="noopener">Method</a> ：函数如下图（但在java中，只能存在于类下面，不可以独立像c，cpp，python一样出现）</li>
+</ul>
+<p><img src="/2020/02/09/java%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%89%B9%E6%80%A7%E7%9A%84%E9%98%90%E8%BF%B0/1.png" alt="1"></p>
+<ul>
+<li><a href="https://www.geeksforgeeks.org/message-passing-in-java/" target="_blank" rel="noopener">Message Passing</a> 信息传递。</li>
+</ul>
 
-                if toc(page.content)
-                    div.al_page_content_outline!= toc(page.content,{list_number:false})
+      
+    </div>
+    <footer class="article-footer">
+      
+        <a data-url="https://jefine.github.io/2020/02/09/java%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%89%B9%E6%80%A7%E7%9A%84%E9%98%90%E8%BF%B0/" data-id="ck811m6kf001begr027vmdka6" class="article-share-link">分享到</a>
+      
 
-                section#post-body!=page.content
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%9A%84%E7%BC%96%E7%A8%8B/" rel="tag">面向对象的编程</a></li></ul>
 
-                include ./includes/plugin/gitalk.pug
-                include ./includes/plugin/disqus.pug
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2020/02/10/%E6%B1%89%E8%AF%BA%E5%A1%94%E7%9A%84%E6%80%9D%E8%80%83%E5%8F%8A%E8%A7%A3%E7%AD%94/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          汉诺塔的思考及解答
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2020/02/08/%E7%AE%97%E6%B3%95%E6%97%B6%E9%97%B4%E5%A4%8D%E6%9D%82%E5%BA%A6%E5%88%86%E6%9E%90d%E5%A4%A7o/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">算法时间复杂度分析</div>
+    </a>
+  
+</nav>
 
-            - var prev = page.prev ? page.prev.path : false;
-            - var next = page.next ? page.next.path : false;
-            nav.dis_flex.post-nav
-                span.prev
-                    if page.prev
-                        a(href=url_for(prev))
-                            span.arrow ←
-                            | Newer Posts
-                span.next
-                    if page.next
-                        a(href=url_for(next))
-                            | Older Posts
-                            span.arrow →
+  
+</article>
 
-    if config.highlight.enable
-        script(type='text/javascript', src=url_for('javascripts/highlight.pack.js'))
-        script!= "document.querySelectorAll('figure.highlight').forEach(function(b){hljs.highlightBlock(b);});"
+</section>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2020 jefine<br>
+      Theme <a href="https://github.com/henryhuang/oishi" target="_blank">Oishi</a>, Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <!--
+      <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">首页</a>
+  
+    <a href="/categories/life" class="mobile-nav-link">生活</a>
+  
+    <a href="/archives" class="mobile-nav-link">归档</a>
+  
+</nav>
+    -->
+    
 
-            //- include includes/comment.pug
+<!-- 百度分享 start -->
+
+<!-- 百度分享 end -->
+
+<script src="//cdn.bootcss.com/jquery/1.11.1/jquery.min.js"></script>
+
+
+
+<script src="/js/jquery.scrollUp.min.js"></script>
+<script src="/js/jquery.transform.js"></script>
+<script src="/js/menu.js"></script>
+
+<script src="/js/script.js"></script>
+<script src="/js/scrollUp.js"></script>
+
+  </div>
+</body>
+</html>

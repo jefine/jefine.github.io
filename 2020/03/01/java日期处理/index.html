@@ -1,51 +1,255 @@
-extends includes/base
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>java日期处理 | jefine</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Java处理日期、日历和时间的方式一直被人所诟病，将 java.util.Date设定为可变类型，以及SimpleDateFormat的非线程安全使其应用非常受限。 新API基于ISO标准日历系统，java.time包下的所有类都是不可变类型而且线程安全。 (因为更安全，不可变了，所以就需要每一个日期搞一个变量（实例？） 18 个 Java8 日期处理的实践，太有用了！ java.time包 示">
+<meta name="keywords" content="time">
+<meta property="og:type" content="article">
+<meta property="og:title" content="java日期处理">
+<meta property="og:url" content="https:&#x2F;&#x2F;jefine.github.io&#x2F;2020&#x2F;03&#x2F;01&#x2F;java%E6%97%A5%E6%9C%9F%E5%A4%84%E7%90%86&#x2F;index.html">
+<meta property="og:site_name" content="jefine">
+<meta property="og:description" content="Java处理日期、日历和时间的方式一直被人所诟病，将 java.util.Date设定为可变类型，以及SimpleDateFormat的非线程安全使其应用非常受限。 新API基于ISO标准日历系统，java.time包下的所有类都是不可变类型而且线程安全。 (因为更安全，不可变了，所以就需要每一个日期搞一个变量（实例？） 18 个 Java8 日期处理的实践，太有用了！ java.time包 示">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2020-03-01T04:04:09.249Z">
+<meta name="twitter:card" content="summary">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link type="text/css" href="//netdna.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.css" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/scrollUp/image.css">
+  <!--[if lt IE 9]><script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7/html5shiv.min.js"></script><![endif]-->
+  
+</head>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <div class="logo">
+        <img src="/logo.png" alt="Profile Picture">
+      </div>
+      <div id="title">jefine</div>
+      
+        <div id="subtitle">小小的梦呓</div>
+      
+       <ul class="my-socials">
+  
+ 
+</ul>
+    </div>
+  </div>
+  <div id="header-inner" class="">
+    <nav id="main-nav">
+      <a id="main-nav-toggle" class="nav-icon"></a>
+      <!--
+        
+          
+            <a class="main-nav-link" href="/">首页</a>
+          
+            <a class="main-nav-link" href="/categories/life">生活</a>
+          
+            <a class="main-nav-link" href="/archives">归档</a>
+          
+        
+      -->
+    </nav>
+    <nav id="title-nav" style="display:none">
+      <a href="/">jefine</a>
+      <img src="/logo.png" alt="Profile Picture">
+      <!--
+      <span id="title-nav-socials">
+        
+       
+     </span>
+      -->
+    </nav>
+    <nav id="sub-nav">
+      
+      <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+    </nav>
+    <div id="search-form-wrap">
+      <form action="http://www.baidu.com/baidu" method="get" accept-charset="utf-8" class="search-form">
+        <input type="search" name="word" maxlength="20" class="search-form-input" placeholder="搜索">
+        <input type="submit" value="" class="search-form-submit">
+        <input name=tn type=hidden value="bds">
+        <input name=cl type=hidden value="3">
+        <input name=ct type=hidden value="2097152">
+        <input type="hidden" name="si" value="jefine.github.io">
+      </form>
+    </div>
+  </div>
+  <div class="site-nav" style="display: none;">
+    <ul>
+      
+      
+        <li><a href="/">首页</a></li>
+      
+        <li><a href="/categories/life">生活</a></li>
+      
+        <li><a href="/archives">归档</a></li>
+      
+      
+    </ul>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="java8-java日期处理" class="article article-type-java8" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/03/01/java%E6%97%A5%E6%9C%9F%E5%A4%84%E7%90%86/" class="article-date">
+  <time datetime="2020-03-01T04:00:21.000Z" itemprop="datePublished">2020-03-01</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/java/">java</a>
+  </div>
 
-block extra_style
-    if theme.gitalk.enable
-        link(rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css")
-    link(rel='stylesheet' href=url_for('./css/atom-one-dark.css'))
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      java日期处理
+    </h1>
+  
 
-block content
-    div.al_page_background.dis_flex_center.al_full_cover
-    div.al_page_container
-        div.al_pos_ab.al_fake_background
-        div.al_main_container.al_main_page_container
-            article.al_article
-                header
-                    h1.al_page_title= page.title
-                    div.al_page_info.dis_flex
-                        div.al_page_content_info
-                            |#{date(page.date, 'MMM DD, YYYY h:mm A')}
-                        div.al_page_content_info
-                            |#{wordcount(page.content)} words
-                        div.al_page_content_info
-                            |#{min2read(page.content)} minutes read
-                        span.tags
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p> Java处理日期、日历和时间的方式一直被人所诟病，将 java.util.Date设定为可变类型，以及SimpleDateFormat的非线程安全使其应用非常受限。</p>
+<p>新API基于ISO标准日历系统，java.time包下的所有类都是不可变类型而且线程安全。</p>
+<p>(因为更安全，不可变了，所以就需要每一个日期搞一个变量（实例？）</p>
+<p><a href="https://mp.weixin.qq.com/s/AGkp_0l_hvMye8QVOBlxwQ" target="_blank" rel="noopener">18 个 Java8 日期处理的实践，太有用了！</a></p>
+<p><a href="https://www.notion.so/6ebff548541544f5a9ba2d6328513ee1" target="_blank" rel="noopener">java.time包</a></p>
+<h2 id="示例1-Java-8中获取今天的日期"><a href="#示例1-Java-8中获取今天的日期" class="headerlink" title="示例1:Java 8中获取今天的日期"></a>示例1:Java 8中获取今天的日期</h2><p>Java 8 中的 LocalDate 用于表示当天日期。和java.util.Date不同，它只有日期，不包含时间。当你仅需要表示日期时就用这个类。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.time.*;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">dealWithTime</span></span></span><br><span class="line"><span class="class"></span>&#123; </span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span> <span class="params">(String[] args)</span> </span></span><br><span class="line"><span class="function">	</span>&#123; </span><br><span class="line">        LocalDate today = LocalDate.now();</span><br><span class="line">        System.out.println(<span class="string">"today is:"</span>+today);</span><br><span class="line">  </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//output:</span></span><br><span class="line"><span class="comment">//today is:2020-02-29</span></span><br></pre></td></tr></table></figure>
 
-                if toc(page.content)
-                    div.al_page_content_outline!= toc(page.content,{list_number:false})
+<p>而如果需要将年月日信息分开：那么我们可以利用上面的today继续操作；</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.time.*;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">dealWithTime</span></span></span><br><span class="line"><span class="class"></span>&#123; </span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span> <span class="params">(String[] args)</span> </span></span><br><span class="line"><span class="function">	</span>&#123; </span><br><span class="line">        LocalDate today = LocalDate.now();</span><br><span class="line">        System.out.println(<span class="string">"today is:"</span>+today);</span><br><span class="line">        <span class="keyword">int</span> year = today.getYear();</span><br><span class="line">        <span class="keyword">int</span> month = today.getMonthValue();</span><br><span class="line">        <span class="keyword">int</span> day = today.getDayOfMonth();</span><br><span class="line">        System.out.println(<span class="string">""</span>+year+month+day);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-                section#post-body!=page.content
+<p>注意：其中还有getMonth()，返回的是一个枚举month里的值（是“FEBRUARY”这种）</p>
+<p>而getMonthValue（）则返回一个值（2）所以我们还能发现许多这样的用法，比如day_of_year()等</p>
+<h2 id="示例2：自定义日期："><a href="#示例2：自定义日期：" class="headerlink" title="示例2：自定义日期："></a>示例2：自定义日期：</h2><p>我们通过静态工厂方法now()非常容易地创建了当天的日期，我们还可以调用另一个有用的工厂方法<strong>LocalDate.of()</strong>创建任意日期， 该方法需要<strong>传入年、月、日做参数，返回对应的LocalDate实例。</strong>这个方法的好处是没再犯老API的设计错误（而且我们也可以使用localDate的方法了），比如年度起始于1900，月份是从0开 始等等（这些问题就不提了哎，文末可能会吐槽一下，并演示一下有多么讨厌）。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.time.*;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">dealWithTime</span></span></span><br><span class="line"><span class="class"></span>&#123; </span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span> <span class="params">(String[] args)</span> </span></span><br><span class="line"><span class="function">	</span>&#123; </span><br><span class="line">        LocalDate fakeDate = LocalDate.of(<span class="number">2020</span>,<span class="number">2</span>,<span class="number">28</span>);</span><br><span class="line">        System.out.println(<span class="string">"yesterday is:"</span>+fakeDate);</span><br><span class="line">        </span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//output：</span></span><br><span class="line"><span class="comment">//yesterday is:2020-02-28</span></span><br></pre></td></tr></table></figure>
 
-                include ./includes/plugin/gitalk.pug
-                include ./includes/plugin/disqus.pug
+<h2 id="示例三：判断两个日期是否相同使用-equals"><a href="#示例三：判断两个日期是否相同使用-equals" class="headerlink" title="示例三：判断两个日期是否相同使用.equals()"></a>示例三：判断两个日期是否相同使用.equals()</h2><h2 id="示例四：检查像生日这种周期性事件：MonthDay："><a href="#示例四：检查像生日这种周期性事件：MonthDay：" class="headerlink" title="示例四：检查像生日这种周期性事件：MonthDay："></a>示例四：检查像生日这种周期性事件：MonthDay：</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.time.*;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">dealWithTime</span></span></span><br><span class="line"><span class="class"></span>&#123; </span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span> <span class="params">(String[] args)</span> </span></span><br><span class="line"><span class="function">	</span>&#123;   LocalDate date1 = LocalDate.now();</span><br><span class="line">        LocalDate date = LocalDate.of(<span class="number">2020</span>,<span class="number">2</span>,<span class="number">28</span>);</span><br><span class="line">        MonthDay birthday = MonthDay.of(date.getMonthValue(),date.getDayOfMonth());</span><br><span class="line">        MonthDay nowMonthDay = MonthDay.now();</span><br><span class="line">        <span class="keyword">if</span>(nowMonthDay.equals(birthday))</span><br><span class="line">        System.out.println(<span class="string">"yes"</span>);</span><br><span class="line">        <span class="keyword">else</span> System.out.println(<span class="string">"nonono"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//output：</span></span><br><span class="line"><span class="comment">//nonono</span></span><br></pre></td></tr></table></figure>
 
-            - var prev = page.prev ? page.prev.path : false;
-            - var next = page.next ? page.next.path : false;
-            nav.dis_flex.post-nav
-                span.prev
-                    if page.prev
-                        a(href=url_for(prev))
-                            span.arrow ←
-                            | Newer Posts
-                span.next
-                    if page.next
-                        a(href=url_for(next))
-                            | Older Posts
-                            span.arrow →
+<p>注意在这里getMonthValue（）和getMonth（）都是可以使用的。</p>
+<h1 id="说完日期，说说时间："><a href="#说完日期，说说时间：" class="headerlink" title="说完日期，说说时间："></a>说完日期，说说时间：</h1><h2 id="示例五：获取当前时间"><a href="#示例五：获取当前时间" class="headerlink" title="示例五：获取当前时间"></a>示例五：获取当前时间</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.time.*;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">dealWithTime</span></span></span><br><span class="line"><span class="class"></span>&#123; </span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span> <span class="params">(String[] args)</span> </span></span><br><span class="line"><span class="function">	</span>&#123;</span><br><span class="line">        LocalTime now = LocalTime.now();</span><br><span class="line">        System.out.println(now);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//output：</span></span><br><span class="line"><span class="number">19</span>:<span class="number">27</span>:<span class="number">01.708</span></span><br></pre></td></tr></table></figure>
 
-    if config.highlight.enable
-        script(type='text/javascript', src=url_for('javascripts/highlight.pack.js'))
-        script!= "document.querySelectorAll('figure.highlight').forEach(function(b){hljs.highlightBlock(b);});"
+<p>这个时间的精度。。可以了</p>
+<h2 id="示例六：计算一段时间前-后的时间-plus-val-ChronoUnit-WEEKS"><a href="#示例六：计算一段时间前-后的时间-plus-val-ChronoUnit-WEEKS" class="headerlink" title="示例六：计算一段时间前/后的时间.plus(val,ChronoUnit.WEEKS)"></a>示例六：计算一段时间前/后的时间.plus(val,ChronoUnit.WEEKS)</h2><p>/.minus(val,ChronoUnit.WEEKS))</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.time.*;</span><br><span class="line"><span class="keyword">import</span> java.time.temporal.ChronoUnit;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">dealWithTime</span></span></span><br><span class="line"><span class="class"></span>&#123; </span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span> <span class="params">(String[] args)</span> </span></span><br><span class="line"><span class="function">	</span>&#123;</span><br><span class="line">        LocalDate now = LocalDate.now();</span><br><span class="line">        LocalDate after = now.plus(<span class="number">1</span>,ChronoUnit.WEEKS);</span><br><span class="line"></span><br><span class="line">        System.out.println(after);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-            //- include includes/comment.pug
+<p>这里是日期，那么就要用localDate了</p>
+<h2 id="示例七-Java-8的Clock时钟类"><a href="#示例七-Java-8的Clock时钟类" class="headerlink" title="示例七:Java 8的Clock时钟类"></a>示例七:Java 8的Clock时钟类</h2><p>Java 8增加了一个Clock时钟类用于获取当时的时间戳，或当前时区下的日期时间信息。以前用到System.currentTimeInMillis()和TimeZone.getDefault()的地方都可用Clock替换</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.time.*;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">dealWithTime</span></span></span><br><span class="line"><span class="class"></span>&#123; </span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span> <span class="params">(String[] args)</span> </span></span><br><span class="line"><span class="function">	</span>&#123;</span><br><span class="line">        Clock clock = Clock.systemUTC();</span><br><span class="line">        System.out.println(<span class="string">"Clock : "</span> + clock.instant());</span><br><span class="line">        System.out.println(<span class="string">"Clock : "</span> + clock.millis());</span><br><span class="line">        <span class="comment">// Returns time based on system clock zone</span></span><br><span class="line">        Clock defaultClock = Clock.systemDefaultZone();</span><br><span class="line">        System.out.println(<span class="string">"Clock : "</span> + defaultClock.millis());</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//output：</span></span><br><span class="line"><span class="comment">//Clock : 2020-03-01T03:06:27.520Z</span></span><br><span class="line"><span class="comment">//Clock : 1583031987647</span></span><br><span class="line"><span class="comment">//Clock : 1583031987687</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="示例八-如何用Java判断日期是早于还是晚于另一个日期"><a href="#示例八-如何用Java判断日期是早于还是晚于另一个日期" class="headerlink" title="示例八:如何用Java判断日期是早于还是晚于另一个日期"></a>示例八:如何用Java判断日期是早于还是晚于另一个日期</h2><p>另一个工作中常见的操作就是如何判断给定的一个日期是大于某天还是小于某天？在Java 8中，LocalDate类有两类方法isBefore()和isAfter()用于比较日期。调用isBefore()方法时，如果给定日期小于当前日期则返回true。当然也可判断是否日期相同。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.time.*;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">dealWithTime</span></span></span><br><span class="line"><span class="class"></span>&#123; </span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span> <span class="params">(String[] args)</span> </span></span><br><span class="line"><span class="function">	</span>&#123;</span><br><span class="line">        LocalDate today = LocalDate.now();</span><br><span class="line">        LocalDate fakeDate = LocalDate.of(<span class="number">2019</span>, <span class="number">2</span>, <span class="number">1</span>);</span><br><span class="line">        <span class="keyword">if</span>(fakeDate.isBefore(today))</span><br><span class="line">        &#123;</span><br><span class="line">            System.out.print(<span class="string">"yes"</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span> System.out.print(<span class="string">"nono"</span>);</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//output：</span></span><br><span class="line"><span class="comment">//yes</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="示例九-Java-8中处理时区"><a href="#示例九-Java-8中处理时区" class="headerlink" title="示例九:Java 8中处理时区"></a>示例九:Java 8中处理时区</h2><p>Java 8不仅分离了日期和时间，也把时区分离出来了。现在有一系列单独的类如ZoneId来处理特定时区，ZoneDateTime类来表示某时区下的时间。这在Java 8以前都是 GregorianCalendar类来做的。下面这个例子展示了如何把本时区的时间转换成另一个时区的时间。</p>
+<p><strong>其他：同样也可以检查闰年，独立的年月计算两个日期之间天数（between）</strong></p>
+<h2 id="示例十：Java-8中如何使用预定义的格式化工具去解析或格式化日期"><a href="#示例十：Java-8中如何使用预定义的格式化工具去解析或格式化日期" class="headerlink" title="示例十：Java 8中如何使用预定义的格式化工具去解析或格式化日期"></a>示例十：Java 8中如何使用预定义的格式化工具去解析或格式化日期</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.time.*;</span><br><span class="line"><span class="keyword">import</span> java.time.format.DateTimeFormatter;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">dealWithTime</span></span></span><br><span class="line"><span class="class"></span>&#123; </span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span> <span class="params">(String[] args)</span> </span></span><br><span class="line"><span class="function">	</span>&#123;</span><br><span class="line">        String dayAfterTommorrow = <span class="string">"20200302"</span>;</span><br><span class="line">        LocalDate formatted = LocalDate.parse(dayAfterTommorrow,DateTimeFormatter.BASIC_ISO_DATE);</span><br><span class="line">        System.out.println(dayAfterTommorrow+<span class="string">"  格式化后的日期为:  "</span>+formatted);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//output：</span></span><br><span class="line"><span class="comment">//20200302  格式化后的日期为:  2020-03-02</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="示例十一：字符串互转日期类型"><a href="#示例十一：字符串互转日期类型" class="headerlink" title="示例十一：字符串互转日期类型"></a>示例十一：字符串互转日期类型</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.time.*;</span><br><span class="line"><span class="keyword">import</span> java.time.format.DateTimeFormatter;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">dealWithTime</span></span></span><br><span class="line"><span class="class"></span>&#123; </span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span> <span class="params">(String[] args)</span> </span></span><br><span class="line"><span class="function">	</span>&#123;</span><br><span class="line">        LocalDateTime date = LocalDateTime.now();</span><br><span class="line"></span><br><span class="line">        DateTimeFormatter format1 = DateTimeFormatter.ofPattern(<span class="string">"yyyy/MM/dd hh:mm:ss"</span>);</span><br><span class="line">    <span class="comment">//日期转字符串</span></span><br><span class="line">        String str = date.format(format1);</span><br><span class="line"></span><br><span class="line">        System.out.println(<span class="string">"日期转换为字符串:"</span>+str);</span><br><span class="line"></span><br><span class="line">        DateTimeFormatter format2 = DateTimeFormatter.ofPattern(<span class="string">"yyyy/MM/dd HH:mm:ss"</span>);</span><br><span class="line">    <span class="comment">//字符串转日期</span></span><br><span class="line">        LocalDate date2 = LocalDate.parse(str,format2);</span><br><span class="line">        System.out.println(<span class="string">"日期类型:"</span>+date2);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//output：</span></span><br><span class="line"><span class="comment">//日期转换为字符串:2020/03/01 11:44:03</span></span><br><span class="line"><span class="comment">//日期类型:2020-03-01</span></span><br></pre></td></tr></table></figure>
+
+<p>如果我们将str的内容更换一下，只要format的内容一致：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.time.*;</span><br><span class="line"><span class="keyword">import</span> java.time.format.DateTimeFormatter;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">dealWithTime</span></span></span><br><span class="line"><span class="class"></span>&#123; </span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span> <span class="params">(String[] args)</span> </span></span><br><span class="line"><span class="function">	</span>&#123;</span><br><span class="line">        String str = <span class="string">"20190112120101"</span>;</span><br><span class="line"></span><br><span class="line">        DateTimeFormatter format2 = DateTimeFormatter.ofPattern(<span class="string">"yyyyMMddHHmmss"</span>);</span><br><span class="line">    <span class="comment">//字符串转日期</span></span><br><span class="line">        LocalDate date2 = LocalDate.parse(str,format2);</span><br><span class="line">        System.out.println(<span class="string">"日期类型:"</span>+date2);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//output：</span></span><br><span class="line"><span class="comment">//日期类型:2019-01-12</span></span><br></pre></td></tr></table></figure>
+
+<p>在这其中我们还是有很多可以去挖掘的。。。</p>
+<p>对了，最后吐槽一下</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">dealWithTime</span></span></span><br><span class="line"><span class="class"></span>&#123; </span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span> <span class="params">(String[] args)</span> </span></span><br><span class="line"><span class="function">	</span>&#123;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">long</span> t = System.currentTimeMillis();</span><br><span class="line"></span><br><span class="line">        System.out.println(t);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>这玩意返回的必须是long类型但是把现在也用不到。返回的时间是距离1970年一月一日零点零分的毫秒数。。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      
+        <a data-url="https://jefine.github.io/2020/03/01/java%E6%97%A5%E6%9C%9F%E5%A4%84%E7%90%86/" data-id="ck811m6kj001fegr07bu20rjb" class="article-share-link">分享到</a>
+      
+
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/time/" rel="tag">time</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2020/03/11/java%E4%B8%AD%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%88%9B%E5%BB%BA%EF%BC%8C%E5%88%9D%E5%A7%8B%E5%8C%96%E4%B8%8E%E5%BC%95%E7%94%A8/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          java中对象的创建，初始化与引用
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2020/02/29/P1023%E7%A8%8E%E6%94%B6%E4%B8%8E%E8%A1%A5%E8%B4%B4%E9%97%AE%E9%A2%98/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">P1023税收与补贴问题</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2020 jefine<br>
+      Theme <a href="https://github.com/henryhuang/oishi" target="_blank">Oishi</a>, Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <!--
+      <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">首页</a>
+  
+    <a href="/categories/life" class="mobile-nav-link">生活</a>
+  
+    <a href="/archives" class="mobile-nav-link">归档</a>
+  
+</nav>
+    -->
+    
+
+<!-- 百度分享 start -->
+
+<!-- 百度分享 end -->
+
+<script src="//cdn.bootcss.com/jquery/1.11.1/jquery.min.js"></script>
+
+
+
+<script src="/js/jquery.scrollUp.min.js"></script>
+<script src="/js/jquery.transform.js"></script>
+<script src="/js/menu.js"></script>
+
+<script src="/js/script.js"></script>
+<script src="/js/scrollUp.js"></script>
+
+  </div>
+</body>
+</html>

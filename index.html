@@ -1,47 +1,1060 @@
-extends includes/base
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>jefine</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="使每个人的生活多一份美好。">
+<meta property="og:type" content="website">
+<meta property="og:title" content="jefine">
+<meta property="og:url" content="https:&#x2F;&#x2F;jefine.github.io&#x2F;index.html">
+<meta property="og:site_name" content="jefine">
+<meta property="og:description" content="使每个人的生活多一份美好。">
+<meta property="og:locale" content="zh-CN">
+<meta name="twitter:card" content="summary">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link type="text/css" href="//netdna.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.css" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/scrollUp/image.css">
+  <!--[if lt IE 9]><script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7/html5shiv.min.js"></script><![endif]-->
+  
+</head>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <div class="logo">
+        <img src="/logo.png" alt="Profile Picture">
+      </div>
+      <div id="title">jefine</div>
+      
+        <div id="subtitle">小小的梦呓</div>
+      
+       <ul class="my-socials">
+  
+ 
+</ul>
+    </div>
+  </div>
+  <div id="header-inner" class="">
+    <nav id="main-nav">
+      <a id="main-nav-toggle" class="nav-icon"></a>
+      <!--
+        
+          
+            <a class="main-nav-link" href="/">首页</a>
+          
+            <a class="main-nav-link" href="/categories/life">生活</a>
+          
+            <a class="main-nav-link" href="/archives">归档</a>
+          
+        
+      -->
+    </nav>
+    <nav id="title-nav" style="display:none">
+      <a href="/">jefine</a>
+      <img src="/logo.png" alt="Profile Picture">
+      <!--
+      <span id="title-nav-socials">
+        
+       
+     </span>
+      -->
+    </nav>
+    <nav id="sub-nav">
+      
+      <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+    </nav>
+    <div id="search-form-wrap">
+      <form action="http://www.baidu.com/baidu" method="get" accept-charset="utf-8" class="search-form">
+        <input type="search" name="word" maxlength="20" class="search-form-input" placeholder="搜索">
+        <input type="submit" value="" class="search-form-submit">
+        <input name=tn type=hidden value="bds">
+        <input name=cl type=hidden value="3">
+        <input name=ct type=hidden value="2097152">
+        <input type="hidden" name="si" value="jefine.github.io">
+      </form>
+    </div>
+  </div>
+  <div class="site-nav" style="display: none;">
+    <ul>
+      
+      
+        <li><a href="/">首页</a></li>
+      
+        <li><a href="/categories/life">生活</a></li>
+      
+        <li><a href="/archives">归档</a></li>
+      
+      
+    </ul>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main">
+  
 
-block content
-    div.al_index_background.dis_flex_center.al_full_cover
-        - var bio = config.bio || 'A Beautiful Text Site.'
-        - var firstBioChar = bio.substr(0, 1)
-        div.al_pos_ab.al_letter.al_index_background_letter= firstBioChar
-        h2.al_index_background_bio= bio
-    div.al_index_container
-        div.al_pos_ab.al_fake_background
-        div.al_main_container
-            div.al_section_container.dis_flex_jcenter
-                div.section_header= 'LATEST PAGES'
-            ur.al_post_list
-                each item in site.posts.sort('date', -1).toArray()
-                    - var postTitle = item.title || 'No Title'
-                    - var createDate = date(item.date, 'MMM DD')
-                    - var firstChar = postTitle.substr(0, 1)
-                    - var postURL = item.link || item.path
-                    - var excerpt = item.excerpt + '...' || 'No Excerpt'
-                    - var readLaterURL = 'https://getpocket.com/edit?url=' + encodeURIComponent(config.url + '/' + url_for(postURL))
-                    li.al_index_pageList_item.al_index_page_seperator
-                        div.al_index_post_title_cnt.dis_flex
-                            div.al_pos_ab.al_letter.al_index_post_title_letter= firstChar
-                            h2.al_index_post_title
-                                a(href=url_for(postURL))= postTitle
-                            div.al_index_post_extra.dis_flex
-                                div.al_index_post_date.al_index_post_extra_item= createDate
-                                div.al_index_post_read_time
-                                    |#{min2read(item.content)} Min Read
-                        div.al_index_post_excerpt_cnt
-                            p.al_index_post_excerpt= excerpt
-                        div.al_index_post_button_cnt.dis_flex
-                            a.al_button.al_button_theme.al_index_post_button(href=url_for(postURL))= 'READ ON'
-                            a.al_button.al_button_transparent.al_index_post_button(href=readLaterURL)= 'READ LATER'
+    
+    <article id="post-LinkedList链表" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/03/17/LinkedList%E9%93%BE%E8%A1%A8/" class="article-date">
+  <time datetime="2020-03-17T09:50:51.000Z" itemprop="datePublished">2020-03-17</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/03/17/LinkedList%E9%93%BE%E8%A1%A8/">LinkedList链表</a>
+    </h1>
+  
 
-            nav.dis_flex.post-nav
-                span.prev
-                    if page.prev
-                        a(href=url_for(page.prev_link))
-                            span.arrow ←
-                            | Newer Posts
-                span.next
-                    if page.next
-                        a(href=url_for(page.next_link))
-                            | Older Posts
-                            span.arrow →
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        
+      
+    </div>
+    <footer class="article-footer">
+      
+        <a data-url="https://jefine.github.io/2020/03/17/LinkedList%E9%93%BE%E8%A1%A8/" data-id="ck811m6jl000pegr07u6r00gp" class="article-share-link">分享到</a>
+      
+
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+    
+  
+
+    
+    <article id="post-java中对象的创建，初始化与引用" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/03/11/java%E4%B8%AD%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%88%9B%E5%BB%BA%EF%BC%8C%E5%88%9D%E5%A7%8B%E5%8C%96%E4%B8%8E%E5%BC%95%E7%94%A8/" class="article-date">
+  <time datetime="2020-03-11T10:01:40.000Z" itemprop="datePublished">2020-03-11</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/java/">java</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/03/11/java%E4%B8%AD%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%88%9B%E5%BB%BA%EF%BC%8C%E5%88%9D%E5%A7%8B%E5%8C%96%E4%B8%8E%E5%BC%95%E7%94%A8/">java中对象的创建，初始化与引用</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>在java的学习过程中，对于对象/基本数据类型是如何创建于初始化和引用的，在这一过程中发生了什么，为什么？下面就是有一定的讲解：</p>
+<h2 id="java对象与引用："><a href="#java对象与引用：" class="headerlink" title="java对象与引用："></a>java对象与引用：</h2><p>A a1 = new A();</p>
+<p>它代表A是类，a1是引用，a1不是对象，new A()才是对象，a1引用指向new A()这个对象。</p>
+<p><strong>在声明时：=符号并不表示赋值，而是引用，是一个传递地址的过程。</strong></p>
+<p>再如：</p>
+<p>A a2;</p>
+<p>它代表A是类，a2是引用，a2不是对象，a2所指向的对象为空null;</p>
+<p>再如：</p>
+<p>a2 = a1;</p>
+<p>它代表，a2是引用，a1也是引用，a1所指向的对象的地址传给了a2(传址），使得a2和a1指向了同一对象。</p>
+<p>综上所述，可以简单的记为，在初始化时，“=”语句左边的是引用，右边new出来的是对象。</p>
+<p>在后面的左右都是引用的“=”语句时，左右的引用同时指向了右边引用所指向的对象。</p>
+<h2 id="JAVA中对象创建和初始化过程"><a href="#JAVA中对象创建和初始化过程" class="headerlink" title="JAVA中对象创建和初始化过程"></a>JAVA中对象创建和初始化过程</h2><p>分析一下JAVA中对象创建和初始化过程中涉及的相关概念问题，java中<strong>栈</strong>(stack)与<strong>堆</strong>(heap)，<strong>对象</strong>、<strong>引用</strong>、<strong>句柄</strong>的概念。</p>
+<h3 id="1-Java中的数据类型"><a href="#1-Java中的数据类型" class="headerlink" title="1.Java中的数据类型"></a>1.Java中的数据类型</h3><p>Java中有3个数据类型：<strong>基本数据类型</strong>(在Java中，boolean、byte、short、int、long、char、float、double这八种是基本数据类型)、<strong>引用类型</strong>和<strong>null类型</strong>。其中，<strong>引用类型包括类类型(含数组)、接口类型。（和struck有点类似哈）</strong></p>
+<p>下列语句声明了一些变量：</p>
+<p>int k ;</p>
+<p>A a; //a是A数据类型的对象变量名（仅作声明）。</p>
+<p>B b1,b2,…,b10000;// 假定B是抽象类或接口。</p>
+<p>String s;</p>
+<p>注意：从数据类型与变量的角度看，基本数据类型变量k、类类型变量a和s、抽象类或接口类型变量b(1万个)，它们都是变量(标识符)。</p>
+<h2 id="2-关于句柄-handle"><a href="#2-关于句柄-handle" class="headerlink" title="2.关于句柄(handle)"></a>2.关于句柄(handle)</h2><p>为了区别<strong>引用类型</strong>的变量标识符和<strong>基本数据类型</strong>变量标识符，我们特别的<strong>使用Handle来称呼引用类型的变量标识符</strong>。上面例子中b1至b10000、a、s都是Handle。Handle直观的看就是手柄、把手，我们采用计算机界常用的中文翻译“句柄”。</p>
+<h3 id="2-1【Windows编程中的】句柄的含义"><a href="#2-1【Windows编程中的】句柄的含义" class="headerlink" title="2.1【Windows编程中的】句柄的含义"></a>2.1【Windows编程中的】句柄的含义</h3><p>句柄是WONDOWS用来标识被应用程序所建立或使用的对象的唯一整数，WINDOWS使用各种各样的句柄标识诸如应用程序实例，窗口，控制，位图，GDI对象等等。WINDOWS句柄有点象C语言中的文件句柄。</p>
+<p>从上面的定义中的我们可以看到，句柄是一个标识符，是拿来标识对象或者项目的，它就象我们的姓名一样，每个人都会有一个，不同的人的姓名不一样，但是，也可能有一个名字和你一样的人。从数据类型上来看它只是一个16位的无符号整数。应用程序几乎总是通过调用一个WINDOWS函数来获得一个句柄，之后其他的WINDOWS函数就可以使用该句柄，以引用相应的对象。</p>
+<p>如果想更透彻一点地认识句柄，我可以告诉大家，<strong>句柄是一种指向指针的指针。我们知道，所谓指针是一种内存地址</strong>。应用程序启动后，组成这个程序的各对象是驻留在内存的。如果简单地理解，似乎我们只要获知这个内存的首地址，那么就可以随时用这个地址访问对象。但是，如果您真的这样认为，那么您就大错特错了。我们知道，Windows是一个以虚拟内存为基础的操作系统。在这种系统环境下，Windows内存管理器经常在内存中来回移动对象，依此来满足各种应用程序的内存需要。对象被移动意味着它的地址变化了。如果地址总是如此变化，我们该到哪里去找该对象呢?</p>
+<p>为了解决这个问题，Windows操作系统为各应用程序腾出一些内存储地址，用来专门登记各应用对象在内存中的地址变化，而这个地址(存储单元的位置)本身是不变的。Windows内存管理器在移动对象在内存中的位置后，把对象新的地址告知这个句柄地址来保存。这样我们只需记住这个句柄地址就可以间接地知道对象具体在内存中的哪个位置。这个地址是在对象装载(Load)时由系统分配给的，当系统卸载时(Unload)又释放给系统。</p>
+<p><strong>句柄地址(稳定)→记载着对象在内存中的地址────→对象在内存中的地址(不稳定)→实际对象</strong></p>
+<h3 id="2-2Java中句柄的意义"><a href="#2-2Java中句柄的意义" class="headerlink" title="2.2Java中句柄的意义"></a>2.2Java中句柄的意义</h3><p>对句柄以前的【Windows编程中的】含义有了深刻的认识，我们可以说Handle是一个我们学习Java时非常需要的术语。它的意义在于区别“对象本身”和对象变量(或者严格点：对象所属的数据类型的变量标识符)。</p>
+<h3 id="2-3回到1中的变量声明："><a href="#2-3回到1中的变量声明：" class="headerlink" title="2.3回到1中的变量声明："></a>2.3回到1中的变量声明：</h3><p>现在，你应该对下面的注释一目了然。</p>
+<p>int k, j ;//k里面存放的是一个整型数。</p>
+<p>A a; //a里面存放地址。</p>
+<p>B b1,b2,…,b10000;// b1，…，b10000里面存放地址。</p>
+<p>String s; //s里面存放地址。</p>
+<h2 id="3-关于引用-reference"><a href="#3-关于引用-reference" class="headerlink" title="3.关于引用(reference)"></a>3.关于引用(reference)</h2><p>什么是“引用”? “the identifier you manipulate is actually a ‘reference’ to an object”。(Thinking in Java 2e )</p>
+<p>翻译是：你操纵的标识符实际上是一个对象的“引用”。或者精确些，翻译成：你操作的标识符实际上是指向一个对象的“引用”。显然，原文中reference是一个有方向感的东西。（说为“指向”也是蛮好）</p>
+<p>回到Java中来，引用可以想象成对象的身份证号码、对象的ID或者对象的手机号码。当然，更多的说法是，引用是对象在内存中住的房间号码。直观的说，对象的引用是创建对象时的返回值!引用是new表达式的返回值。</p>
+<p>new A(); 这里真正创建了一个对象，但我们没有用句柄去持有(hold、拿着、保存)该引用。从微观上看，new表达式完成了对象初始化的任务(三步曲，下文详细分析)，整体上看则返回一个引用。</p>
+<p>再次回到1中的变量声明，再看看下面的注释。</p>
+<p>A a; //声明句柄a，但未初始化，所以里面的值为null。</p>
+<p>B b1,b2,…,b10000;// 声明句柄b1，…，b10000，但未初始化，所以里面的值为null。</p>
+<p>String s; //声明句柄s，但未初始化，所以里面的值为null。</p>
+<h2 id="4-句柄与引用的关系"><a href="#4-句柄与引用的关系" class="headerlink" title="4.句柄与引用的关系"></a>4.句柄与引用的关系</h2><p>A a;//声明句柄a，值为null</p>
+<p>a=new A();//句柄的初始化(句柄 = 引用;即把引用赋值给句柄)</p>
+<p>引用：new A()的值。引用可以简单的看作对象占据内存空间的地址;通过对象的引用，就可以方便的与其他对象区别开来，引用就是对象独特的身份标识。</p>
+<p>完成句柄的初始化后，就可以用句柄遥控对象了。</p>
+<p>当然，这只是从一方面解释对象的创建和初始化，理解了句柄和引用的关系后，下面分析对象初始化的整个过程。先做以下准备工作，说说栈与堆。</p>
+<h2 id="5-java中栈-stack-与堆-heap"><a href="#5-java中栈-stack-与堆-heap" class="headerlink" title="5.java中栈(stack)与堆(heap)"></a>5.java中栈(stack)与堆(heap)</h2><p>在java中内存分为“栈”和“堆”这两种(Stack and Heap).基本数据类型存储在“栈”中，对象引用类型实际存储在“堆”中，在栈中只是保留了引用内存的地址值。</p>
+<p>顺便说说“==”与“equals()方法”，以帮助理解两者(Stack and Heap)的概念。</p>
+<p>在Java中利用”==”比较变量时候，系统使用变量在stack(栈)中所存的值来作为对比的依据，基本数据类型在stack中所存的值就是其?容值，而引用类型在stack中所存放的值是本身所指向Heap中对象的地址值。<strong>Java.lang包中的Object类有public boolean equals (Object obj)方法。它比较两个对象是否相等。仅当被比较的两个引用指向同一对象时(句柄相等)，对象的equals()方法返回true（是对象的比较哦)</strong>。(至于String类的equals()方法，它重写(override)equals()方法，不在本文讨论之列。)</p>
+<h2 id="6-对象的创建和初始化过程"><a href="#6-对象的创建和初始化过程" class="headerlink" title="6.对象的创建和初始化过程"></a>6.对象的创建和初始化过程</h2><p>在java中对象就是类的实例。在一般情况下，当把一个类实例化时，此类的所有成员，包括变量和方法，都被复制到属于此数据类型的一个新的实例中去。分析以下两段代码。</p>
+<h3 id="6-1-Vehicle-veh1-new-Vehicle"><a href="#6-1-Vehicle-veh1-new-Vehicle" class="headerlink" title="6.1 Vehicle veh1 = new Vehicle();"></a>6.1 Vehicle veh1 = new Vehicle();</h3><p>上面的语句做了如下的事情：</p>
+<p>①右边的“new Vehicle”，是以Vehicle类为模板，在堆空间里创建一个Vehicle类对象(也简称为Vehicle对象)。</p>
+<p>②末尾的()意味着，在对象创建后，立即调用Vehicle类的构造函数，对刚生成的对象进行初始化。构造函数是肯定有的。如果没创建，Java会补上一个默认的构造函数。(一般根据类型为null，0）</p>
+<p>③左边的“Vehicle veh1”创建了一个Vehicle类引用变量。</p>
+<p>④“=”操作符使对象引用指向刚创建的那个Vehicle对象。(回想一下句柄与引用)</p>
+<p>将上面的语句分为两个步骤：</p>
+<p>Vehicle veh1;</p>
+<p>veh1 = new Vehicle();</p>
+<p>这样写，就比较清楚了，有两个实体：</p>
+<p>一是对象引用变量，一是对象本身。</p>
+<p>在堆空间里创建的实体，与在栈空间里创建的实体不同。尽管它们也是确确实实存在的实体，但是似乎很难准确的“抓”住它。我们仔细研究一下第二句，找找刚创建的对象叫什么名字?有人说，它叫“Vehicle”。不对，“Vehicle”是类(对象的创建模板)的名字。一个Vehicle类可以据此创建出无数个对象，这些对象不可能全叫“Vehicle”。对象连名都没有，没法直接访问它。我们只能通过对象引用来间接访问对象。</p>
+<h3 id="6-2-Vehicle-veh2"><a href="#6-2-Vehicle-veh2" class="headerlink" title="6.2 Vehicle veh2;"></a>6.2 Vehicle veh2;</h3><p>veh2 = veh1;</p>
+<p>由于veh1和veh2只是对对象的引用，第二行所做的不过是把veh1的引用(地址)赋值给veh2，使得veh1和veh2同时指向唯一的一个Vehicle对象。</p>
+<h3 id="6-3-veh2-new-Vehicle"><a href="#6-3-veh2-new-Vehicle" class="headerlink" title="6.3 veh2 = new Vehicle();"></a>6.3 veh2 = new Vehicle();</h3><p>则引用变量veh2改指向第二个对象。</p>
+<p>从以上叙述再推演下去，我们可以获得以下结论：①一个对象引用可以指向0个（null）或1个对象;②一个对象可以有N个引用指向它。</p>
+<p><a href="http://blog.sina.com.cn/s/blog_7ed8eb7d0101k057.html" target="_blank" rel="noopener">原文链接，稍作修改</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      
+        <a data-url="https://jefine.github.io/2020/03/11/java%E4%B8%AD%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%88%9B%E5%BB%BA%EF%BC%8C%E5%88%9D%E5%A7%8B%E5%8C%96%E4%B8%8E%E5%BC%95%E7%94%A8/" data-id="ck811m6jv000xegr0500s5ypr" class="article-share-link">分享到</a>
+      
+
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+    
+  
+
+    
+    <article id="java8-java日期处理" class="article article-type-java8" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/03/01/java%E6%97%A5%E6%9C%9F%E5%A4%84%E7%90%86/" class="article-date">
+  <time datetime="2020-03-01T04:00:21.000Z" itemprop="datePublished">2020-03-01</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/java/">java</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/03/01/java%E6%97%A5%E6%9C%9F%E5%A4%84%E7%90%86/">java日期处理</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p> Java处理日期、日历和时间的方式一直被人所诟病，将 java.util.Date设定为可变类型，以及SimpleDateFormat的非线程安全使其应用非常受限。</p>
+<p>新API基于ISO标准日历系统，java.time包下的所有类都是不可变类型而且线程安全。</p>
+<p>(因为更安全，不可变了，所以就需要每一个日期搞一个变量（实例？）</p>
+<p><a href="https://mp.weixin.qq.com/s/AGkp_0l_hvMye8QVOBlxwQ" target="_blank" rel="noopener">18 个 Java8 日期处理的实践，太有用了！</a></p>
+<p><a href="https://www.notion.so/6ebff548541544f5a9ba2d6328513ee1" target="_blank" rel="noopener">java.time包</a></p>
+<h2 id="示例1-Java-8中获取今天的日期"><a href="#示例1-Java-8中获取今天的日期" class="headerlink" title="示例1:Java 8中获取今天的日期"></a>示例1:Java 8中获取今天的日期</h2><p>Java 8 中的 LocalDate 用于表示当天日期。和java.util.Date不同，它只有日期，不包含时间。当你仅需要表示日期时就用这个类。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.time.*;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">dealWithTime</span></span></span><br><span class="line"><span class="class"></span>&#123; </span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span> <span class="params">(String[] args)</span> </span></span><br><span class="line"><span class="function">	</span>&#123; </span><br><span class="line">        LocalDate today = LocalDate.now();</span><br><span class="line">        System.out.println(<span class="string">"today is:"</span>+today);</span><br><span class="line">  </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//output:</span></span><br><span class="line"><span class="comment">//today is:2020-02-29</span></span><br></pre></td></tr></table></figure>
+
+<p>而如果需要将年月日信息分开：那么我们可以利用上面的today继续操作；</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.time.*;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">dealWithTime</span></span></span><br><span class="line"><span class="class"></span>&#123; </span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span> <span class="params">(String[] args)</span> </span></span><br><span class="line"><span class="function">	</span>&#123; </span><br><span class="line">        LocalDate today = LocalDate.now();</span><br><span class="line">        System.out.println(<span class="string">"today is:"</span>+today);</span><br><span class="line">        <span class="keyword">int</span> year = today.getYear();</span><br><span class="line">        <span class="keyword">int</span> month = today.getMonthValue();</span><br><span class="line">        <span class="keyword">int</span> day = today.getDayOfMonth();</span><br><span class="line">        System.out.println(<span class="string">""</span>+year+month+day);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>注意：其中还有getMonth()，返回的是一个枚举month里的值（是“FEBRUARY”这种）</p>
+<p>而getMonthValue（）则返回一个值（2）所以我们还能发现许多这样的用法，比如day_of_year()等</p>
+<h2 id="示例2：自定义日期："><a href="#示例2：自定义日期：" class="headerlink" title="示例2：自定义日期："></a>示例2：自定义日期：</h2><p>我们通过静态工厂方法now()非常容易地创建了当天的日期，我们还可以调用另一个有用的工厂方法<strong>LocalDate.of()</strong>创建任意日期， 该方法需要<strong>传入年、月、日做参数，返回对应的LocalDate实例。</strong>这个方法的好处是没再犯老API的设计错误（而且我们也可以使用localDate的方法了），比如年度起始于1900，月份是从0开 始等等（这些问题就不提了哎，文末可能会吐槽一下，并演示一下有多么讨厌）。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.time.*;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">dealWithTime</span></span></span><br><span class="line"><span class="class"></span>&#123; </span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span> <span class="params">(String[] args)</span> </span></span><br><span class="line"><span class="function">	</span>&#123; </span><br><span class="line">        LocalDate fakeDate = LocalDate.of(<span class="number">2020</span>,<span class="number">2</span>,<span class="number">28</span>);</span><br><span class="line">        System.out.println(<span class="string">"yesterday is:"</span>+fakeDate);</span><br><span class="line">        </span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//output：</span></span><br><span class="line"><span class="comment">//yesterday is:2020-02-28</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="示例三：判断两个日期是否相同使用-equals"><a href="#示例三：判断两个日期是否相同使用-equals" class="headerlink" title="示例三：判断两个日期是否相同使用.equals()"></a>示例三：判断两个日期是否相同使用.equals()</h2><h2 id="示例四：检查像生日这种周期性事件：MonthDay："><a href="#示例四：检查像生日这种周期性事件：MonthDay：" class="headerlink" title="示例四：检查像生日这种周期性事件：MonthDay："></a>示例四：检查像生日这种周期性事件：MonthDay：</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.time.*;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">dealWithTime</span></span></span><br><span class="line"><span class="class"></span>&#123; </span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span> <span class="params">(String[] args)</span> </span></span><br><span class="line"><span class="function">	</span>&#123;   LocalDate date1 = LocalDate.now();</span><br><span class="line">        LocalDate date = LocalDate.of(<span class="number">2020</span>,<span class="number">2</span>,<span class="number">28</span>);</span><br><span class="line">        MonthDay birthday = MonthDay.of(date.getMonthValue(),date.getDayOfMonth());</span><br><span class="line">        MonthDay nowMonthDay = MonthDay.now();</span><br><span class="line">        <span class="keyword">if</span>(nowMonthDay.equals(birthday))</span><br><span class="line">        System.out.println(<span class="string">"yes"</span>);</span><br><span class="line">        <span class="keyword">else</span> System.out.println(<span class="string">"nonono"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//output：</span></span><br><span class="line"><span class="comment">//nonono</span></span><br></pre></td></tr></table></figure>
+
+<p>注意在这里getMonthValue（）和getMonth（）都是可以使用的。</p>
+<h1 id="说完日期，说说时间："><a href="#说完日期，说说时间：" class="headerlink" title="说完日期，说说时间："></a>说完日期，说说时间：</h1><h2 id="示例五：获取当前时间"><a href="#示例五：获取当前时间" class="headerlink" title="示例五：获取当前时间"></a>示例五：获取当前时间</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.time.*;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">dealWithTime</span></span></span><br><span class="line"><span class="class"></span>&#123; </span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span> <span class="params">(String[] args)</span> </span></span><br><span class="line"><span class="function">	</span>&#123;</span><br><span class="line">        LocalTime now = LocalTime.now();</span><br><span class="line">        System.out.println(now);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//output：</span></span><br><span class="line"><span class="number">19</span>:<span class="number">27</span>:<span class="number">01.708</span></span><br></pre></td></tr></table></figure>
+
+<p>这个时间的精度。。可以了</p>
+<h2 id="示例六：计算一段时间前-后的时间-plus-val-ChronoUnit-WEEKS"><a href="#示例六：计算一段时间前-后的时间-plus-val-ChronoUnit-WEEKS" class="headerlink" title="示例六：计算一段时间前/后的时间.plus(val,ChronoUnit.WEEKS)"></a>示例六：计算一段时间前/后的时间.plus(val,ChronoUnit.WEEKS)</h2><p>/.minus(val,ChronoUnit.WEEKS))</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.time.*;</span><br><span class="line"><span class="keyword">import</span> java.time.temporal.ChronoUnit;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">dealWithTime</span></span></span><br><span class="line"><span class="class"></span>&#123; </span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span> <span class="params">(String[] args)</span> </span></span><br><span class="line"><span class="function">	</span>&#123;</span><br><span class="line">        LocalDate now = LocalDate.now();</span><br><span class="line">        LocalDate after = now.plus(<span class="number">1</span>,ChronoUnit.WEEKS);</span><br><span class="line"></span><br><span class="line">        System.out.println(after);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>这里是日期，那么就要用localDate了</p>
+<h2 id="示例七-Java-8的Clock时钟类"><a href="#示例七-Java-8的Clock时钟类" class="headerlink" title="示例七:Java 8的Clock时钟类"></a>示例七:Java 8的Clock时钟类</h2><p>Java 8增加了一个Clock时钟类用于获取当时的时间戳，或当前时区下的日期时间信息。以前用到System.currentTimeInMillis()和TimeZone.getDefault()的地方都可用Clock替换</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.time.*;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">dealWithTime</span></span></span><br><span class="line"><span class="class"></span>&#123; </span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span> <span class="params">(String[] args)</span> </span></span><br><span class="line"><span class="function">	</span>&#123;</span><br><span class="line">        Clock clock = Clock.systemUTC();</span><br><span class="line">        System.out.println(<span class="string">"Clock : "</span> + clock.instant());</span><br><span class="line">        System.out.println(<span class="string">"Clock : "</span> + clock.millis());</span><br><span class="line">        <span class="comment">// Returns time based on system clock zone</span></span><br><span class="line">        Clock defaultClock = Clock.systemDefaultZone();</span><br><span class="line">        System.out.println(<span class="string">"Clock : "</span> + defaultClock.millis());</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//output：</span></span><br><span class="line"><span class="comment">//Clock : 2020-03-01T03:06:27.520Z</span></span><br><span class="line"><span class="comment">//Clock : 1583031987647</span></span><br><span class="line"><span class="comment">//Clock : 1583031987687</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="示例八-如何用Java判断日期是早于还是晚于另一个日期"><a href="#示例八-如何用Java判断日期是早于还是晚于另一个日期" class="headerlink" title="示例八:如何用Java判断日期是早于还是晚于另一个日期"></a>示例八:如何用Java判断日期是早于还是晚于另一个日期</h2><p>另一个工作中常见的操作就是如何判断给定的一个日期是大于某天还是小于某天？在Java 8中，LocalDate类有两类方法isBefore()和isAfter()用于比较日期。调用isBefore()方法时，如果给定日期小于当前日期则返回true。当然也可判断是否日期相同。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.time.*;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">dealWithTime</span></span></span><br><span class="line"><span class="class"></span>&#123; </span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span> <span class="params">(String[] args)</span> </span></span><br><span class="line"><span class="function">	</span>&#123;</span><br><span class="line">        LocalDate today = LocalDate.now();</span><br><span class="line">        LocalDate fakeDate = LocalDate.of(<span class="number">2019</span>, <span class="number">2</span>, <span class="number">1</span>);</span><br><span class="line">        <span class="keyword">if</span>(fakeDate.isBefore(today))</span><br><span class="line">        &#123;</span><br><span class="line">            System.out.print(<span class="string">"yes"</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span> System.out.print(<span class="string">"nono"</span>);</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//output：</span></span><br><span class="line"><span class="comment">//yes</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="示例九-Java-8中处理时区"><a href="#示例九-Java-8中处理时区" class="headerlink" title="示例九:Java 8中处理时区"></a>示例九:Java 8中处理时区</h2><p>Java 8不仅分离了日期和时间，也把时区分离出来了。现在有一系列单独的类如ZoneId来处理特定时区，ZoneDateTime类来表示某时区下的时间。这在Java 8以前都是 GregorianCalendar类来做的。下面这个例子展示了如何把本时区的时间转换成另一个时区的时间。</p>
+<p><strong>其他：同样也可以检查闰年，独立的年月计算两个日期之间天数（between）</strong></p>
+<h2 id="示例十：Java-8中如何使用预定义的格式化工具去解析或格式化日期"><a href="#示例十：Java-8中如何使用预定义的格式化工具去解析或格式化日期" class="headerlink" title="示例十：Java 8中如何使用预定义的格式化工具去解析或格式化日期"></a>示例十：Java 8中如何使用预定义的格式化工具去解析或格式化日期</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.time.*;</span><br><span class="line"><span class="keyword">import</span> java.time.format.DateTimeFormatter;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">dealWithTime</span></span></span><br><span class="line"><span class="class"></span>&#123; </span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span> <span class="params">(String[] args)</span> </span></span><br><span class="line"><span class="function">	</span>&#123;</span><br><span class="line">        String dayAfterTommorrow = <span class="string">"20200302"</span>;</span><br><span class="line">        LocalDate formatted = LocalDate.parse(dayAfterTommorrow,DateTimeFormatter.BASIC_ISO_DATE);</span><br><span class="line">        System.out.println(dayAfterTommorrow+<span class="string">"  格式化后的日期为:  "</span>+formatted);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//output：</span></span><br><span class="line"><span class="comment">//20200302  格式化后的日期为:  2020-03-02</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="示例十一：字符串互转日期类型"><a href="#示例十一：字符串互转日期类型" class="headerlink" title="示例十一：字符串互转日期类型"></a>示例十一：字符串互转日期类型</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.time.*;</span><br><span class="line"><span class="keyword">import</span> java.time.format.DateTimeFormatter;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">dealWithTime</span></span></span><br><span class="line"><span class="class"></span>&#123; </span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span> <span class="params">(String[] args)</span> </span></span><br><span class="line"><span class="function">	</span>&#123;</span><br><span class="line">        LocalDateTime date = LocalDateTime.now();</span><br><span class="line"></span><br><span class="line">        DateTimeFormatter format1 = DateTimeFormatter.ofPattern(<span class="string">"yyyy/MM/dd hh:mm:ss"</span>);</span><br><span class="line">    <span class="comment">//日期转字符串</span></span><br><span class="line">        String str = date.format(format1);</span><br><span class="line"></span><br><span class="line">        System.out.println(<span class="string">"日期转换为字符串:"</span>+str);</span><br><span class="line"></span><br><span class="line">        DateTimeFormatter format2 = DateTimeFormatter.ofPattern(<span class="string">"yyyy/MM/dd HH:mm:ss"</span>);</span><br><span class="line">    <span class="comment">//字符串转日期</span></span><br><span class="line">        LocalDate date2 = LocalDate.parse(str,format2);</span><br><span class="line">        System.out.println(<span class="string">"日期类型:"</span>+date2);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//output：</span></span><br><span class="line"><span class="comment">//日期转换为字符串:2020/03/01 11:44:03</span></span><br><span class="line"><span class="comment">//日期类型:2020-03-01</span></span><br></pre></td></tr></table></figure>
+
+<p>如果我们将str的内容更换一下，只要format的内容一致：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.time.*;</span><br><span class="line"><span class="keyword">import</span> java.time.format.DateTimeFormatter;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">dealWithTime</span></span></span><br><span class="line"><span class="class"></span>&#123; </span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span> <span class="params">(String[] args)</span> </span></span><br><span class="line"><span class="function">	</span>&#123;</span><br><span class="line">        String str = <span class="string">"20190112120101"</span>;</span><br><span class="line"></span><br><span class="line">        DateTimeFormatter format2 = DateTimeFormatter.ofPattern(<span class="string">"yyyyMMddHHmmss"</span>);</span><br><span class="line">    <span class="comment">//字符串转日期</span></span><br><span class="line">        LocalDate date2 = LocalDate.parse(str,format2);</span><br><span class="line">        System.out.println(<span class="string">"日期类型:"</span>+date2);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//output：</span></span><br><span class="line"><span class="comment">//日期类型:2019-01-12</span></span><br></pre></td></tr></table></figure>
+
+<p>在这其中我们还是有很多可以去挖掘的。。。</p>
+<p>对了，最后吐槽一下</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">dealWithTime</span></span></span><br><span class="line"><span class="class"></span>&#123; </span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span> <span class="params">(String[] args)</span> </span></span><br><span class="line"><span class="function">	</span>&#123;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">long</span> t = System.currentTimeMillis();</span><br><span class="line"></span><br><span class="line">        System.out.println(t);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>这玩意返回的必须是long类型但是把现在也用不到。返回的时间是距离1970年一月一日零点零分的毫秒数。。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      
+        <a data-url="https://jefine.github.io/2020/03/01/java%E6%97%A5%E6%9C%9F%E5%A4%84%E7%90%86/" data-id="ck811m6kj001fegr07bu20rjb" class="article-share-link">分享到</a>
+      
+
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/time/" rel="tag">time</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+    
+  
+
+    
+    <article id="post-P1023税收与补贴问题" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/02/29/P1023%E7%A8%8E%E6%94%B6%E4%B8%8E%E8%A1%A5%E8%B4%B4%E9%97%AE%E9%A2%98/" class="article-date">
+  <time datetime="2020-02-29T04:26:23.000Z" itemprop="datePublished">2020-02-29</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E7%BC%96%E7%A8%8B/">编程</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/02/29/P1023%E7%A8%8E%E6%94%B6%E4%B8%8E%E8%A1%A5%E8%B4%B4%E9%97%AE%E9%A2%98/">P1023税收与补贴问题</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="题目背景"><a href="#题目背景" class="headerlink" title="题目背景"></a>题目背景</h2><p>每样商品的价格越低，其销量就会相应增大。现已知某种商品的成本及其在若干价位上的销量（产品不会低于成本销售），并假设相邻价位间销量的变化是线性的且在价格高于给定的最高价位后，销量以某固定数值递减。（我们假设价格及销售量都是整数）</p>
+<p>对于某些特殊商品，不可能完全由市场去调节其价格。这时候就需要政府以税收或补贴的方式来控制。（所谓税收或补贴就是对于每个产品收取或给予生产厂家固定金额的货币）</p>
+<h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><p>你是某家咨询公司的项目经理，现在你已经知道政府对某种商品的预期价格，以及在各种价位上的销售情况。要求你确定政府对此商品是应收税还是补贴的最少金额（也为整数），才能使商家在这样一种政府预期的价格上，获取相对其他价位上的最大总利润。</p>
+<p>总利润=单位商品利润   × × 销量</p>
+<p>单位商品利润=单位商品价格 - 单位商品成本 （- 税金  or  + 补贴）</p>
+<h2 id="输入格式"><a href="#输入格式" class="headerlink" title="输入格式"></a>输入格式</h2><p>输入的第一行为政府对某种商品的预期价，第二行有两个整数，第一个整数为商品成本，第二个整数为以成本价销售时的销售量，以下若干行每行都有两个整数，第一个为某价位时的单价，第二个为此时的销量，以一行−1-1−1，−1-1−1表示所有已知价位及对应的销量输入完毕，输入的最后一行为一个单独的整数表示在已知的最高单价外每升高一块钱将减少的销量。</p>
+<h2 id="输出格式"><a href="#输出格式" class="headerlink" title="输出格式"></a>输出格式</h2><p>输出有两种情况：若在政府预期价上能得到最大总利润，则输出一个单独的整数，数的正负表示是补贴还是收税，数的大小表示补贴或收税的金额最小值。若有多解，取绝对值最小的输出。</p>
+<p>如在政府预期价上不能得到最大总利润，则输出“NO SOLUTION”。</p>
+<h2 id="输入输出样例"><a href="#输入输出样例" class="headerlink" title="输入输出样例"></a>输入输出样例</h2><p><strong>输入 #1</strong> </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">31</span><br><span class="line">28 130</span><br><span class="line">30 120</span><br><span class="line">31 110</span><br><span class="line">-1  -1</span><br><span class="line">15</span><br></pre></td></tr></table></figure>
+
+<p><strong>输出 #1</strong> </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">4</span><br></pre></td></tr></table></figure>
+
+<h2 id="说明-提示"><a href="#说明-提示" class="headerlink" title="说明/提示"></a>说明/提示</h2><p>所有数字均小于100000</p>
+<h1 id="解题思路："><a href="#解题思路：" class="headerlink" title="解题思路："></a>解题思路：</h1><h3 id="tips：说实话，这个题目看了很久。。。"><a href="#tips：说实话，这个题目看了很久。。。" class="headerlink" title="tips：说实话，这个题目看了很久。。。"></a>tips：说实话，这个题目看了很久。。。</h3><p>最后，发现所求的是什么了。是要求政府给定一个预期的价格，然后你去尝试不同的补贴或者税收，得到他们的利润，并<strong>看看在每种税收或补贴下总利润最高的价格是不是政府预期价</strong> 。（可以好好思考一下这句，那么我们就计算出不同补贴或税收下，利润最大的价格，再比较）</p>
+<p>（最后，好像没有不符合条件的，所以不用管。。。）</p>
+<p>那么：</p>
+<ol>
+<li><p>我们可以先将购买者的价格和所对应的销量全部存起来，但这又有两个问题：</p>
+<p>1）在题目给出的价格和销量之间，销量是随价格线性变化的，我们可通过计算得出期间的对应价格与销量，并都储存起来。（具体实施方法见代码）即 价格-销量表。 </p>
+<p>2）再输入的最后给定了之后的销量减少值，我们就可以从中得到其后，一直到销量小于0的对应关系，并储存起来。</p>
+</li>
+<li><p>最后再根据不同的补贴（税收）（用一个循环从1开始跑到10000）依次计算其最大利润，并比较在该最大利润的价格是否与政府的价格相同。</p>
+</li>
+</ol>
+<h2 id="代码："><a href="#代码：" class="headerlink" title="代码："></a>代码：</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//代码来源：https://www.luogu.com.cn/user/174034</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">int</span> a[<span class="number">100010</span>][<span class="number">3</span>];<span class="comment">//用于存放价格和销量的数组</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> i=<span class="number">1</span>,j=<span class="number">1</span>,k,expect,down,<span class="built_in">max</span>,temp,cha,xl,num,s,price,p;</span><br><span class="line">    <span class="built_in">cin</span>&gt;&gt;expect;<span class="comment">//读入预期价</span></span><br><span class="line">    <span class="keyword">while</span>(<span class="built_in">cin</span>&gt;&gt;a[i][<span class="number">1</span>]&gt;&gt;a[i][<span class="number">2</span>]&amp;&amp;a[i][<span class="number">1</span>]!=<span class="number">-1</span>&amp;&amp;a[i] [<span class="number">2</span>]!=<span class="number">-1</span>)<span class="comment">//如果输入的两个数不是-1，-1</span></span><br><span class="line">    &#123;</span><br><span class="line">        i++;<span class="comment">//循环变量i++</span></span><br><span class="line">        <span class="keyword">if</span>(i&gt;<span class="number">2</span>&amp;&amp;a[i<span class="number">-1</span>][<span class="number">1</span>]-a[i<span class="number">-2</span>][<span class="number">1</span>]&gt;<span class="number">1</span>)<span class="comment">//如果两个价格之间差大于一</span></span><br><span class="line">        &#123;</span><br><span class="line">            i--;<span class="comment">//回到上一个读入的销量</span></span><br><span class="line">            cha=(a[i<span class="number">-1</span>][<span class="number">2</span>]-a[i][<span class="number">2</span>])/(a[i][<span class="number">1</span>]-a[i<span class="number">-1</span>][<span class="number">1</span>]);<span class="comment">//求出每次销量减少多少：销量差/价格差</span></span><br><span class="line">            temp=a[i][<span class="number">1</span>];<span class="comment">//记录下价格</span></span><br><span class="line">            <span class="keyword">for</span>(j=a[i<span class="number">-1</span>][<span class="number">1</span>]+<span class="number">1</span>;j&lt;=temp;j++)<span class="comment">//按价格递增顺序依次写入</span></span><br><span class="line">            &#123;</span><br><span class="line">                a[i][<span class="number">1</span>]=j;<span class="comment">//写入价格</span></span><br><span class="line">                a[i][<span class="number">2</span>]=a[i<span class="number">-1</span>][<span class="number">2</span>]-cha;<span class="comment">//按销量差写入销量</span></span><br><span class="line">                i++;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">cin</span>&gt;&gt;down;<span class="comment">//输入超过最大价格之后每次销量降低多少</span></span><br><span class="line">    i--;<span class="comment">//因为上面的while循环最后有i++所以用i--抵消……</span></span><br><span class="line">    xl=a[i][<span class="number">2</span>];<span class="comment">//记录目前的销量</span></span><br><span class="line">    <span class="keyword">while</span>(xl&gt;<span class="number">0</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span>(xl-down&lt;<span class="number">0</span>)<span class="keyword">break</span>;<span class="comment">//如销量小于零则退出</span></span><br><span class="line">        <span class="keyword">else</span><span class="comment">//否则</span></span><br><span class="line">        &#123;</span><br><span class="line">            xl-=down;<span class="comment">//销量每次减掉down</span></span><br><span class="line">            i++;<span class="comment">//循环变量++</span></span><br><span class="line">            a[i][<span class="number">1</span>]=a[i<span class="number">-1</span>][<span class="number">1</span>]+<span class="number">1</span>;<span class="comment">//每次价格+1</span></span><br><span class="line">            a[i][<span class="number">2</span>]=xl;<span class="comment">//销量就是xl</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span>(j=<span class="number">1</span>;j&lt;=<span class="number">10000</span>;j++)<span class="comment">//该遍历了，因为收税相当于补贴*-1所以记录一下符号即可</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">max</span>=<span class="number">-99999</span>;<span class="comment">//用于存储最大的总利润</span></span><br><span class="line">        <span class="keyword">for</span>(k=<span class="number">1</span>;k&lt;=i;k++)<span class="comment">//每次扫一遍每一种价格</span></span><br><span class="line">        &#123;</span><br><span class="line">            num=(a[k][<span class="number">1</span>]-a[<span class="number">1</span>][<span class="number">1</span>]+j)*a[k][<span class="number">2</span>];<span class="comment">//套公式算出总利润</span></span><br><span class="line">            <span class="keyword">if</span>(num&gt;=<span class="built_in">max</span>)<span class="comment">//如果总利润比目前最大的大</span></span><br><span class="line">            &#123;</span><br><span class="line">                <span class="built_in">max</span>=num;<span class="comment">//更新max</span></span><br><span class="line">                price=a[k][<span class="number">1</span>];<span class="comment">//记录下价格</span></span><br><span class="line">                p=<span class="number">1</span>;<span class="comment">//记录下符号</span></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(price==expect)&#123;<span class="built_in">cout</span>&lt;&lt;j*p;<span class="keyword">return</span> <span class="number">0</span>;&#125;<span class="comment">//如果价格就是政府预期价则打印出来，因为本身就是从小到大遍历所以不用求绝对值最小的</span></span><br><span class="line">        <span class="built_in">max</span>=<span class="number">-99999</span>;<span class="comment">//后面是收税，原理同上</span></span><br><span class="line">        <span class="keyword">for</span>(k=<span class="number">1</span>;k&lt;=i;k++)</span><br><span class="line">        &#123;</span><br><span class="line">            num=(a[k][<span class="number">1</span>]-a[<span class="number">1</span>][<span class="number">1</span>]-j)*a[k][<span class="number">2</span>];</span><br><span class="line">            <span class="keyword">if</span>(num&gt;=<span class="built_in">max</span>)</span><br><span class="line">            &#123;</span><br><span class="line">               <span class="built_in">max</span>=num;</span><br><span class="line">                price=a[k][<span class="number">1</span>];  </span><br><span class="line">                p=<span class="number">-1</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(price==expect)&#123;<span class="built_in">cout</span>&lt;&lt;j*p;<span class="keyword">return</span> <span class="number">0</span>;&#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+
+      
+    </div>
+    <footer class="article-footer">
+      
+        <a data-url="https://jefine.github.io/2020/02/29/P1023%E7%A8%8E%E6%94%B6%E4%B8%8E%E8%A1%A5%E8%B4%B4%E9%97%AE%E9%A2%98/" data-id="ck811m6jo000regr0huw43jrr" class="article-share-link">分享到</a>
+      
+
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%B4%9B%E8%B0%B7/" rel="tag">洛谷</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+    
+  
+
+    
+    <article id="post-概述STL" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/02/28/%E6%A6%82%E8%BF%B0STL/" class="article-date">
+  <time datetime="2020-02-28T05:27:31.000Z" itemprop="datePublished">2020-02-28</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E7%AE%97%E6%B3%95/">算法</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/02/28/%E6%A6%82%E8%BF%B0STL/">概述STL</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>使用stl可以大大提高算法设计的效率和可靠性。</p>
+<ol>
+<li>概述：</li>
+</ol>
+<p>STL 即Standard Template Library标准模板类库。</p>
+<p>是标准c++库的子集</p>
+<p>通用，强大</p>
+<ol>
+<li>构成：</li>
+</ol>
+<p>container：容器（储存元素）</p>
+<p>algorithm：算法（操作元素）</p>
+<p>iterator：迭代器（类似指针）</p>
+<p>容器container:是一种数据结构</p>
+<h2 id="顺序容器："><a href="#顺序容器：" class="headerlink" title="顺序容器："></a>顺序容器：</h2><p>1）</p>
+<p><a href="https://jefine.github.io/2020/02/27/stlvector/">vector向量容器</a></p>
+<p>2）</p>
+<p>string 类似于上面的函数，有个别的例外。</p>
+<p>3）</p>
+<p>Dequen双端队列容器</p>
+<p>是链表和字符串的调和产物，是多个连续的队列块。</p>
+<p>4）list链表容器</p>
+<p>是一个双链表类模板，只能使用++ - -来使用迭代器</p>
+<h2 id="2-关联容器："><a href="#2-关联容器：" class="headerlink" title="2. 关联容器："></a>2. 关联容器：</h2><p>关联容器中每个元素都有一个关键字（key），通过key来储存和读取原损失，这些关键词可能于元素在容器中的位置无关，所以关联容器中不提供顺序容器中的front(),push_front(),pop_back()等操作，可以实现快速搜索（运用了分类的数据结构）</p>
+<p>1）set（集合容器）/multiset（多重集合容器）</p>
+<p>区别：</p>
+<p>set中元素的关键字是唯一的，而multiset的关键字可以不唯一。<strong>默认情况下会对元素按照升序排列。</strong></p>
+<p>而如果需要集合中的元素可以重复那么可以使用multiset。</p>
+<p>又由于set没有重复的元素，所以如果添加的元素相同，那么不添加；而multiset可以有重复的元素，所以在删除的时候，会将其全部删除然后返回一个被删去元素个数。</p>
+<p>特殊的函数有：</p>
+<p>count（k）返回k在set中的次数。</p>
+<p>find（k)如存在返回该元素的迭代器，否则返回end（）；</p>
+<p>upper/lower_bound（k）返回关键字&gt;k或&gt;=k的第一个元素的迭代器</p>
+<p>2）map（映射容器）/multimap（多重映射容器）</p>
+<p>映射是实现关键字和值的各系的储存结构，可以用key来访问value</p>
+<p>实现关键字和值关系的对应，而map是一一对应；而multimap是</p>
+<p>同时map/multimap容器中的key和value是pair类型（不是像set一样两者都是key类型）pair是一个结构体声明如下：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">pair</span></span></span><br><span class="line"><span class="class">&#123;</span> T first;<span class="comment">//对应key值</span></span><br><span class="line">  T second;<span class="comment">//对应value值</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>按照key升序排列，以红黑树的形式。map支持【】；而multimap不允许【】（在使用map[key]的时侯如果不存在该key值那么就以其为关键字插入一个元素。</p>
+<p>三种方式插入：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="built_in">map</span>&lt;<span class="keyword">char</span>,<span class="keyword">int</span>&gt; mym;</span><br><span class="line">    mym[<span class="string">'a'</span>] = <span class="number">1</span>;</span><br><span class="line">    mym.insert(pair&lt;<span class="keyword">char</span>,<span class="keyword">int</span>&gt;(<span class="string">'b'</span>,<span class="number">2</span>));</span><br><span class="line">    mym.insert(<span class="built_in">map</span>&lt;<span class="keyword">char</span>,<span class="keyword">int</span>&gt;::value_type(<span class="string">'c'</span>,<span class="number">2</span>));</span><br><span class="line">    <span class="built_in">map</span>&lt;<span class="keyword">char</span>,<span class="keyword">int</span>&gt;::iterator it;</span><br><span class="line">    <span class="keyword">for</span>(it = mym.<span class="built_in">begin</span>();it!=mym.<span class="built_in">end</span>();++it)&#123;</span><br><span class="line">        <span class="built_in">cout</span>&lt;&lt;it-&gt;first&lt;&lt;it-&gt;second;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="适配器容器："><a href="#适配器容器：" class="headerlink" title="适配器容器："></a>适配器容器：</h2><p>是基于其他的容器实现的容器，在底层容器实现适配器容器的功能，实际上可以将其作为一个一般的容器去使用。后进后出（只能从顶部出入）</p>
+<p>1）stark 栈容器：</p>
+<p>后进后出默认的底层容器是deque，（当然也可以指定其他的容器作为stark的底层容器）</p>
+<p>只有简单的pop（）出栈；push（）入栈；empty（）；size（）</p>
+<p>2）queue队列容器：先进先出。</p>
+<p>插入的元素在队尾，pop（）出的元素在队首。</p>
+<p>3)priority_queue(优先队列容器）</p>
+<p>可随意顺序入队列但是一旦进入就会被排序（按照值的大小排序）</p>
+<p>在这个里面使用pop（）来找到队伍最前面的（也是最大值的）</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      
+        <a data-url="https://jefine.github.io/2020/02/28/%E6%A6%82%E8%BF%B0STL/" data-id="ck811m6lw002gegr0coke6trh" class="article-share-link">分享到</a>
+      
+
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/stl/" rel="tag">stl</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+    
+  
+
+    
+    <article id="post-stlvector" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/02/27/stlvector/" class="article-date">
+  <time datetime="2020-02-27T09:27:29.000Z" itemprop="datePublished">2020-02-27</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E7%AE%97%E6%B3%95/">算法</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/02/27/stlvector/">stlvector</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Vectors are same as dynamic arrays with the ability to resize itself automatically when an element is inserted or deleted, with their storage being handled automatically by the container. Vector elements are placed in contiguous storage so that they can be accessed and traversed using iterators. In vectors, data is inserted at the end. Inserting at the end takes differential time, as sometimes there may be a need of extending the array. Removing the last element takes only constant time because no resizing happens. Inserting and erasing at the beginning or in the middle is linear in time.</p>
+<p>向量与<strong>动态数组</strong>相同，具有在插入或删除元素时自动调整自身大小的能力，并且容器自动处理其存储。 矢量元素放置在连续的存储中，以便可以使用迭代器对其进行访问和遍历。 在向量中，数据插入到最后（push_back())。 在末尾插入需要花费不同的时间，因为有时可能需要扩展阵列。 删除最后一个元素只需要固定的时间，因为不会发生大小调整。 在开始或中间插入和擦除的时间是线性的。</p>
+<h3 id="Certain-functions-associated-with-the-vector-are"><a href="#Certain-functions-associated-with-the-vector-are" class="headerlink" title="Certain functions associated with the vector are:"></a>Certain functions associated with the vector are:</h3><h2 id="成员函数："><a href="#成员函数：" class="headerlink" title="成员函数："></a>成员函数：</h2><p><strong>Iterators操作</strong></p>
+<ol>
+<li><a href="https://www.geeksforgeeks.org/vectorbegin-vectorend-c-stl/" target="_blank" rel="noopener">begin()</a> – Returns an iterator pointing to the first element in the vector（返回一个指向开始的迭代器（指针））</li>
+<li><a href="https://www.geeksforgeeks.org/vectorbegin-vectorend-c-stl/" target="_blank" rel="noopener">end()</a> – Returns an iterator pointing to the theoretical element that follows the last element in the vector（返回的是最后一个元素的迭代器（指针））</li>
+<li><a href="https://www.geeksforgeeks.org/vector-rbegin-and-rend-function-in-c-stl/" target="_blank" rel="noopener">rbegin()</a> – Returns a reverse iterator pointing to the last element in the vector (reverse beginning). It moves from last to first element（反转的开始，及最后的位置）</li>
+<li><a href="https://www.geeksforgeeks.org/vector-rbegin-and-rend-function-in-c-stl/" target="_blank" rel="noopener">rend()</a> – Returns a reverse iterator pointing to the theoretical element（反转的end，<strong>并不是指向第一个而是第一个之前的理论位置</strong>）<br>preceding the first element in the vector (considered as reverse end)</li>
+<li><a href="https://www.geeksforgeeks.org/vector-cbegin-vector-cend-c-stl/" target="_blank" rel="noopener">cbegin()</a> – Returns a constant iterator pointing to the first element in the vector.（返回一个常量的开始指针，无法修改）</li>
+<li><a href="https://www.geeksforgeeks.org/vector-cbegin-vector-cend-c-stl/" target="_blank" rel="noopener">cend()</a> – Returns a constant iterator pointing to the theoretical element that follows the last element in the vector.（返回最后一个之后的一个理论位置的常量，无法被修改）</li>
+<li><a href="https://www.geeksforgeeks.org/vectorcrend-vectorcrbegin-examples/" target="_blank" rel="noopener">crbegin()</a> – Returns a constant reverse iterator pointing to the last element in<br>the vector (reverse beginning). It moves from last to first element（同理常量，最后一个的位置）</li>
+<li><a href="https://www.geeksforgeeks.org/vectorcrend-vectorcrbegin-examples/" target="_blank" rel="noopener">crend()</a> – Returns a constant reverse iterator pointing to the theoretical<br>element preceding the first element in the vector (considered as reverse end)（同理常量，第一个之前的位置）</li>
+</ol>
+<p>理解：当使用了这些不同的迭代器操作可以减少操作的失误，更加准确，直观地写出更优质的代码。</p>
+<h3 id="Capacity容量"><a href="#Capacity容量" class="headerlink" title="Capacity容量"></a><strong>Capacity容量</strong></h3><ol>
+<li><p><a href="https://www.geeksforgeeks.org/vectorempty-vectorsize-c-stl/" target="_blank" rel="noopener">size()</a> – Returns the number of elements in the vector.元素的个数</p>
+</li>
+<li><p><a href="https://www.geeksforgeeks.org/vector-max_size-function-in-c-stl/" target="_blank" rel="noopener">max_size()</a> – Returns the maximum number of elements that the vector can hold.返回可容纳的最大地元素数量（通常超级超级大，是内存）</p>
+</li>
+<li><p><a href="https://www.geeksforgeeks.org/vector-capacity-function-in-c-stl/" target="_blank" rel="noopener">capacity()</a> – Returns the size of the storage space currently allocated to the vector expressed as number of elements.</p>
+<p> 返回现在所分配的内存大小（但他是用对应的元素个数来作为返回值的）</p>
+</li>
+<li><p><a href="https://www.geeksforgeeks.org/vector-resize-c-stl/" target="_blank" rel="noopener">resize(n)</a> – Resizes the container so that it contains ‘n’ elements.调整容器的大小，使其能够容纳n个元素，如果原本的容量比他大，那就不更替</p>
+</li>
+<li><p><a href="https://www.geeksforgeeks.org/vectorempty-vectorsize-c-stl/" target="_blank" rel="noopener">empty()</a> – Returns whether the container is empty.返回vector是否为空</p>
+</li>
+<li><p><a href="https://www.geeksforgeeks.org/vector-shrink_to_fit-function-in-c-stl/" target="_blank" rel="noopener">shrink_to_fit()</a> – Reduces the capacity of the container to fit its size and destroys all elements beyond the capacity.减小容器的容量以适应其大小，并销毁超出容量的元素</p>
+</li>
+<li><p><a href="https://www.geeksforgeeks.org/using-stdvectorreserve-whenever-possible/" target="_blank" rel="noopener">reserve()</a> – Requests that the vector capacity be at least enough to contain n elements.调整容器大小，使其最小包含n个元素</p>
+</li>
+</ol>
+<ul>
+<li><strong>需要注意的是resize会将多出的空间分配为0，而reserve不会。</strong></li>
+<li>而shrink_to_fit仅仅适用于c++11及其以上（devc++，不支持）</li>
+<li>empty（）返回的是bool但是在c中1或者0也可以使用；</li>
+</ul>
+<h3 id="访问元素："><a href="#访问元素：" class="headerlink" title="访问元素："></a><strong>访问元素：</strong></h3><p><strong>Element access:</strong></p>
+<ol>
+<li><a href="https://www.geeksforgeeks.org/vectoroperator-vectoroperator-c-stl/" target="_blank" rel="noopener">reference operator [g]</a> – Returns a reference to the element at position ‘g’ in the vector使用类似于数组的取址符【】</li>
+<li><a href="https://www.geeksforgeeks.org/vectorat-vectorswap-c-stl/" target="_blank" rel="noopener">at(g)</a> – Returns a reference to the element at position ‘g’ in the vector（和上面的类似，但会更好，不会越界）</li>
+<li><a href="https://www.geeksforgeeks.org/vectorfront-vectorback-c-stl/" target="_blank" rel="noopener">front()</a> – Returns a reference to the first element in the vector最前的元素</li>
+<li><a href="https://www.geeksforgeeks.org/vectorfront-vectorback-c-stl/" target="_blank" rel="noopener">back()</a> – Returns a reference to the last element in the vector最后的元素</li>
+<li><a href="https://www.geeksforgeeks.org/vector-data-function-in-c-stl/" target="_blank" rel="noopener">data()</a> – Returns a direct pointer to the memory array used internally by the vector to store its owned elements.不接受任何参数，返回该向量的指针。</li>
+</ol>
+<h3 id="修饰符："><a href="#修饰符：" class="headerlink" title="修饰符："></a>修饰符：</h3><p><strong>Modifiers:</strong></p>
+<ol>
+<li><p><a href="https://www.geeksforgeeks.org/vector-assign-in-c-stl/" target="_blank" rel="noopener">assign()</a> – It assigns new value to the vector elements by replacing old ones重新分配（未被分配的就被删了，但是被分配的内存不变）</p>
+</li>
+<li><p><a href="https://www.geeksforgeeks.org/vectorpush_back-vectorpop_back-c-stl/" target="_blank" rel="noopener">push_back()</a> – It push the elements into a vector from the back加一个括号内的元素到vector的最后</p>
+</li>
+<li><p><a href="https://www.geeksforgeeks.org/vectorpush_back-vectorpop_back-c-stl/" target="_blank" rel="noopener">pop_back()</a> – It is used to pop or remove elements from a vector from the back.</p>
+</li>
+<li><p><a href="https://www.geeksforgeeks.org/vector-insert-function-in-c-stl/" target="_blank" rel="noopener">insert()</a> – It inserts new elements before the element at the specified position（在指定元素之前插入一个指定的元素</p>
+<ul>
+<li>在指定位置loc前插入值为val的元素,返回指向这个元素的<a href="notion://www.notion.so/iterators.html" target="_blank" rel="noopener">迭代器</a>,.insert(loc,val)</li>
+<li>在指定位置loc前插入num个值为val的元素.insert(loc,num,val)</li>
+<li>在指定位置loc前插入区间[start, end)的所有元素.insert(loc,locstart,locend)</li>
+</ul>
+</li>
+<li><p><a href="https://www.geeksforgeeks.org/vectorclear-vectorerase-c-stl/" target="_blank" rel="noopener">erase()</a> – It is used to remove elements from a container from the specified position or range.</p>
+<p> erase函数要么删作指定位置loc的元素,要么删除区间[start, end)的所有元素.返回值是指向删除的最后一个元素的下一位置的迭代器</p>
+</li>
+<li><p><a href="https://www.geeksforgeeks.org/vectorat-vectorswap-c-stl/" target="_blank" rel="noopener">swap()</a> – It is used to swap the contents of one vector with another vector of same type. Sizes may differ.(交换两个同类型向量的内容）</p>
+</li>
+<li><p><a href="https://www.geeksforgeeks.org/vectorclear-vectorerase-c-stl/" target="_blank" rel="noopener">clear()</a> – It is used to remove all the elements of the vector container函数删除当前vector中的所有元素.</p>
+</li>
+<li><p><a href="https://www.geeksforgeeks.org/vector-emplace-function-in-c-stl/" target="_blank" rel="noopener">emplace()</a> – It extends the container by inserting new element at position用法是该函数返回一个迭代器，该迭代器指向新插入的元素。（在面向对象时emplace会更好，对于一般的数据，都可，而insert的可用性更强）.emplace(loc,val)</p>
+</li>
+<li><p><a href="https://www.geeksforgeeks.org/vectoremplace_back-c-stl/" target="_blank" rel="noopener">emplace_back()</a> – It is used to insert a new element into the vector container, the new element is added to the end of the vector插入元素到最后</p>
+</li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      
+        <a data-url="https://jefine.github.io/2020/02/27/stlvector/" data-id="ck811m6kl001iegr0hduqew6p" class="article-share-link">分享到</a>
+      
+
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/stl/" rel="tag">stl</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+    
+  
+
+    
+    <article id="post-Java无法仅读取一个字符" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/02/25/Java%E6%97%A0%E6%B3%95%E4%BB%85%E8%AF%BB%E5%8F%96%E4%B8%80%E4%B8%AA%E5%AD%97%E7%AC%A6/" class="article-date">
+  <time datetime="2020-02-25T02:57:51.000Z" itemprop="datePublished">2020-02-25</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/java/">java</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/02/25/Java%E6%97%A0%E6%B3%95%E4%BB%85%E8%AF%BB%E5%8F%96%E4%B8%80%E4%B8%AA%E5%AD%97%E7%AC%A6/">Java无法仅读取一个字符</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>问题描述</p>
+<p>在使用java中，有时希望可以像c语言一样单单读取一个字符，但是发现并没有nextChar()的方法可供使用。</p>
+<p>解决办法</p>
+<p>方法一是最常见的方法，和方法二类似都是先得到一个String字符串，然后得到第一个字符，而方法三是根本的解决办法（虽然不好用）</p>
+<p><strong>方法一：</strong></p>
+<p>1．先创建一个Scanner对象</p>
+<p>2．调用Scanner对象的next()方法获取控制台输入，返回的是一个String类型,因为没有nextChar()方法</p>
+<p>3．调用String的charAt(0)方法获取第一个字符</p>
+ <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"> Scanner sc = <span class="keyword">new</span> Scanner(System.in);</span><br><span class="line"></span><br><span class="line"> String s = sc.next();</span><br><span class="line"></span><br><span class="line"> <span class="keyword">char</span> c = s.charAt(<span class="number">0</span>);</span><br><span class="line"><span class="comment">//最后两条语句也可写为char c = sc.next().charAt(0);</span></span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<p><strong>方法二：</strong></p>
+<p>使用方法，将string转换为字符数组，然后取第一个字符即可</p>
+ <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Scanner sc = <span class="keyword">new</span> Scanner(System.in);</span><br><span class="line"></span><br><span class="line"><span class="keyword">char</span> c = scanner.next().toCharArray()[<span class="number">0</span>];</span><br></pre></td></tr></table></figure>
+
+<p><strong><em>方法三：</em></strong></p>
+<p><em>需要有强制转换（因为in.read()得到的是int类型）</em></p>
+<p>需要引入.io（import java.io.*;）</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">char</span> t = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">try</span> &#123;</span><br><span class="line">      t = (<span class="keyword">char</span>)System.in.read();</span><br><span class="line">    &#125; <span class="keyword">catch</span> (IOException e) &#123;</span><br><span class="line">    e.printStackTrace();</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+
+<p> <strong>或</strong></p>
+<p>2.在方法中抛出异常：public static void main(String[] args) throws IOException</p>
+<p>然后</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">char</span> t = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">t = (<span class="keyword">char</span>)System.in.read();</span><br></pre></td></tr></table></figure>
+
+<p><img src="/2020/02/25/Java%E6%97%A0%E6%B3%95%E4%BB%85%E8%AF%BB%E5%8F%96%E4%B8%80%E4%B8%AA%E5%AD%97%E7%AC%A6/1.png" alt></p>
+<p>但可以做到不影响其他的字符（真正意义上的读入一个字符）</p>
+<p><img src="/2020/02/25/Java%E6%97%A0%E6%B3%95%E4%BB%85%E8%AF%BB%E5%8F%96%E4%B8%80%E4%B8%AA%E5%AD%97%E7%AC%A6/2.png" alt></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      
+        <a data-url="https://jefine.github.io/2020/02/25/Java%E6%97%A0%E6%B3%95%E4%BB%85%E8%AF%BB%E5%8F%96%E4%B8%80%E4%B8%AA%E5%AD%97%E7%AC%A6/" data-id="ck811m6ih0008egr041uccetl" class="article-share-link">分享到</a>
+      
+
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+    
+  
+
+    
+    <article id="post-java主类，类与public的简要分析" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/02/19/java%E4%B8%BB%E7%B1%BB%EF%BC%8C%E7%B1%BB%E4%B8%8Epublic%E7%9A%84%E7%AE%80%E8%A6%81%E5%88%86%E6%9E%90/" class="article-date">
+  <time datetime="2020-02-19T09:26:21.000Z" itemprop="datePublished">2020-02-19</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/java/">java</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/02/19/java%E4%B8%BB%E7%B1%BB%EF%BC%8C%E7%B1%BB%E4%B8%8Epublic%E7%9A%84%E7%AE%80%E8%A6%81%E5%88%86%E6%9E%90/">java主类，类与源文件名的简要分析</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>有时候，我们会遇到关于主类，类和public修饰的类的辨析。刚开始，很难辨别。那么，接下来，简要地分析一下其区别：</p>
+<p><strong>1.如果文件中只有一个类，文件名必须与类名一致，有没有public修饰都可以；</strong></p>
+<p><strong>2.一个Java文件中最多只能有一个public类；</strong></p>
+<p><strong>3.如果文件中不止一个类，而且有public类，文件名必须与public类名一致；</strong></p>
+<p><strong>4.如果文件中不止一个类，而且没有public类，文件名可与任一类名一致。</strong>(相同的是主类)</p>
+<p>首先：</p>
+<p> <strong>类是Java程序的最小程序单位</strong> 。</p>
+<ul>
+<li>Java程序是一种纯粹的<strong>面向对象</strong>的程序设计语言，因此Java程序必须以<strong>类的形式</strong>存在，类是Java程序的<strong>最小程序单位</strong>。</li>
+<li>Java程序不允许可执行性语句、方法等成分独立存在，<strong>所有的程序部分都必须放在类定义里</strong>。<del>（不能像c，c++一样瞎写了）</del></li>
+</ul>
+<h2 id="主类："><a href="#主类：" class="headerlink" title="主类："></a>主类：</h2><h5 id="什么是主类？"><a href="#什么是主类？" class="headerlink" title="什么是主类？"></a>什么是主类？</h5><p>一说，类名与文件名相同，且含有main的类。</p>
+<p>一说： 是带有（总程序的）<strong>执行入口</strong>main方法的类。 （虚拟机第一个进入的类）</p>
+<p>那么：我们不妨思考一下：</p>
+<p>Q: 一个类是不是可以有多个main方法呢？</p>
+<p>A: 由于java语言的多态性，我们完全可以在一个类中含有多个main方法，但记住，main是入口，而这些main方法中只有一个才会是入口。</p>
+<blockquote>
+<p>main 方法写法固定：必须被 public static void 修饰，且其形参必须是字符串数组类型（String[] args）。<br>对于一个大型 Java 程序，往往只需要一个入口（即只一个类包含 main 方法），其他类用于被 main 方法直接或间接调用。</p>
+</blockquote>
+<h3 id="Java-源文件的命名规则"><a href="#Java-源文件的命名规则" class="headerlink" title="Java 源文件的命名规则"></a><strong>Java 源文件的命名规则</strong></h3><blockquote>
+<ul>
+<li>通常情况下，Java 程序源文件的主文件名可以任意。</li>
+<li>但如果其中定义了一个 public 类，则该源<strong>文件的主文件名必须与该 public 类的类名相同</strong>。</li>
+<li>一个Java 源文件可包含多个类定义，但最多<strong>只能包含一个public类定义</strong>。</li>
+</ul>
+</blockquote>
+<p><strong>为什么只能包含一个public类？</strong></p>
+<blockquote>
+<p> 因为 public 类可以被项目中其他包下的类访问到。只需要在使用前 import  其对应的 class 文件。将类名与文件名一一对应就可以<strong>方便虚拟机在相应的路径（包名）中找到相应的类的信息</strong>。如果不这么做的话，就很难去找，而且开销也会很大。 </p>
+</blockquote>
+<p><del>1、Java编译器在编译的时候，如果整个Java文件（编译单元）都没有public类（对外的公开接口类），类加载器就无需直接去加载该编译单元产生的所有的字节码文件（.class文件），那么也就是无需去寻找编译后字节码文件存放位置。而类名和文件名一致是为了方便虚拟机在相应的路径中找到相应的类所对应的字节码文件。所以在没有public类的Java文件中，文件名和类名都没什么联系。</del></p>
+<p>2、如果编译单元中包含了public类，那么该类对应的字节码文件需要被类加载器加载的，这时候就需要让类加载器知道该字节码文件的位置，所以就要确保该类与Java文件名称一致。同时，如果有两个public类在同一个文件中，而一个文件只能有一个名称，<strong>故两个public类的名称就不能同时和文件名一样，这就造成至少其中有一个public类在编译的时候编译不通过。</strong></p>
+<p>关于Java源文件命名，通常有以下建议：</p>
+<pre><code>一个 Java 源文件只定义一个类，不同的类使用不同的源文件定义。
+让 Java 源文件的主文件名与该源文件中定义的 pulblic 类同名。</code></pre><h2 id><a href="#" class="headerlink" title></a></h2>
+      
+    </div>
+    <footer class="article-footer">
+      
+        <a data-url="https://jefine.github.io/2020/02/19/java%E4%B8%BB%E7%B1%BB%EF%BC%8C%E7%B1%BB%E4%B8%8Epublic%E7%9A%84%E7%AE%80%E8%A6%81%E5%88%86%E6%9E%90/" data-id="ck811m6k20011egr0h8dmbqxh" class="article-share-link">分享到</a>
+      
+
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/class/" rel="tag">class</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+    
+  
+
+    
+    <article id="post-java字符串string" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/02/17/java%E5%AD%97%E7%AC%A6%E4%B8%B2string/" class="article-date">
+  <time datetime="2020-02-17T12:51:26.000Z" itemprop="datePublished">2020-02-17</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/java/">java</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/02/17/java%E5%AD%97%E7%AC%A6%E4%B8%B2string/">java字符串string</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="格式："><a href="#格式：" class="headerlink" title="格式："></a>格式：</h2><p>首先：初始化样例 ：String str = “Geeks”;</p>
+<p><strong>Creating a String</strong></p>
+<p>There are two ways to create string in Java:（两种方式）</p>
+<ul>
+<li><p><strong><em>String literal\</em></strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">String s = “GeeksforGeeks”;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>Using *new* keyword</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">String s = new String (“GeeksforGeeks”);</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h2 id="字符串背后的一些事情："><a href="#字符串背后的一些事情：" class="headerlink" title="字符串背后的一些事情："></a>字符串背后的一些事情：</h2><p>String 字符串是由字符数组（char array)所支持。</p>
+<p>Strings in Java are Objects that are backed internally by a char array.</p>
+<p>而我们知道，字符数组的大小是固定的，所以：当String发生大小变化时就会产生一个新的String。</p>
+<p>那么他是怎样变化的呢？</p>
+<p>Whenever a String Object is created, two objects will be created- one in the Heap Area and one in the String constant pool and the String object reference always points to heap area object.</p>
+<p>当一个字符串产生的时候，就会创建两个String对象，一个在堆区域，另一个在字符串常态池中<strong>，而且字符串引用总指向堆区域的对象。</strong></p>
+<p>例如：（看是该字符串引用总是指向堆区域的对象，而且是首字母，像指针一样，不过java避开了指针的概念。）</p>
+<p><img src="/2020/02/17/java%E5%AD%97%E7%AC%A6%E4%B8%B2string/Untitled.png" alt></p>
+<h2 id="接口和类在字符串中："><a href="#接口和类在字符串中：" class="headerlink" title="接口和类在字符串中："></a>接口和类在字符串中：</h2><ul>
+<li><p><a href="https://www.geeksforgeeks.org/tag/java-charbuffer/" target="_blank" rel="noopener">CharBuffer</a>: This class implements the CharSequence interface. This class is used to allow character buffers to be used in place of CharSequences. An example of such usage is the regular-expression package java.util.regex.</p>
+<p>不懂CharBuffer：此类实现CharSequence接口。 此类用于允许使用字符缓冲区代替CharSequences。 正则表达式包java.util.regex是这种用法的一个示例。</p>
+</li>
+<li><p><a href="https://www.geeksforgeeks.org/string-class-in-java/" target="_blank" rel="noopener">String</a>: String is a sequence of characters. In java, objects of String are immutable which means a constant and cannot be changed once created.（String的对象是不可改变的）</p>
+</li>
+<li><p><a href="http://www.geeksforgeeks.org/stringbuffer-class-in-java/" target="_blank" rel="noopener">StringBuffer</a>: <strong>StringBuffer</strong> is a peer class of <strong>String</strong> that provides much of the functionality of strings. String represents fixed-length, immutable character sequences while StringBuffer represents growable and writable character sequences.（又出来个String buffer，批判了String的固定长度和不可变后，称自己是可增长的，可变化的。它还是String的同级字符串类。。。）</p>
+<p><strong>Syntax:</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">StringBuffer s = new StringBuffer(&quot;GeeksforGeeks&quot;);</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><a href="https://www.geeksforgeeks.org/stringbuilder-class-in-java-with-examples/" target="_blank" rel="noopener">StringBuilder</a>: The <strong>StringBuilder</strong> in Java represents a mutable sequence of characters. Since the String Class in Java creates and immutable sequence of characters, the StringBuilder class provides an alternate to String Class, as it creates a mutable sequence of characters.（又来一个StringBuilder 说自己也是可变的字符串</p>
+<p><strong>Syntax:</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">StringBuilder str = new StringBuilder();</span><br><span class="line">str.append(&quot;GFG&quot;);</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><a href="https://www.geeksforgeeks.org/stringtokenizer-class-java-example-set-1-constructors/" target="_blank" rel="noopener">StringTokenizer</a>: StringTokenizer class in Java is used to break a string into tokens. <strong>Example:</strong></p>
+<p><img src="/2020/02/17/java%E5%AD%97%E7%AC%A6%E4%B8%B2string/Untitled1.png" alt></p>
+<p>A StringTokenizer object internally maintains a current position within the string to be tokenized. Some operations advance this current position past the characters processed. A token is returned by taking a substring of the string that was used to create the StringTokenizer object.(用于处理过的字符串，不太懂）</p>
+</li>
+<li><p><a href="https://www.geeksforgeeks.org/java-util-stringjoiner-java8/" target="_blank" rel="noopener">StringJoiner</a>: StringJoiner is a class in <em><a href="https://www.geeksforgeeks.org/tag/java-util-package/" target="_blank" rel="noopener">java.util</a></em> package which is used to construct a sequence of characters(strings) separated by a delimiter and optionally starting with a supplied prefix and ending with a supplied suffix. Though this can also be with the help of StringBuilder class to append delimiter after each string, StringJoiner provides an easy way to do that without much code to write.（也是处理分隔符的，和上面的是一对儿）</p>
+<p><strong>Syntax:</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">public StringJoiner(CharSequence delimiter)</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h2 id="more："><a href="#more：" class="headerlink" title="more："></a>more：</h2><p>此外，在我们要去取值的时候，比如String第二个字符的值的时候，应该用:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">String str = &quot;hello word&quot;;</span><br><span class="line">char mychar =  str.charAt(1);</span><br></pre></td></tr></table></figure>
+
+<p>如果想要比较字符串的值是否相同的话：</p>
+<p>if（s.contentEquals(“-1”)）来比较。否则就是比较储存位置（因为String在java中是对象，不是基本类型）</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      
+        <a data-url="https://jefine.github.io/2020/02/17/java%E5%AD%97%E7%AC%A6%E4%B8%B2string/" data-id="ck811m6k60014egr029bk4o5b" class="article-share-link">分享到</a>
+      
+
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/string/" rel="tag">string</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+    
+  
+
+    
+    <article id="post-java方法methods" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/02/17/java%E6%96%B9%E6%B3%95methods/" class="article-date">
+  <time datetime="2020-02-17T12:45:13.000Z" itemprop="datePublished">2020-02-17</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/java/">java</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/02/17/java%E6%96%B9%E6%B3%95methods/">java方法methods</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>java中还是称之为“方法”好了。</p>
+<p>In general, method declarations has six components :</p>
+<p>包括这六部分：</p>
+<ul>
+<li><strong>Modifier</strong>-（标识符）: Defines <strong>access type</strong> of the method i.e. from where it can be accessed in your application. In Java, there 4 type of the access specifiers.<ul>
+<li>public: accessible in all class in your application.</li>
+<li>protected: accessible within the class in which it is defined and in its <strong>subclass(es)</strong></li>
+<li>private: accessible only within the class in which it is defined.</li>
+<li>default (declared/defined without using any modifier) : accessible<br>within same class and package within which its class is defined.</li>
+</ul>
+</li>
+<li><strong>The return type</strong>（返回值） : The data type of the value returned by the method or void if does not return a value.</li>
+<li><strong>Method Name</strong> （方法名）: the rules for field names apply to method names as well, but the convention is a little different.</li>
+<li><strong>Parameter list</strong>  （参数列表）: Comma separated list of the input parameters are defined, preceded with their data type, within the<br>enclosed parenthesis. If there are no parameters, you must use empty<br>parentheses ().</li>
+<li><strong>Exception list</strong>  （异常列表）: The exceptions you expect by the method can throw, you can specify these exception(s).可以列出方法可能的异常会被引发，在此列表中可以指定这些异常。</li>
+<li><strong>Method body</strong>  : it is enclosed between braces. The code you need to be executed to perform your intended operations.</li>
+</ul>
+<p><img src="/2020/02/17/java%E6%96%B9%E6%B3%95methods/Untitled.png" alt="Untitled"></p>
+<p><strong>How to name a Method?</strong></p>
+<p> A method name is typically a single word that should be a <strong>verb</strong>in lowercase or multi-word, that begins with a <strong>verb</strong> in lowercase followed by <strong>adjective, noun…..</strong> After the first word, first letter of each word should be capitalized. For example, findSum, computeMax, setX and get.</p>
+<p>方法的命名通常为动词（小写）后可跟一个名词（后面的单词首字母大写）。computeMax。</p>
+<pre><code>//自己写的
+import java.util.Scanner;
+class Addition{
+    int sum;
+    public int addTwoInt(int a,int b) {
+        sum = a + b;
+        return sum;
+    }
+}
+
+public class Main {
+    public  static void main(String args[]){
+        Addition add = new Addition();
+        int s = add.addTwoInt(1,2);
+        System.out.print(s);
+    }
+
+}
+
+// 标准版本
+//Program to illustrate methodsin java 
+import java.io.*; 
+
+class Addition { 
+
+    int sum = 0; 
+
+    public int addTwoInt(int a, int b){ 
+
+        // adding two integer value. 
+        sum = a + b; 
+
+        //returning summation of two values. 
+        return sum; 
+    } 
+
+} 
+
+class GFG { 
+    public static void main (String[] args) { 
+
+        // creating an instance of Addition class 
+        Addition add = new Addition(); 
+
+        // calling addTwoInt() method to add two integer using instance created 
+        // in above step. 
+        int s = add.addTwoInt(1,2); 
+        System.out.println(&quot;Sum of two integer values :&quot;+ s); 
+
+    } 
+}</code></pre>
+      
+    </div>
+    <footer class="article-footer">
+      
+        <a data-url="https://jefine.github.io/2020/02/17/java%E6%96%B9%E6%B3%95methods/" data-id="ck811m6kb0018egr01fe63vsp" class="article-share-link">分享到</a>
+      
+
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/methods/" rel="tag">methods</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+    
+  
+  
+    <nav id="page-nav">
+      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/2/">下一页</a>
+    </nav>
+  
+</section>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2020 jefine<br>
+      Theme <a href="https://github.com/henryhuang/oishi" target="_blank">Oishi</a>, Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <!--
+      <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">首页</a>
+  
+    <a href="/categories/life" class="mobile-nav-link">生活</a>
+  
+    <a href="/archives" class="mobile-nav-link">归档</a>
+  
+</nav>
+    -->
+    
+
+<!-- 百度分享 start -->
+
+<!-- 百度分享 end -->
+
+<script src="//cdn.bootcss.com/jquery/1.11.1/jquery.min.js"></script>
+
+
+
+<script src="/js/jquery.scrollUp.min.js"></script>
+<script src="/js/jquery.transform.js"></script>
+<script src="/js/menu.js"></script>
+
+<script src="/js/script.js"></script>
+<script src="/js/scrollUp.js"></script>
+
+  </div>
+</body>
+</html>

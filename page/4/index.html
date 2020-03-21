@@ -1,47 +1,499 @@
-extends includes/base
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>jefine</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="使每个人的生活多一份美好。">
+<meta property="og:type" content="website">
+<meta property="og:title" content="jefine">
+<meta property="og:url" content="https:&#x2F;&#x2F;jefine.github.io&#x2F;page&#x2F;4&#x2F;index.html">
+<meta property="og:site_name" content="jefine">
+<meta property="og:description" content="使每个人的生活多一份美好。">
+<meta property="og:locale" content="zh-CN">
+<meta name="twitter:card" content="summary">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link type="text/css" href="//netdna.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.css" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/scrollUp/image.css">
+  <!--[if lt IE 9]><script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7/html5shiv.min.js"></script><![endif]-->
+  
+</head>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <div class="logo">
+        <img src="/logo.png" alt="Profile Picture">
+      </div>
+      <div id="title">jefine</div>
+      
+        <div id="subtitle">小小的梦呓</div>
+      
+       <ul class="my-socials">
+  
+ 
+</ul>
+    </div>
+  </div>
+  <div id="header-inner" class="">
+    <nav id="main-nav">
+      <a id="main-nav-toggle" class="nav-icon"></a>
+      <!--
+        
+          
+            <a class="main-nav-link" href="/">首页</a>
+          
+            <a class="main-nav-link" href="/categories/life">生活</a>
+          
+            <a class="main-nav-link" href="/archives">归档</a>
+          
+        
+      -->
+    </nav>
+    <nav id="title-nav" style="display:none">
+      <a href="/">jefine</a>
+      <img src="/logo.png" alt="Profile Picture">
+      <!--
+      <span id="title-nav-socials">
+        
+       
+     </span>
+      -->
+    </nav>
+    <nav id="sub-nav">
+      
+      <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+    </nav>
+    <div id="search-form-wrap">
+      <form action="http://www.baidu.com/baidu" method="get" accept-charset="utf-8" class="search-form">
+        <input type="search" name="word" maxlength="20" class="search-form-input" placeholder="搜索">
+        <input type="submit" value="" class="search-form-submit">
+        <input name=tn type=hidden value="bds">
+        <input name=cl type=hidden value="3">
+        <input name=ct type=hidden value="2097152">
+        <input type="hidden" name="si" value="jefine.github.io">
+      </form>
+    </div>
+  </div>
+  <div class="site-nav" style="display: none;">
+    <ul>
+      
+      
+        <li><a href="/">首页</a></li>
+      
+        <li><a href="/categories/life">生活</a></li>
+      
+        <li><a href="/archives">归档</a></li>
+      
+      
+    </ul>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main">
+  
 
-block content
-    div.al_index_background.dis_flex_center.al_full_cover
-        - var bio = config.bio || 'A Beautiful Text Site.'
-        - var firstBioChar = bio.substr(0, 1)
-        div.al_pos_ab.al_letter.al_index_background_letter= firstBioChar
-        h2.al_index_background_bio= bio
-    div.al_index_container
-        div.al_pos_ab.al_fake_background
-        div.al_main_container
-            div.al_section_container.dis_flex_jcenter
-                div.section_header= 'LATEST PAGES'
-            ur.al_post_list
-                each item in site.posts.sort('date', -1).toArray()
-                    - var postTitle = item.title || 'No Title'
-                    - var createDate = date(item.date, 'MMM DD')
-                    - var firstChar = postTitle.substr(0, 1)
-                    - var postURL = item.link || item.path
-                    - var excerpt = item.excerpt + '...' || 'No Excerpt'
-                    - var readLaterURL = 'https://getpocket.com/edit?url=' + encodeURIComponent(config.url + '/' + url_for(postURL))
-                    li.al_index_pageList_item.al_index_page_seperator
-                        div.al_index_post_title_cnt.dis_flex
-                            div.al_pos_ab.al_letter.al_index_post_title_letter= firstChar
-                            h2.al_index_post_title
-                                a(href=url_for(postURL))= postTitle
-                            div.al_index_post_extra.dis_flex
-                                div.al_index_post_date.al_index_post_extra_item= createDate
-                                div.al_index_post_read_time
-                                    |#{min2read(item.content)} Min Read
-                        div.al_index_post_excerpt_cnt
-                            p.al_index_post_excerpt= excerpt
-                        div.al_index_post_button_cnt.dis_flex
-                            a.al_button.al_button_theme.al_index_post_button(href=url_for(postURL))= 'READ ON'
-                            a.al_button.al_button_transparent.al_index_post_button(href=readLaterURL)= 'READ LATER'
+    
+    <article id="7-16-方阵循环右移于其各种踩bug23333" class="article article-type-7-16" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/11/12/%E6%96%B9%E9%98%B5%E5%BE%AA%E7%8E%AF%E5%8F%B3%E7%A7%BB%E4%BA%8E%E5%85%B6%E5%90%84%E7%A7%8D%E8%B8%A9bug23333/" class="article-date">
+  <time datetime="2019-11-12T13:33:24.000Z" itemprop="datePublished">2019-11-12</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E7%BC%96%E7%A8%8B/">编程</a>
+  </div>
 
-            nav.dis_flex.post-nav
-                span.prev
-                    if page.prev
-                        a(href=url_for(page.prev_link))
-                            span.arrow ←
-                            | Newer Posts
-                span.next
-                    if page.next
-                        a(href=url_for(page.next_link))
-                            | Older Posts
-                            span.arrow →
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/11/12/%E6%96%B9%E9%98%B5%E5%BE%AA%E7%8E%AF%E5%8F%B3%E7%A7%BB%E4%BA%8E%E5%85%B6%E5%90%84%E7%A7%8D%E8%B8%A9bug23333/">方阵循环右移于其各种踩bug23333</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>又是元气满满地踩bug。。</p>
+<p>开始：思路是依照题意交换即可</p>
+<p>然后：发现初始值会因其交换而改变，决定做两个二维数组一个储存一个赋值</p>
+<p>接着：遇到溢出现象，猛然发现大bug，程序是从新数组中间的跑出来的，也就是说临界值之前的没有赋值。。。决定以if判断是否为最后一个，那么从头开始赋值。</p>
+<p>最后：看似正确（看错了）其实是换位错位，和题目要求的结果都不一样。。。</p>
+<p><img src="/2019/11/12/%E6%96%B9%E9%98%B5%E5%BE%AA%E7%8E%AF%E5%8F%B3%E7%A7%BB%E4%BA%8E%E5%85%B6%E5%90%84%E7%A7%8D%E8%B8%A9bug23333/timg.jpg" alt="a"></p>
+<p>陷入沉思！</p>
+<p>然后打开百度。。</p>
+<p>发现更改为%即可解决多次”进位”（姑且这么称作吧）。于是又修改了几次for循环的条件得以解决所有问题</p>
+<p>我太难了。</p>
+<p>下面是更改了许多次的代码。。。</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> m,n,i,k,j;</span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">"%d %d"</span>,&amp;m,&amp;n);</span><br><span class="line">	<span class="keyword">int</span> a[n][n];</span><br><span class="line">	<span class="keyword">int</span> b[n][n];</span><br><span class="line">	<span class="comment">//intput</span></span><br><span class="line">	<span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;n;i++)&#123;</span><br><span class="line">		<span class="keyword">for</span>(j=<span class="number">0</span>;j&lt;n;j++)&#123;</span><br><span class="line">		<span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;a[i][j]);	</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="comment">//nswitch</span></span><br><span class="line">	<span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;n;i++)&#123;</span><br><span class="line">		<span class="keyword">for</span>(j=<span class="number">0</span>;j&lt;n;j++)&#123;<span class="comment">//控制a数组从第一个开始输出。 </span></span><br><span class="line">			<span class="comment">//其中，n-m+j是被赋值的列的位置，当其等于n-1时应为复制到该列最后一个，应切换！ </span></span><br><span class="line">		</span><br><span class="line">	</span><br><span class="line">		b[i][(j+m)%n]=a[i][j];<span class="comment">//for临界及其之后的 </span></span><br><span class="line">			</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="comment">//output</span></span><br><span class="line">	<span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;n;i++)&#123;</span><br><span class="line">		<span class="keyword">for</span>(j=<span class="number">0</span>;j&lt;n;j++)&#123;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"%d"</span>,b[i][j]);</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">" "</span>);	</span><br><span class="line">		<span class="keyword">if</span>(j==n<span class="number">-1</span>)<span class="built_in">printf</span>(<span class="string">"\n"</span>);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>得出：做题要多思考其逻辑顺序，不要人云亦云，将题目分解为自己已知，与未知，将其一步一步的以案例分析，从一到一百，通过实际例子，分析其规律于变化情况，进而改变过程。不断修正。</p>
+<p>一定要搞清楚所有的过程，不能似是而非，否则一定会出现难以想象的bug。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      
+        <a data-url="https://jefine.github.io/2019/11/12/%E6%96%B9%E9%98%B5%E5%BE%AA%E7%8E%AF%E5%8F%B3%E7%A7%BB%E4%BA%8E%E5%85%B6%E5%90%84%E7%A7%8D%E8%B8%A9bug23333/" data-id="ck811m6li0026egr0bdnl8nph" class="article-share-link">分享到</a>
+      
+
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/pta/" rel="tag">pta</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+    
+  
+
+    
+    <article id="post-简化的插入排序-详解附带一些基础讲解" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/11/12/%E7%AE%80%E5%8C%96%E7%9A%84%E6%8F%92%E5%85%A5%E6%8E%92%E5%BA%8F-%E8%AF%A6%E8%A7%A3%E9%99%84%E5%B8%A6%E4%B8%80%E4%BA%9B%E5%9F%BA%E7%A1%80%E8%AE%B2%E8%A7%A3/" class="article-date">
+  <time datetime="2019-11-12T01:05:52.000Z" itemprop="datePublished">2019-11-12</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E7%AE%97%E6%B3%95/">算法</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/11/12/%E7%AE%80%E5%8C%96%E7%9A%84%E6%8F%92%E5%85%A5%E6%8E%92%E5%BA%8F-%E8%AF%A6%E8%A7%A3%E9%99%84%E5%B8%A6%E4%B8%80%E4%BA%9B%E5%9F%BA%E7%A1%80%E8%AE%B2%E8%A7%A3/">简化的插入排序,详解附带一些基础讲解</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>本题要求编写程序，将一个给定的整数插到原本有序的整数序列中，使结果序列仍然有序。</p>
+<h3 id="输入格式："><a href="#输入格式：" class="headerlink" title="输入格式："></a>输入格式：</h3><p>输入在第一行先给出非负整数N（&lt;10）；第二行给出N个从小到大排好顺序的整数；第三行给出一个整数X。</p>
+<h3 id="输出格式："><a href="#输出格式：" class="headerlink" title="输出格式："></a>输出格式：</h3><p>在一行内输出将X插入后仍然从小到大有序的整数序列，每个数字后面有一个空格。</p>
+<h3 id="输入样例："><a href="#输入样例：" class="headerlink" title="输入样例："></a>输入样例：</h3><p> 5<br>1 2 4 5 7<br>3</p>
+<h3 id="输出样例："><a href="#输出样例：" class="headerlink" title="输出样例："></a>输出样例：</h3><p>1 2 3 4 5 7 </p>
+<h1 id="代码在最后，此处是分析（写的很基础）（更新后为两种方法）"><a href="#代码在最后，此处是分析（写的很基础）（更新后为两种方法）" class="headerlink" title="代码在最后，此处是分析（写的很基础）（更新后为两种方法）."></a>代码在最后，此处是分析（写的很基础）（更新后为两种方法）.</h1><p><em>方法一的思路：定义数组=&gt; 找到插入值的位置=&gt; 将其后面的值转换位置=&gt; 将其插入，输出数组即可。</em></p>
+<ol>
+<li><p>首先，我们分析这道题，不难发现其在增加一个数后<strong>数组的大小发生了变化</strong>，所以我们在定义时直接int a【n+1】即可解决.</p>
+</li>
+<li><p>之后，我们遍历数组，将第二行输入的数字赋值到数组a【n+1】中即可。<br>接着我们就开始进行数据的调换，<del>但把大象装进冰箱的第一步是打开冰箱门</del>，即我们首先要<strong>找到x即插入值的位置</strong>应该在哪里。所以我们不难想到遍历数组，当其大于a[i]且小于a[i+1],（在此题中，保证了不重复，不会出现相等的情况）则记录下这个i，此为其位置！</p>
+</li>
+<li><p>再找到其位置后，我们可以开始转换吧，采用的思想是将其错位放置，即例如原本为第五个位置的数放置在第六个位置，将第四个位置的数放在第五个位置（顺序可不能反了啊2333）。<br>那么又会出现一个最大的问题！<strong>如何合理安排其转换</strong>？理解了思路后，其实实践中，我们就会发现许多问题，比如错位放置的时候，在哪里停止？从哪里开始？<br>在数组中，其第一个数从a[0]开始的，所以其开始的顺序是与正常的逻辑有所差异（即差一位）。所以我们<strong>先熟悉正常的，常见的，for循环而了解其循环的次数与特性。</strong><br> 1.当我们输入：（以题目中给出的参考输入值为准）</p>
+ <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;n;i++)或者<span class="keyword">for</span>(i=<span class="number">1</span>;i&lt;=n;i++)</span><br></pre></td></tr></table></figure>
+<p> 那么我们会循环n（即n-0）次.由于我们使用的数组为保持一致性，我们还是使用第一种.</p>
+</li>
+</ol>
+<p>2.在此题中，我们需要交换多少次呢？我们原来一共有n个数，后来变为n+1个数，我们从一般情况来看：当满足以下条件时我们可以得到其位置（即i）</p>
+ <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span>(x&gt;a[i]&amp;&amp;x&lt;a[i+<span class="number">1</span>])</span><br></pre></td></tr></table></figure>
+
+<p> 但我们也应注意到（载体给定的数据中）是第3个而且其i=2；此时我们输入的数据中，最后一个是i=n-1；<br> 在这里我们使用新的变量j来计数,并实现交换数组。（保持i的不变）在此循环中我们循环了(n-1)-i+1次即在i后面我们有这么多次交换。<strong>注意：a[i]不变，a[i+1]最终会进行x的赋值实现插入（被替换）</strong>。（此处类比上述1的特性）</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(j=n<span class="number">-1</span>;j&gt;i;j- -);</span><br></pre></td></tr></table></figure>
+
+
+<p>3.最后，我们考虑到将x插入，则一般情况解决，但是其中的特殊情况：比如x最小或最大在最前面或最后一个，则需要单独处理。 （有朋友指出给定的数字与有序数列中的相同时的bug，已经修复，而且我觉得题意最后要求排列后为有序数列，就不会给出这样的情况（也许是我错了，但最好加上等于号排除这种可能）。感谢提出问题并交流） </p>
+<h3 id="真的代码！"><a href="#真的代码！" class="headerlink" title="真的代码！"></a>真的代码！</h3><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> n,j,i,t,x;</span><br><span class="line"></span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;n);</span><br><span class="line">		<span class="keyword">int</span> a[n+<span class="number">1</span>];</span><br><span class="line"></span><br><span class="line">	<span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;n;i++)&#123;<span class="comment">//input</span></span><br><span class="line">		<span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;a[i]);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;x);</span><br><span class="line"></span><br><span class="line">	<span class="keyword">if</span>(x&lt;a[<span class="number">0</span>])&#123;<span class="comment">//special min </span></span><br><span class="line">		<span class="keyword">for</span>(j=n<span class="number">-1</span>;j&gt;=<span class="number">0</span>;j--)&#123;<span class="comment">//有多少个n移多少次！ </span></span><br><span class="line">	 	a[j+<span class="number">1</span>]=a[j];</span><br><span class="line">	 	&#125;a[<span class="number">0</span>]=x;</span><br><span class="line">	&#125;</span><br><span class="line"> 	<span class="keyword">else</span> <span class="keyword">if</span>(x&gt;a[n<span class="number">-1</span>])a[n]=x;<span class="comment">//special max </span></span><br><span class="line"> 	</span><br><span class="line">	<span class="keyword">else</span> <span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;n;i++)&#123;<span class="comment">//do</span></span><br><span class="line">	 <span class="keyword">if</span>(x&gt;a[i]&amp;&amp;x&lt;=a[i+<span class="number">1</span>])&#123;</span><br><span class="line">	 	<span class="keyword">for</span>(j=n<span class="number">-1</span>;j&gt;i;j--)&#123;</span><br><span class="line">	 		a[j+<span class="number">1</span>]=a[j];</span><br><span class="line">	 	&#125;a[i+<span class="number">1</span>]=x;</span><br><span class="line">	 	<span class="keyword">break</span>;</span><br><span class="line">	 &#125;</span><br><span class="line">	&#125; </span><br><span class="line">	<span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;n+<span class="number">1</span>;i++)&#123;<span class="comment">//output</span></span><br><span class="line">		</span><br><span class="line"></span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"%d "</span>,a[i]);</span><br><span class="line">	</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>方法二的思路：从后向前比较，如果x&gt;最后一个数字a[n-1]那么将a[n]赋值为x即可停止程序；如果x&lt;a[n-1]，那么我们将a[n-1]向后移一位，再继续循环比较。</p>
+<ul>
+<li>这样的好处是我们不必再去考虑一些特殊情况的处理</li>
+<li>更加符合我们的逻辑习惯</li>
+<li>代码也更为简单</li>
+</ul>
+<h2 id="代码如下："><a href="#代码如下：" class="headerlink" title="代码如下："></a>代码如下：</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> n,j,i,t,x;</span><br><span class="line"></span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;n);</span><br><span class="line">		<span class="keyword">int</span> a[n+<span class="number">1</span>];</span><br><span class="line"></span><br><span class="line">	<span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;n;i++)&#123;<span class="comment">//input</span></span><br><span class="line">		<span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;a[i]);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;x);</span><br><span class="line"></span><br><span class="line"><span class="comment">//	if(x&lt;a[0])&#123;//special min </span></span><br><span class="line"><span class="comment">//		for(j=n-1;j&gt;=0;j--)&#123;//有多少个n移多少次！ </span></span><br><span class="line"><span class="comment">//	 	a[j+1]=a[j];</span></span><br><span class="line"><span class="comment">//	 	&#125;a[0]=x;</span></span><br><span class="line"><span class="comment">//	&#125;</span></span><br><span class="line"><span class="comment">// 	else if(x&gt;a[n-1])a[n]=x;//special max </span></span><br><span class="line"><span class="comment">// 	</span></span><br><span class="line"><span class="comment">//	else </span></span><br><span class="line">	<span class="keyword">for</span>(i=n<span class="number">-1</span>;i&gt;=<span class="number">0</span>;i--)&#123;<span class="comment">//do</span></span><br><span class="line">	 <span class="keyword">if</span>(x&gt;a[i])&#123;</span><br><span class="line">	 a[i+<span class="number">1</span>]=x;</span><br><span class="line">	 <span class="keyword">break</span>;&#125;<span class="comment">//找到x的位置并插入了</span></span><br><span class="line">	 <span class="keyword">else</span> a[i+<span class="number">1</span>]=a[i];<span class="comment">//没找到，将大的数字向右移一位，继续比较。				 </span></span><br><span class="line">	&#125; </span><br><span class="line">	</span><br><span class="line">	<span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;n+<span class="number">1</span>;i++)&#123;<span class="comment">//output</span></span><br><span class="line">		</span><br><span class="line"></span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"%d "</span>,a[i]);</span><br><span class="line">	</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+      
+    </div>
+    <footer class="article-footer">
+      
+        <a data-url="https://jefine.github.io/2019/11/12/%E7%AE%80%E5%8C%96%E7%9A%84%E6%8F%92%E5%85%A5%E6%8E%92%E5%BA%8F-%E8%AF%A6%E8%A7%A3%E9%99%84%E5%B8%A6%E4%B8%80%E4%BA%9B%E5%9F%BA%E7%A1%80%E8%AE%B2%E8%A7%A3/" data-id="ck811m6mj002vegr0b08a3zks" class="article-share-link">分享到</a>
+      
+
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%8E%92%E5%BA%8F/" rel="tag">排序</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+    
+  
+
+    
+    <article id="post-各种排序方式的汇总及学习（只写了冒泡排序）" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/11/09/%E5%90%84%E7%A7%8D%E6%8E%92%E5%BA%8F%E6%96%B9%E5%BC%8F%E7%9A%84%E6%B1%87%E6%80%BB%E5%8F%8A%E5%AD%A6%E4%B9%A0%EF%BC%88%E5%8F%AA%E5%86%99%E4%BA%86%E5%86%92%E6%B3%A1%E6%8E%92%E5%BA%8F%EF%BC%89/" class="article-date">
+  <time datetime="2019-11-09T04:58:00.000Z" itemprop="datePublished">2019-11-09</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E7%BC%96%E7%A8%8B/">编程</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/11/09/%E5%90%84%E7%A7%8D%E6%8E%92%E5%BA%8F%E6%96%B9%E5%BC%8F%E7%9A%84%E6%B1%87%E6%80%BB%E5%8F%8A%E5%AD%A6%E4%B9%A0%EF%BC%88%E5%8F%AA%E5%86%99%E4%BA%86%E5%86%92%E6%B3%A1%E6%8E%92%E5%BA%8F%EF%BC%89/">各种排序方式的汇总及学习（只更了冒泡排序）</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="首先了解排序："><a href="#首先了解排序：" class="headerlink" title="首先了解排序："></a>首先了解排序：</h3><h6 id="排序的定义"><a href="#排序的定义" class="headerlink" title="排序的定义"></a><strong>排序的定义</strong></h6><p>假设含有n个记录的序列为{r1,r2,…,rn}，其相应的关键字分别是{k1,k2,…,kn}，需要确定1,2,…,n的一种排列p1,p2,…,pn，使其相应的关键字满足kp1&lt;=kp2&lt;=…&lt;=kpn 非递减（或非递增）的关系，即使得序列成为一个按关键字有序的序列{rp1,rp2,…,rpn}，这样的操作就称为排序[1]。</p>
+<p>简单来说，排序就是使输入的序列变成符合一定规则（关键字）的有序序列（非递减或非递增）。大多数遇到的排序问题都是按数据元素值的大小规则进行排序的问题。所以本文为了方便起见，只讨论数据元素值大小比较的排序问题。</p>
+<h6 id="排序的稳定性"><a href="#排序的稳定性" class="headerlink" title="排序的稳定性"></a><strong>排序的稳定性</strong></h6><p>假设ki=kj（1&lt;=i&lt;=n，1&lt;=j&lt;=n，i!=j），且在排序前的序列中ri领先于rj（即i&lt;j）。</p>
+<ul>
+<li>如果排序后ri仍领先于rj，则称所用的排序方法是稳定的；</li>
+<li>反之，若可能使得排序后的序列中rj领先于ri，则称所用的排序方法是不稳定的。</li>
+</ul>
+<p>简单来概括稳定和不稳定[2]：</p>
+<ul>
+<li><strong>稳定</strong>：如果a原本在b前面，而a=b，排序之后a仍然在b前面；</li>
+<li><strong>不稳定</strong>：如果a原本在b前面，而a=b，排序之后a可能在b的后面。</li>
+</ul>
+<h6 id="时间和空间复杂度"><a href="#时间和空间复杂度" class="headerlink" title="时间和空间复杂度"></a><strong>时间和空间复杂度</strong></h6><ul>
+<li><p><strong>时间复杂度</strong>：对排序数据的总的操作次数。反应当n变化时，操作次数呈现什么规律</p>
+</li>
+<li><p><strong>空间复杂度</strong>：算法在计算机内执行时所需要的存储空间的容量，它也是数据规模n的函数。<br><img src="https://img-blog.csdnimg.cn/20191109144007487.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ1NTcyNDA0,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+</li>
+</ul>
+<h2 id="1-冒泡排序（Bubble-Sort）："><a href="#1-冒泡排序（Bubble-Sort）：" class="headerlink" title="1. 冒泡排序（Bubble Sort）："></a>1. 冒泡排序<strong>（Bubble Sort）</strong>：</h2><h4 id="1-1-一般的冒泡排序："><a href="#1-1-一般的冒泡排序：" class="headerlink" title="1.1 一般的冒泡排序："></a>1.1 一般的冒泡排序：</h4><p><strong>基本思想</strong></p>
+<p>比较相邻的两个元素，将值大的元素交换到右边（降序则相反）</p>
+<p><strong>步骤</strong>：</p>
+<ol>
+<li><p>比较相邻的元素。如果第一个比第二个大，就交换它们两个；</p>
+</li>
+<li><p>对每一对相邻元素作同样的工作，从开始第一对到结尾的最后一对，这样在<strong>最后的元素应该会是最大的数</strong>；</p>
+</li>
+<li><p>针对所有的元素重复以上的步骤，除了最后一个；</p>
+</li>
+<li><p>重复步骤1~3，直到排序完成。</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> n,i,j;</span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;n);</span><br><span class="line">	<span class="keyword">int</span> a[n]; </span><br><span class="line">	<span class="comment">//input</span></span><br><span class="line">	<span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;n;i++)&#123;</span><br><span class="line">		<span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;a[i]);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="comment">//bubble sort </span></span><br><span class="line">	<span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;n<span class="number">-1</span>;i++)&#123;<span class="comment">//从第一个到倒数第二个</span></span><br><span class="line">		<span class="keyword">for</span>(j=<span class="number">0</span>;j&lt;n<span class="number">-1</span>;j++)&#123;<span class="comment">//从第一个倒数第二个</span></span><br><span class="line">			<span class="keyword">if</span>(a[j]&gt;a[j+<span class="number">1</span>])&#123;</span><br><span class="line">				<span class="keyword">int</span> t=a[j];</span><br><span class="line">				a[j]=a[j+<span class="number">1</span>];</span><br><span class="line">				a[j+<span class="number">1</span>]=t;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="comment">//output</span></span><br><span class="line">	<span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;n;i++)&#123;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"%d "</span>,a[i]);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+</li>
+</ol>
+<p>比如有n个元素，那么第一次比较迭代，需要比较n-1次（因为是相邻成对比较，最后一个元素没有与下一个相邻比较的对象，所以是n-1次），此次迭代完成后确定了最后一个元素为最大值；第二次比较迭代，需要比较n-2次，因为第一次迭代已经确定好了最后一个元素，所以不再需要比较；…；第 i次比较迭代，需要比较n-i次，此时确定后面i个元素是有序的较大元素；…；第n-1次比较迭代，需要比较n-(n-1)次，此时完成冒泡排序操作。</p>
+<p>原始的冒泡排序是<strong>稳定排序</strong>。由于该排序算法的每一轮要遍历所有元素，轮转的次数和元素数量相当，所以时间复杂度是 o(n^2) = (n-1)*(n-1)</p>
+<p><img src="https://img-blog.csdnimg.cn/20191109144459488.gif" alt="在这里插入图片描述"></p>
+<p>代码使用双循环来进行排序。外部循环控制所有的回合，内部循环代表每一轮的冒泡处理，先进行元素比较，再进行元素交换。</p>
+<h4 id="1-2优化版冒泡排序："><a href="#1-2优化版冒泡排序：" class="headerlink" title="1.2优化版冒泡排序："></a>1.2优化版冒泡排序：</h4><p>优化结果：<strong>解决了在已经调整好顺序后继续循环的问题。</strong></p>
+<p>优化方向：如果我们能<strong>判断出数列已经有序（最后几个数字），并且做出标记（但仅仅标记了数列是有序的）</strong>，剩下的几轮排序就可以不必执行，提早结束工作。</p>
+<p> 代码思路：代码做了小小的改动，利用布尔变量isSorted作为标记。如果在本轮排序中，元素有交换，则说明数列无序；如果没有元素交换，说明数列已然有序，直接跳出大循环。 </p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> n,i,j;</span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;n);</span><br><span class="line">	<span class="keyword">int</span> a[n]; </span><br><span class="line">	<span class="comment">//input</span></span><br><span class="line">	<span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;n;i++)&#123;</span><br><span class="line">		<span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;a[i]);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="comment">//bubble sort </span></span><br><span class="line">	<span class="keyword">int</span> issort=<span class="number">0</span>;<span class="comment">//此处有变动</span></span><br><span class="line">	<span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;n<span class="number">-1</span>;i++)&#123;</span><br><span class="line">		<span class="keyword">for</span>(j=<span class="number">0</span>;j&lt;n<span class="number">-1</span>;j++)&#123;</span><br><span class="line">			<span class="keyword">if</span>(a[j]&gt;a[j+<span class="number">1</span>])&#123;</span><br><span class="line">				<span class="keyword">int</span> t=a[j];</span><br><span class="line">				a[j]=a[j+<span class="number">1</span>];</span><br><span class="line">				a[j+<span class="number">1</span>]=t;</span><br><span class="line">				issort=<span class="number">1</span>; <span class="comment">//此处有变动</span></span><br><span class="line">			&#125;</span><br><span class="line">		&#125;<span class="keyword">if</span>(issort==<span class="number">0</span>)<span class="keyword">break</span>;<span class="comment">//此处是最后一处变动了，，此处解决的是大循环的结束条件。</span></span><br><span class="line">	&#125;</span><br><span class="line">	<span class="comment">//output</span></span><br><span class="line">	<span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;n;i++)&#123;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"%d "</span>,a[i]);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="1-3再次优化版冒泡排序："><a href="#1-3再次优化版冒泡排序：" class="headerlink" title="1.3再次优化版冒泡排序："></a>1.3再次优化版冒泡排序：</h4><p>这个问题的关键点在哪里呢？关键在于对数列<strong>有序区</strong>的界定。</p>
+<p><strong>按照现有一般的逻辑</strong>，有序区的长度和排序的轮数是相等的。比如第一轮排序过后的有序区长度是1（为最后一个），第二轮排序过后的有序区长度是2 ….</p>
+<p>实际上，数列真正的有序区可能会大于这个长度，比如如果后面5个元素实际都已经属于有序区。因此后面的许多次元素比较（这里是指在大循环）是没有意义的。</p>
+<p>如何避免这种情况呢？我们可以在每一轮排序的最后，<strong>记录下最后一次元素交换的位置，那个位置也就是无序数列的边界，再往后就是有序区了</strong>。</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> n,i,j;</span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;n);</span><br><span class="line">	<span class="keyword">int</span> a[n]; </span><br><span class="line">	<span class="comment">//input</span></span><br><span class="line">	<span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;n;i++)&#123;</span><br><span class="line">		<span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;a[i]);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="comment">//bubble sort </span></span><br><span class="line">	<span class="keyword">int</span> issort=<span class="number">0</span>;</span><br><span class="line">	<span class="keyword">int</span> tem=n<span class="number">-1</span>;</span><br><span class="line">	<span class="keyword">int</span> border=n<span class="number">-1</span>;</span><br><span class="line">	<span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;n<span class="number">-1</span>;i++)&#123;</span><br><span class="line">		<span class="keyword">for</span>(j=<span class="number">0</span>;j&lt;border;j++)&#123; <span class="comment">//此次更改的是小循环的结束条件。</span></span><br><span class="line">			<span class="keyword">if</span>(a[j]&gt;a[j+<span class="number">1</span>])&#123;</span><br><span class="line">				<span class="keyword">int</span> t=a[j];</span><br><span class="line">				a[j]=a[j+<span class="number">1</span>];</span><br><span class="line">				a[j+<span class="number">1</span>]=t;</span><br><span class="line">				issort=<span class="number">1</span>; </span><br><span class="line">				tem=j;<span class="comment">//此时tem记录的是小循环里的最后一次交换	</span></span><br><span class="line">					<span class="comment">//极有可能与大循环冲突。 	</span></span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		border=tem;</span><br><span class="line">		<span class="keyword">if</span>(issort==<span class="number">0</span>)<span class="keyword">break</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="comment">//output</span></span><br><span class="line">	<span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;n;i++)&#123;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"%d "</span>,a[i]);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>总结：此次优化是将大循环，小循环的结束条件进行修正。</strong></p>
+<p>本文来自一些微信公众号与csdn和自己的总结与修改（抱歉，我找不到文章链接了），在此表示感谢，如有侵权，联系立删。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      
+        <a data-url="https://jefine.github.io/2019/11/09/%E5%90%84%E7%A7%8D%E6%8E%92%E5%BA%8F%E6%96%B9%E5%BC%8F%E7%9A%84%E6%B1%87%E6%80%BB%E5%8F%8A%E5%AD%A6%E4%B9%A0%EF%BC%88%E5%8F%AA%E5%86%99%E4%BA%86%E5%86%92%E6%B3%A1%E6%8E%92%E5%BA%8F%EF%BC%89/" data-id="ck811m6l8001zegr07j2af0iw" class="article-share-link">分享到</a>
+      
+
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" rel="tag">数据结构</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+    
+  
+
+    
+    <article id="post-pta输出指定范围内的斐波那契数列" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/11/07/pta%E8%BE%93%E5%87%BA%E6%8C%87%E5%AE%9A%E8%8C%83%E5%9B%B4%E5%86%85%E7%9A%84%E6%96%90%E6%B3%A2%E9%82%A3%E5%A5%91%E6%95%B0%E5%88%97/" class="article-date">
+  <time datetime="2019-11-07T06:44:00.000Z" itemprop="datePublished">2019-11-07</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E7%BC%96%E7%A8%8B/">编程</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/11/07/pta%E8%BE%93%E5%87%BA%E6%8C%87%E5%AE%9A%E8%8C%83%E5%9B%B4%E5%86%85%E7%9A%84%E6%96%90%E6%B3%A2%E9%82%A3%E5%A5%91%E6%95%B0%E5%88%97/">pta输出指定范围内的斐波那契数列</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>这是一道pta的题目，对新人有一定难度（我就是）。欢迎大家多交流。谢谢！</p>
+<h2 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h2><p>本题要求实现一个计算Fibonacci数的简单函数，并利用其实现另一个函数，输出两正整数m和n（0&lt;m≤n≤10000）之间的所有Fibonacci数。所谓Fibonacci数列就是满足任一项数字是前两项的和（最开始两项均定义为1）的数列。<br>函数接口定义：<br>int fib( int n );<br>void PrintFN( int m, int n );<br>其中函数fib须返回第n项Fibonacci数；函数PrintFN要在一行中输出给定范围[m, n]内的所有Fibonacci数，相邻数字间有一个空格，行末不得有多余空格。如果给定区间内没有Fibonacci数，则输出一行“No Fibonacci number”。</p>
+<h2 id="题目代码"><a href="#题目代码" class="headerlink" title="题目代码"></a>题目代码</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// #include &lt;stdio.h&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">fib</span><span class="params">( <span class="keyword">int</span> n )</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">PrintFN</span><span class="params">( <span class="keyword">int</span> m, <span class="keyword">int</span> n )</span></span>;</span><br><span class="line">	</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> m, n, t;</span><br><span class="line"></span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">"%d %d %d"</span>, &amp;m, &amp;n, &amp;t);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"fib(%d) = %d\n"</span>, t, fib(t));</span><br><span class="line">    PrintFN(m, n);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* 你的代码将被嵌在这里 */</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="作业代码-后面有很多可以改进的地方）"><a href="#作业代码-后面有很多可以改进的地方）" class="headerlink" title="作业代码(后面有很多可以改进的地方）"></a>作业代码(后面有很多可以改进的地方）</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">fib</span><span class="params">(<span class="keyword">int</span> n)</span></span>&#123; </span><br><span class="line">	<span class="keyword">int</span> i=<span class="number">0</span>,a[<span class="number">10000</span>];<span class="comment">//n==2;</span></span><br><span class="line">	<span class="keyword">for</span>(;i&lt;=n;i++)&#123;</span><br><span class="line">		<span class="keyword">if</span>(i==<span class="number">0</span>||i==<span class="number">1</span>)&#123;</span><br><span class="line">		a[<span class="number">0</span>]=a[<span class="number">1</span>]=<span class="number">1</span>; </span><br><span class="line">		&#125;<span class="keyword">else</span> a[i]=a[i<span class="number">-2</span>]+a[i<span class="number">-1</span>];</span><br><span class="line">		<span class="keyword">if</span>(i==n<span class="number">-1</span>)&#123;</span><br><span class="line">			<span class="keyword">return</span> a[i];	 </span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">PrintFN</span><span class="params">( <span class="keyword">int</span> m, <span class="keyword">int</span> n )</span></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> i;</span><br><span class="line">	<span class="keyword">int</span> cnt=<span class="number">0</span>;</span><br><span class="line">	<span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;=<span class="number">10000</span>;i++)&#123;</span><br><span class="line">		<span class="keyword">if</span>(fib(i)&gt;<span class="number">10000</span>)&#123;</span><br><span class="line">			<span class="keyword">break</span>;</span><br><span class="line">		&#125;	<span class="keyword">if</span> (fib(i)==m)&#123;</span><br><span class="line">			<span class="keyword">if</span>(cnt==<span class="number">1</span>)&#123;</span><br><span class="line">			<span class="built_in">printf</span>(<span class="string">" "</span>) ;</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="keyword">else</span> <span class="built_in">printf</span>(<span class="string">"%d"</span>,fib(i));</span><br><span class="line">			cnt++;</span><br><span class="line">		&#125;<span class="keyword">else</span> <span class="keyword">if</span>(fib(i)&gt;m&amp;&amp;fib(i)&lt;=n)&#123;</span><br><span class="line">			cnt++;</span><br><span class="line">			<span class="keyword">if</span>(cnt==<span class="number">1</span>)<span class="built_in">printf</span>(<span class="string">"%d"</span>,fib(i));</span><br><span class="line">			<span class="keyword">else</span> <span class="built_in">printf</span>(<span class="string">" %d"</span>,fib(i));</span><br><span class="line">	</span><br><span class="line">		&#125;	</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">if</span>(cnt==<span class="number">0</span>)&#123;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"No Fibonacci number"</span>);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="分步改正并讲解"><a href="#分步改正并讲解" class="headerlink" title="分步改正并讲解"></a>分步改正并讲解</h2><h3 id="int-fib-int-n-；-返回第n项斐波那契数。"><a href="#int-fib-int-n-；-返回第n项斐波那契数。" class="headerlink" title="int fib(int n)；//返回第n项斐波那契数。"></a>int fib(int n)；//返回第n项斐波那契数。</h3><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">fib</span><span class="params">(<span class="keyword">int</span> n)</span></span>&#123;<span class="comment">//返回第n项斐波那契数。 </span></span><br><span class="line">	<span class="keyword">int</span> i=<span class="number">0</span>,a[<span class="number">10000</span>];<span class="comment">//n==2;</span></span><br><span class="line">	<span class="keyword">for</span>(;i&lt;=n;i++)&#123;</span><br><span class="line">		<span class="keyword">if</span>(i==<span class="number">0</span>||i==<span class="number">1</span>)&#123;</span><br><span class="line">		a[<span class="number">0</span>]=a[<span class="number">1</span>]=<span class="number">1</span>; </span><br><span class="line">		&#125;<span class="keyword">else</span> a[i]=a[i<span class="number">-2</span>]+a[i<span class="number">-1</span>];</span><br><span class="line">		<span class="keyword">if</span>(i==n<span class="number">-1</span>)&#123;</span><br><span class="line">			<span class="keyword">return</span> a[i];</span><br><span class="line">		&#125;<span class="comment">//牺牲空间而下面的牺牲时间（每次都从头算一遍）</span></span><br><span class="line">	&#125;</span><br><span class="line">&#125;<span class="comment">/*int fib( int n )&#123;</span></span><br><span class="line"><span class="comment">    if(n==1||n==2)</span></span><br><span class="line"><span class="comment">	return 1;</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">	return fib(n-2)+fib(n-1);</span></span><br><span class="line"><span class="comment">&#125;*/</span><span class="comment">//可用其替换啊啊啊啊！</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="void-PrintFN-int-m-int-n-返回【m，n】之间的斐波那契数列"><a href="#void-PrintFN-int-m-int-n-返回【m，n】之间的斐波那契数列" class="headerlink" title="void PrintFN( int m, int n )//返回【m，n】之间的斐波那契数列"></a>void PrintFN( int m, int n )//返回【m，n】之间的斐波那契数列</h3><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">PrintFN</span><span class="params">( <span class="keyword">int</span> m, <span class="keyword">int</span> n )</span></span>&#123;<span class="comment">//输出所有斐波那契数列并一直到第m项，打印出来</span></span><br><span class="line">	<span class="keyword">int</span> i;</span><br><span class="line">	<span class="keyword">int</span> cnt=<span class="number">0</span>;</span><br><span class="line">	<span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;=<span class="number">10000</span>;i++)&#123;</span><br><span class="line">		<span class="keyword">if</span>(fib(i)&gt;<span class="number">10000</span>)&#123;<span class="comment">//因为会有内存溢出</span></span><br><span class="line">			<span class="keyword">break</span>;</span><br><span class="line">		&#125;	<span class="keyword">if</span> (fib(i)==m)&#123;</span><br><span class="line"><span class="comment">//下面我写的代码很奇怪吧，因为如果不这么做，当m==1时就会 输出三个1；所以很无奈		</span></span><br><span class="line"><span class="comment">/*int first = 1;</span></span><br><span class="line"><span class="comment">    if(m==1)&#123;</span></span><br><span class="line"><span class="comment">        printf("1 1");</span></span><br><span class="line"><span class="comment">        first = 0;</span></span><br><span class="line"><span class="comment">        m = 2;</span></span><br><span class="line"><span class="comment">    &#125;*/</span><span class="comment">//这样是一种更好的做法，直接输出1 1；</span></span><br><span class="line">			<span class="keyword">if</span>(cnt==<span class="number">1</span>)&#123;</span><br><span class="line">			<span class="built_in">printf</span>(<span class="string">" "</span>) ;</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="keyword">else</span> <span class="built_in">printf</span>(<span class="string">"%d"</span>,fib(i));</span><br><span class="line">			cnt++;</span><br><span class="line">		&#125;<span class="keyword">else</span> <span class="keyword">if</span>(fib(i)&gt;m&amp;&amp;fib(i)&lt;=n)&#123;</span><br><span class="line">			cnt++;</span><br><span class="line">			<span class="keyword">if</span>(cnt==<span class="number">1</span>)<span class="built_in">printf</span>(<span class="string">"%d"</span>,fib(i));</span><br><span class="line">			<span class="keyword">else</span> <span class="built_in">printf</span>(<span class="string">" %d"</span>,fib(i));</span><br><span class="line">	</span><br><span class="line">		&#125;	</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">if</span>(cnt==<span class="number">0</span>)&#123;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"No Fibonacci number"</span>);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>感谢众多大神的帮助，这篇文章只是为了帮助更多的入门者更好的走下去。</p>
+<p>文中有参考<a href="https://blog.csdn.net/qq_43328781/article/details/85157414" target="_blank" rel="noopener">https://blog.csdn.net/qq_43328781/article/details/85157414</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      
+        <a data-url="https://jefine.github.io/2019/11/07/pta%E8%BE%93%E5%87%BA%E6%8C%87%E5%AE%9A%E8%8C%83%E5%9B%B4%E5%86%85%E7%9A%84%E6%96%90%E6%B3%A2%E9%82%A3%E5%A5%91%E6%95%B0%E5%88%97/" data-id="ck811m6kt001pegr09osc6tif" class="article-share-link">分享到</a>
+      
+
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/pta/" rel="tag">pta</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+    
+  
+
+    
+    <article id="post-记录与发现" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/11/06/%E8%AE%B0%E5%BD%95%E4%B8%8E%E5%8F%91%E7%8E%B0/" class="article-date">
+  <time datetime="2019-11-06T04:32:00.000Z" itemprop="datePublished">2019-11-06</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/11/06/%E8%AE%B0%E5%BD%95%E4%B8%8E%E5%8F%91%E7%8E%B0/">记录，发现</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="记录与发现"><a href="#记录与发现" class="headerlink" title="记录与发现"></a>记录与发现</h2><p>pta，acm，蓝桥等。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      
+        <a data-url="https://jefine.github.io/2019/11/06/%E8%AE%B0%E5%BD%95%E4%B8%8E%E5%8F%91%E7%8E%B0/" data-id="ck811m6mz0032egr02kob6lwq" class="article-share-link">分享到</a>
+      
+
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+    
+  
+  
+    <nav id="page-nav">
+      <a class="extend prev" rel="prev" href="/page/3/">上一页</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span>
+    </nav>
+  
+</section>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2020 jefine<br>
+      Theme <a href="https://github.com/henryhuang/oishi" target="_blank">Oishi</a>, Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <!--
+      <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">首页</a>
+  
+    <a href="/categories/life" class="mobile-nav-link">生活</a>
+  
+    <a href="/archives" class="mobile-nav-link">归档</a>
+  
+</nav>
+    -->
+    
+
+<!-- 百度分享 start -->
+
+<!-- 百度分享 end -->
+
+<script src="//cdn.bootcss.com/jquery/1.11.1/jquery.min.js"></script>
+
+
+
+<script src="/js/jquery.scrollUp.min.js"></script>
+<script src="/js/jquery.transform.js"></script>
+<script src="/js/menu.js"></script>
+
+<script src="/js/script.js"></script>
+<script src="/js/scrollUp.js"></script>
+
+  </div>
+</body>
+</html>

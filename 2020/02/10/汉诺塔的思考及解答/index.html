@@ -1,51 +1,233 @@
-extends includes/base
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>汉诺塔的思考及解答 | jefine</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="其实在汉诺塔问题之前，斐波那契数列的问题是个比较好解决的问题。 但是汉诺塔问题令我思考了一段时间。最后不断探索，有了一些思考。 沉下心，我们需要有一个大的格局。不断分解为小的问题。 递归问题么，不就是找到规律与出口么。 汉诺塔（又称河内塔）问题：大梵天创造世界的时候做了三根金刚石柱子，在一根柱子上从下往上按照大小顺序摞着64片黄金圆盘。大梵天命令婆罗门把圆盘从下面开始按大小顺序重新摆放在另一根柱子">
+<meta name="keywords" content="递归">
+<meta property="og:type" content="article">
+<meta property="og:title" content="汉诺塔的思考及解答">
+<meta property="og:url" content="https:&#x2F;&#x2F;jefine.github.io&#x2F;2020&#x2F;02&#x2F;10&#x2F;%E6%B1%89%E8%AF%BA%E5%A1%94%E7%9A%84%E6%80%9D%E8%80%83%E5%8F%8A%E8%A7%A3%E7%AD%94&#x2F;index.html">
+<meta property="og:site_name" content="jefine">
+<meta property="og:description" content="其实在汉诺塔问题之前，斐波那契数列的问题是个比较好解决的问题。 但是汉诺塔问题令我思考了一段时间。最后不断探索，有了一些思考。 沉下心，我们需要有一个大的格局。不断分解为小的问题。 递归问题么，不就是找到规律与出口么。 汉诺塔（又称河内塔）问题：大梵天创造世界的时候做了三根金刚石柱子，在一根柱子上从下往上按照大小顺序摞着64片黄金圆盘。大梵天命令婆罗门把圆盘从下面开始按大小顺序重新摆放在另一根柱子">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https:&#x2F;&#x2F;jefine.github.io&#x2F;2020&#x2F;02&#x2F;10&#x2F;%E6%B1%89%E8%AF%BA%E5%A1%94%E7%9A%84%E6%80%9D%E8%80%83%E5%8F%8A%E8%A7%A3%E7%AD%94&#x2F;Untitled.png">
+<meta property="og:updated_time" content="2020-02-10T06:43:55.102Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https:&#x2F;&#x2F;jefine.github.io&#x2F;2020&#x2F;02&#x2F;10&#x2F;%E6%B1%89%E8%AF%BA%E5%A1%94%E7%9A%84%E6%80%9D%E8%80%83%E5%8F%8A%E8%A7%A3%E7%AD%94&#x2F;Untitled.png">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link type="text/css" href="//netdna.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.css" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/scrollUp/image.css">
+  <!--[if lt IE 9]><script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7/html5shiv.min.js"></script><![endif]-->
+  
+</head>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <div class="logo">
+        <img src="/logo.png" alt="Profile Picture">
+      </div>
+      <div id="title">jefine</div>
+      
+        <div id="subtitle">小小的梦呓</div>
+      
+       <ul class="my-socials">
+  
+ 
+</ul>
+    </div>
+  </div>
+  <div id="header-inner" class="">
+    <nav id="main-nav">
+      <a id="main-nav-toggle" class="nav-icon"></a>
+      <!--
+        
+          
+            <a class="main-nav-link" href="/">首页</a>
+          
+            <a class="main-nav-link" href="/categories/life">生活</a>
+          
+            <a class="main-nav-link" href="/archives">归档</a>
+          
+        
+      -->
+    </nav>
+    <nav id="title-nav" style="display:none">
+      <a href="/">jefine</a>
+      <img src="/logo.png" alt="Profile Picture">
+      <!--
+      <span id="title-nav-socials">
+        
+       
+     </span>
+      -->
+    </nav>
+    <nav id="sub-nav">
+      
+      <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+    </nav>
+    <div id="search-form-wrap">
+      <form action="http://www.baidu.com/baidu" method="get" accept-charset="utf-8" class="search-form">
+        <input type="search" name="word" maxlength="20" class="search-form-input" placeholder="搜索">
+        <input type="submit" value="" class="search-form-submit">
+        <input name=tn type=hidden value="bds">
+        <input name=cl type=hidden value="3">
+        <input name=ct type=hidden value="2097152">
+        <input type="hidden" name="si" value="jefine.github.io">
+      </form>
+    </div>
+  </div>
+  <div class="site-nav" style="display: none;">
+    <ul>
+      
+      
+        <li><a href="/">首页</a></li>
+      
+        <li><a href="/categories/life">生活</a></li>
+      
+        <li><a href="/archives">归档</a></li>
+      
+      
+    </ul>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-汉诺塔的思考及解答" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/02/10/%E6%B1%89%E8%AF%BA%E5%A1%94%E7%9A%84%E6%80%9D%E8%80%83%E5%8F%8A%E8%A7%A3%E7%AD%94/" class="article-date">
+  <time datetime="2020-02-10T06:36:38.000Z" itemprop="datePublished">2020-02-10</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E7%AE%97%E6%B3%95/">算法</a>
+  </div>
 
-block extra_style
-    if theme.gitalk.enable
-        link(rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css")
-    link(rel='stylesheet' href=url_for('./css/atom-one-dark.css'))
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      汉诺塔的思考及解答
+    </h1>
+  
 
-block content
-    div.al_page_background.dis_flex_center.al_full_cover
-    div.al_page_container
-        div.al_pos_ab.al_fake_background
-        div.al_main_container.al_main_page_container
-            article.al_article
-                header
-                    h1.al_page_title= page.title
-                    div.al_page_info.dis_flex
-                        div.al_page_content_info
-                            |#{date(page.date, 'MMM DD, YYYY h:mm A')}
-                        div.al_page_content_info
-                            |#{wordcount(page.content)} words
-                        div.al_page_content_info
-                            |#{min2read(page.content)} minutes read
-                        span.tags
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>其实在汉诺塔问题之前，斐波那契数列的问题是个比较好解决的问题。</p>
+<p>但是汉诺塔问题令我思考了一段时间。最后不断探索，有了一些思考。</p>
+<p>沉下心，我们需要有一个大的格局。不断分解为小的问题。</p>
+<p>递归问题么，不就是找到规律与出口么。</p>
+<p>汉诺塔（又称河内塔）问题：大梵天创造世界的时候做了三根金刚石柱子，在一根柱子上从下往上按照大小顺序摞着64片黄金圆盘。大梵天命令婆罗门把圆盘从下面开始按大小顺序重新摆放在另一根柱子上。并且规定，在小圆盘上不能放大圆盘，在三根柱子之间一次只能移动一个圆盘。</p>
+<p>我们不妨自己先试一试，如何将一个或三个盘子从a移动到c。</p>
+<p>好的，那么总结一下<strong>规律</strong>，<strong>假设有n个盘子，我们就是借助一个柱子c，把a上的n-1个盘子放到b上，再把b上的n-1个盘子通过a移动到c上即可</strong>。（下图较复杂，简单看看就好）</p>
+<p><img src="/2020/02/10/%E6%B1%89%E8%AF%BA%E5%A1%94%E7%9A%84%E6%80%9D%E8%80%83%E5%8F%8A%E8%A7%A3%E7%AD%94/Untitled.png" alt="Untitled">好的，那么这一步的代码该怎么写呢？？？</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hanoi(n<span class="number">-1</span>,a,c,b);<span class="comment">//我们就是借助一个柱子c，把a上的n-1个盘子放到b上，</span></span><br><span class="line"><span class="built_in">printf</span>(<span class="string">"将%c移动到%c\\n"</span>,a,b);</span><br><span class="line">hanoi(n<span class="number">-1</span>,b,a,c);<span class="comment">//再把b上的n-1个盘子通过a移动到c上即可。</span></span><br></pre></td></tr></table></figure>
 
-                if toc(page.content)
-                    div.al_page_content_outline!= toc(page.content,{list_number:false})
+<p>这样是不是就可以理解了。</p>
+<p>好的，但是我们要给这个函数一个出口不然，他就会一直跑下去。。。（并且问我怎么知道的）</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span>(n==<span class="number">1</span>)&#123;<span class="comment">//终止条件。</span></span><br><span class="line"><span class="built_in">printf</span>(<span class="string">"将%c移动到%c\\n"</span>,a,c);<span class="comment">//最后不就是把a上的最后一个放到c上，就可以了吧。</span></span><br><span class="line"><span class="comment">//我们不考虑别的。嘿嘿</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-                section#post-body!=page.content
+<p>那么综合起来就是：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="keyword">int</span> cnt;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">hanoi</span><span class="params">(<span class="keyword">int</span> n,<span class="keyword">char</span> a,<span class="keyword">char</span> b,<span class="keyword">char</span> c)</span></span>&#123;</span><br><span class="line">cnt++;</span><br><span class="line"><span class="keyword">if</span>(n==<span class="number">1</span>)&#123;</span><br><span class="line"><span class="built_in">printf</span>(<span class="string">"将%c移动到%c\\n"</span>,a,c);</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">else</span> &#123;</span><br><span class="line">hanoi(n<span class="number">-1</span>,a,c,b);</span><br><span class="line"><span class="built_in">printf</span>(<span class="string">"将%c移动到%c\\n"</span>,a,b);</span><br><span class="line">hanoi(n<span class="number">-1</span>,b,a,c);</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line"><span class="keyword">int</span> n;</span><br><span class="line"><span class="keyword">char</span> a=<span class="string">'a'</span>,b=<span class="string">'b'</span>,c=<span class="string">'c'</span>;</span><br><span class="line"><span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;n);</span><br><span class="line">hanoi(n,a,b,c);</span><br><span class="line"><span class="built_in">printf</span>(<span class="string">"%d"</span>,cnt);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-                include ./includes/plugin/gitalk.pug
-                include ./includes/plugin/disqus.pug
+<p>注释可以参考上面的哦。</p>
+<p>链接：知乎上有一个有意思的答案，不妨一看：</p>
+<p><a href="https://www.zhihu.com/question/24385418/answer/257751077" target="_blank" rel="noopener">https://www.zhihu.com/question/24385418/answer/257751077</a></p>
+<p>bilibili也有一个不错的视频讲解：</p>
+<p><a href="https://www.bilibili.com/video/av9830115?from=search&amp;seid=9898738544530212324" target="_blank" rel="noopener">https://www.bilibili.com/video/av9830115?from=search&amp;seid=9898738544530212324</a></p>
 
-            - var prev = page.prev ? page.prev.path : false;
-            - var next = page.next ? page.next.path : false;
-            nav.dis_flex.post-nav
-                span.prev
-                    if page.prev
-                        a(href=url_for(prev))
-                            span.arrow ←
-                            | Newer Posts
-                span.next
-                    if page.next
-                        a(href=url_for(next))
-                            | Older Posts
-                            span.arrow →
+      
+    </div>
+    <footer class="article-footer">
+      
+        <a data-url="https://jefine.github.io/2020/02/10/%E6%B1%89%E8%AF%BA%E5%A1%94%E7%9A%84%E6%80%9D%E8%80%83%E5%8F%8A%E8%A7%A3%E7%AD%94/" data-id="ck811m6m2002kegr0heex2fjs" class="article-share-link">分享到</a>
+      
 
-    if config.highlight.enable
-        script(type='text/javascript', src=url_for('javascripts/highlight.pack.js'))
-        script!= "document.querySelectorAll('figure.highlight').forEach(function(b){hljs.highlightBlock(b);});"
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E9%80%92%E5%BD%92/" rel="tag">递归</a></li></ul>
 
-            //- include includes/comment.pug
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2020/02/11/javaconstructors%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          javaconstructors构造函数
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2020/02/09/java%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%89%B9%E6%80%A7%E7%9A%84%E9%98%90%E8%BF%B0/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">java面向对象特性的阐述</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2020 jefine<br>
+      Theme <a href="https://github.com/henryhuang/oishi" target="_blank">Oishi</a>, Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <!--
+      <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">首页</a>
+  
+    <a href="/categories/life" class="mobile-nav-link">生活</a>
+  
+    <a href="/archives" class="mobile-nav-link">归档</a>
+  
+</nav>
+    -->
+    
+
+<!-- 百度分享 start -->
+
+<!-- 百度分享 end -->
+
+<script src="//cdn.bootcss.com/jquery/1.11.1/jquery.min.js"></script>
+
+
+
+<script src="/js/jquery.scrollUp.min.js"></script>
+<script src="/js/jquery.transform.js"></script>
+<script src="/js/menu.js"></script>
+
+<script src="/js/script.js"></script>
+<script src="/js/scrollUp.js"></script>
+
+  </div>
+</body>
+</html>

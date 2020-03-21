@@ -1,51 +1,262 @@
-extends includes/base
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>javaconstructors构造函数 | jefine</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Constructors are used to assign values to the class variables at the time of object creation, either explicitly done by the programmer or by Java itself (default constructor).  在创建对象时，可以使用构造函数将值分配给类变">
+<meta name="keywords" content="java构造函数">
+<meta property="og:type" content="article">
+<meta property="og:title" content="javaconstructors构造函数">
+<meta property="og:url" content="https:&#x2F;&#x2F;jefine.github.io&#x2F;2020&#x2F;02&#x2F;11&#x2F;javaconstructors%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0&#x2F;index.html">
+<meta property="og:site_name" content="jefine">
+<meta property="og:description" content="Constructors are used to assign values to the class variables at the time of object creation, either explicitly done by the programmer or by Java itself (default constructor).  在创建对象时，可以使用构造函数将值分配给类变">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2020-02-11T09:02:10.612Z">
+<meta name="twitter:card" content="summary">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link type="text/css" href="//netdna.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.css" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/scrollUp/image.css">
+  <!--[if lt IE 9]><script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7/html5shiv.min.js"></script><![endif]-->
+  
+</head>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <div class="logo">
+        <img src="/logo.png" alt="Profile Picture">
+      </div>
+      <div id="title">jefine</div>
+      
+        <div id="subtitle">小小的梦呓</div>
+      
+       <ul class="my-socials">
+  
+ 
+</ul>
+    </div>
+  </div>
+  <div id="header-inner" class="">
+    <nav id="main-nav">
+      <a id="main-nav-toggle" class="nav-icon"></a>
+      <!--
+        
+          
+            <a class="main-nav-link" href="/">首页</a>
+          
+            <a class="main-nav-link" href="/categories/life">生活</a>
+          
+            <a class="main-nav-link" href="/archives">归档</a>
+          
+        
+      -->
+    </nav>
+    <nav id="title-nav" style="display:none">
+      <a href="/">jefine</a>
+      <img src="/logo.png" alt="Profile Picture">
+      <!--
+      <span id="title-nav-socials">
+        
+       
+     </span>
+      -->
+    </nav>
+    <nav id="sub-nav">
+      
+      <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+    </nav>
+    <div id="search-form-wrap">
+      <form action="http://www.baidu.com/baidu" method="get" accept-charset="utf-8" class="search-form">
+        <input type="search" name="word" maxlength="20" class="search-form-input" placeholder="搜索">
+        <input type="submit" value="" class="search-form-submit">
+        <input name=tn type=hidden value="bds">
+        <input name=cl type=hidden value="3">
+        <input name=ct type=hidden value="2097152">
+        <input type="hidden" name="si" value="jefine.github.io">
+      </form>
+    </div>
+  </div>
+  <div class="site-nav" style="display: none;">
+    <ul>
+      
+      
+        <li><a href="/">首页</a></li>
+      
+        <li><a href="/categories/life">生活</a></li>
+      
+        <li><a href="/archives">归档</a></li>
+      
+      
+    </ul>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-javaconstructors构造函数" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/02/11/javaconstructors%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0/" class="article-date">
+  <time datetime="2020-02-11T08:11:11.000Z" itemprop="datePublished">2020-02-11</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/java/">java</a>
+  </div>
 
-block extra_style
-    if theme.gitalk.enable
-        link(rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css")
-    link(rel='stylesheet' href=url_for('./css/atom-one-dark.css'))
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      javaconstructors构造函数
+    </h1>
+  
 
-block content
-    div.al_page_background.dis_flex_center.al_full_cover
-    div.al_page_container
-        div.al_pos_ab.al_fake_background
-        div.al_main_container.al_main_page_container
-            article.al_article
-                header
-                    h1.al_page_title= page.title
-                    div.al_page_info.dis_flex
-                        div.al_page_content_info
-                            |#{date(page.date, 'MMM DD, YYYY h:mm A')}
-                        div.al_page_content_info
-                            |#{wordcount(page.content)} words
-                        div.al_page_content_info
-                            |#{min2read(page.content)} minutes read
-                        span.tags
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <blockquote>
+<p>Constructors are used to assign values to the class variables at the time of object creation, either explicitly done by the programmer or by Java itself (default constructor).</p>
+</blockquote>
+<p>在创建对象时，可以使用构造函数将值分配给类变量，这些值可以由程序员显式完成，也可以由Java本身（默认构造函数）完成。</p>
+<p><a href="https://www.geeksforgeeks.org/constructors-in-java/" target="_blank" rel="noopener">Constructors in Java - GeeksforGeeks</a></p>
+<p><strong>Rules for writing Constructor:</strong></p>
+<ul>
+<li><p>Constructor(s) of a class must has same name as the class name in which it resides.</p>
+<p>构造函数的名字和类名必须一致。</p>
+</li>
+<li><p>A constructor in Java can not be abstract, final, static and Synchronized.</p>
+<p>java中的构造函数不能是抽象的，最终的，静态的和同步的。</p>
+</li>
+<li><p>Access modifiers can be used in constructor declaration to control its access i.e which other class can call the constructor.</p>
+<p>可以在构造函数声明中使用访问修饰符来控制其访问，即哪个其他类可以调用构造函数。</p>
+</li>
+</ul>
+<h3 id="构造函数的类型："><a href="#构造函数的类型：" class="headerlink" title="构造函数的类型："></a>构造函数的类型：</h3><ol>
+<li><p><strong>无参构造函数</strong>：</p>
+<p>没有参数的构造函数被认为时默认构造函数。若我们没有在类中定义构造函数，那么编译器会自己定义一个无参数的构造函数。Default constructor provides the default values to the object like 0, null, etc. depending on the type.（默认的构造函数提供默认的值给对象0，null，等，更具他们的类型不同）</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Java Program to illustrate calling a // no-argument constructor import [java.io](http://java.io).*;</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Geek</span> </span>&#123; <span class="keyword">int</span> num; String name;</span><br><span class="line"></span><br><span class="line"> <span class="comment">// this would be invoked while an object </span></span><br><span class="line"> <span class="comment">// of that class is created. </span></span><br><span class="line"> Geek() </span><br><span class="line"> &#123; </span><br><span class="line"> 	System.out.println(<span class="string">"Constructor called"</span>); </span><br><span class="line"> &#125; </span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">GFG</span> </span>&#123; <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span> <span class="params">(String[] args)</span> </span>&#123; <span class="comment">// this would invoke default constructor. Geek geek1 = new Geek();</span></span><br><span class="line"></span><br><span class="line"> 	<span class="comment">// Default constructor provides the default </span></span><br><span class="line"> 	<span class="comment">// values to the object like 0, null </span></span><br><span class="line"> 	System.out.println(geek1.name); </span><br><span class="line"> 	System.out.println(geek1.num); </span><br><span class="line"> &#125; </span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-                if toc(page.content)
-                    div.al_page_content_outline!= toc(page.content,{list_number:false})
 
-                section#post-body!=page.content
 
-                include ./includes/plugin/gitalk.pug
-                include ./includes/plugin/disqus.pug
+</li>
+</ol>
+<p>0utput :</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Constructor called</span><br><span class="line">null</span><br><span class="line">0</span><br></pre></td></tr></table></figure>
 
-            - var prev = page.prev ? page.prev.path : false;
-            - var next = page.next ? page.next.path : false;
-            nav.dis_flex.post-nav
-                span.prev
-                    if page.prev
-                        a(href=url_for(prev))
-                            span.arrow ←
-                            | Newer Posts
-                span.next
-                    if page.next
-                        a(href=url_for(next))
-                            | Older Posts
-                            span.arrow →
+<p><strong>2. 有参构造函数：</strong></p>
+<p>If we want to initialize fields of the class with your own values, then use a parameterized constructor.如果我们想使用我们自己的值去给类中的变量赋值的话，那么使用参数化的构造函数（有参构造函数）。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Java Program to illustrate calling of </span></span><br><span class="line"><span class="comment">// parameterized constructor. </span></span><br><span class="line"><span class="keyword">import</span> java.io.*; </span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Geek</span> </span></span><br><span class="line"><span class="class"></span>&#123; </span><br><span class="line">	<span class="comment">// data members of the class. </span></span><br><span class="line">	String name; </span><br><span class="line">	<span class="keyword">int</span> id; </span><br><span class="line"></span><br><span class="line">	<span class="comment">// constructor would initialize data members </span></span><br><span class="line">	<span class="comment">// with the values of passed arguments while </span></span><br><span class="line">	<span class="comment">// object of that class created. </span></span><br><span class="line">	Geek(String name, <span class="keyword">int</span> id) </span><br><span class="line">	&#123; </span><br><span class="line">		<span class="keyword">this</span>.name = name; </span><br><span class="line">		<span class="keyword">this</span>.id = id; </span><br><span class="line">	&#125; </span><br><span class="line">&#125; </span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">GFG</span> </span></span><br><span class="line"><span class="class"></span>&#123; </span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span> <span class="params">(String[] args)</span> </span></span><br><span class="line"><span class="function">	</span>&#123; </span><br><span class="line">		<span class="comment">// this would invoke the parameterized constructor. </span></span><br><span class="line">		Geek geek1 = <span class="keyword">new</span> Geek(<span class="string">"adam"</span>, <span class="number">1</span>); </span><br><span class="line">		System.out.println(<span class="string">"GeekName :"</span> + geek1.name + </span><br><span class="line">						<span class="string">" and GeekId :"</span> + geek1.id); </span><br><span class="line">	&#125; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-    if config.highlight.enable
-        script(type='text/javascript', src=url_for('javascripts/highlight.pack.js'))
-        script!= "document.querySelectorAll('figure.highlight').forEach(function(b){hljs.highlightBlock(b);});"
+<p>Output:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">GeekName :adam and GeekId :1</span><br></pre></td></tr></table></figure>
 
-            //- include includes/comment.pug
+<p>也就是说<strong>每一个类里面都有一个构造函数用来给变量赋值</strong>。如果你自己不去写这个构造函数，那么编译器会写一个。这样就可以给你创建的所有变量默认赋值了。（如果构造函数有参数那么，就是你给定的值；如果没有参数，那么就是0或者时null)。对了，构造函数中也可以写其他的语句，可以夹带私货。</p>
+<h2 id="使用构造参数时的一些其他问题："><a href="#使用构造参数时的一些其他问题：" class="headerlink" title="使用构造参数时的一些其他问题："></a>使用构造参数时的一些其他问题：</h2><ul>
+<li><p><strong>Does constructor return any value?</strong> （有返回值么？没有，但可以写return）</p>
+<p>There are no “return value” statements in constructor, but constructor returns current class instance. We can write ‘return’ inside a constructor.</p>
+</li>
+<li><p><strong>Constructor Overloading.</strong>（我们同样将其视作函数【本来就是】，当然也可以像函数一样，通过参数的类型，数目和顺序的不同来区分不同的同名构造函数）</p>
+<p>Like methods, we can overload constructors for creating objects in different ways. Compiler differentiates constructors on the basis of numbers of parameters, types of the parameters and order of the parameters.</p>
+</li>
+</ul>
+<blockquote>
+<p><strong>How constructors are different from methods in Java?构造函数和函数的区别</strong></p>
+</blockquote>
+<ul>
+<li>Constructor(s) must have the same name as the class within which it defined while it is not necessary for the method in java.构造函数的名字只能和类名相同，而且也不是必要的。</li>
+<li>Constructor(s) do not return any type while method(s) have the return type or <strong>void</strong> if does not return any value.构造函数没有返回值</li>
+<li>Constructor is called only once at the time of Object creation while method(s) can be called any numbers of time.构造函数只有在对象被创建的时候调用一次，而函数可以无限次被调用。</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      
+        <a data-url="https://jefine.github.io/2020/02/11/javaconstructors%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0/" data-id="ck811m6jt000vegr08b3kd39i" class="article-share-link">分享到</a>
+      
+
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/java%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0/" rel="tag">java构造函数</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2020/02/17/java%E6%96%B9%E6%B3%95methods/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          java方法methods
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2020/02/10/%E6%B1%89%E8%AF%BA%E5%A1%94%E7%9A%84%E6%80%9D%E8%80%83%E5%8F%8A%E8%A7%A3%E7%AD%94/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">汉诺塔的思考及解答</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2020 jefine<br>
+      Theme <a href="https://github.com/henryhuang/oishi" target="_blank">Oishi</a>, Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <!--
+      <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">首页</a>
+  
+    <a href="/categories/life" class="mobile-nav-link">生活</a>
+  
+    <a href="/archives" class="mobile-nav-link">归档</a>
+  
+</nav>
+    -->
+    
+
+<!-- 百度分享 start -->
+
+<!-- 百度分享 end -->
+
+<script src="//cdn.bootcss.com/jquery/1.11.1/jquery.min.js"></script>
+
+
+
+<script src="/js/jquery.scrollUp.min.js"></script>
+<script src="/js/jquery.transform.js"></script>
+<script src="/js/menu.js"></script>
+
+<script src="/js/script.js"></script>
+<script src="/js/scrollUp.js"></script>
+
+  </div>
+</body>
+</html>

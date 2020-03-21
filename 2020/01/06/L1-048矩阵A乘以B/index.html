@@ -1,51 +1,235 @@
-extends includes/base
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>L1-048矩阵A乘以B | jefine</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="给定两个矩阵A和B，要求你计算它们的乘积矩阵AB。需要注意的是，只有规模匹配的矩阵才可以相乘。即若A有Ra行、Ca列，B有Rb行、Cb列，则只有Ca与Rb相等时，两个矩阵才能相乘。 输入格式：输入先后给出两个矩阵A和B。对于每个矩阵，首先在一行中给出其行数R和列数C，随后R行，每行给出C个整数，以1个空格分隔，且行首尾没有多余的空格。输入保证两个矩阵的R和C都是正数，并且所有整数的绝对值不超过10">
+<meta name="keywords" content="pta">
+<meta property="og:type" content="article">
+<meta property="og:title" content="L1-048矩阵A乘以B">
+<meta property="og:url" content="https:&#x2F;&#x2F;jefine.github.io&#x2F;2020&#x2F;01&#x2F;06&#x2F;L1-048%E7%9F%A9%E9%98%B5A%E4%B9%98%E4%BB%A5B&#x2F;index.html">
+<meta property="og:site_name" content="jefine">
+<meta property="og:description" content="给定两个矩阵A和B，要求你计算它们的乘积矩阵AB。需要注意的是，只有规模匹配的矩阵才可以相乘。即若A有Ra行、Ca列，B有Rb行、Cb列，则只有Ca与Rb相等时，两个矩阵才能相乘。 输入格式：输入先后给出两个矩阵A和B。对于每个矩阵，首先在一行中给出其行数R和列数C，随后R行，每行给出C个整数，以1个空格分隔，且行首尾没有多余的空格。输入保证两个矩阵的R和C都是正数，并且所有整数的绝对值不超过10">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https:&#x2F;&#x2F;i.loli.net&#x2F;2020&#x2F;01&#x2F;07&#x2F;drTUXefu1ItHyLm.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;i.loli.net&#x2F;2020&#x2F;01&#x2F;06&#x2F;vBWcMO1TzVIKuPG.png">
+<meta property="og:updated_time" content="2020-01-07T02:58:44.445Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https:&#x2F;&#x2F;i.loli.net&#x2F;2020&#x2F;01&#x2F;07&#x2F;drTUXefu1ItHyLm.png">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link type="text/css" href="//netdna.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.css" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/scrollUp/image.css">
+  <!--[if lt IE 9]><script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7/html5shiv.min.js"></script><![endif]-->
+  
+</head>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <div class="logo">
+        <img src="/logo.png" alt="Profile Picture">
+      </div>
+      <div id="title">jefine</div>
+      
+        <div id="subtitle">小小的梦呓</div>
+      
+       <ul class="my-socials">
+  
+ 
+</ul>
+    </div>
+  </div>
+  <div id="header-inner" class="">
+    <nav id="main-nav">
+      <a id="main-nav-toggle" class="nav-icon"></a>
+      <!--
+        
+          
+            <a class="main-nav-link" href="/">首页</a>
+          
+            <a class="main-nav-link" href="/categories/life">生活</a>
+          
+            <a class="main-nav-link" href="/archives">归档</a>
+          
+        
+      -->
+    </nav>
+    <nav id="title-nav" style="display:none">
+      <a href="/">jefine</a>
+      <img src="/logo.png" alt="Profile Picture">
+      <!--
+      <span id="title-nav-socials">
+        
+       
+     </span>
+      -->
+    </nav>
+    <nav id="sub-nav">
+      
+      <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+    </nav>
+    <div id="search-form-wrap">
+      <form action="http://www.baidu.com/baidu" method="get" accept-charset="utf-8" class="search-form">
+        <input type="search" name="word" maxlength="20" class="search-form-input" placeholder="搜索">
+        <input type="submit" value="" class="search-form-submit">
+        <input name=tn type=hidden value="bds">
+        <input name=cl type=hidden value="3">
+        <input name=ct type=hidden value="2097152">
+        <input type="hidden" name="si" value="jefine.github.io">
+      </form>
+    </div>
+  </div>
+  <div class="site-nav" style="display: none;">
+    <ul>
+      
+      
+        <li><a href="/">首页</a></li>
+      
+        <li><a href="/categories/life">生活</a></li>
+      
+        <li><a href="/archives">归档</a></li>
+      
+      
+    </ul>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-L1-048矩阵A乘以B" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/01/06/L1-048%E7%9F%A9%E9%98%B5A%E4%B9%98%E4%BB%A5B/" class="article-date">
+  <time datetime="2020-01-06T06:40:05.000Z" itemprop="datePublished">2020-01-06</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E7%BC%96%E7%A8%8B/">编程</a>
+  </div>
 
-block extra_style
-    if theme.gitalk.enable
-        link(rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css")
-    link(rel='stylesheet' href=url_for('./css/atom-one-dark.css'))
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      L1-048矩阵A乘以B
+    </h1>
+  
 
-block content
-    div.al_page_background.dis_flex_center.al_full_cover
-    div.al_page_container
-        div.al_pos_ab.al_fake_background
-        div.al_main_container.al_main_page_container
-            article.al_article
-                header
-                    h1.al_page_title= page.title
-                    div.al_page_info.dis_flex
-                        div.al_page_content_info
-                            |#{date(page.date, 'MMM DD, YYYY h:mm A')}
-                        div.al_page_content_info
-                            |#{wordcount(page.content)} words
-                        div.al_page_content_info
-                            |#{min2read(page.content)} minutes read
-                        span.tags
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>给定两个矩阵A和B，要求你计算它们的乘积矩阵AB。需要注意的是，只有规模匹配的矩阵才可以相乘。即若A有Ra行、Ca列，B有Rb行、Cb列，则只有Ca与Rb相等时，两个矩阵才能相乘。</p>
+<h3 id="输入格式："><a href="#输入格式：" class="headerlink" title="输入格式："></a>输入格式：</h3><p>输入先后给出两个矩阵A和B。对于每个矩阵，首先在一行中给出其行数R和列数C，随后R行，每行给出C个整数，以1个空格分隔，且行首尾没有多余的空格。输入保证两个矩阵的R和C都是正数，并且所有整数的绝对值不超过100。</p>
+<h3 id="输出格式："><a href="#输出格式：" class="headerlink" title="输出格式："></a>输出格式：</h3><p>若输入的两个矩阵的规模是匹配的，则按照输入的格式输出乘积矩阵AB，否则输出<code>Error: Ca != Rb</code>，其中<code>Ca</code>是A的列数，<code>Rb</code>是B的行数。</p>
+<h3 id="输入样例1："><a href="#输入样例1：" class="headerlink" title="输入样例1："></a>输入样例1：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">2 3</span><br><span class="line">1 2 3</span><br><span class="line">4 5 6</span><br><span class="line">3 4</span><br><span class="line">7 8 9 0</span><br><span class="line">-1 -2 -3 -4</span><br><span class="line">5 6 7 8</span><br></pre></td></tr></table></figure>
 
-                if toc(page.content)
-                    div.al_page_content_outline!= toc(page.content,{list_number:false})
+<h3 id="输出样例1："><a href="#输出样例1：" class="headerlink" title="输出样例1："></a>输出样例1：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">2 4</span><br><span class="line">20 22 24 16</span><br><span class="line">53 58 63 28</span><br></pre></td></tr></table></figure>
 
-                section#post-body!=page.content
+<h3 id="输入样例2："><a href="#输入样例2：" class="headerlink" title="输入样例2："></a>输入样例2：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">3 2</span><br><span class="line">38 26</span><br><span class="line">43 -5</span><br><span class="line">0 17</span><br><span class="line">3 2</span><br><span class="line">-11 57</span><br><span class="line">99 68</span><br><span class="line">81 72</span><br></pre></td></tr></table></figure>
 
-                include ./includes/plugin/gitalk.pug
-                include ./includes/plugin/disqus.pug
+<h3 id="输出样例2："><a href="#输出样例2：" class="headerlink" title="输出样例2："></a>输出样例2：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Error: 2 != 3</span><br></pre></td></tr></table></figure>
 
-            - var prev = page.prev ? page.prev.path : false;
-            - var next = page.next ? page.next.path : false;
-            nav.dis_flex.post-nav
-                span.prev
-                    if page.prev
-                        a(href=url_for(prev))
-                            span.arrow ←
-                            | Newer Posts
-                span.next
-                    if page.next
-                        a(href=url_for(next))
-                            | Older Posts
-                            span.arrow →
+<h3 id="题目思路："><a href="#题目思路：" class="headerlink" title="题目思路："></a>题目思路：</h3><p>一开始，一看题目。嗯！没有思路。。。</p>
+<p>什么是矩阵乘法呢？（此处可以百度了解以下）</p>
+<p><img src="https://i.loli.net/2020/01/07/drTUXefu1ItHyLm.png" alt="BWqSKunTFkLpziP.png"></p>
+<p>简单地说就是上述公式。百度词条中这样定义：</p>
+<p><img src="https://i.loli.net/2020/01/06/vBWcMO1TzVIKuPG.png" alt="图片.png"></p>
+<p>看完之后，我们就或许有了一点思路。</p>
+<p>于是如果符合条件，我们就依次计算输出即可。</p>
+<p>但是！！！</p>
+<p>这道题最最关键的就是各种不同的自定义字母所代表的含义。（比如上图中的是b  [1 ] [1]  其实在数组中是b [0] [0];谨慎呀！！！<del>（找这个bug找的脑壳疼）</del></p>
+<p>当然，也可以动态数组，但是这样更好理解一一些。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">int</span> c1,c2,r1,r2; </span><br><span class="line">	<span class="keyword">int</span> i,j;</span><br><span class="line">	<span class="built_in">cin</span>&gt;&gt;r1&gt;&gt;c1;	</span><br><span class="line">	<span class="keyword">int</span> m[r1][c1];<span class="comment">//定义并得到两个数组 </span></span><br><span class="line">	<span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;r1;i++)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">for</span>( j=<span class="number">0</span>;j&lt;c1;j++)</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="built_in">cin</span>&gt;&gt;m[i][j];</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;	</span><br><span class="line">	<span class="built_in">cin</span>&gt;&gt;r2&gt;&gt;c2;	</span><br><span class="line">	<span class="keyword">int</span> n[r2][c2];</span><br><span class="line">	<span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;r2;i++)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">for</span>( j=<span class="number">0</span>;j&lt;c2;j++)</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="built_in">cin</span>&gt;&gt;n[i][j];</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">if</span>(c1==r2)</span><br><span class="line">	&#123;<span class="comment">//首先排除不相等的情况 (规模是否相等） </span></span><br><span class="line">		<span class="built_in">cout</span>&lt;&lt;r1&lt;&lt;<span class="string">" "</span>&lt;&lt;c2&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">		<span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;r1;i++)&#123;<span class="comment">//前两个for得到n个item； </span></span><br><span class="line">			<span class="keyword">for</span>(j=<span class="number">0</span>;j&lt;c2;j++)</span><br><span class="line">			&#123;<span class="comment">//输出每一行； </span></span><br><span class="line">				<span class="keyword">int</span> sum=<span class="number">0</span>;</span><br><span class="line">				<span class="keyword">for</span>(<span class="keyword">int</span> k=<span class="number">0</span>;k&lt;c1;k++)&#123;<span class="comment">//（见公式）； </span></span><br><span class="line">				sum=sum+m[i][k]*n[k][j];</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="built_in">cout</span>&lt;&lt;sum;</span><br><span class="line">			<span class="keyword">if</span>(j!=c2<span class="number">-1</span>)</span><br><span class="line">			  <span class="built_in">cout</span>&lt;&lt;<span class="string">" "</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="built_in">cout</span>&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">else</span> <span class="built_in">cout</span>&lt;&lt;<span class="string">"Error: "</span>&lt;&lt;c2&lt;&lt;<span class="string">" != "</span>&lt;&lt;r2;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;	</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-    if config.highlight.enable
-        script(type='text/javascript', src=url_for('javascripts/highlight.pack.js'))
-        script!= "document.querySelectorAll('figure.highlight').forEach(function(b){hljs.highlightBlock(b);});"
 
-            //- include includes/comment.pug
+      
+    </div>
+    <footer class="article-footer">
+      
+        <a data-url="https://jefine.github.io/2020/01/06/L1-048%E7%9F%A9%E9%98%B5A%E4%B9%98%E4%BB%A5B/" data-id="ck811m6j9000iegr04kvacqq5" class="article-share-link">分享到</a>
+      
+
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/pta/" rel="tag">pta</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2020/01/06/L1-050%E5%80%92%E6%95%B0%E7%AC%ACN%E4%B8%AA%E5%AD%97%E7%AC%A6%E4%B8%B2/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          L1-050倒数第N个字符串
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2020/01/05/L1-046%E6%95%B4%E9%99%A4%E5%85%89%E6%A3%8D%EF%BC%88%E6%A8%A1%E6%8B%9F%E5%A4%A7%E6%95%B0%E9%99%A4%E6%B3%95%EF%BC%89/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">L1-046整除光棍（模拟大数除法）</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2020 jefine<br>
+      Theme <a href="https://github.com/henryhuang/oishi" target="_blank">Oishi</a>, Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <!--
+      <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">首页</a>
+  
+    <a href="/categories/life" class="mobile-nav-link">生活</a>
+  
+    <a href="/archives" class="mobile-nav-link">归档</a>
+  
+</nav>
+    -->
+    
+
+<!-- 百度分享 start -->
+
+<!-- 百度分享 end -->
+
+<script src="//cdn.bootcss.com/jquery/1.11.1/jquery.min.js"></script>
+
+
+
+<script src="/js/jquery.scrollUp.min.js"></script>
+<script src="/js/jquery.transform.js"></script>
+<script src="/js/menu.js"></script>
+
+<script src="/js/script.js"></script>
+<script src="/js/scrollUp.js"></script>
+
+  </div>
+</body>
+</html>

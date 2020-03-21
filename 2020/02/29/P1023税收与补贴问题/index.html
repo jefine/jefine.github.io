@@ -1,51 +1,239 @@
-extends includes/base
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>P1023税收与补贴问题 | jefine</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="题目背景每样商品的价格越低，其销量就会相应增大。现已知某种商品的成本及其在若干价位上的销量（产品不会低于成本销售），并假设相邻价位间销量的变化是线性的且在价格高于给定的最高价位后，销量以某固定数值递减。（我们假设价格及销售量都是整数） 对于某些特殊商品，不可能完全由市场去调节其价格。这时候就需要政府以税收或补贴的方式来控制。（所谓税收或补贴就是对于每个产品收取或给予生产厂家固定金额的货币） 题目描">
+<meta name="keywords" content="洛谷">
+<meta property="og:type" content="article">
+<meta property="og:title" content="P1023税收与补贴问题">
+<meta property="og:url" content="https:&#x2F;&#x2F;jefine.github.io&#x2F;2020&#x2F;02&#x2F;29&#x2F;P1023%E7%A8%8E%E6%94%B6%E4%B8%8E%E8%A1%A5%E8%B4%B4%E9%97%AE%E9%A2%98&#x2F;index.html">
+<meta property="og:site_name" content="jefine">
+<meta property="og:description" content="题目背景每样商品的价格越低，其销量就会相应增大。现已知某种商品的成本及其在若干价位上的销量（产品不会低于成本销售），并假设相邻价位间销量的变化是线性的且在价格高于给定的最高价位后，销量以某固定数值递减。（我们假设价格及销售量都是整数） 对于某些特殊商品，不可能完全由市场去调节其价格。这时候就需要政府以税收或补贴的方式来控制。（所谓税收或补贴就是对于每个产品收取或给予生产厂家固定金额的货币） 题目描">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2020-02-29T04:44:02.267Z">
+<meta name="twitter:card" content="summary">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link type="text/css" href="//netdna.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.css" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/scrollUp/image.css">
+  <!--[if lt IE 9]><script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7/html5shiv.min.js"></script><![endif]-->
+  
+</head>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <div class="logo">
+        <img src="/logo.png" alt="Profile Picture">
+      </div>
+      <div id="title">jefine</div>
+      
+        <div id="subtitle">小小的梦呓</div>
+      
+       <ul class="my-socials">
+  
+ 
+</ul>
+    </div>
+  </div>
+  <div id="header-inner" class="">
+    <nav id="main-nav">
+      <a id="main-nav-toggle" class="nav-icon"></a>
+      <!--
+        
+          
+            <a class="main-nav-link" href="/">首页</a>
+          
+            <a class="main-nav-link" href="/categories/life">生活</a>
+          
+            <a class="main-nav-link" href="/archives">归档</a>
+          
+        
+      -->
+    </nav>
+    <nav id="title-nav" style="display:none">
+      <a href="/">jefine</a>
+      <img src="/logo.png" alt="Profile Picture">
+      <!--
+      <span id="title-nav-socials">
+        
+       
+     </span>
+      -->
+    </nav>
+    <nav id="sub-nav">
+      
+      <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+    </nav>
+    <div id="search-form-wrap">
+      <form action="http://www.baidu.com/baidu" method="get" accept-charset="utf-8" class="search-form">
+        <input type="search" name="word" maxlength="20" class="search-form-input" placeholder="搜索">
+        <input type="submit" value="" class="search-form-submit">
+        <input name=tn type=hidden value="bds">
+        <input name=cl type=hidden value="3">
+        <input name=ct type=hidden value="2097152">
+        <input type="hidden" name="si" value="jefine.github.io">
+      </form>
+    </div>
+  </div>
+  <div class="site-nav" style="display: none;">
+    <ul>
+      
+      
+        <li><a href="/">首页</a></li>
+      
+        <li><a href="/categories/life">生活</a></li>
+      
+        <li><a href="/archives">归档</a></li>
+      
+      
+    </ul>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-P1023税收与补贴问题" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/02/29/P1023%E7%A8%8E%E6%94%B6%E4%B8%8E%E8%A1%A5%E8%B4%B4%E9%97%AE%E9%A2%98/" class="article-date">
+  <time datetime="2020-02-29T04:26:23.000Z" itemprop="datePublished">2020-02-29</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E7%BC%96%E7%A8%8B/">编程</a>
+  </div>
 
-block extra_style
-    if theme.gitalk.enable
-        link(rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css")
-    link(rel='stylesheet' href=url_for('./css/atom-one-dark.css'))
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      P1023税收与补贴问题
+    </h1>
+  
 
-block content
-    div.al_page_background.dis_flex_center.al_full_cover
-    div.al_page_container
-        div.al_pos_ab.al_fake_background
-        div.al_main_container.al_main_page_container
-            article.al_article
-                header
-                    h1.al_page_title= page.title
-                    div.al_page_info.dis_flex
-                        div.al_page_content_info
-                            |#{date(page.date, 'MMM DD, YYYY h:mm A')}
-                        div.al_page_content_info
-                            |#{wordcount(page.content)} words
-                        div.al_page_content_info
-                            |#{min2read(page.content)} minutes read
-                        span.tags
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="题目背景"><a href="#题目背景" class="headerlink" title="题目背景"></a>题目背景</h2><p>每样商品的价格越低，其销量就会相应增大。现已知某种商品的成本及其在若干价位上的销量（产品不会低于成本销售），并假设相邻价位间销量的变化是线性的且在价格高于给定的最高价位后，销量以某固定数值递减。（我们假设价格及销售量都是整数）</p>
+<p>对于某些特殊商品，不可能完全由市场去调节其价格。这时候就需要政府以税收或补贴的方式来控制。（所谓税收或补贴就是对于每个产品收取或给予生产厂家固定金额的货币）</p>
+<h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><p>你是某家咨询公司的项目经理，现在你已经知道政府对某种商品的预期价格，以及在各种价位上的销售情况。要求你确定政府对此商品是应收税还是补贴的最少金额（也为整数），才能使商家在这样一种政府预期的价格上，获取相对其他价位上的最大总利润。</p>
+<p>总利润=单位商品利润   × × 销量</p>
+<p>单位商品利润=单位商品价格 - 单位商品成本 （- 税金  or  + 补贴）</p>
+<h2 id="输入格式"><a href="#输入格式" class="headerlink" title="输入格式"></a>输入格式</h2><p>输入的第一行为政府对某种商品的预期价，第二行有两个整数，第一个整数为商品成本，第二个整数为以成本价销售时的销售量，以下若干行每行都有两个整数，第一个为某价位时的单价，第二个为此时的销量，以一行−1-1−1，−1-1−1表示所有已知价位及对应的销量输入完毕，输入的最后一行为一个单独的整数表示在已知的最高单价外每升高一块钱将减少的销量。</p>
+<h2 id="输出格式"><a href="#输出格式" class="headerlink" title="输出格式"></a>输出格式</h2><p>输出有两种情况：若在政府预期价上能得到最大总利润，则输出一个单独的整数，数的正负表示是补贴还是收税，数的大小表示补贴或收税的金额最小值。若有多解，取绝对值最小的输出。</p>
+<p>如在政府预期价上不能得到最大总利润，则输出“NO SOLUTION”。</p>
+<h2 id="输入输出样例"><a href="#输入输出样例" class="headerlink" title="输入输出样例"></a>输入输出样例</h2><p><strong>输入 #1</strong> </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">31</span><br><span class="line">28 130</span><br><span class="line">30 120</span><br><span class="line">31 110</span><br><span class="line">-1  -1</span><br><span class="line">15</span><br></pre></td></tr></table></figure>
 
-                if toc(page.content)
-                    div.al_page_content_outline!= toc(page.content,{list_number:false})
+<p><strong>输出 #1</strong> </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">4</span><br></pre></td></tr></table></figure>
 
-                section#post-body!=page.content
+<h2 id="说明-提示"><a href="#说明-提示" class="headerlink" title="说明/提示"></a>说明/提示</h2><p>所有数字均小于100000</p>
+<h1 id="解题思路："><a href="#解题思路：" class="headerlink" title="解题思路："></a>解题思路：</h1><h3 id="tips：说实话，这个题目看了很久。。。"><a href="#tips：说实话，这个题目看了很久。。。" class="headerlink" title="tips：说实话，这个题目看了很久。。。"></a>tips：说实话，这个题目看了很久。。。</h3><p>最后，发现所求的是什么了。是要求政府给定一个预期的价格，然后你去尝试不同的补贴或者税收，得到他们的利润，并<strong>看看在每种税收或补贴下总利润最高的价格是不是政府预期价</strong> 。（可以好好思考一下这句，那么我们就计算出不同补贴或税收下，利润最大的价格，再比较）</p>
+<p>（最后，好像没有不符合条件的，所以不用管。。。）</p>
+<p>那么：</p>
+<ol>
+<li><p>我们可以先将购买者的价格和所对应的销量全部存起来，但这又有两个问题：</p>
+<p>1）在题目给出的价格和销量之间，销量是随价格线性变化的，我们可通过计算得出期间的对应价格与销量，并都储存起来。（具体实施方法见代码）即 价格-销量表。 </p>
+<p>2）再输入的最后给定了之后的销量减少值，我们就可以从中得到其后，一直到销量小于0的对应关系，并储存起来。</p>
+</li>
+<li><p>最后再根据不同的补贴（税收）（用一个循环从1开始跑到10000）依次计算其最大利润，并比较在该最大利润的价格是否与政府的价格相同。</p>
+</li>
+</ol>
+<h2 id="代码："><a href="#代码：" class="headerlink" title="代码："></a>代码：</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//代码来源：https://www.luogu.com.cn/user/174034</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">int</span> a[<span class="number">100010</span>][<span class="number">3</span>];<span class="comment">//用于存放价格和销量的数组</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> i=<span class="number">1</span>,j=<span class="number">1</span>,k,expect,down,<span class="built_in">max</span>,temp,cha,xl,num,s,price,p;</span><br><span class="line">    <span class="built_in">cin</span>&gt;&gt;expect;<span class="comment">//读入预期价</span></span><br><span class="line">    <span class="keyword">while</span>(<span class="built_in">cin</span>&gt;&gt;a[i][<span class="number">1</span>]&gt;&gt;a[i][<span class="number">2</span>]&amp;&amp;a[i][<span class="number">1</span>]!=<span class="number">-1</span>&amp;&amp;a[i] [<span class="number">2</span>]!=<span class="number">-1</span>)<span class="comment">//如果输入的两个数不是-1，-1</span></span><br><span class="line">    &#123;</span><br><span class="line">        i++;<span class="comment">//循环变量i++</span></span><br><span class="line">        <span class="keyword">if</span>(i&gt;<span class="number">2</span>&amp;&amp;a[i<span class="number">-1</span>][<span class="number">1</span>]-a[i<span class="number">-2</span>][<span class="number">1</span>]&gt;<span class="number">1</span>)<span class="comment">//如果两个价格之间差大于一</span></span><br><span class="line">        &#123;</span><br><span class="line">            i--;<span class="comment">//回到上一个读入的销量</span></span><br><span class="line">            cha=(a[i<span class="number">-1</span>][<span class="number">2</span>]-a[i][<span class="number">2</span>])/(a[i][<span class="number">1</span>]-a[i<span class="number">-1</span>][<span class="number">1</span>]);<span class="comment">//求出每次销量减少多少：销量差/价格差</span></span><br><span class="line">            temp=a[i][<span class="number">1</span>];<span class="comment">//记录下价格</span></span><br><span class="line">            <span class="keyword">for</span>(j=a[i<span class="number">-1</span>][<span class="number">1</span>]+<span class="number">1</span>;j&lt;=temp;j++)<span class="comment">//按价格递增顺序依次写入</span></span><br><span class="line">            &#123;</span><br><span class="line">                a[i][<span class="number">1</span>]=j;<span class="comment">//写入价格</span></span><br><span class="line">                a[i][<span class="number">2</span>]=a[i<span class="number">-1</span>][<span class="number">2</span>]-cha;<span class="comment">//按销量差写入销量</span></span><br><span class="line">                i++;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">cin</span>&gt;&gt;down;<span class="comment">//输入超过最大价格之后每次销量降低多少</span></span><br><span class="line">    i--;<span class="comment">//因为上面的while循环最后有i++所以用i--抵消……</span></span><br><span class="line">    xl=a[i][<span class="number">2</span>];<span class="comment">//记录目前的销量</span></span><br><span class="line">    <span class="keyword">while</span>(xl&gt;<span class="number">0</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span>(xl-down&lt;<span class="number">0</span>)<span class="keyword">break</span>;<span class="comment">//如销量小于零则退出</span></span><br><span class="line">        <span class="keyword">else</span><span class="comment">//否则</span></span><br><span class="line">        &#123;</span><br><span class="line">            xl-=down;<span class="comment">//销量每次减掉down</span></span><br><span class="line">            i++;<span class="comment">//循环变量++</span></span><br><span class="line">            a[i][<span class="number">1</span>]=a[i<span class="number">-1</span>][<span class="number">1</span>]+<span class="number">1</span>;<span class="comment">//每次价格+1</span></span><br><span class="line">            a[i][<span class="number">2</span>]=xl;<span class="comment">//销量就是xl</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span>(j=<span class="number">1</span>;j&lt;=<span class="number">10000</span>;j++)<span class="comment">//该遍历了，因为收税相当于补贴*-1所以记录一下符号即可</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">max</span>=<span class="number">-99999</span>;<span class="comment">//用于存储最大的总利润</span></span><br><span class="line">        <span class="keyword">for</span>(k=<span class="number">1</span>;k&lt;=i;k++)<span class="comment">//每次扫一遍每一种价格</span></span><br><span class="line">        &#123;</span><br><span class="line">            num=(a[k][<span class="number">1</span>]-a[<span class="number">1</span>][<span class="number">1</span>]+j)*a[k][<span class="number">2</span>];<span class="comment">//套公式算出总利润</span></span><br><span class="line">            <span class="keyword">if</span>(num&gt;=<span class="built_in">max</span>)<span class="comment">//如果总利润比目前最大的大</span></span><br><span class="line">            &#123;</span><br><span class="line">                <span class="built_in">max</span>=num;<span class="comment">//更新max</span></span><br><span class="line">                price=a[k][<span class="number">1</span>];<span class="comment">//记录下价格</span></span><br><span class="line">                p=<span class="number">1</span>;<span class="comment">//记录下符号</span></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(price==expect)&#123;<span class="built_in">cout</span>&lt;&lt;j*p;<span class="keyword">return</span> <span class="number">0</span>;&#125;<span class="comment">//如果价格就是政府预期价则打印出来，因为本身就是从小到大遍历所以不用求绝对值最小的</span></span><br><span class="line">        <span class="built_in">max</span>=<span class="number">-99999</span>;<span class="comment">//后面是收税，原理同上</span></span><br><span class="line">        <span class="keyword">for</span>(k=<span class="number">1</span>;k&lt;=i;k++)</span><br><span class="line">        &#123;</span><br><span class="line">            num=(a[k][<span class="number">1</span>]-a[<span class="number">1</span>][<span class="number">1</span>]-j)*a[k][<span class="number">2</span>];</span><br><span class="line">            <span class="keyword">if</span>(num&gt;=<span class="built_in">max</span>)</span><br><span class="line">            &#123;</span><br><span class="line">               <span class="built_in">max</span>=num;</span><br><span class="line">                price=a[k][<span class="number">1</span>];  </span><br><span class="line">                p=<span class="number">-1</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(price==expect)&#123;<span class="built_in">cout</span>&lt;&lt;j*p;<span class="keyword">return</span> <span class="number">0</span>;&#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-                include ./includes/plugin/gitalk.pug
-                include ./includes/plugin/disqus.pug
 
-            - var prev = page.prev ? page.prev.path : false;
-            - var next = page.next ? page.next.path : false;
-            nav.dis_flex.post-nav
-                span.prev
-                    if page.prev
-                        a(href=url_for(prev))
-                            span.arrow ←
-                            | Newer Posts
-                span.next
-                    if page.next
-                        a(href=url_for(next))
-                            | Older Posts
-                            span.arrow →
 
-    if config.highlight.enable
-        script(type='text/javascript', src=url_for('javascripts/highlight.pack.js'))
-        script!= "document.querySelectorAll('figure.highlight').forEach(function(b){hljs.highlightBlock(b);});"
 
-            //- include includes/comment.pug
+      
+    </div>
+    <footer class="article-footer">
+      
+        <a data-url="https://jefine.github.io/2020/02/29/P1023%E7%A8%8E%E6%94%B6%E4%B8%8E%E8%A1%A5%E8%B4%B4%E9%97%AE%E9%A2%98/" data-id="ck811m6jo000regr0huw43jrr" class="article-share-link">分享到</a>
+      
+
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%B4%9B%E8%B0%B7/" rel="tag">洛谷</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2020/03/01/java%E6%97%A5%E6%9C%9F%E5%A4%84%E7%90%86/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          java日期处理
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2020/02/28/%E6%A6%82%E8%BF%B0STL/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">概述STL</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2020 jefine<br>
+      Theme <a href="https://github.com/henryhuang/oishi" target="_blank">Oishi</a>, Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <!--
+      <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">首页</a>
+  
+    <a href="/categories/life" class="mobile-nav-link">生活</a>
+  
+    <a href="/archives" class="mobile-nav-link">归档</a>
+  
+</nav>
+    -->
+    
+
+<!-- 百度分享 start -->
+
+<!-- 百度分享 end -->
+
+<script src="//cdn.bootcss.com/jquery/1.11.1/jquery.min.js"></script>
+
+
+
+<script src="/js/jquery.scrollUp.min.js"></script>
+<script src="/js/jquery.transform.js"></script>
+<script src="/js/menu.js"></script>
+
+<script src="/js/script.js"></script>
+<script src="/js/scrollUp.js"></script>
+
+  </div>
+</body>
+</html>

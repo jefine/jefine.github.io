@@ -1,51 +1,232 @@
-extends includes/base
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>pta统计一行文本的单词个数 | jefine</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="本题目要求编写程序统计一行字符中单词的个数。所谓“单词”是指连续不含空格的字符串，各单词之间用空格分隔，空格数可以是多个。 输入格式:输入给出一行字符。输出格式:在一行中输出单词个数。输入样例:   Let’s go to room 209.       输出样例:   5       1234567891011121314151617181920212223242526272829#includ">
+<meta name="keywords" content="pta">
+<meta property="og:type" content="article">
+<meta property="og:title" content="pta统计一行文本的单词个数">
+<meta property="og:url" content="https:&#x2F;&#x2F;jefine.github.io&#x2F;2019&#x2F;11&#x2F;24&#x2F;pta%E7%BB%9F%E8%AE%A1%E4%B8%80%E8%A1%8C%E6%96%87%E6%9C%AC%E7%9A%84%E5%8D%95%E8%AF%8D%E4%B8%AA%E6%95%B0&#x2F;index.html">
+<meta property="og:site_name" content="jefine">
+<meta property="og:description" content="本题目要求编写程序统计一行字符中单词的个数。所谓“单词”是指连续不含空格的字符串，各单词之间用空格分隔，空格数可以是多个。 输入格式:输入给出一行字符。输出格式:在一行中输出单词个数。输入样例:   Let’s go to room 209.       输出样例:   5       1234567891011121314151617181920212223242526272829#includ">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-11-24T03:29:08.817Z">
+<meta name="twitter:card" content="summary">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link type="text/css" href="//netdna.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.css" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/scrollUp/image.css">
+  <!--[if lt IE 9]><script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7/html5shiv.min.js"></script><![endif]-->
+  
+</head>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <div class="logo">
+        <img src="/logo.png" alt="Profile Picture">
+      </div>
+      <div id="title">jefine</div>
+      
+        <div id="subtitle">小小的梦呓</div>
+      
+       <ul class="my-socials">
+  
+ 
+</ul>
+    </div>
+  </div>
+  <div id="header-inner" class="">
+    <nav id="main-nav">
+      <a id="main-nav-toggle" class="nav-icon"></a>
+      <!--
+        
+          
+            <a class="main-nav-link" href="/">首页</a>
+          
+            <a class="main-nav-link" href="/categories/life">生活</a>
+          
+            <a class="main-nav-link" href="/archives">归档</a>
+          
+        
+      -->
+    </nav>
+    <nav id="title-nav" style="display:none">
+      <a href="/">jefine</a>
+      <img src="/logo.png" alt="Profile Picture">
+      <!--
+      <span id="title-nav-socials">
+        
+       
+     </span>
+      -->
+    </nav>
+    <nav id="sub-nav">
+      
+      <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+    </nav>
+    <div id="search-form-wrap">
+      <form action="http://www.baidu.com/baidu" method="get" accept-charset="utf-8" class="search-form">
+        <input type="search" name="word" maxlength="20" class="search-form-input" placeholder="搜索">
+        <input type="submit" value="" class="search-form-submit">
+        <input name=tn type=hidden value="bds">
+        <input name=cl type=hidden value="3">
+        <input name=ct type=hidden value="2097152">
+        <input type="hidden" name="si" value="jefine.github.io">
+      </form>
+    </div>
+  </div>
+  <div class="site-nav" style="display: none;">
+    <ul>
+      
+      
+        <li><a href="/">首页</a></li>
+      
+        <li><a href="/categories/life">生活</a></li>
+      
+        <li><a href="/archives">归档</a></li>
+      
+      
+    </ul>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-pta统计一行文本的单词个数" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/11/24/pta%E7%BB%9F%E8%AE%A1%E4%B8%80%E8%A1%8C%E6%96%87%E6%9C%AC%E7%9A%84%E5%8D%95%E8%AF%8D%E4%B8%AA%E6%95%B0/" class="article-date">
+  <time datetime="2019-11-24T03:07:18.000Z" itemprop="datePublished">2019-11-24</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E7%BC%96%E7%A8%8B/">编程</a>
+  </div>
 
-block extra_style
-    if theme.gitalk.enable
-        link(rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css")
-    link(rel='stylesheet' href=url_for('./css/atom-one-dark.css'))
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      pta统计一行文本的单词个数
+    </h1>
+  
 
-block content
-    div.al_page_background.dis_flex_center.al_full_cover
-    div.al_page_container
-        div.al_pos_ab.al_fake_background
-        div.al_main_container.al_main_page_container
-            article.al_article
-                header
-                    h1.al_page_title= page.title
-                    div.al_page_info.dis_flex
-                        div.al_page_content_info
-                            |#{date(page.date, 'MMM DD, YYYY h:mm A')}
-                        div.al_page_content_info
-                            |#{wordcount(page.content)} words
-                        div.al_page_content_info
-                            |#{min2read(page.content)} minutes read
-                        span.tags
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>本题目要求编写程序统计一行字符中单词的个数。所谓“单词”是指连续不含空格的字符串，各单词之间用空格分隔，空格数可以是多个。</p>
+<h2 id="输入格式-输入给出一行字符。"><a href="#输入格式-输入给出一行字符。" class="headerlink" title="输入格式:输入给出一行字符。"></a>输入格式:输入给出一行字符。</h2><h2 id="输出格式-在一行中输出单词个数。"><a href="#输出格式-在一行中输出单词个数。" class="headerlink" title="输出格式:在一行中输出单词个数。"></a>输出格式:在一行中输出单词个数。</h2><h2 id="输入样例"><a href="#输入样例" class="headerlink" title="输入样例:"></a>输入样例:</h2><table>
+<thead>
+<tr>
+<th align="center">Let’s go to room 209.</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center"></td>
+</tr>
+</tbody></table>
+<h2 id="输出样例"><a href="#输出样例" class="headerlink" title="输出样例:"></a>输出样例:</h2><table>
+<thead>
+<tr>
+<th align="center">5</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center"></td>
+</tr>
+</tbody></table>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> i,cnt=<span class="number">0</span>,cntword=<span class="number">0</span>;</span><br><span class="line">	<span class="keyword">char</span> a;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">while</span>(<span class="number">1</span>)&#123;</span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">"%c"</span>,&amp;a);</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">if</span>(a==<span class="string">'\n'</span>)&#123;<span class="comment">//因为只是一行字符，所以遇到回车就结束。</span></span><br><span class="line">	<span class="keyword">break</span>;	</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">else</span> <span class="keyword">if</span>(a!=<span class="string">' '</span>)&#123;<span class="comment">//首字母不为‘ ’时</span></span><br><span class="line">		cntword++;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">while</span>(<span class="number">1</span>)&#123;<span class="comment">//此循环的意义在于判断该单词的位数。</span></span><br><span class="line">	 <span class="comment">//此循环应放在 首字母不为0时的语句中。否则会使的首字母为空格时，使	之跳过下一个字母（如输入‘ 1’则会输出0） </span></span><br><span class="line">		<span class="built_in">scanf</span>(<span class="string">"%c"</span>,&amp;a);</span><br><span class="line">		<span class="keyword">if</span>(a==<span class="string">' '</span>||a==<span class="string">'\n'</span>)&#123;</span><br><span class="line">		<span class="keyword">break</span>;</span><br><span class="line">		&#125;<span class="comment">//判断该单词是否为单字母单词 ，注意该单词在扫描到第一个字母时	已经将其cntword++ </span></span><br><span class="line">	</span><br><span class="line">	&#125;<span class="keyword">if</span>(a==<span class="string">'\n'</span>)&#123;</span><br><span class="line">		<span class="keyword">break</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">&#125;<span class="built_in">printf</span>(<span class="string">"%d"</span>,cntword); </span><br><span class="line"><span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-                if toc(page.content)
-                    div.al_page_content_outline!= toc(page.content,{list_number:false})
+<h4 id="希望此题可以有助于改变我们思考问题的方式。"><a href="#希望此题可以有助于改变我们思考问题的方式。" class="headerlink" title="希望此题可以有助于改变我们思考问题的方式。"></a>希望此题可以有助于改变我们思考问题的方式。</h4>
+      
+    </div>
+    <footer class="article-footer">
+      
+        <a data-url="https://jefine.github.io/2019/11/24/pta%E7%BB%9F%E8%AE%A1%E4%B8%80%E8%A1%8C%E6%96%87%E6%9C%AC%E7%9A%84%E5%8D%95%E8%AF%8D%E4%B8%AA%E6%95%B0/" data-id="ck811m6ko001kegr0bfxj1ivq" class="article-share-link">分享到</a>
+      
 
-                section#post-body!=page.content
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/pta/" rel="tag">pta</a></li></ul>
 
-                include ./includes/plugin/gitalk.pug
-                include ./includes/plugin/disqus.pug
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2019/12/12/%E6%9F%A5%E6%89%BE%E5%AD%90%E4%B8%B2/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          查找子串
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2019/11/12/%E6%96%B9%E9%98%B5%E5%BE%AA%E7%8E%AF%E5%8F%B3%E7%A7%BB%E4%BA%8E%E5%85%B6%E5%90%84%E7%A7%8D%E8%B8%A9bug23333/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">方阵循环右移于其各种踩bug23333</div>
+    </a>
+  
+</nav>
 
-            - var prev = page.prev ? page.prev.path : false;
-            - var next = page.next ? page.next.path : false;
-            nav.dis_flex.post-nav
-                span.prev
-                    if page.prev
-                        a(href=url_for(prev))
-                            span.arrow ←
-                            | Newer Posts
-                span.next
-                    if page.next
-                        a(href=url_for(next))
-                            | Older Posts
-                            span.arrow →
+  
+</article>
 
-    if config.highlight.enable
-        script(type='text/javascript', src=url_for('javascripts/highlight.pack.js'))
-        script!= "document.querySelectorAll('figure.highlight').forEach(function(b){hljs.highlightBlock(b);});"
+</section>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2020 jefine<br>
+      Theme <a href="https://github.com/henryhuang/oishi" target="_blank">Oishi</a>, Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <!--
+      <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">首页</a>
+  
+    <a href="/categories/life" class="mobile-nav-link">生活</a>
+  
+    <a href="/archives" class="mobile-nav-link">归档</a>
+  
+</nav>
+    -->
+    
 
-            //- include includes/comment.pug
+<!-- 百度分享 start -->
+
+<!-- 百度分享 end -->
+
+<script src="//cdn.bootcss.com/jquery/1.11.1/jquery.min.js"></script>
+
+
+
+<script src="/js/jquery.scrollUp.min.js"></script>
+<script src="/js/jquery.transform.js"></script>
+<script src="/js/menu.js"></script>
+
+<script src="/js/script.js"></script>
+<script src="/js/scrollUp.js"></script>
+
+  </div>
+</body>
+</html>

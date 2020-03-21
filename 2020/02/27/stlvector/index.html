@@ -1,51 +1,280 @@
-extends includes/base
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>stlvector | jefine</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Vectors are same as dynamic arrays with the ability to resize itself automatically when an element is inserted or deleted, with their storage being handled automatically by the container. Vector eleme">
+<meta name="keywords" content="stl">
+<meta property="og:type" content="article">
+<meta property="og:title" content="stlvector">
+<meta property="og:url" content="https:&#x2F;&#x2F;jefine.github.io&#x2F;2020&#x2F;02&#x2F;27&#x2F;stlvector&#x2F;index.html">
+<meta property="og:site_name" content="jefine">
+<meta property="og:description" content="Vectors are same as dynamic arrays with the ability to resize itself automatically when an element is inserted or deleted, with their storage being handled automatically by the container. Vector eleme">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2020-02-27T09:32:29.613Z">
+<meta name="twitter:card" content="summary">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link type="text/css" href="//netdna.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.css" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/scrollUp/image.css">
+  <!--[if lt IE 9]><script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7/html5shiv.min.js"></script><![endif]-->
+  
+</head>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <div class="logo">
+        <img src="/logo.png" alt="Profile Picture">
+      </div>
+      <div id="title">jefine</div>
+      
+        <div id="subtitle">小小的梦呓</div>
+      
+       <ul class="my-socials">
+  
+ 
+</ul>
+    </div>
+  </div>
+  <div id="header-inner" class="">
+    <nav id="main-nav">
+      <a id="main-nav-toggle" class="nav-icon"></a>
+      <!--
+        
+          
+            <a class="main-nav-link" href="/">首页</a>
+          
+            <a class="main-nav-link" href="/categories/life">生活</a>
+          
+            <a class="main-nav-link" href="/archives">归档</a>
+          
+        
+      -->
+    </nav>
+    <nav id="title-nav" style="display:none">
+      <a href="/">jefine</a>
+      <img src="/logo.png" alt="Profile Picture">
+      <!--
+      <span id="title-nav-socials">
+        
+       
+     </span>
+      -->
+    </nav>
+    <nav id="sub-nav">
+      
+      <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+    </nav>
+    <div id="search-form-wrap">
+      <form action="http://www.baidu.com/baidu" method="get" accept-charset="utf-8" class="search-form">
+        <input type="search" name="word" maxlength="20" class="search-form-input" placeholder="搜索">
+        <input type="submit" value="" class="search-form-submit">
+        <input name=tn type=hidden value="bds">
+        <input name=cl type=hidden value="3">
+        <input name=ct type=hidden value="2097152">
+        <input type="hidden" name="si" value="jefine.github.io">
+      </form>
+    </div>
+  </div>
+  <div class="site-nav" style="display: none;">
+    <ul>
+      
+      
+        <li><a href="/">首页</a></li>
+      
+        <li><a href="/categories/life">生活</a></li>
+      
+        <li><a href="/archives">归档</a></li>
+      
+      
+    </ul>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-stlvector" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/02/27/stlvector/" class="article-date">
+  <time datetime="2020-02-27T09:27:29.000Z" itemprop="datePublished">2020-02-27</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E7%AE%97%E6%B3%95/">算法</a>
+  </div>
 
-block extra_style
-    if theme.gitalk.enable
-        link(rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css")
-    link(rel='stylesheet' href=url_for('./css/atom-one-dark.css'))
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      stlvector
+    </h1>
+  
 
-block content
-    div.al_page_background.dis_flex_center.al_full_cover
-    div.al_page_container
-        div.al_pos_ab.al_fake_background
-        div.al_main_container.al_main_page_container
-            article.al_article
-                header
-                    h1.al_page_title= page.title
-                    div.al_page_info.dis_flex
-                        div.al_page_content_info
-                            |#{date(page.date, 'MMM DD, YYYY h:mm A')}
-                        div.al_page_content_info
-                            |#{wordcount(page.content)} words
-                        div.al_page_content_info
-                            |#{min2read(page.content)} minutes read
-                        span.tags
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Vectors are same as dynamic arrays with the ability to resize itself automatically when an element is inserted or deleted, with their storage being handled automatically by the container. Vector elements are placed in contiguous storage so that they can be accessed and traversed using iterators. In vectors, data is inserted at the end. Inserting at the end takes differential time, as sometimes there may be a need of extending the array. Removing the last element takes only constant time because no resizing happens. Inserting and erasing at the beginning or in the middle is linear in time.</p>
+<p>向量与<strong>动态数组</strong>相同，具有在插入或删除元素时自动调整自身大小的能力，并且容器自动处理其存储。 矢量元素放置在连续的存储中，以便可以使用迭代器对其进行访问和遍历。 在向量中，数据插入到最后（push_back())。 在末尾插入需要花费不同的时间，因为有时可能需要扩展阵列。 删除最后一个元素只需要固定的时间，因为不会发生大小调整。 在开始或中间插入和擦除的时间是线性的。</p>
+<h3 id="Certain-functions-associated-with-the-vector-are"><a href="#Certain-functions-associated-with-the-vector-are" class="headerlink" title="Certain functions associated with the vector are:"></a>Certain functions associated with the vector are:</h3><h2 id="成员函数："><a href="#成员函数：" class="headerlink" title="成员函数："></a>成员函数：</h2><p><strong>Iterators操作</strong></p>
+<ol>
+<li><a href="https://www.geeksforgeeks.org/vectorbegin-vectorend-c-stl/" target="_blank" rel="noopener">begin()</a> – Returns an iterator pointing to the first element in the vector（返回一个指向开始的迭代器（指针））</li>
+<li><a href="https://www.geeksforgeeks.org/vectorbegin-vectorend-c-stl/" target="_blank" rel="noopener">end()</a> – Returns an iterator pointing to the theoretical element that follows the last element in the vector（返回的是最后一个元素的迭代器（指针））</li>
+<li><a href="https://www.geeksforgeeks.org/vector-rbegin-and-rend-function-in-c-stl/" target="_blank" rel="noopener">rbegin()</a> – Returns a reverse iterator pointing to the last element in the vector (reverse beginning). It moves from last to first element（反转的开始，及最后的位置）</li>
+<li><a href="https://www.geeksforgeeks.org/vector-rbegin-and-rend-function-in-c-stl/" target="_blank" rel="noopener">rend()</a> – Returns a reverse iterator pointing to the theoretical element（反转的end，<strong>并不是指向第一个而是第一个之前的理论位置</strong>）<br>preceding the first element in the vector (considered as reverse end)</li>
+<li><a href="https://www.geeksforgeeks.org/vector-cbegin-vector-cend-c-stl/" target="_blank" rel="noopener">cbegin()</a> – Returns a constant iterator pointing to the first element in the vector.（返回一个常量的开始指针，无法修改）</li>
+<li><a href="https://www.geeksforgeeks.org/vector-cbegin-vector-cend-c-stl/" target="_blank" rel="noopener">cend()</a> – Returns a constant iterator pointing to the theoretical element that follows the last element in the vector.（返回最后一个之后的一个理论位置的常量，无法被修改）</li>
+<li><a href="https://www.geeksforgeeks.org/vectorcrend-vectorcrbegin-examples/" target="_blank" rel="noopener">crbegin()</a> – Returns a constant reverse iterator pointing to the last element in<br>the vector (reverse beginning). It moves from last to first element（同理常量，最后一个的位置）</li>
+<li><a href="https://www.geeksforgeeks.org/vectorcrend-vectorcrbegin-examples/" target="_blank" rel="noopener">crend()</a> – Returns a constant reverse iterator pointing to the theoretical<br>element preceding the first element in the vector (considered as reverse end)（同理常量，第一个之前的位置）</li>
+</ol>
+<p>理解：当使用了这些不同的迭代器操作可以减少操作的失误，更加准确，直观地写出更优质的代码。</p>
+<h3 id="Capacity容量"><a href="#Capacity容量" class="headerlink" title="Capacity容量"></a><strong>Capacity容量</strong></h3><ol>
+<li><p><a href="https://www.geeksforgeeks.org/vectorempty-vectorsize-c-stl/" target="_blank" rel="noopener">size()</a> – Returns the number of elements in the vector.元素的个数</p>
+</li>
+<li><p><a href="https://www.geeksforgeeks.org/vector-max_size-function-in-c-stl/" target="_blank" rel="noopener">max_size()</a> – Returns the maximum number of elements that the vector can hold.返回可容纳的最大地元素数量（通常超级超级大，是内存）</p>
+</li>
+<li><p><a href="https://www.geeksforgeeks.org/vector-capacity-function-in-c-stl/" target="_blank" rel="noopener">capacity()</a> – Returns the size of the storage space currently allocated to the vector expressed as number of elements.</p>
+<p> 返回现在所分配的内存大小（但他是用对应的元素个数来作为返回值的）</p>
+</li>
+<li><p><a href="https://www.geeksforgeeks.org/vector-resize-c-stl/" target="_blank" rel="noopener">resize(n)</a> – Resizes the container so that it contains ‘n’ elements.调整容器的大小，使其能够容纳n个元素，如果原本的容量比他大，那就不更替</p>
+</li>
+<li><p><a href="https://www.geeksforgeeks.org/vectorempty-vectorsize-c-stl/" target="_blank" rel="noopener">empty()</a> – Returns whether the container is empty.返回vector是否为空</p>
+</li>
+<li><p><a href="https://www.geeksforgeeks.org/vector-shrink_to_fit-function-in-c-stl/" target="_blank" rel="noopener">shrink_to_fit()</a> – Reduces the capacity of the container to fit its size and destroys all elements beyond the capacity.减小容器的容量以适应其大小，并销毁超出容量的元素</p>
+</li>
+<li><p><a href="https://www.geeksforgeeks.org/using-stdvectorreserve-whenever-possible/" target="_blank" rel="noopener">reserve()</a> – Requests that the vector capacity be at least enough to contain n elements.调整容器大小，使其最小包含n个元素</p>
+</li>
+</ol>
+<ul>
+<li><strong>需要注意的是resize会将多出的空间分配为0，而reserve不会。</strong></li>
+<li>而shrink_to_fit仅仅适用于c++11及其以上（devc++，不支持）</li>
+<li>empty（）返回的是bool但是在c中1或者0也可以使用；</li>
+</ul>
+<h3 id="访问元素："><a href="#访问元素：" class="headerlink" title="访问元素："></a><strong>访问元素：</strong></h3><p><strong>Element access:</strong></p>
+<ol>
+<li><a href="https://www.geeksforgeeks.org/vectoroperator-vectoroperator-c-stl/" target="_blank" rel="noopener">reference operator [g]</a> – Returns a reference to the element at position ‘g’ in the vector使用类似于数组的取址符【】</li>
+<li><a href="https://www.geeksforgeeks.org/vectorat-vectorswap-c-stl/" target="_blank" rel="noopener">at(g)</a> – Returns a reference to the element at position ‘g’ in the vector（和上面的类似，但会更好，不会越界）</li>
+<li><a href="https://www.geeksforgeeks.org/vectorfront-vectorback-c-stl/" target="_blank" rel="noopener">front()</a> – Returns a reference to the first element in the vector最前的元素</li>
+<li><a href="https://www.geeksforgeeks.org/vectorfront-vectorback-c-stl/" target="_blank" rel="noopener">back()</a> – Returns a reference to the last element in the vector最后的元素</li>
+<li><a href="https://www.geeksforgeeks.org/vector-data-function-in-c-stl/" target="_blank" rel="noopener">data()</a> – Returns a direct pointer to the memory array used internally by the vector to store its owned elements.不接受任何参数，返回该向量的指针。</li>
+</ol>
+<h3 id="修饰符："><a href="#修饰符：" class="headerlink" title="修饰符："></a>修饰符：</h3><p><strong>Modifiers:</strong></p>
+<ol>
+<li><p><a href="https://www.geeksforgeeks.org/vector-assign-in-c-stl/" target="_blank" rel="noopener">assign()</a> – It assigns new value to the vector elements by replacing old ones重新分配（未被分配的就被删了，但是被分配的内存不变）</p>
+</li>
+<li><p><a href="https://www.geeksforgeeks.org/vectorpush_back-vectorpop_back-c-stl/" target="_blank" rel="noopener">push_back()</a> – It push the elements into a vector from the back加一个括号内的元素到vector的最后</p>
+</li>
+<li><p><a href="https://www.geeksforgeeks.org/vectorpush_back-vectorpop_back-c-stl/" target="_blank" rel="noopener">pop_back()</a> – It is used to pop or remove elements from a vector from the back.</p>
+</li>
+<li><p><a href="https://www.geeksforgeeks.org/vector-insert-function-in-c-stl/" target="_blank" rel="noopener">insert()</a> – It inserts new elements before the element at the specified position（在指定元素之前插入一个指定的元素</p>
+<ul>
+<li>在指定位置loc前插入值为val的元素,返回指向这个元素的<a href="notion://www.notion.so/iterators.html" target="_blank" rel="noopener">迭代器</a>,.insert(loc,val)</li>
+<li>在指定位置loc前插入num个值为val的元素.insert(loc,num,val)</li>
+<li>在指定位置loc前插入区间[start, end)的所有元素.insert(loc,locstart,locend)</li>
+</ul>
+</li>
+<li><p><a href="https://www.geeksforgeeks.org/vectorclear-vectorerase-c-stl/" target="_blank" rel="noopener">erase()</a> – It is used to remove elements from a container from the specified position or range.</p>
+<p> erase函数要么删作指定位置loc的元素,要么删除区间[start, end)的所有元素.返回值是指向删除的最后一个元素的下一位置的迭代器</p>
+</li>
+<li><p><a href="https://www.geeksforgeeks.org/vectorat-vectorswap-c-stl/" target="_blank" rel="noopener">swap()</a> – It is used to swap the contents of one vector with another vector of same type. Sizes may differ.(交换两个同类型向量的内容）</p>
+</li>
+<li><p><a href="https://www.geeksforgeeks.org/vectorclear-vectorerase-c-stl/" target="_blank" rel="noopener">clear()</a> – It is used to remove all the elements of the vector container函数删除当前vector中的所有元素.</p>
+</li>
+<li><p><a href="https://www.geeksforgeeks.org/vector-emplace-function-in-c-stl/" target="_blank" rel="noopener">emplace()</a> – It extends the container by inserting new element at position用法是该函数返回一个迭代器，该迭代器指向新插入的元素。（在面向对象时emplace会更好，对于一般的数据，都可，而insert的可用性更强）.emplace(loc,val)</p>
+</li>
+<li><p><a href="https://www.geeksforgeeks.org/vectoremplace_back-c-stl/" target="_blank" rel="noopener">emplace_back()</a> – It is used to insert a new element into the vector container, the new element is added to the end of the vector插入元素到最后</p>
+</li>
+</ol>
 
-                if toc(page.content)
-                    div.al_page_content_outline!= toc(page.content,{list_number:false})
+      
+    </div>
+    <footer class="article-footer">
+      
+        <a data-url="https://jefine.github.io/2020/02/27/stlvector/" data-id="ck811m6kl001iegr0hduqew6p" class="article-share-link">分享到</a>
+      
 
-                section#post-body!=page.content
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/stl/" rel="tag">stl</a></li></ul>
 
-                include ./includes/plugin/gitalk.pug
-                include ./includes/plugin/disqus.pug
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2020/02/28/%E6%A6%82%E8%BF%B0STL/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          概述STL
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2020/02/25/Java%E6%97%A0%E6%B3%95%E4%BB%85%E8%AF%BB%E5%8F%96%E4%B8%80%E4%B8%AA%E5%AD%97%E7%AC%A6/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Java无法仅读取一个字符</div>
+    </a>
+  
+</nav>
 
-            - var prev = page.prev ? page.prev.path : false;
-            - var next = page.next ? page.next.path : false;
-            nav.dis_flex.post-nav
-                span.prev
-                    if page.prev
-                        a(href=url_for(prev))
-                            span.arrow ←
-                            | Newer Posts
-                span.next
-                    if page.next
-                        a(href=url_for(next))
-                            | Older Posts
-                            span.arrow →
+  
+</article>
 
-    if config.highlight.enable
-        script(type='text/javascript', src=url_for('javascripts/highlight.pack.js'))
-        script!= "document.querySelectorAll('figure.highlight').forEach(function(b){hljs.highlightBlock(b);});"
+</section>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2020 jefine<br>
+      Theme <a href="https://github.com/henryhuang/oishi" target="_blank">Oishi</a>, Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <!--
+      <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">首页</a>
+  
+    <a href="/categories/life" class="mobile-nav-link">生活</a>
+  
+    <a href="/archives" class="mobile-nav-link">归档</a>
+  
+</nav>
+    -->
+    
 
-            //- include includes/comment.pug
+<!-- 百度分享 start -->
+
+<!-- 百度分享 end -->
+
+<script src="//cdn.bootcss.com/jquery/1.11.1/jquery.min.js"></script>
+
+
+
+<script src="/js/jquery.scrollUp.min.js"></script>
+<script src="/js/jquery.transform.js"></script>
+<script src="/js/menu.js"></script>
+
+<script src="/js/script.js"></script>
+<script src="/js/scrollUp.js"></script>
+
+  </div>
+</body>
+</html>

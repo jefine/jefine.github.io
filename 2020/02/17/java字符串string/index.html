@@ -1,51 +1,261 @@
-extends includes/base
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>java字符串string | jefine</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="格式：首先：初始化样例 ：String str = “Geeks”; Creating a String There are two ways to create string in Java:（两种方式）  String literal\ 1String s = “GeeksforGeeks”;  Using *new* keyword 1String s = new String (“Geek">
+<meta name="keywords" content="string">
+<meta property="og:type" content="article">
+<meta property="og:title" content="java字符串string">
+<meta property="og:url" content="https:&#x2F;&#x2F;jefine.github.io&#x2F;2020&#x2F;02&#x2F;17&#x2F;java%E5%AD%97%E7%AC%A6%E4%B8%B2string&#x2F;index.html">
+<meta property="og:site_name" content="jefine">
+<meta property="og:description" content="格式：首先：初始化样例 ：String str = “Geeks”; Creating a String There are two ways to create string in Java:（两种方式）  String literal\ 1String s = “GeeksforGeeks”;  Using *new* keyword 1String s = new String (“Geek">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https:&#x2F;&#x2F;jefine.github.io&#x2F;2020&#x2F;02&#x2F;17&#x2F;java%E5%AD%97%E7%AC%A6%E4%B8%B2string&#x2F;Untitled.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;jefine.github.io&#x2F;2020&#x2F;02&#x2F;17&#x2F;java%E5%AD%97%E7%AC%A6%E4%B8%B2string&#x2F;Untitled1.png">
+<meta property="og:updated_time" content="2020-02-17T12:54:42.543Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https:&#x2F;&#x2F;jefine.github.io&#x2F;2020&#x2F;02&#x2F;17&#x2F;java%E5%AD%97%E7%AC%A6%E4%B8%B2string&#x2F;Untitled.png">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link type="text/css" href="//netdna.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.css" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/scrollUp/image.css">
+  <!--[if lt IE 9]><script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7/html5shiv.min.js"></script><![endif]-->
+  
+</head>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <div class="logo">
+        <img src="/logo.png" alt="Profile Picture">
+      </div>
+      <div id="title">jefine</div>
+      
+        <div id="subtitle">小小的梦呓</div>
+      
+       <ul class="my-socials">
+  
+ 
+</ul>
+    </div>
+  </div>
+  <div id="header-inner" class="">
+    <nav id="main-nav">
+      <a id="main-nav-toggle" class="nav-icon"></a>
+      <!--
+        
+          
+            <a class="main-nav-link" href="/">首页</a>
+          
+            <a class="main-nav-link" href="/categories/life">生活</a>
+          
+            <a class="main-nav-link" href="/archives">归档</a>
+          
+        
+      -->
+    </nav>
+    <nav id="title-nav" style="display:none">
+      <a href="/">jefine</a>
+      <img src="/logo.png" alt="Profile Picture">
+      <!--
+      <span id="title-nav-socials">
+        
+       
+     </span>
+      -->
+    </nav>
+    <nav id="sub-nav">
+      
+      <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+    </nav>
+    <div id="search-form-wrap">
+      <form action="http://www.baidu.com/baidu" method="get" accept-charset="utf-8" class="search-form">
+        <input type="search" name="word" maxlength="20" class="search-form-input" placeholder="搜索">
+        <input type="submit" value="" class="search-form-submit">
+        <input name=tn type=hidden value="bds">
+        <input name=cl type=hidden value="3">
+        <input name=ct type=hidden value="2097152">
+        <input type="hidden" name="si" value="jefine.github.io">
+      </form>
+    </div>
+  </div>
+  <div class="site-nav" style="display: none;">
+    <ul>
+      
+      
+        <li><a href="/">首页</a></li>
+      
+        <li><a href="/categories/life">生活</a></li>
+      
+        <li><a href="/archives">归档</a></li>
+      
+      
+    </ul>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-java字符串string" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/02/17/java%E5%AD%97%E7%AC%A6%E4%B8%B2string/" class="article-date">
+  <time datetime="2020-02-17T12:51:26.000Z" itemprop="datePublished">2020-02-17</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/java/">java</a>
+  </div>
 
-block extra_style
-    if theme.gitalk.enable
-        link(rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css")
-    link(rel='stylesheet' href=url_for('./css/atom-one-dark.css'))
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      java字符串string
+    </h1>
+  
 
-block content
-    div.al_page_background.dis_flex_center.al_full_cover
-    div.al_page_container
-        div.al_pos_ab.al_fake_background
-        div.al_main_container.al_main_page_container
-            article.al_article
-                header
-                    h1.al_page_title= page.title
-                    div.al_page_info.dis_flex
-                        div.al_page_content_info
-                            |#{date(page.date, 'MMM DD, YYYY h:mm A')}
-                        div.al_page_content_info
-                            |#{wordcount(page.content)} words
-                        div.al_page_content_info
-                            |#{min2read(page.content)} minutes read
-                        span.tags
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="格式："><a href="#格式：" class="headerlink" title="格式："></a>格式：</h2><p>首先：初始化样例 ：String str = “Geeks”;</p>
+<p><strong>Creating a String</strong></p>
+<p>There are two ways to create string in Java:（两种方式）</p>
+<ul>
+<li><p><strong><em>String literal\</em></strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">String s = “GeeksforGeeks”;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>Using *new* keyword</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">String s = new String (“GeeksforGeeks”);</span><br></pre></td></tr></table></figure>
 
-                if toc(page.content)
-                    div.al_page_content_outline!= toc(page.content,{list_number:false})
+</li>
+</ul>
+<h2 id="字符串背后的一些事情："><a href="#字符串背后的一些事情：" class="headerlink" title="字符串背后的一些事情："></a>字符串背后的一些事情：</h2><p>String 字符串是由字符数组（char array)所支持。</p>
+<p>Strings in Java are Objects that are backed internally by a char array.</p>
+<p>而我们知道，字符数组的大小是固定的，所以：当String发生大小变化时就会产生一个新的String。</p>
+<p>那么他是怎样变化的呢？</p>
+<p>Whenever a String Object is created, two objects will be created- one in the Heap Area and one in the String constant pool and the String object reference always points to heap area object.</p>
+<p>当一个字符串产生的时候，就会创建两个String对象，一个在堆区域，另一个在字符串常态池中<strong>，而且字符串引用总指向堆区域的对象。</strong></p>
+<p>例如：（看是该字符串引用总是指向堆区域的对象，而且是首字母，像指针一样，不过java避开了指针的概念。）</p>
+<p><img src="/2020/02/17/java%E5%AD%97%E7%AC%A6%E4%B8%B2string/Untitled.png" alt></p>
+<h2 id="接口和类在字符串中："><a href="#接口和类在字符串中：" class="headerlink" title="接口和类在字符串中："></a>接口和类在字符串中：</h2><ul>
+<li><p><a href="https://www.geeksforgeeks.org/tag/java-charbuffer/" target="_blank" rel="noopener">CharBuffer</a>: This class implements the CharSequence interface. This class is used to allow character buffers to be used in place of CharSequences. An example of such usage is the regular-expression package java.util.regex.</p>
+<p>不懂CharBuffer：此类实现CharSequence接口。 此类用于允许使用字符缓冲区代替CharSequences。 正则表达式包java.util.regex是这种用法的一个示例。</p>
+</li>
+<li><p><a href="https://www.geeksforgeeks.org/string-class-in-java/" target="_blank" rel="noopener">String</a>: String is a sequence of characters. In java, objects of String are immutable which means a constant and cannot be changed once created.（String的对象是不可改变的）</p>
+</li>
+<li><p><a href="http://www.geeksforgeeks.org/stringbuffer-class-in-java/" target="_blank" rel="noopener">StringBuffer</a>: <strong>StringBuffer</strong> is a peer class of <strong>String</strong> that provides much of the functionality of strings. String represents fixed-length, immutable character sequences while StringBuffer represents growable and writable character sequences.（又出来个String buffer，批判了String的固定长度和不可变后，称自己是可增长的，可变化的。它还是String的同级字符串类。。。）</p>
+<p><strong>Syntax:</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">StringBuffer s = new StringBuffer(&quot;GeeksforGeeks&quot;);</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><a href="https://www.geeksforgeeks.org/stringbuilder-class-in-java-with-examples/" target="_blank" rel="noopener">StringBuilder</a>: The <strong>StringBuilder</strong> in Java represents a mutable sequence of characters. Since the String Class in Java creates and immutable sequence of characters, the StringBuilder class provides an alternate to String Class, as it creates a mutable sequence of characters.（又来一个StringBuilder 说自己也是可变的字符串</p>
+<p><strong>Syntax:</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">StringBuilder str = new StringBuilder();</span><br><span class="line">str.append(&quot;GFG&quot;);</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><a href="https://www.geeksforgeeks.org/stringtokenizer-class-java-example-set-1-constructors/" target="_blank" rel="noopener">StringTokenizer</a>: StringTokenizer class in Java is used to break a string into tokens. <strong>Example:</strong></p>
+<p><img src="/2020/02/17/java%E5%AD%97%E7%AC%A6%E4%B8%B2string/Untitled1.png" alt></p>
+<p>A StringTokenizer object internally maintains a current position within the string to be tokenized. Some operations advance this current position past the characters processed. A token is returned by taking a substring of the string that was used to create the StringTokenizer object.(用于处理过的字符串，不太懂）</p>
+</li>
+<li><p><a href="https://www.geeksforgeeks.org/java-util-stringjoiner-java8/" target="_blank" rel="noopener">StringJoiner</a>: StringJoiner is a class in <em><a href="https://www.geeksforgeeks.org/tag/java-util-package/" target="_blank" rel="noopener">java.util</a></em> package which is used to construct a sequence of characters(strings) separated by a delimiter and optionally starting with a supplied prefix and ending with a supplied suffix. Though this can also be with the help of StringBuilder class to append delimiter after each string, StringJoiner provides an easy way to do that without much code to write.（也是处理分隔符的，和上面的是一对儿）</p>
+<p><strong>Syntax:</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">public StringJoiner(CharSequence delimiter)</span><br></pre></td></tr></table></figure>
 
-                section#post-body!=page.content
+</li>
+</ul>
+<h2 id="more："><a href="#more：" class="headerlink" title="more："></a>more：</h2><p>此外，在我们要去取值的时候，比如String第二个字符的值的时候，应该用:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">String str = &quot;hello word&quot;;</span><br><span class="line">char mychar =  str.charAt(1);</span><br></pre></td></tr></table></figure>
 
-                include ./includes/plugin/gitalk.pug
-                include ./includes/plugin/disqus.pug
+<p>如果想要比较字符串的值是否相同的话：</p>
+<p>if（s.contentEquals(“-1”)）来比较。否则就是比较储存位置（因为String在java中是对象，不是基本类型）</p>
 
-            - var prev = page.prev ? page.prev.path : false;
-            - var next = page.next ? page.next.path : false;
-            nav.dis_flex.post-nav
-                span.prev
-                    if page.prev
-                        a(href=url_for(prev))
-                            span.arrow ←
-                            | Newer Posts
-                span.next
-                    if page.next
-                        a(href=url_for(next))
-                            | Older Posts
-                            span.arrow →
+      
+    </div>
+    <footer class="article-footer">
+      
+        <a data-url="https://jefine.github.io/2020/02/17/java%E5%AD%97%E7%AC%A6%E4%B8%B2string/" data-id="ck811m6k60014egr029bk4o5b" class="article-share-link">分享到</a>
+      
 
-    if config.highlight.enable
-        script(type='text/javascript', src=url_for('javascripts/highlight.pack.js'))
-        script!= "document.querySelectorAll('figure.highlight').forEach(function(b){hljs.highlightBlock(b);});"
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/string/" rel="tag">string</a></li></ul>
 
-            //- include includes/comment.pug
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2020/02/19/java%E4%B8%BB%E7%B1%BB%EF%BC%8C%E7%B1%BB%E4%B8%8Epublic%E7%9A%84%E7%AE%80%E8%A6%81%E5%88%86%E6%9E%90/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          java主类，类与源文件名的简要分析
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2020/02/17/java%E6%96%B9%E6%B3%95methods/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">java方法methods</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2020 jefine<br>
+      Theme <a href="https://github.com/henryhuang/oishi" target="_blank">Oishi</a>, Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <!--
+      <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">首页</a>
+  
+    <a href="/categories/life" class="mobile-nav-link">生活</a>
+  
+    <a href="/archives" class="mobile-nav-link">归档</a>
+  
+</nav>
+    -->
+    
+
+<!-- 百度分享 start -->
+
+<!-- 百度分享 end -->
+
+<script src="//cdn.bootcss.com/jquery/1.11.1/jquery.min.js"></script>
+
+
+
+<script src="/js/jquery.scrollUp.min.js"></script>
+<script src="/js/jquery.transform.js"></script>
+<script src="/js/menu.js"></script>
+
+<script src="/js/script.js"></script>
+<script src="/js/scrollUp.js"></script>
+
+  </div>
+</body>
+</html>

@@ -1,47 +1,196 @@
-extends includes/base
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Tag: 排序 | jefine</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="使每个人的生活多一份美好。">
+<meta property="og:type" content="website">
+<meta property="og:title" content="jefine">
+<meta property="og:url" content="https:&#x2F;&#x2F;jefine.github.io&#x2F;tags&#x2F;%E6%8E%92%E5%BA%8F&#x2F;index.html">
+<meta property="og:site_name" content="jefine">
+<meta property="og:description" content="使每个人的生活多一份美好。">
+<meta property="og:locale" content="zh-CN">
+<meta name="twitter:card" content="summary">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link type="text/css" href="//netdna.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.css" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/scrollUp/image.css">
+  <!--[if lt IE 9]><script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7/html5shiv.min.js"></script><![endif]-->
+  
+</head>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <div class="logo">
+        <img src="/logo.png" alt="Profile Picture">
+      </div>
+      <div id="title">jefine</div>
+      
+        <div id="subtitle">小小的梦呓</div>
+      
+       <ul class="my-socials">
+  
+ 
+</ul>
+    </div>
+  </div>
+  <div id="header-inner" class="">
+    <nav id="main-nav">
+      <a id="main-nav-toggle" class="nav-icon"></a>
+      <!--
+        
+          
+            <a class="main-nav-link" href="/">首页</a>
+          
+            <a class="main-nav-link" href="/categories/life">生活</a>
+          
+            <a class="main-nav-link" href="/archives">归档</a>
+          
+        
+      -->
+    </nav>
+    <nav id="title-nav" style="display:none">
+      <a href="/">jefine</a>
+      <img src="/logo.png" alt="Profile Picture">
+      <!--
+      <span id="title-nav-socials">
+        
+       
+     </span>
+      -->
+    </nav>
+    <nav id="sub-nav">
+      
+      <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+    </nav>
+    <div id="search-form-wrap">
+      <form action="http://www.baidu.com/baidu" method="get" accept-charset="utf-8" class="search-form">
+        <input type="search" name="word" maxlength="20" class="search-form-input" placeholder="搜索">
+        <input type="submit" value="" class="search-form-submit">
+        <input name=tn type=hidden value="bds">
+        <input name=cl type=hidden value="3">
+        <input name=ct type=hidden value="2097152">
+        <input type="hidden" name="si" value="jefine.github.io">
+      </form>
+    </div>
+  </div>
+  <div class="site-nav" style="display: none;">
+    <ul>
+      
+      
+        <li><a href="/">首页</a></li>
+      
+        <li><a href="/categories/life">生活</a></li>
+      
+        <li><a href="/archives">归档</a></li>
+      
+      
+    </ul>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main">
+  
+  
+    
+    
+      
+      
+      <section class="archives-wrap">
+        <div class="archive-year-wrap">
+          <a href="/archives/2019" class="archive-year">2019</a>
+        </div>
+        <div class="archives">
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      <a href="/2019/12/26/%E9%80%89%E6%8B%A9%E6%8E%92%E5%BA%8F-%E8%BE%83%E4%B8%BA%E8%AF%A6%E7%BB%86%E7%9A%84%E5%88%86%E6%9E%90/" class="archive-article-date">
+  <time datetime="2019-12-26T00:35:31.000Z" itemprop="datePublished">12月 26</time>
+</a>
+      
+  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/2019/12/26/%E9%80%89%E6%8B%A9%E6%8E%92%E5%BA%8F-%E8%BE%83%E4%B8%BA%E8%AF%A6%E7%BB%86%E7%9A%84%E5%88%86%E6%9E%90/">选择排序-较为详细的分析</a>
+    </h1>
+  
 
-block content
-    div.al_index_background.dis_flex_center.al_full_cover
-        - var bio = config.bio || 'A Beautiful Text Site.'
-        - var firstBioChar = bio.substr(0, 1)
-        div.al_pos_ab.al_letter.al_index_background_letter= firstBioChar
-        h2.al_index_background_bio= bio
-    div.al_index_container
-        div.al_pos_ab.al_fake_background
-        div.al_main_container
-            div.al_section_container.dis_flex_jcenter
-                div.section_header= 'LATEST PAGES'
-            ur.al_post_list
-                each item in site.posts.sort('date', -1).toArray()
-                    - var postTitle = item.title || 'No Title'
-                    - var createDate = date(item.date, 'MMM DD')
-                    - var firstChar = postTitle.substr(0, 1)
-                    - var postURL = item.link || item.path
-                    - var excerpt = item.excerpt + '...' || 'No Excerpt'
-                    - var readLaterURL = 'https://getpocket.com/edit?url=' + encodeURIComponent(config.url + '/' + url_for(postURL))
-                    li.al_index_pageList_item.al_index_page_seperator
-                        div.al_index_post_title_cnt.dis_flex
-                            div.al_pos_ab.al_letter.al_index_post_title_letter= firstChar
-                            h2.al_index_post_title
-                                a(href=url_for(postURL))= postTitle
-                            div.al_index_post_extra.dis_flex
-                                div.al_index_post_date.al_index_post_extra_item= createDate
-                                div.al_index_post_read_time
-                                    |#{min2read(item.content)} Min Read
-                        div.al_index_post_excerpt_cnt
-                            p.al_index_post_excerpt= excerpt
-                        div.al_index_post_button_cnt.dis_flex
-                            a.al_button.al_button_theme.al_index_post_button(href=url_for(postURL))= 'READ ON'
-                            a.al_button.al_button_transparent.al_index_post_button(href=readLaterURL)= 'READ LATER'
+    </header>
+  </div>
+</article>
+  
+    
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      <a href="/2019/11/12/%E7%AE%80%E5%8C%96%E7%9A%84%E6%8F%92%E5%85%A5%E6%8E%92%E5%BA%8F-%E8%AF%A6%E8%A7%A3%E9%99%84%E5%B8%A6%E4%B8%80%E4%BA%9B%E5%9F%BA%E7%A1%80%E8%AE%B2%E8%A7%A3/" class="archive-article-date">
+  <time datetime="2019-11-12T01:05:52.000Z" itemprop="datePublished">11月 12</time>
+</a>
+      
+  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/2019/11/12/%E7%AE%80%E5%8C%96%E7%9A%84%E6%8F%92%E5%85%A5%E6%8E%92%E5%BA%8F-%E8%AF%A6%E8%A7%A3%E9%99%84%E5%B8%A6%E4%B8%80%E4%BA%9B%E5%9F%BA%E7%A1%80%E8%AE%B2%E8%A7%A3/">简化的插入排序,详解附带一些基础讲解</a>
+    </h1>
+  
 
-            nav.dis_flex.post-nav
-                span.prev
-                    if page.prev
-                        a(href=url_for(page.prev_link))
-                            span.arrow ←
-                            | Newer Posts
-                span.next
-                    if page.next
-                        a(href=url_for(page.next_link))
-                            | Older Posts
-                            span.arrow →
+    </header>
+  </div>
+</article>
+  
+  
+    </div></section>
+  
+</section>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2020 jefine<br>
+      Theme <a href="https://github.com/henryhuang/oishi" target="_blank">Oishi</a>, Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <!--
+      <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">首页</a>
+  
+    <a href="/categories/life" class="mobile-nav-link">生活</a>
+  
+    <a href="/archives" class="mobile-nav-link">归档</a>
+  
+</nav>
+    -->
+    
+
+<!-- 百度分享 start -->
+
+<!-- 百度分享 end -->
+
+<script src="//cdn.bootcss.com/jquery/1.11.1/jquery.min.js"></script>
+
+
+
+<script src="/js/jquery.scrollUp.min.js"></script>
+<script src="/js/jquery.transform.js"></script>
+<script src="/js/menu.js"></script>
+
+<script src="/js/script.js"></script>
+<script src="/js/scrollUp.js"></script>
+
+  </div>
+</body>
+</html>

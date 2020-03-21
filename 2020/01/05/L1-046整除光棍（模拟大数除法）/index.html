@@ -1,51 +1,226 @@
-extends includes/base
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>L1-046整除光棍（模拟大数除法） | jefine</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="这里所谓的“光棍”，并不是指单身汪啦~ 说的是全部由1组成的数字，比如1、11、111、1111等。传说任何一个光棍都能被一个不以5结尾的奇数整除。比如，111111就可以被13整除。 现在，你的程序要读入一个整数x，这个整数一定是奇数并且不以5结尾。然后，经过计算，输出两个数字：第一个数字s，表示x乘以s是一个光棍，第二个数字n是这个光棍的位数。这样的解当然不是唯一的,题目要求你输出最小的解。">
+<meta name="keywords" content="pta">
+<meta property="og:type" content="article">
+<meta property="og:title" content="L1-046整除光棍（模拟大数除法）">
+<meta property="og:url" content="https:&#x2F;&#x2F;jefine.github.io&#x2F;2020&#x2F;01&#x2F;05&#x2F;L1-046%E6%95%B4%E9%99%A4%E5%85%89%E6%A3%8D%EF%BC%88%E6%A8%A1%E6%8B%9F%E5%A4%A7%E6%95%B0%E9%99%A4%E6%B3%95%EF%BC%89&#x2F;index.html">
+<meta property="og:site_name" content="jefine">
+<meta property="og:description" content="这里所谓的“光棍”，并不是指单身汪啦~ 说的是全部由1组成的数字，比如1、11、111、1111等。传说任何一个光棍都能被一个不以5结尾的奇数整除。比如，111111就可以被13整除。 现在，你的程序要读入一个整数x，这个整数一定是奇数并且不以5结尾。然后，经过计算，输出两个数字：第一个数字s，表示x乘以s是一个光棍，第二个数字n是这个光棍的位数。这样的解当然不是唯一的,题目要求你输出最小的解。">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2020-01-05T14:45:35.045Z">
+<meta name="twitter:card" content="summary">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link type="text/css" href="//netdna.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.css" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/scrollUp/image.css">
+  <!--[if lt IE 9]><script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7/html5shiv.min.js"></script><![endif]-->
+  
+</head>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <div class="logo">
+        <img src="/logo.png" alt="Profile Picture">
+      </div>
+      <div id="title">jefine</div>
+      
+        <div id="subtitle">小小的梦呓</div>
+      
+       <ul class="my-socials">
+  
+ 
+</ul>
+    </div>
+  </div>
+  <div id="header-inner" class="">
+    <nav id="main-nav">
+      <a id="main-nav-toggle" class="nav-icon"></a>
+      <!--
+        
+          
+            <a class="main-nav-link" href="/">首页</a>
+          
+            <a class="main-nav-link" href="/categories/life">生活</a>
+          
+            <a class="main-nav-link" href="/archives">归档</a>
+          
+        
+      -->
+    </nav>
+    <nav id="title-nav" style="display:none">
+      <a href="/">jefine</a>
+      <img src="/logo.png" alt="Profile Picture">
+      <!--
+      <span id="title-nav-socials">
+        
+       
+     </span>
+      -->
+    </nav>
+    <nav id="sub-nav">
+      
+      <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+    </nav>
+    <div id="search-form-wrap">
+      <form action="http://www.baidu.com/baidu" method="get" accept-charset="utf-8" class="search-form">
+        <input type="search" name="word" maxlength="20" class="search-form-input" placeholder="搜索">
+        <input type="submit" value="" class="search-form-submit">
+        <input name=tn type=hidden value="bds">
+        <input name=cl type=hidden value="3">
+        <input name=ct type=hidden value="2097152">
+        <input type="hidden" name="si" value="jefine.github.io">
+      </form>
+    </div>
+  </div>
+  <div class="site-nav" style="display: none;">
+    <ul>
+      
+      
+        <li><a href="/">首页</a></li>
+      
+        <li><a href="/categories/life">生活</a></li>
+      
+        <li><a href="/archives">归档</a></li>
+      
+      
+    </ul>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-L1-046整除光棍（模拟大数除法）" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/01/05/L1-046%E6%95%B4%E9%99%A4%E5%85%89%E6%A3%8D%EF%BC%88%E6%A8%A1%E6%8B%9F%E5%A4%A7%E6%95%B0%E9%99%A4%E6%B3%95%EF%BC%89/" class="article-date">
+  <time datetime="2020-01-05T14:30:58.000Z" itemprop="datePublished">2020-01-05</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E7%BC%96%E7%A8%8B/">编程</a>
+  </div>
 
-block extra_style
-    if theme.gitalk.enable
-        link(rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css")
-    link(rel='stylesheet' href=url_for('./css/atom-one-dark.css'))
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      L1-046整除光棍（模拟大数除法）
+    </h1>
+  
 
-block content
-    div.al_page_background.dis_flex_center.al_full_cover
-    div.al_page_container
-        div.al_pos_ab.al_fake_background
-        div.al_main_container.al_main_page_container
-            article.al_article
-                header
-                    h1.al_page_title= page.title
-                    div.al_page_info.dis_flex
-                        div.al_page_content_info
-                            |#{date(page.date, 'MMM DD, YYYY h:mm A')}
-                        div.al_page_content_info
-                            |#{wordcount(page.content)} words
-                        div.al_page_content_info
-                            |#{min2read(page.content)} minutes read
-                        span.tags
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>这里所谓的“光棍”，并不是指单身汪啦~ 说的是全部由1组成的数字，比如1、11、111、1111等。传说任何一个光棍都能被一个不以5结尾的奇数整除。比如，111111就可以被13整除。 现在，你的程序要读入一个整数<code>x</code>，这个整数一定是奇数并且不以5结尾。然后，经过计算，输出两个数字：第一个数字<code>s</code>，表示<code>x</code>乘以<code>s</code>是一个光棍，第二个数字<code>n</code>是这个光棍的位数。这样的解当然不是唯一的,题目要求你输出最小的解。</p>
+<p>提示：一个显然的办法是逐渐增加光棍的位数，直到可以整除<code>x</code>为止。但难点在于，<code>s</code>可能是个非常大的数 —— 比如，程序输入31，那么就输出3584229390681和15，因为31乘以3584229390681的结果是111111111111111，一共15个1。</p>
+<h3 id="输入格式："><a href="#输入格式：" class="headerlink" title="输入格式："></a>输入格式：</h3><p>输入在一行中给出一个不以5结尾的正奇数<code>x</code>（&lt;1000）。</p>
+<h3 id="输出格式："><a href="#输出格式：" class="headerlink" title="输出格式："></a>输出格式：</h3><p>在一行中输出相应的最小的<code>s</code>和<code>n</code>，其间以1个空格分隔。</p>
+<h3 id="输入样例："><a href="#输入样例：" class="headerlink" title="输入样例："></a>输入样例：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">31</span><br></pre></td></tr></table></figure>
 
-                if toc(page.content)
-                    div.al_page_content_outline!= toc(page.content,{list_number:false})
+<h3 id="输出样例："><a href="#输出样例：" class="headerlink" title="输出样例："></a>输出样例：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">3584229390681 15</span><br></pre></td></tr></table></figure>
 
-                section#post-body!=page.content
+<h3 id="题目思路分析："><a href="#题目思路分析：" class="headerlink" title="题目思路分析："></a>题目思路分析：</h3><p>第一次接触大数除法的模拟，在经历过一番思考后，选择了百度。。。</p>
+<p>忽然发现思路其实就是模拟人的思路：假设我们也不知道多少个1才能将31整除。那么怎么得到那个很长的数呢？</p>
+<ol>
+<li>从1，11，111，一个一个去尝试。显然，不成立。（当然，我们可以直接从比除数大的111开始除，这也是后面变成的思路）</li>
+<li>但如果我们实验过几次第一种方法后，我们会发现，其实我们只是在每一次的计算后（发现不能整除）我们就会添加一个1继续去除。之前的商就保留下来了，和我们使用竖式除法是一样的。我们只是需要每次除不尽的时候，填上一个1继续除便是了，之前的商直接输出不是更好。</li>
+</ol>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> x,s=<span class="number">0</span>,n=<span class="number">0</span>;<span class="comment">//除数，被除数，位数 </span></span><br><span class="line">	<span class="built_in">cin</span>&gt;&gt;x;</span><br><span class="line">	<span class="keyword">while</span>(s&lt;x)</span><br><span class="line">	&#123;</span><br><span class="line">		s=s*<span class="number">10</span>+<span class="number">1</span>;<span class="comment">//被除数末位添1直到不小于被除数 </span></span><br><span class="line">		n++;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">while</span>(<span class="literal">true</span>)<span class="comment">//除法 </span></span><br><span class="line">	&#123;</span><br><span class="line">		<span class="built_in">cout</span>&lt;&lt;s/x;<span class="comment">//输出商（就作为开头咯） </span></span><br><span class="line">		s%=x;<span class="comment">//被除数更改为其余数 </span></span><br><span class="line">		<span class="keyword">if</span>(s==<span class="number">0</span>)<span class="keyword">break</span>;<span class="comment">//余数为0则结束（否则加1继续） </span></span><br><span class="line">		s=s*<span class="number">10</span>+<span class="number">1</span>;<span class="comment">//被除数末位加上1</span></span><br><span class="line">		n++; </span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">cout</span>&lt;&lt;<span class="string">' '</span>&lt;&lt;n;<span class="comment">//之前已经输出了商（很大的数）</span></span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-                include ./includes/plugin/gitalk.pug
-                include ./includes/plugin/disqus.pug
+<p><strong>大数模拟，在没有更好的方法下，不如试试康康如果是我们，我们是怎么做的。。。</strong></p>
 
-            - var prev = page.prev ? page.prev.path : false;
-            - var next = page.next ? page.next.path : false;
-            nav.dis_flex.post-nav
-                span.prev
-                    if page.prev
-                        a(href=url_for(prev))
-                            span.arrow ←
-                            | Newer Posts
-                span.next
-                    if page.next
-                        a(href=url_for(next))
-                            | Older Posts
-                            span.arrow →
+      
+    </div>
+    <footer class="article-footer">
+      
+        <a data-url="https://jefine.github.io/2020/01/05/L1-046%E6%95%B4%E9%99%A4%E5%85%89%E6%A3%8D%EF%BC%88%E6%A8%A1%E6%8B%9F%E5%A4%A7%E6%95%B0%E9%99%A4%E6%B3%95%EF%BC%89/" data-id="ck811m6in0009egr09b3c45f1" class="article-share-link">分享到</a>
+      
 
-    if config.highlight.enable
-        script(type='text/javascript', src=url_for('javascripts/highlight.pack.js'))
-        script!= "document.querySelectorAll('figure.highlight').forEach(function(b){hljs.highlightBlock(b);});"
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/pta/" rel="tag">pta</a></li></ul>
 
-            //- include includes/comment.pug
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2020/01/06/L1-048%E7%9F%A9%E9%98%B5A%E4%B9%98%E4%BB%A5B/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          L1-048矩阵A乘以B
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2020/01/04/%E6%89%93%E5%8D%B0%E6%B2%99%E6%BC%8F/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">打印沙漏（代码较详细）</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2020 jefine<br>
+      Theme <a href="https://github.com/henryhuang/oishi" target="_blank">Oishi</a>, Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <!--
+      <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">首页</a>
+  
+    <a href="/categories/life" class="mobile-nav-link">生活</a>
+  
+    <a href="/archives" class="mobile-nav-link">归档</a>
+  
+</nav>
+    -->
+    
+
+<!-- 百度分享 start -->
+
+<!-- 百度分享 end -->
+
+<script src="//cdn.bootcss.com/jquery/1.11.1/jquery.min.js"></script>
+
+
+
+<script src="/js/jquery.scrollUp.min.js"></script>
+<script src="/js/jquery.transform.js"></script>
+<script src="/js/menu.js"></script>
+
+<script src="/js/script.js"></script>
+<script src="/js/scrollUp.js"></script>
+
+  </div>
+</body>
+</html>
