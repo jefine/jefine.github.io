@@ -60,7 +60,7 @@
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https:&#x2F;&#x2F;jefine.github.io&#x2F;2020&#x2F;03&#x2F;17&#x2F;LinkedList%E9%93%BE%E8%A1%A8&#x2F;Linkedlist.png">
 <meta property="og:image" content="https:&#x2F;&#x2F;jefine.github.io&#x2F;2020&#x2F;03&#x2F;17&#x2F;LinkedList%E9%93%BE%E8%A1%A8&#x2F;_2020031917124912SS.png">
-<meta property="og:updated_time" content="2020-03-21T10:50:32.823Z">
+<meta property="og:updated_time" content="2020-03-21T10:52:58.253Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https:&#x2F;&#x2F;jefine.github.io&#x2F;2020&#x2F;03&#x2F;17&#x2F;LinkedList%E9%93%BE%E8%A1%A8&#x2F;Linkedlist.png">
 
@@ -223,7 +223,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-03-21 18:50:32" itemprop="dateModified" datetime="2020-03-21T18:50:32+08:00">2020-03-21</time>
+                <time title="修改时间：2020-03-21 18:52:58" itemprop="dateModified" datetime="2020-03-21T18:52:58+08:00">2020-03-21</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -555,8 +555,9 @@ int main(){
     add(Head,15);
     disp(Head);
     return 0;
-}</code></pre><h2 id="只是写出一个链表就少了很多趣味，增改删查才是硬道理！"><a href="#只是写出一个链表就少了很多趣味，增改删查才是硬道理！" class="headerlink" title="只是写出一个链表就少了很多趣味，增改删查才是硬道理！"></a>只是写出一个链表就少了很多趣味，增改删查才是硬道理！</h2><p>当然了，在开始阶段，我们还是只以单链表为例：</p>
-<h3 id="链表的增："><a href="#链表的增：" class="headerlink" title="链表的增："></a>链表的增：</h3><p><img src="/2020/03/17/LinkedList%E9%93%BE%E8%A1%A8/_2020031917124912SS.png" alt="linkedList/_2020031917124912SS.png"></p>
+}</code></pre><p><strong>只是写出一个链表就少了很多趣味，增改删查才是硬道理！</strong></p>
+<p>当然了，在开始阶段，我们还是只以单链表为例：</p>
+<h2 id="链表的增："><a href="#链表的增：" class="headerlink" title="链表的增："></a>链表的增：</h2><p><img src="/2020/03/17/LinkedList%E9%93%BE%E8%A1%A8/_2020031917124912SS.png" alt="linkedList/_2020031917124912SS.png"></p>
 <p><strong>一、 在链表的末尾增加：</strong>（再重复的系统的讲一下哈）</p>
 <p>这个方法我们在上面已经认识到了，具体的思路就是我们通过头节点找到最后一个节点，然后在她后面添加一个节点，链接上去就可以了。（我们手持一个head房卡，沿着房间不断地走下去，找到最后的房间，在新开一间房间，然后我们在原来的最后一个房间的next的空间里放上新开房间的位置就好了）</p>
 <p>这里假设我们已经有了一个链表了。</p>
@@ -717,7 +718,7 @@ void insertAfter(l* Head,int target,int val){
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#先讲一个小故事（虽然讲的很烂2333）"><span class="nav-number">1.</span> <span class="nav-text">先讲一个小故事（虽然讲的很烂2333）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Advantages-优势"><span class="nav-number">2.</span> <span class="nav-text">Advantages 优势</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Drawbacks-缺点"><span class="nav-number">3.</span> <span class="nav-text">Drawbacks 缺点</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Representation-表达（内容）"><span class="nav-number">4.</span> <span class="nav-text">Representation  表达（内容）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#写一下链表？"><span class="nav-number">5.</span> <span class="nav-text">写一下链表？</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#我们从c开始尝试：-现在只写到了增）"><span class="nav-number">5.1.</span> <span class="nav-text">我们从c开始尝试：(现在只写到了增）</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#只是写出一个链表就少了很多趣味，增改删查才是硬道理！"><span class="nav-number">6.</span> <span class="nav-text">只是写出一个链表就少了很多趣味，增改删查才是硬道理！</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#链表的增："><span class="nav-number">6.1.</span> <span class="nav-text">链表的增：</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#对链表的删"><span class="nav-number">7.</span> <span class="nav-text">对链表的删</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#对链表的改："><span class="nav-number">8.</span> <span class="nav-text">对链表的改：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#对链表的查："><span class="nav-number">9.</span> <span class="nav-text">对链表的查：</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#先讲一个小故事（虽然讲的很烂2333）"><span class="nav-number">1.</span> <span class="nav-text">先讲一个小故事（虽然讲的很烂2333）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Advantages-优势"><span class="nav-number">2.</span> <span class="nav-text">Advantages 优势</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Drawbacks-缺点"><span class="nav-number">3.</span> <span class="nav-text">Drawbacks 缺点</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Representation-表达（内容）"><span class="nav-number">4.</span> <span class="nav-text">Representation  表达（内容）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#写一下链表？"><span class="nav-number">5.</span> <span class="nav-text">写一下链表？</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#我们从c开始尝试：-现在只写到了增）"><span class="nav-number">5.1.</span> <span class="nav-text">我们从c开始尝试：(现在只写到了增）</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#链表的增："><span class="nav-number">6.</span> <span class="nav-text">链表的增：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#对链表的删"><span class="nav-number">7.</span> <span class="nav-text">对链表的删</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#对链表的改："><span class="nav-number">8.</span> <span class="nav-text">对链表的改：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#对链表的查："><span class="nav-number">9.</span> <span class="nav-text">对链表的查：</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
