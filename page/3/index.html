@@ -1,10 +1,56 @@
 <!DOCTYPE html>
-<html>
+<html lang="zh-CN">
 <head>
-  <meta charset="utf-8">
-  
-  <title>jefine</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.0.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+  <link rel="alternate" href="/atom.xml" title="jefine" type="application/atom+xml">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+
+
+<script id="hexo-configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '7.5.0',
+    exturl: false,
+    sidebar: {"position":"left","display":"hide","offset":12,"onmobile":false},
+    copycode: {"enable":true,"show_result":true,"style":null},
+    back2top: {"enable":true,"sidebar":false,"scrollpercent":false},
+    bookmark: {"enable":false,"color":"#222","save":"auto"},
+    fancybox: false,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
+    algolia: {
+      appID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":0},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    localsearch: {"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    path: '',
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    translation: {
+      copy_button: '复制',
+      copy_success: '复制成功',
+      copy_failure: '复制失败'
+    },
+    sidebarPadding: 40
+  };
+</script>
+
   <meta name="description" content="使每个人的生活多一份美好。">
 <meta property="og:type" content="website">
 <meta property="og:title" content="jefine">
@@ -13,739 +59,1055 @@
 <meta property="og:description" content="使每个人的生活多一份美好。">
 <meta property="og:locale" content="zh-CN">
 <meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="https://jefine.github.io/page/3/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: true,
+    isPost: false,
+    isPage: false,
+    isArchive: false
+  };
+</script>
+
+  <title>jefine</title>
   
-  
-    <link rel="icon" href="/favicon.png">
-  
-  <link type="text/css" href="//netdna.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.css" rel="stylesheet">
-  <link rel="stylesheet" href="/css/style.css">
-  <link rel="stylesheet" href="/css/scrollUp/image.css">
-  <!--[if lt IE 9]><script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7/html5shiv.min.js"></script><![endif]-->
-  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
 </head>
-<body>
-  <div id="container">
-    <div id="wrap">
-      <header id="header">
-  <div id="banner"></div>
-  <div id="header-outer" class="outer">
-    <div id="header-title" class="inner">
-      <div class="logo">
-        <img src="/logo.png" alt="Profile Picture">
-      </div>
-      <div id="title">jefine</div>
-      
-        <div id="subtitle">小小的梦呓</div>
-      
-       <ul class="my-socials">
-  
- 
-</ul>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-meta">
+
+    <div>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">jefine</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+        <p class="site-subtitle">小小的梦呓</p>
+  </div>
+
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
     </div>
   </div>
-  <div id="header-inner" class="">
-    <nav id="main-nav">
-      <a id="main-nav-toggle" class="nav-icon"></a>
-      <!--
-        
-          
-            <a class="main-nav-link" href="/">首页</a>
-          
-            <a class="main-nav-link" href="/categories/life">生活</a>
-          
-            <a class="main-nav-link" href="/archives">归档</a>
-          
-        
-      -->
-    </nav>
-    <nav id="title-nav" style="display:none">
-      <a href="/">jefine</a>
-      <img src="/logo.png" alt="Profile Picture">
-      <!--
-      <span id="title-nav-socials">
-        
-       
-     </span>
-      -->
-    </nav>
-    <nav id="sub-nav">
-      
-      <a id="nav-search-btn" class="nav-icon" title="Search"></a>
-    </nav>
-    <div id="search-form-wrap">
-      <form action="http://www.baidu.com/baidu" method="get" accept-charset="utf-8" class="search-form">
-        <input type="search" name="word" maxlength="20" class="search-form-input" placeholder="搜索">
-        <input type="submit" value="" class="search-form-submit">
-        <input name=tn type=hidden value="bds">
-        <input name=cl type=hidden value="3">
-        <input name=ct type=hidden value="2097152">
-        <input type="hidden" name="si" value="jefine.github.io">
-      </form>
-    </div>
-  </div>
-  <div class="site-nav" style="display: none;">
-    <ul>
-      
-      
-        <li><a href="/">首页</a></li>
-      
-        <li><a href="/categories/life">生活</a></li>
-      
-        <li><a href="/archives">归档</a></li>
-      
-      
-    </ul>
-  </div>
-</header>
-      <div class="outer">
-        <section id="main">
+</div>
+
+
+<nav class="site-nav">
   
+  <ul id="menu" class="menu">
+        <li class="menu-item menu-item-home">
 
-    
-    <article id="post-L1-046整除光棍（模拟大数除法）" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2020/01/05/L1-046%E6%95%B4%E9%99%A4%E5%85%89%E6%A3%8D%EF%BC%88%E6%A8%A1%E6%8B%9F%E5%A4%A7%E6%95%B0%E9%99%A4%E6%B3%95%EF%BC%89/" class="article-date">
-  <time datetime="2020-01-05T14:30:58.000Z" itemprop="datePublished">2020-01-05</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/%E7%BC%96%E7%A8%8B/">编程</a>
-  </div>
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>首页</a>
 
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/01/05/L1-046%E6%95%B4%E9%99%A4%E5%85%89%E6%A3%8D%EF%BC%88%E6%A8%A1%E6%8B%9F%E5%A4%A7%E6%95%B0%E9%99%A4%E6%B3%95%EF%BC%89/">L1-046整除光棍（模拟大数除法）</a>
-    </h1>
-  
+  </li>
+        <li class="menu-item menu-item-about">
 
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>这里所谓的“光棍”，并不是指单身汪啦~ 说的是全部由1组成的数字，比如1、11、111、1111等。传说任何一个光棍都能被一个不以5结尾的奇数整除。比如，111111就可以被13整除。 现在，你的程序要读入一个整数<code>x</code>，这个整数一定是奇数并且不以5结尾。然后，经过计算，输出两个数字：第一个数字<code>s</code>，表示<code>x</code>乘以<code>s</code>是一个光棍，第二个数字<code>n</code>是这个光棍的位数。这样的解当然不是唯一的,题目要求你输出最小的解。</p>
-<p>提示：一个显然的办法是逐渐增加光棍的位数，直到可以整除<code>x</code>为止。但难点在于，<code>s</code>可能是个非常大的数 —— 比如，程序输入31，那么就输出3584229390681和15，因为31乘以3584229390681的结果是111111111111111，一共15个1。</p>
-<h3 id="输入格式："><a href="#输入格式：" class="headerlink" title="输入格式："></a>输入格式：</h3><p>输入在一行中给出一个不以5结尾的正奇数<code>x</code>（&lt;1000）。</p>
-<h3 id="输出格式："><a href="#输出格式：" class="headerlink" title="输出格式："></a>输出格式：</h3><p>在一行中输出相应的最小的<code>s</code>和<code>n</code>，其间以1个空格分隔。</p>
-<h3 id="输入样例："><a href="#输入样例：" class="headerlink" title="输入样例："></a>输入样例：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">31</span><br></pre></td></tr></table></figure>
+    <a href="/about/" rel="section"><i class="fa fa-fw fa-user"></i>关于</a>
 
-<h3 id="输出样例："><a href="#输出样例：" class="headerlink" title="输出样例："></a>输出样例：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">3584229390681 15</span><br></pre></td></tr></table></figure>
+  </li>
+        <li class="menu-item menu-item-tags">
 
-<h3 id="题目思路分析："><a href="#题目思路分析：" class="headerlink" title="题目思路分析："></a>题目思路分析：</h3><p>第一次接触大数除法的模拟，在经历过一番思考后，选择了百度。。。</p>
-<p>忽然发现思路其实就是模拟人的思路：假设我们也不知道多少个1才能将31整除。那么怎么得到那个很长的数呢？</p>
-<ol>
-<li>从1，11，111，一个一个去尝试。显然，不成立。（当然，我们可以直接从比除数大的111开始除，这也是后面变成的思路）</li>
-<li>但如果我们实验过几次第一种方法后，我们会发现，其实我们只是在每一次的计算后（发现不能整除）我们就会添加一个1继续去除。之前的商就保留下来了，和我们使用竖式除法是一样的。我们只是需要每次除不尽的时候，填上一个1继续除便是了，之前的商直接输出不是更好。</li>
-</ol>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> x,s=<span class="number">0</span>,n=<span class="number">0</span>;<span class="comment">//除数，被除数，位数 </span></span><br><span class="line">	<span class="built_in">cin</span>&gt;&gt;x;</span><br><span class="line">	<span class="keyword">while</span>(s&lt;x)</span><br><span class="line">	&#123;</span><br><span class="line">		s=s*<span class="number">10</span>+<span class="number">1</span>;<span class="comment">//被除数末位添1直到不小于被除数 </span></span><br><span class="line">		n++;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">while</span>(<span class="literal">true</span>)<span class="comment">//除法 </span></span><br><span class="line">	&#123;</span><br><span class="line">		<span class="built_in">cout</span>&lt;&lt;s/x;<span class="comment">//输出商（就作为开头咯） </span></span><br><span class="line">		s%=x;<span class="comment">//被除数更改为其余数 </span></span><br><span class="line">		<span class="keyword">if</span>(s==<span class="number">0</span>)<span class="keyword">break</span>;<span class="comment">//余数为0则结束（否则加1继续） </span></span><br><span class="line">		s=s*<span class="number">10</span>+<span class="number">1</span>;<span class="comment">//被除数末位加上1</span></span><br><span class="line">		n++; </span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">cout</span>&lt;&lt;<span class="string">' '</span>&lt;&lt;n;<span class="comment">//之前已经输出了商（很大的数）</span></span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>标签</a>
 
-<p><strong>大数模拟，在没有更好的方法下，不如试试康康如果是我们，我们是怎么做的。。。</strong></p>
+  </li>
+        <li class="menu-item menu-item-categories">
 
-      
-    </div>
-    <footer class="article-footer">
-      
-        <a data-url="https://jefine.github.io/2020/01/05/L1-046%E6%95%B4%E9%99%A4%E5%85%89%E6%A3%8D%EF%BC%88%E6%A8%A1%E6%8B%9F%E5%A4%A7%E6%95%B0%E9%99%A4%E6%B3%95%EF%BC%89/" data-id="ck811m6in0009egr09b3c45f1" class="article-share-link">分享到</a>
-      
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>分类</a>
 
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/pta/" rel="tag">pta</a></li></ul>
+  </li>
+        <li class="menu-item menu-item-archives">
 
-    </footer>
-  </div>
-  
-</article>
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档</a>
 
+  </li>
+  </ul>
 
-    
-  
-
-    
-    <article id="l1-002-打印沙漏" class="article article-type-l1-002" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2020/01/04/%E6%89%93%E5%8D%B0%E6%B2%99%E6%BC%8F/" class="article-date">
-  <time datetime="2020-01-04T13:08:22.000Z" itemprop="datePublished">2020-01-04</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/%E7%BC%96%E7%A8%8B/">编程</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/01/04/%E6%89%93%E5%8D%B0%E6%B2%99%E6%BC%8F/">打印沙漏（代码较详细）</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>本题要求你写个程序把给定的符号打印成沙漏的形状。例如给定17个“*”，要求按下列格式打印</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">*****</span><br><span class="line"> ***</span><br><span class="line">  *</span><br><span class="line"> ***</span><br><span class="line">*****</span><br></pre></td></tr></table></figure>
-
-<p>所谓“沙漏形状”，是指每行输出奇数个符号；各行符号中心对齐；相邻两行符号数差2；符号数先从大到小顺序递减到1，再从小到大顺序递增；首尾符号数相等。</p>
-<p>给定任意N个符号，不一定能正好组成一个沙漏。要求打印出的沙漏能用掉尽可能多的符号。</p>
-<h3 id="输入格式"><a href="#输入格式" class="headerlink" title="输入格式:"></a>输入格式:</h3><p>输入在一行给出1个正整数N（≤1000）和一个符号，中间以空格分隔。</p>
-<h3 id="输出格式"><a href="#输出格式" class="headerlink" title="输出格式:"></a>输出格式:</h3><p>首先打印出由给定符号组成的最大的沙漏形状，最后在一行中输出剩下没用掉的符号数。</p>
-<h3 id="输入样例"><a href="#输入样例" class="headerlink" title="输入样例:"></a>输入样例:</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">19 *</span><br></pre></td></tr></table></figure>
-
-<h3 id="输出样例"><a href="#输出样例" class="headerlink" title="输出样例:"></a>输出样例:</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">*****</span><br><span class="line"> ***</span><br><span class="line">  *</span><br><span class="line"> ***</span><br><span class="line">*****</span><br><span class="line">2</span><br></pre></td></tr></table></figure>
-
-<h3 id="题目思路："><a href="#题目思路：" class="headerlink" title="题目思路："></a>题目思路：</h3><p>哎，一言难尽，本以为是一道水题，却在写的时候发现写了好久，静不下心来。就抄了一下别人的。后来机缘巧合下，有自己重新坐下，冷静思考。经过许多次调试，有了一些结果。简单来说：就是大而化小。</p>
-<h3 id="代码："><a href="#代码：" class="headerlink" title="代码："></a>代码：</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> n;</span><br><span class="line">	<span class="built_in">cin</span>&gt;&gt;n;</span><br><span class="line">	<span class="keyword">char</span> ch;</span><br><span class="line">	getchar();<span class="comment">//中间的空格</span></span><br><span class="line">	ch=getchar(); </span><br><span class="line">	<span class="keyword">int</span> i,item=<span class="number">1</span>,sum=<span class="number">1</span>;<span class="comment">//sum为所用的符号个数，item表示最大的一行的符号个数。 </span></span><br><span class="line">	<span class="keyword">for</span>(i=<span class="number">0</span>;sum&lt;=n;i++)<span class="comment">//这样写，最后sum一定大于n，会超出。 </span></span><br><span class="line">	&#123;item+=<span class="number">2</span>;</span><br><span class="line">	sum+=item*<span class="number">2</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	sum-=item*<span class="number">2</span>;<span class="comment">//得到未超出时的所需符号个数sum，（返回上一次的sum） </span></span><br><span class="line">	<span class="keyword">int</span> ans = n-sum;<span class="comment">//得到了最后的剩余的符号个数；（最后输出即可） </span></span><br><span class="line">	</span><br><span class="line">	<span class="comment">//接下来输出沙漏（首先不考虑输出下半个沙漏，先输出一半） </span></span><br><span class="line">	<span class="keyword">int</span> t=item<span class="number">-2</span>;</span><br><span class="line">	<span class="keyword">int</span> cnt=<span class="number">0</span>; <span class="comment">//第一次是0第二行应该时1，依次类推。 </span></span><br><span class="line">	<span class="keyword">for</span>(i=t;i&gt;<span class="number">0</span>;i-=<span class="number">2</span>)</span><br><span class="line">	&#123;	</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> k=<span class="number">0</span>;k&lt;cnt;k++)<span class="built_in">cout</span>&lt;&lt;<span class="string">" "</span>;<span class="comment">//输出空格 </span></span><br><span class="line">		<span class="comment">//cnt++如果放在这里（判断中）会出现无限死循环！</span></span><br><span class="line">		<span class="comment">//(第二行判断的时候会陷入死循环）</span></span><br><span class="line">		<span class="comment">//放在最后就好了。 </span></span><br><span class="line">		</span><br><span class="line">	</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">0</span>;j&lt;i;j++)&#123;<span class="comment">//输出符号 </span></span><br><span class="line">			<span class="built_in">cout</span>&lt;&lt;ch;</span><br><span class="line">		&#125;<span class="built_in">cout</span>&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">		cnt++;	</span><br><span class="line">	&#125; </span><br><span class="line">	</span><br><span class="line">	<span class="comment">//下半个沙漏</span></span><br><span class="line">	cnt--;<span class="comment">//是由于最后cnt又多加了1； </span></span><br><span class="line">	 <span class="keyword">for</span>(i=<span class="number">3</span>;i&lt;=t;i+=<span class="number">2</span>)<span class="comment">//照着上面的反过来即可（但是第一项是1) </span></span><br><span class="line">	 &#123;</span><br><span class="line">	 	cnt--; </span><br><span class="line">	 	<span class="keyword">for</span>(<span class="keyword">int</span> k=<span class="number">0</span>;k&lt;cnt;k++)<span class="built_in">cout</span>&lt;&lt;<span class="string">" "</span>;<span class="comment">//输出空格</span></span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">0</span>;j&lt;i;j++)&#123;<span class="comment">//输出符号 </span></span><br><span class="line">			<span class="built_in">cout</span>&lt;&lt;ch;</span><br><span class="line">		&#125;<span class="built_in">cout</span>&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">	 &#125; </span><br><span class="line">	 <span class="built_in">cout</span>&lt;&lt;ans;<span class="comment">//还有一个剩余个数需要输出。。。 </span></span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">	</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-      
-    </div>
-    <footer class="article-footer">
-      
-        <a data-url="https://jefine.github.io/2020/01/04/%E6%89%93%E5%8D%B0%E6%B2%99%E6%BC%8F/" data-id="ck811m6le0023egr0h5vihz9n" class="article-share-link">分享到</a>
-      
-
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/pta/" rel="tag">pta</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-    
-  
-
-    
-    <article id="post-L1-033出生年" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2020/01/04/L1-033%E5%87%BA%E7%94%9F%E5%B9%B4/" class="article-date">
-  <time datetime="2020-01-04T10:37:05.000Z" itemprop="datePublished">2020-01-04</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/%E7%BC%96%E7%A8%8B/">编程</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/01/04/L1-033%E5%87%BA%E7%94%9F%E5%B9%B4/">L1-033出生年</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><img src="/2020/01/04/L1-033%E5%87%BA%E7%94%9F%E5%B9%B4/F:%5Cblog%5Chexo%5Csource_posts%5CjmK5wuZkEV4aCdJ.png" alt="image.png"></p>
-<p>以上是新浪微博中一奇葩贴：“我出生于1988年，直到25岁才遇到4个数字都不相同的年份。”也就是说，直到2013年才达到“4个数字都不相同”的要求。本题请你根据要求，自动填充“我出生于<code>y</code>年，直到<code>x</code>岁才遇到<code>n</code>个数字都不相同的年份”这句话。</p>
-<h3 id="输入格式："><a href="#输入格式：" class="headerlink" title="输入格式："></a>输入格式：</h3><p>输入在一行中给出出生年份<code>y</code>和目标年份中不同数字的个数<code>n</code>，其中<code>y</code>在[1, 3000]之间，<code>n</code>可以是2、或3、或4。注意不足4位的年份要在前面补零，例如公元1年被认为是0001年，有2个不同的数字0和1。</p>
-<h3 id="输出格式："><a href="#输出格式：" class="headerlink" title="输出格式："></a>输出格式：</h3><p>根据输入，输出<code>x</code>和能达到要求的年份。数字间以1个空格分隔，行首尾不得有多余空格。年份要按4位输出。注意：所谓“<code>n</code>个数字都不相同”是指不同的数字正好是<code>n</code>个。如“2013”被视为满足“4位数字都不同”的条件，但不被视为满足2位或3位数字不同的条件。</p>
-<h3 id="输入样例1："><a href="#输入样例1：" class="headerlink" title="输入样例1："></a>输入样例1：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">1988 4</span><br></pre></td></tr></table></figure>
-
-<h3 id="输出样例1："><a href="#输出样例1：" class="headerlink" title="输出样例1："></a>输出样例1：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">25 2013</span><br></pre></td></tr></table></figure>
-
-<h3 id="输入样例2："><a href="#输入样例2：" class="headerlink" title="输入样例2："></a>输入样例2：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">1 2</span><br></pre></td></tr></table></figure>
-
-<h3 id="输出样例2："><a href="#输出样例2：" class="headerlink" title="输出样例2："></a>输出样例2：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">0 0001</span><br></pre></td></tr></table></figure>
-
-
-
-<h3 id="题目思路："><a href="#题目思路：" class="headerlink" title="题目思路："></a>题目思路：</h3><p>起初打算使用int，来储存，最后使用%04的输出。但是由于分解数字等太麻烦（其实计算各个数字出现的次数才是最麻烦的）期间还使用了sort来排序，方便得到cnt（多少个不同数字）但是这样有改变了原来的年份。。。最终，还是使用了最基本的字符。</p>
-<p>在实现题目要求的时候，常常遇到没有初始化而遇到到许多问题（记得初始化呀。。。</p>
-<p>经过思考，采用a[4]来表示年份，b[10]来记录数字出现的次数。（直接赋值1）这样有几个1就有多少个不同的数字。（算是一种逆向吧，不怕数字重复了。。）</p>
-<h3 id="代码："><a href="#代码：" class="headerlink" title="代码："></a>代码：</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;<span class="comment">//调试的好麻烦。。</span></span><br><span class="line">	</span><br><span class="line">	<span class="keyword">int</span> n;</span><br><span class="line">	<span class="keyword">char</span> a[<span class="number">4</span>];</span><br><span class="line">	<span class="keyword">int</span> cnt=<span class="number">0</span>;</span><br><span class="line">	<span class="keyword">static</span> <span class="keyword">int</span> b[<span class="number">10</span>];</span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">"%s %d"</span>,&amp;a,&amp;n);</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">while</span>(<span class="built_in">strlen</span>(a)&lt;<span class="number">4</span>)&#123;<span class="comment">//将其化为四位年份 (buling)</span></span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">2</span>;i&gt;=<span class="number">0</span>;i--)&#123;<span class="comment">//from 2 to 0;</span></span><br><span class="line">			a[i+<span class="number">1</span>]=a[i];</span><br><span class="line">		&#125;a[<span class="number">0</span>]=<span class="string">'0'</span>;<span class="comment">//不是0而是‘0'</span></span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">int</span> start=(a[<span class="number">0</span>]-<span class="string">'0'</span>)*<span class="number">1000</span>+(a[<span class="number">1</span>]-<span class="string">'0'</span>)*<span class="number">100</span>+(a[<span class="number">2</span>]-<span class="string">'0'</span>)*<span class="number">10</span>+a[<span class="number">3</span>]-<span class="string">'0'</span>;</span><br><span class="line">	b[(a[<span class="number">0</span>]-<span class="string">'0'</span>)]=<span class="number">1</span>;</span><br><span class="line">	b[(a[<span class="number">1</span>]-<span class="string">'0'</span>)]=<span class="number">1</span>;</span><br><span class="line">	b[(a[<span class="number">2</span>]-<span class="string">'0'</span>)]=<span class="number">1</span>;</span><br><span class="line">	b[a[<span class="number">3</span>]-<span class="string">'0'</span>]=<span class="number">1</span>;</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;<span class="number">10</span>;i++)&#123;</span><br><span class="line">		<span class="keyword">if</span>(b[i])&#123;</span><br><span class="line">			cnt++;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">while</span>(cnt!=n)&#123;</span><br><span class="line">		cnt=<span class="number">0</span>;</span><br><span class="line">	a[<span class="number">3</span>]++;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;<span class="number">10</span>;i++)b[i]=<span class="number">0</span>;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">3</span>;j&gt;=<span class="number">1</span>;j--)&#123;<span class="comment">//进位 </span></span><br><span class="line">		<span class="keyword">if</span>(a[j]==<span class="string">':'</span>)&#123;</span><br><span class="line">			a[j]=<span class="string">'0'</span>;</span><br><span class="line">			a[j<span class="number">-1</span>]+=<span class="number">1</span>;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	b[(a[<span class="number">0</span>]-<span class="string">'0'</span>)]=<span class="number">1</span>;</span><br><span class="line">	b[(a[<span class="number">1</span>]-<span class="string">'0'</span>)]=<span class="number">1</span>;</span><br><span class="line">	b[(a[<span class="number">2</span>]-<span class="string">'0'</span>)]=<span class="number">1</span>;</span><br><span class="line">	b[a[<span class="number">3</span>]-<span class="string">'0'</span>]=<span class="number">1</span>;</span><br><span class="line"></span><br><span class="line">	</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;<span class="number">10</span>;i++)&#123;</span><br><span class="line">		<span class="keyword">if</span>(b[i])&#123;</span><br><span class="line">			cnt++;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;	</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">int</span> end=(a[<span class="number">0</span>]-<span class="string">'0'</span>)*<span class="number">1000</span>+(a[<span class="number">1</span>]-<span class="string">'0'</span>)*<span class="number">100</span>+(a[<span class="number">2</span>]-<span class="string">'0'</span>)*<span class="number">10</span>+a[<span class="number">3</span>]-<span class="string">'0'</span>;</span><br><span class="line">	<span class="built_in">cout</span>&lt;&lt;end-start&lt;&lt;<span class="string">" "</span>;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"%04d"</span>,end);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-      
-    </div>
-    <footer class="article-footer">
-      
-        <a data-url="https://jefine.github.io/2020/01/04/L1-033%E5%87%BA%E7%94%9F%E5%B9%B4/" data-id="ck811m6iy000degr05bvv09ib" class="article-share-link">分享到</a>
-      
-
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/pta/" rel="tag">pta</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-    
-  
-
-    
-    <article id="l1-016-查验身份证" class="article article-type-l1-016" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2020/01/03/%E6%9F%A5%E9%AA%8C%E8%BA%AB%E4%BB%BD%E8%AF%81/" class="article-date">
-  <time datetime="2020-01-03T08:28:34.000Z" itemprop="datePublished">2020-01-03</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/%E7%BC%96%E7%A8%8B/">编程</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/01/03/%E6%9F%A5%E9%AA%8C%E8%BA%AB%E4%BB%BD%E8%AF%81/">查验身份证</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        
-      
-    </div>
-    <footer class="article-footer">
-      
-        <a data-url="https://jefine.github.io/2020/01/03/%E6%9F%A5%E9%AA%8C%E8%BA%AB%E4%BB%BD%E8%AF%81/" data-id="ck811m6lr002degr07hpy58b4" class="article-share-link">分享到</a>
-      
-
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/pta/" rel="tag">pta</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-    
-  
-
-    
-    <article id="pta l1-006-连续因子" class="article article-type-pta l1-006" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2020/01/02/%E8%BF%9E%E7%BB%AD%E5%9B%A0%E5%AD%90/" class="article-date">
-  <time datetime="2020-01-02T08:09:01.000Z" itemprop="datePublished">2020-01-02</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/01/02/%E8%BF%9E%E7%BB%AD%E5%9B%A0%E5%AD%90/">L1-006 连续因子</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>一个正整数 N 的因子中可能存在若干连续的数字。例如 630 可以分解为 3×5×6×7，其中 5、6、7 就是 3 个连续的数字。给定任一正整数 N，要求编写程序求出最长连续因子的个数，并输出最小的连续因子序列。</p>
-<h3 id="输入格式："><a href="#输入格式：" class="headerlink" title="输入格式："></a>输入格式：</h3><p>输入在一行中给出一个正整数 N（1&lt;N&lt;231）。</p>
-<h3 id="输出格式："><a href="#输出格式：" class="headerlink" title="输出格式："></a>输出格式：</h3><p>首先在第 1 行输出最长连续因子的个数；然后在第 2 行中按 <code>因子1*因子2*……*因子k</code> 的格式输出最小的连续因子序列，其中因子按递增顺序输出，1 不算在内。</p>
-<h3 id="输入样例："><a href="#输入样例：" class="headerlink" title="输入样例："></a>输入样例：</h3><p>630</p>
-<h3 id="输出样例："><a href="#输出样例：" class="headerlink" title="输出样例："></a>输出样例：</h3><p>3<br>5<em>6</em>7</p>
-<p>思路为从2开始累乘（加1），紧接着就判断是否乘积是其因子<br>如果是，那么记录下来长度，开始的i；<br>一直到乘积大于n停止；<br>然后使乘积（prd）等于1；i++； </p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> ll;<span class="comment">//简写 ，使用long long更好 </span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	ll n;</span><br><span class="line">	<span class="built_in">cin</span>&gt;&gt;n;</span><br><span class="line">	ll prd;<span class="comment">//是乘积（product） </span></span><br><span class="line">	<span class="keyword">int</span> start=<span class="number">0</span>,len=<span class="number">0</span>;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">2</span>;i&lt;=<span class="built_in">sqrt</span>(n);i++)&#123;<span class="comment">//sqrt是为了最后一个点过去（减少计算量） </span></span><br><span class="line">		prd=<span class="number">1</span>;</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> j=i;prd&lt;n;j++)&#123;</span><br><span class="line">			prd*=j;</span><br><span class="line">			<span class="keyword">if</span>(n%prd==<span class="number">0</span>&amp;&amp;j-i+<span class="number">1</span>&gt;len)&#123;</span><br><span class="line">				start=i;</span><br><span class="line">				len=j-i+<span class="number">1</span>;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">if</span>(start==<span class="number">0</span>)&#123;<span class="comment">//等于0的话就意味着它是一个质数！那么排去1.他的因子就只有本身了。 </span></span><br><span class="line">		start=n;</span><br><span class="line">		len = <span class="number">1</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">cout</span>&lt;&lt;len&lt;&lt;<span class="built_in">endl</span>&lt;&lt;start;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=start+<span class="number">1</span>;i&lt;start+len;i++)</span><br><span class="line">	<span class="built_in">cout</span>&lt;&lt;<span class="string">"*"</span>&lt;&lt;i;</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-      
-    </div>
-    <footer class="article-footer">
-      
-        <a data-url="https://jefine.github.io/2020/01/02/%E8%BF%9E%E7%BB%AD%E5%9B%A0%E5%AD%90/" data-id="ck811m6mt002zegr0h5glclv8" class="article-share-link">分享到</a>
-      
-
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/pta/" rel="tag">pta</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-    
-  
-
-    
-    <article id="post-2020" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2020/01/02/2020/" class="article-date">
-  <time datetime="2020-01-02T01:54:43.000Z" itemprop="datePublished">2020-01-02</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/record/">record</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/01/02/2020/">2020</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="2020来咯。"><a href="#2020来咯。" class="headerlink" title="2020来咯。"></a>2020来咯。</h3><p>我们一直以为出现在科幻和未来的2020年，他来了。</p>
-<p>2020更是10年的总结。当然第一批90后30岁了，结合当下的互联网形式，预计今年的35岁梗会愈发汹涌，焦虑会更快的弥漫在这个飞速发展的互联行业中。有人说2019是过去十年中最差的一年，但也是未来十年中最好的一年。曾有人说：每一个行业都有他的黄金十年，白银十年，青铜十年。最好的黄金十年由于移动互联网的爆发持续了20年，那么？互联网要进入白银十年了么？互联网会像传统行业一样逐渐的失去风头么？那么未来什么又是新的未来呢？没有人知道。5g带给我们的究竟是什么样的巨变，我们可能有一些遐想，但未来会不会出现新的增长点（5g+区块链+物联网我还是很看好的）但看未来吧！我辈必将前行。</p>
-<p>在2019跨年演讲《与时间做朋友》中罗振宇（不是罗永浩哈）给我的启发有：</p>
-<h6 id="做-做事的人；做与人交流的人；做最好的自己；"><a href="#做-做事的人；做与人交流的人；做最好的自己；" class="headerlink" title="做 做事的人；做与人交流的人；做最好的自己；"></a>做 做事的人；做与人交流的人；做最好的自己；</h6><h6 id="每个人都是一盏灯，人点亮人"><a href="#每个人都是一盏灯，人点亮人" class="headerlink" title="每个人都是一盏灯，人点亮人"></a>每个人都是一盏灯，人点亮人</h6><h6 id="未来，我来！"><a href="#未来，我来！" class="headerlink" title="未来，我来！"></a>未来，我来！</h6><h6 id><a href="#" class="headerlink" title></a></h6>
-      
-    </div>
-    <footer class="article-footer">
-      
-        <a data-url="https://jefine.github.io/2020/01/02/2020/" data-id="ck811m6hm0000egr03ar39u9a" class="article-share-link">分享到</a>
-      
-
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/newyear/" rel="tag">newyear</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-    
-  
-
-    
-    <article id="post-选择排序-较为详细的分析" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2019/12/26/%E9%80%89%E6%8B%A9%E6%8E%92%E5%BA%8F-%E8%BE%83%E4%B8%BA%E8%AF%A6%E7%BB%86%E7%9A%84%E5%88%86%E6%9E%90/" class="article-date">
-  <time datetime="2019-12-26T00:35:31.000Z" itemprop="datePublished">2019-12-26</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/%E7%AE%97%E6%B3%95/">算法</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/12/26/%E9%80%89%E6%8B%A9%E6%8E%92%E5%BA%8F-%E8%BE%83%E4%B8%BA%E8%AF%A6%E7%BB%86%E7%9A%84%E5%88%86%E6%9E%90/">选择排序-较为详细的分析</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="算法思想："><a href="#算法思想：" class="headerlink" title="算法思想："></a>算法思想：</h3><p>选择排序，从头至尾扫描序列，找出最小的一个元素，和第一个元素交换，接着从剩下的元素中继续这种选择和交换方式，最终得到一个有序序列。 </p>
-<h3 id="具体思路："><a href="#具体思路：" class="headerlink" title="具体思路："></a>具体思路：</h3><p>我们通过记录最小下标进行排序。但有几个需要注意的的地方。</p>
-<p>首先，我们将被排序的数组，分为两个部分：有序区和无序区。</p>
-<p>我们在每一轮的寻找中最小值下标后记得交换，然后一定要将最小值下标再次初始化为第二个（假设刚刚是第一轮查找）（这个初始下标也成了分界有序区和无序去的下标），并且我们每次都要寻找到新的无序区的最小的下标。</p>
-<h3 id="函数样例："><a href="#函数样例：" class="headerlink" title="函数样例："></a>函数样例：</h3><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">selectionSort</span><span class="params">(<span class="keyword">int</span> arr[], <span class="keyword">int</span> n)</span> </span></span><br><span class="line"><span class="function"></span>&#123; </span><br><span class="line">    <span class="keyword">int</span> i, j, min_idx; </span><br><span class="line">  </span><br><span class="line">    <span class="comment">// 一个接着一个，将无序区的排列为有序</span></span><br><span class="line">    <span class="keyword">for</span> (i = <span class="number">0</span>; i &lt; n<span class="number">-1</span>; i++) </span><br><span class="line">    &#123; </span><br><span class="line">        <span class="comment">// Find the minimum element in unsorted array </span></span><br><span class="line">        min_idx = i; <span class="comment">//一定要记得有初始化，而且他的位置在这里哦。</span></span><br><span class="line">        <span class="comment">//及上面提及的从新开始寻找最小值。</span></span><br><span class="line">        <span class="keyword">for</span> (j = i+<span class="number">1</span>; j &lt; n; j++) </span><br><span class="line">          <span class="keyword">if</span> (arr[j] &lt; arr[min_idx]) </span><br><span class="line">            min_idx = j; </span><br><span class="line">  </span><br><span class="line">        <span class="comment">//交换最小值和其自己</span></span><br><span class="line">        <span class="comment">//我们在这里可以加一个判断，来(可能)减少其交换次数</span></span><br><span class="line">        <span class="comment">//if(i! = min_idx)//如果使用的话，记得加大括号将下面的三个都括起来哦</span></span><br><span class="line">        <span class="keyword">int</span> t = arr[min_idx];</span><br><span class="line">        arr[min_idx] = arr[i];</span><br><span class="line">        arr[i] = t;</span><br><span class="line">        </span><br><span class="line">        </span><br><span class="line">    &#125; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>也许我们都会陷入一个又一个的坑，希望能帮助大家，踩坑多么有意义啊。</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      
-        <a data-url="https://jefine.github.io/2019/12/26/%E9%80%89%E6%8B%A9%E6%8E%92%E5%BA%8F-%E8%BE%83%E4%B8%BA%E8%AF%A6%E7%BB%86%E7%9A%84%E5%88%86%E6%9E%90/" data-id="ck811m6n40036egr0hcvt7zbg" class="article-share-link">分享到</a>
-      
-
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%8E%92%E5%BA%8F/" rel="tag">排序</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-    
-  
-
-    
-    <article id="p1308-统计单词数" class="article article-type-p1308" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2019/12/21/%E7%BB%9F%E8%AE%A1%E5%8D%95%E8%AF%8D%E6%95%B0/" class="article-date">
-  <time datetime="2019-12-21T02:39:43.000Z" itemprop="datePublished">2019-12-21</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/%E7%BC%96%E7%A8%8B/">编程</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/12/21/%E7%BB%9F%E8%AE%A1%E5%8D%95%E8%AF%8D%E6%95%B0/">统计单词数</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><p>一般的文本编辑器都有查找单词的功能，该功能可以快速定位特定单词在文章中的位置，有的还能统计出特定单词在文章中出现的次数。</p>
-<p>现在，请你编程实现这一功能，具体要求是：给定一个单词，请你输出它在给定的文章中出现的次数和第一次出现的位置。注意：匹配单词时，不区分大小写，但要求完全匹配，即给定单词必须与文章中的某一独立单词在不区分大小写的情况下完全相同（参见样例1 ），如果给定单词仅是文章中某一单词的一部分则不算匹配（参见样例2 ）。</p>
-<h2 id="输入格式"><a href="#输入格式" class="headerlink" title="输入格式"></a>输入格式</h2><p>共22行。</p>
-<p>第11行为一个字符串，其中只含字母，表示给定单词；</p>
-<p>第22行为一个字符串，其中只可能包含字母和空格，表示给定的文章。</p>
-<h2 id="输出格式"><a href="#输出格式" class="headerlink" title="输出格式"></a>输出格式</h2><p>一行，如果在文章中找到给定单词则输出两个整数，两个整数之间用一个空格隔开，分别是单词在文章中出现的次数和第一次出现的位置（即在文章中第一次出现时，单词首字母在文章中的位置，位置从00 开始）；如果单词在文章中没有出现，则直接输出一个整数-1−1。</p>
-<h2 id="输入输出样例"><a href="#输入输出样例" class="headerlink" title="输入输出样例"></a>输入输出样例</h2><p><strong>输入 #1</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">To</span><br><span class="line">to be or not to be is a question</span><br></pre></td></tr></table></figure>
-
-<p><strong>输出 #1</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">2 0</span><br></pre></td></tr></table></figure>
-
-<p><strong>输入 #2</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">to</span><br><span class="line">Did the Ottoman Empire lose its power at that time</span><br></pre></td></tr></table></figure>
-
-<p><strong>输出 #2</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">-1</span><br></pre></td></tr></table></figure>
-
-<h2 id="说明-提示"><a href="#说明-提示" class="headerlink" title="说明/提示"></a>说明/提示</h2><p>数据范围：</p>
-<p>1≤1≤单词长度≤10≤10。</p>
-<p>1≤1≤文章长度≤1,000,000≤1,000,000。</p>
-<p>noip2011普及组第2题，洛谷新手村。</p>
-<h5 id="本题思路："><a href="#本题思路：" class="headerlink" title="本题思路："></a>本题思路：</h5><ol>
-<li><p>本来打算使用scanf(“%s”)来实现一个接着一个的单词输入，并strcmp判断。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;bits/stdc++.h&gt;</span><br><span class="line">using namespace std;</span><br><span class="line"></span><br><span class="line">int main()</span><br><span class="line">&#123;	char s[20];</span><br><span class="line">	char p[20];</span><br><span class="line">	char t[20];</span><br><span class="line">	char x;</span><br><span class="line">	int cnt=0;</span><br><span class="line">	scanf(&quot;%s&quot;,s);</span><br><span class="line">	strcpy(p,s);</span><br><span class="line">	if(s[0]&gt;=&apos;A&apos;&amp;&amp;s[0]&lt;=&apos;Z&apos;)</span><br><span class="line">	p[0]=s[0]+32;</span><br><span class="line">	if(s[0]&gt;=&apos;a&apos;&amp;&amp;s[0]&lt;=&apos;z&apos;)</span><br><span class="line">	p[0]=s[0]-32;</span><br><span class="line">	</span><br><span class="line">	int i=0;</span><br><span class="line">	int index=0;</span><br><span class="line">	scanf(&quot;%s&quot;,t);</span><br><span class="line">	x=getchar();</span><br><span class="line">	while(x!=&apos;\n&apos;)&#123;</span><br><span class="line">	if(strcmp(t,s)||strcmp(t,p))&#123;</span><br><span class="line">		if(cnt==0)</span><br><span class="line">		index=i;</span><br><span class="line">		cnt++;</span><br><span class="line">	&#125;i++;</span><br><span class="line">	scanf(&quot;%s&quot;,t);</span><br><span class="line">	x=getchar();</span><br><span class="line">&#125;</span><br><span class="line">	if(cnt==0)printf(&quot;-1&quot;);</span><br><span class="line">	else printf(&quot;%d %d&quot;,cnt,index);</span><br><span class="line">	return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>但是经过测试发现，%s后并不会将此单词的下一个单词计入，而是跳转到下一行，继续。与题意不符。而且单词的长度不确定。所以转变思路使用getchar一个一个判断。</p>
-</li>
-<li><p>最后采用以下思路：</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="built_in">string</span> sent,<span class="keyword">word</span>;</span><br><span class="line"><span class="keyword">int</span> lens,lenw,t,pos; </span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    getline(<span class="built_in">cin</span>,<span class="keyword">word</span>);  </span><br><span class="line">    getline(<span class="built_in">cin</span>,sent);   <span class="comment">//字符串含有空格输入，不可以用cin，否则to me只能读到to </span></span><br><span class="line">    lenw=<span class="keyword">word</span>.<span class="built_in">size</span>();   </span><br><span class="line">    lens=sent.<span class="built_in">size</span>();</span><br><span class="line">    <span class="keyword">int</span> j;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;lenw;i++)</span><br><span class="line">     <span class="keyword">word</span>[i]=<span class="built_in">toupper</span>(<span class="keyword">word</span>[i]);  <span class="comment">//转成大写 </span></span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;lens;i++)</span><br><span class="line">     sent[i]=<span class="built_in">toupper</span>(sent[i]);</span><br><span class="line">   t=<span class="number">0</span>;</span><br><span class="line">   <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;=lens-lenw;i++)&#123;</span><br><span class="line">   	<span class="keyword">for</span>( j=<span class="number">0</span>;j&lt;lenw;j++)&#123;</span><br><span class="line">   		<span class="keyword">if</span>(sent[i+j]!=<span class="keyword">word</span>[j])<span class="keyword">break</span>;</span><br><span class="line">   		<span class="keyword">if</span>(i&gt;<span class="number">0</span>&amp;&amp;sent[i<span class="number">-1</span>]!=<span class="string">' '</span>)<span class="keyword">break</span>;</span><br><span class="line">   	&#125;<span class="comment">//用于判断是否为逐字符合。</span></span><br><span class="line">	   <span class="keyword">if</span>(j==lenw&amp;&amp;(sent[i+j]==<span class="string">' '</span>||i+j==lens))</span><br><span class="line">           <span class="comment">//判断条件是否符合</span></span><br><span class="line">       &#123;</span><br><span class="line">	   	t++;</span><br><span class="line">	   	<span class="keyword">if</span>(t==<span class="number">1</span>)pos = i;</span><br><span class="line">	   &#125; </span><br><span class="line">   	</span><br><span class="line">   &#125;</span><br><span class="line">   </span><br><span class="line">    <span class="keyword">if</span>(t==<span class="number">0</span>)<span class="built_in">cout</span>&lt;&lt;<span class="number">-1</span>;</span><br><span class="line">    <span class="keyword">else</span> <span class="built_in">cout</span>&lt;&lt;t&lt;&lt;<span class="string">" "</span>&lt;&lt;pos;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>上述答案的作者为: <a href="https://www.luogu.com.cn/user/8436" target="_blank" rel="noopener">Zehra</a>  </p>
-</li>
-</ol>
-<p>以上即为解答，其中在寻找解题方案的过程中，我还发现许多大佬的许多种方案：比如状态机，根据不同的状态跑程序，但是略微有些麻烦，于是决定使用以上的方案。</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      
-        <a data-url="https://jefine.github.io/2019/12/21/%E7%BB%9F%E8%AE%A1%E5%8D%95%E8%AF%8D%E6%95%B0/" data-id="ck811m6mc002regr0ecuy1e2p" class="article-share-link">分享到</a>
-      
-
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/pta/" rel="tag">pta</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-    
-  
-
-    
-    <article id="post-查找子串" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2019/12/12/%E6%9F%A5%E6%89%BE%E5%AD%90%E4%B8%B2/" class="article-date">
-  <time datetime="2019-12-12T10:29:36.000Z" itemprop="datePublished">2019-12-12</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/%E7%BC%96%E7%A8%8B/">编程</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/12/12/%E6%9F%A5%E6%89%BE%E5%AD%90%E4%B8%B2/">查找子串</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="6-15-查找子串-20分"><a href="#6-15-查找子串-20分" class="headerlink" title="6-15 查找子串 (20分)"></a>6-15 查找子串 (20分)</h2><p>本题要求实现一个字符串查找的简单函数。</p>
-<h1 id="函数接口定义："><a href="#函数接口定义：" class="headerlink" title="函数接口定义："></a>函数接口定义：</h1><p>char *search( char *s, char *t );<br>函数search在字符串s中查找子串t，返回子串t在s中的首地址。若未找到，则返回NULL。</p>
-<h1 id="裁判测试程序样例："><a href="#裁判测试程序样例：" class="headerlink" title="裁判测试程序样例："></a>裁判测试程序样例：</h1><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> MAXS 30</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">char</span> *<span class="title">search</span><span class="params">(<span class="keyword">char</span> *s, <span class="keyword">char</span> *t)</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">ReadString</span><span class="params">( <span class="keyword">char</span> s[] )</span></span>; <span class="comment">/* 裁判提供，细节不表 */</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">char</span> s[MAXS], t[MAXS], *pos;</span><br><span class="line"></span><br><span class="line">    ReadString(s);</span><br><span class="line">    ReadString(t);</span><br><span class="line">    pos = search(s, t);</span><br><span class="line">    <span class="keyword">if</span> ( pos != <span class="literal">NULL</span> )</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"%d\n"</span>, pos - s);</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"-1\n"</span>);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* 你的代码将被嵌在这里 */</span></span><br></pre></td></tr></table></figure>
-<h1 id="输入样例1："><a href="#输入样例1：" class="headerlink" title="输入样例1："></a>输入样例1：</h1><p>The C Programming Language<br>ram </p>
-<h1 id="输出样例1："><a href="#输出样例1：" class="headerlink" title="输出样例1："></a>输出样例1：</h1><p>10</p>
-<h1 id="输入样例2："><a href="#输入样例2：" class="headerlink" title="输入样例2："></a>输入样例2：</h1><p>The C Programming Language<br>bored</p>
-<h1 id="输出样例2："><a href="#输出样例2：" class="headerlink" title="输出样例2："></a>输出样例2：</h1><p>-1</p>
-<h1 id="思路："><a href="#思路：" class="headerlink" title="思路："></a>思路：</h1><p>利用循环寻找到第一个相符合的字符，然后去判断是否为子字符串。<br>但此题目不可使用string.h较为麻烦，考验我们更多的是原理部分。</p>
-<h1 id="代码如下："><a href="#代码如下：" class="headerlink" title="代码如下："></a>代码如下：</h1><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">char</span> *<span class="title">search</span><span class="params">(<span class="keyword">char</span> *s, <span class="keyword">char</span> *t)</span></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> n,i,j,m;</span><br><span class="line">	<span class="keyword">int</span> flag = <span class="number">-1</span>;</span><br><span class="line">	<span class="keyword">for</span>(i=<span class="number">0</span>;s[i]!=<span class="string">'\0'</span>;i++)<span class="comment">//等效n = strlen(s)</span></span><br><span class="line">	n=i;</span><br><span class="line">	<span class="keyword">for</span>(i=<span class="number">0</span>;t[i]!=<span class="string">'\0'</span>;i++)<span class="comment">//等效m = strlen(t)</span></span><br><span class="line">	m=i;</span><br><span class="line">	<span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;n;i++)&#123;<span class="comment">//i控制字符串s</span></span><br><span class="line">		<span class="keyword">if</span>(t[<span class="number">0</span>]==s[i])&#123;<span class="comment">//循环找到第一个相符合的字符</span></span><br><span class="line">			flag = <span class="number">1</span>;<span class="comment">//1代表找到了</span></span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">if</span>(flag = <span class="number">1</span>)&#123;<span class="comment">//如果找到第一个匹配的字符</span></span><br><span class="line">			<span class="keyword">for</span>(j=<span class="number">1</span>;j&lt;=m;j++)&#123;<span class="comment">//j控制字符串t</span></span><br><span class="line">				<span class="keyword">if</span>(t[j]==s[i+j])&#123;<span class="comment">//从第二个开始判断（第一个已经判断成功）</span></span><br><span class="line">					flag =<span class="number">1</span>;</span><br><span class="line">				&#125;<span class="keyword">else</span> &#123;</span><br><span class="line">					flag =<span class="number">-1</span>;<span class="comment">//判断不成立时</span></span><br><span class="line">				<span class="keyword">break</span>;	</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="keyword">if</span>(flag ==<span class="number">1</span>)<span class="keyword">return</span> &amp;s[i];<span class="comment">//（在匹配成功的情况下）</span></span><br><span class="line">		&#125;</span><br><span class="line">	&#125;<span class="keyword">return</span> <span class="literal">NULL</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-      
-    </div>
-    <footer class="article-footer">
-      
-        <a data-url="https://jefine.github.io/2019/12/12/%E6%9F%A5%E6%89%BE%E5%AD%90%E4%B8%B2/" data-id="ck811m6ln002aegr03xb34n2i" class="article-share-link">分享到</a>
-      
-
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/pta/" rel="tag">pta</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-    
-  
-
-    
-    <article id="post-pta统计一行文本的单词个数" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2019/11/24/pta%E7%BB%9F%E8%AE%A1%E4%B8%80%E8%A1%8C%E6%96%87%E6%9C%AC%E7%9A%84%E5%8D%95%E8%AF%8D%E4%B8%AA%E6%95%B0/" class="article-date">
-  <time datetime="2019-11-24T03:07:18.000Z" itemprop="datePublished">2019-11-24</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/%E7%BC%96%E7%A8%8B/">编程</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/11/24/pta%E7%BB%9F%E8%AE%A1%E4%B8%80%E8%A1%8C%E6%96%87%E6%9C%AC%E7%9A%84%E5%8D%95%E8%AF%8D%E4%B8%AA%E6%95%B0/">pta统计一行文本的单词个数</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>本题目要求编写程序统计一行字符中单词的个数。所谓“单词”是指连续不含空格的字符串，各单词之间用空格分隔，空格数可以是多个。</p>
-<h2 id="输入格式-输入给出一行字符。"><a href="#输入格式-输入给出一行字符。" class="headerlink" title="输入格式:输入给出一行字符。"></a>输入格式:输入给出一行字符。</h2><h2 id="输出格式-在一行中输出单词个数。"><a href="#输出格式-在一行中输出单词个数。" class="headerlink" title="输出格式:在一行中输出单词个数。"></a>输出格式:在一行中输出单词个数。</h2><h2 id="输入样例"><a href="#输入样例" class="headerlink" title="输入样例:"></a>输入样例:</h2><table>
-<thead>
-<tr>
-<th align="center">Let’s go to room 209.</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center"></td>
-</tr>
-</tbody></table>
-<h2 id="输出样例"><a href="#输出样例" class="headerlink" title="输出样例:"></a>输出样例:</h2><table>
-<thead>
-<tr>
-<th align="center">5</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center"></td>
-</tr>
-</tbody></table>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> i,cnt=<span class="number">0</span>,cntword=<span class="number">0</span>;</span><br><span class="line">	<span class="keyword">char</span> a;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">while</span>(<span class="number">1</span>)&#123;</span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">"%c"</span>,&amp;a);</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">if</span>(a==<span class="string">'\n'</span>)&#123;<span class="comment">//因为只是一行字符，所以遇到回车就结束。</span></span><br><span class="line">	<span class="keyword">break</span>;	</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">else</span> <span class="keyword">if</span>(a!=<span class="string">' '</span>)&#123;<span class="comment">//首字母不为‘ ’时</span></span><br><span class="line">		cntword++;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">while</span>(<span class="number">1</span>)&#123;<span class="comment">//此循环的意义在于判断该单词的位数。</span></span><br><span class="line">	 <span class="comment">//此循环应放在 首字母不为0时的语句中。否则会使的首字母为空格时，使	之跳过下一个字母（如输入‘ 1’则会输出0） </span></span><br><span class="line">		<span class="built_in">scanf</span>(<span class="string">"%c"</span>,&amp;a);</span><br><span class="line">		<span class="keyword">if</span>(a==<span class="string">' '</span>||a==<span class="string">'\n'</span>)&#123;</span><br><span class="line">		<span class="keyword">break</span>;</span><br><span class="line">		&#125;<span class="comment">//判断该单词是否为单字母单词 ，注意该单词在扫描到第一个字母时	已经将其cntword++ </span></span><br><span class="line">	</span><br><span class="line">	&#125;<span class="keyword">if</span>(a==<span class="string">'\n'</span>)&#123;</span><br><span class="line">		<span class="keyword">break</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">&#125;<span class="built_in">printf</span>(<span class="string">"%d"</span>,cntword); </span><br><span class="line"><span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h4 id="希望此题可以有助于改变我们思考问题的方式。"><a href="#希望此题可以有助于改变我们思考问题的方式。" class="headerlink" title="希望此题可以有助于改变我们思考问题的方式。"></a>希望此题可以有助于改变我们思考问题的方式。</h4>
-      
-    </div>
-    <footer class="article-footer">
-      
-        <a data-url="https://jefine.github.io/2019/11/24/pta%E7%BB%9F%E8%AE%A1%E4%B8%80%E8%A1%8C%E6%96%87%E6%9C%AC%E7%9A%84%E5%8D%95%E8%AF%8D%E4%B8%AA%E6%95%B0/" data-id="ck811m6ko001kegr0bfxj1ivq" class="article-share-link">分享到</a>
-      
-
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/pta/" rel="tag">pta</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-    
-  
-  
-    <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/page/2/">上一页</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/4/">下一页</a>
-    </nav>
-  
-</section>
-        
-      </div>
-      <footer id="footer">
-  
-  <div class="outer">
-    <div id="footer-info" class="inner">
-      &copy; 2020 jefine<br>
-      Theme <a href="https://github.com/henryhuang/oishi" target="_blank">Oishi</a>, Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
-    </div>
-  </div>
-</footer>
-    </div>
-    <!--
-      <nav id="mobile-nav">
-  
-    <a href="/" class="mobile-nav-link">首页</a>
-  
-    <a href="/categories/life" class="mobile-nav-link">生活</a>
-  
-    <a href="/archives" class="mobile-nav-link">归档</a>
-  
 </nav>
-    -->
+</div>
+    </header>
+
     
-
-<!-- 百度分享 start -->
-
-<!-- 百度分享 end -->
-
-<script src="//cdn.bootcss.com/jquery/1.11.1/jquery.min.js"></script>
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
 
 
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
 
-<script src="/js/jquery.scrollUp.min.js"></script>
-<script src="/js/jquery.transform.js"></script>
-<script src="/js/menu.js"></script>
+          <div class="content">
+            
 
-<script src="/js/script.js"></script>
-<script src="/js/scrollUp.js"></script>
+  <div class="posts-expand">
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://jefine.github.io/2020/01/05/L1-046%E6%95%B4%E9%99%A4%E5%85%89%E6%A3%8D%EF%BC%88%E6%A8%A1%E6%8B%9F%E5%A4%A7%E6%95%B0%E9%99%A4%E6%B3%95%EF%BC%89/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="jefine">
+      <meta itemprop="description" content="使每个人的生活多一份美好。">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="jefine">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/01/05/L1-046%E6%95%B4%E9%99%A4%E5%85%89%E6%A3%8D%EF%BC%88%E6%A8%A1%E6%8B%9F%E5%A4%A7%E6%95%B0%E9%99%A4%E6%B3%95%EF%BC%89/" class="post-title-link" itemprop="url">L1-046整除光棍（模拟大数除法）</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2020-01-05 22:30:58 / 修改时间：22:45:35" itemprop="dateCreated datePublished" datetime="2020-01-05T22:30:58+08:00">2020-01-05</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%BC%96%E7%A8%8B/" itemprop="url" rel="index">
+                    <span itemprop="name">编程</span>
+                  </a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>这里所谓的“光棍”，并不是指单身汪啦~ 说的是全部由1组成的数字，比如1、11、111、1111等。传说任何一个光棍都能被一个不以5结尾的奇数整除。比如，111111就可以被13整除。 现在，你的程序要读入一个整数<code>x</code>，这个整数一定是奇数并且不以5结尾。然后，经过计算，输出两个数字：第一个数字<code>s</code>，表示<code>x</code>乘以<code>s</code>是一个光棍，第二个数字<code>n</code>是这个光棍的位数。这样的解当然不是唯一的,题目要求你输出最小的解。</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2020/01/05/L1-046%E6%95%B4%E9%99%A4%E5%85%89%E6%A3%8D%EF%BC%88%E6%A8%A1%E6%8B%9F%E5%A4%A7%E6%95%B0%E9%99%A4%E6%B3%95%EF%BC%89/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://jefine.github.io/2020/01/04/%E6%89%93%E5%8D%B0%E6%B2%99%E6%BC%8F/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="jefine">
+      <meta itemprop="description" content="使每个人的生活多一份美好。">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="jefine">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/01/04/%E6%89%93%E5%8D%B0%E6%B2%99%E6%BC%8F/" class="post-title-link" itemprop="url">打印沙漏（代码较详细）</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2020-01-04 21:08:22 / 修改时间：21:15:54" itemprop="dateCreated datePublished" datetime="2020-01-04T21:08:22+08:00">2020-01-04</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%BC%96%E7%A8%8B/" itemprop="url" rel="index">
+                    <span itemprop="name">编程</span>
+                  </a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>本题要求你写个程序把给定的符号打印成沙漏的形状。例如给定17个“*”，要求按下列格式打印</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2020/01/04/%E6%89%93%E5%8D%B0%E6%B2%99%E6%BC%8F/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://jefine.github.io/2020/01/04/L1-033%E5%87%BA%E7%94%9F%E5%B9%B4/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="jefine">
+      <meta itemprop="description" content="使每个人的生活多一份美好。">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="jefine">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/01/04/L1-033%E5%87%BA%E7%94%9F%E5%B9%B4/" class="post-title-link" itemprop="url">L1-033出生年</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2020-01-04 18:37:05 / 修改时间：18:49:16" itemprop="dateCreated datePublished" datetime="2020-01-04T18:37:05+08:00">2020-01-04</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%BC%96%E7%A8%8B/" itemprop="url" rel="index">
+                    <span itemprop="name">编程</span>
+                  </a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p><img src="/2020/01/04/L1-033%E5%87%BA%E7%94%9F%E5%B9%B4/F:%5Cblog%5Chexo%5Csource_posts%5CjmK5wuZkEV4aCdJ.png" alt="image.png"></p><p>以上是新浪微博中一奇葩贴：“我出生于1988年，直到25岁才遇到4个数字都不相同的年份。”也就是说，直到2013年才达到“4个数字都不相同”的要求。本题请你根据要求，自动填充“我出生于<code>y</code>年，直到<code>x</code>岁才遇到<code>n</code>个数字都不相同的年份”这句话。</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2020/01/04/L1-033%E5%87%BA%E7%94%9F%E5%B9%B4/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://jefine.github.io/2020/01/03/%E6%9F%A5%E9%AA%8C%E8%BA%AB%E4%BB%BD%E8%AF%81/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="jefine">
+      <meta itemprop="description" content="使每个人的生活多一份美好。">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="jefine">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/01/03/%E6%9F%A5%E9%AA%8C%E8%BA%AB%E4%BB%BD%E8%AF%81/" class="post-title-link" itemprop="url">查验身份证</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-01-03 16:28:34" itemprop="dateCreated datePublished" datetime="2020-01-03T16:28:34+08:00">2020-01-03</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-01-04 18:37:35" itemprop="dateModified" datetime="2020-01-04T18:37:35+08:00">2020-01-04</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%BC%96%E7%A8%8B/" itemprop="url" rel="index">
+                    <span itemprop="name">编程</span>
+                  </a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://jefine.github.io/2020/01/02/%E8%BF%9E%E7%BB%AD%E5%9B%A0%E5%AD%90/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="jefine">
+      <meta itemprop="description" content="使每个人的生活多一份美好。">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="jefine">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/01/02/%E8%BF%9E%E7%BB%AD%E5%9B%A0%E5%AD%90/" class="post-title-link" itemprop="url">L1-006 连续因子</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2020-01-02 16:09:01 / 修改时间：16:13:16" itemprop="dateCreated datePublished" datetime="2020-01-02T16:09:01+08:00">2020-01-02</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>一个正整数 N 的因子中可能存在若干连续的数字。例如 630 可以分解为 3×5×6×7，其中 5、6、7 就是 3 个连续的数字。给定任一正整数 N，要求编写程序求出最长连续因子的个数，并输出最小的连续因子序列。</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2020/01/02/%E8%BF%9E%E7%BB%AD%E5%9B%A0%E5%AD%90/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://jefine.github.io/2020/01/02/2020/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="jefine">
+      <meta itemprop="description" content="使每个人的生活多一份美好。">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="jefine">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/01/02/2020/" class="post-title-link" itemprop="url">2020</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-01-02 09:54:43" itemprop="dateCreated datePublished" datetime="2020-01-02T09:54:43+08:00">2020-01-02</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-02-21 21:36:04" itemprop="dateModified" datetime="2020-02-21T21:36:04+08:00">2020-02-21</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/record/" itemprop="url" rel="index">
+                    <span itemprop="name">record</span>
+                  </a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h3 id="2020来咯。"><a href="#2020来咯。" class="headerlink" title="2020来咯。"></a>2020来咯。</h3><p>我们一直以为出现在科幻和未来的2020年，他来了。</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2020/01/02/2020/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://jefine.github.io/2019/12/26/%E9%80%89%E6%8B%A9%E6%8E%92%E5%BA%8F-%E8%BE%83%E4%B8%BA%E8%AF%A6%E7%BB%86%E7%9A%84%E5%88%86%E6%9E%90/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="jefine">
+      <meta itemprop="description" content="使每个人的生活多一份美好。">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="jefine">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2019/12/26/%E9%80%89%E6%8B%A9%E6%8E%92%E5%BA%8F-%E8%BE%83%E4%B8%BA%E8%AF%A6%E7%BB%86%E7%9A%84%E5%88%86%E6%9E%90/" class="post-title-link" itemprop="url">选择排序-较为详细的分析</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2019-12-26 08:35:31 / 修改时间：18:13:13" itemprop="dateCreated datePublished" datetime="2019-12-26T08:35:31+08:00">2019-12-26</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%AE%97%E6%B3%95/" itemprop="url" rel="index">
+                    <span itemprop="name">算法</span>
+                  </a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h3 id="算法思想："><a href="#算法思想：" class="headerlink" title="算法思想："></a>算法思想：</h3><p>选择排序，从头至尾扫描序列，找出最小的一个元素，和第一个元素交换，接着从剩下的元素中继续这种选择和交换方式，最终得到一个有序序列。 </p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2019/12/26/%E9%80%89%E6%8B%A9%E6%8E%92%E5%BA%8F-%E8%BE%83%E4%B8%BA%E8%AF%A6%E7%BB%86%E7%9A%84%E5%88%86%E6%9E%90/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://jefine.github.io/2019/12/21/%E7%BB%9F%E8%AE%A1%E5%8D%95%E8%AF%8D%E6%95%B0/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="jefine">
+      <meta itemprop="description" content="使每个人的生活多一份美好。">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="jefine">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2019/12/21/%E7%BB%9F%E8%AE%A1%E5%8D%95%E8%AF%8D%E6%95%B0/" class="post-title-link" itemprop="url">统计单词数</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2019-12-21 10:39:43" itemprop="dateCreated datePublished" datetime="2019-12-21T10:39:43+08:00">2019-12-21</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2019-12-25 21:26:43" itemprop="dateModified" datetime="2019-12-25T21:26:43+08:00">2019-12-25</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%BC%96%E7%A8%8B/" itemprop="url" rel="index">
+                    <span itemprop="name">编程</span>
+                  </a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><p>一般的文本编辑器都有查找单词的功能，该功能可以快速定位特定单词在文章中的位置，有的还能统计出特定单词在文章中出现的次数。</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2019/12/21/%E7%BB%9F%E8%AE%A1%E5%8D%95%E8%AF%8D%E6%95%B0/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://jefine.github.io/2019/12/12/%E6%9F%A5%E6%89%BE%E5%AD%90%E4%B8%B2/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="jefine">
+      <meta itemprop="description" content="使每个人的生活多一份美好。">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="jefine">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2019/12/12/%E6%9F%A5%E6%89%BE%E5%AD%90%E4%B8%B2/" class="post-title-link" itemprop="url">查找子串</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2019-12-12 18:29:36" itemprop="dateCreated datePublished" datetime="2019-12-12T18:29:36+08:00">2019-12-12</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2019-12-14 11:03:50" itemprop="dateModified" datetime="2019-12-14T11:03:50+08:00">2019-12-14</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%BC%96%E7%A8%8B/" itemprop="url" rel="index">
+                    <span itemprop="name">编程</span>
+                  </a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="6-15-查找子串-20分"><a href="#6-15-查找子串-20分" class="headerlink" title="6-15 查找子串 (20分)"></a>6-15 查找子串 (20分)</h2>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2019/12/12/%E6%9F%A5%E6%89%BE%E5%AD%90%E4%B8%B2/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://jefine.github.io/2019/11/24/pta%E7%BB%9F%E8%AE%A1%E4%B8%80%E8%A1%8C%E6%96%87%E6%9C%AC%E7%9A%84%E5%8D%95%E8%AF%8D%E4%B8%AA%E6%95%B0/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="jefine">
+      <meta itemprop="description" content="使每个人的生活多一份美好。">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="jefine">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2019/11/24/pta%E7%BB%9F%E8%AE%A1%E4%B8%80%E8%A1%8C%E6%96%87%E6%9C%AC%E7%9A%84%E5%8D%95%E8%AF%8D%E4%B8%AA%E6%95%B0/" class="post-title-link" itemprop="url">pta统计一行文本的单词个数</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2019-11-24 11:07:18 / 修改时间：11:29:08" itemprop="dateCreated datePublished" datetime="2019-11-24T11:07:18+08:00">2019-11-24</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%BC%96%E7%A8%8B/" itemprop="url" rel="index">
+                    <span itemprop="name">编程</span>
+                  </a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>本题目要求编写程序统计一行字符中单词的个数。所谓“单词”是指连续不含空格的字符串，各单词之间用空格分隔，空格数可以是多个。</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2019/11/24/pta%E7%BB%9F%E8%AE%A1%E4%B8%80%E8%A1%8C%E6%96%87%E6%9C%AC%E7%9A%84%E5%8D%95%E8%AF%8D%E4%B8%AA%E6%95%B0/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
 
   </div>
+
+  
+  <nav class="pagination">
+    <a class="extend prev" rel="prev" href="/page/2/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/4/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
+  </nav>
+
+
+
+          </div>
+          
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <img class="site-author-image" itemprop="image" alt="jefine"
+    src="/images/avatar.gif">
+  <p class="site-author-name" itemprop="name">jefine</p>
+  <div class="site-description" itemprop="description">使每个人的生活多一份美好。</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">35</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">5</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">15</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="feed-link motion-element">
+    <a href="/atom.xml" rel="alternate">
+      <i class="fa fa-rss"></i>RSS
+    </a>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">jefine</span>
+</div>
+
+        
+
+
+
+
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+<script src="/js/utils.js"></script><script src="/js/motion.js"></script>
+<script src="/js/schemes/muse.js"></script>
+<script src="/js/next-boot.js"></script>
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
 </body>
 </html>
