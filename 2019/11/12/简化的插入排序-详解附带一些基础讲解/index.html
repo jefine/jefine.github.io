@@ -1,468 +1,51 @@
-<!DOCTYPE html>
-<html lang="zh-CN">
-<head>
-  <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
-<meta name="theme-color" content="#222">
-<meta name="generator" content="Hexo 4.0.0">
-  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
-  <link rel="mask-icon" href="/images/logo.svg" color="#222">
-  <link rel="alternate" href="/atom.xml" title="jefine" type="application/atom+xml">
-
-<link rel="stylesheet" href="/css/main.css">
-
-
-<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
-
-
-<script id="hexo-configurations">
-  var NexT = window.NexT || {};
-  var CONFIG = {
-    root: '/',
-    scheme: 'Muse',
-    version: '7.5.0',
-    exturl: false,
-    sidebar: {"position":"left","display":"hide","offset":12,"onmobile":false},
-    copycode: {"enable":true,"show_result":true,"style":null},
-    back2top: {"enable":true,"sidebar":false,"scrollpercent":false},
-    bookmark: {"enable":false,"color":"#222","save":"auto"},
-    fancybox: false,
-    mediumzoom: false,
-    lazyload: false,
-    pangu: false,
-    algolia: {
-      appID: '',
-      apiKey: '',
-      indexName: '',
-      hits: {"per_page":0},
-      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
-    },
-    localsearch: {"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
-    path: '',
-    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
-    translation: {
-      copy_button: '复制',
-      copy_success: '复制成功',
-      copy_failure: '复制失败'
-    },
-    sidebarPadding: 40
-  };
-</script>
-
-  <meta name="description" content="本题要求编写程序，将一个给定的整数插到原本有序的整数序列中，使结果序列仍然有序。">
-<meta name="keywords" content="排序">
-<meta property="og:type" content="article">
-<meta property="og:title" content="简化的插入排序,详解附带一些基础讲解">
-<meta property="og:url" content="https:&#x2F;&#x2F;jefine.github.io&#x2F;2019&#x2F;11&#x2F;12&#x2F;%E7%AE%80%E5%8C%96%E7%9A%84%E6%8F%92%E5%85%A5%E6%8E%92%E5%BA%8F-%E8%AF%A6%E8%A7%A3%E9%99%84%E5%B8%A6%E4%B8%80%E4%BA%9B%E5%9F%BA%E7%A1%80%E8%AE%B2%E8%A7%A3&#x2F;index.html">
-<meta property="og:site_name" content="jefine">
-<meta property="og:description" content="本题要求编写程序，将一个给定的整数插到原本有序的整数序列中，使结果序列仍然有序。">
-<meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-12-26T00:37:06.514Z">
-<meta name="twitter:card" content="summary">
-
-<link rel="canonical" href="https://jefine.github.io/2019/11/12/%E7%AE%80%E5%8C%96%E7%9A%84%E6%8F%92%E5%85%A5%E6%8E%92%E5%BA%8F-%E8%AF%A6%E8%A7%A3%E9%99%84%E5%B8%A6%E4%B8%80%E4%BA%9B%E5%9F%BA%E7%A1%80%E8%AE%B2%E8%A7%A3/">
-
-
-<script id="page-configurations">
-  // https://hexo.io/docs/variables.html
-  CONFIG.page = {
-    sidebar: "",
-    isHome: false,
-    isPost: true,
-    isPage: false,
-    isArchive: false
-  };
-</script>
-
-  <title>简化的插入排序,详解附带一些基础讲解 | jefine</title>
-  
-
-
-
-
-
-
-  <noscript>
-  <style>
-  .use-motion .brand,
-  .use-motion .menu-item,
-  .sidebar-inner,
-  .use-motion .post-block,
-  .use-motion .pagination,
-  .use-motion .comments,
-  .use-motion .post-header,
-  .use-motion .post-body,
-  .use-motion .collection-header { opacity: initial; }
-
-  .use-motion .site-title,
-  .use-motion .site-subtitle {
-    opacity: initial;
-    top: initial;
-  }
-
-  .use-motion .logo-line-before i { left: initial; }
-  .use-motion .logo-line-after i { right: initial; }
-  </style>
-</noscript>
-
-</head>
-
-<body itemscope itemtype="http://schema.org/WebPage">
-  <div class="container use-motion">
-    <div class="headband"></div>
-
-    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"><div class="site-brand-container">
-  <div class="site-meta">
-
-    <div>
-      <a href="/" class="brand" rel="start">
-        <span class="logo-line-before"><i></i></span>
-        <span class="site-title">jefine</span>
-        <span class="logo-line-after"><i></i></span>
-      </a>
-    </div>
-        <p class="site-subtitle">小小的梦呓</p>
-  </div>
-
-  <div class="site-nav-toggle">
-    <div class="toggle" aria-label="切换导航栏">
-      <span class="toggle-line toggle-line-first"></span>
-      <span class="toggle-line toggle-line-middle"></span>
-      <span class="toggle-line toggle-line-last"></span>
-    </div>
-  </div>
-</div>
-
-
-<nav class="site-nav">
-  
-  <ul id="menu" class="menu">
-        <li class="menu-item menu-item-home">
-
-    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>首页</a>
-
-  </li>
-        <li class="menu-item menu-item-about">
-
-    <a href="/about/" rel="section"><i class="fa fa-fw fa-user"></i>关于</a>
-
-  </li>
-        <li class="menu-item menu-item-tags">
-
-    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>标签</a>
-
-  </li>
-        <li class="menu-item menu-item-categories">
-
-    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>分类</a>
-
-  </li>
-        <li class="menu-item menu-item-archives">
-
-    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档</a>
-
-  </li>
-  </ul>
-
-</nav>
-</div>
-    </header>
-
-    
-  <div class="back-to-top">
-    <i class="fa fa-arrow-up"></i>
-    <span>0%</span>
-  </div>
-
-
-    <main class="main">
-      <div class="main-inner">
-        <div class="content-wrap">
-          
-
-          <div class="content">
-            
-
-  <div class="posts-expand">
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://jefine.github.io/2019/11/12/%E7%AE%80%E5%8C%96%E7%9A%84%E6%8F%92%E5%85%A5%E6%8E%92%E5%BA%8F-%E8%AF%A6%E8%A7%A3%E9%99%84%E5%B8%A6%E4%B8%80%E4%BA%9B%E5%9F%BA%E7%A1%80%E8%AE%B2%E8%A7%A3/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="jefine">
-      <meta itemprop="description" content="使每个人的生活多一份美好。">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="jefine">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          简化的插入排序,详解附带一些基础讲解
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2019-11-12 09:05:52" itemprop="dateCreated datePublished" datetime="2019-11-12T09:05:52+08:00">2019-11-12</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2019-12-26 08:37:06" itemprop="dateModified" datetime="2019-12-26T08:37:06+08:00">2019-12-26</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E7%AE%97%E6%B3%95/" itemprop="url" rel="index">
-                    <span itemprop="name">算法</span>
-                  </a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-        <p>本题要求编写程序，将一个给定的整数插到原本有序的整数序列中，使结果序列仍然有序。</p><a id="more"></a>
-<h3 id="输入格式："><a href="#输入格式：" class="headerlink" title="输入格式："></a>输入格式：</h3><p>输入在第一行先给出非负整数N（&lt;10）；第二行给出N个从小到大排好顺序的整数；第三行给出一个整数X。</p>
-<h3 id="输出格式："><a href="#输出格式：" class="headerlink" title="输出格式："></a>输出格式：</h3><p>在一行内输出将X插入后仍然从小到大有序的整数序列，每个数字后面有一个空格。</p>
-<h3 id="输入样例："><a href="#输入样例：" class="headerlink" title="输入样例："></a>输入样例：</h3><p> 5<br>1 2 4 5 7<br>3</p>
-<h3 id="输出样例："><a href="#输出样例：" class="headerlink" title="输出样例："></a>输出样例：</h3><p>1 2 3 4 5 7 </p>
-<h1 id="代码在最后，此处是分析（写的很基础）（更新后为两种方法）"><a href="#代码在最后，此处是分析（写的很基础）（更新后为两种方法）" class="headerlink" title="代码在最后，此处是分析（写的很基础）（更新后为两种方法）."></a>代码在最后，此处是分析（写的很基础）（更新后为两种方法）.</h1><p><em>方法一的思路：定义数组=&gt; 找到插入值的位置=&gt; 将其后面的值转换位置=&gt; 将其插入，输出数组即可。</em></p>
-<ol>
-<li><p>首先，我们分析这道题，不难发现其在增加一个数后<strong>数组的大小发生了变化</strong>，所以我们在定义时直接int a【n+1】即可解决.</p>
-</li>
-<li><p>之后，我们遍历数组，将第二行输入的数字赋值到数组a【n+1】中即可。<br>接着我们就开始进行数据的调换，<del>但把大象装进冰箱的第一步是打开冰箱门</del>，即我们首先要<strong>找到x即插入值的位置</strong>应该在哪里。所以我们不难想到遍历数组，当其大于a[i]且小于a[i+1],（在此题中，保证了不重复，不会出现相等的情况）则记录下这个i，此为其位置！</p>
-</li>
-<li><p>再找到其位置后，我们可以开始转换吧，采用的思想是将其错位放置，即例如原本为第五个位置的数放置在第六个位置，将第四个位置的数放在第五个位置（顺序可不能反了啊2333）。<br>那么又会出现一个最大的问题！<strong>如何合理安排其转换</strong>？理解了思路后，其实实践中，我们就会发现许多问题，比如错位放置的时候，在哪里停止？从哪里开始？<br>在数组中，其第一个数从a[0]开始的，所以其开始的顺序是与正常的逻辑有所差异（即差一位）。所以我们<strong>先熟悉正常的，常见的，for循环而了解其循环的次数与特性。</strong><br> 1.当我们输入：（以题目中给出的参考输入值为准）</p>
- <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;n;i++)或者<span class="keyword">for</span>(i=<span class="number">1</span>;i&lt;=n;i++)</span><br></pre></td></tr></table></figure>
-<p> 那么我们会循环n（即n-0）次.由于我们使用的数组为保持一致性，我们还是使用第一种.</p>
-</li>
-</ol>
-<p>2.在此题中，我们需要交换多少次呢？我们原来一共有n个数，后来变为n+1个数，我们从一般情况来看：当满足以下条件时我们可以得到其位置（即i）</p>
- <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span>(x&gt;a[i]&amp;&amp;x&lt;a[i+<span class="number">1</span>])</span><br></pre></td></tr></table></figure>
-
-<p> 但我们也应注意到（载体给定的数据中）是第3个而且其i=2；此时我们输入的数据中，最后一个是i=n-1；<br> 在这里我们使用新的变量j来计数,并实现交换数组。（保持i的不变）在此循环中我们循环了(n-1)-i+1次即在i后面我们有这么多次交换。<strong>注意：a[i]不变，a[i+1]最终会进行x的赋值实现插入（被替换）</strong>。（此处类比上述1的特性）</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(j=n<span class="number">-1</span>;j&gt;i;j- -);</span><br></pre></td></tr></table></figure>
-
-
-<p>3.最后，我们考虑到将x插入，则一般情况解决，但是其中的特殊情况：比如x最小或最大在最前面或最后一个，则需要单独处理。 （有朋友指出给定的数字与有序数列中的相同时的bug，已经修复，而且我觉得题意最后要求排列后为有序数列，就不会给出这样的情况（也许是我错了，但最好加上等于号排除这种可能）。感谢提出问题并交流） </p>
-<h3 id="真的代码！"><a href="#真的代码！" class="headerlink" title="真的代码！"></a>真的代码！</h3><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> n,j,i,t,x;</span><br><span class="line"></span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;n);</span><br><span class="line">		<span class="keyword">int</span> a[n+<span class="number">1</span>];</span><br><span class="line"></span><br><span class="line">	<span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;n;i++)&#123;<span class="comment">//input</span></span><br><span class="line">		<span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;a[i]);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;x);</span><br><span class="line"></span><br><span class="line">	<span class="keyword">if</span>(x&lt;a[<span class="number">0</span>])&#123;<span class="comment">//special min </span></span><br><span class="line">		<span class="keyword">for</span>(j=n<span class="number">-1</span>;j&gt;=<span class="number">0</span>;j--)&#123;<span class="comment">//有多少个n移多少次！ </span></span><br><span class="line">	 	a[j+<span class="number">1</span>]=a[j];</span><br><span class="line">	 	&#125;a[<span class="number">0</span>]=x;</span><br><span class="line">	&#125;</span><br><span class="line"> 	<span class="keyword">else</span> <span class="keyword">if</span>(x&gt;a[n<span class="number">-1</span>])a[n]=x;<span class="comment">//special max </span></span><br><span class="line"> 	</span><br><span class="line">	<span class="keyword">else</span> <span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;n;i++)&#123;<span class="comment">//do</span></span><br><span class="line">	 <span class="keyword">if</span>(x&gt;a[i]&amp;&amp;x&lt;=a[i+<span class="number">1</span>])&#123;</span><br><span class="line">	 	<span class="keyword">for</span>(j=n<span class="number">-1</span>;j&gt;i;j--)&#123;</span><br><span class="line">	 		a[j+<span class="number">1</span>]=a[j];</span><br><span class="line">	 	&#125;a[i+<span class="number">1</span>]=x;</span><br><span class="line">	 	<span class="keyword">break</span>;</span><br><span class="line">	 &#125;</span><br><span class="line">	&#125; </span><br><span class="line">	<span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;n+<span class="number">1</span>;i++)&#123;<span class="comment">//output</span></span><br><span class="line">		</span><br><span class="line"></span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"%d "</span>,a[i]);</span><br><span class="line">	</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>方法二的思路：从后向前比较，如果x&gt;最后一个数字a[n-1]那么将a[n]赋值为x即可停止程序；如果x&lt;a[n-1]，那么我们将a[n-1]向后移一位，再继续循环比较。</p>
-<ul>
-<li>这样的好处是我们不必再去考虑一些特殊情况的处理</li>
-<li>更加符合我们的逻辑习惯</li>
-<li>代码也更为简单</li>
-</ul>
-<h2 id="代码如下："><a href="#代码如下：" class="headerlink" title="代码如下："></a>代码如下：</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> n,j,i,t,x;</span><br><span class="line"></span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;n);</span><br><span class="line">		<span class="keyword">int</span> a[n+<span class="number">1</span>];</span><br><span class="line"></span><br><span class="line">	<span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;n;i++)&#123;<span class="comment">//input</span></span><br><span class="line">		<span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;a[i]);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;x);</span><br><span class="line"></span><br><span class="line"><span class="comment">//	if(x&lt;a[0])&#123;//special min </span></span><br><span class="line"><span class="comment">//		for(j=n-1;j&gt;=0;j--)&#123;//有多少个n移多少次！ </span></span><br><span class="line"><span class="comment">//	 	a[j+1]=a[j];</span></span><br><span class="line"><span class="comment">//	 	&#125;a[0]=x;</span></span><br><span class="line"><span class="comment">//	&#125;</span></span><br><span class="line"><span class="comment">// 	else if(x&gt;a[n-1])a[n]=x;//special max </span></span><br><span class="line"><span class="comment">// 	</span></span><br><span class="line"><span class="comment">//	else </span></span><br><span class="line">	<span class="keyword">for</span>(i=n<span class="number">-1</span>;i&gt;=<span class="number">0</span>;i--)&#123;<span class="comment">//do</span></span><br><span class="line">	 <span class="keyword">if</span>(x&gt;a[i])&#123;</span><br><span class="line">	 a[i+<span class="number">1</span>]=x;</span><br><span class="line">	 <span class="keyword">break</span>;&#125;<span class="comment">//找到x的位置并插入了</span></span><br><span class="line">	 <span class="keyword">else</span> a[i+<span class="number">1</span>]=a[i];<span class="comment">//没找到，将大的数字向右移一位，继续比较。				 </span></span><br><span class="line">	&#125; </span><br><span class="line">	</span><br><span class="line">	<span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;n+<span class="number">1</span>;i++)&#123;<span class="comment">//output</span></span><br><span class="line">		</span><br><span class="line"></span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"%d "</span>,a[i]);</span><br><span class="line">	</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-
-
-
-
-    </div>
-
-    
-    
-    
-
-      <footer class="post-footer">
-          <div class="post-tags">
-              <a href="/tags/%E6%8E%92%E5%BA%8F/" rel="tag"># 排序</a>
-          </div>
-
-        
-
-          <div class="post-nav">
-            <div class="post-nav-next post-nav-item">
-                <a href="/2019/11/09/%E5%90%84%E7%A7%8D%E6%8E%92%E5%BA%8F%E6%96%B9%E5%BC%8F%E7%9A%84%E6%B1%87%E6%80%BB%E5%8F%8A%E5%AD%A6%E4%B9%A0%EF%BC%88%E5%8F%AA%E5%86%99%E4%BA%86%E5%86%92%E6%B3%A1%E6%8E%92%E5%BA%8F%EF%BC%89/" rel="next" title="各种排序方式的汇总及学习（只更了冒泡排序）">
-                  <i class="fa fa-chevron-left"></i> 各种排序方式的汇总及学习（只更了冒泡排序）
-                </a>
-            </div>
-
-            <span class="post-nav-divider"></span>
-
-            <div class="post-nav-prev post-nav-item">
-                <a href="/2019/11/12/%E6%96%B9%E9%98%B5%E5%BE%AA%E7%8E%AF%E5%8F%B3%E7%A7%BB%E4%BA%8E%E5%85%B6%E5%90%84%E7%A7%8D%E8%B8%A9bug23333/" rel="prev" title="方阵循环右移于其各种踩bug23333">
-                  方阵循环右移于其各种踩bug23333 <i class="fa fa-chevron-right"></i>
-                </a>
-            </div>
-          </div>
-      </footer>
-    
-  </article>
-  
-  
-  
-
-  </div>
-
-
-          </div>
-          
-
-        </div>
-          
-  
-  <div class="toggle sidebar-toggle">
-    <span class="toggle-line toggle-line-first"></span>
-    <span class="toggle-line toggle-line-middle"></span>
-    <span class="toggle-line toggle-line-last"></span>
-  </div>
-
-  <aside class="sidebar">
-    <div class="sidebar-inner">
-
-      <ul class="sidebar-nav motion-element">
-        <li class="sidebar-nav-toc">
-          文章目录
-        </li>
-        <li class="sidebar-nav-overview">
-          站点概览
-        </li>
-      </ul>
-
-      <!--noindex-->
-      <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#输入格式："><span class="nav-number">1.</span> <span class="nav-text">输入格式：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#输出格式："><span class="nav-number">2.</span> <span class="nav-text">输出格式：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#输入样例："><span class="nav-number">3.</span> <span class="nav-text">输入样例：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#输出样例："><span class="nav-number">4.</span> <span class="nav-text">输出样例：</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#代码在最后，此处是分析（写的很基础）（更新后为两种方法）"><span class="nav-number"></span> <span class="nav-text">代码在最后，此处是分析（写的很基础）（更新后为两种方法）.</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#真的代码！"><span class="nav-number">1.</span> <span class="nav-text">真的代码！</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#代码如下："><span class="nav-number"></span> <span class="nav-text">代码如下：</span></a></div>
-      </div>
-      <!--/noindex-->
-
-      <div class="site-overview-wrap sidebar-panel">
-        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-  <img class="site-author-image" itemprop="image" alt="jefine"
-    src="/images/avatar.gif">
-  <p class="site-author-name" itemprop="name">jefine</p>
-  <div class="site-description" itemprop="description">使每个人的生活多一份美好。</div>
-</div>
-<div class="site-state-wrap motion-element">
-  <nav class="site-state">
-      <div class="site-state-item site-state-posts">
-          <a href="/archives/">
-        
-          <span class="site-state-item-count">34</span>
-          <span class="site-state-item-name">日志</span>
-        </a>
-      </div>
-      <div class="site-state-item site-state-categories">
-            <a href="/categories/">
-          
-        <span class="site-state-item-count">5</span>
-        <span class="site-state-item-name">分类</span></a>
-      </div>
-      <div class="site-state-item site-state-tags">
-            <a href="/tags/">
-          
-        <span class="site-state-item-count">15</span>
-        <span class="site-state-item-name">标签</span></a>
-      </div>
-  </nav>
-</div>
-  <div class="feed-link motion-element">
-    <a href="/atom.xml" rel="alternate">
-      <i class="fa fa-rss"></i>RSS
-    </a>
-  </div>
-
-
-
-      </div>
-
-    </div>
-  </aside>
-  <div id="sidebar-dimmer"></div>
-
-
-      </div>
-    </main>
-
-    <footer class="footer">
-      <div class="footer-inner">
-        
-
-<div class="copyright">
-  
-  &copy; 
-  <span itemprop="copyrightYear">2020</span>
-  <span class="with-love">
-    <i class="fa fa-user"></i>
-  </span>
-  <span class="author" itemprop="copyrightHolder">jefine</span>
-</div>
-
-        
-
-
-
-
-
-
-
-
-
-
-
-
-        
-      </div>
-    </footer>
-  </div>
-
-  
-  <script src="/lib/anime.min.js"></script>
-  <script src="/lib/velocity/velocity.min.js"></script>
-  <script src="/lib/velocity/velocity.ui.min.js"></script>
-<script src="/js/utils.js"></script><script src="/js/motion.js"></script>
-<script src="/js/schemes/muse.js"></script>
-<script src="/js/next-boot.js"></script>
-
-
-
-  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-
-  
-
-</body>
-</html>
+extends includes/base
+
+block extra_style
+    if theme.gitalk.enable
+        link(rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css")
+    link(rel='stylesheet' href=url_for('./css/atom-one-dark.css'))
+
+block content
+    div.al_page_background.dis_flex_center.al_full_cover
+    div.al_page_container
+        div.al_pos_ab.al_fake_background
+        div.al_main_container.al_main_page_container
+            article.al_article
+                header
+                    h1.al_page_title= page.title
+                    div.al_page_info.dis_flex
+                        div.al_page_content_info
+                            |#{date(page.date, 'MMM DD, YYYY h:mm A')}
+                        div.al_page_content_info
+                            |#{wordcount(page.content)} words
+                        div.al_page_content_info
+                            |#{min2read(page.content)} minutes read
+                        span.tags
+
+                if toc(page.content)
+                    div.al_page_content_outline!= toc(page.content,{list_number:false})
+
+                section#post-body!=page.content
+
+                include ./includes/plugin/gitalk.pug
+                include ./includes/plugin/disqus.pug
+
+            - var prev = page.prev ? page.prev.path : false;
+            - var next = page.next ? page.next.path : false;
+            nav.dis_flex.post-nav
+                span.prev
+                    if page.prev
+                        a(href=url_for(prev))
+                            span.arrow ←
+                            | Newer Posts
+                span.next
+                    if page.next
+                        a(href=url_for(next))
+                            | Older Posts
+                            span.arrow →
+
+    if config.highlight.enable
+        script(type='text/javascript', src=url_for('javascripts/highlight.pack.js'))
+        script!= "document.querySelectorAll('figure.highlight').forEach(function(b){hljs.highlightBlock(b);});"
+
+            //- include includes/comment.pug
