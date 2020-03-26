@@ -60,7 +60,7 @@
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https:&#x2F;&#x2F;jefine.github.io&#x2F;2020&#x2F;03&#x2F;17&#x2F;LinkedList%E9%93%BE%E8%A1%A8&#x2F;Linkedlist.png">
 <meta property="og:image" content="https:&#x2F;&#x2F;jefine.github.io&#x2F;2020&#x2F;03&#x2F;17&#x2F;LinkedList%E9%93%BE%E8%A1%A8&#x2F;_2020031917124912SS.png">
-<meta property="og:updated_time" content="2020-03-21T10:52:58.253Z">
+<meta property="og:updated_time" content="2020-03-21T11:04:48.029Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https:&#x2F;&#x2F;jefine.github.io&#x2F;2020&#x2F;03&#x2F;17&#x2F;LinkedList%E9%93%BE%E8%A1%A8&#x2F;Linkedlist.png">
 
@@ -223,7 +223,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-03-21 18:52:58" itemprop="dateModified" datetime="2020-03-21T18:52:58+08:00">2020-03-21</time>
+                <time title="修改时间：2020-03-21 19:04:48" itemprop="dateModified" datetime="2020-03-21T19:04:48+08:00">2020-03-21</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -288,20 +288,9 @@ int data;
 struct Node* next;
 };</code></pre><p>In Java or C#, LinkedList can be represented as a class and a Node as a<br>separate class. The LinkedList class contains a reference of Node class<br>type.</p>
 <p>而在java，c#中LinkedList可以表示为一个类，而Node可以表示为单独的类。 LinkedList类包含Node类类型的引用。</p>
-<pre><code>class LinkedList { 
-    Node head; // head of the list 
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">LinkedList</span> &#123;</span> </span><br><span class="line">	Node head; <span class="comment">// head of the list </span></span><br><span class="line"></span><br><span class="line">	<span class="comment">/* Linked list Node*/</span></span><br><span class="line">	<span class="class"><span class="keyword">class</span> <span class="title">Node</span> &#123;</span> </span><br><span class="line">		<span class="keyword">int</span> data; </span><br><span class="line">		Node next; </span><br><span class="line"></span><br><span class="line">		<span class="comment">// Constructor to create a new node </span></span><br><span class="line">		<span class="comment">// Next is by default initialized </span></span><br><span class="line">		<span class="comment">// as null </span></span><br><span class="line">		Node(<span class="keyword">int</span> d) &#123; data = d; &#125; </span><br><span class="line">	&#125; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-    /* Linked list Node*/
-    class Node { 
-        int data; 
-        Node next; 
-
-        // Constructor to create a new node 
-        // Next is by default initialized 
-        // as null 
-        Node(int d) { data = d; } 
-    } 
-}</code></pre><h2 id="写一下链表？"><a href="#写一下链表？" class="headerlink" title="写一下链表？"></a>写一下链表？</h2><h3 id="我们从c开始尝试：-现在只写到了增）"><a href="#我们从c开始尝试：-现在只写到了增）" class="headerlink" title="我们从c开始尝试：(现在只写到了增）"></a>我们从c开始尝试：(现在只写到了增）</h3><p>好的，在此之前，我们似乎好像可能看起来学会了如何使用，但是看懂了和会写出来中间还是有一定的差距的。</p>
+<h2 id="写一下链表？"><a href="#写一下链表？" class="headerlink" title="写一下链表？"></a>写一下链表？</h2><h3 id="我们从c开始尝试：-现在只写到了增）"><a href="#我们从c开始尝试：-现在只写到了增）" class="headerlink" title="我们从c开始尝试：(现在只写到了增）"></a>我们从c开始尝试：(现在只写到了增）</h3><p>好的，在此之前，我们似乎好像可能看起来学会了如何使用，但是看懂了和会写出来中间还是有一定的差距的。</p>
 <p>链表还有一下基础的知识需要去掌握：</p>
 <p><a href="https://www.runoob.com/cprogramming/c-function-malloc.html" target="_blank" rel="noopener">malloc</a> ：用于申请一定的内存.</p>
 <p>那么这句(struct Node*)malloc(sizeof(struct Node))是什么鬼呢？（<del>这也太长了吧</del>）</p>
@@ -310,175 +299,25 @@ struct Node* next;
 <p>对了，这句话是会返回一个地址的，就是指向自己申请内存的位置。</p>
 <p><strong>注意：节点呀！只有Head和普通节点。我们说的头指针，尾指针一类的，都是仅仅声明，作用就像房卡一样，是可以换的，里面存放的是链表中节点的地址。</strong></p>
 <p>好的，下面我们要耐住性子，认真的学习咯（后文的故事如果听不太懂，放心你不是一个人，多看看不是故事的内容会更好）；（下面是一个标准化的介绍）</p>
-<pre><code>// A simple C program to introduce 
-// a linked list 
-#include &lt;stdio.h&gt; 
-#include &lt;stdlib.h&gt; 
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// A simple C program to introduce </span></span><br><span class="line"><span class="comment">// a linked list </span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt; </span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdlib.h&gt; </span></span></span><br><span class="line"></span><br><span class="line"><span class="comment">//这个结构体就是我们要用到的节点了，</span></span><br><span class="line"><span class="comment">//既然c语言里的基本类型没有，我们就自己造一个。</span></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Node</span> &#123;</span> </span><br><span class="line">	<span class="keyword">int</span> data; </span><br><span class="line">	<span class="class"><span class="keyword">struct</span> <span class="title">Node</span>* <span class="title">next</span>;</span> </span><br><span class="line">&#125;; </span><br><span class="line"></span><br><span class="line"><span class="comment">// Program to create a simple linkedlist with 3 nodes </span></span><br><span class="line"><span class="comment">//编程去建立一个有三个节点的链表</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span></span><br><span class="line"><span class="function"></span>&#123; </span><br><span class="line">	<span class="comment">//声明3个节点，注意了哈，这里是声明！！！</span></span><br><span class="line">	<span class="comment">//并没用得到那三个节点，就像我们拿到了三个空门牌，但是房间还没造出来呢</span></span><br><span class="line">	<span class="class"><span class="keyword">struct</span> <span class="title">Node</span>* <span class="title">head</span> = <span class="title">NULL</span>;</span> </span><br><span class="line">	<span class="class"><span class="keyword">struct</span> <span class="title">Node</span>* <span class="title">second</span> = <span class="title">NULL</span>;</span> </span><br><span class="line">	<span class="class"><span class="keyword">struct</span> <span class="title">Node</span>* <span class="title">third</span> = <span class="title">NULL</span>;</span> </span><br><span class="line"></span><br><span class="line">	<span class="comment">// allocate 3 nodes in the heap</span></span><br><span class="line">	<span class="comment">//从堆中申请三个节点的内存（这会儿才得到房间了，并把房间号写在了门牌上） </span></span><br><span class="line">	head = (struct Node*)<span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(struct Node)); </span><br><span class="line">	second = (struct Node*)<span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(struct Node)); </span><br><span class="line">	third = (struct Node*)<span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(struct Node)); </span><br><span class="line"></span><br><span class="line">	<span class="comment">/* Three blocks have been allocated dynamically. </span></span><br><span class="line"><span class="comment">	We have pointers to these three blocks as head, </span></span><br><span class="line"><span class="comment">	second and third	 </span></span><br><span class="line"><span class="comment">	下面是灵魂的绘图（佩服佩服）来表示我们所申请的三个节点的储存状态，</span></span><br><span class="line"><span class="comment">	他们是不相连的哦</span></span><br><span class="line"><span class="comment">	head		        second	   	 third </span></span><br><span class="line"><span class="comment">		|		         	 |		    	   | </span></span><br><span class="line"><span class="comment">		|	          	 |	     		   |</span></span><br><span class="line"><span class="comment">	+---+-----+	 +----+----+	 +----+----+ </span></span><br><span class="line"><span class="comment">	| # | # |	    | # | # |	    | # | # | </span></span><br><span class="line"><span class="comment">	+---+-----+	 +----+----+	 +----+----+ </span></span><br><span class="line"><span class="comment">	#代表了随机值，一个是数据，一个是指针，</span></span><br><span class="line"><span class="comment">	和我们的stuct node结构相同哦，</span></span><br><span class="line"><span class="comment">	但是他们现在还是随机值，因为我们没有给他们赋值。</span></span><br><span class="line"><span class="comment">	</span></span><br><span class="line"><span class="comment">	# represents any random value. </span></span><br><span class="line"><span class="comment">	Data is random because we haven’t assigned </span></span><br><span class="line"><span class="comment">	anything yet */</span></span><br><span class="line"></span><br><span class="line">	head-&gt;data = <span class="number">1</span>; <span class="comment">// assign data in first node </span></span><br><span class="line">	head-&gt;next = second; </span><br><span class="line">	<span class="comment">// Link first node with the second node </span></span><br><span class="line">	<span class="comment">// 我们给第一个节点赋值了，并且告诉了他下一个节点的位置</span></span><br><span class="line"></span><br><span class="line">	<span class="comment">/* data has been assigned to the data part of the first </span></span><br><span class="line"><span class="comment">	block (block pointed by the head). And next </span></span><br><span class="line"><span class="comment">	pointer of first block points to second. </span></span><br><span class="line"><span class="comment">	So they both are linked. </span></span><br><span class="line"><span class="comment">	//那个代码由于复制可能会造成错位，木得办法，撮合着看把哈哈。</span></span><br><span class="line"><span class="comment">		head		 second		 third </span></span><br><span class="line"><span class="comment">			|			 |			 | </span></span><br><span class="line"><span class="comment">			|			 |			 | </span></span><br><span class="line"><span class="comment">	+---+---+	 +----+----+	 +-----+----+ </span></span><br><span class="line"><span class="comment">	| 1 | o-----&gt;| # | # |	 | # | # | </span></span><br><span class="line"><span class="comment">	+---+---+	 +----+----+	 +-----+----+	 </span></span><br><span class="line"><span class="comment">	*/</span></span><br><span class="line"></span><br><span class="line">	<span class="comment">// assign data to second node </span></span><br><span class="line">	second-&gt;data = <span class="number">2</span>; </span><br><span class="line"></span><br><span class="line">	<span class="comment">// Link second node with the third node </span></span><br><span class="line">	second-&gt;next = third; </span><br><span class="line"></span><br><span class="line">	<span class="comment">//同上，给第二个赋值，并且告诉他下一个在哪里</span></span><br><span class="line">	<span class="comment">/* data has been assigned to the data part of the second </span></span><br><span class="line"><span class="comment">	block (block pointed by second). And next </span></span><br><span class="line"><span class="comment">	pointer of the second block points to the third </span></span><br><span class="line"><span class="comment">	block. So all three blocks are linked. </span></span><br><span class="line"><span class="comment">	</span></span><br><span class="line"><span class="comment">	head		 second		 third </span></span><br><span class="line"><span class="comment">		|			 |			 | </span></span><br><span class="line"><span class="comment">		|			 |			 | </span></span><br><span class="line"><span class="comment">	+---+---+	 +---+---+	 +----+----+ </span></span><br><span class="line"><span class="comment">	| 1 | o-----&gt;| 2 | o-----&gt; | # | # | </span></span><br><span class="line"><span class="comment">	+---+---+	 +---+---+	 +----+----+	 */</span></span><br><span class="line"></span><br><span class="line">	third-&gt;data = <span class="number">3</span>; <span class="comment">// assign data to third node </span></span><br><span class="line">	third-&gt;next = <span class="literal">NULL</span>; </span><br><span class="line">	</span><br><span class="line">	<span class="comment">//给第三个（也是最后一个）赋值，并告诉他，你后面没人了。</span></span><br><span class="line">	<span class="comment">/* data has been assigned to data part of third </span></span><br><span class="line"><span class="comment">	block (block pointed by third). And next pointer </span></span><br><span class="line"><span class="comment">	of the third block is made NULL to indicate </span></span><br><span class="line"><span class="comment">	that the linked list is terminated here. </span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">	We have the linked list ready. </span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">		head	 </span></span><br><span class="line"><span class="comment">			| </span></span><br><span class="line"><span class="comment">			| </span></span><br><span class="line"><span class="comment">		+---+---+	 +---+---+	 +----+------+ </span></span><br><span class="line"><span class="comment">		| 1 | o-----&gt;| 2 | o-----&gt; | 3 | NULL | </span></span><br><span class="line"><span class="comment">		+---+---+	 +---+---+	 +----+------+</span></span><br></pre></td></tr></table></figure>
 
-//这个结构体就是我们要用到的节点了，
-//既然c语言里的基本类型没有，我们就自己造一个。
-struct Node { 
-    int data; 
-    struct Node* next; 
-}; 
 
-// Program to create a simple linkedlist with 3 nodes 
-//编程去建立一个有三个节点的链表
-int main() 
-{ 
-    //声明3个节点，注意了哈，这里是声明！！！
-    //并没用得到那三个节点，就像我们拿到了三个空门牌，但是房间还没造出来呢
-    struct Node* head = NULL; 
-    struct Node* second = NULL; 
-    struct Node* third = NULL; 
+<p>​        </p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">	Note that only head is sufficient to represent </span><br><span class="line">	the whole <span class="built_in">list</span>. We can traverse the complete </span><br><span class="line">	<span class="built_in">list</span> by following next pointers. */</span><br><span class="line">	</span><br><span class="line">	<span class="comment">//接下来一定要试试效果么！</span></span><br><span class="line">	<span class="class"><span class="keyword">struct</span> <span class="title">Node</span>* <span class="title">n</span> = <span class="title">head</span>;</span></span><br><span class="line">	<span class="comment">//新建立一个指针，让他去循环着跑</span></span><br><span class="line">	<span class="comment">//并且哈，它指向了第一个有数据的节点</span></span><br><span class="line">	<span class="keyword">while</span> (n != <span class="literal">NULL</span>) &#123; </span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">" %d "</span>, n-&gt;data); </span><br><span class="line">        n = n-&gt;next; <span class="comment">//输出完后，他就有指向了下一个</span></span><br><span class="line">    &#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-    // allocate 3 nodes in the heap
-    //从堆中申请三个节点的内存（这会儿才得到房间了，并把房间号写在了门牌上） 
-    head = (struct Node*)malloc(sizeof(struct Node)); 
-    second = (struct Node*)malloc(sizeof(struct Node)); 
-    third = (struct Node*)malloc(sizeof(struct Node)); 
-
-    /* Three blocks have been allocated dynamically. 
-    We have pointers to these three blocks as head, 
-    second and third     
-    下面是灵魂的绘图（佩服佩服）来表示我们所申请的三个节点的储存状态，
-    他们是不相连的哦
-    head                second            third 
-        |                      |                   | 
-        |                   |                    |
-    +---+-----+     +----+----+     +----+----+ 
-    | # | # |        | # | # |        | # | # | 
-    +---+-----+     +----+----+     +----+----+ 
-    #代表了随机值，一个是数据，一个是指针，
-    和我们的stuct node结构相同哦，
-    但是他们现在还是随机值，因为我们没有给他们赋值。
-
-    # represents any random value. 
-    Data is random because we haven’t assigned 
-    anything yet */
-
-    head-&gt;data = 1; // assign data in first node 
-    head-&gt;next = second; 
-    // Link first node with the second node 
-    // 我们给第一个节点赋值了，并且告诉了他下一个节点的位置
-
-    /* data has been assigned to the data part of the first 
-    block (block pointed by the head). And next 
-    pointer of first block points to second. 
-    So they both are linked. 
-    //那个代码由于复制可能会造成错位，木得办法，撮合着看把哈哈。
-        head         second         third 
-            |             |             | 
-            |             |             | 
-    +---+---+     +----+----+     +-----+----+ 
-    | 1 | o-----&gt;| # | # |     | # | # | 
-    +---+---+     +----+----+     +-----+----+     
-    */
-
-    // assign data to second node 
-    second-&gt;data = 2; 
-
-    // Link second node with the third node 
-    second-&gt;next = third; 
-
-    //同上，给第二个赋值，并且告诉他下一个在哪里
-    /* data has been assigned to the data part of the second 
-    block (block pointed by second). And next 
-    pointer of the second block points to the third 
-    block. So all three blocks are linked. 
-
-    head         second         third 
-        |             |             | 
-        |             |             | 
-    +---+---+     +---+---+     +----+----+ 
-    | 1 | o-----&gt;| 2 | o-----&gt; | # | # | 
-    +---+---+     +---+---+     +----+----+     */
-
-    third-&gt;data = 3; // assign data to third node 
-    third-&gt;next = NULL; 
-
-    //给第三个（也是最后一个）赋值，并告诉他，你后面没人了。
-    /* data has been assigned to data part of third 
-    block (block pointed by third). And next pointer 
-    of the third block is made NULL to indicate 
-    that the linked list is terminated here. 
-
-    We have the linked list ready. 
-
-        head     
-            | 
-            | 
-        +---+---+     +---+---+     +----+------+ 
-        | 1 | o-----&gt;| 2 | o-----&gt; | 3 | NULL | 
-        +---+---+     +---+---+     +----+------+     </code></pre><p>​        </p>
-<pre><code>    Note that only head is sufficient to represent 
-    the whole list. We can traverse the complete 
-    list by following next pointers. */
-
-    //接下来一定要试试效果么！
-    struct Node* n = head;
-    //新建立一个指针，让他去循环着跑
-    //并且哈，它指向了第一个有数据的节点
-    while (n != NULL) { 
-        printf(&quot; %d &quot;, n-&gt;data); 
-        n = n-&gt;next; //输出完后，他就有指向了下一个
-    }
-    return 0; 
-}</code></pre><p>这就完了？这就完了。</p>
+<p>这就完了？这就完了。</p>
 <p>下面是一个简洁的代码：</p>
-<pre><code>// A simple C program for traversal of a linked list 
-#include &lt;stdio.h&gt; 
-#include &lt;stdlib.h&gt; 
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// A simple C program for traversal of a linked list </span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt; </span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdlib.h&gt; </span></span></span><br><span class="line">  </span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Node</span> &#123;</span> </span><br><span class="line">    <span class="keyword">int</span> data; </span><br><span class="line">    <span class="class"><span class="keyword">struct</span> <span class="title">Node</span>* <span class="title">next</span>;</span> </span><br><span class="line">&#125;; </span><br><span class="line">  </span><br><span class="line"><span class="comment">// This function prints contents of linked list starting from </span></span><br><span class="line"><span class="comment">// the given node </span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">printList</span><span class="params">(struct Node* n)</span> </span></span><br><span class="line"><span class="function"></span>&#123; </span><br><span class="line">    <span class="keyword">while</span> (n != <span class="literal">NULL</span>) &#123; </span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">" %d "</span>, n-&gt;data); </span><br><span class="line">        n = n-&gt;next; </span><br><span class="line">    &#125; </span><br><span class="line">&#125; </span><br><span class="line">  </span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span></span><br><span class="line"><span class="function"></span>&#123; </span><br><span class="line">    <span class="class"><span class="keyword">struct</span> <span class="title">Node</span>* <span class="title">head</span> = <span class="title">NULL</span>;</span> </span><br><span class="line">    <span class="class"><span class="keyword">struct</span> <span class="title">Node</span>* <span class="title">second</span> = <span class="title">NULL</span>;</span> </span><br><span class="line">    <span class="class"><span class="keyword">struct</span> <span class="title">Node</span>* <span class="title">third</span> = <span class="title">NULL</span>;</span> </span><br><span class="line">  </span><br><span class="line">    <span class="comment">// allocate 3 nodes in the heap </span></span><br><span class="line">    head = (struct Node*)<span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(struct Node)); </span><br><span class="line">    second = (struct Node*)<span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(struct Node)); </span><br><span class="line">    third = (struct Node*)<span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(struct Node)); </span><br><span class="line">  </span><br><span class="line">    head-&gt;data = <span class="number">1</span>; <span class="comment">// assign data in first node </span></span><br><span class="line">    head-&gt;next = second; <span class="comment">// Link first node with second </span></span><br><span class="line">  </span><br><span class="line">    second-&gt;data = <span class="number">2</span>; <span class="comment">// assign data to second node </span></span><br><span class="line">    second-&gt;next = third; </span><br><span class="line">  </span><br><span class="line">    third-&gt;data = <span class="number">3</span>; <span class="comment">// assign data to third node </span></span><br><span class="line">    third-&gt;next = <span class="literal">NULL</span>; </span><br><span class="line">  </span><br><span class="line">    printList(head); </span><br><span class="line">  </span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-struct Node { 
-    int data; 
-    struct Node* next; 
-}; 
-
-// This function prints contents of linked list starting from 
-// the given node 
-void printList(struct Node* n) 
-{ 
-    while (n != NULL) { 
-        printf(&quot; %d &quot;, n-&gt;data); 
-        n = n-&gt;next; 
-    } 
-} 
-
-int main() 
-{ 
-    struct Node* head = NULL; 
-    struct Node* second = NULL; 
-    struct Node* third = NULL; 
-
-    // allocate 3 nodes in the heap 
-    head = (struct Node*)malloc(sizeof(struct Node)); 
-    second = (struct Node*)malloc(sizeof(struct Node)); 
-    third = (struct Node*)malloc(sizeof(struct Node)); 
-
-    head-&gt;data = 1; // assign data in first node 
-    head-&gt;next = second; // Link first node with second 
-
-    second-&gt;data = 2; // assign data to second node 
-    second-&gt;next = third; 
-
-    third-&gt;data = 3; // assign data to third node 
-    third-&gt;next = NULL; 
-
-    printList(head); 
-
-    return 0; 
-}</code></pre><p>当然，当我自己上手之后，生活还是狠狠地把我按在地上摩擦。。。</p>
+<p>当然，当我自己上手之后，生活还是狠狠地把我按在地上摩擦。。。</p>
 <p>不妨我们模块化的写一下一个链表吧（写了很久来理解链表的优秀）</p>
 <p>我先分开讲解每个模块的作用和意义，之后放在一起来观看，效果<del>（可能）</del>更佳。</p>
 <p>1 必不可少的这个结构体呀！</p>
 <p>你看，这个stuct Node *多长呀，如果我们使用的是typedef的话我们就可以将l作为一个数据类型的名字，然后把l当作int这样的来使用就好了（我们还是可以使用struct Node的）。</p>
 <p>其次，看第二行，这个调用就很有意思了，声明了一个l数据类型的指针。</p>
-<pre><code>typedef struct Node
-{
-    int val;
-    l* next;//等效 struct Node *next
-}l;</code></pre><p>2 我们要创建一个链表了。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> <span class="title">Node</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">    <span class="keyword">int</span> val;</span><br><span class="line">    l* next;<span class="comment">//等效 struct Node *next</span></span><br><span class="line">&#125;l;</span><br></pre></td></tr></table></figure>
+
+<p>2 我们要创建一个链表了。</p>
 <p>我们在main函数里面声明了一个Head的指针，并且申请了一个内存空间，并把其地址放进了head。这个时候把他传过来。</p>
 <p>或者说，我们要了一个房卡，并要了一个房间，这个房卡就是head，房卡对应的就是该房间。</p>
 <p>第一步：</p>
@@ -486,170 +325,60 @@ int main()
 <p>第二步：我们把指针n的内容（也就是新声明的节点的地址）赋值给head指针指向的next的位置【哈哈，有点懵吧，就是说，我们现在手里一共有两张房卡对吧，一张是head（head房卡可是能打开head房间的哦），另一张是n（n可是上面有房间号码的），然后我们打开head的房间，在里面的next区域放上n房卡的内容（就是刚刚申请的房间号/地址）（用这个例子<del>可能</del>好理解哈，指针总是很奇妙的）</p>
 <p>第三步：将n赋值,并指向空【然后我们利用n房卡打开刚刚申请的房间哈，然后在内容区域放上内容，在下一个的区域放上空，说明后面没有房间了】</p>
 <p>这就好了。想象一下我们拿着head房卡就可以了，先是到head的next区域找到下一个房间的位置，然后进去，就能看见第一个房间的内容区域还能看到下一个房间在哪里了，当然在此处我们没有下一个房间。</p>
-<pre><code>void creat(l *head){
-    l *n = (l*)malloc(sizeof(l));
-    if(n==NULL)cout&lt;&lt;&quot;Error,malloc failed!&quot;;//这里做一下判断，如果内存不足，那么报错
-        head-&gt;next = n;
-    n-&gt;val = 6;
-    n-&gt;next = NULL;   
-}</code></pre><p>3那我们一定要再来一个房间呀</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">creat</span><span class="params">(l *head)</span></span>&#123;</span><br><span class="line">    l *n = (l*)<span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(l));</span><br><span class="line">    <span class="keyword">if</span>(n==<span class="literal">NULL</span>)<span class="built_in">cout</span>&lt;&lt;<span class="string">"Error,malloc failed!"</span>;<span class="comment">//这里做一下判断，如果内存不足，那么报错</span></span><br><span class="line">		head-&gt;next = n;</span><br><span class="line">    n-&gt;val = <span class="number">6</span>;</span><br><span class="line">    n-&gt;next = <span class="literal">NULL</span>;   </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>3那我们一定要再来一个房间呀</p>
 <p>第一步：传入一个头节点，和一个值【拿上head门卡和要往新房间里放的东西】</p>
 <p>第二步：声明一个新的节点p，并使其和head指向相同。【再要一张门卡，复制一下head门卡的内容】这样做可以保证head不被破环。</p>
 <p>第三步：开始找最后一个房间了，如果指向的房间中的next区域还有值，就说明后面还有房间，我们就把这个门卡p指向本来房间里的下一个房间位置，就是我们将p门卡本来打开时的是这个房间，我们使他打开的是下一个房间，（当然，他无法再打开这个房间了）然后继续搜索。直到发现只是最后一个房间。</p>
 <p>第四步：我们新索要一个房间，原来最后一个空房间的next区域要存放上这个房间的位置了。然后我们把我们的东西也就是一个值放在新的房间，这个新房间就成了最后一个房间了，我们就需要把他的next变为NUll空，记住哦，这些步骤一步也不能缺少，否则就会酿成大错。。。（<del>无限卡壳</del>）</p>
-<pre><code>void add(l*Head,int val){   
-    l* p = Head;
-    while(p-&gt;next)p=p-&gt;next;
-    l*t = (l*)malloc(sizeof(l));
-        p-&gt;next =t;
-    t-&gt;val=val;
-    t-&gt;next = NULL;
-    }</code></pre><p>4赶紧巡查一遍房间吧：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">add</span><span class="params">(l*Head,<span class="keyword">int</span> val)</span></span>&#123;   </span><br><span class="line">    l* p = Head;</span><br><span class="line">    <span class="keyword">while</span>(p-&gt;next)p=p-&gt;next;</span><br><span class="line">    l*t = (l*)<span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(l));</span><br><span class="line">		p-&gt;next =t;</span><br><span class="line">    t-&gt;val=val;</span><br><span class="line">    t-&gt;next = <span class="literal">NULL</span>;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+
+<p>4赶紧巡查一遍房间吧：</p>
 <p>我们只用拿着head门卡就好，每次巡查的时候记得再要一个门卡自己的门卡保存着第一个房间的位置，可不能乱改。然后搜查完成一间房间之后，房卡n就成了下一个房间的房卡，继续搜查。哈哈</p>
-<pre><code>void disp(struct Node *head){
-    struct Node *n = head-&gt;next;
-    while(n){
-        cout&lt;&lt;n-&gt;val&lt;&lt;&quot; &quot;;
-        n = n-&gt;next;
-    }
-    cout&lt;&lt;endl;
-}</code></pre><p>总的代码如下：</p>
-<pre><code>#include &lt;bits/stdc++.h&gt;
-using namespace std;
-typedef struct Node
-{
-    int val;
-    struct Node* next;
-}l;  
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">disp</span><span class="params">(struct Node *head)</span></span>&#123;</span><br><span class="line">    <span class="class"><span class="keyword">struct</span> <span class="title">Node</span> *<span class="title">n</span> = <span class="title">head</span>-&gt;<span class="title">next</span>;</span></span><br><span class="line">    <span class="keyword">while</span>(n)&#123;</span><br><span class="line">        <span class="built_in">cout</span>&lt;&lt;n-&gt;val&lt;&lt;<span class="string">" "</span>;</span><br><span class="line">        n = n-&gt;next;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">cout</span>&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-void disp(struct Node *head){
-    struct Node *n = head-&gt;next;
-    while(n){
-        cout&lt;&lt;n-&gt;val&lt;&lt;&quot; &quot;;
-        n = n-&gt;next;
-    }
-    cout&lt;&lt;endl;
-}
 
-void creat(l *head){
-    l *n = (l*)malloc(sizeof(l));
-    if(n==NULL)cout&lt;&lt;&quot;Error,malloc failed!&quot;;
-    head-&gt;next = n;
-    n-&gt;val = 6;
-    n-&gt;next = NULL;   
-} 
+<p>总的代码如下：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> <span class="title">Node</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">    <span class="keyword">int</span> val;</span><br><span class="line">    <span class="class"><span class="keyword">struct</span> <span class="title">Node</span>* <span class="title">next</span>;</span></span><br><span class="line">&#125;l;  </span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">disp</span><span class="params">(struct Node *head)</span></span>&#123;</span><br><span class="line">    <span class="class"><span class="keyword">struct</span> <span class="title">Node</span> *<span class="title">n</span> = <span class="title">head</span>-&gt;<span class="title">next</span>;</span></span><br><span class="line">    <span class="keyword">while</span>(n)&#123;</span><br><span class="line">        <span class="built_in">cout</span>&lt;&lt;n-&gt;val&lt;&lt;<span class="string">" "</span>;</span><br><span class="line">        n = n-&gt;next;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">cout</span>&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">creat</span><span class="params">(l *head)</span></span>&#123;</span><br><span class="line">    l *n = (l*)<span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(l));</span><br><span class="line">    <span class="keyword">if</span>(n==<span class="literal">NULL</span>)<span class="built_in">cout</span>&lt;&lt;<span class="string">"Error,malloc failed!"</span>;</span><br><span class="line">	head-&gt;next = n;</span><br><span class="line">    n-&gt;val = <span class="number">6</span>;</span><br><span class="line">    n-&gt;next = <span class="literal">NULL</span>;   </span><br><span class="line">&#125; </span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">add</span><span class="params">(l*Head,<span class="keyword">int</span> val)</span></span>&#123;   </span><br><span class="line">    l* p = Head;</span><br><span class="line">    <span class="keyword">while</span>(p-&gt;next)p=p-&gt;next;</span><br><span class="line">    l*t = (l*)<span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(l));</span><br><span class="line">    p-&gt;next = t;</span><br><span class="line">    t-&gt;val=val;</span><br><span class="line">    t-&gt;next = <span class="literal">NULL</span>;</span><br></pre></td></tr></table></figure>
 
-void add(l*Head,int val){   
-    l* p = Head;
-    while(p-&gt;next)p=p-&gt;next;
-    l*t = (l*)malloc(sizeof(l));
-    p-&gt;next = t;
-    t-&gt;val=val;
-    t-&gt;next = NULL;</code></pre><p>​    </p>
-<pre><code>}
-int main(){
-    l *Head;
-    Head = (l*)malloc(sizeof(l));
 
-    creat(Head);
-    add(Head,15);
-    disp(Head);
-    return 0;
-}</code></pre><p><strong>只是写出一个链表就少了很多趣味，增改删查才是硬道理！</strong></p>
+
+<p>​    </p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    l *Head;</span><br><span class="line">    Head = (l*)<span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(l));</span><br><span class="line">    </span><br><span class="line">    creat(Head);</span><br><span class="line">    add(Head,<span class="number">15</span>);</span><br><span class="line">    disp(Head);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>只是写出一个链表就少了很多趣味，增改删查才是硬道理！</strong></p>
 <p>当然了，在开始阶段，我们还是只以单链表为例：</p>
 <h2 id="链表的增："><a href="#链表的增：" class="headerlink" title="链表的增："></a>链表的增：</h2><p><img src="/2020/03/17/LinkedList%E9%93%BE%E8%A1%A8/_2020031917124912SS.png" alt="linkedList/_2020031917124912SS.png"></p>
 <p><strong>一、 在链表的末尾增加：</strong>（再重复的系统的讲一下哈）</p>
 <p>这个方法我们在上面已经认识到了，具体的思路就是我们通过头节点找到最后一个节点，然后在她后面添加一个节点，链接上去就可以了。（我们手持一个head房卡，沿着房间不断地走下去，找到最后的房间，在新开一间房间，然后我们在原来的最后一个房间的next的空间里放上新开房间的位置就好了）</p>
 <p>这里假设我们已经有了一个链表了。</p>
-<pre><code>void addLast(l*Head,int val){   
-    l* p = Head;//设置临时的指针，用来指向不同的节点，实现在不影响head的情况下遍历等操作
-    while(p-&gt;next)p=p-&gt;next;
-    l*t = (l*)malloc(sizeof(l));
-    p-&gt;next = t;
-    t-&gt;val=val;
-    t-&gt;next = NULL;
-}</code></pre><p><strong>二、在链表的头部增加：</strong></p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">addLast</span><span class="params">(l*Head,<span class="keyword">int</span> val)</span></span>&#123;   </span><br><span class="line">    l* p = Head;<span class="comment">//设置临时的指针，用来指向不同的节点，实现在不影响head的情况下遍历等操作</span></span><br><span class="line">    <span class="keyword">while</span>(p-&gt;next)p=p-&gt;next;</span><br><span class="line">    l*t = (l*)<span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(l));</span><br><span class="line">    p-&gt;next = t;</span><br><span class="line">    t-&gt;val=val;</span><br><span class="line">    t-&gt;next = <span class="literal">NULL</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+<p><strong>二、在链表的头部增加：</strong></p>
 <p>这个的做法似乎比上一个还要简单呢，毕竟我们不用去一一寻找到最后一个了。</p>
 <p>既然我们需要添加一个值，那么新建一个节点（房间）是必不可少的了。然后将值放入，让其指向本来的第一个节点，在让head指向它就好。（不怕麻烦的话，也可以重新添加一个指针变量，作为中间值，来进行操作）</p>
-<pre><code>void addHead(l*Head,int val){
-    l* t = (l*)malloc(sizeof(l));
-    t-&gt;val = val;
-    t-&gt;next = Head-&gt;next;
-    Head -&gt;next = t;
-}</code></pre><p><strong>三、在链表的中间插入：</strong></p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">addHead</span><span class="params">(l*Head,<span class="keyword">int</span> val)</span></span>&#123;</span><br><span class="line">    l* t = (l*)<span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(l));</span><br><span class="line">    t-&gt;val = val;</span><br><span class="line">    t-&gt;next = Head-&gt;next;</span><br><span class="line">    Head -&gt;next = t;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+<p><strong>三、在链表的中间插入：</strong></p>
 <p>这个可以说是前两者的综合版本了。我们要先找到这个节点，然后对他进行插入。</p>
 <p>这里就以给定一个值，作为目标值，在其后面添加一个节点吧。查找的方法是先检查一下它后面是否还有节点，如果有就判断他的值是否符合，如果不符合就使指针指向下一个节点。这样出来的结果只会有两种，一种是没有找到，也有可能是这个值就在最后一个节点里面。</p>
 <p>这里做了两个版本的给定值寻找插入方法，一种是在其之前，另一种是在其后。（两者之间只需要一点点的代码改动就可以了，在不同的地方已经用//注释）</p>
-<pre><code>void insertBefore(l* Head,int target,int val){
-    l* pre  = Head;//*
-    l* p = Head;
-    while(p-&gt;next){
-        if(p-&gt;val==target)break;
-        else {
-             pre = p;//*
-            p = p-&gt;next;
-        }
-    }
-    if(p-&gt;next==NULL&amp;&amp;p-&gt;val!=target){
-        cout&lt;&lt;&quot;查找失败&quot;&lt;&lt;endl;
-        return;
-    }
-    l*t = (l*)malloc(sizeof(l));
-    t-&gt;val = val;
-    pre-&gt;next = t;//*
-    t-&gt;next = p; //*
-}
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">insertBefore</span><span class="params">(l* Head,<span class="keyword">int</span> target,<span class="keyword">int</span> val)</span></span>&#123;</span><br><span class="line">    l* pre  = Head;<span class="comment">//*</span></span><br><span class="line">    l* p = Head;</span><br><span class="line">    <span class="keyword">while</span>(p-&gt;next)&#123;</span><br><span class="line">        <span class="keyword">if</span>(p-&gt;val==target)<span class="keyword">break</span>;</span><br><span class="line">        <span class="keyword">else</span> &#123;</span><br><span class="line">             pre = p;<span class="comment">//*</span></span><br><span class="line">            p = p-&gt;next;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span>(p-&gt;next==<span class="literal">NULL</span>&amp;&amp;p-&gt;val!=target)&#123;</span><br><span class="line">        <span class="built_in">cout</span>&lt;&lt;<span class="string">"查找失败"</span>&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    l*t = (l*)<span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(l));</span><br><span class="line">    t-&gt;val = val;</span><br><span class="line">    pre-&gt;next = t;<span class="comment">//*</span></span><br><span class="line">    t-&gt;next = p; <span class="comment">//*</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">insertAfter</span><span class="params">(l* Head,<span class="keyword">int</span> target,<span class="keyword">int</span> val)</span></span>&#123;</span><br><span class="line">    l* p = Head;</span><br><span class="line">    <span class="keyword">while</span>(p-&gt;next)&#123;</span><br><span class="line">        <span class="keyword">if</span>(p-&gt;val==target)<span class="keyword">break</span>;</span><br><span class="line">        <span class="keyword">else</span> &#123;</span><br><span class="line">            p = p-&gt;next;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span>(p-&gt;next==<span class="literal">NULL</span>&amp;&amp;p-&gt;val!=target)&#123;</span><br><span class="line">        <span class="built_in">cout</span>&lt;&lt;<span class="string">"查找失败"</span>&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    l*t = (l*)<span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(l));</span><br><span class="line">    t-&gt;val = val;</span><br><span class="line">     t-&gt;next = p-&gt;next;<span class="comment">//*</span></span><br><span class="line">     p-&gt;next = t;<span class="comment">//*</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-void insertAfter(l* Head,int target,int val){
-    l* p = Head;
-    while(p-&gt;next){
-        if(p-&gt;val==target)break;
-        else {
-            p = p-&gt;next;
-        }
-    }
-    if(p-&gt;next==NULL&amp;&amp;p-&gt;val!=target){
-        cout&lt;&lt;&quot;查找失败&quot;&lt;&lt;endl;
-        return;
-    }
-    l*t = (l*)malloc(sizeof(l));
-    t-&gt;val = val;
-     t-&gt;next = p-&gt;next;//*
-     p-&gt;next = t;//*
-}</code></pre><h2 id="对链表的删"><a href="#对链表的删" class="headerlink" title="对链表的删"></a>对链表的删</h2><p>？？？如果前面的掌握了的话，那么对链表的某个节点进行删除自然不是问题。就直接放代码了（思路和上面的<strong>insertBefore</strong>相同哦）（<del>代码其实也是参考上面的</del>）</p>
-<pre><code>void del(l* Head,int target){//这里传入头节点和目标值就可以了
-    l* pre  = Head;
-    l* p = Head;
-    while(p-&gt;next){
-        if(p-&gt;val==target)break;
-        else {
-             pre = p;
-            p = p-&gt;next;
-        }
-    }
-    if(p-&gt;next==NULL&amp;&amp;p-&gt;val!=target){
-        cout&lt;&lt;&quot;查找失败&quot;&lt;&lt;endl;
-        return;
-    }
-        pre-&gt;next = p-&gt;next;//是的，将insertAfter代码的最后几行更改为这一行就好了。
-        //（相当于将这个节点跳过去了）
-      free(p); //既然删除了这个节点，那么就把他释放掉，节约内存。
-}</code></pre><h2 id="对链表的改："><a href="#对链表的改：" class="headerlink" title="对链表的改："></a>对链表的改：</h2><p>？？？如果前面的掌握了的话，那么对链表的某个值进行更改自然不是问题。就直接放代码了（思路和上面的<strong>insertAfter</strong>相同哦）（<del>代码其实也是参考上面的</del>）<del>（人类的本质是复读机）</del></p>
-<pre><code>void change(l* Head,int target,int val){
-    l* p = Head;
-    while(p-&gt;next){
-        if(p-&gt;val==target)break;
-        else {
-            p = p-&gt;next;
-        }
-    }
-    if(p-&gt;next==NULL&amp;&amp;p-&gt;val!=target){
-        cout&lt;&lt;&quot;查找失败&quot;&lt;&lt;endl;
-        return;
-    }
-    p-&gt;val = val;//其实就是把insertAfter()最后的几行代码改为这个（2333）
 
-}</code></pre><h2 id="对链表的查："><a href="#对链表的查：" class="headerlink" title="对链表的查："></a>对链表的查：</h2><p>我们不是一直在查找么？？？（<del>避免复读，</del>就不再赘述）</p>
+<h2 id="对链表的删"><a href="#对链表的删" class="headerlink" title="对链表的删"></a>对链表的删</h2><p>？？？如果前面的掌握了的话，那么对链表的某个节点进行删除自然不是问题。就直接放代码了（思路和上面的<strong>insertBefore</strong>相同哦）（<del>代码其实也是参考上面的</del>）</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">del</span><span class="params">(l* Head,<span class="keyword">int</span> target)</span></span>&#123;<span class="comment">//这里传入头节点和目标值就可以了</span></span><br><span class="line">    l* pre  = Head;</span><br><span class="line">    l* p = Head;</span><br><span class="line">    <span class="keyword">while</span>(p-&gt;next)&#123;</span><br><span class="line">        <span class="keyword">if</span>(p-&gt;val==target)<span class="keyword">break</span>;</span><br><span class="line">        <span class="keyword">else</span> &#123;</span><br><span class="line">             pre = p;</span><br><span class="line">            p = p-&gt;next;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span>(p-&gt;next==<span class="literal">NULL</span>&amp;&amp;p-&gt;val!=target)&#123;</span><br><span class="line">        <span class="built_in">cout</span>&lt;&lt;<span class="string">"查找失败"</span>&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line">		pre-&gt;next = p-&gt;next;<span class="comment">//是的，将insertAfter代码的最后几行更改为这一行就好了。</span></span><br><span class="line">		<span class="comment">//（相当于将这个节点跳过去了）</span></span><br><span class="line">	  <span class="built_in">free</span>(p); <span class="comment">//既然删除了这个节点，那么就把他释放掉，节约内存。</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+<h2 id="对链表的改："><a href="#对链表的改：" class="headerlink" title="对链表的改："></a>对链表的改：</h2><p>？？？如果前面的掌握了的话，那么对链表的某个值进行更改自然不是问题。就直接放代码了（思路和上面的<strong>insertAfter</strong>相同哦）（<del>代码其实也是参考上面的</del>）<del>（人类的本质是复读机）</del></p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">change</span><span class="params">(l* Head,<span class="keyword">int</span> target,<span class="keyword">int</span> val)</span></span>&#123;</span><br><span class="line">    l* p = Head;</span><br><span class="line">    <span class="keyword">while</span>(p-&gt;next)&#123;</span><br><span class="line">        <span class="keyword">if</span>(p-&gt;val==target)<span class="keyword">break</span>;</span><br><span class="line">        <span class="keyword">else</span> &#123;</span><br><span class="line">            p = p-&gt;next;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span>(p-&gt;next==<span class="literal">NULL</span>&amp;&amp;p-&gt;val!=target)&#123;</span><br><span class="line">        <span class="built_in">cout</span>&lt;&lt;<span class="string">"查找失败"</span>&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    p-&gt;val = val;<span class="comment">//其实就是把insertAfter()最后的几行代码改为这个（2333）</span></span><br><span class="line">   </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+<h2 id="对链表的查："><a href="#对链表的查：" class="headerlink" title="对链表的查："></a>对链表的查：</h2><p>我们不是一直在查找么？？？（<del>避免复读，</del>就不再赘述）</p>
 <p>看到这里，首先是一份敬佩，敬佩您能够静下心来一步一步的去尝试，去探索，去思考。确实文章篇幅很长，需要一定的耐心去思考，并且链表理解起来确实不是很困难，但是如果是刚开始，去上手操作，自然还是漏洞百出，bug重重。但是只要我们多尝试，多敲代码，缕清关系，明确指针自身的所在。那么，我们的各个方面都会有一定的成长。</p>
 <p>谢谢阅读，本文中仍有许多的不足之处，还望交流指正。</p>
 <p>对于后期，大家还可以去了解其他的链表形式，来加强对链表的使用。</p>
@@ -734,14 +463,14 @@ void insertAfter(l* Head,int target,int val){
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">36</span>
+          <span class="site-state-item-count">37</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">6</span>
+        <span class="site-state-item-count">7</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
