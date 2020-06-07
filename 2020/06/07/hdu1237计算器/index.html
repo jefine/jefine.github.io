@@ -50,20 +50,18 @@
   };
 </script>
 
-  <meta name="description" content="给定一个完全由小写英文字母组成的字符串等差递增序列，该序列中的每个字符串的长度固定为 L，从 L 个 a 开始，以 1 为步长递增。例如当 L 为 3 时，序列为 { aaa, aab, aac, …, aaz, aba, abb, …, abz, …, zzz  }。这个序列的倒数第27个字符串就是 zyz。对于任意给定的 L，本题要求你给出对应序列倒数第 N 个字符串。">
-<meta name="keywords" content="pta">
+  <meta name="description" content="简单计算器\Time Limit: 2000&#x2F;1000 MS (Java&#x2F;Others)  Memory Limit: 65536&#x2F;32768 K (Java&#x2F;Others)Total Submission(s): 36334  Accepted Submission(s): 13065**">
+<meta name="keywords" content="hdu 栈">
 <meta property="og:type" content="article">
-<meta property="og:title" content="L1-050倒数第N个字符串">
-<meta property="og:url" content="https:&#x2F;&#x2F;jefine.github.io&#x2F;2020&#x2F;01&#x2F;06&#x2F;L1-050%E5%80%92%E6%95%B0%E7%AC%ACN%E4%B8%AA%E5%AD%97%E7%AC%A6%E4%B8%B2&#x2F;index.html">
+<meta property="og:title" content="hdu1237计算器">
+<meta property="og:url" content="https:&#x2F;&#x2F;jefine.github.io&#x2F;2020&#x2F;06&#x2F;07&#x2F;hdu1237%E8%AE%A1%E7%AE%97%E5%99%A8&#x2F;index.html">
 <meta property="og:site_name" content="jefine">
-<meta property="og:description" content="给定一个完全由小写英文字母组成的字符串等差递增序列，该序列中的每个字符串的长度固定为 L，从 L 个 a 开始，以 1 为步长递增。例如当 L 为 3 时，序列为 { aaa, aab, aac, …, aaz, aba, abb, …, abz, …, zzz  }。这个序列的倒数第27个字符串就是 zyz。对于任意给定的 L，本题要求你给出对应序列倒数第 N 个字符串。">
+<meta property="og:description" content="简单计算器\Time Limit: 2000&#x2F;1000 MS (Java&#x2F;Others)  Memory Limit: 65536&#x2F;32768 K (Java&#x2F;Others)Total Submission(s): 36334  Accepted Submission(s): 13065**">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="https:&#x2F;&#x2F;i.loli.net&#x2F;2020&#x2F;01&#x2F;07&#x2F;IBXFH3viYGakNlS.png">
-<meta property="og:updated_time" content="2020-01-07T03:01:09.631Z">
+<meta property="og:updated_time" content="2020-06-07T02:34:27.346Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https:&#x2F;&#x2F;i.loli.net&#x2F;2020&#x2F;01&#x2F;07&#x2F;IBXFH3viYGakNlS.png">
 
-<link rel="canonical" href="https://jefine.github.io/2020/01/06/L1-050%E5%80%92%E6%95%B0%E7%AC%ACN%E4%B8%AA%E5%AD%97%E7%AC%A6%E4%B8%B2/">
+<link rel="canonical" href="https://jefine.github.io/2020/06/07/hdu1237%E8%AE%A1%E7%AE%97%E5%99%A8/">
 
 
 <script id="page-configurations">
@@ -77,7 +75,7 @@
   };
 </script>
 
-  <title>L1-050倒数第N个字符串 | jefine</title>
+  <title>hdu1237计算器 | jefine</title>
   
 
 
@@ -192,7 +190,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://jefine.github.io/2020/01/06/L1-050%E5%80%92%E6%95%B0%E7%AC%ACN%E4%B8%AA%E5%AD%97%E7%AC%A6%E4%B8%B2/">
+    <link itemprop="mainEntityOfPage" href="https://jefine.github.io/2020/06/07/hdu1237%E8%AE%A1%E7%AE%97%E5%99%A8/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -205,7 +203,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          L1-050倒数第N个字符串
+          hdu1237计算器
         </h1>
 
         <div class="post-meta">
@@ -214,16 +212,10 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
+              
 
-              <time title="创建时间：2020-01-06 22:01:17" itemprop="dateCreated datePublished" datetime="2020-01-06T22:01:17+08:00">2020-01-06</time>
+              <time title="创建时间：2020-06-07 10:26:22 / 修改时间：10:34:27" itemprop="dateCreated datePublished" datetime="2020-06-07T10:26:22+08:00">2020-06-07</time>
             </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-01-07 11:01:09" itemprop="dateModified" datetime="2020-01-07T11:01:09+08:00">2020-01-07</time>
-              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
@@ -238,7 +230,7 @@
 
 
           
-             <span id="/2020/01/06/L1-050%E5%80%92%E6%95%B0%E7%AC%ACN%E4%B8%AA%E5%AD%97%E7%AC%A6%E4%B8%B2/" class="leancloud_visitors" data-flag-title="L1-050倒数第N个字符串">
+             <span id="/2020/06/07/hdu1237%E8%AE%A1%E7%AE%97%E5%99%A8/" class="leancloud_visitors" data-flag-title="hdu1237计算器">
                <span class="post-meta-divider">|</span>
                <span classs="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -259,32 +251,35 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>给定一个完全由小写英文字母组成的字符串等差递增序列，该序列中的每个字符串的长度固定为 L，从 L 个 a 开始，以 1 为步长递增。例如当 L 为 3 时，序列为 { aaa, aab, aac, …, aaz, aba, abb, …, abz, …, zzz  }。这个序列的倒数第27个字符串就是 zyz。对于任意给定的 L，本题要求你给出对应序列倒数第 N 个字符串。</p><a id="more"></a>
-<h3 id="输入格式："><a href="#输入格式：" class="headerlink" title="输入格式："></a>输入格式：</h3><p>输入在一行中给出两个正整数 L（2 ≤ L ≤ 6）和 N（≤105）。</p>
-<h3 id="输出格式："><a href="#输出格式：" class="headerlink" title="输出格式："></a>输出格式：</h3><p>在一行中输出对应序列倒数第 N 个字符串。题目保证这个字符串是存在的。</p>
-<h3 id="输入样例："><a href="#输入样例：" class="headerlink" title="输入样例："></a>输入样例：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">3 7417</span><br></pre></td></tr></table></figure>
+        <h1 id="简单计算器"><a href="#简单计算器" class="headerlink" title="简单计算器"></a><a href="http://acm.hdu.edu.cn/showproblem.php?pid=1237" target="_blank" rel="noopener">简单计算器</a></h1><p><strong><em>\</em>Time Limit: 2000/1000 MS (Java/Others)  Memory Limit: 65536/32768 K (Java/Others)<br>Total Submission(s): 36334  Accepted Submission(s): 13065<br>**</strong></p><a id="more"></a>
+<p>Problem Description</p>
+<p>读入一个只包含 +, -, *, / 的非负整数计算表达式，计算该表达式的值。</p>
+<p>Input</p>
+<p>测试输入包含若干测试用例，每个测试用例占一行，每行不超过200个字符，整数和运算符之间用一个空格分隔。没有非法表达式。当一行中只有0时输入结束，相应的结果不要输出。</p>
+<p>Output</p>
+<p>对每个测试用例输出1行，即该表达式的值，精确到小数点后2位。</p>
+<p>Sample Input</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">1 + 2</span><br><span class="line">4 + 2 * 5 - 7 / 11</span><br><span class="line">0</span><br></pre></td></tr></table></figure>
 
-<h3 id="输出样例："><a href="#输出样例：" class="headerlink" title="输出样例："></a>输出样例：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pat</span><br></pre></td></tr></table></figure>
 
-<h2 id="首先："><a href="#首先：" class="headerlink" title="首先："></a>首先：</h2><p>我们发现下图的诡异场景第50题看似准确率不算很低，但是吧，做的人少呀。顿时比其他少了一半，给这道题目布满诡异的气氛。</p>
-<p><img src="https://i.loli.net/2020/01/07/IBXFH3viYGakNlS.png" alt="6i5tGebuBCwXaoE.png"></p>
-<p>开始做题时，发觉这应该是一道类似于进制转换的题目。</p>
-<p><strong>但是！</strong>做了题才发现有这么几个坑：</p>
-<ol>
-<li>英文字母26个谢谢。<del>不是24 。</del></li>
-<li>pow()函数中;pow返回值为double。此处强制转换为int了，应该是26的转换为25了 。所以在使用pow函数时要小心了。</li>
-<li>第一个数其实是第0个数，第二个是第一个，不是么？</li>
-</ol>
-<h3 id="代码部分："><a href="#代码部分：" class="headerlink" title="代码部分："></a>代码部分：</h3><h3 id="方一：递归："><a href="#方一：递归：" class="headerlink" title="方一：递归："></a>方一：递归：</h3><p>下面的递归应该是比较好理解的进制转换方法。</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">int</span> n,l;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">f</span><span class="params">(<span class="keyword">int</span> a,<span class="keyword">int</span> b)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(a &gt; <span class="number">1</span>) f(a - <span class="number">1</span>,b / <span class="number">26</span>);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"%c"</span>,<span class="string">'z'</span> - (b % <span class="number">26</span>));</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="built_in">cin</span>&gt;&gt;n&gt;&gt;l;</span><br><span class="line">    f(n,l - <span class="number">1</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<p>如果我们想要使得的第二个输入的n为正序，那么我们可以将其与最大做差得到倒序的值（2333）当然，我们调一下代码也是可以的。</p>
-<p>将</p>
-<p>printf(“%c”,’z’ - (b % 26));</p>
-<p>调为</p>
-<p>printf(“%c”,’a’ + (b % 26));即可</p>
-<h3 id="方二："><a href="#方二：" class="headerlink" title="方二："></a>方二：</h3><p>当然我们也可以使用字符串将每个字符储存，最后输出即可。</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> l,n,c;</span><br><span class="line">    <span class="keyword">char</span> s[<span class="number">7</span>];</span><br><span class="line">    <span class="built_in">cin</span>&gt;&gt;l&gt;&gt;n;</span><br><span class="line">    c = l - <span class="number">1</span>;</span><br><span class="line">    s[l] = <span class="string">'\0'</span>;</span><br><span class="line">    n --;</span><br><span class="line">    <span class="keyword">while</span>(n || c &gt;= <span class="number">0</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        s[c --] = <span class="string">'z'</span> - n % <span class="number">26</span>;</span><br><span class="line">        n /= <span class="number">26</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">cout</span>&lt;&lt;s;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+<p>Sample Output</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">3.00</span><br><span class="line">13.36</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<p>Source</p>
+<p> <a href="http://acm.hdu.edu.cn/search.php?field=problem&key=%D5%E3%B4%F3%BC%C6%CB%E3%BB%FA%D1%D0%BE%BF%C9%FA%B8%B4%CA%D4%C9%CF%BB%FA%BF%BC%CA%D4-2006%C4%EA&source=1&searchmode=source" target="_blank" rel="noopener"> 浙大计算机研究生复试上机考试-2006年 </a> </p>
+<p>解题思路：</p>
+<p>主要是采取了两个栈来保存操作符和运算数字。</p>
+<p>另外：亮点在于P(c) &lt; P(op.top())这里的优先级比较：</p>
+<p>我们可以发现通过表格或者其他的形式可以看出在运算优先级的问题上，我们只有采取这样的策略才是最好的。</p>
+<p>当前的优先级高那么压入栈，当前优先级和栈顶（上次的）的优先级相同，或小于上次的话，自然时先算上次的，同时这样的模拟也是最符合我们自己的真实的运算过程的。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">P</span><span class="params">(<span class="keyword">char</span> c)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (c == <span class="string">'+'</span> || c == <span class="string">'-'</span>) <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">2</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">double</span> <span class="title">Ans</span><span class="params">(<span class="keyword">double</span> x, <span class="keyword">double</span> y, <span class="keyword">char</span> c)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (c == <span class="string">'+'</span>) <span class="keyword">return</span> x + y;</span><br><span class="line">    <span class="keyword">if</span> (c == <span class="string">'-'</span>) <span class="keyword">return</span> x - y;</span><br><span class="line">    <span class="keyword">if</span> (c == <span class="string">'*'</span>)<span class="keyword">return</span> x*y;</span><br><span class="line">    <span class="keyword">return</span> x / y;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> n;</span><br><span class="line">    <span class="keyword">while</span> (~<span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;n))</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">char</span> c = getchar();</span><br><span class="line">        <span class="keyword">if</span> (c==<span class="string">'\n'</span>&amp;&amp;n == <span class="number">0</span>)<span class="keyword">break</span>;</span><br><span class="line">        <span class="built_in">stack</span>&lt;<span class="keyword">char</span>&gt; op;</span><br><span class="line">        <span class="built_in">stack</span>&lt;<span class="keyword">double</span>&gt;num;</span><br><span class="line">        num.push(n);</span><br><span class="line">        <span class="keyword">while</span> (<span class="literal">true</span>)<span class="comment">//开始一行的运算，之前已经获取了一个n，并压入num；</span></span><br><span class="line">        &#123;</span><br><span class="line">            <span class="built_in">scanf</span>(<span class="string">"%c %d"</span>, &amp;c, &amp;n);</span><br><span class="line">            <span class="keyword">char</span> k = getchar();</span><br><span class="line">            <span class="keyword">while</span> (!op.empty()&amp;&amp;P(c)&lt;=P(op.top()))<span class="comment">//第一次会跳过</span></span><br><span class="line">            <span class="comment">//当操作符的栈不为空……且现在的操作符优先级小于或等于栈顶的的操作符的优先级时</span></span><br><span class="line">            <span class="comment">//那么先将之前的进行计算</span></span><br><span class="line">            &#123;</span><br><span class="line">                <span class="keyword">char</span> t = op.top();</span><br><span class="line">                op.pop();</span><br><span class="line">                <span class="keyword">double</span> y = num.top();</span><br><span class="line">                num.pop();</span><br><span class="line">                <span class="keyword">double</span> x = num.top();</span><br><span class="line">                num.pop();</span><br><span class="line">                <span class="keyword">double</span> ans = Ans(x, y, t);</span><br><span class="line">                num.push(ans);</span><br><span class="line">            &#125;</span><br><span class="line">            op.push(c);</span><br><span class="line">            num.push(n);</span><br><span class="line">            <span class="keyword">if</span> (k == <span class="string">'\n'</span>)<span class="keyword">break</span>;</span><br><span class="line">            <span class="comment">//这导致了上面还有压入的数字和操作符未被操作，便有了下面的判断op栈</span></span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">while</span> (!op.empty())</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">char</span> t = op.top();</span><br><span class="line">            op.pop();</span><br><span class="line">            <span class="keyword">double</span> y = num.top();</span><br><span class="line">            num.pop();</span><br><span class="line">            <span class="keyword">double</span> x = num.top();</span><br><span class="line">            num.pop();</span><br><span class="line">            <span class="keyword">double</span> ans = Ans(x, y, t);</span><br><span class="line">            num.push(ans);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"%.2f\n"</span>, num.top());</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 
     </div>
@@ -295,24 +290,21 @@
 
       <footer class="post-footer">
           <div class="post-tags">
-              <a href="/tags/pta/" rel="tag"># pta</a>
+              <a href="/tags/hdu-%E6%A0%88/" rel="tag"># hdu 栈</a>
           </div>
 
         
 
           <div class="post-nav">
             <div class="post-nav-next post-nav-item">
-                <a href="/2020/01/06/L1-048%E7%9F%A9%E9%98%B5A%E4%B9%98%E4%BB%A5B/" rel="next" title="L1-048矩阵A乘以B">
-                  <i class="fa fa-chevron-left"></i> L1-048矩阵A乘以B
+                <a href="/2020/06/04/pta%E5%85%AD%E5%BA%A6%E7%A9%BA%E9%97%B4/" rel="next" title="pta六度空间">
+                  <i class="fa fa-chevron-left"></i> pta六度空间
                 </a>
             </div>
 
             <span class="post-nav-divider"></span>
 
             <div class="post-nav-prev post-nav-item">
-                <a href="/2020/01/16/2020%E5%AD%A6%E6%A0%A1%E5%90%84%E7%9B%B8%E5%85%B3%E6%AF%94%E8%B5%9B%EF%BC%8C%E8%B5%84%E6%A0%BC%E8%AF%81%E4%B9%A6%E7%9A%84%E6%97%B6%E9%97%B4/" rel="prev" title="2020学校各相关比赛，资格证书的时间">
-                  2020学校各相关比赛，资格证书的时间 <i class="fa fa-chevron-right"></i>
-                </a>
             </div>
           </div>
       </footer>
@@ -351,7 +343,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#输入格式："><span class="nav-number">1.</span> <span class="nav-text">输入格式：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#输出格式："><span class="nav-number">2.</span> <span class="nav-text">输出格式：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#输入样例："><span class="nav-number">3.</span> <span class="nav-text">输入样例：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#输出样例："><span class="nav-number">4.</span> <span class="nav-text">输出样例：</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#首先："><span class="nav-number"></span> <span class="nav-text">首先：</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#代码部分："><span class="nav-number">1.</span> <span class="nav-text">代码部分：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#方一：递归："><span class="nav-number">2.</span> <span class="nav-text">方一：递归：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#方二："><span class="nav-number">3.</span> <span class="nav-text">方二：</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#简单计算器"><span class="nav-number">1.</span> <span class="nav-text">简单计算器</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
