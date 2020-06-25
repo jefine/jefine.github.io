@@ -50,16 +50,20 @@
   };
 </script>
 
-  <meta name="description" content="使每个人的生活多一份美好。">
-<meta property="og:type" content="website">
-<meta property="og:title" content="jefine">
-<meta property="og:url" content="https:&#x2F;&#x2F;jefine.github.io&#x2F;archives&#x2F;2020&#x2F;02&#x2F;page&#x2F;2&#x2F;index.html">
+  <meta name="description" content="阿里云云端linux部署（安装可视化界面和基本操作）">
+<meta name="keywords" content="cloud">
+<meta property="og:type" content="article">
+<meta property="og:title" content="linux_prepare">
+<meta property="og:url" content="https:&#x2F;&#x2F;jefine.github.io&#x2F;2020&#x2F;06&#x2F;25&#x2F;linux-prepare&#x2F;index.html">
 <meta property="og:site_name" content="jefine">
-<meta property="og:description" content="使每个人的生活多一份美好。">
+<meta property="og:description" content="阿里云云端linux部署（安装可视化界面和基本操作）">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https:&#x2F;&#x2F;edu.aliyun.com&#x2F;files&#x2F;default&#x2F;2017&#x2F;07-31&#x2F;220916c810e8689358.png">
+<meta property="og:updated_time" content="2020-06-25T04:41:53.621Z">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https:&#x2F;&#x2F;edu.aliyun.com&#x2F;files&#x2F;default&#x2F;2017&#x2F;07-31&#x2F;220916c810e8689358.png">
 
-<link rel="canonical" href="https://jefine.github.io/archives/2020/02/page/2/">
+<link rel="canonical" href="https://jefine.github.io/2020/06/25/linux-prepare/">
 
 
 <script id="page-configurations">
@@ -67,13 +71,13 @@
   CONFIG.page = {
     sidebar: "",
     isHome: false,
-    isPost: false,
+    isPost: true,
     isPage: false,
-    isArchive: true
+    isArchive: false
   };
 </script>
 
-  <title>归档 | jefine</title>
+  <title>linux_prepare | jefine</title>
   
 
 
@@ -183,53 +187,114 @@
           <div class="content">
             
 
+  <div class="posts-expand">
+      
   
   
-  
-  <div class="post-block">
-    <div class="posts-collapse">
-      <div class="collection-title">
-        
-        <span class="collection-header">还行! 目前共计 46 篇日志。 继续努力。</span>
-      </div>
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://jefine.github.io/2020/06/25/linux-prepare/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="jefine">
+      <meta itemprop="description" content="使每个人的生活多一份美好。">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="jefine">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          linux_prepare
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2020-06-25 12:06:41 / 修改时间：12:41:53" itemprop="dateCreated datePublished" datetime="2020-06-25T12:06:41+08:00">2020-06-25</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/justForFun/" itemprop="url" rel="index">
+                    <span itemprop="name">justForFun</span>
+                  </a>
+                </span>
+            </span>
+
+
+          
+             <span id="/2020/06/25/linux-prepare/" class="leancloud_visitors" data-flag-title="linux_prepare">
+               <span class="post-meta-divider">|</span>
+               <span classs="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读量： </span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-    <div class="collection-year">
-      <h1 class="collection-header">2020</h1>
+        <h2 id="阿里云云端linux部署（安装可视化界面和基本操作）"><a href="#阿里云云端linux部署（安装可视化界面和基本操作）" class="headerlink" title="阿里云云端linux部署（安装可视化界面和基本操作）"></a>阿里云云端linux部署（安装可视化界面和基本操作）</h2><a id="more"></a><h3 id="选择系统"><a href="#选择系统" class="headerlink" title="选择系统"></a>选择系统</h3><p> 这里我们选择公共镜像的 CentOS 7 64bit 系统 </p>
+<h3 id="更新软件源并升级系统"><a href="#更新软件源并升级系统" class="headerlink" title="更新软件源并升级系统"></a><strong>更新软件源并升级系统</strong></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum update&amp;&amp; yum install wqy-microhei-fonts</span><br></pre></td></tr></table></figure>
+
+<h3 id="安装Gnome-VNC一键包："><a href="#安装Gnome-VNC一键包：" class="headerlink" title="安装Gnome+VNC一键包："></a><strong>安装Gnome+VNC一键包：</strong></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget https://gist.githubusercontent.com/ivmm/d93138038edbd551def09205bb61ae11/raw/8ed82411926acb3ab331d293f6200447ad2c85cf/gnome_install.sh&amp;&amp; bash gnome_install.sh</span><br></pre></td></tr></table></figure>
+
+<p>然后就是中文的提示，让我们设置密码了（设置之后，还提醒我们可以设置一个其他的权限较小的一个账户，可设置可不设置）</p>
+<p>然后就会提示你安装好了</p>
+<p><img src="https://edu.aliyun.com/files/default/2017/07-31/220916c810e8689358.png" alt></p>
+
     </div>
 
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+    
+    
+    
 
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2020-02-08T19:40:05+08:00"
-              content="2020-02-08">
-          02-08
-        </time>
-      </div>
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/cloud/" rel="tag"># cloud</a>
+          </div>
 
-      <h2 class="post-title">
-          <a class="post-title-link" href="/2020/02/08/%E7%AE%97%E6%B3%95%E6%97%B6%E9%97%B4%E5%A4%8D%E6%9D%82%E5%BA%A6%E5%88%86%E6%9E%90d%E5%A4%A7o/" itemprop="url">
-            <span itemprop="name">算法时间复杂度分析</span>
-          </a>
-      </h2>
+        
 
-    </header>
+          <div class="post-nav">
+            <div class="post-nav-next post-nav-item">
+                <a href="/2020/06/24/ecsIDE/" rel="next" title="阿里云ecs构建在线IDE">
+                  <i class="fa fa-chevron-left"></i> 阿里云ecs构建在线IDE
+                </a>
+            </div>
+
+            <span class="post-nav-divider"></span>
+
+            <div class="post-nav-prev post-nav-item">
+            </div>
+          </div>
+      </footer>
+    
   </article>
+  
+  
+  
 
-
-    </div>
   </div>
-  
-  
-  
-
-  
-  <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/archives/2020/02/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/archives/2020/02/">1</a><span class="page-number current">2</span>
-  </nav>
-
 
 
           </div>
@@ -258,6 +323,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#阿里云云端linux部署（安装可视化界面和基本操作）"><span class="nav-number">1.</span> <span class="nav-text">阿里云云端linux部署（安装可视化界面和基本操作）</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#选择系统"><span class="nav-number">1.1.</span> <span class="nav-text">选择系统</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#更新软件源并升级系统"><span class="nav-number">1.2.</span> <span class="nav-text">更新软件源并升级系统</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装Gnome-VNC一键包："><span class="nav-number">1.3.</span> <span class="nav-text">安装Gnome+VNC一键包：</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
