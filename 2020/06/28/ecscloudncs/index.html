@@ -50,16 +50,21 @@
   };
 </script>
 
-  <meta name="description" content="使每个人的生活多一份美好。">
-<meta property="og:type" content="website">
-<meta property="og:title" content="jefine">
-<meta property="og:url" content="https:&#x2F;&#x2F;jefine.github.io&#x2F;categories&#x2F;%E7%BC%96%E7%A8%8B&#x2F;index.html">
+  <meta name="description" content="基于aliyunECS和NAS搭建个人网盘 OwnCloud">
+<meta name="keywords" content="cloud">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ecscloudncs">
+<meta property="og:url" content="https:&#x2F;&#x2F;jefine.github.io&#x2F;2020&#x2F;06&#x2F;28&#x2F;ecscloudncs&#x2F;index.html">
 <meta property="og:site_name" content="jefine">
-<meta property="og:description" content="使每个人的生活多一份美好。">
+<meta property="og:description" content="基于aliyunECS和NAS搭建个人网盘 OwnCloud">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https:&#x2F;&#x2F;i.loli.net&#x2F;2020&#x2F;06&#x2F;28&#x2F;6wNZtSmgx3AJO49.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;i.loli.net&#x2F;2020&#x2F;06&#x2F;28&#x2F;LduHMVnsPJvEGAT.png">
+<meta property="og:updated_time" content="2020-06-28T04:41:25.451Z">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https:&#x2F;&#x2F;i.loli.net&#x2F;2020&#x2F;06&#x2F;28&#x2F;6wNZtSmgx3AJO49.png">
 
-<link rel="canonical" href="https://jefine.github.io/categories/%E7%BC%96%E7%A8%8B/">
+<link rel="canonical" href="https://jefine.github.io/2020/06/28/ecscloudncs/">
 
 
 <script id="page-configurations">
@@ -67,13 +72,13 @@
   CONFIG.page = {
     sidebar: "",
     isHome: false,
-    isPost: false,
+    isPost: true,
     isPage: false,
     isArchive: false
   };
 </script>
 
-  <title>分类: 编程 | jefine</title>
+  <title>ecscloudncs | jefine</title>
   
 
 
@@ -183,233 +188,131 @@
           <div class="content">
             
 
+  <div class="posts-expand">
+      
   
   
-  
-  <div class="post-block">
-    <div class="posts-collapse">
-      <div class="collection-title">
-        <h1 class="collection-header">编程
-          <small>分类</small>
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://jefine.github.io/2020/06/28/ecscloudncs/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="jefine">
+      <meta itemprop="description" content="使每个人的生活多一份美好。">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="jefine">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          ecscloudncs
         </h1>
-      </div>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2020-06-28 11:43:23 / 修改时间：12:41:25" itemprop="dateCreated datePublished" datetime="2020-06-28T11:43:23+08:00">2020-06-28</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/justForFun/" itemprop="url" rel="index">
+                    <span itemprop="name">justForFun</span>
+                  </a>
+                </span>
+            </span>
+
+
+          
+             <span id="/2020/06/28/ecscloudncs/" class="leancloud_visitors" data-flag-title="ecscloudncs">
+               <span class="post-meta-divider">|</span>
+               <span classs="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读量： </span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-    <div class="collection-year">
-      <h1 class="collection-header">2020</h1>
-    </div>
+        <p> 基于aliyunECS和NAS搭建个人网盘 OwnCloud</p><a id="more"></a>
+<h2 id="首先连接服务器"><a href="#首先连接服务器" class="headerlink" title="首先连接服务器"></a>首先连接服务器</h2><p>通过ssh形式即可（许多种方法，就不一一列举了）</p>
+<h2 id="安装OwnCloud"><a href="#安装OwnCloud" class="headerlink" title="安装OwnCloud"></a>安装OwnCloud</h2><p>OwnCloud是一款开源的云存储软件，基于PHP的自建网盘。基本上是私人使用，没有用户注册功能，但是有用户添加功能，你可以无限制地添加用户，OwnCloud支持多个平台（windows，MAC，Android，IOS，Linux）。</p>
+<ol>
+<li>执行以下命令，添加一个新的软件源。</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">rpm --import https://download.owncloud.org/download/repositories/10.0/CentOS_7/repodata/repomd.xml.key</span><br><span class="line"></span><br><span class="line">wget http://download.owncloud.org/download/repositories/10.0/CentOS_7/ce:10.0.repo -O /etc/yum.repos.d/ce:10.0.repo</span><br></pre></td></tr></table></figure>
 
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+<ol start="2">
+<li>执行以下命令安装OwnCloud-files。（网络环境的原因吧，很慢）</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum install owncloud-files</span><br></pre></td></tr></table></figure>
 
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2020-06-07T10:26:22+08:00"
-              content="2020-06-07">
-          06-07
-        </time>
-      </div>
+<p><img src="https://i.loli.net/2020/06/28/6wNZtSmgx3AJO49.png" alt></p>
+<ol start="3">
+<li>执行以下命令查看安装是否成功。</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ll /var/www/html</span><br></pre></td></tr></table></figure>
 
-      <h2 class="post-title">
-          <a class="post-title-link" href="/2020/06/07/hdu1237%E8%AE%A1%E7%AE%97%E5%99%A8/" itemprop="url">
-            <span itemprop="name">hdu1237计算器</span>
-          </a>
-      </h2>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2020-03-21T16:58:48+08:00"
-              content="2020-03-21">
-          03-21
-        </time>
-      </div>
-
-      <h2 class="post-title">
-          <a class="post-title-link" href="/2020/03/21/p1086%E8%8A%B1%E7%94%9F%E9%87%87%E6%91%98/" itemprop="url">
-            <span itemprop="name">p1086花生采摘</span>
-          </a>
-      </h2>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2020-02-29T12:26:23+08:00"
-              content="2020-02-29">
-          02-29
-        </time>
-      </div>
-
-      <h2 class="post-title">
-          <a class="post-title-link" href="/2020/02/29/P1023%E7%A8%8E%E6%94%B6%E4%B8%8E%E8%A1%A5%E8%B4%B4%E9%97%AE%E9%A2%98/" itemprop="url">
-            <span itemprop="name">P1023税收与补贴问题</span>
-          </a>
-      </h2>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2020-01-29T18:09:07+08:00"
-              content="2020-01-29">
-          01-29
-        </time>
-      </div>
-
-      <h2 class="post-title">
-          <a class="post-title-link" href="/2020/01/29/P1149%E7%81%AB%E6%9F%B4%E6%A3%92%E7%AD%89%E5%BC%8F/" itemprop="url">
-            <span itemprop="name">P1149火柴棒等式</span>
-          </a>
-      </h2>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2020-01-06T22:01:17+08:00"
-              content="2020-01-06">
-          01-06
-        </time>
-      </div>
-
-      <h2 class="post-title">
-          <a class="post-title-link" href="/2020/01/06/L1-050%E5%80%92%E6%95%B0%E7%AC%ACN%E4%B8%AA%E5%AD%97%E7%AC%A6%E4%B8%B2/" itemprop="url">
-            <span itemprop="name">L1-050倒数第N个字符串</span>
-          </a>
-      </h2>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2020-01-06T14:40:05+08:00"
-              content="2020-01-06">
-          01-06
-        </time>
-      </div>
-
-      <h2 class="post-title">
-          <a class="post-title-link" href="/2020/01/06/L1-048%E7%9F%A9%E9%98%B5A%E4%B9%98%E4%BB%A5B/" itemprop="url">
-            <span itemprop="name">L1-048矩阵A乘以B</span>
-          </a>
-      </h2>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2020-01-05T22:30:58+08:00"
-              content="2020-01-05">
-          01-05
-        </time>
-      </div>
-
-      <h2 class="post-title">
-          <a class="post-title-link" href="/2020/01/05/L1-046%E6%95%B4%E9%99%A4%E5%85%89%E6%A3%8D%EF%BC%88%E6%A8%A1%E6%8B%9F%E5%A4%A7%E6%95%B0%E9%99%A4%E6%B3%95%EF%BC%89/" itemprop="url">
-            <span itemprop="name">L1-046整除光棍（模拟大数除法）</span>
-          </a>
-      </h2>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2020-01-04T21:08:22+08:00"
-              content="2020-01-04">
-          01-04
-        </time>
-      </div>
-
-      <h2 class="post-title">
-          <a class="post-title-link" href="/2020/01/04/%E6%89%93%E5%8D%B0%E6%B2%99%E6%BC%8F/" itemprop="url">
-            <span itemprop="name">打印沙漏（代码较详细）</span>
-          </a>
-      </h2>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2020-01-04T18:37:05+08:00"
-              content="2020-01-04">
-          01-04
-        </time>
-      </div>
-
-      <h2 class="post-title">
-          <a class="post-title-link" href="/2020/01/04/L1-033%E5%87%BA%E7%94%9F%E5%B9%B4/" itemprop="url">
-            <span itemprop="name">L1-033出生年</span>
-          </a>
-      </h2>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2020-01-03T16:28:34+08:00"
-              content="2020-01-03">
-          01-03
-        </time>
-      </div>
-
-      <h2 class="post-title">
-          <a class="post-title-link" href="/2020/01/03/%E6%9F%A5%E9%AA%8C%E8%BA%AB%E4%BB%BD%E8%AF%81/" itemprop="url">
-            <span itemprop="name">查验身份证</span>
-          </a>
-      </h2>
-
-    </header>
-  </article>
+<p>在这个过程中如需确认，全部yes。</p>
+<h2 id="配置owncloud"><a href="#配置owncloud" class="headerlink" title="配置owncloud"></a>配置owncloud</h2><p>最后一步</p>
+<p>登录 公网ip:owncloud</p>
+<p>创建账号密码即可（数据库最好不搭理他，总出问题）</p>
+<p>然后就可以登录使用了</p>
+<p><img src="https://i.loli.net/2020/06/28/LduHMVnsPJvEGAT.png" alt></p>
 
     </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/cloud/" rel="tag"># cloud</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-next post-nav-item">
+                <a href="/2020/06/25/linux-prepare/" rel="next" title="linux_prepare">
+                  <i class="fa fa-chevron-left"></i> linux_prepare
+                </a>
+            </div>
+
+            <span class="post-nav-divider"></span>
+
+            <div class="post-nav-prev post-nav-item">
+            </div>
+          </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
   </div>
-  
-  
-  
-
-  
-  <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/categories/%E7%BC%96%E7%A8%8B/page/2/">2</a><a class="extend next" rel="next" href="/categories/%E7%BC%96%E7%A8%8B/page/2/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
-  </nav>
-
 
 
           </div>
@@ -438,6 +341,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#首先连接服务器"><span class="nav-number">1.</span> <span class="nav-text">首先连接服务器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装OwnCloud"><span class="nav-number">2.</span> <span class="nav-text">安装OwnCloud</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#配置owncloud"><span class="nav-number">3.</span> <span class="nav-text">配置owncloud</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
