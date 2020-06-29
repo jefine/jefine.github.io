@@ -263,7 +263,6 @@
 </li>
 <li><p><strong>Using *new* keyword</strong></p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">String s = new String (“GeeksforGeeks”);</span><br></pre></td></tr></table></figure>
-
 </li>
 </ul>
 <h2 id="字符串背后的一些事情："><a href="#字符串背后的一些事情：" class="headerlink" title="字符串背后的一些事情："></a>字符串背后的一些事情：</h2><p>String 字符串是由字符数组（char array)所支持。</p>
@@ -295,12 +294,10 @@
 <li><p><a href="https://www.geeksforgeeks.org/java-util-stringjoiner-java8/" target="_blank" rel="noopener">StringJoiner</a>: StringJoiner is a class in <em><a href="https://www.geeksforgeeks.org/tag/java-util-package/" target="_blank" rel="noopener">java.util</a></em> package which is used to construct a sequence of characters(strings) separated by a delimiter and optionally starting with a supplied prefix and ending with a supplied suffix. Though this can also be with the help of StringBuilder class to append delimiter after each string, StringJoiner provides an easy way to do that without much code to write.（也是处理分隔符的，和上面的是一对儿）</p>
 <p><strong>Syntax:</strong></p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">public StringJoiner(CharSequence delimiter)</span><br></pre></td></tr></table></figure>
-
 </li>
 </ul>
 <h2 id="more："><a href="#more：" class="headerlink" title="more："></a>more：</h2><p>此外，在我们要去取值的时候，比如String第二个字符的值的时候，应该用:</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">String str = &quot;hello word&quot;;</span><br><span class="line">char mychar =  str.charAt(1);</span><br></pre></td></tr></table></figure>
-
 <p>如果想要比较字符串的值是否相同的话：</p>
 <p>if（s.contentEquals(“-1”)）来比较。否则就是比较储存位置（因为String在java中是对象，不是基本类型）</p>
 
@@ -575,6 +572,8 @@
 
 
 
+
+  
 
   
 

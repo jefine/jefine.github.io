@@ -261,18 +261,15 @@
 <li>执行以下命令，添加一个新的软件源。</li>
 </ol>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">rpm --import https://download.owncloud.org/download/repositories/10.0/CentOS_7/repodata/repomd.xml.key</span><br><span class="line"></span><br><span class="line">wget http://download.owncloud.org/download/repositories/10.0/CentOS_7/ce:10.0.repo -O /etc/yum.repos.d/ce:10.0.repo</span><br></pre></td></tr></table></figure>
-
-<ol start="2">
+<ol>
 <li>执行以下命令安装OwnCloud-files。（网络环境的原因吧，很慢）</li>
 </ol>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum install owncloud-files</span><br></pre></td></tr></table></figure>
-
 <p><img src="https://i.loli.net/2020/06/28/6wNZtSmgx3AJO49.png" alt></p>
-<ol start="3">
+<ol>
 <li>执行以下命令查看安装是否成功。</li>
 </ol>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ll /var/www/html</span><br></pre></td></tr></table></figure>
-
 <p>在这个过程中如需确认，全部yes。</p>
 <h2 id="配置owncloud"><a href="#配置owncloud" class="headerlink" title="配置owncloud"></a>配置owncloud</h2><p>最后一步</p>
 <p>登录 公网ip:owncloud</p>
@@ -551,6 +548,8 @@
 
 
 
+
+  
 
   
 

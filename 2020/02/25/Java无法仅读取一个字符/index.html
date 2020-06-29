@@ -262,25 +262,17 @@
 <p>2．调用Scanner对象的next()方法获取控制台输入，返回的是一个String类型,因为没有nextChar()方法</p>
 <p>3．调用String的charAt(0)方法获取第一个字符</p>
  <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"> Scanner sc = <span class="keyword">new</span> Scanner(System.in);</span><br><span class="line"></span><br><span class="line"> String s = sc.next();</span><br><span class="line"></span><br><span class="line"> <span class="keyword">char</span> c = s.charAt(<span class="number">0</span>);</span><br><span class="line"><span class="comment">//最后两条语句也可写为char c = sc.next().charAt(0);</span></span><br></pre></td></tr></table></figure>
-
-
-
-
-
 <p><strong>方法二：</strong></p>
 <p>使用方法，将string转换为字符数组，然后取第一个字符即可</p>
  <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Scanner sc = <span class="keyword">new</span> Scanner(System.in);</span><br><span class="line"></span><br><span class="line"><span class="keyword">char</span> c = scanner.next().toCharArray()[<span class="number">0</span>];</span><br></pre></td></tr></table></figure>
-
 <p><strong><em>方法三：</em></strong></p>
 <p><em>需要有强制转换（因为in.read()得到的是int类型）</em></p>
 <p>需要引入.io（import java.io.*;）</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">char</span> t = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">try</span> &#123;</span><br><span class="line">      t = (<span class="keyword">char</span>)System.in.read();</span><br><span class="line">    &#125; <span class="keyword">catch</span> (IOException e) &#123;</span><br><span class="line">    e.printStackTrace();</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
-
 <p> <strong>或</strong></p>
 <p>2.在方法中抛出异常：public static void main(String[] args) throws IOException</p>
 <p>然后</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">char</span> t = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">t = (<span class="keyword">char</span>)System.in.read();</span><br></pre></td></tr></table></figure>
-
 <p><img src="/2020/02/25/Java%E6%97%A0%E6%B3%95%E4%BB%85%E8%AF%BB%E5%8F%96%E4%B8%80%E4%B8%AA%E5%AD%97%E7%AC%A6/1.png" alt></p>
 <p>但可以做到不影响其他的字符（真正意义上的读入一个字符）</p>
 <p><img src="/2020/02/25/Java%E6%97%A0%E6%B3%95%E4%BB%85%E8%AF%BB%E5%8F%96%E4%B8%80%E4%B8%AA%E5%AD%97%E7%AC%A6/2.png" alt></p>
@@ -552,6 +544,8 @@
 
 
 
+
+  
 
   
 

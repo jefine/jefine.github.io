@@ -256,7 +256,6 @@
 <p>首先，我们将被排序的数组，分为两个部分：有序区和无序区。</p>
 <p>我们在每一轮的寻找中最小值下标后记得交换，然后一定要将最小值下标再次初始化为第二个（假设刚刚是第一轮查找）（这个初始下标也成了分界有序区和无序去的下标），并且我们每次都要寻找到新的无序区的最小的下标。</p>
 <h3 id="函数样例："><a href="#函数样例：" class="headerlink" title="函数样例："></a>函数样例：</h3><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">selectionSort</span><span class="params">(<span class="keyword">int</span> arr[], <span class="keyword">int</span> n)</span> </span></span><br><span class="line"><span class="function"></span>&#123; </span><br><span class="line">    <span class="keyword">int</span> i, j, min_idx; </span><br><span class="line">  </span><br><span class="line">    <span class="comment">// 一个接着一个，将无序区的排列为有序</span></span><br><span class="line">    <span class="keyword">for</span> (i = <span class="number">0</span>; i &lt; n<span class="number">-1</span>; i++) </span><br><span class="line">    &#123; </span><br><span class="line">        <span class="comment">// Find the minimum element in unsorted array </span></span><br><span class="line">        min_idx = i; <span class="comment">//一定要记得有初始化，而且他的位置在这里哦。</span></span><br><span class="line">        <span class="comment">//及上面提及的从新开始寻找最小值。</span></span><br><span class="line">        <span class="keyword">for</span> (j = i+<span class="number">1</span>; j &lt; n; j++) </span><br><span class="line">          <span class="keyword">if</span> (arr[j] &lt; arr[min_idx]) </span><br><span class="line">            min_idx = j; </span><br><span class="line">  </span><br><span class="line">        <span class="comment">//交换最小值和其自己</span></span><br><span class="line">        <span class="comment">//我们在这里可以加一个判断，来(可能)减少其交换次数</span></span><br><span class="line">        <span class="comment">//if(i! = min_idx)//如果使用的话，记得加大括号将下面的三个都括起来哦</span></span><br><span class="line">        <span class="keyword">int</span> t = arr[min_idx];</span><br><span class="line">        arr[min_idx] = arr[i];</span><br><span class="line">        arr[i] = t;</span><br><span class="line">        </span><br><span class="line">        </span><br><span class="line">    &#125; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
 <p>也许我们都会陷入一个又一个的坑，希望能帮助大家，踩坑多么有意义啊。</p>
 
     </div>
@@ -530,6 +529,8 @@
 
 
 
+
+  
 
   
 

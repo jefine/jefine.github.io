@@ -262,14 +262,11 @@
 <p>好的，那么总结一下<strong>规律</strong>，<strong>假设有n个盘子，我们就是借助一个柱子c，把a上的n-1个盘子放到b上，再把b上的n-1个盘子通过a移动到c上即可</strong>。（下图较复杂，简单看看就好）</p>
 <p><img src="/2020/02/10/%E6%B1%89%E8%AF%BA%E5%A1%94%E7%9A%84%E6%80%9D%E8%80%83%E5%8F%8A%E8%A7%A3%E7%AD%94/Untitled.png" alt="Untitled">好的，那么这一步的代码该怎么写呢？？？</p>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hanoi(n<span class="number">-1</span>,a,c,b);<span class="comment">//我们就是借助一个柱子c，把a上的n-1个盘子放到b上，</span></span><br><span class="line"><span class="built_in">printf</span>(<span class="string">"将%c移动到%c\\n"</span>,a,b);</span><br><span class="line">hanoi(n<span class="number">-1</span>,b,a,c);<span class="comment">//再把b上的n-1个盘子通过a移动到c上即可。</span></span><br></pre></td></tr></table></figure>
-
 <p>这样是不是就可以理解了。</p>
 <p>好的，但是我们要给这个函数一个出口不然，他就会一直跑下去。。。（并且问我怎么知道的）</p>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span>(n==<span class="number">1</span>)&#123;<span class="comment">//终止条件。</span></span><br><span class="line"><span class="built_in">printf</span>(<span class="string">"将%c移动到%c\\n"</span>,a,c);<span class="comment">//最后不就是把a上的最后一个放到c上，就可以了吧。</span></span><br><span class="line"><span class="comment">//我们不考虑别的。嘿嘿</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
 <p>那么综合起来就是：</p>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="keyword">int</span> cnt;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">hanoi</span><span class="params">(<span class="keyword">int</span> n,<span class="keyword">char</span> a,<span class="keyword">char</span> b,<span class="keyword">char</span> c)</span></span>&#123;</span><br><span class="line">cnt++;</span><br><span class="line"><span class="keyword">if</span>(n==<span class="number">1</span>)&#123;</span><br><span class="line"><span class="built_in">printf</span>(<span class="string">"将%c移动到%c\\n"</span>,a,c);</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">else</span> &#123;</span><br><span class="line">hanoi(n<span class="number">-1</span>,a,c,b);</span><br><span class="line"><span class="built_in">printf</span>(<span class="string">"将%c移动到%c\\n"</span>,a,b);</span><br><span class="line">hanoi(n<span class="number">-1</span>,b,a,c);</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line"><span class="keyword">int</span> n;</span><br><span class="line"><span class="keyword">char</span> a=<span class="string">'a'</span>,b=<span class="string">'b'</span>,c=<span class="string">'c'</span>;</span><br><span class="line"><span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;n);</span><br><span class="line">hanoi(n,a,b,c);</span><br><span class="line"><span class="built_in">printf</span>(<span class="string">"%d"</span>,cnt);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
 <p>注释可以参考上面的哦。</p>
 <p>链接：知乎上有一个有意思的答案，不妨一看：</p>
 <p><a href="https://www.zhihu.com/question/24385418/answer/257751077" target="_blank" rel="noopener">https://www.zhihu.com/question/24385418/answer/257751077</a></p>
@@ -546,6 +543,8 @@
 
 
 
+
+  
 
   
 
