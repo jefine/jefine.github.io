@@ -50,15 +50,15 @@
   };
 </script>
 
-  <meta name="description" content="这是一个挺有意思的利用二进制的性质进行打印n个数字（从0到n）的所有组合题目。">
+  <meta name="description" content="这是一道挺有意思的利用二进制的性质进行打印n个数字（从0到n）的所有组合题目。">
 <meta name="keywords" content="二进制">
 <meta property="og:type" content="article">
 <meta property="og:title" content="输出全组合二进制">
 <meta property="og:url" content="https:&#x2F;&#x2F;jefine.github.io&#x2F;2020&#x2F;07&#x2F;04&#x2F;%E8%BE%93%E5%87%BA%E5%85%A8%E7%BB%84%E5%90%88%E4%BA%8C%E8%BF%9B%E5%88%B6&#x2F;index.html">
 <meta property="og:site_name" content="jefine">
-<meta property="og:description" content="这是一个挺有意思的利用二进制的性质进行打印n个数字（从0到n）的所有组合题目。">
+<meta property="og:description" content="这是一道挺有意思的利用二进制的性质进行打印n个数字（从0到n）的所有组合题目。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2020-07-05T06:30:52.104Z">
+<meta property="og:updated_time" content="2020-07-10T08:26:14.755Z">
 <meta name="twitter:card" content="summary">
 
 <link rel="canonical" href="https://jefine.github.io/2020/07/04/%E8%BE%93%E5%87%BA%E5%85%A8%E7%BB%84%E5%90%88%E4%BA%8C%E8%BF%9B%E5%88%B6/">
@@ -220,7 +220,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-07-05 14:30:52" itemprop="dateModified" datetime="2020-07-05T14:30:52+08:00">2020-07-05</time>
+                <time title="修改时间：2020-07-10 16:26:14" itemprop="dateModified" datetime="2020-07-10T16:26:14+08:00">2020-07-10</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -257,7 +257,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>这是一个挺有意思的利用二进制的性质进行打印n个数字（从0到n）的所有组合题目。</p><a id="more"></a>
+        <p>这是一道挺有意思的利用二进制的性质进行打印n个数字（从0到n）的所有组合题目。</p><a id="more"></a>
 <p>首先：辨析一下排列和组合的区别。</p>
 <h3 id="排列组合"><a href="#排列组合" class="headerlink" title="排列组合"></a>排列组合</h3><p>排列： </p>
 <script type="math/tex; mode=display">
@@ -294,6 +294,17 @@
 <p>不难发现，我们最终并没有用到3，4，5，6，7这样的十进制数字（尽管他们在上表中有所对应，但那也不过是各种情况的编号罢了，），只是用了0，1，2这恰好是[0,n)的范围内的数字。大胆推测 只有当i的数字越大那么在j中二进制中的1 出现的概率越大，（tips，$0111_{(2)}$恰好是7，二进制中的1的个数是（2+1）个1 emm~）。例如$7_{(10)}$ 对应$0111_{(2)}$那么他就可以有三个数字的集合成立了（果然是012）</p>
 <p><del>上面一段有点饶头，仔细想想，都是对的，但似乎没什么用~可以无视</del>~~</p>
 <p>自己在不断探索的过程中，仍能够不断的发现二进制的奇妙用途，和神奇1 的对应。此题还需慢慢回味。</p>
+<hr>
+<p>​    数日后，再次回顾此代码，发现有着许多的新的感悟：之前不太明白的地方都一一揭开：</p>
+<p>首先就是</p>
+<script type="math/tex; mode=display">
+\begin{vmatrix}子集&\emptyset & a_0 & a_1  &a_1,a_0 &a_2 &a_2,a_0 & a_2,a_1 &a_2,a_1,a_0\\二进制数&000 & 001 & 010 & 011 & 100 & 101 & 110 & 111 \\对应的十进制(i)&0 & 1  & 2 & 3 & 4 & 5 & 6 & 7  \\\end{vmatrix}</script><p>哈哈，这个和上图的有什么区别呢？<del>并没有</del>，只是多了一个标识i</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (i &amp; ( <span class="number">1</span>&lt;&lt;j ) )</span><br></pre></td></tr></table></figure>
+<p>回顾代码：不难看出其实对于作者的行为我<del>们</del>是有一些困惑的。为什么要这样做？</p>
+<p>那我们不妨解释一下i和j的作用好了</p>
+<p><strong>i</strong>  :其实对应的是上表中的对应的十进制：也就是说，我们将i循环了$n^2$次，其实就是恰好我们将这n个子集打印出来。</p>
+<p><strong>j</strong>  :其实是二进制的从低到高位依次赋值1，并判断是否&amp;，1&lt;&lt;j 其实就是 $2^j$ 次方wow，当j为0时其实就是二进制的最后一位为1，j=1时判断倒数第二位是否为1。那么判断的另一个对象是谁呢？当然是i。</p>
+<p>每一个i的二进制都不相同，我们就可以依次利用j来判断该位上是否有数字有的话就把j输出出去，j是[0,n)所以可以利用二进制完美地实现所有子集的输出。</p>
 
     </div>
 
