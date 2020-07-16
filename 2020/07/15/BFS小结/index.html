@@ -58,7 +58,7 @@
 <meta property="og:site_name" content="jefine">
 <meta property="og:description" content="BFS可以说是在搜索中十分常用的基础算法了，在这次的初学中，做一个小结，希望可以将其模块化，系统化，公式化。从而进一步提升对bfs的理解,加快自己的解题步骤, 当然,之后少不了DFS的相关文档咯.">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2020-07-15T08:43:03.550Z">
+<meta property="og:updated_time" content="2020-07-16T11:22:08.837Z">
 <meta name="twitter:card" content="summary">
 
 <link rel="canonical" href="https://jefine.github.io/2020/07/15/BFS%E5%B0%8F%E7%BB%93/">
@@ -212,10 +212,16 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              
 
-              <time title="创建时间：2020-07-15 15:52:04 / 修改时间：16:43:03" itemprop="dateCreated datePublished" datetime="2020-07-15T15:52:04+08:00">2020-07-15</time>
+              <time title="创建时间：2020-07-15 15:52:04" itemprop="dateCreated datePublished" datetime="2020-07-15T15:52:04+08:00">2020-07-15</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-07-16 19:22:08" itemprop="dateModified" datetime="2020-07-16T19:22:08+08:00">2020-07-16</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
@@ -293,7 +299,10 @@
 <li>重复步骤2。</li>
 </ol>
 <p>其中重要 的就是我们需要限制的约束条件和下一个位置的可能点.当然bfs是一个思想并不拘泥于为某道题目而服务,所以我们往往需要多加练习,在面对求最短路径的时候,才能从容不迫的写出题解.</p>
-
+<h4 id="vis是为了防止我们将踩过的点再次踩入"><a href="#vis是为了防止我们将踩过的点再次踩入" class="headerlink" title="vis是为了防止我们将踩过的点再次踩入"></a>vis是为了防止我们将踩过的点再次踩入</h4><p>想象一下，我们水花的方向是四周的一圈，那么也一定会有的向着我们已经走过的路的水波方向，我们要做好辨别工作，那么就给他们加上一个vis的判断。他们的范围就是所有的可能涉及的区域集合。可能通常是数组。</p>
+<p>这样，我们不必花费过多的时间去判断该行为是否会造成逆流，我们只需要进行有效的标注即可！</p>
+<p>杜绝了同样的状态二次出现！</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">另外说一下自己这题目的一个收获。。。WA又不知道哪里不对真是很郁闷的事。。。。于是今晚想出了个法子。。。。。。。。。。。OJ上的题目提交出现WA。。在没有测试数据的情况下。。可以这样试试：</span><br><span class="line">拿别人AC的代码还有自己的代码。。。。小做下修改。。。看看能不能把输入改成一种循环。。比如这题可以把输入改成ABC三个数字三个嵌套的1到100（不过1到100这样规模太大。。。我自己试就死机了。。）。。。然后利用C＋＋的fstream。。把两个程序的结果输出到两个TXT文本中。。。然后再写个小程序读取两个文本每行的内容作下比对。。。出现不一样的行就是自己的代码输出结果和别人不一样的地方了。。。。。</span><br><span class="line">有经验的大牛们这些小技巧可能都知道吧。。。小第献丑了恩＝ ＝</span><br></pre></td></tr></table></figure>
     </div>
 
     
@@ -317,6 +326,9 @@
             <span class="post-nav-divider"></span>
 
             <div class="post-nav-prev post-nav-item">
+                <a href="/2020/07/16/poj3414Pots/" rel="prev" title="poj3414Pots">
+                  poj3414Pots <i class="fa fa-chevron-right"></i>
+                </a>
             </div>
           </div>
       </footer>
@@ -355,7 +367,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#BFS是什么"><span class="nav-number">1.</span> <span class="nav-text">BFS是什么?</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#BFS如何做"><span class="nav-number">2.</span> <span class="nav-text">BFS如何做?</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#什么时候开始"><span class="nav-number">2.0.1.</span> <span class="nav-text">什么时候开始?</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#我们什么时候结束"><span class="nav-number">2.0.2.</span> <span class="nav-text">我们什么时候结束?</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#实现步骤"><span class="nav-number">2.0.3.</span> <span class="nav-text">实现步骤:</span></a></li></ol></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#BFS是什么"><span class="nav-number">1.</span> <span class="nav-text">BFS是什么?</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#BFS如何做"><span class="nav-number">2.</span> <span class="nav-text">BFS如何做?</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#什么时候开始"><span class="nav-number">2.0.1.</span> <span class="nav-text">什么时候开始?</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#我们什么时候结束"><span class="nav-number">2.0.2.</span> <span class="nav-text">我们什么时候结束?</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#实现步骤"><span class="nav-number">2.0.3.</span> <span class="nav-text">实现步骤:</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#vis是为了防止我们将踩过的点再次踩入"><span class="nav-number">2.0.4.</span> <span class="nav-text">vis是为了防止我们将踩过的点再次踩入</span></a></li></ol></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -371,7 +383,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">46</span>
+          <span class="site-state-item-count">47</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -384,7 +396,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">21</span>
+        <span class="site-state-item-count">22</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>

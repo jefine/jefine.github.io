@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.0.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+
+
+<script id="hexo-configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '7.5.0',
+    exturl: false,
+    sidebar: {"position":"left","display":"hide","offset":12,"onmobile":true},
+    copycode: {"enable":true,"show_result":true,"style":null},
+    back2top: {"enable":true,"sidebar":false,"scrollpercent":false},
+    bookmark: {"enable":false,"color":"#222","save":"auto"},
+    fancybox: false,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
+    algolia: {
+      appID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":0},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    localsearch: {"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    path: '',
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    translation: {
+      copy_button: '复制',
+      copy_success: '复制成功',
+      copy_failure: '复制失败'
+    },
+    sidebarPadding: 40
+  };
+</script>
+
+  <meta name="description" content="这是一道对于初学BFS而言较复杂的题目，虽然整体上，bfs的方法没有太大的变化，但的确如果想要在初学阶段将其理解，并做出一定的总结，一定会使得这道题目发挥出超其本身的价值和内容。">
+<meta name="keywords" content="poj bfs">
+<meta property="og:type" content="article">
+<meta property="og:title" content="poj3414Pots">
+<meta property="og:url" content="https:&#x2F;&#x2F;jefine.github.io&#x2F;2020&#x2F;07&#x2F;16&#x2F;poj3414Pots&#x2F;index.html">
+<meta property="og:site_name" content="jefine">
+<meta property="og:description" content="这是一道对于初学BFS而言较复杂的题目，虽然整体上，bfs的方法没有太大的变化，但的确如果想要在初学阶段将其理解，并做出一定的总结，一定会使得这道题目发挥出超其本身的价值和内容。">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2020-07-16T23:52:52.309Z">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="https://jefine.github.io/2020/07/16/poj3414Pots/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: false,
+    isPost: true,
+    isPage: false,
+    isArchive: false
+  };
+</script>
+
+  <title>poj3414Pots | jefine</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-meta">
+
+    <div>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">jefine</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+        <p class="site-subtitle">小小的梦呓</p>
+  </div>
+
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-fw fa-user"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档</a>
+
+  </li>
+  </ul>
+
+</nav>
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content">
+            
+
+  <div class="posts-expand">
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://jefine.github.io/2020/07/16/poj3414Pots/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="jefine">
+      <meta itemprop="description" content="使每个人的生活多一份美好。">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="jefine">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          poj3414Pots
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-07-16 19:25:05" itemprop="dateCreated datePublished" datetime="2020-07-16T19:25:05+08:00">2020-07-16</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-07-17 07:52:52" itemprop="dateModified" datetime="2020-07-17T07:52:52+08:00">2020-07-17</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%AE%97%E6%B3%95/" itemprop="url" rel="index">
+                    <span itemprop="name">算法</span>
+                  </a>
+                </span>
+            </span>
+
+
+          
+             <span id="/2020/07/16/poj3414Pots/" class="leancloud_visitors" data-flag-title="poj3414Pots">
+               <span class="post-meta-divider">|</span>
+               <span classs="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读量： </span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>这是一道对于初学BFS而言较复杂的题目，虽然整体上，bfs的方法没有太大的变化，但的确如果想要在初学阶段将其理解，并做出一定的总结，一定会使得这道题目发挥出超其本身的价值和内容。</p><a id="more"></a>
+<p>此题目：细心，冷静，多思考。</p>
+<p>当然，由于我比较菜，各种错误和疏忽不断出现，所以此题花费了较长的时间，约5h，并在最后的两个小时内参考了他人的代码。。。</p>
+<hr>
+<h4 id="Pots"><a href="#Pots" class="headerlink" title="Pots"></a>Pots</h4><div class="table-container">
+<table>
+<thead>
+<tr>
+<th><strong>Time Limit:</strong> 1000MS</th>
+<th></th>
+<th><strong>Memory Limit:</strong> 65536K</th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Total Submissions:</strong> 31113</td>
+<td></td>
+<td><strong>Accepted:</strong> 12915</td>
+<td></td>
+<td>Special Judge</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Description</p>
+<p>You are given two pots, having the volume of <strong>A</strong> and <strong>B</strong> liters respectively. The following operations can be performed:</p>
+<ol>
+<li>FILL(i)    fill the pot <strong>i</strong> (1 ≤ <strong>i</strong> ≤ 2) from the tap;</li>
+<li>DROP(i)   empty the pot <strong>i</strong> to the drain;</li>
+<li>POUR(i,j)  pour from pot <strong>i</strong> to pot <strong>j</strong>; after this operation either the pot <strong>j</strong> is full (and there may be some water left in the pot <strong>i</strong>), or the pot <strong>i</strong> is empty (and all its contents have been moved to the pot <strong>j</strong>).</li>
+</ol>
+<p>Write a program to find the shortest possible sequence of these operations that will yield exactly <strong>C</strong> liters of water in one of the pots.</p>
+<p>Input</p>
+<p>On the first and only line are the numbers <strong>A</strong>, <strong>B</strong>, and <strong>C</strong>. These are all integers in the range from 1 to 100 and <strong>C</strong>≤max(<strong>A</strong>,<strong>B</strong>).</p>
+<p>Output</p>
+<p>The first line of the output must contain the length of the sequence of operations <strong>K</strong>. The following <strong>K</strong> lines must each describe one operation. If there are several sequences  of minimal length, output any one of them. If the desired result can’t  be achieved, the first and only line of the file must contain the word ‘<strong>impossible</strong>’.</p>
+<p>Sample Input</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">3 5 4</span><br></pre></td></tr></table></figure>
+<p>Sample Output</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">6</span><br><span class="line">FILL(2)</span><br><span class="line">POUR(2,1)</span><br><span class="line">DROP(1)</span><br><span class="line">POUR(2,1)</span><br><span class="line">FILL(2)</span><br><span class="line">POUR(2,1)</span><br></pre></td></tr></table></figure>
+<p>Source</p>
+<p><a href="http://poj.org/searchproblem?field=source&amp;key=Northeastern+Europe+2002" target="_blank" rel="noopener">Northeastern Europe 2002</a>, Western Subregion</p>
+<hr>
+<p>题目的中文大约是：给定两个容积为a，b的水壶，初始状态为空；再给一个水量c。每次操作可以如下进行：</p>
+<ol>
+<li>将壶1或者壶2填满；</li>
+<li>将壶1或者壶2全部倒掉；</li>
+<li>将一个壶中的水导入另一个壶中（能倒入多少就倒入多少，当然其中一个壶不能是空的，另一个不能是满的）</li>
+</ol>
+<p>输入abc，需要你输出当其中一个水壶的水量达到c时所用的次数与倾倒步骤打印出来；当然如果永远达不到c的话，输出impossible即可。</p>
+<p>tips：多组输入，c符合规范。</p>
+<p>emm，不妨以此题目为例，梳理一下bfs的做法好了。</p>
+<p>首先我们要判断这道题目是bfs，从题目中可以清楚看出，求最短路径，每次的操作是固定的那么基本上就可以用bfs去解决。先看一般，再看特殊的地方需要什么东西来解决（比如题目所求的cnt，步骤）</p>
+<ol>
+<li><p><strong>确定一个状态包括了什么</strong>：比如，有的题目仅仅需要该点的位置，有的题目还需要其他的东西；只能具体问题具体分析了。在此题目中，我们可以看到一个状态就是我们的a，b两个水壶的储水量。</p>
+<p>那么我们将其设定为一个struct node即可包括 两个int 代表两个水壶的储水量。</p>
+<p>特别是考虑到本题目需要cnt和倒水的步骤，那么我们在每个状态里的的步骤都是不一样的，就用string 储存吧，然后每一个步骤添加的时候记得加上换行符号”\n”;</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">node</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">    <span class="keyword">int</span> x;</span><br><span class="line">    <span class="keyword">int</span> y;</span><br><span class="line">    <span class="built_in">string</span> s;</span><br><span class="line">    <span class="keyword">int</span> cnt;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<ol>
+<li><p><strong>寻找vis范围</strong>，确定了总的范围我们才可以利用vis来判断我们是否踩过这个点，这也是最有效的方法来避免死循环,也是迫使队列结束的好方法。有题目给出的“These are all integers in the range from 1 to 100 and <strong>C</strong>≤max(<strong>A</strong>,<strong>B</strong>).”所以我们知道a有100种可能，b也是。（小提示，如果你发现有题目似乎用不到vis那么大概也许<strong>可能</strong>他不一定需要使用bfs来解题）</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">bool</span> vis[<span class="number">101</span>][<span class="number">101</span>];</span><br></pre></td></tr></table></figure>
+<p>对了，记住此题目是多行输入，意味着如果你的vis不及时初始化就会fc</p>
+<p>在这里初始化 vis 可以使用memset，常见用法是这样。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">define</span> CLR(x,y) memset(x,y,sizeof(x))</span></span><br><span class="line">CLR(vis,<span class="literal">false</span>);</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>找到起点和终点的状态。终点顾名思义其中有一个水壶的储水量是c的时候就代表了end，而开始我们发现他给定的是两个空的水壶，所以我们给定一个node 初始化全0,记得标记vis是1，然后将其推到队列里作为起始点。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">  <span class="built_in">queue</span>&lt;node&gt; q;</span><br><span class="line">   </span><br><span class="line">   node t;</span><br><span class="line">   t.cnt=<span class="number">0</span>;</span><br><span class="line">   t.x=<span class="number">0</span>;</span><br><span class="line">   t.y=<span class="number">0</span>;</span><br><span class="line">   t.s=<span class="string">""</span>;</span><br><span class="line">vis[<span class="number">0</span>][<span class="number">0</span>]=<span class="number">1</span>;</span><br><span class="line">   q.push(t);</span><br></pre></td></tr></table></figure>
+<p>但，不难发现，第一步的走法其实只有给两个壶其中之一填满。所以我们也可以是将其设为两个初始点，添加到队列其中去，但是记得更改相关的数值，参考下code。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">node t;</span><br><span class="line">   t.cnt =<span class="number">1</span>;</span><br><span class="line">   t.x = a;</span><br><span class="line">   t.y = <span class="number">0</span>;</span><br><span class="line">   t.s = <span class="string">"FILL(1)\n"</span>;</span><br><span class="line">   q.push(t);</span><br><span class="line">   </span><br><span class="line">   vis[a][<span class="number">0</span>] =<span class="number">1</span>;</span><br><span class="line">   t.cnt =<span class="number">1</span>;</span><br><span class="line">   t.x = <span class="number">0</span>;</span><br><span class="line">   t.y = b;</span><br><span class="line">   t.s = <span class="string">"FILL(2)\n"</span>;</span><br><span class="line">   vis[<span class="number">0</span>][b] = <span class="number">1</span>;</span><br><span class="line">   q.push(t);</span><br></pre></td></tr></table></figure>
+<p>当然，两者的区别并不是很大，选择前者更容易理解一些，也更加符合一般的bfs的要求。</p>
+</li>
+<li><p>下面就要进入queue队列的循环中去咯~</p>
+<p>进入循环当然先把front给从队列中打捞出来。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">while</span>(!q.empty())&#123;</span><br><span class="line">        node front  = q.front();</span><br><span class="line">        q.pop();</span><br><span class="line">        t = front;</span><br></pre></td></tr></table></figure>
+<p>这里的t 是借用了上面的t实际上,我们往往是重新node next  的做法往往更普遍一些。</p>
+<p>有了 此次开头的中心点，我们就要赶紧确定什么时候能结束了，万一我们直接就出去了呢哈哈。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span>(front.x ==c||front.y ==c)&#123;</span><br><span class="line">            cnt = t.cnt;</span><br><span class="line">            <span class="built_in">cout</span>&lt;&lt;cnt&lt;&lt;<span class="string">"\n"</span>;</span><br><span class="line">            <span class="built_in">cout</span>&lt;&lt;front.s;</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        &#125;</span><br></pre></td></tr></table></figure>
+<p>这里有一丝丝的玄机，因为这里采用了break，所以我们在最后bfs返回的是cnt的值，所以我们要将cnt给赋值了，才能return 回去。虽然我们在这里就输出了cnt，但返回的cnt是用来判断我们是否是impossible，如果我们一直没有找到使得题目成立条件，而队列走走完了，那我们就一直没有给cnt赋过值，所以我们自然是返回的是0 那么，就可在main函数中做出特判。</p>
+</li>
+<li><p>接下来就是几种动作的出现，其实就是6种</p>
+<p> FILL(1),FILL(2),DROP(1),DROP(2),POUR(1,2),POUR(2,1) </p>
+<p>我们在对其分别进行情况的判定，然后一一进行就可以了。当然这个过程是艰苦的，如果在一些相似的地方没有思考清楚而是cv的话，容易由于没有看清而出现许多问题。所以奥里给，这一部分需要认真一些。</p>
+<p>对了，我们在前面看到我们既然进行到了这一步，一定是出不去了所以front.cnt++；</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br></pre></td><td class="code"><pre><span class="line">front.cnt ++;</span><br><span class="line">        <span class="comment">//fill</span></span><br><span class="line">         t = front;</span><br><span class="line">        <span class="keyword">if</span>((front.x!=a) &amp;&amp; (!vis[a][front.y]))&#123;<span class="comment">// </span></span><br><span class="line">            t.x = a;</span><br><span class="line">            t.y = front.y;</span><br><span class="line">            t.s =front.s + <span class="string">"FILL(1)\n"</span>;</span><br><span class="line">            </span><br><span class="line">            q.push(t);</span><br><span class="line">            vis[a][t.y] = <span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>((front.y!=b) &amp;&amp;(!vis[front.x][b]))&#123;</span><br><span class="line">            t.x = front.x;</span><br><span class="line">            t.y = b;</span><br><span class="line">            t.s =front.s + <span class="string">"FILL(2)\n"</span>;</span><br><span class="line">            </span><br><span class="line">            q.push(t);</span><br><span class="line">            vis[t.x][b] = <span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">//pour</span></span><br><span class="line">        <span class="keyword">if</span>((front.x) &amp;&amp; (front.y!=b))&#123;<span class="comment">//因为我们pour有两种情况，b被倒满或倒不满，所以我们最好放到里面去判断vis</span></span><br><span class="line">            <span class="keyword">if</span>(front.x&gt;=(b-front.y)&amp;&amp;front.x)&#123;</span><br><span class="line">                t.y = b;</span><br><span class="line">                t.x = front.x - (b-front.y);</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span> &#123;</span><br><span class="line">                t.y = front.y + front.x;</span><br><span class="line">                t.x = <span class="number">0</span>;   </span><br><span class="line">            &#125;</span><br><span class="line">                t.s = front.s + <span class="string">"POUR(1,2)\n"</span>;</span><br><span class="line">                <span class="keyword">if</span>(!vis[t.x][t.y])</span><br><span class="line">                q.push(t);</span><br><span class="line">                vis[t.x][t.y] = <span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>((front.y) &amp;&amp; (front.x!=a))&#123;<span class="comment">//因为我们pour有两种情况，a被倒满或倒不满，所以我们最好放到里面去判断vis</span></span><br><span class="line">            <span class="keyword">if</span>(front.y&gt;=(a-front.x) &amp;&amp; front.y)&#123;</span><br><span class="line">                t.y = front.y -(a - front.x); </span><br><span class="line">                t.x = a;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span> &#123;</span><br><span class="line">                t.x = front.x+ front.y;</span><br><span class="line">                t.y = <span class="number">0</span>;</span><br><span class="line">            &#125;</span><br><span class="line">                t.s = front.s + <span class="string">"POUR(2,1)\n"</span>;</span><br><span class="line">                <span class="keyword">if</span>(!vis[t.x][t.y])</span><br><span class="line">                </span><br><span class="line">                q.push(t);</span><br><span class="line">                vis[t.x][t.y] = <span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">//drop</span></span><br><span class="line">        <span class="keyword">if</span>((front.x)&amp;&amp;(!vis[<span class="number">0</span>][front.y]))&#123;</span><br><span class="line">            t.x = <span class="number">0</span>;</span><br><span class="line">            t.y = front.y;</span><br><span class="line">            t.s = front.s + <span class="string">"DROP(1)\n"</span>;</span><br><span class="line">            vis[<span class="number">0</span>][t.y] = <span class="number">1</span>;</span><br><span class="line">            </span><br><span class="line">            q.push(t);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>((front.y)&amp;&amp;(!vis[front.x][<span class="number">0</span>]))&#123;</span><br><span class="line">            t.x = front.x;<span class="comment">//cv makes me forget it!!!</span></span><br><span class="line">            t.y = <span class="number">0</span>;</span><br><span class="line">            t.s = front.s + <span class="string">"DROP(2)\n"</span>;</span><br><span class="line">            vis[t.x][<span class="number">0</span>] = <span class="number">1</span>;        </span><br><span class="line">            q.push(t);</span><br><span class="line">        &#125;     </span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>最后return cnt;就可以结束这个bfs了。小心，因为代码过长，一处很小的错误可能就会gg。</p>
+<h2 id="完整的代码"><a href="#完整的代码" class="headerlink" title="完整的代码"></a>完整的代码</h2><p>对，你没有看错，两套代码，中英双文嘿嘿，两种代码其实在一些小的方面有所不同，参考第一个即可，第二个是他人代码（出处已不可寻）</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br><span class="line">192</span><br><span class="line">193</span><br><span class="line">194</span><br><span class="line">195</span><br><span class="line">196</span><br><span class="line">197</span><br><span class="line">198</span><br><span class="line">199</span><br><span class="line">200</span><br><span class="line">201</span><br><span class="line">202</span><br><span class="line">203</span><br><span class="line">204</span><br><span class="line">205</span><br><span class="line">206</span><br><span class="line">207</span><br><span class="line">208</span><br><span class="line">209</span><br><span class="line">210</span><br><span class="line">211</span><br><span class="line">212</span><br><span class="line">213</span><br><span class="line">214</span><br><span class="line">215</span><br><span class="line">216</span><br><span class="line">217</span><br><span class="line">218</span><br><span class="line">219</span><br><span class="line">220</span><br><span class="line">221</span><br><span class="line">222</span><br><span class="line">223</span><br><span class="line">224</span><br><span class="line">225</span><br><span class="line">226</span><br><span class="line">227</span><br><span class="line">228</span><br><span class="line">229</span><br><span class="line">230</span><br><span class="line">231</span><br><span class="line">232</span><br><span class="line">233</span><br><span class="line">234</span><br><span class="line">235</span><br><span class="line">236</span><br><span class="line">237</span><br><span class="line">238</span><br><span class="line">239</span><br><span class="line">240</span><br><span class="line">241</span><br><span class="line">242</span><br><span class="line">243</span><br><span class="line">244</span><br><span class="line">245</span><br><span class="line">246</span><br><span class="line">247</span><br><span class="line">248</span><br><span class="line">249</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;string.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdlib.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;math.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;map&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;set&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;queue&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;string&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> CLR(x,y) memset(x,y,sizeof(x))</span></span><br><span class="line"><span class="keyword">int</span> a,b,c;</span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">node</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">    <span class="keyword">int</span> x;</span><br><span class="line">    <span class="keyword">int</span> y;</span><br><span class="line">    <span class="built_in">string</span> s;</span><br><span class="line">    <span class="keyword">int</span> cnt;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">bool</span> vis[<span class="number">101</span>][<span class="number">101</span>];</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">bfs</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> cnt =<span class="number">0</span>;</span><br><span class="line">    CLR(vis,<span class="literal">false</span>);</span><br><span class="line">    <span class="built_in">queue</span>&lt;node&gt; q;</span><br><span class="line"></span><br><span class="line">    node t;</span><br><span class="line">    t.cnt=<span class="number">0</span>;</span><br><span class="line">    t.x=<span class="number">0</span>;</span><br><span class="line">    t.y=<span class="number">0</span>;</span><br><span class="line">    t.s=<span class="string">""</span>;</span><br><span class="line">    vis[<span class="number">0</span>][<span class="number">0</span>] =<span class="number">1</span>;</span><br><span class="line">    q.push(t);</span><br><span class="line">    <span class="keyword">while</span>(!q.empty())&#123;</span><br><span class="line">        node front  = q.front();</span><br><span class="line">        q.pop();</span><br><span class="line">        t = front;</span><br><span class="line">        <span class="keyword">if</span>(front.x ==c||front.y ==c)&#123;</span><br><span class="line">            cnt = t.cnt;</span><br><span class="line">            <span class="built_in">cout</span>&lt;&lt;cnt&lt;&lt;<span class="string">"\n"</span>;</span><br><span class="line">            <span class="built_in">cout</span>&lt;&lt;front.s;</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        front.cnt ++;</span><br><span class="line">        <span class="comment">//fill</span></span><br><span class="line">         t = front;</span><br><span class="line">        <span class="keyword">if</span>((front.x!=a) &amp;&amp; (!vis[a][front.y]))&#123;<span class="comment">// &lt;?</span></span><br><span class="line">            t.x = a;</span><br><span class="line">            t.y = front.y;</span><br><span class="line">            t.s =front.s + <span class="string">"FILL(1)\n"</span>;</span><br><span class="line">            </span><br><span class="line">            q.push(t);</span><br><span class="line">            vis[a][t.y] = <span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>((front.y!=b) &amp;&amp;(!vis[front.x][b]))&#123;</span><br><span class="line">            t.x = front.x;</span><br><span class="line">            t.y = b;</span><br><span class="line">            t.s =front.s + <span class="string">"FILL(2)\n"</span>;</span><br><span class="line">            </span><br><span class="line">            q.push(t);</span><br><span class="line">            vis[t.x][b] = <span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">//pour</span></span><br><span class="line">        <span class="keyword">if</span>((front.x) &amp;&amp; (front.y!=b))&#123;<span class="comment">//因为我们pour有两种情况，b被倒满或倒不满，所以我们最好放到里面去判断vis</span></span><br><span class="line">            <span class="keyword">if</span>(front.x&gt;=(b-front.y)&amp;&amp;front.x)&#123;</span><br><span class="line">                t.y = b;</span><br><span class="line">                t.x = front.x - (b-front.y);</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span> &#123;</span><br><span class="line">                t.y = front.y + front.x;</span><br><span class="line">                t.x = <span class="number">0</span>;   </span><br><span class="line">            &#125;</span><br><span class="line">                t.s = front.s + <span class="string">"POUR(1,2)\n"</span>;</span><br><span class="line">                <span class="keyword">if</span>(!vis[t.x][t.y])</span><br><span class="line">                q.push(t);</span><br><span class="line">                vis[t.x][t.y] = <span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>((front.y) &amp;&amp; (front.x!=a))&#123;<span class="comment">//因为我们pour有两种情况，a被倒满或倒不满，所以我们最好放到里面去判断vis</span></span><br><span class="line">            <span class="keyword">if</span>(front.y&gt;=(a-front.x) &amp;&amp; front.y)&#123;</span><br><span class="line">                t.y = front.y -(a - front.x); </span><br><span class="line">                t.x = a;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span> &#123;</span><br><span class="line">                t.x = front.x+ front.y;</span><br><span class="line">                t.y = <span class="number">0</span>;</span><br><span class="line">            &#125;</span><br><span class="line">                t.s = front.s + <span class="string">"POUR(2,1)\n"</span>;</span><br><span class="line">                <span class="keyword">if</span>(!vis[t.x][t.y])</span><br><span class="line">                </span><br><span class="line">                q.push(t);</span><br><span class="line">                vis[t.x][t.y] = <span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">//drop</span></span><br><span class="line">        <span class="keyword">if</span>((front.x)&amp;&amp;(!vis[<span class="number">0</span>][front.y]))&#123;</span><br><span class="line">            t.x = <span class="number">0</span>;</span><br><span class="line">            t.y = front.y;</span><br><span class="line">            t.s = front.s + <span class="string">"DROP(1)\n"</span>;</span><br><span class="line">            vis[<span class="number">0</span>][t.y] = <span class="number">1</span>;</span><br><span class="line">            </span><br><span class="line">            q.push(t);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>((front.y)&amp;&amp;(!vis[front.x][<span class="number">0</span>]))&#123;</span><br><span class="line">            t.x = front.x;<span class="comment">//cv makes me forget it!!!</span></span><br><span class="line">            t.y = <span class="number">0</span>;</span><br><span class="line">            t.s = front.s + <span class="string">"DROP(2)\n"</span>;</span><br><span class="line">            vis[t.x][<span class="number">0</span>] = <span class="number">1</span>;        </span><br><span class="line">            q.push(t);</span><br><span class="line">        &#125;     </span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> cnt;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">while</span> ((<span class="built_in">cin</span>&gt;&gt;a&gt;&gt;b&gt;&gt;c))</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span>(bfs()==<span class="number">0</span>)<span class="built_in">cout</span>&lt;&lt;<span class="string">"impossible"</span>&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//personal code.</span></span><br><span class="line"></span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">#include&lt;stdio.h&gt;</span></span><br><span class="line"><span class="comment">#include&lt;string.h&gt;</span></span><br><span class="line"><span class="comment">#include&lt;stdlib.h&gt;</span></span><br><span class="line"><span class="comment">#include&lt;math.h&gt;</span></span><br><span class="line"><span class="comment">#include&lt;algorithm&gt;</span></span><br><span class="line"><span class="comment">#include&lt;map&gt;</span></span><br><span class="line"><span class="comment">#include&lt;set&gt;</span></span><br><span class="line"><span class="comment">#include&lt;queue&gt;</span></span><br><span class="line"><span class="comment">#include&lt;string&gt;</span></span><br><span class="line"><span class="comment">#include&lt;iostream&gt;</span></span><br><span class="line"><span class="comment">using namespace std;</span></span><br><span class="line"><span class="comment">#define CLR(arr,val) memset(arr,val,sizeof(arr))</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">int n , m , x;</span></span><br><span class="line"><span class="comment">bool vis[200][200];</span></span><br><span class="line"><span class="comment">//图上所有点的取值区域可用 a，b的不同的水量状态表示！</span></span><br><span class="line"><span class="comment">struct nodes&#123;</span></span><br><span class="line"><span class="comment">	int x, y;</span></span><br><span class="line"><span class="comment">	string step;</span></span><br><span class="line"><span class="comment">	int cnt;</span></span><br><span class="line"><span class="comment">&#125;;</span></span><br><span class="line"><span class="comment"> </span></span><br><span class="line"><span class="comment">int bfs() &#123;</span></span><br><span class="line"><span class="comment">	int cnt = 0;</span></span><br><span class="line"><span class="comment">	CLR(vis, 0);//init</span></span><br><span class="line"><span class="comment">	queue&lt;nodes&gt; q;</span></span><br><span class="line"><span class="comment">	nodes nd1;</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">	nd1.x = 0;//(init)</span></span><br><span class="line"><span class="comment">	nd1.y = 0;</span></span><br><span class="line"><span class="comment">	nd1.cnt = 0;</span></span><br><span class="line"><span class="comment">    nd1.step = "";</span></span><br><span class="line"><span class="comment">	q.push(nd1);</span></span><br><span class="line"><span class="comment">	vis[0][0]=1;</span></span><br><span class="line"><span class="comment">	</span></span><br><span class="line"><span class="comment">	while(!q.empty()) &#123;</span></span><br><span class="line"><span class="comment">		nodes nd = q.front();</span></span><br><span class="line"><span class="comment">		q.pop();</span></span><br><span class="line"><span class="comment">		if (nd.x == x || nd.y == x) &#123;// end</span></span><br><span class="line"><span class="comment">			cnt = nd.cnt;</span></span><br><span class="line"><span class="comment">			cout&lt;&lt;cnt&lt;&lt;"\n";// it looks like nothing at all. However this cnt is connect to the return value!</span></span><br><span class="line"><span class="comment">                            //there is one possible thing is that we could at the last step that we find the right idea!</span></span><br><span class="line"><span class="comment">			cout&lt;&lt;nd.step;</span></span><br><span class="line"><span class="comment">			break;</span></span><br><span class="line"><span class="comment">		&#125;</span></span><br><span class="line"><span class="comment">		++nd.cnt;// every time the nd will be renew one as front;</span></span><br><span class="line"><span class="comment">		nodes nd2;//as next</span></span><br><span class="line"><span class="comment">		nd2.cnt = nd.cnt; </span></span><br><span class="line"><span class="comment">		if (nd.x &lt; n &amp;&amp; !vis[n][nd.y]) &#123;//if fronter is not full&amp;&amp; not visit the status when it is full</span></span><br><span class="line"><span class="comment">			nd2.x = n;</span></span><br><span class="line"><span class="comment">			nd2.y = nd.y;</span></span><br><span class="line"><span class="comment">			nd2.step = nd.step + "FILL(1)\n";</span></span><br><span class="line"><span class="comment">			q.push(nd2);</span></span><br><span class="line"><span class="comment">			vis[nd2.x][nd2.y] = 1;</span></span><br><span class="line"><span class="comment">		&#125;</span></span><br><span class="line"><span class="comment">		if (nd.y &lt; m &amp;&amp; !vis[nd.x][m]) &#123;</span></span><br><span class="line"><span class="comment">			nd2.x = nd.x;</span></span><br><span class="line"><span class="comment">			nd2.y = m;</span></span><br><span class="line"><span class="comment">			nd2.step = nd.step + "FILL(2)\n";</span></span><br><span class="line"><span class="comment">			q.push(nd2);</span></span><br><span class="line"><span class="comment">			vis[nd2.x][nd2.y] = 1;</span></span><br><span class="line"><span class="comment">		&#125;</span></span><br><span class="line"><span class="comment">		</span></span><br><span class="line"><span class="comment">		if (nd.x &gt; 0 &amp;&amp; nd.y != m) &#123;//when a is not a empty one &amp;&amp; b is not full</span></span><br><span class="line"><span class="comment">			if (nd.x &gt;= (m - nd.y) &amp;&amp; nd.x != 0) &#123;//if a couldn't pour it's all to b</span></span><br><span class="line"><span class="comment">				nd2.x = (nd.x - (m - nd.y));// a will pour as more as it could </span></span><br><span class="line"><span class="comment">				nd2.y = m;				</span></span><br><span class="line"><span class="comment">			&#125; </span></span><br><span class="line"><span class="comment">            else &#123;//a could pour all to b</span></span><br><span class="line"><span class="comment">				nd2.y = (nd.x + nd.y);</span></span><br><span class="line"><span class="comment">				nd2.x = 0;</span></span><br><span class="line"><span class="comment">			&#125;</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">			if (!vis[nd2.x][nd2.y]) &#123;</span></span><br><span class="line"><span class="comment">				nd2.step = nd.step + "POUR(1,2)\n";</span></span><br><span class="line"><span class="comment">				q.push(nd2);</span></span><br><span class="line"><span class="comment">				vis[nd2.x][nd2.y] = 1;</span></span><br><span class="line"><span class="comment">			&#125;</span></span><br><span class="line"><span class="comment">			</span></span><br><span class="line"><span class="comment">		&#125;</span></span><br><span class="line"><span class="comment">		</span></span><br><span class="line"><span class="comment">		if (nd.y &gt; 0 &amp;&amp; nd.x != n) &#123;//pour b to a</span></span><br><span class="line"><span class="comment">			if (nd.y &gt;= (n - nd.x) &amp;&amp; nd.y != 0) &#123;</span></span><br><span class="line"><span class="comment">				nd2.y = (nd.y - (n - nd.x));</span></span><br><span class="line"><span class="comment">				nd2.x = n;</span></span><br><span class="line"><span class="comment">			&#125; else &#123;</span></span><br><span class="line"><span class="comment">				</span></span><br><span class="line"><span class="comment">				nd2.x = (nd.y + nd.x);</span></span><br><span class="line"><span class="comment">				nd2.y = 0;</span></span><br><span class="line"><span class="comment">			&#125;</span></span><br><span class="line"><span class="comment">			if (!vis[nd2.x][nd2.y]) &#123;</span></span><br><span class="line"><span class="comment">				nd2.step = nd.step + "POUR(2,1)\n";</span></span><br><span class="line"><span class="comment">				q.push(nd2);</span></span><br><span class="line"><span class="comment">				vis[nd2.x][nd2.y] = 1;	</span></span><br><span class="line"><span class="comment">			&#125;</span></span><br><span class="line"><span class="comment">		&#125;</span></span><br><span class="line"><span class="comment">		</span></span><br><span class="line"><span class="comment">		if (nd.x &gt; 0 &amp;&amp; !vis[0][nd.y]) &#123;//a is not empty</span></span><br><span class="line"><span class="comment">			nd2.x = 0;</span></span><br><span class="line"><span class="comment">			nd2.y = nd.y;</span></span><br><span class="line"><span class="comment">			nd2.step = nd.step + "DROP(1)\n";</span></span><br><span class="line"><span class="comment">			q.push(nd2);</span></span><br><span class="line"><span class="comment">			vis[nd2.x][nd2.y] = 1;</span></span><br><span class="line"><span class="comment">		&#125;</span></span><br><span class="line"><span class="comment">		if (nd.y &gt; 0 &amp;&amp; !vis[nd.x][0]) &#123;</span></span><br><span class="line"><span class="comment">			nd2.x = nd.x;</span></span><br><span class="line"><span class="comment">			nd2.y = 0;</span></span><br><span class="line"><span class="comment">			nd2.step = nd.step + "DROP(2)\n";</span></span><br><span class="line"><span class="comment">			q.push(nd2);</span></span><br><span class="line"><span class="comment">			vis[nd2.x][nd2.y] = 1;</span></span><br><span class="line"><span class="comment">		&#125;</span></span><br><span class="line"><span class="comment">		</span></span><br><span class="line"><span class="comment">	&#125;</span></span><br><span class="line"><span class="comment">	return cnt;</span></span><br><span class="line"><span class="comment">&#125;</span></span><br><span class="line"><span class="comment"> </span></span><br><span class="line"><span class="comment">int main()</span></span><br><span class="line"><span class="comment">&#123;</span></span><br><span class="line"><span class="comment">	while(cin&gt;&gt;n&gt;&gt;m&gt;&gt;x) &#123;</span></span><br><span class="line"><span class="comment">		if (bfs() == 0) &#123;</span></span><br><span class="line"><span class="comment">			cout&lt;&lt;"impossible"&lt;&lt;endl;</span></span><br><span class="line"><span class="comment">		&#125; </span></span><br><span class="line"><span class="comment">	&#125;</span></span><br><span class="line"><span class="comment">&#125;</span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></table></figure>
+<p>当然，这道题目还见到有用其他方法去配合bfs进行解题的，</p>
+<p><a href="https://blog.csdn.net/qq_34374664/article/details/53170539" target="_blank" rel="noopener">其他方法之一</a></p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/poj-bfs/" rel="tag"># poj bfs</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-next post-nav-item">
+                <a href="/2020/07/15/BFS%E5%B0%8F%E7%BB%93/" rel="next" title="BFS小结">
+                  <i class="fa fa-chevron-left"></i> BFS小结
+                </a>
+            </div>
+
+            <span class="post-nav-divider"></span>
+
+            <div class="post-nav-prev post-nav-item">
+            </div>
+          </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+  </div>
+
+
+          </div>
+          
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#Pots"><span class="nav-number">1.</span> <span class="nav-text">Pots</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#完整的代码"><span class="nav-number"></span> <span class="nav-text">完整的代码</span></a></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <img class="site-author-image" itemprop="image" alt="jefine"
+    src="/images/avatar.gif">
+  <p class="site-author-name" itemprop="name">jefine</p>
+  <div class="site-description" itemprop="description">使每个人的生活多一份美好。</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">47</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">9</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">22</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/jefine" title="GitHub &amp;rarr; https:&#x2F;&#x2F;github.com&#x2F;jefine" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+<div class="copyright">
+  
+  &copy; 2019 – 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">jefine</span>
+</div>
+
+        
+
+
+
+
+
+
+  <script>
+  function leancloudSelector(url) {
+    return document.getElementById(url).querySelector('.leancloud-visitors-count');
+  }
+  if (CONFIG.page.isPost) {
+    function addCount(Counter) {
+      var visitors = document.querySelector('.leancloud_visitors');
+      var url = visitors.getAttribute('id').trim();
+      var title = visitors.getAttribute('data-flag-title').trim();
+
+    Counter('get', `/classes/Counter?where=${encodeURIComponent(JSON.stringify({ url }))}&limit=1`)
+        .then(response => response.json())
+        .then(({ results }) => {
+          if (results.length > 0) {
+            var counter = results[0];
+            Counter('put', '/classes/Counter/' + counter.objectId, { time: { '__op': 'Increment', 'amount': 1 } })
+              .then(response => response.json())
+              .then(() => {
+                leancloudSelector(url).innerText = counter.time + 1;
+              })
+              .catch(error => {
+                console.log('Failed to save visitor count', error);
+              })
+          } else {
+              Counter('post', '/classes/Counter', { title: title, url: url, time: 1 })
+                .then(response => response.json())
+                .then(() => {
+                  leancloudSelector(url).innerText = 1;
+                })
+                .catch(error => {
+                  console.log('Failed to create', error);
+                });
+          }
+        })
+        .catch(error => {
+          console.log('LeanCloud Counter Error', error);
+        });
+    }
+  } else {
+    function showTime(Counter) {
+      var visitors = document.querySelectorAll('.leancloud_visitors');
+      var entries = [...visitors].map(element => {
+        return element.getAttribute('id').trim();
+      });
+
+   Counter('get', `?where=${encodeURIComponent(JSON.stringify({ url: { '$in': entries } }))}`)
+        .then(response => response.json())
+        .then(({ results }) => {
+          if (results.length === 0) {
+            document.querySelectorAll('.leancloud_visitors .leancloud-visitors-count').forEach(element => {
+              element.innerText = 0;
+            });
+            return;
+          }
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.url;
+            var time = item.time;
+            leancloudSelector(url).innerText = time;
+          }
+          for (var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = leancloudSelector(url);
+            if (element.innerText == '') {
+              element.innerText = 0;
+            }
+          }
+        })
+        .catch(error => {
+          console.log('LeanCloud Counter Error', error);
+        });
+    }
+  }
+
+  fetch('https://app-router.leancloud.cn/2/route?appId=P6wp1XWlawXLj33BOylRsu8k-gzGzoHsz')
+    .then(response => response.json())
+    .then(({ api_server }) => {
+      var Counter = (method, url, data) => {
+        return fetch(`https://${api_server}/1.1${url}`, {
+          method: method,
+          headers: {
+            'X-LC-Id': 'P6wp1XWlawXLj33BOylRsu8k-gzGzoHsz',
+            'X-LC-Key': '1UHlSmySq6dvSx3RUHJ60WhG',
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(data)
+        });
+      };
+      if (CONFIG.page.isPost) {
+        const localhost = /http:\/\/(localhost|127.0.0.1|0.0.0.0)/;
+        if (localhost.test(document.URL)) return;
+        addCount(Counter);
+      } else if (document.querySelectorAll('.post-title-link').length >= 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+<script src="/js/utils.js"></script><script src="/js/motion.js"></script>
+<script src="/js/schemes/muse.js"></script>
+<script src="/js/next-boot.js"></script>
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+</body>
+</html>
