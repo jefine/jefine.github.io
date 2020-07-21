@@ -58,7 +58,7 @@
 <meta property="og:site_name" content="jefine">
 <meta property="og:description" content="BFS可以说是在搜索中十分常用的基础算法了，在这次的初学中，做一个小结，希望可以将其模块化，系统化，公式化。从而进一步提升对bfs的理解,加快自己的解题步骤, 当然,之后少不了DFS的相关文档咯.">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2020-07-18T09:40:52.252Z">
+<meta property="og:updated_time" content="2020-07-21T01:20:29.815Z">
 <meta name="twitter:card" content="summary">
 
 <link rel="canonical" href="https://jefine.github.io/2020/07/15/BFS%E5%B0%8F%E7%BB%93/">
@@ -220,7 +220,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-07-18 17:40:52" itemprop="dateModified" datetime="2020-07-18T17:40:52+08:00">2020-07-18</time>
+                <time title="修改时间：2020-07-21 09:20:29" itemprop="dateModified" datetime="2020-07-21T09:20:29+08:00">2020-07-21</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -304,9 +304,25 @@
 </ol>
 <p>其中重要 的就是我们需要限制的约束条件和下一个位置的可能点.</p>
 <p>当然bfs是一个思想并不拘泥于为某道题目而服务,所以我们往往需要多加练习,在面对求最短路径的时候,才能从容不迫的写出题解.</p>
-<h5 id="vis是为了防止我们将踩过的点再次踩入"><a href="#vis是为了防止我们将踩过的点再次踩入" class="headerlink" title="vis是为了防止我们将踩过的点再次踩入"></a>vis是为了防止我们将踩过的点再次踩入</h5><p>想象一下，我们水花的方向是四周的一圈，那么也一定会有的向着我们已经走过的路的水波方向，我们要做好辨别工作，那么就给他们加上一个vis的判断。他们的范围就是所有的可能涉及的区域集合。可能通常是数组。</p>
+<h3 id="需要注意的几个小点点："><a href="#需要注意的几个小点点：" class="headerlink" title="需要注意的几个小点点："></a>需要注意的几个小点点：</h3><ol>
+<li><p>vis是为了防止我们将踩过的点再次踩入</p>
+<p>想象一下，我们水花的方向是四周的一圈，那么也一定会有的向着我们已经走过的路的水波方向，我们要做好辨别工作，那么就给他们加上一个vis的判断。他们的范围就是所有的可能涉及的区域集合。可能通常是数组。</p>
 <p>这样，我们不必花费过多的时间去判断该行为是否会造成逆流，我们只需要进行有效的标注即可！</p>
 <p>杜绝了同样的状态二次出现！</p>
+</li>
+<li><p>我们通常会遇到需要记录层数的时刻，那么最好是使用一个node 里面放上cnt来记录当前节点的层数。</p>
+</li>
+<li><p>我们在对于一个节点进行多个动作时候，需要注意，我们要将其恢复为front的状态，或者更方便一些的，我们直接将其 cnt++；在循环的过程中，我们一直采用front来判断条件或者是对即将入队的节点进行赋值。</p>
+<p>eg：在洛谷1135的题目中我们在队列的循环过程中的front进行变动的做法：而不是对t进行改动。在其他的题目中也经常适用，不要改变t，除非即将入队，判断采用front的+-等进行操作即可。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">t.cnt = front.cnt+<span class="number">1</span>;</span><br><span class="line"><span class="keyword">if</span>(CHECK((front.h+high[front.h])))&#123;</span><br><span class="line">    t.h = front.h+high[front.h];</span><br><span class="line">    vis[t.h] = <span class="number">1</span>;</span><br><span class="line">    q.push(t);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>我们如果需要记录可以达到多少个点，那么我们在队列中，只要 !vis 我们就可以给他count++；一般是放在动作里面的。如上面的代码情况就放在vis[t.h]=1 下面一行即可。</p>
+</li>
+<li><p>如果我们需要遍历出到每一个点的最短步数，如洛谷p1443，我们最暴力的想法就是给定每一点作为终点，不断地去跑bfs，然而这样是复杂度很高的，完全没有必要这样做，我们既然目标是所有的点，那么我们再 声明一个和vis的范围相同的一个ans数组来记录一个queue的每个点（！vis）的时候的步数即可，未记录的即为无法达到，通过遍历ans数组即可获得相关内容。</p>
+</li>
+<li><p>遇到三维的状态（hdu1204）时，只需要注意输入，接着按照正常的bfs动作流程即可。</p>
+</li>
+</ol>
 
     </div>
 
@@ -372,7 +388,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#BFS是什么"><span class="nav-number">1.</span> <span class="nav-text">BFS是什么?</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#BFS流程是"><span class="nav-number">2.</span> <span class="nav-text">BFS流程是?</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#什么时候开始"><span class="nav-number">2.0.1.</span> <span class="nav-text">什么时候开始?</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#我们什么时候结束"><span class="nav-number">2.0.2.</span> <span class="nav-text">我们什么时候结束?</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#实现步骤"><span class="nav-number">2.0.3.</span> <span class="nav-text">实现步骤:</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#vis是为了防止我们将踩过的点再次踩入"><span class="nav-number">2.0.3.1.</span> <span class="nav-text">vis是为了防止我们将踩过的点再次踩入</span></a></li></ol></li></ol></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#BFS是什么"><span class="nav-number">1.</span> <span class="nav-text">BFS是什么?</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#BFS流程是"><span class="nav-number">2.</span> <span class="nav-text">BFS流程是?</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#什么时候开始"><span class="nav-number">2.0.1.</span> <span class="nav-text">什么时候开始?</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#我们什么时候结束"><span class="nav-number">2.0.2.</span> <span class="nav-text">我们什么时候结束?</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#实现步骤"><span class="nav-number">2.0.3.</span> <span class="nav-text">实现步骤:</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#需要注意的几个小点点："><span class="nav-number">2.1.</span> <span class="nav-text">需要注意的几个小点点：</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
