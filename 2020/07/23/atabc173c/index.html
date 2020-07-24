@@ -38,8 +38,8 @@
       hits: {"per_page":0},
       labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
     },
-    localsearch: {"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
-    path: '',
+    localsearch: {"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    path: 'search.xml',
     motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
     translation: {
       copy_button: '复制',
@@ -59,7 +59,7 @@
 <meta property="og:description" content="此题目主要包括了全排列，二进制的相关知识">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https:&#x2F;&#x2F;jefine.github.io&#x2F;2020&#x2F;07&#x2F;23&#x2F;atabc173c&#x2F;Screenshot_2020-07-23%20C%20-%20H%20and%20V.png">
-<meta property="og:updated_time" content="2020-07-23T14:13:37.192Z">
+<meta property="og:updated_time" content="2020-07-23T23:18:54.850Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https:&#x2F;&#x2F;jefine.github.io&#x2F;2020&#x2F;07&#x2F;23&#x2F;atabc173c&#x2F;Screenshot_2020-07-23%20C%20-%20H%20and%20V.png">
 
@@ -166,9 +166,34 @@
     <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档</a>
 
   </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
   </ul>
 
 </nav>
+  <div class="site-search">
+    <div class="popup search-popup">
+    <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocorrect="off" autocapitalize="none"
+           placeholder="搜索..." spellcheck="false"
+           type="text" id="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result"></div>
+
+</div>
+<div class="search-pop-overlay"></div>
+
+  </div>
 </div>
     </header>
 
@@ -214,10 +239,16 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              
 
-              <time title="创建时间：2020-07-23 21:21:46 / 修改时间：22:13:37" itemprop="dateCreated datePublished" datetime="2020-07-23T21:21:46+08:00">2020-07-23</time>
+              <time title="创建时间：2020-07-23 21:21:46" itemprop="dateCreated datePublished" datetime="2020-07-23T21:21:46+08:00">2020-07-23</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-07-24 07:18:54" itemprop="dateModified" datetime="2020-07-24T07:18:54+08:00">2020-07-24</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
@@ -266,7 +297,8 @@
 <p>注意到数据的范围： 1≤H,W≤6 所以 如果采暴力的方法我们也不过是 $2^{12} = 4096$ 次操作，并不会从boom，是一个相对计算机而言很小的一个数据大小。</p>
 <p>那么如何去储存一个 4096（最大） 种情况呢（其中每一种情况要表示：一共要涂刷的行或者列），我们采用了二进制状态映射的方法（<a href="https://jefine.github.io/2020/07/04/%E8%BE%93%E5%87%BA%E5%85%A8%E7%BB%84%E5%90%88%E4%BA%8C%E8%BF%9B%E5%88%B6/">回想之前全排列的二进制方法</a>） 同样这次我们对于 矩阵的行 而言，一共有h行，那么一共有 $2^h$ 种行的不同状态（即不同的涂刷方式）我们就采取二进制的方法记录，这种对于单个单位（如 此处的行）只有两种状态的数据的存储。例如：0b001 可以表示第一行第二行不刷红色，第三行刷红。</p>
 <p>我们采用 0 表示不涂刷，或者表示涂刷都是可以的，无伤大雅（毕竟有一个不刷的状态就会有刷的情况与之对应，我们将全部情况都列出来了 了 了）。所以 十进制下的 $0-(h-1)$ 就可以将  $2^h$ 种状态全部表示出来了。</p>
-<p>同理，我们也可以将列的表示如上方式，这样我们就实现了：<strong>采用一个十进制的数字，来表示一行或者一列的涂刷情况了</strong>。</p>
+<p>如果我们采用的是其他（比如，采用了 用一个矩阵来保存一种可能性的结果的话，那么就需要4000多个矩阵来表示，但想想一个矩阵我们采用一个二维数组emm 过于复杂咯，更何况每个矩阵依旧是需要依次遍历循环 判断黑色个数）</p>
+<p>同理，我们也可以将列的表示如上方式，这样我们就实现了：<strong>采用一个十进制的数字（其实需要的是它所对应的二进制），来表示一行或者一列的涂刷情况了</strong>。</p>
 <p>接着，我们就要判断出该行列状态下的黑砖的数量是不是和题目要求的一致，一致就cnt++。</p>
 <h3 id="具体实现："><a href="#具体实现：" class="headerlink" title="具体实现："></a>具体实现：</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> ll long long</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	<span class="keyword">int</span> H, W, K;</span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">"%d %d %d"</span>, &amp;H, &amp;W, &amp;K);</span><br><span class="line">	<span class="keyword">char</span> c[H][W];</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; H; ++i) &#123;</span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; W; ++j) <span class="built_in">scanf</span>(<span class="string">" %c"</span>, &amp;c[i][j]);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">int</span> ans = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; (<span class="number">1</span> &lt;&lt; H); ++i) &#123;</span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; (<span class="number">1</span> &lt;&lt; W); ++j) &#123;</span><br><span class="line">			<span class="keyword">int</span> cnt = <span class="number">0</span>;</span><br><span class="line">			<span class="comment">// above is the every situation that we may face</span></span><br><span class="line"></span><br><span class="line">			<span class="comment">// for each block c[k][l]</span></span><br><span class="line">			<span class="keyword">for</span> (<span class="keyword">int</span> k = <span class="number">0</span>; k &lt; H; ++k) &#123;</span><br><span class="line">				<span class="keyword">for</span> (<span class="keyword">int</span> l = <span class="number">0</span>; l &lt; W; ++l) &#123;</span><br><span class="line">					<span class="comment">//i , j = 0b0101 </span></span><br><span class="line">					<span class="keyword">if</span> (!(i &amp; (<span class="number">1</span> &lt;&lt; k)) &amp;&amp; !(j &amp; (<span class="number">1</span> &lt;&lt; l)) &amp;&amp; c[k][l] == <span class="string">'#'</span>) ++cnt;<span class="comment">//1 red, 0 not red</span></span><br><span class="line">					</span><br><span class="line">					<span class="comment">//if ((i &amp; (1 &lt;&lt; k)) &amp;&amp; (j &amp; (1 &lt;&lt; l)) &amp;&amp; c[k][l] == '#') ++cnt;//0 red, 1 not red</span></span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="keyword">if</span> (cnt == K) ++ans;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"%d"</span>, ans);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
@@ -526,6 +558,8 @@
 
 
 
+
+  <script src="/js/local-search.js"></script>
 
 
 
