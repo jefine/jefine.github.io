@@ -1,89 +1,68 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta http-equiv="content-type" content="text/html; charset=utf-8">
-    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
-    
-    <title>hdu1237计算器 - jefine</title>
-    <meta charset="utf-8">
-    
-    <meta name="title" content="hdu1237计算器 - jefine">
-    <meta name="description" content="">
-    <meta property="og:image" content="/favicon.png">
-    <meta property="og:image:width" content="200" />
-    <meta property="og:image:height" content="200" />
-    
-    <link href="https://fonts.googleapis.com/css2?family=Source+Serif+Pro:wght@400;700&display=swap" rel="stylesheet">
-    
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;700&display=swap" rel="stylesheet">
-    <style>
-        body {
-            font-family: 'Source Serif Pro', 'Source Han Serif SC', 'Noto Serif CJK SC', 'Noto Serif SC', serif;
-        }
-    </style>
-    
-    <link rel="shortcut icon" href="/favicon.png">
-    
-    <link rel="stylesheet"
-        href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.17.1/build/styles/arduino-light.min.css">
-    <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.17.1/build/highlight.min.js"></script>
-    <script>hljs.initHighlightingOnLoad();</script>
-    
-    
-    <link rel="stylesheet" href="/css/style.css">
-    <script src="/js/jquery.min.js"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
+  
+  <title>hdu1237计算器 | jefine</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+    <link rel="stylesheet" href="/css/highlight.css"><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+  
 </head>
-
 <body>
-    <!-- hexo-inject:begin --><!-- hexo-inject:end --><header class="header">
-    <div class="blog-title">
-        <a href="/" class="logo">jefine</a>
-    </div>
-    <nav class="navbar">
-        <ul class="menu">
-            
-            
-            
-            <li class="menu-item">
-                
-                <a href="/" class="menu-item-link">Home</a>
-                
-            </li>
-            
-            
-            
-            <li class="menu-item">
-                
-                <a href="/archives" class="menu-item-link">Archives</a>
-                
-            </li>
-            
-            
-            
-            <li class="menu-item">
-                
-                <a href="/about" class="menu-item-link">About</a>
-                
-            </li>
-            
-            
-            
-            <li class="menu-item">
-                
-                <a href="/rss" class="menu-item-link">RSS</a>
-                
-            </li>
-            
-        </ul>
-    </nav>
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div id="wrapper">
+    <header id="header">
+  <h1 id="title">
+    <a href="/">jefine</a>
+  </h1>
+  <nav>
+    
+    
+      
+      <a class="nav-link" href="/">Home</a>
+    
+      
+        <span class="nav-spacer">×</span>
+      
+      <a class="nav-link" href="/about">About</a>
+    
+      
+        <span class="nav-spacer">×</span>
+      
+      <a class="nav-link" href="/archives">Archives</a>
+    
+    
+  </nav>
 </header>
-    <main class="main">
-        <article class="post">
-    <div class="post-title">
-        <h1 class="title">hdu1237计算器</h2>
-    </div>
-    <div class="post-content">
-        <h1 id="简单计算器"><a href="#简单计算器" class="headerlink" title="简单计算器"></a><a href="http://acm.hdu.edu.cn/showproblem.php?pid=1237" target="_blank" rel="noopener">简单计算器</a></h1><p>Time Limit: 2000/1000 MS (Java/Others)  Memory Limit: 65536/32768 K (Java/Others)<br>Total Submission(s): 36334  Accepted Submission(s): 13065</p>
+
+    <div id="content">
+      <article id="post-hdu1237计算器" class="article article-type-post" itemprop="blogPost" itemscope>
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h2 class="article-title" itemprop="headline name">
+      hdu1237计算器
+    </h2>
+  
+
+
+        <div class="article-meta">
+          <time class="article-date" datetime="2020-06-07T02:26:22.000Z" itemprop="datePublished">六月 7, 2020, 10:26 上午</time>
+
+          
+        </div>
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+      
+        <h1 id="简单计算器"><a href="#简单计算器" class="headerlink" title="简单计算器"></a><a href="http://acm.hdu.edu.cn/showproblem.php?pid=1237" target="_blank" rel="noopener">简单计算器</a></h1>  <a id="more"></a>
+<p>Time Limit: 2000/1000 MS (Java/Others)  Memory Limit: 65536/32768 K (Java/Others)<br>Total Submission(s): 36334  Accepted Submission(s): 13065</p>
 <p>Problem Description</p>
 <p>读入一个只包含 +, -, *, / 的非负整数计算表达式，计算该表达式的值。</p>
 <p>Input</p>
@@ -103,40 +82,66 @@
 <p>当前的优先级高那么压入栈，当前优先级和栈顶（上次的）的优先级相同，或小于上次的话，自然时先算上次的，同时这样的模拟也是最符合我们自己的真实的运算过程的。</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">P</span><span class="params">(<span class="keyword">char</span> c)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (c == <span class="string">'+'</span> || c == <span class="string">'-'</span>) <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">2</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">double</span> <span class="title">Ans</span><span class="params">(<span class="keyword">double</span> x, <span class="keyword">double</span> y, <span class="keyword">char</span> c)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (c == <span class="string">'+'</span>) <span class="keyword">return</span> x + y;</span><br><span class="line">    <span class="keyword">if</span> (c == <span class="string">'-'</span>) <span class="keyword">return</span> x - y;</span><br><span class="line">    <span class="keyword">if</span> (c == <span class="string">'*'</span>)<span class="keyword">return</span> x*y;</span><br><span class="line">    <span class="keyword">return</span> x / y;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> n;</span><br><span class="line">    <span class="keyword">while</span> (~<span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;n))</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">char</span> c = getchar();</span><br><span class="line">        <span class="keyword">if</span> (c==<span class="string">'\n'</span>&amp;&amp;n == <span class="number">0</span>)<span class="keyword">break</span>;</span><br><span class="line">        <span class="built_in">stack</span>&lt;<span class="keyword">char</span>&gt; op;</span><br><span class="line">        <span class="built_in">stack</span>&lt;<span class="keyword">double</span>&gt;num;</span><br><span class="line">        num.push(n);</span><br><span class="line">        <span class="keyword">while</span> (<span class="literal">true</span>)<span class="comment">//开始一行的运算，之前已经获取了一个n，并压入num；</span></span><br><span class="line">        &#123;</span><br><span class="line">            <span class="built_in">scanf</span>(<span class="string">"%c %d"</span>, &amp;c, &amp;n);</span><br><span class="line">            <span class="keyword">char</span> k = getchar();</span><br><span class="line">            <span class="keyword">while</span> (!op.empty()&amp;&amp;P(c)&lt;=P(op.top()))<span class="comment">//第一次会跳过</span></span><br><span class="line">            <span class="comment">//当操作符的栈不为空……且现在的操作符优先级小于或等于栈顶的的操作符的优先级时</span></span><br><span class="line">            <span class="comment">//那么先将之前的进行计算</span></span><br><span class="line">            &#123;</span><br><span class="line">                <span class="keyword">char</span> t = op.top();</span><br><span class="line">                op.pop();</span><br><span class="line">                <span class="keyword">double</span> y = num.top();</span><br><span class="line">                num.pop();</span><br><span class="line">                <span class="keyword">double</span> x = num.top();</span><br><span class="line">                num.pop();</span><br><span class="line">                <span class="keyword">double</span> ans = Ans(x, y, t);</span><br><span class="line">                num.push(ans);</span><br><span class="line">            &#125;</span><br><span class="line">            op.push(c);</span><br><span class="line">            num.push(n);</span><br><span class="line">            <span class="keyword">if</span> (k == <span class="string">'\n'</span>)<span class="keyword">break</span>;</span><br><span class="line">            <span class="comment">//这导致了上面还有压入的数字和操作符未被操作，便有了下面的判断op栈</span></span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">while</span> (!op.empty())</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">char</span> t = op.top();</span><br><span class="line">            op.pop();</span><br><span class="line">            <span class="keyword">double</span> y = num.top();</span><br><span class="line">            num.pop();</span><br><span class="line">            <span class="keyword">double</span> x = num.top();</span><br><span class="line">            num.pop();</span><br><span class="line">            <span class="keyword">double</span> ans = Ans(x, y, t);</span><br><span class="line">            num.push(ans);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"%.2f\n"</span>, num.top());</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
+      
     </div>
-    <div class="post-meta">
-        
-    <span class="post-time">2020/06/07</span>
+    
+    
+    <div class="article-category">
+      
+        <b>Categories:</b>
+        <a class="article-category-link" href="/categories/%E7%BC%96%E7%A8%8B/">编程</a>
+      
+      
+        <br/>
+      
+      
+        <b>Tags:</b>
+        <a class="article-tag-link" href="/tags/hdu-%E6%A0%88/" rel="tag">hdu 栈</a>
+      
     </div>
+    
+    
+  </div>
 </article>
 
-<div class="prev_next">
-    <nav id="prev_next">
-
-<div class="prev">
-    
-    <p>Newer</p>
-    <a href="/2020/06/28/负数二进制（码制与数制）/"><div class="article-nav-title">负数二进制（码制与数制）</div></a>
-    
-</div>
-<div class="next">
-    
-    <p>Older</p>
-    <a href="/2020/06/04/pta六度空间/"><div class="article-nav-title">pta六度空间</div></a>
-    
-</div>
-
+  
+<nav id="article-nav" class="article-nav">
+  
+    <a href="/2020/06/28/%E8%B4%9F%E6%95%B0%E4%BA%8C%E8%BF%9B%E5%88%B6%EF%BC%88%E7%A0%81%E5%88%B6%E4%B8%8E%E6%95%B0%E5%88%B6%EF%BC%89/" id="article-nav-newer" class="article-nav-link-wrap newer">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          负数二进制（码制与数制）
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2020/06/04/pta%E5%85%AD%E5%BA%A6%E7%A9%BA%E9%97%B4/" id="article-nav-older" class="article-nav-link-wrap older">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">
+        
+          pta六度空间
+        
+      </div>
+    </a>
+  
 </nav>
-</div>
-
-<div class="post-comment">
-    
 
 
 
-</div>
 
-    </main><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+
+    </div>
+  </div><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+  
+
+
+
+
+
+
+
 </body>
-
 </html>

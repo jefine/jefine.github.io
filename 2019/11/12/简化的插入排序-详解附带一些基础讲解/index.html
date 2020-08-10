@@ -1,89 +1,68 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta http-equiv="content-type" content="text/html; charset=utf-8">
-    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
-    
-    <title>简化的插入排序,详解附带一些基础讲解 - jefine</title>
-    <meta charset="utf-8">
-    
-    <meta name="title" content="简化的插入排序,详解附带一些基础讲解 - jefine">
-    <meta name="description" content="">
-    <meta property="og:image" content="/favicon.png">
-    <meta property="og:image:width" content="200" />
-    <meta property="og:image:height" content="200" />
-    
-    <link href="https://fonts.googleapis.com/css2?family=Source+Serif+Pro:wght@400;700&display=swap" rel="stylesheet">
-    
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;700&display=swap" rel="stylesheet">
-    <style>
-        body {
-            font-family: 'Source Serif Pro', 'Source Han Serif SC', 'Noto Serif CJK SC', 'Noto Serif SC', serif;
-        }
-    </style>
-    
-    <link rel="shortcut icon" href="/favicon.png">
-    
-    <link rel="stylesheet"
-        href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.17.1/build/styles/arduino-light.min.css">
-    <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.17.1/build/highlight.min.js"></script>
-    <script>hljs.initHighlightingOnLoad();</script>
-    
-    
-    <link rel="stylesheet" href="/css/style.css">
-    <script src="/js/jquery.min.js"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
+  
+  <title>简化的插入排序,详解附带一些基础讲解 | jefine</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+    <link rel="stylesheet" href="/css/highlight.css"><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+  
 </head>
-
 <body>
-    <!-- hexo-inject:begin --><!-- hexo-inject:end --><header class="header">
-    <div class="blog-title">
-        <a href="/" class="logo">jefine</a>
-    </div>
-    <nav class="navbar">
-        <ul class="menu">
-            
-            
-            
-            <li class="menu-item">
-                
-                <a href="/" class="menu-item-link">Home</a>
-                
-            </li>
-            
-            
-            
-            <li class="menu-item">
-                
-                <a href="/archives" class="menu-item-link">Archives</a>
-                
-            </li>
-            
-            
-            
-            <li class="menu-item">
-                
-                <a href="/about" class="menu-item-link">About</a>
-                
-            </li>
-            
-            
-            
-            <li class="menu-item">
-                
-                <a href="/rss" class="menu-item-link">RSS</a>
-                
-            </li>
-            
-        </ul>
-    </nav>
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div id="wrapper">
+    <header id="header">
+  <h1 id="title">
+    <a href="/">jefine</a>
+  </h1>
+  <nav>
+    
+    
+      
+      <a class="nav-link" href="/">Home</a>
+    
+      
+        <span class="nav-spacer">×</span>
+      
+      <a class="nav-link" href="/about">About</a>
+    
+      
+        <span class="nav-spacer">×</span>
+      
+      <a class="nav-link" href="/archives">Archives</a>
+    
+    
+  </nav>
 </header>
-    <main class="main">
-        <article class="post">
-    <div class="post-title">
-        <h1 class="title">简化的插入排序,详解附带一些基础讲解</h2>
-    </div>
-    <div class="post-content">
+
+    <div id="content">
+      <article id="post-简化的插入排序-详解附带一些基础讲解" class="article article-type-post" itemprop="blogPost" itemscope>
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h2 class="article-title" itemprop="headline name">
+      简化的插入排序,详解附带一些基础讲解
+    </h2>
+  
+
+
+        <div class="article-meta">
+          <time class="article-date" datetime="2019-11-12T01:05:52.000Z" itemprop="datePublished">十一月 12, 2019, 9:05 上午</time>
+
+          
+        </div>
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+      
         <p>本题要求编写程序，将一个给定的整数插到原本有序的整数序列中，使结果序列仍然有序。</p>
+  <a id="more"></a>
 <h3 id="输入格式："><a href="#输入格式：" class="headerlink" title="输入格式："></a>输入格式：</h3><p>输入在第一行先给出非负整数N（&lt;10）；第二行给出N个从小到大排好顺序的整数；第三行给出一个整数X。</p>
 <h3 id="输出格式："><a href="#输出格式：" class="headerlink" title="输出格式："></a>输出格式：</h3><p>在一行内输出将X插入后仍然从小到大有序的整数序列，每个数字后面有一个空格。</p>
 <h3 id="输入样例："><a href="#输入样例：" class="headerlink" title="输入样例："></a>输入样例：</h3><p> 5<br>1 2 4 5 7<br>3</p>
@@ -111,40 +90,66 @@
 </ul>
 <h2 id="代码如下："><a href="#代码如下：" class="headerlink" title="代码如下："></a>代码如下：</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> n,j,i,t,x;</span><br><span class="line"></span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;n);</span><br><span class="line">		<span class="keyword">int</span> a[n+<span class="number">1</span>];</span><br><span class="line"></span><br><span class="line">	<span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;n;i++)&#123;<span class="comment">//input</span></span><br><span class="line">		<span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;a[i]);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;x);</span><br><span class="line"></span><br><span class="line"><span class="comment">//	if(x&lt;a[0])&#123;//special min </span></span><br><span class="line"><span class="comment">//		for(j=n-1;j&gt;=0;j--)&#123;//有多少个n移多少次！ </span></span><br><span class="line"><span class="comment">//	 	a[j+1]=a[j];</span></span><br><span class="line"><span class="comment">//	 	&#125;a[0]=x;</span></span><br><span class="line"><span class="comment">//	&#125;</span></span><br><span class="line"><span class="comment">// 	else if(x&gt;a[n-1])a[n]=x;//special max </span></span><br><span class="line"><span class="comment">// 	</span></span><br><span class="line"><span class="comment">//	else </span></span><br><span class="line">	<span class="keyword">for</span>(i=n<span class="number">-1</span>;i&gt;=<span class="number">0</span>;i--)&#123;<span class="comment">//do</span></span><br><span class="line">	 <span class="keyword">if</span>(x&gt;a[i])&#123;</span><br><span class="line">	 a[i+<span class="number">1</span>]=x;</span><br><span class="line">	 <span class="keyword">break</span>;&#125;<span class="comment">//找到x的位置并插入了</span></span><br><span class="line">	 <span class="keyword">else</span> a[i+<span class="number">1</span>]=a[i];<span class="comment">//没找到，将大的数字向右移一位，继续比较。				 </span></span><br><span class="line">	&#125; </span><br><span class="line">	</span><br><span class="line">	<span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;n+<span class="number">1</span>;i++)&#123;<span class="comment">//output</span></span><br><span class="line">		</span><br><span class="line"></span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"%d "</span>,a[i]);</span><br><span class="line">	</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
+      
     </div>
-    <div class="post-meta">
-        
-    <span class="post-time">2019/11/12</span>
+    
+    
+    <div class="article-category">
+      
+        <b>Categories:</b>
+        <a class="article-category-link" href="/categories/%E7%AE%97%E6%B3%95/">算法</a>
+      
+      
+        <br/>
+      
+      
+        <b>Tags:</b>
+        <a class="article-tag-link" href="/tags/%E6%8E%92%E5%BA%8F/" rel="tag">排序</a>
+      
     </div>
+    
+    
+  </div>
 </article>
 
-<div class="prev_next">
-    <nav id="prev_next">
-
-<div class="prev">
-    
-    <p>Newer</p>
-    <a href="/2019/11/12/方阵循环右移于其各种踩bug23333/"><div class="article-nav-title">方阵循环右移于其各种踩bug23333</div></a>
-    
-</div>
-<div class="next">
-    
-    <p>Older</p>
-    <a href="/2019/11/09/各种排序方式的汇总及学习（只写了冒泡排序）/"><div class="article-nav-title">各种排序方式的汇总及学习（只更了冒泡排序）</div></a>
-    
-</div>
-
+  
+<nav id="article-nav" class="article-nav">
+  
+    <a href="/2019/11/12/%E6%96%B9%E9%98%B5%E5%BE%AA%E7%8E%AF%E5%8F%B3%E7%A7%BB%E4%BA%8E%E5%85%B6%E5%90%84%E7%A7%8D%E8%B8%A9bug23333/" id="article-nav-newer" class="article-nav-link-wrap newer">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          方阵循环右移于其各种踩bug23333
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2019/11/09/%E5%90%84%E7%A7%8D%E6%8E%92%E5%BA%8F%E6%96%B9%E5%BC%8F%E7%9A%84%E6%B1%87%E6%80%BB%E5%8F%8A%E5%AD%A6%E4%B9%A0%EF%BC%88%E5%8F%AA%E5%86%99%E4%BA%86%E5%86%92%E6%B3%A1%E6%8E%92%E5%BA%8F%EF%BC%89/" id="article-nav-older" class="article-nav-link-wrap older">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">
+        
+          各种排序方式的汇总及学习（只更了冒泡排序）
+        
+      </div>
+    </a>
+  
 </nav>
-</div>
-
-<div class="post-comment">
-    
 
 
 
-</div>
 
-    </main><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+
+    </div>
+  </div><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+  
+
+
+
+
+
+
+
 </body>
-
 </html>

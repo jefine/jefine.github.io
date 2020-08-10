@@ -1,89 +1,68 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta http-equiv="content-type" content="text/html; charset=utf-8">
-    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
-    
-    <title>各种排序方式的汇总及学习（只更了冒泡排序） - jefine</title>
-    <meta charset="utf-8">
-    
-    <meta name="title" content="各种排序方式的汇总及学习（只更了冒泡排序） - jefine">
-    <meta name="description" content="">
-    <meta property="og:image" content="/favicon.png">
-    <meta property="og:image:width" content="200" />
-    <meta property="og:image:height" content="200" />
-    
-    <link href="https://fonts.googleapis.com/css2?family=Source+Serif+Pro:wght@400;700&display=swap" rel="stylesheet">
-    
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;700&display=swap" rel="stylesheet">
-    <style>
-        body {
-            font-family: 'Source Serif Pro', 'Source Han Serif SC', 'Noto Serif CJK SC', 'Noto Serif SC', serif;
-        }
-    </style>
-    
-    <link rel="shortcut icon" href="/favicon.png">
-    
-    <link rel="stylesheet"
-        href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.17.1/build/styles/arduino-light.min.css">
-    <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.17.1/build/highlight.min.js"></script>
-    <script>hljs.initHighlightingOnLoad();</script>
-    
-    
-    <link rel="stylesheet" href="/css/style.css">
-    <script src="/js/jquery.min.js"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
+  
+  <title>各种排序方式的汇总及学习（只更了冒泡排序） | jefine</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+    <link rel="stylesheet" href="/css/highlight.css"><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+  
 </head>
-
 <body>
-    <!-- hexo-inject:begin --><!-- hexo-inject:end --><header class="header">
-    <div class="blog-title">
-        <a href="/" class="logo">jefine</a>
-    </div>
-    <nav class="navbar">
-        <ul class="menu">
-            
-            
-            
-            <li class="menu-item">
-                
-                <a href="/" class="menu-item-link">Home</a>
-                
-            </li>
-            
-            
-            
-            <li class="menu-item">
-                
-                <a href="/archives" class="menu-item-link">Archives</a>
-                
-            </li>
-            
-            
-            
-            <li class="menu-item">
-                
-                <a href="/about" class="menu-item-link">About</a>
-                
-            </li>
-            
-            
-            
-            <li class="menu-item">
-                
-                <a href="/rss" class="menu-item-link">RSS</a>
-                
-            </li>
-            
-        </ul>
-    </nav>
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div id="wrapper">
+    <header id="header">
+  <h1 id="title">
+    <a href="/">jefine</a>
+  </h1>
+  <nav>
+    
+    
+      
+      <a class="nav-link" href="/">Home</a>
+    
+      
+        <span class="nav-spacer">×</span>
+      
+      <a class="nav-link" href="/about">About</a>
+    
+      
+        <span class="nav-spacer">×</span>
+      
+      <a class="nav-link" href="/archives">Archives</a>
+    
+    
+  </nav>
 </header>
-    <main class="main">
-        <article class="post">
-    <div class="post-title">
-        <h1 class="title">各种排序方式的汇总及学习（只更了冒泡排序）</h2>
-    </div>
-    <div class="post-content">
-        <h3 id="首先了解排序："><a href="#首先了解排序：" class="headerlink" title="首先了解排序："></a>首先了解排序：</h3><h6 id="排序的定义"><a href="#排序的定义" class="headerlink" title="排序的定义"></a><strong>排序的定义</strong></h6><p>假设含有n个记录的序列为{r1,r2,…,rn}，其相应的关键字分别是{k1,k2,…,kn}，需要确定1,2,…,n的一种排列p1,p2,…,pn，使其相应的关键字满足kp1&lt;=kp2&lt;=…&lt;=kpn 非递减（或非递增）的关系，即使得序列成为一个按关键字有序的序列{rp1,rp2,…,rpn}，这样的操作就称为排序[1]。</p>
+
+    <div id="content">
+      <article id="post-各种排序方式的汇总及学习（只写了冒泡排序）" class="article article-type-post" itemprop="blogPost" itemscope>
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h2 class="article-title" itemprop="headline name">
+      各种排序方式的汇总及学习（只更了冒泡排序）
+    </h2>
+  
+
+
+        <div class="article-meta">
+          <time class="article-date" datetime="2019-11-09T04:58:00.000Z" itemprop="datePublished">十一月 9, 2019, 12:58 下午</time>
+
+          
+        </div>
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+      
+        <h3 id="首先了解排序："><a href="#首先了解排序：" class="headerlink" title="首先了解排序："></a>首先了解排序：</h3>  <a id="more"></a>
+<h6 id="排序的定义"><a href="#排序的定义" class="headerlink" title="排序的定义"></a><strong>排序的定义</strong></h6><p>假设含有n个记录的序列为{r1,r2,…,rn}，其相应的关键字分别是{k1,k2,…,kn}，需要确定1,2,…,n的一种排列p1,p2,…,pn，使其相应的关键字满足kp1&lt;=kp2&lt;=…&lt;=kpn 非递减（或非递增）的关系，即使得序列成为一个按关键字有序的序列{rp1,rp2,…,rpn}，这样的操作就称为排序[1]。</p>
 <p>简单来说，排序就是使输入的序列变成符合一定规则（关键字）的有序序列（非递减或非递增）。大多数遇到的排序问题都是按数据元素值的大小规则进行排序的问题。所以本文为了方便起见，只讨论数据元素值大小比较的排序问题。</p>
 <h6 id="排序的稳定性"><a href="#排序的稳定性" class="headerlink" title="排序的稳定性"></a><strong>排序的稳定性</strong></h6><p>假设ki=kj（1&lt;=i&lt;=n，1&lt;=j&lt;=n，i!=j），且在排序前的序列中ri领先于rj（即i&lt;j）。</p>
 <ul>
@@ -130,40 +109,66 @@
 <p><strong>总结：此次优化是将大循环，小循环的结束条件进行修正。</strong></p>
 <p>本文来自一些微信公众号与csdn和自己的总结与修改（抱歉，我找不到文章链接了），在此表示感谢，如有侵权，联系立删。</p>
 
+      
     </div>
-    <div class="post-meta">
-        
-    <span class="post-time">2019/11/09</span>
+    
+    
+    <div class="article-category">
+      
+        <b>Categories:</b>
+        <a class="article-category-link" href="/categories/%E7%BC%96%E7%A8%8B/">编程</a>
+      
+      
+        <br/>
+      
+      
+        <b>Tags:</b>
+        <a class="article-tag-link" href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" rel="tag">数据结构</a>
+      
     </div>
+    
+    
+  </div>
 </article>
 
-<div class="prev_next">
-    <nav id="prev_next">
-
-<div class="prev">
-    
-    <p>Newer</p>
-    <a href="/2019/11/12/简化的插入排序-详解附带一些基础讲解/"><div class="article-nav-title">简化的插入排序,详解附带一些基础讲解</div></a>
-    
-</div>
-<div class="next">
-    
-    <p>Older</p>
-    <a href="/2019/11/07/pta输出指定范围内的斐波那契数列/"><div class="article-nav-title">pta输出指定范围内的斐波那契数列</div></a>
-    
-</div>
-
+  
+<nav id="article-nav" class="article-nav">
+  
+    <a href="/2019/11/12/%E7%AE%80%E5%8C%96%E7%9A%84%E6%8F%92%E5%85%A5%E6%8E%92%E5%BA%8F-%E8%AF%A6%E8%A7%A3%E9%99%84%E5%B8%A6%E4%B8%80%E4%BA%9B%E5%9F%BA%E7%A1%80%E8%AE%B2%E8%A7%A3/" id="article-nav-newer" class="article-nav-link-wrap newer">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          简化的插入排序,详解附带一些基础讲解
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2019/11/07/pta%E8%BE%93%E5%87%BA%E6%8C%87%E5%AE%9A%E8%8C%83%E5%9B%B4%E5%86%85%E7%9A%84%E6%96%90%E6%B3%A2%E9%82%A3%E5%A5%91%E6%95%B0%E5%88%97/" id="article-nav-older" class="article-nav-link-wrap older">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">
+        
+          pta输出指定范围内的斐波那契数列
+        
+      </div>
+    </a>
+  
 </nav>
-</div>
-
-<div class="post-comment">
-    
 
 
 
-</div>
 
-    </main><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+
+    </div>
+  </div><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+  
+
+
+
+
+
+
+
 </body>
-
 </html>

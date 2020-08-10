@@ -1,89 +1,68 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta http-equiv="content-type" content="text/html; charset=utf-8">
-    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
-    
-    <title>atabc173c C - H and V - jefine</title>
-    <meta charset="utf-8">
-    
-    <meta name="title" content="atabc173c C - H and V - jefine">
-    <meta name="description" content="">
-    <meta property="og:image" content="/favicon.png">
-    <meta property="og:image:width" content="200" />
-    <meta property="og:image:height" content="200" />
-    
-    <link href="https://fonts.googleapis.com/css2?family=Source+Serif+Pro:wght@400;700&display=swap" rel="stylesheet">
-    
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;700&display=swap" rel="stylesheet">
-    <style>
-        body {
-            font-family: 'Source Serif Pro', 'Source Han Serif SC', 'Noto Serif CJK SC', 'Noto Serif SC', serif;
-        }
-    </style>
-    
-    <link rel="shortcut icon" href="/favicon.png">
-    
-    <link rel="stylesheet"
-        href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.17.1/build/styles/arduino-light.min.css">
-    <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.17.1/build/highlight.min.js"></script>
-    <script>hljs.initHighlightingOnLoad();</script>
-    
-    
-    <link rel="stylesheet" href="/css/style.css">
-    <script src="/js/jquery.min.js"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
+  
+  <title>atabc173c C - H and V | jefine</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+    <link rel="stylesheet" href="/css/highlight.css"><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+  
 </head>
-
 <body>
-    <!-- hexo-inject:begin --><!-- hexo-inject:end --><header class="header">
-    <div class="blog-title">
-        <a href="/" class="logo">jefine</a>
-    </div>
-    <nav class="navbar">
-        <ul class="menu">
-            
-            
-            
-            <li class="menu-item">
-                
-                <a href="/" class="menu-item-link">Home</a>
-                
-            </li>
-            
-            
-            
-            <li class="menu-item">
-                
-                <a href="/archives" class="menu-item-link">Archives</a>
-                
-            </li>
-            
-            
-            
-            <li class="menu-item">
-                
-                <a href="/about" class="menu-item-link">About</a>
-                
-            </li>
-            
-            
-            
-            <li class="menu-item">
-                
-                <a href="/rss" class="menu-item-link">RSS</a>
-                
-            </li>
-            
-        </ul>
-    </nav>
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div id="wrapper">
+    <header id="header">
+  <h1 id="title">
+    <a href="/">jefine</a>
+  </h1>
+  <nav>
+    
+    
+      
+      <a class="nav-link" href="/">Home</a>
+    
+      
+        <span class="nav-spacer">×</span>
+      
+      <a class="nav-link" href="/about">About</a>
+    
+      
+        <span class="nav-spacer">×</span>
+      
+      <a class="nav-link" href="/archives">Archives</a>
+    
+    
+  </nav>
 </header>
-    <main class="main">
-        <article class="post">
-    <div class="post-title">
-        <h1 class="title">atabc173c C - H and V</h2>
-    </div>
-    <div class="post-content">
+
+    <div id="content">
+      <article id="post-atabc173c" class="article article-type-post" itemprop="blogPost" itemscope>
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h2 class="article-title" itemprop="headline name">
+      atabc173c C - H and V
+    </h2>
+  
+
+
+        <div class="article-meta">
+          <time class="article-date" datetime="2020-07-23T13:21:46.000Z" itemprop="datePublished">七月 23, 2020, 9:21 晚上</time>
+
+          
+        </div>
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+      
         <p>此题目主要包括了全排列，二进制的相关知识</p>
+  <a id="more"></a>
 <p><a href="https://atcoder.jp/contests/abc173/tasks/abc173_c" target="_blank" rel="noopener">C - H and V</a>(单击题目可进入下图链接)</p>
 <p><img src="/2020/07/23/atabc173c/Screenshot_2020-07-23 C - H and V.png" alt="2020-07-23 C - H and V"></p>
 <p>题意：第一次看的时候，看的有点呆。</p>
@@ -101,37 +80,52 @@
 <p>接着，我们就要判断出该行列状态下的黑砖的数量是不是和题目要求的一致，一致就cnt++。</p>
 <h3 id="具体实现："><a href="#具体实现：" class="headerlink" title="具体实现："></a>具体实现：</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> ll long long</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	<span class="keyword">int</span> H, W, K;</span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">"%d %d %d"</span>, &amp;H, &amp;W, &amp;K);</span><br><span class="line">	<span class="keyword">char</span> c[H][W];</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; H; ++i) &#123;</span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; W; ++j) <span class="built_in">scanf</span>(<span class="string">" %c"</span>, &amp;c[i][j]);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">int</span> ans = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; (<span class="number">1</span> &lt;&lt; H); ++i) &#123;</span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; (<span class="number">1</span> &lt;&lt; W); ++j) &#123;</span><br><span class="line">			<span class="keyword">int</span> cnt = <span class="number">0</span>;</span><br><span class="line">			<span class="comment">// above is the every situation that we may face</span></span><br><span class="line"></span><br><span class="line">			<span class="comment">// for each block c[k][l]</span></span><br><span class="line">			<span class="keyword">for</span> (<span class="keyword">int</span> k = <span class="number">0</span>; k &lt; H; ++k) &#123;</span><br><span class="line">				<span class="keyword">for</span> (<span class="keyword">int</span> l = <span class="number">0</span>; l &lt; W; ++l) &#123;</span><br><span class="line">					<span class="comment">//i , j = 0b0101 </span></span><br><span class="line">					<span class="keyword">if</span> (!(i &amp; (<span class="number">1</span> &lt;&lt; k)) &amp;&amp; !(j &amp; (<span class="number">1</span> &lt;&lt; l)) &amp;&amp; c[k][l] == <span class="string">'#'</span>) ++cnt;<span class="comment">//1 red, 0 not red</span></span><br><span class="line">					</span><br><span class="line">					<span class="comment">//if ((i &amp; (1 &lt;&lt; k)) &amp;&amp; (j &amp; (1 &lt;&lt; l)) &amp;&amp; c[k][l] == '#') ++cnt;//0 red, 1 not red</span></span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="keyword">if</span> (cnt == K) ++ans;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"%d"</span>, ans);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
+      
     </div>
-    <div class="post-meta">
-        
-    <span class="post-time">2020/07/23</span>
+    
+    
+    <div class="article-category">
+      
+        <b>Categories:</b>
+        <a class="article-category-link" href="/categories/%E7%BC%96%E7%A8%8B/">编程</a>
+      
+      
+        <br/>
+      
+      
+        <b>Tags:</b>
+        <a class="article-tag-link" href="/tags/atcoder-%E4%BA%8C%E8%BF%9B%E5%88%B6/" rel="tag">atcoder 二进制</a>
+      
     </div>
+    
+    
+  </div>
 </article>
 
-<div class="prev_next">
-    <nav id="prev_next">
-
-<div class="prev">
-    
-</div>
-<div class="next">
-    
-    <p>Older</p>
-    <a href="/2020/07/18/hdu1240Asteroids/"><div class="article-nav-title">hdu1240Asteroids</div></a>
-    
-</div>
-
+  
+<nav id="article-nav" class="article-nav">
+  
+    <span id="article-nav-newer" class="article-nav-link-wrap newer"></span>
+  
+  
+    <a href="/2020/07/18/hdu1240Asteroids/" id="article-nav-older" class="article-nav-link-wrap older">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">
+        
+          hdu1240Asteroids
+        
+      </div>
+    </a>
+  
 </nav>
-</div>
-
-<div class="post-comment">
-    
 
 
 
-</div>
 
-    </main><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
+
+
+    </div>
+  </div><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
 <script type="text/x-mathjax-config">
   MathJax.Hub.Config("");
 </script>
@@ -149,6 +143,13 @@
 </script>
 <!-- End: Injected MathJax -->
 <!-- hexo-inject:end -->
-</body>
+  
 
+
+
+
+
+
+
+</body>
 </html>
