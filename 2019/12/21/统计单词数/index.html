@@ -1,66 +1,96 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
-  
-  <title>统计单词数 | jefine</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  
-  
-  <link rel="stylesheet" href="/css/style.css">
-  
-    <link rel="stylesheet" href="/css/highlight.css"><!-- hexo-inject:begin --><!-- hexo-inject:end -->
-  
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+    
+    <title>统计单词数 - jefine</title>
+    <meta charset="utf-8">
+    
+    <meta name="title" content="统计单词数 - jefine">
+    <meta name="description" content="">
+    <meta property="og:image" content="/favicon.png">
+    <meta property="og:image:width" content="200" />
+    <meta property="og:image:height" content="200" />
+    
+    <link href="https://fonts.googleapis.com/css2?family=Source+Serif+Pro:wght@400;700&display=swap" rel="stylesheet">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Source Serif Pro', 'Source Han Serif SC', 'Noto Serif CJK SC', 'Noto Serif SC', serif;
+        }
+    </style>
+    
+    <link rel="shortcut icon" href="/favicon.png">
+    
+    <link rel="stylesheet"
+        href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.17.1/build/styles/arduino-light.min.css">
+    <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.17.1/build/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    
+    
+    <link rel="stylesheet" href="/css/style.css">
+    <script src="/js/jquery.min.js"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 </head>
+
 <body>
-  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div id="wrapper">
-    <header id="header">
-  <h1 id="title">
-    <a href="/">jefine</a>
-  </h1>
-  <nav>
-    
-    
-      
-      <a class="nav-link" href="/">Home</a>
-    
-      
-        <span class="nav-spacer">×</span>
-      
-      <a class="nav-link" href="/about">About</a>
-    
-      
-        <span class="nav-spacer">×</span>
-      
-      <a class="nav-link" href="/archives">Archives</a>
-    
-    
-  </nav>
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><header class="header">
+    <div class="blog-title">
+        <a href="/" class="logo">jefine</a>
+    </div>
+    <nav class="navbar">
+        <ul class="menu">
+            
+            
+            
+            <li class="menu-item">
+                
+                <a href="/" class="menu-item-link">Home</a>
+                
+            </li>
+            
+            
+            
+            <li class="menu-item">
+                
+                <a href="/archives" class="menu-item-link">Archives</a>
+                
+            </li>
+            
+            
+            
+            <li class="menu-item">
+                
+                <a href="/about" class="menu-item-link">About</a>
+                
+            </li>
+            
+            
+            
+            <li class="menu-item">
+                
+                <a href="/rss" class="menu-item-link">RSS</a>
+                
+            </li>
+            
+            
+            
+            <li class="menu-item">
+                
+                <a href="/member" class="menu-item-link">Member</a>
+                
+            </li>
+            
+        </ul>
+    </nav>
 </header>
-
-    <div id="content">
-      <article id="p1308-统计单词数" class="article article-type-p1308" itemprop="blogPost" itemscope>
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h2 class="article-title" itemprop="headline name">
-      统计单词数
-    </h2>
-  
-
-
-        <div class="article-meta">
-          <time class="article-date" datetime="2019-12-21T02:39:43.000Z" itemprop="datePublished">十二月 21, 2019, 10:39 上午</time>
-
-          
-        </div>
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-      
+    <main class="main">
+        <article class="post">
+    <div class="post-title">
+        <h1 class="title">统计单词数</h2>
+    </div>
+    <div class="post-content">
         <h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><p>一般的文本编辑器都有查找单词的功能，该功能可以快速定位特定单词在文章中的位置，有的还能统计出特定单词在文章中出现的次数。</p>
   <a id="more"></a>
 <p>现在，请你编程实现这一功能，具体要求是：给定一个单词，请你输出它在给定的文章中出现的次数和第一次出现的位置。注意：匹配单词时，不区分大小写，但要求完全匹配，即给定单词必须与文章中的某一独立单词在不区分大小写的情况下完全相同（参见样例1 ），如果给定单词仅是文章中某一单词的一部分则不算匹配（参见样例2 ）。</p>
@@ -92,66 +122,40 @@
 </ol>
 <p>以上即为解答，其中在寻找解题方案的过程中，我还发现许多大佬的许多种方案：比如状态机，根据不同的状态跑程序，但是略微有些麻烦，于是决定使用以上的方案。</p>
 
-      
     </div>
-    
-    
-    <div class="article-category">
-      
-        <b>Categories:</b>
-        <a class="article-category-link" href="/categories/%E7%BC%96%E7%A8%8B/">编程</a>
-      
-      
-        <br/>
-      
-      
-        <b>Tags:</b>
-        <a class="article-tag-link" href="/tags/pta/" rel="tag">pta</a>
-      
+    <div class="post-meta">
+        
+    <span class="post-time">二〇一九年十二月廿一日</span>
     </div>
-    
-    
-  </div>
 </article>
 
-  
-<nav id="article-nav" class="article-nav">
-  
-    <a href="/2019/12/26/%E9%80%89%E6%8B%A9%E6%8E%92%E5%BA%8F-%E8%BE%83%E4%B8%BA%E8%AF%A6%E7%BB%86%E7%9A%84%E5%88%86%E6%9E%90/" id="article-nav-newer" class="article-nav-link-wrap newer">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          选择排序-较为详细的分析
-        
-      </div>
-    </a>
-  
-  
-    <a href="/2019/12/12/%E6%9F%A5%E6%89%BE%E5%AD%90%E4%B8%B2/" id="article-nav-older" class="article-nav-link-wrap older">
-      <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">
-        
-          查找子串
-        
-      </div>
-    </a>
-  
+<div class="prev_next">
+    <nav id="prev_next">
+
+<div class="prev">
+    
+    <p>Newer</p>
+    <a href="/2019/12/26/选择排序-较为详细的分析/"><div class="article-nav-title">选择排序-较为详细的分析</div></a>
+    
+</div>
+<div class="next">
+    
+    <p>Older</p>
+    <a href="/2019/12/12/查找子串/"><div class="article-nav-title">查找子串</div></a>
+    
+</div>
+
 </nav>
+</div>
+
+<div class="post-comment">
+    
 
 
 
+</div>
 
-
-
-    </div>
-  </div><!-- hexo-inject:begin --><!-- hexo-inject:end -->
-  
-
-
-
-
-
-
-
+    </main><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 </body>
+
 </html>

@@ -1,66 +1,96 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
-  
-  <title>L1-050倒数第N个字符串 | jefine</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  
-  
-  <link rel="stylesheet" href="/css/style.css">
-  
-    <link rel="stylesheet" href="/css/highlight.css"><!-- hexo-inject:begin --><!-- hexo-inject:end -->
-  
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+    
+    <title>L1-050倒数第N个字符串 - jefine</title>
+    <meta charset="utf-8">
+    
+    <meta name="title" content="L1-050倒数第N个字符串 - jefine">
+    <meta name="description" content="">
+    <meta property="og:image" content="/favicon.png">
+    <meta property="og:image:width" content="200" />
+    <meta property="og:image:height" content="200" />
+    
+    <link href="https://fonts.googleapis.com/css2?family=Source+Serif+Pro:wght@400;700&display=swap" rel="stylesheet">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Source Serif Pro', 'Source Han Serif SC', 'Noto Serif CJK SC', 'Noto Serif SC', serif;
+        }
+    </style>
+    
+    <link rel="shortcut icon" href="/favicon.png">
+    
+    <link rel="stylesheet"
+        href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.17.1/build/styles/arduino-light.min.css">
+    <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.17.1/build/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    
+    
+    <link rel="stylesheet" href="/css/style.css">
+    <script src="/js/jquery.min.js"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 </head>
+
 <body>
-  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div id="wrapper">
-    <header id="header">
-  <h1 id="title">
-    <a href="/">jefine</a>
-  </h1>
-  <nav>
-    
-    
-      
-      <a class="nav-link" href="/">Home</a>
-    
-      
-        <span class="nav-spacer">×</span>
-      
-      <a class="nav-link" href="/about">About</a>
-    
-      
-        <span class="nav-spacer">×</span>
-      
-      <a class="nav-link" href="/archives">Archives</a>
-    
-    
-  </nav>
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><header class="header">
+    <div class="blog-title">
+        <a href="/" class="logo">jefine</a>
+    </div>
+    <nav class="navbar">
+        <ul class="menu">
+            
+            
+            
+            <li class="menu-item">
+                
+                <a href="/" class="menu-item-link">Home</a>
+                
+            </li>
+            
+            
+            
+            <li class="menu-item">
+                
+                <a href="/archives" class="menu-item-link">Archives</a>
+                
+            </li>
+            
+            
+            
+            <li class="menu-item">
+                
+                <a href="/about" class="menu-item-link">About</a>
+                
+            </li>
+            
+            
+            
+            <li class="menu-item">
+                
+                <a href="/rss" class="menu-item-link">RSS</a>
+                
+            </li>
+            
+            
+            
+            <li class="menu-item">
+                
+                <a href="/member" class="menu-item-link">Member</a>
+                
+            </li>
+            
+        </ul>
+    </nav>
 </header>
-
-    <div id="content">
-      <article id="post-L1-050倒数第N个字符串" class="article article-type-post" itemprop="blogPost" itemscope>
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h2 class="article-title" itemprop="headline name">
-      L1-050倒数第N个字符串
-    </h2>
-  
-
-
-        <div class="article-meta">
-          <time class="article-date" datetime="2020-01-06T14:01:17.000Z" itemprop="datePublished">一月 6, 2020, 10:01 晚上</time>
-
-          
-        </div>
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-      
+    <main class="main">
+        <article class="post">
+    <div class="post-title">
+        <h1 class="title">L1-050倒数第N个字符串</h2>
+    </div>
+    <div class="post-content">
         <p>给定一个完全由小写英文字母组成的字符串等差递增序列，该序列中的每个字符串的长度固定为 L，从 L 个 a 开始，以 1 为步长递增。例如当 L 为 3 时，序列为 { aaa, aab, aac, …, aaz, aba, abb, …, abz, …, zzz  }。这个序列的倒数第27个字符串就是 zyz。对于任意给定的 L，本题要求你给出对应序列倒数第 N 个字符串。</p>
 <h3 id="输入格式："><a href="#输入格式：" class="headerlink" title="输入格式："></a>输入格式：</h3><p>输入在一行中给出两个正整数 L（2 ≤ L ≤ 6）和 N（≤105）。</p>
 <h3 id="输出格式："><a href="#输出格式：" class="headerlink" title="输出格式："></a>输出格式：</h3><p>在一行中输出对应序列倒数第 N 个字符串。题目保证这个字符串是存在的。</p>
@@ -85,66 +115,40 @@
 <h3 id="方二："><a href="#方二：" class="headerlink" title="方二："></a>方二：</h3><p>当然我们也可以使用字符串将每个字符储存，最后输出即可。</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> l,n,c;</span><br><span class="line">    <span class="keyword">char</span> s[<span class="number">7</span>];</span><br><span class="line">    <span class="built_in">cin</span>&gt;&gt;l&gt;&gt;n;</span><br><span class="line">    c = l - <span class="number">1</span>;</span><br><span class="line">    s[l] = <span class="string">'\0'</span>;</span><br><span class="line">    n --;</span><br><span class="line">    <span class="keyword">while</span>(n || c &gt;= <span class="number">0</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        s[c --] = <span class="string">'z'</span> - n % <span class="number">26</span>;</span><br><span class="line">        n /= <span class="number">26</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">cout</span>&lt;&lt;s;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-      
     </div>
-    
-    
-    <div class="article-category">
-      
-        <b>Categories:</b>
-        <a class="article-category-link" href="/categories/%E7%BC%96%E7%A8%8B/">编程</a>
-      
-      
-        <br/>
-      
-      
-        <b>Tags:</b>
-        <a class="article-tag-link" href="/tags/pta/" rel="tag">pta</a>
-      
+    <div class="post-meta">
+        
+    <span class="post-time">二〇二〇年一月六日</span>
     </div>
-    
-    
-  </div>
 </article>
 
-  
-<nav id="article-nav" class="article-nav">
-  
-    <a href="/2020/01/16/2020%E5%AD%A6%E6%A0%A1%E5%90%84%E7%9B%B8%E5%85%B3%E6%AF%94%E8%B5%9B%EF%BC%8C%E8%B5%84%E6%A0%BC%E8%AF%81%E4%B9%A6%E7%9A%84%E6%97%B6%E9%97%B4/" id="article-nav-newer" class="article-nav-link-wrap newer">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          2020学校各相关比赛，资格证书的时间
-        
-      </div>
-    </a>
-  
-  
-    <a href="/2020/01/06/L1-048%E7%9F%A9%E9%98%B5A%E4%B9%98%E4%BB%A5B/" id="article-nav-older" class="article-nav-link-wrap older">
-      <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">
-        
-          L1-048矩阵A乘以B
-        
-      </div>
-    </a>
-  
+<div class="prev_next">
+    <nav id="prev_next">
+
+<div class="prev">
+    
+    <p>Newer</p>
+    <a href="/2020/01/16/2020学校各相关比赛，资格证书的时间/"><div class="article-nav-title">2020学校各相关比赛，资格证书的时间</div></a>
+    
+</div>
+<div class="next">
+    
+    <p>Older</p>
+    <a href="/2020/01/06/L1-048矩阵A乘以B/"><div class="article-nav-title">L1-048矩阵A乘以B</div></a>
+    
+</div>
+
 </nav>
+</div>
+
+<div class="post-comment">
+    
 
 
 
+</div>
 
-
-
-    </div>
-  </div><!-- hexo-inject:begin --><!-- hexo-inject:end -->
-  
-
-
-
-
-
-
-
+    </main><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 </body>
+
 </html>

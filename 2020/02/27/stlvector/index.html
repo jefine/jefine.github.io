@@ -1,66 +1,96 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
-  
-  <title>stlvector | jefine</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  
-  
-  <link rel="stylesheet" href="/css/style.css">
-  
-    <link rel="stylesheet" href="/css/highlight.css"><!-- hexo-inject:begin --><!-- hexo-inject:end -->
-  
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+    
+    <title>stlvector - jefine</title>
+    <meta charset="utf-8">
+    
+    <meta name="title" content="stlvector - jefine">
+    <meta name="description" content="">
+    <meta property="og:image" content="/favicon.png">
+    <meta property="og:image:width" content="200" />
+    <meta property="og:image:height" content="200" />
+    
+    <link href="https://fonts.googleapis.com/css2?family=Source+Serif+Pro:wght@400;700&display=swap" rel="stylesheet">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Source Serif Pro', 'Source Han Serif SC', 'Noto Serif CJK SC', 'Noto Serif SC', serif;
+        }
+    </style>
+    
+    <link rel="shortcut icon" href="/favicon.png">
+    
+    <link rel="stylesheet"
+        href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.17.1/build/styles/arduino-light.min.css">
+    <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.17.1/build/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    
+    
+    <link rel="stylesheet" href="/css/style.css">
+    <script src="/js/jquery.min.js"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 </head>
+
 <body>
-  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div id="wrapper">
-    <header id="header">
-  <h1 id="title">
-    <a href="/">jefine</a>
-  </h1>
-  <nav>
-    
-    
-      
-      <a class="nav-link" href="/">Home</a>
-    
-      
-        <span class="nav-spacer">×</span>
-      
-      <a class="nav-link" href="/about">About</a>
-    
-      
-        <span class="nav-spacer">×</span>
-      
-      <a class="nav-link" href="/archives">Archives</a>
-    
-    
-  </nav>
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><header class="header">
+    <div class="blog-title">
+        <a href="/" class="logo">jefine</a>
+    </div>
+    <nav class="navbar">
+        <ul class="menu">
+            
+            
+            
+            <li class="menu-item">
+                
+                <a href="/" class="menu-item-link">Home</a>
+                
+            </li>
+            
+            
+            
+            <li class="menu-item">
+                
+                <a href="/archives" class="menu-item-link">Archives</a>
+                
+            </li>
+            
+            
+            
+            <li class="menu-item">
+                
+                <a href="/about" class="menu-item-link">About</a>
+                
+            </li>
+            
+            
+            
+            <li class="menu-item">
+                
+                <a href="/rss" class="menu-item-link">RSS</a>
+                
+            </li>
+            
+            
+            
+            <li class="menu-item">
+                
+                <a href="/member" class="menu-item-link">Member</a>
+                
+            </li>
+            
+        </ul>
+    </nav>
 </header>
-
-    <div id="content">
-      <article id="post-stlvector" class="article article-type-post" itemprop="blogPost" itemscope>
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h2 class="article-title" itemprop="headline name">
-      stlvector
-    </h2>
-  
-
-
-        <div class="article-meta">
-          <time class="article-date" datetime="2020-02-27T09:27:29.000Z" itemprop="datePublished">二月 27, 2020, 5:27 下午</time>
-
-          
-        </div>
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-      
+    <main class="main">
+        <article class="post">
+    <div class="post-title">
+        <h1 class="title">stlvector</h2>
+    </div>
+    <div class="post-content">
         <p>Vectors are same as dynamic arrays with the ability to resize itself automatically when an element is inserted or deleted, with their storage being handled automatically by the container. Vector elements are placed in contiguous storage so that they can be accessed and traversed using iterators. In vectors, data is inserted at the end. Inserting at the end takes differential time, as sometimes there may be a need of extending the array. Removing the last element takes only constant time because no resizing happens. Inserting and erasing at the beginning or in the middle is linear in time.</p>
 <p>向量与<strong>动态数组</strong>相同，具有在插入或删除元素时自动调整自身大小的能力，并且容器自动处理其存储。 矢量元素放置在连续的存储中，以便可以使用迭代器对其进行访问和遍历。 在向量中，数据插入到最后（push_back())。 在末尾插入需要花费不同的时间，因为有时可能需要扩展阵列。 删除最后一个元素只需要固定的时间，因为不会发生大小调整。 在开始或中间插入和擦除的时间是线性的。</p>
   <a id="more"></a>
@@ -122,66 +152,40 @@
 <li><a href="https://www.geeksforgeeks.org/vectoremplace_back-c-stl/" target="_blank" rel="noopener">emplace_back()</a> – It is used to insert a new element into the vector container, the new element is added to the end of the vector插入元素到最后</li>
 </ol>
 
-      
     </div>
-    
-    
-    <div class="article-category">
-      
-        <b>Categories:</b>
-        <a class="article-category-link" href="/categories/%E7%AE%97%E6%B3%95/">算法</a>
-      
-      
-        <br/>
-      
-      
-        <b>Tags:</b>
-        <a class="article-tag-link" href="/tags/stl/" rel="tag">stl</a>
-      
+    <div class="post-meta">
+        
+    <span class="post-time">二〇二〇年二月廿七日</span>
     </div>
-    
-    
-  </div>
 </article>
 
-  
-<nav id="article-nav" class="article-nav">
-  
-    <a href="/2020/02/28/%E6%A6%82%E8%BF%B0STL/" id="article-nav-newer" class="article-nav-link-wrap newer">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          概述STL
-        
-      </div>
-    </a>
-  
-  
-    <a href="/2020/02/25/Java%E6%97%A0%E6%B3%95%E4%BB%85%E8%AF%BB%E5%8F%96%E4%B8%80%E4%B8%AA%E5%AD%97%E7%AC%A6/" id="article-nav-older" class="article-nav-link-wrap older">
-      <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">
-        
-          Java无法仅读取一个字符
-        
-      </div>
-    </a>
-  
+<div class="prev_next">
+    <nav id="prev_next">
+
+<div class="prev">
+    
+    <p>Newer</p>
+    <a href="/2020/02/28/概述STL/"><div class="article-nav-title">概述STL</div></a>
+    
+</div>
+<div class="next">
+    
+    <p>Older</p>
+    <a href="/2020/02/25/Java无法仅读取一个字符/"><div class="article-nav-title">Java无法仅读取一个字符</div></a>
+    
+</div>
+
 </nav>
+</div>
+
+<div class="post-comment">
+    
 
 
 
+</div>
 
-
-
-    </div>
-  </div><!-- hexo-inject:begin --><!-- hexo-inject:end -->
-  
-
-
-
-
-
-
-
+    </main><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 </body>
+
 </html>

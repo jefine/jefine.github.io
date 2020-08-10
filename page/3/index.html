@@ -1,663 +1,384 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
-  
-  <title>jefine</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  
-  
-  <link rel="stylesheet" href="/css/style.css">
-  
-    <link rel="stylesheet" href="/css/highlight.css"><!-- hexo-inject:begin --><!-- hexo-inject:end -->
-  
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+    
+    <title>jefine</title>
+    <meta charset="utf-8">
+    
+    <meta name="title" content="jefine">
+    <meta name="description" content="使每个人的生活多一份美好。">
+    <meta property="og:image" content="/favicon.png">
+    <meta property="og:image:width" content="200" />
+    <meta property="og:image:height" content="200" />
+    
+    <link href="https://fonts.googleapis.com/css2?family=Source+Serif+Pro:wght@400;700&display=swap" rel="stylesheet">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Source Serif Pro', 'Source Han Serif SC', 'Noto Serif CJK SC', 'Noto Serif SC', serif;
+        }
+    </style>
+    
+    <link rel="shortcut icon" href="/favicon.png">
+    
+    <link rel="stylesheet"
+        href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.17.1/build/styles/arduino-light.min.css">
+    <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.17.1/build/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    
+    
+    <link rel="stylesheet" href="/css/style.css">
+    <script src="/js/jquery.min.js"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 </head>
+
 <body>
-  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div id="wrapper">
-    <header id="header">
-  <h1 id="title">
-    <a href="/">jefine</a>
-  </h1>
-  <nav>
-    
-    
-      
-      <a class="nav-link" href="/">Home</a>
-    
-      
-        <span class="nav-spacer">×</span>
-      
-      <a class="nav-link" href="/about">About</a>
-    
-      
-        <span class="nav-spacer">×</span>
-      
-      <a class="nav-link" href="/archives">Archives</a>
-    
-    
-  </nav>
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><header class="header">
+    <div class="blog-title">
+        <a href="/" class="logo">jefine</a>
+    </div>
+    <nav class="navbar">
+        <ul class="menu">
+            
+            
+            
+            <li class="menu-item">
+                
+                <a href="/" class="menu-item-link">Home</a>
+                
+            </li>
+            
+            
+            
+            <li class="menu-item">
+                
+                <a href="/archives" class="menu-item-link">Archives</a>
+                
+            </li>
+            
+            
+            
+            <li class="menu-item">
+                
+                <a href="/about" class="menu-item-link">About</a>
+                
+            </li>
+            
+            
+            
+            <li class="menu-item">
+                
+                <a href="/rss" class="menu-item-link">RSS</a>
+                
+            </li>
+            
+            
+            
+            <li class="menu-item">
+                
+                <a href="/member" class="menu-item-link">Member</a>
+                
+            </li>
+            
+        </ul>
+    </nav>
 </header>
-
-    <div id="content">
-      
-  
-    <article id="post-Java无法仅读取一个字符" class="article article-type-post" itemprop="blogPost" itemscope>
-  <div class="article-inner">
+    <main class="main">
+        <section class="posts">
     
-      <header class="article-header">
-        
-  
-    <h2 class="article-title" itemprop="name">
-      <a href="/2020/02/25/Java%E6%97%A0%E6%B3%95%E4%BB%85%E8%AF%BB%E5%8F%96%E4%B8%80%E4%B8%AA%E5%AD%97%E7%AC%A6/">Java无法仅读取一个字符</a>
-      
-    </h2>
-  
-
-
-        <div class="article-meta">
-          <time class="article-date" datetime="2020-02-25T02:57:51.000Z" itemprop="datePublished">二月 25, 2020, 10:57 上午</time>
-
-          
+    <article class="post">
+        <div class="post-title">
+            <a class="post-title-link" href="/2020/02/25/Java%E6%97%A0%E6%B3%95%E4%BB%85%E8%AF%BB%E5%8F%96%E4%B8%80%E4%B8%AA%E5%AD%97%E7%AC%A6/">Java无法仅读取一个字符</a>
         </div>
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-      
-        <p>问题描述</p>
-<p>在使用java中，有时希望可以像c语言一样单单读取一个字符，但是发现并没有nextChar()的方法可供使用。</p>
-<p>解决办法</p>
-<p>方法一是最常见的方法，和方法二类似都是先得到一个String字符串，然后得到第一个字符，而方法三是根本的解决办法（虽然不好用）</p>
-<p><strong>方法一：</strong></p>
-<p>1．先创建一个Scanner对象</p>
-<p>2．调用Scanner对象的next()方法获取控制台输入，返回的是一个String类型,因为没有nextChar()方法</p>
-<p>3．调用String的charAt(0)方法获取第一个字符</p>
- <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"> Scanner sc = <span class="keyword">new</span> Scanner(System.in);</span><br><span class="line"></span><br><span class="line"> String s = sc.next();</span><br><span class="line"></span><br><span class="line"> <span class="keyword">char</span> c = s.charAt(<span class="number">0</span>);</span><br><span class="line"><span class="comment">//最后两条语句也可写为char c = sc.next().charAt(0);</span></span><br></pre></td></tr></table></figure>
-<p><strong>方法二：</strong></p>
-<p>使用方法，将string转换为字符数组，然后取第一个字符即可</p>
- <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Scanner sc = <span class="keyword">new</span> Scanner(System.in);</span><br><span class="line"></span><br><span class="line"><span class="keyword">char</span> c = scanner.next().toCharArray()[<span class="number">0</span>];</span><br></pre></td></tr></table></figure>
-<p><strong><em>方法三：</em></strong></p>
-<p><em>需要有强制转换（因为in.read()得到的是int类型）</em></p>
-<p>需要引入.io（import java.io.*;）</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">char</span> t = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">try</span> &#123;</span><br><span class="line">      t = (<span class="keyword">char</span>)System.in.read();</span><br><span class="line">    &#125; <span class="keyword">catch</span> (IOException e) &#123;</span><br><span class="line">    e.printStackTrace();</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
-<p> <strong>或</strong></p>
-<p>2.在方法中抛出异常：public static void main(String[] args) throws IOException</p>
-<p>然后</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">char</span> t = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">t = (<span class="keyword">char</span>)System.in.read();</span><br></pre></td></tr></table></figure>
-<p><img src="/2020/02/25/Java%E6%97%A0%E6%B3%95%E4%BB%85%E8%AF%BB%E5%8F%96%E4%B8%80%E4%B8%AA%E5%AD%97%E7%AC%A6/1.png" alt></p>
-<p>但可以做到不影响其他的字符（真正意义上的读入一个字符）</p>
-<p><img src="/2020/02/25/Java%E6%97%A0%E6%B3%95%E4%BB%85%E8%AF%BB%E5%8F%96%E4%B8%80%E4%B8%AA%E5%AD%97%E7%AC%A6/2.png" alt></p>
-
-      
-    </div>
-    
-    
-    
-  </div>
-</article>
-
-
-
-  
-    <article id="post-java主类，类与public的简要分析" class="article article-type-post" itemprop="blogPost" itemscope>
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h2 class="article-title" itemprop="name">
-      <a href="/2020/02/19/java%E4%B8%BB%E7%B1%BB%EF%BC%8C%E7%B1%BB%E4%B8%8Epublic%E7%9A%84%E7%AE%80%E8%A6%81%E5%88%86%E6%9E%90/">java主类，类与源文件名的简要分析</a>
-      
-    </h2>
-  
-
-
-        <div class="article-meta">
-          <time class="article-date" datetime="2020-02-19T09:26:21.000Z" itemprop="datePublished">二月 19, 2020, 5:26 下午</time>
-
-          
+        <div class="post-content">
+            
+            
+            <a class="More" href="/2020/02/25/Java%E6%97%A0%E6%B3%95%E4%BB%85%E8%AF%BB%E5%8F%96%E4%B8%80%E4%B8%AA%E5%AD%97%E7%AC%A6/">More</a>
+            
         </div>
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-      
-        <p>有时候，我们会遇到关于主类，类和public修饰的类的辨析。刚开始，很难辨别。那么，接下来，简要地分析一下其区别：</p>
-<p><strong>1.如果文件中只有一个类，文件名必须与类名一致，有没有public修饰都可以；</strong></p>
-<p><strong>2.一个Java文件中最多只能有一个public类；</strong></p>
-<p><strong>3.如果文件中不止一个类，而且有public类，文件名必须与public类名一致；</strong></p>
-<p><strong>4.如果文件中不止一个类，而且没有public类，文件名可与任一类名一致。</strong>(相同的是主类)</p>
-<p>首先：</p>
-<p> <strong>类是Java程序的最小程序单位</strong> 。</p>
-<ul>
-<li>Java程序是一种纯粹的<strong>面向对象</strong>的程序设计语言，因此Java程序必须以<strong>类的形式</strong>存在，类是Java程序的<strong>最小程序单位</strong>。</li>
-<li>Java程序不允许可执行性语句、方法等成分独立存在，<strong>所有的程序部分都必须放在类定义里</strong>。<del>（不能像c，c++一样瞎写了）</del></li>
-</ul>
-<h2 id="主类："><a href="#主类：" class="headerlink" title="主类："></a>主类：</h2><h5 id="什么是主类？"><a href="#什么是主类？" class="headerlink" title="什么是主类？"></a>什么是主类？</h5><p>一说，类名与文件名相同，且含有main的类。</p>
-<p>一说： 是带有（总程序的）<strong>执行入口</strong>main方法的类。 （虚拟机第一个进入的类）</p>
-<p>那么：我们不妨思考一下：</p>
-<p>Q: 一个类是不是可以有多个main方法呢？</p>
-<p>A: 由于java语言的多态性，我们完全可以在一个类中含有多个main方法，但记住，main是入口，而这些main方法中只有一个才会是入口。</p>
-<blockquote>
-<p>main 方法写法固定：必须被 public static void 修饰，且其形参必须是字符串数组类型（String[] args）。<br>对于一个大型 Java 程序，往往只需要一个入口（即只一个类包含 main 方法），其他类用于被 main 方法直接或间接调用。</p>
-</blockquote>
-<h3 id="Java-源文件的命名规则"><a href="#Java-源文件的命名规则" class="headerlink" title="Java 源文件的命名规则"></a><strong>Java 源文件的命名规则</strong></h3><blockquote>
-<ul>
-<li>通常情况下，Java 程序源文件的主文件名可以任意。</li>
-<li>但如果其中定义了一个 public 类，则该源<strong>文件的主文件名必须与该 public 类的类名相同</strong>。</li>
-<li>一个Java 源文件可包含多个类定义，但最多<strong>只能包含一个public类定义</strong>。</li>
-</ul>
-</blockquote>
-<p><strong>为什么只能包含一个public类？</strong></p>
-<blockquote>
-<p> 因为 public 类可以被项目中其他包下的类访问到。只需要在使用前 import  其对应的 class 文件。将类名与文件名一一对应就可以<strong>方便虚拟机在相应的路径（包名）中找到相应的类的信息</strong>。如果不这么做的话，就很难去找，而且开销也会很大。 </p>
-</blockquote>
-<p><del>1、Java编译器在编译的时候，如果整个Java文件（编译单元）都没有public类（对外的公开接口类），类加载器就无需直接去加载该编译单元产生的所有的字节码文件（.class文件），那么也就是无需去寻找编译后字节码文件存放位置。而类名和文件名一致是为了方便虚拟机在相应的路径中找到相应的类所对应的字节码文件。所以在没有public类的Java文件中，文件名和类名都没什么联系。</del></p>
-<p>2、如果编译单元中包含了public类，那么该类对应的字节码文件需要被类加载器加载的，这时候就需要让类加载器知道该字节码文件的位置，所以就要确保该类与Java文件名称一致。同时，如果有两个public类在同一个文件中，而一个文件只能有一个名称，<strong>故两个public类的名称就不能同时和文件名一样，这就造成至少其中有一个public类在编译的时候编译不通过。</strong></p>
-<p>关于Java源文件命名，通常有以下建议：</p>
-<pre><code>一个 Java 源文件只定义一个类，不同的类使用不同的源文件定义。
-让 Java 源文件的主文件名与该源文件中定义的 pulblic 类同名。
-</code></pre><h2 id><a href="#" class="headerlink" title=" "></a> </h2>
-      
-    </div>
-    
-    
-    
-  </div>
-</article>
-
-
-
-  
-    <article id="post-java字符串string" class="article article-type-post" itemprop="blogPost" itemscope>
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h2 class="article-title" itemprop="name">
-      <a href="/2020/02/17/java%E5%AD%97%E7%AC%A6%E4%B8%B2string/">java字符串string</a>
-      
-    </h2>
-  
-
-
-        <div class="article-meta">
-          <time class="article-date" datetime="2020-02-17T12:51:26.000Z" itemprop="datePublished">二月 17, 2020, 8:51 晚上</time>
-
-          
+        <div class="post-meta">
+            
+            <span class="post-time">二〇二〇年二月廿五日</span>
         </div>
-      </header>
+    </article>
     
-    <div class="article-entry" itemprop="articleBody">
-      
-      
-        <h2 id="格式："><a href="#格式：" class="headerlink" title="格式："></a>格式：</h2><p>首先：初始化样例 ：String str = “Geeks”;</p>
-<p><strong>Creating a String</strong></p>
-<p>There are two ways to create string in Java:（两种方式）</p>
-<ul>
-<li><p><strong><em>String literal\</em></strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">String s = “GeeksforGeeks”;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p><strong>Using *new* keyword</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">String s = new String (“GeeksforGeeks”);</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<h2 id="字符串背后的一些事情："><a href="#字符串背后的一些事情：" class="headerlink" title="字符串背后的一些事情："></a>字符串背后的一些事情：</h2><p>String 字符串是由字符数组（char array)所支持。</p>
-<p>Strings in Java are Objects that are backed internally by a char array.</p>
-<p>而我们知道，字符数组的大小是固定的，所以：当String发生大小变化时就会产生一个新的String。</p>
-<p>那么他是怎样变化的呢？</p>
-<p>Whenever a String Object is created, two objects will be created- one in the Heap Area and one in the String constant pool and the String object reference always points to heap area object.</p>
-<p>当一个字符串产生的时候，就会创建两个String对象，一个在堆区域，另一个在字符串常态池中<strong>，而且字符串引用总指向堆区域的对象。</strong></p>
-<p>例如：（看是该字符串引用总是指向堆区域的对象，而且是首字母，像指针一样，不过java避开了指针的概念。）</p>
-<p><img src="/2020/02/17/java%E5%AD%97%E7%AC%A6%E4%B8%B2string/Untitled.png" alt></p>
-<h2 id="接口和类在字符串中："><a href="#接口和类在字符串中：" class="headerlink" title="接口和类在字符串中："></a>接口和类在字符串中：</h2><ul>
-<li><p><a href="https://www.geeksforgeeks.org/tag/java-charbuffer/" target="_blank" rel="noopener">CharBuffer</a>: This class implements the CharSequence interface. This class is used to allow character buffers to be used in place of CharSequences. An example of such usage is the regular-expression package java.util.regex.</p>
-<p>不懂CharBuffer：此类实现CharSequence接口。 此类用于允许使用字符缓冲区代替CharSequences。 正则表达式包java.util.regex是这种用法的一个示例。</p>
-</li>
-<li><p><a href="https://www.geeksforgeeks.org/string-class-in-java/" target="_blank" rel="noopener">String</a>: String is a sequence of characters. In java, objects of String are immutable which means a constant and cannot be changed once created.（String的对象是不可改变的）</p>
-</li>
-<li><p><a href="http://www.geeksforgeeks.org/stringbuffer-class-in-java/" target="_blank" rel="noopener">StringBuffer</a>: <strong>StringBuffer</strong> is a peer class of <strong>String</strong> that provides much of the functionality of strings. String represents fixed-length, immutable character sequences while StringBuffer represents growable and writable character sequences.（又出来个String buffer，批判了String的固定长度和不可变后，称自己是可增长的，可变化的。它还是String的同级字符串类。。。）</p>
-<p><strong>Syntax:</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">StringBuffer s = new StringBuffer(&quot;GeeksforGeeks&quot;);</span><br></pre></td></tr></table></figure>
-</li>
-<li><p><a href="https://www.geeksforgeeks.org/stringbuilder-class-in-java-with-examples/" target="_blank" rel="noopener">StringBuilder</a>: The <strong>StringBuilder</strong> in Java represents a mutable sequence of characters. Since the String Class in Java creates and immutable sequence of characters, the StringBuilder class provides an alternate to String Class, as it creates a mutable sequence of characters.（又来一个StringBuilder 说自己也是可变的字符串</p>
-<p><strong>Syntax:</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">StringBuilder str = new StringBuilder();</span><br><span class="line">str.append(&quot;GFG&quot;);</span><br></pre></td></tr></table></figure>
-</li>
-<li><p><a href="https://www.geeksforgeeks.org/stringtokenizer-class-java-example-set-1-constructors/" target="_blank" rel="noopener">StringTokenizer</a>: StringTokenizer class in Java is used to break a string into tokens. <strong>Example:</strong></p>
-<p><img src="/2020/02/17/java%E5%AD%97%E7%AC%A6%E4%B8%B2string/Untitled1.png" alt></p>
-<p>A StringTokenizer object internally maintains a current position within the string to be tokenized. Some operations advance this current position past the characters processed. A token is returned by taking a substring of the string that was used to create the StringTokenizer object.(用于处理过的字符串，不太懂）</p>
-</li>
-<li><p><a href="https://www.geeksforgeeks.org/java-util-stringjoiner-java8/" target="_blank" rel="noopener">StringJoiner</a>: StringJoiner is a class in <em><a href="https://www.geeksforgeeks.org/tag/java-util-package/" target="_blank" rel="noopener">java.util</a></em> package which is used to construct a sequence of characters(strings) separated by a delimiter and optionally starting with a supplied prefix and ending with a supplied suffix. Though this can also be with the help of StringBuilder class to append delimiter after each string, StringJoiner provides an easy way to do that without much code to write.（也是处理分隔符的，和上面的是一对儿）</p>
-<p><strong>Syntax:</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">public StringJoiner(CharSequence delimiter)</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<h2 id="more："><a href="#more：" class="headerlink" title="more："></a>more：</h2><p>此外，在我们要去取值的时候，比如String第二个字符的值的时候，应该用:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">String str = &quot;hello word&quot;;</span><br><span class="line">char mychar =  str.charAt(1);</span><br></pre></td></tr></table></figure>
-<p>如果想要比较字符串的值是否相同的话：</p>
-<p>if（s.contentEquals(“-1”)）来比较。否则就是比较储存位置（因为String在java中是对象，不是基本类型）</p>
-
-      
-    </div>
-    
-    
-    
-  </div>
-</article>
-
-
-
-  
-    <article id="post-java方法methods" class="article article-type-post" itemprop="blogPost" itemscope>
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h2 class="article-title" itemprop="name">
-      <a href="/2020/02/17/java%E6%96%B9%E6%B3%95methods/">java方法methods</a>
-      
-    </h2>
-  
-
-
-        <div class="article-meta">
-          <time class="article-date" datetime="2020-02-17T12:45:13.000Z" itemprop="datePublished">二月 17, 2020, 8:45 晚上</time>
-
-          
+    <article class="post">
+        <div class="post-title">
+            <a class="post-title-link" href="/2020/02/19/java%E4%B8%BB%E7%B1%BB%EF%BC%8C%E7%B1%BB%E4%B8%8Epublic%E7%9A%84%E7%AE%80%E8%A6%81%E5%88%86%E6%9E%90/">java主类，类与源文件名的简要分析</a>
         </div>
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-      
-        <p>java中还是称之为“方法”好了。</p>
-      
-    </div>
-    
-      <div class="article-more-link">
-        <a href="/2020/02/17/java%E6%96%B9%E6%B3%95methods/#more">more</a>
-      </div>
-    
-    
-    
-  </div>
-</article>
-
-
-
-  
-    <article id="post-javaconstructors构造函数" class="article article-type-post" itemprop="blogPost" itemscope>
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h2 class="article-title" itemprop="name">
-      <a href="/2020/02/11/javaconstructors%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0/">javaconstructors构造函数</a>
-      
-    </h2>
-  
-
-
-        <div class="article-meta">
-          <time class="article-date" datetime="2020-02-11T08:11:11.000Z" itemprop="datePublished">二月 11, 2020, 4:11 下午</time>
-
-          
+        <div class="post-content">
+            
+            
+            <a class="More" href="/2020/02/19/java%E4%B8%BB%E7%B1%BB%EF%BC%8C%E7%B1%BB%E4%B8%8Epublic%E7%9A%84%E7%AE%80%E8%A6%81%E5%88%86%E6%9E%90/">More</a>
+            
         </div>
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-      
-        <blockquote>
-<p>Constructors are used to assign values to the class variables at the time of object creation, either explicitly done by the programmer or by Java itself (default constructor).</p>
-</blockquote>
-<p>在创建对象时，可以使用构造函数将值分配给类变量，这些值可以由程序员显式完成，也可以由Java本身（默认构造函数）完成。</p>
-<p><a href="https://www.geeksforgeeks.org/constructors-in-java/" target="_blank" rel="noopener">Constructors in Java - GeeksforGeeks</a></p>
-<p><strong>Rules for writing Constructor:</strong></p>
-<ul>
-<li><p>Constructor(s) of a class must has same name as the class name in which it resides.</p>
-<p>构造函数的名字和类名必须一致。</p>
-</li>
-<li><p>A constructor in Java can not be abstract, final, static and Synchronized.</p>
-<p>java中的构造函数不能是抽象的，最终的，静态的和同步的。</p>
-</li>
-<li><p>Access modifiers can be used in constructor declaration to control its access i.e which other class can call the constructor.</p>
-<p>可以在构造函数声明中使用访问修饰符来控制其访问，即哪个其他类可以调用构造函数。</p>
-</li>
-</ul>
-<h3 id="构造函数的类型："><a href="#构造函数的类型：" class="headerlink" title="构造函数的类型："></a>构造函数的类型：</h3><ol>
-<li><p><strong>无参构造函数</strong>：</p>
-<p>没有参数的构造函数被认为时默认构造函数。若我们没有在类中定义构造函数，那么编译器会自己定义一个无参数的构造函数。Default constructor provides the default values to the object like 0, null, etc. depending on the type.（默认的构造函数提供默认的值给对象0，null，等，更具他们的类型不同）</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Java Program to illustrate calling a // no-argument constructor import [java.io](http://java.io).*;</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Geek</span> </span>&#123; <span class="keyword">int</span> num; String name;</span><br><span class="line"></span><br><span class="line"> <span class="comment">// this would be invoked while an object </span></span><br><span class="line"> <span class="comment">// of that class is created. </span></span><br><span class="line"> Geek() </span><br><span class="line"> &#123; </span><br><span class="line"> 	System.out.println(<span class="string">"Constructor called"</span>); </span><br><span class="line"> &#125; </span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">GFG</span> </span>&#123; <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span> <span class="params">(String[] args)</span> </span>&#123; <span class="comment">// this would invoke default constructor. Geek geek1 = new Geek();</span></span><br><span class="line"></span><br><span class="line"> 	<span class="comment">// Default constructor provides the default </span></span><br><span class="line"> 	<span class="comment">// values to the object like 0, null </span></span><br><span class="line"> 	System.out.println(geek1.name); </span><br><span class="line"> 	System.out.println(geek1.num); </span><br><span class="line"> &#125; </span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-<p>0utput :</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Constructor called</span><br><span class="line">null</span><br><span class="line">0</span><br></pre></td></tr></table></figure>
-<p><strong>2. 有参构造函数：</strong></p>
-<p>If we want to initialize fields of the class with your own values, then use a parameterized constructor.如果我们想使用我们自己的值去给类中的变量赋值的话，那么使用参数化的构造函数（有参构造函数）。</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Java Program to illustrate calling of </span></span><br><span class="line"><span class="comment">// parameterized constructor. </span></span><br><span class="line"><span class="keyword">import</span> java.io.*; </span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Geek</span> </span></span><br><span class="line"><span class="class"></span>&#123; </span><br><span class="line">	<span class="comment">// data members of the class. </span></span><br><span class="line">	String name; </span><br><span class="line">	<span class="keyword">int</span> id; </span><br><span class="line"></span><br><span class="line">	<span class="comment">// constructor would initialize data members </span></span><br><span class="line">	<span class="comment">// with the values of passed arguments while </span></span><br><span class="line">	<span class="comment">// object of that class created. </span></span><br><span class="line">	Geek(String name, <span class="keyword">int</span> id) </span><br><span class="line">	&#123; </span><br><span class="line">		<span class="keyword">this</span>.name = name; </span><br><span class="line">		<span class="keyword">this</span>.id = id; </span><br><span class="line">	&#125; </span><br><span class="line">&#125; </span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">GFG</span> </span></span><br><span class="line"><span class="class"></span>&#123; </span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span> <span class="params">(String[] args)</span> </span></span><br><span class="line"><span class="function">	</span>&#123; </span><br><span class="line">		<span class="comment">// this would invoke the parameterized constructor. </span></span><br><span class="line">		Geek geek1 = <span class="keyword">new</span> Geek(<span class="string">"adam"</span>, <span class="number">1</span>); </span><br><span class="line">		System.out.println(<span class="string">"GeekName :"</span> + geek1.name + </span><br><span class="line">						<span class="string">" and GeekId :"</span> + geek1.id); </span><br><span class="line">	&#125; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>Output:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">GeekName :adam and GeekId :1</span><br></pre></td></tr></table></figure>
-<p>也就是说<strong>每一个类里面都有一个构造函数用来给变量赋值</strong>。如果你自己不去写这个构造函数，那么编译器会写一个。这样就可以给你创建的所有变量默认赋值了。（如果构造函数有参数那么，就是你给定的值；如果没有参数，那么就是0或者时null)。对了，构造函数中也可以写其他的语句，可以夹带私货。</p>
-<h2 id="使用构造参数时的一些其他问题："><a href="#使用构造参数时的一些其他问题：" class="headerlink" title="使用构造参数时的一些其他问题："></a>使用构造参数时的一些其他问题：</h2><ul>
-<li><p><strong>Does constructor return any value?</strong> （有返回值么？没有，但可以写return）</p>
-<p>There are no “return value” statements in constructor, but constructor returns current class instance. We can write ‘return’ inside a constructor.</p>
-</li>
-<li><p><strong>Constructor Overloading.</strong>（我们同样将其视作函数【本来就是】，当然也可以像函数一样，通过参数的类型，数目和顺序的不同来区分不同的同名构造函数）</p>
-<p>Like methods, we can overload constructors for creating objects in different ways. Compiler differentiates constructors on the basis of numbers of parameters, types of the parameters and order of the parameters.</p>
-</li>
-</ul>
-<blockquote>
-<p><strong>How constructors are different from methods in Java?构造函数和函数的区别</strong></p>
-</blockquote>
-<ul>
-<li>Constructor(s) must have the same name as the class within which it defined while it is not necessary for the method in java.构造函数的名字只能和类名相同，而且也不是必要的。</li>
-<li>Constructor(s) do not return any type while method(s) have the return type or <strong>void</strong> if does not return any value.构造函数没有返回值</li>
-<li>Constructor is called only once at the time of Object creation while method(s) can be called any numbers of time.构造函数只有在对象被创建的时候调用一次，而函数可以无限次被调用。</li>
-</ul>
-
-      
-    </div>
-    
-    
-    
-  </div>
-</article>
-
-
-
-  
-    <article id="post-汉诺塔的思考及解答" class="article article-type-post" itemprop="blogPost" itemscope>
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h2 class="article-title" itemprop="name">
-      <a href="/2020/02/10/%E6%B1%89%E8%AF%BA%E5%A1%94%E7%9A%84%E6%80%9D%E8%80%83%E5%8F%8A%E8%A7%A3%E7%AD%94/">汉诺塔的思考及解答</a>
-      
-    </h2>
-  
-
-
-        <div class="article-meta">
-          <time class="article-date" datetime="2020-02-10T06:36:38.000Z" itemprop="datePublished">二月 10, 2020, 2:36 下午</time>
-
-          
+        <div class="post-meta">
+            
+            <span class="post-time">二〇二〇年二月十九日</span>
         </div>
-      </header>
+    </article>
     
-    <div class="article-entry" itemprop="articleBody">
-      
-      
-        <p>其实在汉诺塔问题之前，斐波那契数列的问题是个比较好解决的问题。</p>
+    <article class="post">
+        <div class="post-title">
+            <a class="post-title-link" href="/2020/02/17/java%E5%AD%97%E7%AC%A6%E4%B8%B2string/">java字符串string</a>
+        </div>
+        <div class="post-content">
+            
+            
+            <a class="More" href="/2020/02/17/java%E5%AD%97%E7%AC%A6%E4%B8%B2string/">More</a>
+            
+        </div>
+        <div class="post-meta">
+            
+            <span class="post-time">二〇二〇年二月十七日</span>
+        </div>
+    </article>
+    
+    <article class="post">
+        <div class="post-title">
+            <a class="post-title-link" href="/2020/02/17/java%E6%96%B9%E6%B3%95methods/">java方法methods</a>
+        </div>
+        <div class="post-content">
+            
+            <p>java中还是称之为“方法”好了。</p>
+            <a class="More" href="/2020/02/17/java%E6%96%B9%E6%B3%95methods/">More</a>
+            
+        </div>
+        <div class="post-meta">
+            
+            <span class="post-time">二〇二〇年二月十七日</span>
+        </div>
+    </article>
+    
+    <article class="post">
+        <div class="post-title">
+            <a class="post-title-link" href="/2020/02/11/javaconstructors%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0/">javaconstructors构造函数</a>
+        </div>
+        <div class="post-content">
+            
+            
+            <a class="More" href="/2020/02/11/javaconstructors%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0/">More</a>
+            
+        </div>
+        <div class="post-meta">
+            
+            <span class="post-time">二〇二〇年二月十一日</span>
+        </div>
+    </article>
+    
+    <article class="post">
+        <div class="post-title">
+            <a class="post-title-link" href="/2020/02/10/%E6%B1%89%E8%AF%BA%E5%A1%94%E7%9A%84%E6%80%9D%E8%80%83%E5%8F%8A%E8%A7%A3%E7%AD%94/">汉诺塔的思考及解答</a>
+        </div>
+        <div class="post-content">
+            
+            <p>其实在汉诺塔问题之前，斐波那契数列的问题是个比较好解决的问题。</p>
 <p>但是汉诺塔问题令我思考了一段时间。最后不断探索，有了一些思考。</p>
 <p>沉下心，我们需要有一个大的格局。不断分解为小的问题。</p>
 <p>递归问题么，不就是找到规律与出口么。</p>
-      
-    </div>
-    
-      <div class="article-more-link">
-        <a href="/2020/02/10/%E6%B1%89%E8%AF%BA%E5%A1%94%E7%9A%84%E6%80%9D%E8%80%83%E5%8F%8A%E8%A7%A3%E7%AD%94/#more">more</a>
-      </div>
-    
-    
-    
-  </div>
-</article>
-
-
-
-  
-    <article id="post-java面向对象特性的阐述" class="article article-type-post" itemprop="blogPost" itemscope>
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h2 class="article-title" itemprop="name">
-      <a href="/2020/02/09/java%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%89%B9%E6%80%A7%E7%9A%84%E9%98%90%E8%BF%B0/">java面向对象特性的阐述</a>
-      
-    </h2>
-  
-
-
-        <div class="article-meta">
-          <time class="article-date" datetime="2020-02-09T08:34:41.000Z" itemprop="datePublished">二月 9, 2020, 4:34 下午</time>
-
-          
+            <a class="More" href="/2020/02/10/%E6%B1%89%E8%AF%BA%E5%A1%94%E7%9A%84%E6%80%9D%E8%80%83%E5%8F%8A%E8%A7%A3%E7%AD%94/">More</a>
+            
         </div>
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-      
-        <blockquote>
-<p>Object-oriented programming: As the name suggests, Object-Oriented Programming or OOPs refers to languages that uses objects in programming. Object-oriented programming aims to implement real-world entities like inheritance, hiding, polymorphism etc in programming. <strong>The main aim of OOP is to bind together the data and the functions that operate on them so that no other part of the code can access this data except that function.（OOP的主要目的是将数据和对其进行操作的功能绑定在一起，以便除该功能外，代码的其他任何部分都无法访问此数据。）</strong></p>
-</blockquote>
-<p><a href="https://www.geeksforgeeks.org/object-oriented-programming-oops-concept-in-java/" target="_blank" rel="noopener">Object Oriented Programming (OOPs) Concept in Java - GeeksforGeeks</a></p>
-<ol>
-<li>在这其中，指出oops（面向对象的编程）主要目的是将<strong>数据和函数</strong>结合在一起，bind说明两者是绑定。</li>
-<li>当然inheritance, hiding, polymorphism etc（继承，隐藏，多态等）等内容。。。</li>
-</ol>
-<p>下面学习一波面向对象的语言的特性：</p>
-<h2 id="面对对象的三大特征："><a href="#面对对象的三大特征：" class="headerlink" title="面对对象的三大特征："></a><strong>面对对象的三大特征：</strong></h2><h3 id="1-polymorphism多态："><a href="#1-polymorphism多态：" class="headerlink" title="1. polymorphism多态："></a>1. polymorphism多态：</h3><p><a href="https://www.geeksforgeeks.org/polymorphism-in-java/" target="_blank" rel="noopener">Polymorphism in Java - GeeksforGeeks</a></p>
-<p>. In other words, polymorphism allows you to define one interface and have multiple implementations</p>
-<ul>
-<li><a href="https://www.geeksforgeeks.org/overloading-in-java/" target="_blank" rel="noopener">Overloading in Java</a></li>
-</ul>
-<p>即一个函数名字有着许多不同的含义（根据传入值类型，数量的不同而改变），以实现更多。</p>
-<p><strong>也就是说可以创建多个同名的函数</strong></p>
-<p>在现实生活中：我们对于一个名字会有许多的不同的理解，这取决于环境的不同。同样的在面向对象的特性（多态）吧，便实现了这一真实世界中的现象，赋值给了编程。</p>
-<ul>
-<li><a href="https://www.geeksforgeeks.org/overriding-in-java/" target="_blank" rel="noopener">Overriding in Java</a></li>
-</ul>
-<p>所谓多态就是指一个类实例的相同方法在不同情形有不同表现形式。多态机制使具有不同内部结构的对象可以共享相同的外部接口。这意味着，虽然针对不同对象的具体操作不同，但通过一个公共的类，它们（那些操作）可以通过相同的方式予以调用。</p>
-<p>最常见的多态就是将子类传入父类参数中，运行时调用父类方法时通过传入的子类决定具体的内部结构或行为。</p>
-<h3 id="2-Inheritance-继承"><a href="#2-Inheritance-继承" class="headerlink" title="2. Inheritance:继承"></a>2. Inheritance:继承</h3><p>继承就是一个函数可以使用其他函数的内容（field和methods即函数和变量）。</p>
-<p>分为三类：</p>
-<ul>
-<li><strong>Super Class:</strong> The class whose features are inherited is known as superclass(or a base class or a parent class).超类：被其他类继承</li>
-<li><strong>Sub Class:</strong> The class that inherits the other class is known as subclass(or a derived class, extended class, or child class). The subclass can add its own fields and methods in addition to the superclass fields and methods.子类：继承其他类</li>
-<li><strong>Reusability:</strong> Inheritance supports the concept of “reusability”, i.e. when we want to create a new class and there is already a class that includes some of the code that we want, we can derive our new class from the existing class. By doing this, we are reusing the fields and methods of the existing class.体现了其可以重复利用代码，不必多次重复去编写重复的内容。</li>
-</ul>
-<p>关键词是 <strong>extends</strong></p>
-<h3 id="3-Encapsulation-封装"><a href="#3-Encapsulation-封装" class="headerlink" title="3. Encapsulation:封装"></a>3. Encapsulation:封装</h3><p>封装：就是将该类所操作的数据和类，封装在一起。这是一种保护机制，可以使得其他的代码无法获取到被封装起数据，以此保护了数据。</p>
-<h3 id="除了三大基本特征以外：其实共七大（有重复）特征"><a href="#除了三大基本特征以外：其实共七大（有重复）特征" class="headerlink" title="除了三大基本特征以外：其实共七大（有重复）特征"></a>除了三大基本特征以外：其实共七大（有重复）特征</h3><ul>
-<li><a href="https://www.geeksforgeeks.org/polymorphism-in-java/" target="_blank" rel="noopener">Polymorphism</a> 多态</li>
-<li><a href="https://www.geeksforgeeks.org/inheritance-in-java/" target="_blank" rel="noopener">Inheritance</a> 继承</li>
-<li><a href="https://www.geeksforgeeks.org/encapsulation-in-java/" target="_blank" rel="noopener">Encapsulation</a> 封装</li>
-<li><a href="https://www.geeksforgeeks.org/abstraction-in-java-2/" target="_blank" rel="noopener">Abstraction</a> 抽象：</li>
-</ul>
-<p>将数据简化，只提供需要的数据给用户</p>
-<p>抽象是通过接口和抽象类来实现的。我们可以使用接口实现100%的抽象。</p>
-<ul>
-<li><a href="https://www.geeksforgeeks.org/classes-objects-java/" target="_blank" rel="noopener">Class</a> 类（类是用户定义的蓝图或原型，从中可以创建对象）</li>
-<li><a href="https://www.geeksforgeeks.org/classes-objects-java/" target="_blank" rel="noopener">Object</a>  对象：<strong>State ，Behavior， Identity</strong></li>
-<li><a href="https://www.geeksforgeeks.org/methods-in-java/" target="_blank" rel="noopener">Method</a> ：函数如下图（但在java中，只能存在于类下面，不可以独立像c，cpp，python一样出现）</li>
-</ul>
-<p><img src="/2020/02/09/java%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%89%B9%E6%80%A7%E7%9A%84%E9%98%90%E8%BF%B0/1.png" alt="1"></p>
-<ul>
-<li><a href="https://www.geeksforgeeks.org/message-passing-in-java/" target="_blank" rel="noopener">Message Passing</a> 信息传递。</li>
-</ul>
-
-      
-    </div>
-    
-    
-    
-  </div>
-</article>
-
-
-
-  
-    <article id="post-算法时间复杂度分析d大o" class="article article-type-post" itemprop="blogPost" itemscope>
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h2 class="article-title" itemprop="name">
-      <a href="/2020/02/08/%E7%AE%97%E6%B3%95%E6%97%B6%E9%97%B4%E5%A4%8D%E6%9D%82%E5%BA%A6%E5%88%86%E6%9E%90d%E5%A4%A7o/">算法时间复杂度分析</a>
-      
-    </h2>
-  
-
-
-        <div class="article-meta">
-          <time class="article-date" datetime="2020-02-08T11:40:05.000Z" itemprop="datePublished">二月 8, 2020, 7:40 晚上</time>
-
-          
+        <div class="post-meta">
+            
+            <span class="post-time">二〇二〇年二月十日</span>
         </div>
-      </header>
+    </article>
     
-    <div class="article-entry" itemprop="articleBody">
-      
-      
-        <h1 id="1-2-算法分析"><a href="#1-2-算法分析" class="headerlink" title="1.2 算法分析:"></a>1.2 算法分析:</h1><p><img src="https://i.loli.net/2020/02/08/vLTN4YAGuk5enzZ.png" alt="Untitled.png"></p>
+    <article class="post">
+        <div class="post-title">
+            <a class="post-title-link" href="/2020/02/09/java%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%89%B9%E6%80%A7%E7%9A%84%E9%98%90%E8%BF%B0/">java面向对象特性的阐述</a>
+        </div>
+        <div class="post-content">
+            
+            
+            <a class="More" href="/2020/02/09/java%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%89%B9%E6%80%A7%E7%9A%84%E9%98%90%E8%BF%B0/">More</a>
+            
+        </div>
+        <div class="post-meta">
+            
+            <span class="post-time">二〇二〇年二月九日</span>
+        </div>
+    </article>
+    
+    <article class="post">
+        <div class="post-title">
+            <a class="post-title-link" href="/2020/02/08/%E7%AE%97%E6%B3%95%E6%97%B6%E9%97%B4%E5%A4%8D%E6%9D%82%E5%BA%A6%E5%88%86%E6%9E%90d%E5%A4%A7o/">算法时间复杂度分析</a>
+        </div>
+        <div class="post-content">
+            
+            <h1 id="1-2-算法分析"><a href="#1-2-算法分析" class="headerlink" title="1.2 算法分析:"></a>1.2 算法分析:</h1><p><img src="https://i.loli.net/2020/02/08/vLTN4YAGuk5enzZ.png" alt="Untitled.png"></p>
 <p>分为：事后统计法与事前分析估算法。</p>
 <p>当然，第一种需要执行程序。而且存在着其他的因素来干扰结果。（与硬件有关）</p>
 <p>所以采用<strong>事前分析评估法</strong>来分析算法的效率。</p>
-      
-    </div>
-    
-      <div class="article-more-link">
-        <a href="/2020/02/08/%E7%AE%97%E6%B3%95%E6%97%B6%E9%97%B4%E5%A4%8D%E6%9D%82%E5%BA%A6%E5%88%86%E6%9E%90d%E5%A4%A7o/#more">more</a>
-      </div>
-    
-    
-    
-  </div>
-</article>
-
-
-
-  
-    <article id="post-使用sort函数对结构体排序" class="article article-type-post" itemprop="blogPost" itemscope>
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h2 class="article-title" itemprop="name">
-      <a href="/2020/01/31/%E4%BD%BF%E7%94%A8sort%E5%87%BD%E6%95%B0%E5%AF%B9%E7%BB%93%E6%9E%84%E4%BD%93%E6%8E%92%E5%BA%8F/">使用sort函数对结构体排序</a>
-      
-    </h2>
-  
-
-
-        <div class="article-meta">
-          <time class="article-date" datetime="2020-01-31T06:40:05.000Z" itemprop="datePublished">一月 31, 2020, 2:40 下午</time>
-
-          
+            <a class="More" href="/2020/02/08/%E7%AE%97%E6%B3%95%E6%97%B6%E9%97%B4%E5%A4%8D%E6%9D%82%E5%BA%A6%E5%88%86%E6%9E%90d%E5%A4%A7o/">More</a>
+            
         </div>
-      </header>
+        <div class="post-meta">
+            
+            <span class="post-time">二〇二〇年二月八日</span>
+        </div>
+    </article>
     
-    <div class="article-entry" itemprop="articleBody">
-      
-      
-        <p>在使用sort函数排序的时候，遇到了一些问题（因为我们不只是排序数组呀）。</p>
+    <article class="post">
+        <div class="post-title">
+            <a class="post-title-link" href="/2020/01/31/%E4%BD%BF%E7%94%A8sort%E5%87%BD%E6%95%B0%E5%AF%B9%E7%BB%93%E6%9E%84%E4%BD%93%E6%8E%92%E5%BA%8F/">使用sort函数对结构体排序</a>
+        </div>
+        <div class="post-content">
+            
+            <p>在使用sort函数排序的时候，遇到了一些问题（因为我们不只是排序数组呀）。</p>
 <p>比如我们只想利用结构体变量中的其中一个变量来对结构体排序；（比如实际应用中对学生的成绩排序并进行打印）</p>
 <p>那么经查阅，（简单的方法）大致为如下：</p>
-      
-    </div>
-    
-      <div class="article-more-link">
-        <a href="/2020/01/31/%E4%BD%BF%E7%94%A8sort%E5%87%BD%E6%95%B0%E5%AF%B9%E7%BB%93%E6%9E%84%E4%BD%93%E6%8E%92%E5%BA%8F/#more">more</a>
-      </div>
-    
-    
-    
-  </div>
-</article>
-
-
-
-  
-    <article id="post-P1149火柴棒等式" class="article article-type-post" itemprop="blogPost" itemscope>
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h2 class="article-title" itemprop="name">
-      <a href="/2020/01/29/P1149%E7%81%AB%E6%9F%B4%E6%A3%92%E7%AD%89%E5%BC%8F/">P1149火柴棒等式</a>
-      
-    </h2>
-  
-
-
-        <div class="article-meta">
-          <time class="article-date" datetime="2020-01-29T10:09:07.000Z" itemprop="datePublished">一月 29, 2020, 6:09 晚上</time>
-
-          
+            <a class="More" href="/2020/01/31/%E4%BD%BF%E7%94%A8sort%E5%87%BD%E6%95%B0%E5%AF%B9%E7%BB%93%E6%9E%84%E4%BD%93%E6%8E%92%E5%BA%8F/">More</a>
+            
         </div>
-      </header>
+        <div class="post-meta">
+            
+            <span class="post-time">二〇二〇年一月三十一日</span>
+        </div>
+    </article>
     
-    <div class="article-entry" itemprop="articleBody">
-      
-      
-        <h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><p> 给你n根火柴棍，你可以拼出多少个形如“A+B=C”的等式？等式中的A、B、C是用火柴棍拼出的整数（若该数非零，则最高位不能是0）。用火柴棍拼数字0−9的拼法如图所示： </p>
-<p> <img src="https://cdn.luogu.com.cn/upload/pic/49.png" alt="img"> </p>
-<p>注意：</p>
-<ol>
-<li>加号与等号各自需要两根火柴棍</li>
-<li>如果A≠B，则A+B=C与B+A=C视为不同的等式(A,B,C&gt;=0)</li>
-<li>n根火柴棍必须全部用上</li>
-</ol>
-<h2 id="输入格式"><a href="#输入格式" class="headerlink" title="输入格式"></a>输入格式</h2><p>一个整数n(n&lt;=24)</p>
-<h2 id="输出格式"><a href="#输出格式" class="headerlink" title="输出格式"></a>输出格式</h2><p>一个整数，能拼成的不同等式的数目。</p>
-<h2 id="输入输出样例"><a href="#输入输出样例" class="headerlink" title="输入输出样例"></a>输入输出样例</h2><p><strong>输入 #1</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">14</span><br></pre></td></tr></table></figure>
-<p><strong>输出 #1</strong> </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">2</span><br></pre></td></tr></table></figure>
-<p><strong>输入 #2</strong> </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">18</span><br></pre></td></tr></table></figure>
-<p><strong>输出 #2</strong> </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">9</span><br></pre></td></tr></table></figure>
-<h2 id="说明-提示"><a href="#说明-提示" class="headerlink" title="说明/提示"></a>说明/提示</h2><p>【输入输出样例1解释】</p>
-<p>2个等式为：</p>
-<p> 0+1=10和1+0=1。 </p>
-<p>【输入输出样例2解释】</p>
-<p>9个等式为：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">0+4=4</span><br><span class="line">0+11=11</span><br><span class="line">1+10=11</span><br><span class="line">2+2=4</span><br><span class="line">2+7=9</span><br><span class="line">4+0=4</span><br><span class="line">7+2=9</span><br><span class="line">10+1=11</span><br><span class="line">11+0=11</span><br></pre></td></tr></table></figure>
-<p><strong>思路</strong>：简单的参考了如下的答案并作出了一定的解释：其主要是将各个数字的所需个数计算出来，然后一一尝试是否符合即可。</p>
-<h3 id="代码如下"><a href="#代码如下" class="headerlink" title="代码如下:"></a><strong>代码如下</strong>:</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">int</span> n; </span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">      <span class="keyword">int</span> a[<span class="number">2001</span>]=&#123;<span class="number">6</span>&#125;,b,c[<span class="number">10</span>]=&#123;<span class="number">6</span>,<span class="number">2</span>,<span class="number">5</span>,<span class="number">5</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>,<span class="number">3</span>,<span class="number">7</span>,<span class="number">6</span>&#125;,s=<span class="number">0</span>,i,j;</span><br><span class="line">      <span class="comment">//a[2001]表示的是每个数字(eg.“1998”)所需的火柴棒个数； </span></span><br><span class="line">      <span class="comment">//而c是默认的0-9的所需火柴棒个数；以此为基础来计算a[2001];</span></span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;b);</span><br><span class="line">        <span class="keyword">for</span>(i=<span class="number">1</span>;i&lt;=<span class="number">2000</span>;i++)</span><br><span class="line">        &#123;</span><br><span class="line">                j=i;</span><br><span class="line">                <span class="keyword">while</span>(j&gt;=<span class="number">1</span>)<span class="comment">//求每个数所用的火柴棒</span></span><br><span class="line">                &#123;</span><br><span class="line">                    a[i]+=c[j%<span class="number">10</span>];</span><br><span class="line">                    j/=<span class="number">10</span>;</span><br><span class="line">                &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;=<span class="number">1000</span>;i++)</span><br><span class="line">        &#123;</span><br><span class="line">                <span class="keyword">for</span>(j=<span class="number">0</span>;j&lt;=<span class="number">1000</span>;j++)</span><br><span class="line">                <span class="keyword">if</span>(a[i]+a[j]+a[i+j]+<span class="number">4</span>==b)s++;<span class="comment">//还有加号与等号（4）;  </span></span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"%d"</span>,s);</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-      
-    </div>
+    <article class="post">
+        <div class="post-title">
+            <a class="post-title-link" href="/2020/01/29/P1149%E7%81%AB%E6%9F%B4%E6%A3%92%E7%AD%89%E5%BC%8F/">P1149火柴棒等式</a>
+        </div>
+        <div class="post-content">
+            
+            
+            <a class="More" href="/2020/01/29/P1149%E7%81%AB%E6%9F%B4%E6%A3%92%E7%AD%89%E5%BC%8F/">More</a>
+            
+        </div>
+        <div class="post-meta">
+            
+            <span class="post-time">二〇二〇年一月廿九日</span>
+        </div>
+    </article>
     
-    
-    
-  </div>
-</article>
+</section>
 
+<script>
+    var Home = location.href,
+    xhr,
+    xhrUrl = '';
 
+    var Diaspora = {
+        L: function(url, f, err) {
+            if (url == xhrUrl) {
+                return false;
+            }
+            xhrUrl = url;
+            if (xhr) {
+                xhr.abort();
+            }
+            xhr = $.ajax({
+                type: 'GET',
+                url: url,
+                timeout: 10000,
+                success: function(data) {
+                    f(data);
+                    xhrUrl = '';
+                },
+                error: function(a, b, c) {
+                    if (b == 'abort') {
+                        err && err()
+                    } else {
+                        window.location.href = url;
+                    }
+                    xhrUrl = '';
+                }
+            });
+        },
+        loading: function() {
+            var w = window.innerWidth;
+            var css = '<style class="loaderstyle" id="loaderstyle'+ w +'">'+
+                '@-moz-keyframes loader'+ w +'{100%{background-position:'+ w +'px 0}}'+
+                '@-webkit-keyframes loader'+ w +'{100%{background-position:'+ w +'px 0}}'+
+                '.loader'+ w +'{-webkit-animation:loader'+ w +' 3s linear infinite;-moz-animation:loader'+ w +' 3s linear infinite;}'+
+                '</style>';
+            $('.loaderstyle').remove()
+            $('head').append(css)
+            $('#loader').removeClass().addClass('loader'+ w).show()
+        },
+        loaded: function() {
+            $('#loader').removeClass().hide()
+        }
+    };
 
-  
+    $(function() {
+        $('body').on('click', function(e) {
+            var tag = $(e.target).attr('class') || '',
+                rel = $(e.target).attr('rel') || '';
+            if (!tag && !rel) return;
+            switch (true) {
+                // next page
+                case (tag.indexOf('more') != -1):
+                    tag = $('.more');
+                    if (tag.data('status') == 'loading') {
+                        return false
+                    }
+                    var num = parseInt(tag.data('page')) || 1;
+                    if (num == 1) {
+                        tag.data('page', 1)
+                    }
+                    tag.html("Loading...").data('status', 'loading')
+                    Diaspora.loading()
+                    Diaspora.L(tag.attr('href'), function(data) {
+                        tag.hide();
+                        $('.license').hide();
+                        var link = $(data).find('.more').attr('href');
+                        if (link != undefined) {
+                            tag.attr('href', link).html("Older Article").data('status', 'loaded')
+                            tag.data('page', parseInt(tag.data('page')) + 1)
+                        } else {
+                            $('body').remove()
+                        }
+                        var tempScrollTop = $(window).scrollTop();
+                        $('body').append($(data).find('.posts'))
+                        $(window).scrollTop(tempScrollTop + 100);
+                        Diaspora.loaded()
+                        //$('html,body').animate({ scrollTop: tempScrollTop + 400 }, 500);
+                        if (link !== '/') {
+                            $('body').append($(data).find('.page-nav'))
+                        }
+                        $('body').append($(data).find('.license'))
+                    }, function() {
+                        tag.html("Older Article").data('status', 'loaded')
+                    })
+                    return false;
+                    break;
+                default:
+                    return true;
+                    break;
+            }
+        });
+    })
+</script>
 
+<nav class="page-nav">
+  <a href="/page/4/" class="more">Older Article</a>
+</nav>
 
-  <nav id="page-nav" class="page-nav">
-    
-    <a class="extend prev" rel="prev" href="/page/2/">« Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/4/">Next »</a>
-  </nav>
+<p class="license">本站文章使用 CC BY-NC-SA 4.0 许可证</p>
+    </main><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config("");
+</script>
 
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+      all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+  });
+</script>
 
-
-    </div>
-  </div><!-- hexo-inject:begin --><!-- hexo-inject:end -->
-  
-
-
-
-
-
-
-
+<script type="text/javascript" src="custom_mathjax_source">
+</script>
+<!-- End: Injected MathJax -->
+<!-- hexo-inject:end -->
 </body>
+
 </html>

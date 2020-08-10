@@ -1,66 +1,96 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
-  
-  <title>P1149火柴棒等式 | jefine</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  
-  
-  <link rel="stylesheet" href="/css/style.css">
-  
-    <link rel="stylesheet" href="/css/highlight.css"><!-- hexo-inject:begin --><!-- hexo-inject:end -->
-  
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+    
+    <title>P1149火柴棒等式 - jefine</title>
+    <meta charset="utf-8">
+    
+    <meta name="title" content="P1149火柴棒等式 - jefine">
+    <meta name="description" content="">
+    <meta property="og:image" content="/favicon.png">
+    <meta property="og:image:width" content="200" />
+    <meta property="og:image:height" content="200" />
+    
+    <link href="https://fonts.googleapis.com/css2?family=Source+Serif+Pro:wght@400;700&display=swap" rel="stylesheet">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Source Serif Pro', 'Source Han Serif SC', 'Noto Serif CJK SC', 'Noto Serif SC', serif;
+        }
+    </style>
+    
+    <link rel="shortcut icon" href="/favicon.png">
+    
+    <link rel="stylesheet"
+        href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.17.1/build/styles/arduino-light.min.css">
+    <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.17.1/build/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    
+    
+    <link rel="stylesheet" href="/css/style.css">
+    <script src="/js/jquery.min.js"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 </head>
+
 <body>
-  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div id="wrapper">
-    <header id="header">
-  <h1 id="title">
-    <a href="/">jefine</a>
-  </h1>
-  <nav>
-    
-    
-      
-      <a class="nav-link" href="/">Home</a>
-    
-      
-        <span class="nav-spacer">×</span>
-      
-      <a class="nav-link" href="/about">About</a>
-    
-      
-        <span class="nav-spacer">×</span>
-      
-      <a class="nav-link" href="/archives">Archives</a>
-    
-    
-  </nav>
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><header class="header">
+    <div class="blog-title">
+        <a href="/" class="logo">jefine</a>
+    </div>
+    <nav class="navbar">
+        <ul class="menu">
+            
+            
+            
+            <li class="menu-item">
+                
+                <a href="/" class="menu-item-link">Home</a>
+                
+            </li>
+            
+            
+            
+            <li class="menu-item">
+                
+                <a href="/archives" class="menu-item-link">Archives</a>
+                
+            </li>
+            
+            
+            
+            <li class="menu-item">
+                
+                <a href="/about" class="menu-item-link">About</a>
+                
+            </li>
+            
+            
+            
+            <li class="menu-item">
+                
+                <a href="/rss" class="menu-item-link">RSS</a>
+                
+            </li>
+            
+            
+            
+            <li class="menu-item">
+                
+                <a href="/member" class="menu-item-link">Member</a>
+                
+            </li>
+            
+        </ul>
+    </nav>
 </header>
-
-    <div id="content">
-      <article id="post-P1149火柴棒等式" class="article article-type-post" itemprop="blogPost" itemscope>
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h2 class="article-title" itemprop="headline name">
-      P1149火柴棒等式
-    </h2>
-  
-
-
-        <div class="article-meta">
-          <time class="article-date" datetime="2020-01-29T10:09:07.000Z" itemprop="datePublished">一月 29, 2020, 6:09 晚上</time>
-
-          
-        </div>
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-      
+    <main class="main">
+        <article class="post">
+    <div class="post-title">
+        <h1 class="title">P1149火柴棒等式</h2>
+    </div>
+    <div class="post-content">
         <h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><p> 给你n根火柴棍，你可以拼出多少个形如“A+B=C”的等式？等式中的A、B、C是用火柴棍拼出的整数（若该数非零，则最高位不能是0）。用火柴棍拼数字0−9的拼法如图所示： </p>
 <p> <img src="https://cdn.luogu.com.cn/upload/pic/49.png" alt="img"> </p>
 <p>注意：</p>
@@ -88,66 +118,40 @@
 <p><strong>思路</strong>：简单的参考了如下的答案并作出了一定的解释：其主要是将各个数字的所需个数计算出来，然后一一尝试是否符合即可。</p>
 <h3 id="代码如下"><a href="#代码如下" class="headerlink" title="代码如下:"></a><strong>代码如下</strong>:</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">int</span> n; </span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">      <span class="keyword">int</span> a[<span class="number">2001</span>]=&#123;<span class="number">6</span>&#125;,b,c[<span class="number">10</span>]=&#123;<span class="number">6</span>,<span class="number">2</span>,<span class="number">5</span>,<span class="number">5</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>,<span class="number">3</span>,<span class="number">7</span>,<span class="number">6</span>&#125;,s=<span class="number">0</span>,i,j;</span><br><span class="line">      <span class="comment">//a[2001]表示的是每个数字(eg.“1998”)所需的火柴棒个数； </span></span><br><span class="line">      <span class="comment">//而c是默认的0-9的所需火柴棒个数；以此为基础来计算a[2001];</span></span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;b);</span><br><span class="line">        <span class="keyword">for</span>(i=<span class="number">1</span>;i&lt;=<span class="number">2000</span>;i++)</span><br><span class="line">        &#123;</span><br><span class="line">                j=i;</span><br><span class="line">                <span class="keyword">while</span>(j&gt;=<span class="number">1</span>)<span class="comment">//求每个数所用的火柴棒</span></span><br><span class="line">                &#123;</span><br><span class="line">                    a[i]+=c[j%<span class="number">10</span>];</span><br><span class="line">                    j/=<span class="number">10</span>;</span><br><span class="line">                &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;=<span class="number">1000</span>;i++)</span><br><span class="line">        &#123;</span><br><span class="line">                <span class="keyword">for</span>(j=<span class="number">0</span>;j&lt;=<span class="number">1000</span>;j++)</span><br><span class="line">                <span class="keyword">if</span>(a[i]+a[j]+a[i+j]+<span class="number">4</span>==b)s++;<span class="comment">//还有加号与等号（4）;  </span></span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"%d"</span>,s);</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-      
     </div>
-    
-    
-    <div class="article-category">
-      
-        <b>Categories:</b>
-        <a class="article-category-link" href="/categories/%E7%BC%96%E7%A8%8B/">编程</a>
-      
-      
-        <br/>
-      
-      
-        <b>Tags:</b>
-        <a class="article-tag-link" href="/tags/%E6%B4%9B%E8%B0%B7/" rel="tag">洛谷</a>
-      
+    <div class="post-meta">
+        
+    <span class="post-time">二〇二〇年一月廿九日</span>
     </div>
-    
-    
-  </div>
 </article>
 
-  
-<nav id="article-nav" class="article-nav">
-  
-    <a href="/2020/01/31/%E4%BD%BF%E7%94%A8sort%E5%87%BD%E6%95%B0%E5%AF%B9%E7%BB%93%E6%9E%84%E4%BD%93%E6%8E%92%E5%BA%8F/" id="article-nav-newer" class="article-nav-link-wrap newer">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          使用sort函数对结构体排序
-        
-      </div>
-    </a>
-  
-  
-    <a href="/2020/01/19/%E5%B0%8F%E8%AE%B0%EF%BC%9A%E4%B8%80%E6%AC%A1%E6%99%AE%E9%80%9A%E5%BE%AA%E8%BF%B9%E8%BD%A6%E5%A4%A7%E8%B5%9B/" id="article-nav-older" class="article-nav-link-wrap older">
-      <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">
-        
-          小记：一次普通循迹车大赛
-        
-      </div>
-    </a>
-  
+<div class="prev_next">
+    <nav id="prev_next">
+
+<div class="prev">
+    
+    <p>Newer</p>
+    <a href="/2020/01/31/使用sort函数对结构体排序/"><div class="article-nav-title">使用sort函数对结构体排序</div></a>
+    
+</div>
+<div class="next">
+    
+    <p>Older</p>
+    <a href="/2020/01/19/小记：一次普通循迹车大赛/"><div class="article-nav-title">小记：一次普通循迹车大赛</div></a>
+    
+</div>
+
 </nav>
+</div>
+
+<div class="post-comment">
+    
 
 
 
+</div>
 
-
-
-    </div>
-  </div><!-- hexo-inject:begin --><!-- hexo-inject:end -->
-  
-
-
-
-
-
-
-
+    </main><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 </body>
+
 </html>

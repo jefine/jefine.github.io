@@ -1,66 +1,96 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
-  
-  <title>L1-006 连续因子 | jefine</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  
-  
-  <link rel="stylesheet" href="/css/style.css">
-  
-    <link rel="stylesheet" href="/css/highlight.css"><!-- hexo-inject:begin --><!-- hexo-inject:end -->
-  
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+    
+    <title>L1-006 连续因子 - jefine</title>
+    <meta charset="utf-8">
+    
+    <meta name="title" content="L1-006 连续因子 - jefine">
+    <meta name="description" content="">
+    <meta property="og:image" content="/favicon.png">
+    <meta property="og:image:width" content="200" />
+    <meta property="og:image:height" content="200" />
+    
+    <link href="https://fonts.googleapis.com/css2?family=Source+Serif+Pro:wght@400;700&display=swap" rel="stylesheet">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Source Serif Pro', 'Source Han Serif SC', 'Noto Serif CJK SC', 'Noto Serif SC', serif;
+        }
+    </style>
+    
+    <link rel="shortcut icon" href="/favicon.png">
+    
+    <link rel="stylesheet"
+        href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.17.1/build/styles/arduino-light.min.css">
+    <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.17.1/build/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    
+    
+    <link rel="stylesheet" href="/css/style.css">
+    <script src="/js/jquery.min.js"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 </head>
+
 <body>
-  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div id="wrapper">
-    <header id="header">
-  <h1 id="title">
-    <a href="/">jefine</a>
-  </h1>
-  <nav>
-    
-    
-      
-      <a class="nav-link" href="/">Home</a>
-    
-      
-        <span class="nav-spacer">×</span>
-      
-      <a class="nav-link" href="/about">About</a>
-    
-      
-        <span class="nav-spacer">×</span>
-      
-      <a class="nav-link" href="/archives">Archives</a>
-    
-    
-  </nav>
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><header class="header">
+    <div class="blog-title">
+        <a href="/" class="logo">jefine</a>
+    </div>
+    <nav class="navbar">
+        <ul class="menu">
+            
+            
+            
+            <li class="menu-item">
+                
+                <a href="/" class="menu-item-link">Home</a>
+                
+            </li>
+            
+            
+            
+            <li class="menu-item">
+                
+                <a href="/archives" class="menu-item-link">Archives</a>
+                
+            </li>
+            
+            
+            
+            <li class="menu-item">
+                
+                <a href="/about" class="menu-item-link">About</a>
+                
+            </li>
+            
+            
+            
+            <li class="menu-item">
+                
+                <a href="/rss" class="menu-item-link">RSS</a>
+                
+            </li>
+            
+            
+            
+            <li class="menu-item">
+                
+                <a href="/member" class="menu-item-link">Member</a>
+                
+            </li>
+            
+        </ul>
+    </nav>
 </header>
-
-    <div id="content">
-      <article id="pta l1-006-连续因子" class="article article-type-pta l1-006" itemprop="blogPost" itemscope>
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h2 class="article-title" itemprop="headline name">
-      L1-006 连续因子
-    </h2>
-  
-
-
-        <div class="article-meta">
-          <time class="article-date" datetime="2020-01-02T08:09:01.000Z" itemprop="datePublished">一月 2, 2020, 4:09 下午</time>
-
-          
-        </div>
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-      
+    <main class="main">
+        <article class="post">
+    <div class="post-title">
+        <h1 class="title">L1-006 连续因子</h2>
+    </div>
+    <div class="post-content">
         <p>一个正整数 N 的因子中可能存在若干连续的数字。例如 630 可以分解为 3×5×6×7，其中 5、6、7 就是 3 个连续的数字。给定任一正整数 N，要求编写程序求出最长连续因子的个数，并输出最小的连续因子序列。</p>
   <a id="more"></a>
 <h3 id="输入格式："><a href="#输入格式：" class="headerlink" title="输入格式："></a>输入格式：</h3><p>输入在一行中给出一个正整数 N（1&lt;N&lt;231）。</p>
@@ -70,61 +100,40 @@
 <p>思路为从2开始累乘（加1），紧接着就判断是否乘积是其因子<br>如果是，那么记录下来长度，开始的i；<br>一直到乘积大于n停止；<br>然后使乘积（prd）等于1；i++； </p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> ll;<span class="comment">//简写 ，使用long long更好 </span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	ll n;</span><br><span class="line">	<span class="built_in">cin</span>&gt;&gt;n;</span><br><span class="line">	ll prd;<span class="comment">//是乘积（product） </span></span><br><span class="line">	<span class="keyword">int</span> start=<span class="number">0</span>,len=<span class="number">0</span>;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">2</span>;i&lt;=<span class="built_in">sqrt</span>(n);i++)&#123;<span class="comment">//sqrt是为了最后一个点过去（减少计算量） </span></span><br><span class="line">		prd=<span class="number">1</span>;</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> j=i;prd&lt;n;j++)&#123;</span><br><span class="line">			prd*=j;</span><br><span class="line">			<span class="keyword">if</span>(n%prd==<span class="number">0</span>&amp;&amp;j-i+<span class="number">1</span>&gt;len)&#123;</span><br><span class="line">				start=i;</span><br><span class="line">				len=j-i+<span class="number">1</span>;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">if</span>(start==<span class="number">0</span>)&#123;<span class="comment">//等于0的话就意味着它是一个质数！那么排去1.他的因子就只有本身了。 </span></span><br><span class="line">		start=n;</span><br><span class="line">		len = <span class="number">1</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">cout</span>&lt;&lt;len&lt;&lt;<span class="built_in">endl</span>&lt;&lt;start;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=start+<span class="number">1</span>;i&lt;start+len;i++)</span><br><span class="line">	<span class="built_in">cout</span>&lt;&lt;<span class="string">"*"</span>&lt;&lt;i;</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-      
     </div>
-    
-    
-    <div class="article-category">
-      
-      
-      
-        <b>Tags:</b>
-        <a class="article-tag-link" href="/tags/pta/" rel="tag">pta</a>
-      
+    <div class="post-meta">
+        
+    <span class="post-time">二〇二〇年一月二日</span>
     </div>
-    
-    
-  </div>
 </article>
 
-  
-<nav id="article-nav" class="article-nav">
-  
-    <a href="/2020/01/03/%E6%9F%A5%E9%AA%8C%E8%BA%AB%E4%BB%BD%E8%AF%81/" id="article-nav-newer" class="article-nav-link-wrap newer">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          查验身份证
-        
-      </div>
-    </a>
-  
-  
-    <a href="/2020/01/02/2020/" id="article-nav-older" class="article-nav-link-wrap older">
-      <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">
-        
-          2020
-        
-      </div>
-    </a>
-  
+<div class="prev_next">
+    <nav id="prev_next">
+
+<div class="prev">
+    
+    <p>Newer</p>
+    <a href="/2020/01/03/查验身份证/"><div class="article-nav-title">查验身份证</div></a>
+    
+</div>
+<div class="next">
+    
+    <p>Older</p>
+    <a href="/2020/01/02/2020/"><div class="article-nav-title">2020</div></a>
+    
+</div>
+
 </nav>
+</div>
+
+<div class="post-comment">
+    
 
 
 
+</div>
 
-
-
-    </div>
-  </div><!-- hexo-inject:begin --><!-- hexo-inject:end -->
-  
-
-
-
-
-
-
-
+    </main><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 </body>
+
 </html>
