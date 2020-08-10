@@ -1,1281 +1,352 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html>
 <head>
-  <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
-<meta name="theme-color" content="#222">
-<meta name="generator" content="Hexo 4.0.0">
-  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
-  <link rel="mask-icon" href="/images/logo.svg" color="#222">
-
-<link rel="stylesheet" href="/css/main.css">
-
-
-<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
-
-
-<script id="hexo-configurations">
-  var NexT = window.NexT || {};
-  var CONFIG = {
-    root: '/',
-    scheme: 'Muse',
-    version: '7.5.0',
-    exturl: false,
-    sidebar: {"position":"left","display":"hide","offset":12,"onmobile":true},
-    copycode: {"enable":true,"show_result":true,"style":null},
-    back2top: {"enable":true,"sidebar":false,"scrollpercent":false},
-    bookmark: {"enable":false,"color":"#222","save":"auto"},
-    fancybox: false,
-    mediumzoom: false,
-    lazyload: false,
-    pangu: false,
-    algolia: {
-      appID: '',
-      apiKey: '',
-      indexName: '',
-      hits: {"per_page":0},
-      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
-    },
-    localsearch: {"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
-    path: 'search.xml',
-    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
-    translation: {
-      copy_button: '复制',
-      copy_success: '复制成功',
-      copy_failure: '复制失败'
-    },
-    sidebarPadding: 40
-  };
-</script>
-
-  <meta name="description" content="使每个人的生活多一份美好。">
-<meta property="og:type" content="website">
-<meta property="og:title" content="jefine">
-<meta property="og:url" content="https:&#x2F;&#x2F;jefine.github.io&#x2F;page&#x2F;5&#x2F;index.html">
-<meta property="og:site_name" content="jefine">
-<meta property="og:description" content="使每个人的生活多一份美好。">
-<meta property="og:locale" content="zh-CN">
-<meta name="twitter:card" content="summary">
-
-<link rel="canonical" href="https://jefine.github.io/page/5/">
-
-
-<script id="page-configurations">
-  // https://hexo.io/docs/variables.html
-  CONFIG.page = {
-    sidebar: "",
-    isHome: true,
-    isPost: false,
-    isPage: false,
-    isArchive: false
-  };
-</script>
-
-  <title>jefine</title>
-  
-
-
-
-
-
-
-  <noscript>
-  <style>
-  .use-motion .brand,
-  .use-motion .menu-item,
-  .sidebar-inner,
-  .use-motion .post-block,
-  .use-motion .pagination,
-  .use-motion .comments,
-  .use-motion .post-header,
-  .use-motion .post-body,
-  .use-motion .collection-header { opacity: initial; }
-
-  .use-motion .site-title,
-  .use-motion .site-subtitle {
-    opacity: initial;
-    top: initial;
-  }
-
-  .use-motion .logo-line-before i { left: initial; }
-  .use-motion .logo-line-after i { right: initial; }
-  </style>
-</noscript>
-
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+    
+    <title>jefine</title>
+    <meta charset="utf-8">
+    
+    <meta name="title" content="jefine">
+    <meta name="description" content="使每个人的生活多一份美好。">
+    <meta property="og:image" content="/favicon.png">
+    <meta property="og:image:width" content="200" />
+    <meta property="og:image:height" content="200" />
+    
+    <link href="https://fonts.googleapis.com/css2?family=Source+Serif+Pro:wght@400;700&display=swap" rel="stylesheet">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Source Serif Pro', 'Source Han Serif SC', 'Noto Serif CJK SC', 'Noto Serif SC', serif;
+        }
+    </style>
+    
+    <link rel="shortcut icon" href="/favicon.png">
+    
+    <link rel="stylesheet"
+        href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.17.1/build/styles/arduino-light.min.css">
+    <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.17.1/build/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    
+    
+    <link rel="stylesheet" href="/css/style.css">
+    <script src="/js/jquery.min.js"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 </head>
 
-<body itemscope itemtype="http://schema.org/WebPage">
-  <div class="container use-motion">
-    <div class="headband"></div>
-
-    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"><div class="site-brand-container">
-  <div class="site-meta">
-
-    <div>
-      <a href="/" class="brand" rel="start">
-        <span class="logo-line-before"><i></i></span>
-        <span class="site-title">jefine</span>
-        <span class="logo-line-after"><i></i></span>
-      </a>
+<body>
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><header class="header">
+    <div class="blog-title">
+        <a href="/" class="logo">jefine</a>
     </div>
-        <p class="site-subtitle">小小的梦呓</p>
-  </div>
-
-  <div class="site-nav-toggle">
-    <div class="toggle" aria-label="切换导航栏">
-      <span class="toggle-line toggle-line-first"></span>
-      <span class="toggle-line toggle-line-middle"></span>
-      <span class="toggle-line toggle-line-last"></span>
-    </div>
-  </div>
-</div>
-
-
-<nav class="site-nav">
-  
-  <ul id="menu" class="menu">
-        <li class="menu-item menu-item-home">
-
-    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>首页</a>
-
-  </li>
-        <li class="menu-item menu-item-about">
-
-    <a href="/about/" rel="section"><i class="fa fa-fw fa-user"></i>关于</a>
-
-  </li>
-        <li class="menu-item menu-item-tags">
-
-    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>标签</a>
-
-  </li>
-        <li class="menu-item menu-item-categories">
-
-    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>分类</a>
-
-  </li>
-        <li class="menu-item menu-item-archives">
-
-    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档</a>
-
-  </li>
-      <li class="menu-item menu-item-search">
-        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
-        </a>
-      </li>
-  </ul>
-
-</nav>
-  <div class="site-search">
-    <div class="popup search-popup">
-    <div class="search-header">
-  <span class="search-icon">
-    <i class="fa fa-search"></i>
-  </span>
-  <div class="search-input-container">
-    <input autocomplete="off" autocorrect="off" autocapitalize="none"
-           placeholder="搜索..." spellcheck="false"
-           type="text" id="search-input">
-  </div>
-  <span class="popup-btn-close">
-    <i class="fa fa-times-circle"></i>
-  </span>
-</div>
-<div id="search-result"></div>
-
-</div>
-<div class="search-pop-overlay"></div>
-
-  </div>
-</div>
-    </header>
-
-    
-  <div class="back-to-top">
-    <i class="fa fa-arrow-up"></i>
-    <span>0%</span>
-  </div>
-
-
-    <main class="main">
-      <div class="main-inner">
-        <div class="content-wrap">
-          
-
-          <div class="content">
+    <nav class="navbar">
+        <ul class="menu">
             
-
-  <div class="posts-expand">
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://jefine.github.io/2019/12/26/%E9%80%89%E6%8B%A9%E6%8E%92%E5%BA%8F-%E8%BE%83%E4%B8%BA%E8%AF%A6%E7%BB%86%E7%9A%84%E5%88%86%E6%9E%90/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="jefine">
-      <meta itemprop="description" content="使每个人的生活多一份美好。">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="jefine">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2019/12/26/%E9%80%89%E6%8B%A9%E6%8E%92%E5%BA%8F-%E8%BE%83%E4%B8%BA%E8%AF%A6%E7%BB%86%E7%9A%84%E5%88%86%E6%9E%90/" class="post-title-link" itemprop="url">选择排序-较为详细的分析</a>
-        </h1>
-
+            
+            
+            <li class="menu-item">
+                
+                <a href="/" class="menu-item-link">Home</a>
+                
+            </li>
+            
+            
+            
+            <li class="menu-item">
+                
+                <a href="/archives" class="menu-item-link">Archives</a>
+                
+            </li>
+            
+            
+            
+            <li class="menu-item">
+                
+                <a href="/about" class="menu-item-link">About</a>
+                
+            </li>
+            
+            
+            
+            <li class="menu-item">
+                
+                <a href="/rss" class="menu-item-link">RSS</a>
+                
+            </li>
+            
+        </ul>
+    </nav>
+</header>
+    <main class="main">
+        <section class="posts">
+    
+    <article class="post">
+        <div class="post-title">
+            <a class="post-title-link" href="/2019/12/26/%E9%80%89%E6%8B%A9%E6%8E%92%E5%BA%8F-%E8%BE%83%E4%B8%BA%E8%AF%A6%E7%BB%86%E7%9A%84%E5%88%86%E6%9E%90/">选择排序-较为详细的分析</a>
+        </div>
+        <div class="post-content">
+            
+            
+            <a class="More" href="/2019/12/26/%E9%80%89%E6%8B%A9%E6%8E%92%E5%BA%8F-%E8%BE%83%E4%B8%BA%E8%AF%A6%E7%BB%86%E7%9A%84%E5%88%86%E6%9E%90/">More</a>
+            
+        </div>
         <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              
-
-              <time title="创建时间：2019-12-26 08:35:31 / 修改时间：18:13:13" itemprop="dateCreated datePublished" datetime="2019-12-26T08:35:31+08:00">2019-12-26</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E7%AE%97%E6%B3%95/" itemprop="url" rel="index">
-                    <span itemprop="name">算法</span>
-                  </a>
-                </span>
-            </span>
-
-
-          
-             <span id="/2019/12/26/%E9%80%89%E6%8B%A9%E6%8E%92%E5%BA%8F-%E8%BE%83%E4%B8%BA%E8%AF%A6%E7%BB%86%E7%9A%84%E5%88%86%E6%9E%90/" class="leancloud_visitors" data-flag-title="选择排序-较为详细的分析">
-               <span class="post-meta-divider">|</span>
-               <span classs="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读量： </span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
+            
+            <span class="post-time">2019/12/26</span>
         </div>
-      </header>
-
+    </article>
     
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h3 id="算法思想："><a href="#算法思想：" class="headerlink" title="算法思想："></a>算法思想：</h3><p>选择排序，从头至尾扫描序列，找出最小的一个元素，和第一个元素交换，接着从剩下的元素中继续这种选择和交换方式，最终得到一个有序序列。 </p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2019/12/26/%E9%80%89%E6%8B%A9%E6%8E%92%E5%BA%8F-%E8%BE%83%E4%B8%BA%E8%AF%A6%E7%BB%86%E7%9A%84%E5%88%86%E6%9E%90/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://jefine.github.io/2019/12/21/%E7%BB%9F%E8%AE%A1%E5%8D%95%E8%AF%8D%E6%95%B0/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="jefine">
-      <meta itemprop="description" content="使每个人的生活多一份美好。">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="jefine">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2019/12/21/%E7%BB%9F%E8%AE%A1%E5%8D%95%E8%AF%8D%E6%95%B0/" class="post-title-link" itemprop="url">统计单词数</a>
-        </h1>
-
+    <article class="post">
+        <div class="post-title">
+            <a class="post-title-link" href="/2019/12/21/%E7%BB%9F%E8%AE%A1%E5%8D%95%E8%AF%8D%E6%95%B0/">统计单词数</a>
+        </div>
+        <div class="post-content">
+            
+            
+            <a class="More" href="/2019/12/21/%E7%BB%9F%E8%AE%A1%E5%8D%95%E8%AF%8D%E6%95%B0/">More</a>
+            
+        </div>
         <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2019-12-21 10:39:43" itemprop="dateCreated datePublished" datetime="2019-12-21T10:39:43+08:00">2019-12-21</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2019-12-25 21:26:43" itemprop="dateModified" datetime="2019-12-25T21:26:43+08:00">2019-12-25</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E7%BC%96%E7%A8%8B/" itemprop="url" rel="index">
-                    <span itemprop="name">编程</span>
-                  </a>
-                </span>
-            </span>
-
-
-          
-             <span id="/2019/12/21/%E7%BB%9F%E8%AE%A1%E5%8D%95%E8%AF%8D%E6%95%B0/" class="leancloud_visitors" data-flag-title="统计单词数">
-               <span class="post-meta-divider">|</span>
-               <span classs="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读量： </span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
+            
+            <span class="post-time">2019/12/21</span>
         </div>
-      </header>
-
+    </article>
     
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><p>一般的文本编辑器都有查找单词的功能，该功能可以快速定位特定单词在文章中的位置，有的还能统计出特定单词在文章中出现的次数。</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2019/12/21/%E7%BB%9F%E8%AE%A1%E5%8D%95%E8%AF%8D%E6%95%B0/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://jefine.github.io/2019/12/12/%E6%9F%A5%E6%89%BE%E5%AD%90%E4%B8%B2/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="jefine">
-      <meta itemprop="description" content="使每个人的生活多一份美好。">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="jefine">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2019/12/12/%E6%9F%A5%E6%89%BE%E5%AD%90%E4%B8%B2/" class="post-title-link" itemprop="url">查找子串</a>
-        </h1>
-
+    <article class="post">
+        <div class="post-title">
+            <a class="post-title-link" href="/2019/12/12/%E6%9F%A5%E6%89%BE%E5%AD%90%E4%B8%B2/">查找子串</a>
+        </div>
+        <div class="post-content">
+            
+            
+            <a class="More" href="/2019/12/12/%E6%9F%A5%E6%89%BE%E5%AD%90%E4%B8%B2/">More</a>
+            
+        </div>
         <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2019-12-12 18:29:36" itemprop="dateCreated datePublished" datetime="2019-12-12T18:29:36+08:00">2019-12-12</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2019-12-14 11:03:50" itemprop="dateModified" datetime="2019-12-14T11:03:50+08:00">2019-12-14</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E7%BC%96%E7%A8%8B/" itemprop="url" rel="index">
-                    <span itemprop="name">编程</span>
-                  </a>
-                </span>
-            </span>
-
-
-          
-             <span id="/2019/12/12/%E6%9F%A5%E6%89%BE%E5%AD%90%E4%B8%B2/" class="leancloud_visitors" data-flag-title="查找子串">
-               <span class="post-meta-divider">|</span>
-               <span classs="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读量： </span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
+            
+            <span class="post-time">2019/12/12</span>
         </div>
-      </header>
-
+    </article>
     
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h2 id="6-15-查找子串-20分"><a href="#6-15-查找子串-20分" class="headerlink" title="6-15 查找子串 (20分)"></a>6-15 查找子串 (20分)</h2>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2019/12/12/%E6%9F%A5%E6%89%BE%E5%AD%90%E4%B8%B2/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://jefine.github.io/2019/11/24/pta%E7%BB%9F%E8%AE%A1%E4%B8%80%E8%A1%8C%E6%96%87%E6%9C%AC%E7%9A%84%E5%8D%95%E8%AF%8D%E4%B8%AA%E6%95%B0/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="jefine">
-      <meta itemprop="description" content="使每个人的生活多一份美好。">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="jefine">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2019/11/24/pta%E7%BB%9F%E8%AE%A1%E4%B8%80%E8%A1%8C%E6%96%87%E6%9C%AC%E7%9A%84%E5%8D%95%E8%AF%8D%E4%B8%AA%E6%95%B0/" class="post-title-link" itemprop="url">pta统计一行文本的单词个数</a>
-        </h1>
-
+    <article class="post">
+        <div class="post-title">
+            <a class="post-title-link" href="/2019/11/24/pta%E7%BB%9F%E8%AE%A1%E4%B8%80%E8%A1%8C%E6%96%87%E6%9C%AC%E7%9A%84%E5%8D%95%E8%AF%8D%E4%B8%AA%E6%95%B0/">pta统计一行文本的单词个数</a>
+        </div>
+        <div class="post-content">
+            
+            
+            <a class="More" href="/2019/11/24/pta%E7%BB%9F%E8%AE%A1%E4%B8%80%E8%A1%8C%E6%96%87%E6%9C%AC%E7%9A%84%E5%8D%95%E8%AF%8D%E4%B8%AA%E6%95%B0/">More</a>
+            
+        </div>
         <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              
-
-              <time title="创建时间：2019-11-24 11:07:18 / 修改时间：11:29:08" itemprop="dateCreated datePublished" datetime="2019-11-24T11:07:18+08:00">2019-11-24</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E7%BC%96%E7%A8%8B/" itemprop="url" rel="index">
-                    <span itemprop="name">编程</span>
-                  </a>
-                </span>
-            </span>
-
-
-          
-             <span id="/2019/11/24/pta%E7%BB%9F%E8%AE%A1%E4%B8%80%E8%A1%8C%E6%96%87%E6%9C%AC%E7%9A%84%E5%8D%95%E8%AF%8D%E4%B8%AA%E6%95%B0/" class="leancloud_visitors" data-flag-title="pta统计一行文本的单词个数">
-               <span class="post-meta-divider">|</span>
-               <span classs="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读量： </span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
+            
+            <span class="post-time">2019/11/24</span>
         </div>
-      </header>
-
+    </article>
     
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>本题目要求编写程序统计一行字符中单词的个数。所谓“单词”是指连续不含空格的字符串，各单词之间用空格分隔，空格数可以是多个。</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2019/11/24/pta%E7%BB%9F%E8%AE%A1%E4%B8%80%E8%A1%8C%E6%96%87%E6%9C%AC%E7%9A%84%E5%8D%95%E8%AF%8D%E4%B8%AA%E6%95%B0/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://jefine.github.io/2019/11/12/%E6%96%B9%E9%98%B5%E5%BE%AA%E7%8E%AF%E5%8F%B3%E7%A7%BB%E4%BA%8E%E5%85%B6%E5%90%84%E7%A7%8D%E8%B8%A9bug23333/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="jefine">
-      <meta itemprop="description" content="使每个人的生活多一份美好。">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="jefine">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2019/11/12/%E6%96%B9%E9%98%B5%E5%BE%AA%E7%8E%AF%E5%8F%B3%E7%A7%BB%E4%BA%8E%E5%85%B6%E5%90%84%E7%A7%8D%E8%B8%A9bug23333/" class="post-title-link" itemprop="url">方阵循环右移于其各种踩bug23333</a>
-        </h1>
-
+    <article class="post">
+        <div class="post-title">
+            <a class="post-title-link" href="/2019/11/12/%E6%96%B9%E9%98%B5%E5%BE%AA%E7%8E%AF%E5%8F%B3%E7%A7%BB%E4%BA%8E%E5%85%B6%E5%90%84%E7%A7%8D%E8%B8%A9bug23333/">方阵循环右移于其各种踩bug23333</a>
+        </div>
+        <div class="post-content">
+            
+            
+            <a class="More" href="/2019/11/12/%E6%96%B9%E9%98%B5%E5%BE%AA%E7%8E%AF%E5%8F%B3%E7%A7%BB%E4%BA%8E%E5%85%B6%E5%90%84%E7%A7%8D%E8%B8%A9bug23333/">More</a>
+            
+        </div>
         <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2019-11-12 21:33:24" itemprop="dateCreated datePublished" datetime="2019-11-12T21:33:24+08:00">2019-11-12</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-01-04 21:09:15" itemprop="dateModified" datetime="2020-01-04T21:09:15+08:00">2020-01-04</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E7%BC%96%E7%A8%8B/" itemprop="url" rel="index">
-                    <span itemprop="name">编程</span>
-                  </a>
-                </span>
-            </span>
-
-
-          
-             <span id="/2019/11/12/%E6%96%B9%E9%98%B5%E5%BE%AA%E7%8E%AF%E5%8F%B3%E7%A7%BB%E4%BA%8E%E5%85%B6%E5%90%84%E7%A7%8D%E8%B8%A9bug23333/" class="leancloud_visitors" data-flag-title="方阵循环右移于其各种踩bug23333">
-               <span class="post-meta-divider">|</span>
-               <span classs="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读量： </span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
+            
+            <span class="post-time">2019/11/12</span>
         </div>
-      </header>
-
+    </article>
     
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>又是元气满满地踩bug。。</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2019/11/12/%E6%96%B9%E9%98%B5%E5%BE%AA%E7%8E%AF%E5%8F%B3%E7%A7%BB%E4%BA%8E%E5%85%B6%E5%90%84%E7%A7%8D%E8%B8%A9bug23333/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://jefine.github.io/2019/11/12/%E7%AE%80%E5%8C%96%E7%9A%84%E6%8F%92%E5%85%A5%E6%8E%92%E5%BA%8F-%E8%AF%A6%E8%A7%A3%E9%99%84%E5%B8%A6%E4%B8%80%E4%BA%9B%E5%9F%BA%E7%A1%80%E8%AE%B2%E8%A7%A3/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="jefine">
-      <meta itemprop="description" content="使每个人的生活多一份美好。">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="jefine">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2019/11/12/%E7%AE%80%E5%8C%96%E7%9A%84%E6%8F%92%E5%85%A5%E6%8E%92%E5%BA%8F-%E8%AF%A6%E8%A7%A3%E9%99%84%E5%B8%A6%E4%B8%80%E4%BA%9B%E5%9F%BA%E7%A1%80%E8%AE%B2%E8%A7%A3/" class="post-title-link" itemprop="url">简化的插入排序,详解附带一些基础讲解</a>
-        </h1>
-
+    <article class="post">
+        <div class="post-title">
+            <a class="post-title-link" href="/2019/11/12/%E7%AE%80%E5%8C%96%E7%9A%84%E6%8F%92%E5%85%A5%E6%8E%92%E5%BA%8F-%E8%AF%A6%E8%A7%A3%E9%99%84%E5%B8%A6%E4%B8%80%E4%BA%9B%E5%9F%BA%E7%A1%80%E8%AE%B2%E8%A7%A3/">简化的插入排序,详解附带一些基础讲解</a>
+        </div>
+        <div class="post-content">
+            
+            
+            <a class="More" href="/2019/11/12/%E7%AE%80%E5%8C%96%E7%9A%84%E6%8F%92%E5%85%A5%E6%8E%92%E5%BA%8F-%E8%AF%A6%E8%A7%A3%E9%99%84%E5%B8%A6%E4%B8%80%E4%BA%9B%E5%9F%BA%E7%A1%80%E8%AE%B2%E8%A7%A3/">More</a>
+            
+        </div>
         <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2019-11-12 09:05:52" itemprop="dateCreated datePublished" datetime="2019-11-12T09:05:52+08:00">2019-11-12</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2019-12-26 08:37:06" itemprop="dateModified" datetime="2019-12-26T08:37:06+08:00">2019-12-26</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E7%AE%97%E6%B3%95/" itemprop="url" rel="index">
-                    <span itemprop="name">算法</span>
-                  </a>
-                </span>
-            </span>
-
-
-          
-             <span id="/2019/11/12/%E7%AE%80%E5%8C%96%E7%9A%84%E6%8F%92%E5%85%A5%E6%8E%92%E5%BA%8F-%E8%AF%A6%E8%A7%A3%E9%99%84%E5%B8%A6%E4%B8%80%E4%BA%9B%E5%9F%BA%E7%A1%80%E8%AE%B2%E8%A7%A3/" class="leancloud_visitors" data-flag-title="简化的插入排序,详解附带一些基础讲解">
-               <span class="post-meta-divider">|</span>
-               <span classs="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读量： </span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
+            
+            <span class="post-time">2019/11/12</span>
         </div>
-      </header>
-
+    </article>
     
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>本题要求编写程序，将一个给定的整数插到原本有序的整数序列中，使结果序列仍然有序。</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2019/11/12/%E7%AE%80%E5%8C%96%E7%9A%84%E6%8F%92%E5%85%A5%E6%8E%92%E5%BA%8F-%E8%AF%A6%E8%A7%A3%E9%99%84%E5%B8%A6%E4%B8%80%E4%BA%9B%E5%9F%BA%E7%A1%80%E8%AE%B2%E8%A7%A3/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://jefine.github.io/2019/11/09/%E5%90%84%E7%A7%8D%E6%8E%92%E5%BA%8F%E6%96%B9%E5%BC%8F%E7%9A%84%E6%B1%87%E6%80%BB%E5%8F%8A%E5%AD%A6%E4%B9%A0%EF%BC%88%E5%8F%AA%E5%86%99%E4%BA%86%E5%86%92%E6%B3%A1%E6%8E%92%E5%BA%8F%EF%BC%89/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="jefine">
-      <meta itemprop="description" content="使每个人的生活多一份美好。">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="jefine">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2019/11/09/%E5%90%84%E7%A7%8D%E6%8E%92%E5%BA%8F%E6%96%B9%E5%BC%8F%E7%9A%84%E6%B1%87%E6%80%BB%E5%8F%8A%E5%AD%A6%E4%B9%A0%EF%BC%88%E5%8F%AA%E5%86%99%E4%BA%86%E5%86%92%E6%B3%A1%E6%8E%92%E5%BA%8F%EF%BC%89/" class="post-title-link" itemprop="url">各种排序方式的汇总及学习（只更了冒泡排序）</a>
-        </h1>
-
+    <article class="post">
+        <div class="post-title">
+            <a class="post-title-link" href="/2019/11/09/%E5%90%84%E7%A7%8D%E6%8E%92%E5%BA%8F%E6%96%B9%E5%BC%8F%E7%9A%84%E6%B1%87%E6%80%BB%E5%8F%8A%E5%AD%A6%E4%B9%A0%EF%BC%88%E5%8F%AA%E5%86%99%E4%BA%86%E5%86%92%E6%B3%A1%E6%8E%92%E5%BA%8F%EF%BC%89/">各种排序方式的汇总及学习（只更了冒泡排序）</a>
+        </div>
+        <div class="post-content">
+            
+            
+            <a class="More" href="/2019/11/09/%E5%90%84%E7%A7%8D%E6%8E%92%E5%BA%8F%E6%96%B9%E5%BC%8F%E7%9A%84%E6%B1%87%E6%80%BB%E5%8F%8A%E5%AD%A6%E4%B9%A0%EF%BC%88%E5%8F%AA%E5%86%99%E4%BA%86%E5%86%92%E6%B3%A1%E6%8E%92%E5%BA%8F%EF%BC%89/">More</a>
+            
+        </div>
         <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              
-
-              <time title="创建时间：2019-11-09 12:58:00 / 修改时间：14:50:56" itemprop="dateCreated datePublished" datetime="2019-11-09T12:58:00+08:00">2019-11-09</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E7%BC%96%E7%A8%8B/" itemprop="url" rel="index">
-                    <span itemprop="name">编程</span>
-                  </a>
-                </span>
-            </span>
-
-
-          
-             <span id="/2019/11/09/%E5%90%84%E7%A7%8D%E6%8E%92%E5%BA%8F%E6%96%B9%E5%BC%8F%E7%9A%84%E6%B1%87%E6%80%BB%E5%8F%8A%E5%AD%A6%E4%B9%A0%EF%BC%88%E5%8F%AA%E5%86%99%E4%BA%86%E5%86%92%E6%B3%A1%E6%8E%92%E5%BA%8F%EF%BC%89/" class="leancloud_visitors" data-flag-title="各种排序方式的汇总及学习（只更了冒泡排序）">
-               <span class="post-meta-divider">|</span>
-               <span classs="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读量： </span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
+            
+            <span class="post-time">2019/11/09</span>
         </div>
-      </header>
-
+    </article>
     
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h3 id="首先了解排序："><a href="#首先了解排序：" class="headerlink" title="首先了解排序："></a>首先了解排序：</h3><h6 id="排序的定义"><a href="#排序的定义" class="headerlink" title="排序的定义"></a><strong>排序的定义</strong></h6>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2019/11/09/%E5%90%84%E7%A7%8D%E6%8E%92%E5%BA%8F%E6%96%B9%E5%BC%8F%E7%9A%84%E6%B1%87%E6%80%BB%E5%8F%8A%E5%AD%A6%E4%B9%A0%EF%BC%88%E5%8F%AA%E5%86%99%E4%BA%86%E5%86%92%E6%B3%A1%E6%8E%92%E5%BA%8F%EF%BC%89/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://jefine.github.io/2019/11/07/pta%E8%BE%93%E5%87%BA%E6%8C%87%E5%AE%9A%E8%8C%83%E5%9B%B4%E5%86%85%E7%9A%84%E6%96%90%E6%B3%A2%E9%82%A3%E5%A5%91%E6%95%B0%E5%88%97/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="jefine">
-      <meta itemprop="description" content="使每个人的生活多一份美好。">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="jefine">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2019/11/07/pta%E8%BE%93%E5%87%BA%E6%8C%87%E5%AE%9A%E8%8C%83%E5%9B%B4%E5%86%85%E7%9A%84%E6%96%90%E6%B3%A2%E9%82%A3%E5%A5%91%E6%95%B0%E5%88%97/" class="post-title-link" itemprop="url">pta输出指定范围内的斐波那契数列</a>
-        </h1>
-
+    <article class="post">
+        <div class="post-title">
+            <a class="post-title-link" href="/2019/11/07/pta%E8%BE%93%E5%87%BA%E6%8C%87%E5%AE%9A%E8%8C%83%E5%9B%B4%E5%86%85%E7%9A%84%E6%96%90%E6%B3%A2%E9%82%A3%E5%A5%91%E6%95%B0%E5%88%97/">pta输出指定范围内的斐波那契数列</a>
+        </div>
+        <div class="post-content">
+            
+            
+            <a class="More" href="/2019/11/07/pta%E8%BE%93%E5%87%BA%E6%8C%87%E5%AE%9A%E8%8C%83%E5%9B%B4%E5%86%85%E7%9A%84%E6%96%90%E6%B3%A2%E9%82%A3%E5%A5%91%E6%95%B0%E5%88%97/">More</a>
+            
+        </div>
         <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2019-11-07 14:44:00" itemprop="dateCreated datePublished" datetime="2019-11-07T14:44:00+08:00">2019-11-07</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2019-11-08 10:14:44" itemprop="dateModified" datetime="2019-11-08T10:14:44+08:00">2019-11-08</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E7%BC%96%E7%A8%8B/" itemprop="url" rel="index">
-                    <span itemprop="name">编程</span>
-                  </a>
-                </span>
-            </span>
-
-
-          
-             <span id="/2019/11/07/pta%E8%BE%93%E5%87%BA%E6%8C%87%E5%AE%9A%E8%8C%83%E5%9B%B4%E5%86%85%E7%9A%84%E6%96%90%E6%B3%A2%E9%82%A3%E5%A5%91%E6%95%B0%E5%88%97/" class="leancloud_visitors" data-flag-title="pta输出指定范围内的斐波那契数列">
-               <span class="post-meta-divider">|</span>
-               <span classs="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读量： </span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
+            
+            <span class="post-time">2019/11/07</span>
         </div>
-      </header>
-
+    </article>
     
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>这是一道pta的题目，对新人有一定难度（我就是）。欢迎大家多交流。谢谢！</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2019/11/07/pta%E8%BE%93%E5%87%BA%E6%8C%87%E5%AE%9A%E8%8C%83%E5%9B%B4%E5%86%85%E7%9A%84%E6%96%90%E6%B3%A2%E9%82%A3%E5%A5%91%E6%95%B0%E5%88%97/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://jefine.github.io/2019/11/06/%E8%AE%B0%E5%BD%95%E4%B8%8E%E5%8F%91%E7%8E%B0/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="jefine">
-      <meta itemprop="description" content="使每个人的生活多一份美好。">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="jefine">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2019/11/06/%E8%AE%B0%E5%BD%95%E4%B8%8E%E5%8F%91%E7%8E%B0/" class="post-title-link" itemprop="url">记录，发现</a>
-        </h1>
-
+    <article class="post">
+        <div class="post-title">
+            <a class="post-title-link" href="/2019/11/06/%E8%AE%B0%E5%BD%95%E4%B8%8E%E5%8F%91%E7%8E%B0/">记录，发现</a>
+        </div>
+        <div class="post-content">
+            
+            
+            <a class="More" href="/2019/11/06/%E8%AE%B0%E5%BD%95%E4%B8%8E%E5%8F%91%E7%8E%B0/">More</a>
+            
+        </div>
         <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2019-11-06 12:32:00" itemprop="dateCreated datePublished" datetime="2019-11-06T12:32:00+08:00">2019-11-06</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2019-11-08 07:18:08" itemprop="dateModified" datetime="2019-11-08T07:18:08+08:00">2019-11-08</time>
-              </span>
-
-
-          
-             <span id="/2019/11/06/%E8%AE%B0%E5%BD%95%E4%B8%8E%E5%8F%91%E7%8E%B0/" class="leancloud_visitors" data-flag-title="记录，发现">
-               <span class="post-meta-divider">|</span>
-               <span classs="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读量： </span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
+            
+            <span class="post-time">2019/11/06</span>
         </div>
-      </header>
-
+    </article>
     
-    
-    
-    <div class="post-body" itemprop="articleBody">
+</section>
 
-      
-          <h2 id="记录与发现"><a href="#记录与发现" class="headerlink" title="记录与发现"></a>记录与发现</h2><p>pta，acm，蓝桥等。</p>
-      
-    </div>
+<script>
+    var Home = location.href,
+    xhr,
+    xhrUrl = '';
 
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-  </div>
-
-  
-  <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/4/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/4/">4</a><span class="page-number current">5</span>
-  </nav>
-
-
-
-          </div>
-          
-
-        </div>
-          
-  
-  <div class="toggle sidebar-toggle">
-    <span class="toggle-line toggle-line-first"></span>
-    <span class="toggle-line toggle-line-middle"></span>
-    <span class="toggle-line toggle-line-last"></span>
-  </div>
-
-  <aside class="sidebar">
-    <div class="sidebar-inner">
-
-      <ul class="sidebar-nav motion-element">
-        <li class="sidebar-nav-toc">
-          文章目录
-        </li>
-        <li class="sidebar-nav-overview">
-          站点概览
-        </li>
-      </ul>
-
-      <!--noindex-->
-      <div class="post-toc-wrap sidebar-panel">
-      </div>
-      <!--/noindex-->
-
-      <div class="site-overview-wrap sidebar-panel">
-        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-  <img class="site-author-image" itemprop="image" alt="jefine"
-    src="/images/avatar.gif">
-  <p class="site-author-name" itemprop="name">jefine</p>
-  <div class="site-description" itemprop="description">使每个人的生活多一份美好。</div>
-</div>
-<div class="site-state-wrap motion-element">
-  <nav class="site-state">
-      <div class="site-state-item site-state-posts">
-          <a href="/archives/">
-        
-          <span class="site-state-item-count">49</span>
-          <span class="site-state-item-name">日志</span>
-        </a>
-      </div>
-      <div class="site-state-item site-state-categories">
-            <a href="/categories/">
-          
-        <span class="site-state-item-count">9</span>
-        <span class="site-state-item-name">分类</span></a>
-      </div>
-      <div class="site-state-item site-state-tags">
-            <a href="/tags/">
-          
-        <span class="site-state-item-count">23</span>
-        <span class="site-state-item-name">标签</span></a>
-      </div>
-  </nav>
-</div>
-  <div class="links-of-author motion-element">
-      <span class="links-of-author-item">
-        <a href="https://github.com/jefine" title="GitHub &amp;rarr; https:&#x2F;&#x2F;github.com&#x2F;jefine" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
-      </span>
-  </div>
-
-
-
-      </div>
-
-    </div>
-  </aside>
-  <div id="sidebar-dimmer"></div>
-
-
-      </div>
-    </main>
-
-    <footer class="footer">
-      <div class="footer-inner">
-        
-
-<div class="copyright">
-  
-  &copy; 2019 – 
-  <span itemprop="copyrightYear">2020</span>
-  <span class="with-love">
-    <i class="fa fa-user"></i>
-  </span>
-  <span class="author" itemprop="copyrightHolder">jefine</span>
-</div>
-
-        
-
-
-
-
-
-
-  <script>
-  function leancloudSelector(url) {
-    return document.getElementById(url).querySelector('.leancloud-visitors-count');
-  }
-  if (CONFIG.page.isPost) {
-    function addCount(Counter) {
-      var visitors = document.querySelector('.leancloud_visitors');
-      var url = visitors.getAttribute('id').trim();
-      var title = visitors.getAttribute('data-flag-title').trim();
-
-    Counter('get', `/classes/Counter?where=${encodeURIComponent(JSON.stringify({ url }))}&limit=1`)
-        .then(response => response.json())
-        .then(({ results }) => {
-          if (results.length > 0) {
-            var counter = results[0];
-            Counter('put', '/classes/Counter/' + counter.objectId, { time: { '__op': 'Increment', 'amount': 1 } })
-              .then(response => response.json())
-              .then(() => {
-                leancloudSelector(url).innerText = counter.time + 1;
-              })
-              .catch(error => {
-                console.log('Failed to save visitor count', error);
-              })
-          } else {
-              Counter('post', '/classes/Counter', { title: title, url: url, time: 1 })
-                .then(response => response.json())
-                .then(() => {
-                  leancloudSelector(url).innerText = 1;
-                })
-                .catch(error => {
-                  console.log('Failed to create', error);
-                });
-          }
-        })
-        .catch(error => {
-          console.log('LeanCloud Counter Error', error);
-        });
-    }
-  } else {
-    function showTime(Counter) {
-      var visitors = document.querySelectorAll('.leancloud_visitors');
-      var entries = [...visitors].map(element => {
-        return element.getAttribute('id').trim();
-      });
-
-   Counter('get', `?where=${encodeURIComponent(JSON.stringify({ url: { '$in': entries } }))}`)
-        .then(response => response.json())
-        .then(({ results }) => {
-          if (results.length === 0) {
-            document.querySelectorAll('.leancloud_visitors .leancloud-visitors-count').forEach(element => {
-              element.innerText = 0;
-            });
-            return;
-          }
-          for (var i = 0; i < results.length; i++) {
-            var item = results[i];
-            var url = item.url;
-            var time = item.time;
-            leancloudSelector(url).innerText = time;
-          }
-          for (var i = 0; i < entries.length; i++) {
-            var url = entries[i];
-            var element = leancloudSelector(url);
-            if (element.innerText == '') {
-              element.innerText = 0;
+    var Diaspora = {
+        L: function(url, f, err) {
+            if (url == xhrUrl) {
+                return false;
             }
-          }
-        })
-        .catch(error => {
-          console.log('LeanCloud Counter Error', error);
+            xhrUrl = url;
+            if (xhr) {
+                xhr.abort();
+            }
+            xhr = $.ajax({
+                type: 'GET',
+                url: url,
+                timeout: 10000,
+                success: function(data) {
+                    f(data);
+                    xhrUrl = '';
+                },
+                error: function(a, b, c) {
+                    if (b == 'abort') {
+                        err && err()
+                    } else {
+                        window.location.href = url;
+                    }
+                    xhrUrl = '';
+                }
+            });
+        },
+        loading: function() {
+            var w = window.innerWidth;
+            var css = '<style class="loaderstyle" id="loaderstyle'+ w +'">'+
+                '@-moz-keyframes loader'+ w +'{100%{background-position:'+ w +'px 0}}'+
+                '@-webkit-keyframes loader'+ w +'{100%{background-position:'+ w +'px 0}}'+
+                '.loader'+ w +'{-webkit-animation:loader'+ w +' 3s linear infinite;-moz-animation:loader'+ w +' 3s linear infinite;}'+
+                '</style>';
+            $('.loaderstyle').remove()
+            $('head').append(css)
+            $('#loader').removeClass().addClass('loader'+ w).show()
+        },
+        loaded: function() {
+            $('#loader').removeClass().hide()
+        }
+    };
+
+    $(function() {
+        $('body').on('click', function(e) {
+            var tag = $(e.target).attr('class') || '',
+                rel = $(e.target).attr('rel') || '';
+            if (!tag && !rel) return;
+            switch (true) {
+                // next page
+                case (tag.indexOf('more') != -1):
+                    tag = $('.more');
+                    if (tag.data('status') == 'loading') {
+                        return false
+                    }
+                    var num = parseInt(tag.data('page')) || 1;
+                    if (num == 1) {
+                        tag.data('page', 1)
+                    }
+                    tag.html("Loading...").data('status', 'loading')
+                    Diaspora.loading()
+                    Diaspora.L(tag.attr('href'), function(data) {
+                        tag.hide();
+                        $('.license').hide();
+                        var link = $(data).find('.more').attr('href');
+                        if (link != undefined) {
+                            tag.attr('href', link).html("Older Article").data('status', 'loaded')
+                            tag.data('page', parseInt(tag.data('page')) + 1)
+                        } else {
+                            $('body').remove()
+                        }
+                        var tempScrollTop = $(window).scrollTop();
+                        $('body').append($(data).find('.posts'))
+                        $(window).scrollTop(tempScrollTop + 100);
+                        Diaspora.loaded()
+                        //$('html,body').animate({ scrollTop: tempScrollTop + 400 }, 500);
+                        if (link !== '/') {
+                            $('body').append($(data).find('.page-nav'))
+                        }
+                        $('body').append($(data).find('.license'))
+                    }, function() {
+                        tag.html("Older Article").data('status', 'loaded')
+                    })
+                    return false;
+                    break;
+                default:
+                    return true;
+                    break;
+            }
         });
+    })
+</script>
+
+<nav class="page-nav">
+  <a href="/" class="more">Older Article</a>
+</nav>
+
+<p class="license">本站文章使用 CC BY-NC-SA 4.0 许可证</p>
+    </main><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config("");
+</script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+      all[i].SourceElement().parentNode.className += ' has-jax';
     }
-  }
+  });
+</script>
 
-  fetch('https://app-router.leancloud.cn/2/route?appId=P6wp1XWlawXLj33BOylRsu8k-gzGzoHsz')
-    .then(response => response.json())
-    .then(({ api_server }) => {
-      var Counter = (method, url, data) => {
-        return fetch(`https://${api_server}/1.1${url}`, {
-          method: method,
-          headers: {
-            'X-LC-Id': 'P6wp1XWlawXLj33BOylRsu8k-gzGzoHsz',
-            'X-LC-Key': '1UHlSmySq6dvSx3RUHJ60WhG',
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify(data)
-        });
-      };
-      if (CONFIG.page.isPost) {
-        const localhost = /http:\/\/(localhost|127.0.0.1|0.0.0.0)/;
-        if (localhost.test(document.URL)) return;
-        addCount(Counter);
-      } else if (document.querySelectorAll('.post-title-link').length >= 1) {
-        showTime(Counter);
-      }
-    });
-  </script>
-
-
-
-
-
-
-        
-      </div>
-    </footer>
-  </div>
-
-  
-  <script src="/lib/anime.min.js"></script>
-  <script src="/lib/velocity/velocity.min.js"></script>
-  <script src="/lib/velocity/velocity.ui.min.js"></script>
-<script src="/js/utils.js"></script><script src="/js/motion.js"></script>
-<script src="/js/schemes/muse.js"></script>
-<script src="/js/next-boot.js"></script>
-
-
-
-  
-
-
-
-
-  <script src="/js/local-search.js"></script>
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-
-  
-
-  
-
+<script type="text/javascript" src="custom_mathjax_source">
+</script>
+<!-- End: Injected MathJax -->
+<!-- hexo-inject:end -->
 </body>
+
 </html>
