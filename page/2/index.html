@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
@@ -20,11 +20,11 @@
   var NexT = window.NexT || {};
   var CONFIG = {
     root: '/',
-    scheme: 'Muse',
+    scheme: 'Mist',
     version: '7.5.0',
     exturl: false,
     sidebar: {"position":"left","display":"hide","offset":12,"onmobile":true},
-    copycode: {"enable":true,"show_result":true,"style":null},
+    copycode: {"enable":true,"show_result":true,"style":"mac"},
     back2top: {"enable":true,"sidebar":false,"scrollpercent":false},
     bookmark: {"enable":false,"color":"#222","save":"auto"},
     fancybox: false,
@@ -42,21 +42,21 @@
     path: 'search.xml',
     motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
     translation: {
-      copy_button: '复制',
-      copy_success: '复制成功',
-      copy_failure: '复制失败'
+      copy_button: 'Copy',
+      copy_success: 'Copied',
+      copy_failure: 'Copy failed'
     },
     sidebarPadding: 40
   };
 </script>
 
-  <meta name="description" content="使每个人的生活多一份美好。">
+  <meta name="description" content="Makes Better">
 <meta property="og:type" content="website">
 <meta property="og:title" content="jefine">
 <meta property="og:url" content="https:&#x2F;&#x2F;jefine.github.io&#x2F;page&#x2F;2&#x2F;index.html">
 <meta property="og:site_name" content="jefine">
-<meta property="og:description" content="使每个人的生活多一份美好。">
-<meta property="og:locale" content="zh-CN">
+<meta property="og:description" content="Makes Better">
+<meta property="og:locale" content="en">
 <meta name="twitter:card" content="summary">
 
 <link rel="canonical" href="https://jefine.github.io/page/2/">
@@ -112,7 +112,7 @@
 
     <header class="header" itemscope itemtype="http://schema.org/WPHeader">
       <div class="header-inner"><div class="site-brand-container">
-  <div class="site-meta">
+  <div class="site-meta custom-logo">
 
     <div>
       <a href="/" class="brand" rel="start">
@@ -125,7 +125,7 @@
   </div>
 
   <div class="site-nav-toggle">
-    <div class="toggle" aria-label="切换导航栏">
+    <div class="toggle" aria-label="Toggle navigation bar">
       <span class="toggle-line toggle-line-first"></span>
       <span class="toggle-line toggle-line-middle"></span>
       <span class="toggle-line toggle-line-last"></span>
@@ -139,31 +139,31 @@
   <ul id="menu" class="menu">
         <li class="menu-item menu-item-home">
 
-    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>首页</a>
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>Home</a>
 
   </li>
         <li class="menu-item menu-item-about">
 
-    <a href="/about/" rel="section"><i class="fa fa-fw fa-user"></i>关于</a>
+    <a href="/about/" rel="section"><i class="fa fa-fw fa-user"></i>About</a>
 
   </li>
         <li class="menu-item menu-item-tags">
 
-    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>标签</a>
+    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>Tags<span class="badge">23</span></a>
 
   </li>
         <li class="menu-item menu-item-categories">
 
-    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>分类</a>
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>Categories<span class="badge">9</span></a>
 
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档</a>
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>Archives<span class="badge">49</span></a>
 
   </li>
       <li class="menu-item menu-item-search">
-        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
         </a>
       </li>
   </ul>
@@ -177,7 +177,7 @@
   </span>
   <div class="search-input-container">
     <input autocomplete="off" autocorrect="off" autocapitalize="none"
-           placeholder="搜索..." spellcheck="false"
+           placeholder="Searching..." spellcheck="false"
            type="text" id="search-input">
   </div>
   <span class="popup-btn-close">
@@ -212,13 +212,13 @@
         
   
   
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
     <link itemprop="mainEntityOfPage" href="https://jefine.github.io/2020/04/30/%E5%A4%A7%E6%95%B0%E4%B9%98%E6%B3%95/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="image" content="/images/ava.jpg">
       <meta itemprop="name" content="jefine">
-      <meta itemprop="description" content="使每个人的生活多一份美好。">
+      <meta itemprop="description" content="Makes Better">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -235,22 +235,22 @@
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
               </span>
-              <span class="post-meta-item-text">发表于</span>
+              <span class="post-meta-item-text">Posted on</span>
 
-              <time title="创建时间：2020-04-30 18:07:52" itemprop="dateCreated datePublished" datetime="2020-04-30T18:07:52+08:00">2020-04-30</time>
+              <time title="Created: 2020-04-30 18:07:52" itemprop="dateCreated datePublished" datetime="2020-04-30T18:07:52+08:00">2020-04-30</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-08-10 12:08:12" itemprop="dateModified" datetime="2020-08-10T12:08:12+08:00">2020-08-10</time>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2020-08-10 12:08:12" itemprop="dateModified" datetime="2020-08-10T12:08:12+08:00">2020-08-10</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
               </span>
-              <span class="post-meta-item-text">分类于</span>
+              <span class="post-meta-item-text">In</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
                   <a href="/categories/java/" itemprop="url" rel="index">
                     <span itemprop="name">java</span>
@@ -286,7 +286,7 @@
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2020/04/30/%E5%A4%A7%E6%95%B0%E4%B9%98%E6%B3%95/#more" rel="contents">
-                阅读全文 &raquo;
+                Read more &raquo;
               </a>
             </div>
           <!--/noindex-->
@@ -308,13 +308,13 @@
         
   
   
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
     <link itemprop="mainEntityOfPage" href="https://jefine.github.io/2020/04/01/java%E4%B8%AD%E5%90%84%E7%A7%8D%E7%B1%BB%E7%9A%84%E8%B7%B3%E8%BD%AC%E4%BE%8B%E9%A2%98%E5%88%86%E6%9E%90/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="image" content="/images/ava.jpg">
       <meta itemprop="name" content="jefine">
-      <meta itemprop="description" content="使每个人的生活多一份美好。">
+      <meta itemprop="description" content="Makes Better">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -331,16 +331,16 @@
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
               </span>
-              <span class="post-meta-item-text">发表于</span>
+              <span class="post-meta-item-text">Posted on</span>
               
 
-              <time title="创建时间：2020-04-01 16:46:55 / 修改时间：18:02:04" itemprop="dateCreated datePublished" datetime="2020-04-01T16:46:55+08:00">2020-04-01</time>
+              <time title="Created: 2020-04-01 16:46:55 / Modified: 18:02:04" itemprop="dateCreated datePublished" datetime="2020-04-01T16:46:55+08:00">2020-04-01</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
               </span>
-              <span class="post-meta-item-text">分类于</span>
+              <span class="post-meta-item-text">In</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
                   <a href="/categories/java/" itemprop="url" rel="index">
                     <span itemprop="name">java</span>
@@ -372,40 +372,14 @@
 
       
           <p>在学习java的继承的过程中遇到这样的一个分析类题目，比较有意思，在这里做出简要分析：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//请写出以下程序运行结果：</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">package</span> test;</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Test</span> </span>&#123;</span><br><span class="line">   <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">      Test t = <span class="keyword">new</span> Test();</span><br><span class="line">      t.show(<span class="keyword">new</span> Car()&#123;</span><br><span class="line">         <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span></span>&#123;</span><br><span class="line">            System.out.println(<span class="string">"test run"</span>);           </span><br><span class="line">         &#125;</span><br><span class="line">      &#125;);</span><br><span class="line">   &#125;</span><br><span class="line">   <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">show</span><span class="params">(Car c)</span></span>&#123;</span><br><span class="line">      c.run();</span><br><span class="line">      c.show();</span><br><span class="line">&#125;&#125;</span><br><span class="line"><span class="keyword">abstract</span> <span class="class"><span class="keyword">class</span> <span class="title">Car</span></span>&#123;</span><br><span class="line">   <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span></span>&#123;</span><br><span class="line">      System.out.println(<span class="string">"car run"</span>);     </span><br><span class="line">   &#125;</span><br><span class="line">   <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">show</span><span class="params">()</span></span>&#123;</span><br><span class="line">       System.out.println(getClass().getName());</span><br><span class="line">&#125;&#125;</span><br></pre></td></tr></table></figure>
-<p> 那么，我们可以通过断点的分析：</p>
-<ol>
-<li><p>首先。我们从main函数进入，发现他创建了Test类的一个对象t；</p>
-<p>我们在test类中并没有寻找到Test类的构造函数，所以应该是系统默认的构造器，不进行任何的行为；</p>
-</li>
-<li><p>之后，我们注意一下这一步，首先是t.show（）方法，在Test的类中有这么一个方法，不过我们看到show方法是需要传入一个car类的对象，所以他new了一个car对象，离奇的是car对象后面接着一对大括号。</p>
-</li>
-<li><p>注意到：这里有一个匿名类，用来一次性使用的创建car对象。这样抽象类car才能被以匿名类中的内容实例化。这样，我们就完成了对car类的实例化，得到了一个car类的对象。</p>
-<p><img src="/2020/04/01/java%E4%B8%AD%E5%90%84%E7%A7%8D%E7%B1%BB%E7%9A%84%E8%B7%B3%E8%BD%AC%E4%BE%8B%E9%A2%98%E5%88%86%E6%9E%90/image-20200401173415543.png" alt="image-20200401173415543"></p>
-</li>
-<li><p>接着，我们以那个新new的对象作为参数，调用了Test类中的show方法。</p>
-<p><img src="/2020/04/01/java%E4%B8%AD%E5%90%84%E7%A7%8D%E7%B1%BB%E7%9A%84%E8%B7%B3%E8%BD%AC%E4%BE%8B%E9%A2%98%E5%88%86%E6%9E%90/image-20200401174104233.png" alt="image-20200401174104233"></p>
-<p>而show方法的第一条语句是c.show();注意到我们是通过匿名类创建的对象，而我们是通过匿名类中的重新写的run（）方法，所以他又跳回了第六行，输出“test run”；</p>
-</li>
-</ol>
-<p><img src="/2020/04/01/java%E4%B8%AD%E5%90%84%E7%A7%8D%E7%B1%BB%E7%9A%84%E8%B7%B3%E8%BD%AC%E4%BE%8B%E9%A2%98%E5%88%86%E6%9E%90/image-20200401174405627.png" alt="image-20200401174405627"></p>
-<ol>
-<li><p>好的，接下来我们又回到了show方法中，继续调用c.show(),这时，我们回头看匿名类，它里面竟然没有show的方法。。。所以他就只能调用car类的show（）方法。</p>
-<p><img src="/2020/04/01/java%E4%B8%AD%E5%90%84%E7%A7%8D%E7%B1%BB%E7%9A%84%E8%B7%B3%E8%BD%AC%E4%BE%8B%E9%A2%98%E5%88%86%E6%9E%90/image-20200401174506855.png" alt="image-20200401174506855"></p>
-</li>
-</ol>
-<ol>
-<li><p>注意到了右侧返回的getName()是”test.Test$1”，好吧，test是包名，Test是类名，可以理解！</p>
-<p>但是$1就使得不少同学迷惑了。</p>
-<p><img src="/2020/04/01/java%E4%B8%AD%E5%90%84%E7%A7%8D%E7%B1%BB%E7%9A%84%E8%B7%B3%E8%BD%AC%E4%BE%8B%E9%A2%98%E5%88%86%E6%9E%90/image-20200401174856777.png" alt="image-20200401174856777"> </p>
-</li>
-<li><p>好的，我们这次打开文件管理系统，找到我们编译的文件所在，发现.java编译后多出了Test$1.class的文件，这个.class是怎么来的呢？对了是匿名类！这里的Test$1这个类名是编译器给它的名字（匿名类没有名字，但是java编译器要给他起个名，才好分辨）而命名的格式就是第一个Test类下面的匿名类的话就叫$1,第二个就是$2。</p>
-<p><img src="/2020/04/01/java%E4%B8%AD%E5%90%84%E7%A7%8D%E7%B1%BB%E7%9A%84%E8%B7%B3%E8%BD%AC%E4%BE%8B%E9%A2%98%E5%88%86%E6%9E%90/image-20200401175322331.png" alt="image-20200401175322331"></p>
-</li>
-</ol>
-<p><img src="/2020/04/01/java%E4%B8%AD%E5%90%84%E7%A7%8D%E7%B1%BB%E7%9A%84%E8%B7%B3%E8%BD%AC%E4%BE%8B%E9%A2%98%E5%88%86%E6%9E%90/image-20200401180024806.png" alt="image-20200401175322331"></p>
-<p>这样就可以了，程序就结束了！主要涉及了匿名成员类。大家有兴趣（最好可以了解一下）</p>
-
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2020/04/01/java%E4%B8%AD%E5%90%84%E7%A7%8D%E7%B1%BB%E7%9A%84%E8%B7%B3%E8%BD%AC%E4%BE%8B%E9%A2%98%E5%88%86%E6%9E%90/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -423,13 +397,13 @@
         
   
   
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
     <link itemprop="mainEntityOfPage" href="https://jefine.github.io/2020/03/26/%E4%B8%80%E5%85%83%E5%A4%9A%E6%AC%A1%E5%A4%9A%E9%A1%B9%E5%BC%8F%E7%9A%84%E5%8A%A0%E5%87%8F/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="image" content="/images/ava.jpg">
       <meta itemprop="name" content="jefine">
-      <meta itemprop="description" content="使每个人的生活多一份美好。">
+      <meta itemprop="description" content="Makes Better">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -446,22 +420,22 @@
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
               </span>
-              <span class="post-meta-item-text">发表于</span>
+              <span class="post-meta-item-text">Posted on</span>
 
-              <time title="创建时间：2020-03-26 22:00:11" itemprop="dateCreated datePublished" datetime="2020-03-26T22:00:11+08:00">2020-03-26</time>
+              <time title="Created: 2020-03-26 22:00:11" itemprop="dateCreated datePublished" datetime="2020-03-26T22:00:11+08:00">2020-03-26</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-08-10 12:09:17" itemprop="dateModified" datetime="2020-08-10T12:09:17+08:00">2020-08-10</time>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2020-08-10 12:09:17" itemprop="dateModified" datetime="2020-08-10T12:09:17+08:00">2020-08-10</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
               </span>
-              <span class="post-meta-item-text">分类于</span>
+              <span class="post-meta-item-text">In</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
                   <a href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%9F%BA%E7%A1%80/" itemprop="url" rel="index">
                     <span itemprop="name">数据结构基础</span>
@@ -497,7 +471,7 @@
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2020/03/26/%E4%B8%80%E5%85%83%E5%A4%9A%E6%AC%A1%E5%A4%9A%E9%A1%B9%E5%BC%8F%E7%9A%84%E5%8A%A0%E5%87%8F/#more" rel="contents">
-                阅读全文 &raquo;
+                Read more &raquo;
               </a>
             </div>
           <!--/noindex-->
@@ -519,13 +493,13 @@
         
   
   
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
     <link itemprop="mainEntityOfPage" href="https://jefine.github.io/2020/03/21/p1086%E8%8A%B1%E7%94%9F%E9%87%87%E6%91%98/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="image" content="/images/ava.jpg">
       <meta itemprop="name" content="jefine">
-      <meta itemprop="description" content="使每个人的生活多一份美好。">
+      <meta itemprop="description" content="Makes Better">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -542,16 +516,16 @@
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
               </span>
-              <span class="post-meta-item-text">发表于</span>
+              <span class="post-meta-item-text">Posted on</span>
               
 
-              <time title="创建时间：2020-03-21 16:58:48 / 修改时间：18:34:00" itemprop="dateCreated datePublished" datetime="2020-03-21T16:58:48+08:00">2020-03-21</time>
+              <time title="Created: 2020-03-21 16:58:48 / Modified: 18:34:00" itemprop="dateCreated datePublished" datetime="2020-03-21T16:58:48+08:00">2020-03-21</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
               </span>
-              <span class="post-meta-item-text">分类于</span>
+              <span class="post-meta-item-text">In</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
                   <a href="/categories/%E7%BC%96%E7%A8%8B/" itemprop="url" rel="index">
                     <span itemprop="name">编程</span>
@@ -583,34 +557,14 @@
 
       
           <h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><p>鲁宾逊先生有一只宠物猴，名叫多多。这天，他们两个正沿着乡间小路散步，突然发现路边的告示牌上贴着一张小小的纸条：“欢迎免费品尝我种的花生！――熊字”。</p>
-<p>鲁宾逊先生和多多都很开心，因为花生正是他们的最爱。在告示牌背后，路边真的有一块花生田，花生植株整齐地排列成矩形网格（如图111）。有经验的多多一眼就能看出，每棵花生植株下的花生有多少。为了训练多多的算术，鲁宾逊先生说：“你先找出花生最多的植株，去采摘它的花生；然后再找出剩下的植株里花生最多的，去采摘它的花生；依此类推，不过你一定要在我限定的时间内回到路边。”</p>
-<p><img src="/2020/03/21/p1086%E8%8A%B1%E7%94%9F%E9%87%87%E6%91%98/1182.png" alt></p>
-<p>我们假定多多在每个单位时间内，可以做下列四件事情中的一件：</p>
-<ol>
-<li>从路边跳到最靠近路边（即第一行）的某棵花生植株；</li>
-<li>从一棵植株跳到前后左右与之相邻的另一棵植株</li>
-<li>采摘一棵植株下的花生：</li>
-<li>从最靠近路边（即第一行）的某棵花生植株跳回路边</li>
-</ol>
-<p>现在给定一块花生田的大小和花生的分布，请问在限定时间内，多多最多可以采到多少个花生？注意可能只有部分植株下面长有花生，假设这些植株下的花生个数各不相同。</p>
-<p>例如在图2所示的花生田里，只有位于(2,5),(3,7),(4,2),(5,4)的植株下长有花生，个数分别为13,7,15,9。沿着图示的路线，多多在21个单位时间内，最多可以采到37个花生。</p>
-<h2 id="输入格式"><a href="#输入格式" class="headerlink" title="输入格式"></a>输入格式</h2><p>第一行包括三个整数，M,N和K，用空格隔开；表示花生田的大小为MN（1≤M,N≤20），多多采花生的限定时间为K（0≤K≤1000）个单位时间。接下来的M行，每行包括N个非负整数，也用空格隔开；第i+1行的第j个整数Pij（0≤Pij≤500）表示花生田里植株（i,j）下花生的数目，0表示该植株下没有花生。</p>
-<h2 id="输出格式"><a href="#输出格式" class="headerlink" title="输出格式"></a>输出格式</h2><p>一个整数，即在限定时间内，多多最多可以采到花生的个数。</p>
-<h2 id="输入输出样例"><a href="#输入输出样例" class="headerlink" title="输入输出样例"></a>输入输出样例</h2><p><strong>输入 #1</strong> </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">6 7 21</span><br><span class="line">0 0 0 0 0 0 0</span><br><span class="line">0 0 0 0 13 0 0</span><br><span class="line">0 0 0 0 0 0 7</span><br><span class="line">0 15 0 0 0 0 0</span><br><span class="line">0 0 0 9 0 0 0</span><br><span class="line">0 0 0 0 0 0 0</span><br></pre></td></tr></table></figure>
-<p><strong>输出 #1</strong> </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">37</span><br></pre></td></tr></table></figure>
-<p><strong>输入 #2</strong> </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">6 7 20</span><br><span class="line">0 0 0 0 0 0 0</span><br><span class="line">0 0 0 0 13 0 0</span><br><span class="line">0 0 0 0 0 0 7</span><br><span class="line">0 15 0 0 0 0 0</span><br><span class="line">0 0 0 9 0 0 0</span><br><span class="line">0 0 0 0 0 0 0</span><br></pre></td></tr></table></figure>
-<p><strong>输出 #2</strong> </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">28</span><br></pre></td></tr></table></figure>
-<h2 id="解题思路："><a href="#解题思路：" class="headerlink" title="解题思路："></a>解题思路：</h2><p>刚开始急匆匆地一看题目（然后就陷入了一阵思考：“如何在有限的时间内拿到最多的花生呢？”哎，每个花生的个数还不一样，也就是先后顺序什么的都要去更改哎，动态规划？<del>（可是其实我不会动态规划哈哈）</del>那么怎么办呢，哎呦，然后发现了一个问题，这是一道普及题目那么不会那么难的吧？！</p>
-<p>又重新审题后，发现我原来看错题目了！在那段极长的唠叨中，<strong>它规定的摘取顺序是按照从大到小的顺序区去采摘，</strong>而不是向我之前所想的那样，这样一来就大大简化了自己的步骤。</p>
-<p>之后一开始打算使用一个二维数组来储存但是发现不太对，想起来结构体于是；</p>
-<p>有了思路，使用一个结构体来储存自己的x，y，和花生的个数；然后排序，从大到小但是要记住判断下一次是不是采摘完还能回去哈哈。</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> <span class="title">hua</span>&#123;</span></span><br><span class="line">    <span class="keyword">int</span> x;</span><br><span class="line">    <span class="keyword">int</span> y;</span><br><span class="line">    <span class="keyword">int</span> num;</span><br><span class="line">&#125;h;</span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">cmp</span><span class="params">(h a,h b)</span></span>&#123;    </span><br><span class="line">        <span class="keyword">return</span>  a.num &gt; b.num; </span><br><span class="line">&#125;;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> m,n,k,cnt=<span class="number">0</span>,ans=<span class="number">0</span>,real=<span class="number">0</span>;</span><br><span class="line">    <span class="built_in">cin</span>&gt;&gt;m&gt;&gt;n&gt;&gt;k;</span><br><span class="line">    h a[m*n];</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;m;i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">0</span>;j&lt;n;j++)&#123;</span><br><span class="line">        a[cnt].x = i;</span><br><span class="line">        a[cnt].y = j;</span><br><span class="line">        <span class="built_in">cin</span>&gt;&gt;a[cnt++].num; </span><br><span class="line">		<span class="keyword">if</span>(a[cnt<span class="number">-1</span>].num!=<span class="number">0</span>)real++;  </span><br><span class="line">        &#125;  </span><br><span class="line">    &#125;</span><br><span class="line">    sort(a,a+m*n,cmp);</span><br><span class="line">    <span class="keyword">int</span> i = <span class="number">0</span>;</span><br><span class="line">    k--;<span class="comment">//跳入</span></span><br><span class="line">    <span class="keyword">int</span> least = a[i].x*<span class="number">2</span>+<span class="number">2</span>;</span><br><span class="line">    <span class="keyword">int</span> cost = a[i].x+<span class="number">1</span>;</span><br><span class="line">   	<span class="comment">// cout&lt;&lt;real&lt;&lt;endl;</span></span><br><span class="line">    <span class="comment">//cout&lt;&lt;"应该是：3，1"&lt;&lt;a[0].x&lt;&lt;"  "&lt;&lt;a[0].y&lt;&lt;endl;</span></span><br><span class="line">    <span class="keyword">while</span>(k&gt;=least&amp;&amp;(i&lt;=real))&#123;<span class="comment">//省去了讨论最后一步跳出</span></span><br><span class="line">        k-=cost;<span class="comment">//到达a[i]点所需要的步数，并加上挖出所需要的一步</span></span><br><span class="line">       <span class="comment">// cout&lt;&lt;"least:"&lt;&lt;least&lt;&lt;"  cost:"&lt;&lt;cost;</span></span><br><span class="line">       <span class="comment">// cout&lt;&lt;"   k:"&lt;&lt;k&lt;&lt;endl;</span></span><br><span class="line">        ans+=a[i].num;</span><br><span class="line">        least = <span class="built_in">abs</span>(a[i+<span class="number">1</span>].y-a[i].y)+<span class="built_in">abs</span>(a[i+<span class="number">1</span>].x-a[i].x)+a[i+<span class="number">1</span>].x+<span class="number">2</span>;</span><br><span class="line">        <span class="comment">//假设能拿到下一个,且挖掘，并保证能够返回到第一行。</span></span><br><span class="line">        cost = <span class="built_in">abs</span>(a[i+<span class="number">1</span>].y-a[i].y)+<span class="built_in">abs</span>(a[i+<span class="number">1</span>].x-a[i].x)+<span class="number">1</span>;</span><br><span class="line">        i++;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">cout</span>&lt;&lt;ans;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>好的，这个故事告诉我们。。。审视好题目。。。</p>
-
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2020/03/21/p1086%E8%8A%B1%E7%94%9F%E9%87%87%E6%91%98/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -628,13 +582,13 @@
         
   
   
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
     <link itemprop="mainEntityOfPage" href="https://jefine.github.io/2020/03/17/LinkedList%E9%93%BE%E8%A1%A8/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="image" content="/images/ava.jpg">
       <meta itemprop="name" content="jefine">
-      <meta itemprop="description" content="使每个人的生活多一份美好。">
+      <meta itemprop="description" content="Makes Better">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -651,22 +605,22 @@
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
               </span>
-              <span class="post-meta-item-text">发表于</span>
+              <span class="post-meta-item-text">Posted on</span>
 
-              <time title="创建时间：2020-03-17 17:50:51" itemprop="dateCreated datePublished" datetime="2020-03-17T17:50:51+08:00">2020-03-17</time>
+              <time title="Created: 2020-03-17 17:50:51" itemprop="dateCreated datePublished" datetime="2020-03-17T17:50:51+08:00">2020-03-17</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-03-21 19:04:48" itemprop="dateModified" datetime="2020-03-21T19:04:48+08:00">2020-03-21</time>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2020-03-21 19:04:48" itemprop="dateModified" datetime="2020-03-21T19:04:48+08:00">2020-03-21</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
               </span>
-              <span class="post-meta-item-text">分类于</span>
+              <span class="post-meta-item-text">In</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
                   <a href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" itemprop="url" rel="index">
                     <span itemprop="name">数据结构</span>
@@ -698,103 +652,14 @@
 
       
           <p>今天说说链表：说到链表就不得不提及数组，两者相爱相杀，但又都是极为重要的基本数据结构类型。</p>
-<p>相对于链表，我们一般情况下更熟悉数组。</p>
-<p>（<del>听说加上英文，会显得高端不少</del>）：</p>
-<h2 id="先讲一个小故事（虽然讲的很烂2333）"><a href="#先讲一个小故事（虽然讲的很烂2333）" class="headerlink" title="先讲一个小故事（虽然讲的很烂2333）"></a>先讲一个小故事（虽然讲的很烂2333）</h2><p>从前，一群小朋友外出游玩，到酒店申请房间啊，他们呢，申请的是数组方式的房间（哈哈）那么他们的房间号就是相连的。他们很容易的相互串门，带队者也可以轻松的找到他们每个人的所在（带队者只用记住第一个小朋友的位置和学号就好）。但问题是，他们这样申请房间的话，有的小朋友如果申请更换房间，会比较麻烦，更有甚者，不小心生病了，需要退房，那么负责人就要重新给每个人好分配房间，大多数小朋友都需要更换自己的房间，就会很麻烦。这时候，酒店管理者想到，如果我们让学号相邻的小朋友的记住他（她）下一个学号的小朋友的房间号（就像一号记住二号的房间号，二号记住三号的房间号），那么负责人还是只用记住第一个小朋友的房间号就可以按照顺序依次找到每个小朋友。（<del>当然要是其中一个小朋友忘记后面小朋友的位置的话。。。我们就失去了一堆小朋友</del>）。酒店管理者发现这样的话，不仅可以使得他们的房间利用率得到大大的提升，并且可以方便住宿人员的调动。</p>
-<p>好的，相信读完这个尴尬的小故事，我们大概对链表有了一个感性的认识，他是为了解决一些数组的不足而出现的。下面就是严谨的分析链表的优缺点。</p>
-<p>作为有强大功能的链表，对他的操作当然有许多，比如：链表的创建，修改，删除，插入，输出，排序，反序，清空链表的元素，求链表的长度等等。</p>
-<p>初学链表，一般从单向链表开始：（本文也暂时只有单向链表）</p>
-<h2 id="Advantages-优势"><a href="#Advantages-优势" class="headerlink" title="Advantages 优势"></a><strong>Advantages 优势</strong></h2><p><strong>1)</strong> Dynamic size（动态大小）</p>
-<p><strong>2)</strong> Ease of insertion/deletion（方便插入和删除）</p>
-<h2 id="Drawbacks-缺点"><a href="#Drawbacks-缺点" class="headerlink" title="Drawbacks 缺点"></a><strong>Drawbacks 缺点</strong></h2><p><strong>1)</strong> Random access is not allowed. We have to access elements sequentially starting from the first node. So we cannot do binary search with linked lists efficiently with its default implementation. </p>
-<p>不允许随机访问。 我们必须从第一个节点开始顺序访问元素。 因此，我们无法使用其默认实现对链接列表进行有效的二分查找。</p>
-<p><strong>2)</strong> Extra memory space for a pointer is required with each element of the list.</p>
-<p>需要额外的空间去存放链表中下一个元素的位置。</p>
-<p><strong>3)</strong> Not cache friendly. Since array elements are<br>contiguous locations, there is locality of reference which is not there<br>in case of linked lists.</p>
-<p>不缓存友好。 由于数组元素是连续的位置，因此存在引用位置，而在链接列表的情况下则不存在。</p>
-<p>（就是说不能写成a[6])</p>
-<h2 id="Representation-表达（内容）"><a href="#Representation-表达（内容）" class="headerlink" title="Representation  表达（内容）"></a><strong>Representation  表达（内容）</strong></h2><p>首先，我们将一个链表中的每个元素称为一个节点（Node),特殊的第一个被叫做头节点，最后一个被叫做尾节点。（图中，abcd是四个节点，但注意a不是头节点哈哈，Head是头节点，他指向的a节点）一般来说，头节点Head不存放内容，尾节点没有下一个元素的位置。（以简单的单链表为例）</p>
-<p><img src="/2020/03/17/LinkedList%E9%93%BE%E8%A1%A8/Linkedlist.png" alt="linkedList/Linkedlist.png"></p>
-<p>A linked list is represented by a pointer to the first node of the<br>linked list. The first node is called the head. If the linked list is<br>empty, then the value of the head is NULL.</p>
-<p>链接列表由指向链接列表的第一个节点的指针表示。 第一个节点称为头。 如果链表为空，则head的值为NULL。（<del>好绕口</del>）<br>Each node in a list consists of at least two parts:</p>
-<p>每一个节点至少包括两部分：<br>1) data 数据<br>2) Pointer (Or Reference) to the next node 指向下一个结点的指针（指向/引用）<br>In C, we can represent a node using structures. Below is an example of a linked list node with integer data.</p>
-<p>在c语言中，我们使用结构体来表示，如下面的代码:</p>
-<pre><code>struct Node {
-int data;
-struct Node* next;
-};
-</code></pre><p>In Java or C#, LinkedList can be represented as a class and a Node as a<br>separate class. The LinkedList class contains a reference of Node class<br>type.</p>
-<p>而在java，c#中LinkedList可以表示为一个类，而Node可以表示为单独的类。 LinkedList类包含Node类类型的引用。</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">LinkedList</span> &#123;</span> </span><br><span class="line">	Node head; <span class="comment">// head of the list </span></span><br><span class="line"></span><br><span class="line">	<span class="comment">/* Linked list Node*/</span></span><br><span class="line">	<span class="class"><span class="keyword">class</span> <span class="title">Node</span> &#123;</span> </span><br><span class="line">		<span class="keyword">int</span> data; </span><br><span class="line">		Node next; </span><br><span class="line"></span><br><span class="line">		<span class="comment">// Constructor to create a new node </span></span><br><span class="line">		<span class="comment">// Next is by default initialized </span></span><br><span class="line">		<span class="comment">// as null </span></span><br><span class="line">		Node(<span class="keyword">int</span> d) &#123; data = d; &#125; </span><br><span class="line">	&#125; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="写一下链表？"><a href="#写一下链表？" class="headerlink" title="写一下链表？"></a>写一下链表？</h2><h3 id="我们从c开始尝试：-现在只写到了增）"><a href="#我们从c开始尝试：-现在只写到了增）" class="headerlink" title="我们从c开始尝试：(现在只写到了增）"></a>我们从c开始尝试：(现在只写到了增）</h3><p>好的，在此之前，我们似乎好像可能看起来学会了如何使用，但是看懂了和会写出来中间还是有一定的差距的。</p>
-<p>链表还有一下基础的知识需要去掌握：</p>
-<p><a href="https://www.runoob.com/cprogramming/c-function-malloc.html" target="_blank" rel="noopener">malloc</a> ：用于申请一定的内存.</p>
-<p>那么这句(struct Node*)malloc(sizeof(struct Node))是什么鬼呢？（<del>这也太长了吧</del>）</p>
-<p>不急，我们仔细看看，他是申请了一个内存，多大呢？（struct Node）类型的所需要的储存空间；（就像房间的类型一样，偏要双人床的那种）</p>
-<p>那么前面的那个（struct Node*）是？哦，他是说这一块申请来的内存要强制转化成struct Node类型的，就是说专门给节点使用的。<del>（自己辛辛苦苦申请来的，才不给别人用呢）。</del></p>
-<p>对了，这句话是会返回一个地址的，就是指向自己申请内存的位置。</p>
-<p><strong>注意：节点呀！只有Head和普通节点。我们说的头指针，尾指针一类的，都是仅仅声明，作用就像房卡一样，是可以换的，里面存放的是链表中节点的地址。</strong></p>
-<p>好的，下面我们要耐住性子，认真的学习咯（后文的故事如果听不太懂，放心你不是一个人，多看看不是故事的内容会更好）；（下面是一个标准化的介绍）</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// A simple C program to introduce </span></span><br><span class="line"><span class="comment">// a linked list </span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt; </span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdlib.h&gt; </span></span></span><br><span class="line"></span><br><span class="line"><span class="comment">//这个结构体就是我们要用到的节点了，</span></span><br><span class="line"><span class="comment">//既然c语言里的基本类型没有，我们就自己造一个。</span></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Node</span> &#123;</span> </span><br><span class="line">	<span class="keyword">int</span> data; </span><br><span class="line">	<span class="class"><span class="keyword">struct</span> <span class="title">Node</span>* <span class="title">next</span>;</span> </span><br><span class="line">&#125;; </span><br><span class="line"></span><br><span class="line"><span class="comment">// Program to create a simple linkedlist with 3 nodes </span></span><br><span class="line"><span class="comment">//编程去建立一个有三个节点的链表</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span></span><br><span class="line"><span class="function"></span>&#123; </span><br><span class="line">	<span class="comment">//声明3个节点，注意了哈，这里是声明！！！</span></span><br><span class="line">	<span class="comment">//并没用得到那三个节点，就像我们拿到了三个空门牌，但是房间还没造出来呢</span></span><br><span class="line">	<span class="class"><span class="keyword">struct</span> <span class="title">Node</span>* <span class="title">head</span> = <span class="title">NULL</span>;</span> </span><br><span class="line">	<span class="class"><span class="keyword">struct</span> <span class="title">Node</span>* <span class="title">second</span> = <span class="title">NULL</span>;</span> </span><br><span class="line">	<span class="class"><span class="keyword">struct</span> <span class="title">Node</span>* <span class="title">third</span> = <span class="title">NULL</span>;</span> </span><br><span class="line"></span><br><span class="line">	<span class="comment">// allocate 3 nodes in the heap</span></span><br><span class="line">	<span class="comment">//从堆中申请三个节点的内存（这会儿才得到房间了，并把房间号写在了门牌上） </span></span><br><span class="line">	head = (struct Node*)<span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(struct Node)); </span><br><span class="line">	second = (struct Node*)<span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(struct Node)); </span><br><span class="line">	third = (struct Node*)<span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(struct Node)); </span><br><span class="line"></span><br><span class="line">	<span class="comment">/* Three blocks have been allocated dynamically. </span></span><br><span class="line"><span class="comment">	We have pointers to these three blocks as head, </span></span><br><span class="line"><span class="comment">	second and third	 </span></span><br><span class="line"><span class="comment">	下面是灵魂的绘图（佩服佩服）来表示我们所申请的三个节点的储存状态，</span></span><br><span class="line"><span class="comment">	他们是不相连的哦</span></span><br><span class="line"><span class="comment">	head		        second	   	 third </span></span><br><span class="line"><span class="comment">		|		         	 |		    	   | </span></span><br><span class="line"><span class="comment">		|	          	 |	     		   |</span></span><br><span class="line"><span class="comment">	+---+-----+	 +----+----+	 +----+----+ </span></span><br><span class="line"><span class="comment">	| # | # |	    | # | # |	    | # | # | </span></span><br><span class="line"><span class="comment">	+---+-----+	 +----+----+	 +----+----+ </span></span><br><span class="line"><span class="comment">	#代表了随机值，一个是数据，一个是指针，</span></span><br><span class="line"><span class="comment">	和我们的stuct node结构相同哦，</span></span><br><span class="line"><span class="comment">	但是他们现在还是随机值，因为我们没有给他们赋值。</span></span><br><span class="line"><span class="comment">	</span></span><br><span class="line"><span class="comment">	# represents any random value. </span></span><br><span class="line"><span class="comment">	Data is random because we haven’t assigned </span></span><br><span class="line"><span class="comment">	anything yet */</span></span><br><span class="line"></span><br><span class="line">	head-&gt;data = <span class="number">1</span>; <span class="comment">// assign data in first node </span></span><br><span class="line">	head-&gt;next = second; </span><br><span class="line">	<span class="comment">// Link first node with the second node </span></span><br><span class="line">	<span class="comment">// 我们给第一个节点赋值了，并且告诉了他下一个节点的位置</span></span><br><span class="line"></span><br><span class="line">	<span class="comment">/* data has been assigned to the data part of the first </span></span><br><span class="line"><span class="comment">	block (block pointed by the head). And next </span></span><br><span class="line"><span class="comment">	pointer of first block points to second. </span></span><br><span class="line"><span class="comment">	So they both are linked. </span></span><br><span class="line"><span class="comment">	//那个代码由于复制可能会造成错位，木得办法，撮合着看把哈哈。</span></span><br><span class="line"><span class="comment">		head		 second		 third </span></span><br><span class="line"><span class="comment">			|			 |			 | </span></span><br><span class="line"><span class="comment">			|			 |			 | </span></span><br><span class="line"><span class="comment">	+---+---+	 +----+----+	 +-----+----+ </span></span><br><span class="line"><span class="comment">	| 1 | o-----&gt;| # | # |	 | # | # | </span></span><br><span class="line"><span class="comment">	+---+---+	 +----+----+	 +-----+----+	 </span></span><br><span class="line"><span class="comment">	*/</span></span><br><span class="line"></span><br><span class="line">	<span class="comment">// assign data to second node </span></span><br><span class="line">	second-&gt;data = <span class="number">2</span>; </span><br><span class="line"></span><br><span class="line">	<span class="comment">// Link second node with the third node </span></span><br><span class="line">	second-&gt;next = third; </span><br><span class="line"></span><br><span class="line">	<span class="comment">//同上，给第二个赋值，并且告诉他下一个在哪里</span></span><br><span class="line">	<span class="comment">/* data has been assigned to the data part of the second </span></span><br><span class="line"><span class="comment">	block (block pointed by second). And next </span></span><br><span class="line"><span class="comment">	pointer of the second block points to the third </span></span><br><span class="line"><span class="comment">	block. So all three blocks are linked. </span></span><br><span class="line"><span class="comment">	</span></span><br><span class="line"><span class="comment">	head		 second		 third </span></span><br><span class="line"><span class="comment">		|			 |			 | </span></span><br><span class="line"><span class="comment">		|			 |			 | </span></span><br><span class="line"><span class="comment">	+---+---+	 +---+---+	 +----+----+ </span></span><br><span class="line"><span class="comment">	| 1 | o-----&gt;| 2 | o-----&gt; | # | # | </span></span><br><span class="line"><span class="comment">	+---+---+	 +---+---+	 +----+----+	 */</span></span><br><span class="line"></span><br><span class="line">	third-&gt;data = <span class="number">3</span>; <span class="comment">// assign data to third node </span></span><br><span class="line">	third-&gt;next = <span class="literal">NULL</span>; </span><br><span class="line">	</span><br><span class="line">	<span class="comment">//给第三个（也是最后一个）赋值，并告诉他，你后面没人了。</span></span><br><span class="line">	<span class="comment">/* data has been assigned to data part of third </span></span><br><span class="line"><span class="comment">	block (block pointed by third). And next pointer </span></span><br><span class="line"><span class="comment">	of the third block is made NULL to indicate </span></span><br><span class="line"><span class="comment">	that the linked list is terminated here. </span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">	We have the linked list ready. </span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">		head	 </span></span><br><span class="line"><span class="comment">			| </span></span><br><span class="line"><span class="comment">			| </span></span><br><span class="line"><span class="comment">		+---+---+	 +---+---+	 +----+------+ </span></span><br><span class="line"><span class="comment">		| 1 | o-----&gt;| 2 | o-----&gt; | 3 | NULL | </span></span><br><span class="line"><span class="comment">		+---+---+	 +---+---+	 +----+------+</span></span><br></pre></td></tr></table></figure>
-<p>​        </p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">	Note that only head is sufficient to represent </span><br><span class="line">	the whole <span class="built_in">list</span>. We can traverse the complete </span><br><span class="line">	<span class="built_in">list</span> by following next pointers. */</span><br><span class="line">	</span><br><span class="line">	<span class="comment">//接下来一定要试试效果么！</span></span><br><span class="line">	<span class="class"><span class="keyword">struct</span> <span class="title">Node</span>* <span class="title">n</span> = <span class="title">head</span>;</span></span><br><span class="line">	<span class="comment">//新建立一个指针，让他去循环着跑</span></span><br><span class="line">	<span class="comment">//并且哈，它指向了第一个有数据的节点</span></span><br><span class="line">	<span class="keyword">while</span> (n != <span class="literal">NULL</span>) &#123; </span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">" %d "</span>, n-&gt;data); </span><br><span class="line">        n = n-&gt;next; <span class="comment">//输出完后，他就有指向了下一个</span></span><br><span class="line">    &#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>这就完了？这就完了。</p>
-<p>下面是一个简洁的代码：</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// A simple C program for traversal of a linked list </span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt; </span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdlib.h&gt; </span></span></span><br><span class="line">  </span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Node</span> &#123;</span> </span><br><span class="line">    <span class="keyword">int</span> data; </span><br><span class="line">    <span class="class"><span class="keyword">struct</span> <span class="title">Node</span>* <span class="title">next</span>;</span> </span><br><span class="line">&#125;; </span><br><span class="line">  </span><br><span class="line"><span class="comment">// This function prints contents of linked list starting from </span></span><br><span class="line"><span class="comment">// the given node </span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">printList</span><span class="params">(struct Node* n)</span> </span></span><br><span class="line"><span class="function"></span>&#123; </span><br><span class="line">    <span class="keyword">while</span> (n != <span class="literal">NULL</span>) &#123; </span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">" %d "</span>, n-&gt;data); </span><br><span class="line">        n = n-&gt;next; </span><br><span class="line">    &#125; </span><br><span class="line">&#125; </span><br><span class="line">  </span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span></span><br><span class="line"><span class="function"></span>&#123; </span><br><span class="line">    <span class="class"><span class="keyword">struct</span> <span class="title">Node</span>* <span class="title">head</span> = <span class="title">NULL</span>;</span> </span><br><span class="line">    <span class="class"><span class="keyword">struct</span> <span class="title">Node</span>* <span class="title">second</span> = <span class="title">NULL</span>;</span> </span><br><span class="line">    <span class="class"><span class="keyword">struct</span> <span class="title">Node</span>* <span class="title">third</span> = <span class="title">NULL</span>;</span> </span><br><span class="line">  </span><br><span class="line">    <span class="comment">// allocate 3 nodes in the heap </span></span><br><span class="line">    head = (struct Node*)<span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(struct Node)); </span><br><span class="line">    second = (struct Node*)<span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(struct Node)); </span><br><span class="line">    third = (struct Node*)<span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(struct Node)); </span><br><span class="line">  </span><br><span class="line">    head-&gt;data = <span class="number">1</span>; <span class="comment">// assign data in first node </span></span><br><span class="line">    head-&gt;next = second; <span class="comment">// Link first node with second </span></span><br><span class="line">  </span><br><span class="line">    second-&gt;data = <span class="number">2</span>; <span class="comment">// assign data to second node </span></span><br><span class="line">    second-&gt;next = third; </span><br><span class="line">  </span><br><span class="line">    third-&gt;data = <span class="number">3</span>; <span class="comment">// assign data to third node </span></span><br><span class="line">    third-&gt;next = <span class="literal">NULL</span>; </span><br><span class="line">  </span><br><span class="line">    printList(head); </span><br><span class="line">  </span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>当然，当我自己上手之后，生活还是狠狠地把我按在地上摩擦。。。</p>
-<p>不妨我们模块化的写一下一个链表吧（写了很久来理解链表的优秀）</p>
-<p>我先分开讲解每个模块的作用和意义，之后放在一起来观看，效果<del>（可能）</del>更佳。</p>
-<p>1 必不可少的这个结构体呀！</p>
-<p>你看，这个stuct Node *多长呀，如果我们使用的是typedef的话我们就可以将l作为一个数据类型的名字，然后把l当作int这样的来使用就好了（我们还是可以使用struct Node的）。</p>
-<p>其次，看第二行，这个调用就很有意思了，声明了一个l数据类型的指针。</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> <span class="title">Node</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">    <span class="keyword">int</span> val;</span><br><span class="line">    l* next;<span class="comment">//等效 struct Node *next</span></span><br><span class="line">&#125;l;</span><br></pre></td></tr></table></figure>
-<p>2 我们要创建一个链表了。</p>
-<p>我们在main函数里面声明了一个Head的指针，并且申请了一个内存空间，并把其地址放进了head。这个时候把他传过来。</p>
-<p>或者说，我们要了一个房卡，并要了一个房间，这个房卡就是head，房卡对应的就是该房间。</p>
-<p>第一步：</p>
-<p>在creat函数里面：我们先是malloc 了一个l类型的空间，这个房间的地址赋值给了新声明的n指针上。【或者说我们向酒店索要了一间l类型的房间（房卡当然比房间要好拿到一些呀），同时把这个房间的门牌号输入到了门卡上。】</p>
-<p>第二步：我们把指针n的内容（也就是新声明的节点的地址）赋值给head指针指向的next的位置【哈哈，有点懵吧，就是说，我们现在手里一共有两张房卡对吧，一张是head（head房卡可是能打开head房间的哦），另一张是n（n可是上面有房间号码的），然后我们打开head的房间，在里面的next区域放上n房卡的内容（就是刚刚申请的房间号/地址）（用这个例子<del>可能</del>好理解哈，指针总是很奇妙的）</p>
-<p>第三步：将n赋值,并指向空【然后我们利用n房卡打开刚刚申请的房间哈，然后在内容区域放上内容，在下一个的区域放上空，说明后面没有房间了】</p>
-<p>这就好了。想象一下我们拿着head房卡就可以了，先是到head的next区域找到下一个房间的位置，然后进去，就能看见第一个房间的内容区域还能看到下一个房间在哪里了，当然在此处我们没有下一个房间。</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">creat</span><span class="params">(l *head)</span></span>&#123;</span><br><span class="line">    l *n = (l*)<span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(l));</span><br><span class="line">    <span class="keyword">if</span>(n==<span class="literal">NULL</span>)<span class="built_in">cout</span>&lt;&lt;<span class="string">"Error,malloc failed!"</span>;<span class="comment">//这里做一下判断，如果内存不足，那么报错</span></span><br><span class="line">		head-&gt;next = n;</span><br><span class="line">    n-&gt;val = <span class="number">6</span>;</span><br><span class="line">    n-&gt;next = <span class="literal">NULL</span>;   </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>3那我们一定要再来一个房间呀</p>
-<p>第一步：传入一个头节点，和一个值【拿上head门卡和要往新房间里放的东西】</p>
-<p>第二步：声明一个新的节点p，并使其和head指向相同。【再要一张门卡，复制一下head门卡的内容】这样做可以保证head不被破环。</p>
-<p>第三步：开始找最后一个房间了，如果指向的房间中的next区域还有值，就说明后面还有房间，我们就把这个门卡p指向本来房间里的下一个房间位置，就是我们将p门卡本来打开时的是这个房间，我们使他打开的是下一个房间，（当然，他无法再打开这个房间了）然后继续搜索。直到发现只是最后一个房间。</p>
-<p>第四步：我们新索要一个房间，原来最后一个空房间的next区域要存放上这个房间的位置了。然后我们把我们的东西也就是一个值放在新的房间，这个新房间就成了最后一个房间了，我们就需要把他的next变为NUll空，记住哦，这些步骤一步也不能缺少，否则就会酿成大错。。。（<del>无限卡壳</del>）</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">add</span><span class="params">(l*Head,<span class="keyword">int</span> val)</span></span>&#123;   </span><br><span class="line">    l* p = Head;</span><br><span class="line">    <span class="keyword">while</span>(p-&gt;next)p=p-&gt;next;</span><br><span class="line">    l*t = (l*)<span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(l));</span><br><span class="line">		p-&gt;next =t;</span><br><span class="line">    t-&gt;val=val;</span><br><span class="line">    t-&gt;next = <span class="literal">NULL</span>;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
-<p>4赶紧巡查一遍房间吧：</p>
-<p>我们只用拿着head门卡就好，每次巡查的时候记得再要一个门卡自己的门卡保存着第一个房间的位置，可不能乱改。然后搜查完成一间房间之后，房卡n就成了下一个房间的房卡，继续搜查。哈哈</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">disp</span><span class="params">(struct Node *head)</span></span>&#123;</span><br><span class="line">    <span class="class"><span class="keyword">struct</span> <span class="title">Node</span> *<span class="title">n</span> = <span class="title">head</span>-&gt;<span class="title">next</span>;</span></span><br><span class="line">    <span class="keyword">while</span>(n)&#123;</span><br><span class="line">        <span class="built_in">cout</span>&lt;&lt;n-&gt;val&lt;&lt;<span class="string">" "</span>;</span><br><span class="line">        n = n-&gt;next;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">cout</span>&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>总的代码如下：</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> <span class="title">Node</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">    <span class="keyword">int</span> val;</span><br><span class="line">    <span class="class"><span class="keyword">struct</span> <span class="title">Node</span>* <span class="title">next</span>;</span></span><br><span class="line">&#125;l;  </span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">disp</span><span class="params">(struct Node *head)</span></span>&#123;</span><br><span class="line">    <span class="class"><span class="keyword">struct</span> <span class="title">Node</span> *<span class="title">n</span> = <span class="title">head</span>-&gt;<span class="title">next</span>;</span></span><br><span class="line">    <span class="keyword">while</span>(n)&#123;</span><br><span class="line">        <span class="built_in">cout</span>&lt;&lt;n-&gt;val&lt;&lt;<span class="string">" "</span>;</span><br><span class="line">        n = n-&gt;next;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">cout</span>&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">creat</span><span class="params">(l *head)</span></span>&#123;</span><br><span class="line">    l *n = (l*)<span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(l));</span><br><span class="line">    <span class="keyword">if</span>(n==<span class="literal">NULL</span>)<span class="built_in">cout</span>&lt;&lt;<span class="string">"Error,malloc failed!"</span>;</span><br><span class="line">	head-&gt;next = n;</span><br><span class="line">    n-&gt;val = <span class="number">6</span>;</span><br><span class="line">    n-&gt;next = <span class="literal">NULL</span>;   </span><br><span class="line">&#125; </span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">add</span><span class="params">(l*Head,<span class="keyword">int</span> val)</span></span>&#123;   </span><br><span class="line">    l* p = Head;</span><br><span class="line">    <span class="keyword">while</span>(p-&gt;next)p=p-&gt;next;</span><br><span class="line">    l*t = (l*)<span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(l));</span><br><span class="line">    p-&gt;next = t;</span><br><span class="line">    t-&gt;val=val;</span><br><span class="line">    t-&gt;next = <span class="literal">NULL</span>;</span><br></pre></td></tr></table></figure>
-<p>​    </p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    l *Head;</span><br><span class="line">    Head = (l*)<span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(l));</span><br><span class="line">    </span><br><span class="line">    creat(Head);</span><br><span class="line">    add(Head,<span class="number">15</span>);</span><br><span class="line">    disp(Head);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p><strong>只是写出一个链表就少了很多趣味，增改删查才是硬道理！</strong></p>
-<p>当然了，在开始阶段，我们还是只以单链表为例：</p>
-<h2 id="链表的增："><a href="#链表的增：" class="headerlink" title="链表的增："></a>链表的增：</h2><p><img src="/2020/03/17/LinkedList%E9%93%BE%E8%A1%A8/_2020031917124912SS.png" alt="linkedList/_2020031917124912SS.png"></p>
-<p><strong>一、 在链表的末尾增加：</strong>（再重复的系统的讲一下哈）</p>
-<p>这个方法我们在上面已经认识到了，具体的思路就是我们通过头节点找到最后一个节点，然后在她后面添加一个节点，链接上去就可以了。（我们手持一个head房卡，沿着房间不断地走下去，找到最后的房间，在新开一间房间，然后我们在原来的最后一个房间的next的空间里放上新开房间的位置就好了）</p>
-<p>这里假设我们已经有了一个链表了。</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">addLast</span><span class="params">(l*Head,<span class="keyword">int</span> val)</span></span>&#123;   </span><br><span class="line">    l* p = Head;<span class="comment">//设置临时的指针，用来指向不同的节点，实现在不影响head的情况下遍历等操作</span></span><br><span class="line">    <span class="keyword">while</span>(p-&gt;next)p=p-&gt;next;</span><br><span class="line">    l*t = (l*)<span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(l));</span><br><span class="line">    p-&gt;next = t;</span><br><span class="line">    t-&gt;val=val;</span><br><span class="line">    t-&gt;next = <span class="literal">NULL</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p><strong>二、在链表的头部增加：</strong></p>
-<p>这个的做法似乎比上一个还要简单呢，毕竟我们不用去一一寻找到最后一个了。</p>
-<p>既然我们需要添加一个值，那么新建一个节点（房间）是必不可少的了。然后将值放入，让其指向本来的第一个节点，在让head指向它就好。（不怕麻烦的话，也可以重新添加一个指针变量，作为中间值，来进行操作）</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">addHead</span><span class="params">(l*Head,<span class="keyword">int</span> val)</span></span>&#123;</span><br><span class="line">    l* t = (l*)<span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(l));</span><br><span class="line">    t-&gt;val = val;</span><br><span class="line">    t-&gt;next = Head-&gt;next;</span><br><span class="line">    Head -&gt;next = t;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p><strong>三、在链表的中间插入：</strong></p>
-<p>这个可以说是前两者的综合版本了。我们要先找到这个节点，然后对他进行插入。</p>
-<p>这里就以给定一个值，作为目标值，在其后面添加一个节点吧。查找的方法是先检查一下它后面是否还有节点，如果有就判断他的值是否符合，如果不符合就使指针指向下一个节点。这样出来的结果只会有两种，一种是没有找到，也有可能是这个值就在最后一个节点里面。</p>
-<p>这里做了两个版本的给定值寻找插入方法，一种是在其之前，另一种是在其后。（两者之间只需要一点点的代码改动就可以了，在不同的地方已经用//注释）</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">insertBefore</span><span class="params">(l* Head,<span class="keyword">int</span> target,<span class="keyword">int</span> val)</span></span>&#123;</span><br><span class="line">    l* pre  = Head;<span class="comment">//*</span></span><br><span class="line">    l* p = Head;</span><br><span class="line">    <span class="keyword">while</span>(p-&gt;next)&#123;</span><br><span class="line">        <span class="keyword">if</span>(p-&gt;val==target)<span class="keyword">break</span>;</span><br><span class="line">        <span class="keyword">else</span> &#123;</span><br><span class="line">             pre = p;<span class="comment">//*</span></span><br><span class="line">            p = p-&gt;next;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span>(p-&gt;next==<span class="literal">NULL</span>&amp;&amp;p-&gt;val!=target)&#123;</span><br><span class="line">        <span class="built_in">cout</span>&lt;&lt;<span class="string">"查找失败"</span>&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    l*t = (l*)<span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(l));</span><br><span class="line">    t-&gt;val = val;</span><br><span class="line">    pre-&gt;next = t;<span class="comment">//*</span></span><br><span class="line">    t-&gt;next = p; <span class="comment">//*</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">insertAfter</span><span class="params">(l* Head,<span class="keyword">int</span> target,<span class="keyword">int</span> val)</span></span>&#123;</span><br><span class="line">    l* p = Head;</span><br><span class="line">    <span class="keyword">while</span>(p-&gt;next)&#123;</span><br><span class="line">        <span class="keyword">if</span>(p-&gt;val==target)<span class="keyword">break</span>;</span><br><span class="line">        <span class="keyword">else</span> &#123;</span><br><span class="line">            p = p-&gt;next;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span>(p-&gt;next==<span class="literal">NULL</span>&amp;&amp;p-&gt;val!=target)&#123;</span><br><span class="line">        <span class="built_in">cout</span>&lt;&lt;<span class="string">"查找失败"</span>&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    l*t = (l*)<span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(l));</span><br><span class="line">    t-&gt;val = val;</span><br><span class="line">     t-&gt;next = p-&gt;next;<span class="comment">//*</span></span><br><span class="line">     p-&gt;next = t;<span class="comment">//*</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="对链表的删"><a href="#对链表的删" class="headerlink" title="对链表的删"></a>对链表的删</h2><p>？？？如果前面的掌握了的话，那么对链表的某个节点进行删除自然不是问题。就直接放代码了（思路和上面的<strong>insertBefore</strong>相同哦）（<del>代码其实也是参考上面的</del>）</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">del</span><span class="params">(l* Head,<span class="keyword">int</span> target)</span></span>&#123;<span class="comment">//这里传入头节点和目标值就可以了</span></span><br><span class="line">    l* pre  = Head;</span><br><span class="line">    l* p = Head;</span><br><span class="line">    <span class="keyword">while</span>(p-&gt;next)&#123;</span><br><span class="line">        <span class="keyword">if</span>(p-&gt;val==target)<span class="keyword">break</span>;</span><br><span class="line">        <span class="keyword">else</span> &#123;</span><br><span class="line">             pre = p;</span><br><span class="line">            p = p-&gt;next;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span>(p-&gt;next==<span class="literal">NULL</span>&amp;&amp;p-&gt;val!=target)&#123;</span><br><span class="line">        <span class="built_in">cout</span>&lt;&lt;<span class="string">"查找失败"</span>&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line">		pre-&gt;next = p-&gt;next;<span class="comment">//是的，将insertAfter代码的最后几行更改为这一行就好了。</span></span><br><span class="line">		<span class="comment">//（相当于将这个节点跳过去了）</span></span><br><span class="line">	  <span class="built_in">free</span>(p); <span class="comment">//既然删除了这个节点，那么就把他释放掉，节约内存。</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="对链表的改："><a href="#对链表的改：" class="headerlink" title="对链表的改："></a>对链表的改：</h2><p>？？？如果前面的掌握了的话，那么对链表的某个值进行更改自然不是问题。就直接放代码了（思路和上面的<strong>insertAfter</strong>相同哦）（<del>代码其实也是参考上面的</del>）<del>（人类的本质是复读机）</del></p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">change</span><span class="params">(l* Head,<span class="keyword">int</span> target,<span class="keyword">int</span> val)</span></span>&#123;</span><br><span class="line">    l* p = Head;</span><br><span class="line">    <span class="keyword">while</span>(p-&gt;next)&#123;</span><br><span class="line">        <span class="keyword">if</span>(p-&gt;val==target)<span class="keyword">break</span>;</span><br><span class="line">        <span class="keyword">else</span> &#123;</span><br><span class="line">            p = p-&gt;next;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span>(p-&gt;next==<span class="literal">NULL</span>&amp;&amp;p-&gt;val!=target)&#123;</span><br><span class="line">        <span class="built_in">cout</span>&lt;&lt;<span class="string">"查找失败"</span>&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    p-&gt;val = val;<span class="comment">//其实就是把insertAfter()最后的几行代码改为这个（2333）</span></span><br><span class="line">   </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="对链表的查："><a href="#对链表的查：" class="headerlink" title="对链表的查："></a>对链表的查：</h2><p>我们不是一直在查找么？？？（<del>避免复读，</del>就不再赘述）</p>
-<p>看到这里，首先是一份敬佩，敬佩您能够静下心来一步一步的去尝试，去探索，去思考。确实文章篇幅很长，需要一定的耐心去思考，并且链表理解起来确实不是很困难，但是如果是刚开始，去上手操作，自然还是漏洞百出，bug重重。但是只要我们多尝试，多敲代码，缕清关系，明确指针自身的所在。那么，我们的各个方面都会有一定的成长。</p>
-<p>谢谢阅读，本文中仍有许多的不足之处，还望交流指正。</p>
-<p>对于后期，大家还可以去了解其他的链表形式，来加强对链表的使用。</p>
-
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2020/03/17/LinkedList%E9%93%BE%E8%A1%A8/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -812,13 +677,13 @@ struct Node* next;
         
   
   
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
     <link itemprop="mainEntityOfPage" href="https://jefine.github.io/2020/03/11/java%E4%B8%AD%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%88%9B%E5%BB%BA%EF%BC%8C%E5%88%9D%E5%A7%8B%E5%8C%96%E4%B8%8E%E5%BC%95%E7%94%A8/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="image" content="/images/ava.jpg">
       <meta itemprop="name" content="jefine">
-      <meta itemprop="description" content="使每个人的生活多一份美好。">
+      <meta itemprop="description" content="Makes Better">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -835,16 +700,16 @@ struct Node* next;
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
               </span>
-              <span class="post-meta-item-text">发表于</span>
+              <span class="post-meta-item-text">Posted on</span>
               
 
-              <time title="创建时间：2020-03-11 18:01:40 / 修改时间：18:05:30" itemprop="dateCreated datePublished" datetime="2020-03-11T18:01:40+08:00">2020-03-11</time>
+              <time title="Created: 2020-03-11 18:01:40 / Modified: 18:05:30" itemprop="dateCreated datePublished" datetime="2020-03-11T18:01:40+08:00">2020-03-11</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
               </span>
-              <span class="post-meta-item-text">分类于</span>
+              <span class="post-meta-item-text">In</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
                   <a href="/categories/java/" itemprop="url" rel="index">
                     <span itemprop="name">java</span>
@@ -876,71 +741,14 @@ struct Node* next;
 
       
           <p>在java的学习过程中，对于对象/基本数据类型是如何创建于初始化和引用的，在这一过程中发生了什么，为什么？下面就是有一定的讲解：</p>
-<h2 id="java对象与引用："><a href="#java对象与引用：" class="headerlink" title="java对象与引用："></a>java对象与引用：</h2><p>A a1 = new A();</p>
-<p>它代表A是类，a1是引用，a1不是对象，new A()才是对象，a1引用指向new A()这个对象。</p>
-<p><strong>在声明时：=符号并不表示赋值，而是引用，是一个传递地址的过程。</strong></p>
-<p>再如：</p>
-<p>A a2;</p>
-<p>它代表A是类，a2是引用，a2不是对象，a2所指向的对象为空null;</p>
-<p>再如：</p>
-<p>a2 = a1;</p>
-<p>它代表，a2是引用，a1也是引用，a1所指向的对象的地址传给了a2(传址），使得a2和a1指向了同一对象。</p>
-<p>综上所述，可以简单的记为，在初始化时，“=”语句左边的是引用，右边new出来的是对象。</p>
-<p>在后面的左右都是引用的“=”语句时，左右的引用同时指向了右边引用所指向的对象。</p>
-<h2 id="JAVA中对象创建和初始化过程"><a href="#JAVA中对象创建和初始化过程" class="headerlink" title="JAVA中对象创建和初始化过程"></a>JAVA中对象创建和初始化过程</h2><p>分析一下JAVA中对象创建和初始化过程中涉及的相关概念问题，java中<strong>栈</strong>(stack)与<strong>堆</strong>(heap)，<strong>对象</strong>、<strong>引用</strong>、<strong>句柄</strong>的概念。</p>
-<h3 id="1-Java中的数据类型"><a href="#1-Java中的数据类型" class="headerlink" title="1.Java中的数据类型"></a>1.Java中的数据类型</h3><p>Java中有3个数据类型：<strong>基本数据类型</strong>(在Java中，boolean、byte、short、int、long、char、float、double这八种是基本数据类型)、<strong>引用类型</strong>和<strong>null类型</strong>。其中，<strong>引用类型包括类类型(含数组)、接口类型。（和struck有点类似哈）</strong></p>
-<p>下列语句声明了一些变量：</p>
-<p>int k ;</p>
-<p>A a; //a是A数据类型的对象变量名（仅作声明）。</p>
-<p>B b1,b2,…,b10000;// 假定B是抽象类或接口。</p>
-<p>String s;</p>
-<p>注意：从数据类型与变量的角度看，基本数据类型变量k、类类型变量a和s、抽象类或接口类型变量b(1万个)，它们都是变量(标识符)。</p>
-<h2 id="2-关于句柄-handle"><a href="#2-关于句柄-handle" class="headerlink" title="2.关于句柄(handle)"></a>2.关于句柄(handle)</h2><p>为了区别<strong>引用类型</strong>的变量标识符和<strong>基本数据类型</strong>变量标识符，我们特别的<strong>使用Handle来称呼引用类型的变量标识符</strong>。上面例子中b1至b10000、a、s都是Handle。Handle直观的看就是手柄、把手，我们采用计算机界常用的中文翻译“句柄”。</p>
-<h3 id="2-1【Windows编程中的】句柄的含义"><a href="#2-1【Windows编程中的】句柄的含义" class="headerlink" title="2.1【Windows编程中的】句柄的含义"></a>2.1【Windows编程中的】句柄的含义</h3><p>句柄是WONDOWS用来标识被应用程序所建立或使用的对象的唯一整数，WINDOWS使用各种各样的句柄标识诸如应用程序实例，窗口，控制，位图，GDI对象等等。WINDOWS句柄有点象C语言中的文件句柄。</p>
-<p>从上面的定义中的我们可以看到，句柄是一个标识符，是拿来标识对象或者项目的，它就象我们的姓名一样，每个人都会有一个，不同的人的姓名不一样，但是，也可能有一个名字和你一样的人。从数据类型上来看它只是一个16位的无符号整数。应用程序几乎总是通过调用一个WINDOWS函数来获得一个句柄，之后其他的WINDOWS函数就可以使用该句柄，以引用相应的对象。</p>
-<p>如果想更透彻一点地认识句柄，我可以告诉大家，<strong>句柄是一种指向指针的指针。我们知道，所谓指针是一种内存地址</strong>。应用程序启动后，组成这个程序的各对象是驻留在内存的。如果简单地理解，似乎我们只要获知这个内存的首地址，那么就可以随时用这个地址访问对象。但是，如果您真的这样认为，那么您就大错特错了。我们知道，Windows是一个以虚拟内存为基础的操作系统。在这种系统环境下，Windows内存管理器经常在内存中来回移动对象，依此来满足各种应用程序的内存需要。对象被移动意味着它的地址变化了。如果地址总是如此变化，我们该到哪里去找该对象呢?</p>
-<p>为了解决这个问题，Windows操作系统为各应用程序腾出一些内存储地址，用来专门登记各应用对象在内存中的地址变化，而这个地址(存储单元的位置)本身是不变的。Windows内存管理器在移动对象在内存中的位置后，把对象新的地址告知这个句柄地址来保存。这样我们只需记住这个句柄地址就可以间接地知道对象具体在内存中的哪个位置。这个地址是在对象装载(Load)时由系统分配给的，当系统卸载时(Unload)又释放给系统。</p>
-<p><strong>句柄地址(稳定)→记载着对象在内存中的地址────→对象在内存中的地址(不稳定)→实际对象</strong></p>
-<h3 id="2-2Java中句柄的意义"><a href="#2-2Java中句柄的意义" class="headerlink" title="2.2Java中句柄的意义"></a>2.2Java中句柄的意义</h3><p>对句柄以前的【Windows编程中的】含义有了深刻的认识，我们可以说Handle是一个我们学习Java时非常需要的术语。它的意义在于区别“对象本身”和对象变量(或者严格点：对象所属的数据类型的变量标识符)。</p>
-<h3 id="2-3回到1中的变量声明："><a href="#2-3回到1中的变量声明：" class="headerlink" title="2.3回到1中的变量声明："></a>2.3回到1中的变量声明：</h3><p>现在，你应该对下面的注释一目了然。</p>
-<p>int k, j ;//k里面存放的是一个整型数。</p>
-<p>A a; //a里面存放地址。</p>
-<p>B b1,b2,…,b10000;// b1，…，b10000里面存放地址。</p>
-<p>String s; //s里面存放地址。</p>
-<h2 id="3-关于引用-reference"><a href="#3-关于引用-reference" class="headerlink" title="3.关于引用(reference)"></a>3.关于引用(reference)</h2><p>什么是“引用”? “the identifier you manipulate is actually a ‘reference’ to an object”。(Thinking in Java 2e )</p>
-<p>翻译是：你操纵的标识符实际上是一个对象的“引用”。或者精确些，翻译成：你操作的标识符实际上是指向一个对象的“引用”。显然，原文中reference是一个有方向感的东西。（说为“指向”也是蛮好）</p>
-<p>回到Java中来，引用可以想象成对象的身份证号码、对象的ID或者对象的手机号码。当然，更多的说法是，引用是对象在内存中住的房间号码。直观的说，对象的引用是创建对象时的返回值!引用是new表达式的返回值。</p>
-<p>new A(); 这里真正创建了一个对象，但我们没有用句柄去持有(hold、拿着、保存)该引用。从微观上看，new表达式完成了对象初始化的任务(三步曲，下文详细分析)，整体上看则返回一个引用。</p>
-<p>再次回到1中的变量声明，再看看下面的注释。</p>
-<p>A a; //声明句柄a，但未初始化，所以里面的值为null。</p>
-<p>B b1,b2,…,b10000;// 声明句柄b1，…，b10000，但未初始化，所以里面的值为null。</p>
-<p>String s; //声明句柄s，但未初始化，所以里面的值为null。</p>
-<h2 id="4-句柄与引用的关系"><a href="#4-句柄与引用的关系" class="headerlink" title="4.句柄与引用的关系"></a>4.句柄与引用的关系</h2><p>A a;//声明句柄a，值为null</p>
-<p>a=new A();//句柄的初始化(句柄 = 引用;即把引用赋值给句柄)</p>
-<p>引用：new A()的值。引用可以简单的看作对象占据内存空间的地址;通过对象的引用，就可以方便的与其他对象区别开来，引用就是对象独特的身份标识。</p>
-<p>完成句柄的初始化后，就可以用句柄遥控对象了。</p>
-<p>当然，这只是从一方面解释对象的创建和初始化，理解了句柄和引用的关系后，下面分析对象初始化的整个过程。先做以下准备工作，说说栈与堆。</p>
-<h2 id="5-java中栈-stack-与堆-heap"><a href="#5-java中栈-stack-与堆-heap" class="headerlink" title="5.java中栈(stack)与堆(heap)"></a>5.java中栈(stack)与堆(heap)</h2><p>在java中内存分为“栈”和“堆”这两种(Stack and Heap).基本数据类型存储在“栈”中，对象引用类型实际存储在“堆”中，在栈中只是保留了引用内存的地址值。</p>
-<p>顺便说说“==”与“equals()方法”，以帮助理解两者(Stack and Heap)的概念。</p>
-<p>在Java中利用”==”比较变量时候，系统使用变量在stack(栈)中所存的值来作为对比的依据，基本数据类型在stack中所存的值就是其?容值，而引用类型在stack中所存放的值是本身所指向Heap中对象的地址值。<strong>Java.lang包中的Object类有public boolean equals (Object obj)方法。它比较两个对象是否相等。仅当被比较的两个引用指向同一对象时(句柄相等)，对象的equals()方法返回true（是对象的比较哦)</strong>。(至于String类的equals()方法，它重写(override)equals()方法，不在本文讨论之列。)</p>
-<h2 id="6-对象的创建和初始化过程"><a href="#6-对象的创建和初始化过程" class="headerlink" title="6.对象的创建和初始化过程"></a>6.对象的创建和初始化过程</h2><p>在java中对象就是类的实例。在一般情况下，当把一个类实例化时，此类的所有成员，包括变量和方法，都被复制到属于此数据类型的一个新的实例中去。分析以下两段代码。</p>
-<h3 id="6-1-Vehicle-veh1-new-Vehicle"><a href="#6-1-Vehicle-veh1-new-Vehicle" class="headerlink" title="6.1 Vehicle veh1 = new Vehicle();"></a>6.1 Vehicle veh1 = new Vehicle();</h3><p>上面的语句做了如下的事情：</p>
-<p>①右边的“new Vehicle”，是以Vehicle类为模板，在堆空间里创建一个Vehicle类对象(也简称为Vehicle对象)。</p>
-<p>②末尾的()意味着，在对象创建后，立即调用Vehicle类的构造函数，对刚生成的对象进行初始化。构造函数是肯定有的。如果没创建，Java会补上一个默认的构造函数。(一般根据类型为null，0）</p>
-<p>③左边的“Vehicle veh1”创建了一个Vehicle类引用变量。</p>
-<p>④“=”操作符使对象引用指向刚创建的那个Vehicle对象。(回想一下句柄与引用)</p>
-<p>将上面的语句分为两个步骤：</p>
-<p>Vehicle veh1;</p>
-<p>veh1 = new Vehicle();</p>
-<p>这样写，就比较清楚了，有两个实体：</p>
-<p>一是对象引用变量，一是对象本身。</p>
-<p>在堆空间里创建的实体，与在栈空间里创建的实体不同。尽管它们也是确确实实存在的实体，但是似乎很难准确的“抓”住它。我们仔细研究一下第二句，找找刚创建的对象叫什么名字?有人说，它叫“Vehicle”。不对，“Vehicle”是类(对象的创建模板)的名字。一个Vehicle类可以据此创建出无数个对象，这些对象不可能全叫“Vehicle”。对象连名都没有，没法直接访问它。我们只能通过对象引用来间接访问对象。</p>
-<h3 id="6-2-Vehicle-veh2"><a href="#6-2-Vehicle-veh2" class="headerlink" title="6.2 Vehicle veh2;"></a>6.2 Vehicle veh2;</h3><p>veh2 = veh1;</p>
-<p>由于veh1和veh2只是对对象的引用，第二行所做的不过是把veh1的引用(地址)赋值给veh2，使得veh1和veh2同时指向唯一的一个Vehicle对象。</p>
-<h3 id="6-3-veh2-new-Vehicle"><a href="#6-3-veh2-new-Vehicle" class="headerlink" title="6.3 veh2 = new Vehicle();"></a>6.3 veh2 = new Vehicle();</h3><p>则引用变量veh2改指向第二个对象。</p>
-<p>从以上叙述再推演下去，我们可以获得以下结论：①一个对象引用可以指向0个（null）或1个对象;②一个对象可以有N个引用指向它。</p>
-<p><a href="http://blog.sina.com.cn/s/blog_7ed8eb7d0101k057.html" target="_blank" rel="noopener">原文链接，稍作修改</a></p>
-
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2020/03/11/java%E4%B8%AD%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%88%9B%E5%BB%BA%EF%BC%8C%E5%88%9D%E5%A7%8B%E5%8C%96%E4%B8%8E%E5%BC%95%E7%94%A8/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -958,13 +766,13 @@ struct Node* next;
         
   
   
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
     <link itemprop="mainEntityOfPage" href="https://jefine.github.io/2020/03/01/java%E6%97%A5%E6%9C%9F%E5%A4%84%E7%90%86/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="image" content="/images/ava.jpg">
       <meta itemprop="name" content="jefine">
-      <meta itemprop="description" content="使每个人的生活多一份美好。">
+      <meta itemprop="description" content="Makes Better">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -981,22 +789,22 @@ struct Node* next;
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
               </span>
-              <span class="post-meta-item-text">发表于</span>
+              <span class="post-meta-item-text">Posted on</span>
 
-              <time title="创建时间：2020-03-01 12:00:21" itemprop="dateCreated datePublished" datetime="2020-03-01T12:00:21+08:00">2020-03-01</time>
+              <time title="Created: 2020-03-01 12:00:21" itemprop="dateCreated datePublished" datetime="2020-03-01T12:00:21+08:00">2020-03-01</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-08-10 12:09:22" itemprop="dateModified" datetime="2020-08-10T12:09:22+08:00">2020-08-10</time>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2020-08-10 12:09:22" itemprop="dateModified" datetime="2020-08-10T12:09:22+08:00">2020-08-10</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
               </span>
-              <span class="post-meta-item-text">分类于</span>
+              <span class="post-meta-item-text">In</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
                   <a href="/categories/java/" itemprop="url" rel="index">
                     <span itemprop="name">java</span>
@@ -1028,40 +836,14 @@ struct Node* next;
 
       
           <p> Java处理日期、日历和时间的方式一直被人所诟病，将 java.util.Date设定为可变类型，以及SimpleDateFormat的非线程安全使其应用非常受限。</p>
-<p>新API基于ISO标准日历系统，java.time包下的所有类都是不可变类型而且线程安全。</p>
-<p>(因为更安全，不可变了，所以就需要每一个日期搞一个变量（实例？）</p>
-<p><a href="https://mp.weixin.qq.com/s/AGkp_0l_hvMye8QVOBlxwQ" target="_blank" rel="noopener">18 个 Java8 日期处理的实践，太有用了！</a></p>
-<p><a href="https://www.notion.so/6ebff548541544f5a9ba2d6328513ee1" target="_blank" rel="noopener">java.time包</a></p>
-<h2 id="示例1-Java-8中获取今天的日期"><a href="#示例1-Java-8中获取今天的日期" class="headerlink" title="示例1:Java 8中获取今天的日期"></a>示例1:Java 8中获取今天的日期</h2><p>Java 8 中的 LocalDate 用于表示当天日期。和java.util.Date不同，它只有日期，不包含时间。当你仅需要表示日期时就用这个类。</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.time.*;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">dealWithTime</span></span></span><br><span class="line"><span class="class"></span>&#123; </span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span> <span class="params">(String[] args)</span> </span></span><br><span class="line"><span class="function">	</span>&#123; </span><br><span class="line">        LocalDate today = LocalDate.now();</span><br><span class="line">        System.out.println(<span class="string">"today is:"</span>+today);</span><br><span class="line">  </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//output:</span></span><br><span class="line"><span class="comment">//today is:2020-02-29</span></span><br></pre></td></tr></table></figure>
-<p>而如果需要将年月日信息分开：那么我们可以利用上面的today继续操作；</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.time.*;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">dealWithTime</span></span></span><br><span class="line"><span class="class"></span>&#123; </span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span> <span class="params">(String[] args)</span> </span></span><br><span class="line"><span class="function">	</span>&#123; </span><br><span class="line">        LocalDate today = LocalDate.now();</span><br><span class="line">        System.out.println(<span class="string">"today is:"</span>+today);</span><br><span class="line">        <span class="keyword">int</span> year = today.getYear();</span><br><span class="line">        <span class="keyword">int</span> month = today.getMonthValue();</span><br><span class="line">        <span class="keyword">int</span> day = today.getDayOfMonth();</span><br><span class="line">        System.out.println(<span class="string">""</span>+year+month+day);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>注意：其中还有getMonth()，返回的是一个枚举month里的值（是“FEBRUARY”这种）</p>
-<p>而getMonthValue（）则返回一个值（2）所以我们还能发现许多这样的用法，比如day_of_year()等</p>
-<h2 id="示例2：自定义日期："><a href="#示例2：自定义日期：" class="headerlink" title="示例2：自定义日期："></a>示例2：自定义日期：</h2><p>我们通过静态工厂方法now()非常容易地创建了当天的日期，我们还可以调用另一个有用的工厂方法<strong>LocalDate.of()</strong>创建任意日期， 该方法需要<strong>传入年、月、日做参数，返回对应的LocalDate实例。</strong>这个方法的好处是没再犯老API的设计错误（而且我们也可以使用localDate的方法了），比如年度起始于1900，月份是从0开 始等等（这些问题就不提了哎，文末可能会吐槽一下，并演示一下有多么讨厌）。</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.time.*;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">dealWithTime</span></span></span><br><span class="line"><span class="class"></span>&#123; </span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span> <span class="params">(String[] args)</span> </span></span><br><span class="line"><span class="function">	</span>&#123; </span><br><span class="line">        LocalDate fakeDate = LocalDate.of(<span class="number">2020</span>,<span class="number">2</span>,<span class="number">28</span>);</span><br><span class="line">        System.out.println(<span class="string">"yesterday is:"</span>+fakeDate);</span><br><span class="line">        </span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//output：</span></span><br><span class="line"><span class="comment">//yesterday is:2020-02-28</span></span><br></pre></td></tr></table></figure>
-<h2 id="示例三：判断两个日期是否相同使用-equals"><a href="#示例三：判断两个日期是否相同使用-equals" class="headerlink" title="示例三：判断两个日期是否相同使用.equals()"></a>示例三：判断两个日期是否相同使用.equals()</h2><h2 id="示例四：检查像生日这种周期性事件：MonthDay："><a href="#示例四：检查像生日这种周期性事件：MonthDay：" class="headerlink" title="示例四：检查像生日这种周期性事件：MonthDay："></a>示例四：检查像生日这种周期性事件：MonthDay：</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.time.*;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">dealWithTime</span></span></span><br><span class="line"><span class="class"></span>&#123; </span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span> <span class="params">(String[] args)</span> </span></span><br><span class="line"><span class="function">	</span>&#123;   LocalDate date1 = LocalDate.now();</span><br><span class="line">        LocalDate date = LocalDate.of(<span class="number">2020</span>,<span class="number">2</span>,<span class="number">28</span>);</span><br><span class="line">        MonthDay birthday = MonthDay.of(date.getMonthValue(),date.getDayOfMonth());</span><br><span class="line">        MonthDay nowMonthDay = MonthDay.now();</span><br><span class="line">        <span class="keyword">if</span>(nowMonthDay.equals(birthday))</span><br><span class="line">        System.out.println(<span class="string">"yes"</span>);</span><br><span class="line">        <span class="keyword">else</span> System.out.println(<span class="string">"nonono"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//output：</span></span><br><span class="line"><span class="comment">//nonono</span></span><br></pre></td></tr></table></figure>
-<p>注意在这里getMonthValue（）和getMonth（）都是可以使用的。</p>
-<h1 id="说完日期，说说时间："><a href="#说完日期，说说时间：" class="headerlink" title="说完日期，说说时间："></a>说完日期，说说时间：</h1><h2 id="示例五：获取当前时间"><a href="#示例五：获取当前时间" class="headerlink" title="示例五：获取当前时间"></a>示例五：获取当前时间</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.time.*;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">dealWithTime</span></span></span><br><span class="line"><span class="class"></span>&#123; </span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span> <span class="params">(String[] args)</span> </span></span><br><span class="line"><span class="function">	</span>&#123;</span><br><span class="line">        LocalTime now = LocalTime.now();</span><br><span class="line">        System.out.println(now);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//output：</span></span><br><span class="line"><span class="number">19</span>:<span class="number">27</span>:<span class="number">01.708</span></span><br></pre></td></tr></table></figure>
-<p>这个时间的精度。。可以了</p>
-<h2 id="示例六：计算一段时间前-后的时间-plus-val-ChronoUnit-WEEKS"><a href="#示例六：计算一段时间前-后的时间-plus-val-ChronoUnit-WEEKS" class="headerlink" title="示例六：计算一段时间前/后的时间.plus(val,ChronoUnit.WEEKS)"></a>示例六：计算一段时间前/后的时间.plus(val,ChronoUnit.WEEKS)</h2><p>/.minus(val,ChronoUnit.WEEKS))</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.time.*;</span><br><span class="line"><span class="keyword">import</span> java.time.temporal.ChronoUnit;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">dealWithTime</span></span></span><br><span class="line"><span class="class"></span>&#123; </span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span> <span class="params">(String[] args)</span> </span></span><br><span class="line"><span class="function">	</span>&#123;</span><br><span class="line">        LocalDate now = LocalDate.now();</span><br><span class="line">        LocalDate after = now.plus(<span class="number">1</span>,ChronoUnit.WEEKS);</span><br><span class="line"></span><br><span class="line">        System.out.println(after);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>这里是日期，那么就要用localDate了</p>
-<h2 id="示例七-Java-8的Clock时钟类"><a href="#示例七-Java-8的Clock时钟类" class="headerlink" title="示例七:Java 8的Clock时钟类"></a>示例七:Java 8的Clock时钟类</h2><p>Java 8增加了一个Clock时钟类用于获取当时的时间戳，或当前时区下的日期时间信息。以前用到System.currentTimeInMillis()和TimeZone.getDefault()的地方都可用Clock替换</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.time.*;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">dealWithTime</span></span></span><br><span class="line"><span class="class"></span>&#123; </span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span> <span class="params">(String[] args)</span> </span></span><br><span class="line"><span class="function">	</span>&#123;</span><br><span class="line">        Clock clock = Clock.systemUTC();</span><br><span class="line">        System.out.println(<span class="string">"Clock : "</span> + clock.instant());</span><br><span class="line">        System.out.println(<span class="string">"Clock : "</span> + clock.millis());</span><br><span class="line">        <span class="comment">// Returns time based on system clock zone</span></span><br><span class="line">        Clock defaultClock = Clock.systemDefaultZone();</span><br><span class="line">        System.out.println(<span class="string">"Clock : "</span> + defaultClock.millis());</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//output：</span></span><br><span class="line"><span class="comment">//Clock : 2020-03-01T03:06:27.520Z</span></span><br><span class="line"><span class="comment">//Clock : 1583031987647</span></span><br><span class="line"><span class="comment">//Clock : 1583031987687</span></span><br></pre></td></tr></table></figure>
-<h2 id="示例八-如何用Java判断日期是早于还是晚于另一个日期"><a href="#示例八-如何用Java判断日期是早于还是晚于另一个日期" class="headerlink" title="示例八:如何用Java判断日期是早于还是晚于另一个日期"></a>示例八:如何用Java判断日期是早于还是晚于另一个日期</h2><p>另一个工作中常见的操作就是如何判断给定的一个日期是大于某天还是小于某天？在Java 8中，LocalDate类有两类方法isBefore()和isAfter()用于比较日期。调用isBefore()方法时，如果给定日期小于当前日期则返回true。当然也可判断是否日期相同。</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.time.*;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">dealWithTime</span></span></span><br><span class="line"><span class="class"></span>&#123; </span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span> <span class="params">(String[] args)</span> </span></span><br><span class="line"><span class="function">	</span>&#123;</span><br><span class="line">        LocalDate today = LocalDate.now();</span><br><span class="line">        LocalDate fakeDate = LocalDate.of(<span class="number">2019</span>, <span class="number">2</span>, <span class="number">1</span>);</span><br><span class="line">        <span class="keyword">if</span>(fakeDate.isBefore(today))</span><br><span class="line">        &#123;</span><br><span class="line">            System.out.print(<span class="string">"yes"</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span> System.out.print(<span class="string">"nono"</span>);</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//output：</span></span><br><span class="line"><span class="comment">//yes</span></span><br></pre></td></tr></table></figure>
-<h2 id="示例九-Java-8中处理时区"><a href="#示例九-Java-8中处理时区" class="headerlink" title="示例九:Java 8中处理时区"></a>示例九:Java 8中处理时区</h2><p>Java 8不仅分离了日期和时间，也把时区分离出来了。现在有一系列单独的类如ZoneId来处理特定时区，ZoneDateTime类来表示某时区下的时间。这在Java 8以前都是 GregorianCalendar类来做的。下面这个例子展示了如何把本时区的时间转换成另一个时区的时间。</p>
-<p><strong>其他：同样也可以检查闰年，独立的年月计算两个日期之间天数（between）</strong></p>
-<h2 id="示例十：Java-8中如何使用预定义的格式化工具去解析或格式化日期"><a href="#示例十：Java-8中如何使用预定义的格式化工具去解析或格式化日期" class="headerlink" title="示例十：Java 8中如何使用预定义的格式化工具去解析或格式化日期"></a>示例十：Java 8中如何使用预定义的格式化工具去解析或格式化日期</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.time.*;</span><br><span class="line"><span class="keyword">import</span> java.time.format.DateTimeFormatter;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">dealWithTime</span></span></span><br><span class="line"><span class="class"></span>&#123; </span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span> <span class="params">(String[] args)</span> </span></span><br><span class="line"><span class="function">	</span>&#123;</span><br><span class="line">        String dayAfterTommorrow = <span class="string">"20200302"</span>;</span><br><span class="line">        LocalDate formatted = LocalDate.parse(dayAfterTommorrow,DateTimeFormatter.BASIC_ISO_DATE);</span><br><span class="line">        System.out.println(dayAfterTommorrow+<span class="string">"  格式化后的日期为:  "</span>+formatted);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//output：</span></span><br><span class="line"><span class="comment">//20200302  格式化后的日期为:  2020-03-02</span></span><br></pre></td></tr></table></figure>
-<h2 id="示例十一：字符串互转日期类型"><a href="#示例十一：字符串互转日期类型" class="headerlink" title="示例十一：字符串互转日期类型"></a>示例十一：字符串互转日期类型</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.time.*;</span><br><span class="line"><span class="keyword">import</span> java.time.format.DateTimeFormatter;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">dealWithTime</span></span></span><br><span class="line"><span class="class"></span>&#123; </span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span> <span class="params">(String[] args)</span> </span></span><br><span class="line"><span class="function">	</span>&#123;</span><br><span class="line">        LocalDateTime date = LocalDateTime.now();</span><br><span class="line"></span><br><span class="line">        DateTimeFormatter format1 = DateTimeFormatter.ofPattern(<span class="string">"yyyy/MM/dd hh:mm:ss"</span>);</span><br><span class="line">    <span class="comment">//日期转字符串</span></span><br><span class="line">        String str = date.format(format1);</span><br><span class="line"></span><br><span class="line">        System.out.println(<span class="string">"日期转换为字符串:"</span>+str);</span><br><span class="line"></span><br><span class="line">        DateTimeFormatter format2 = DateTimeFormatter.ofPattern(<span class="string">"yyyy/MM/dd HH:mm:ss"</span>);</span><br><span class="line">    <span class="comment">//字符串转日期</span></span><br><span class="line">        LocalDate date2 = LocalDate.parse(str,format2);</span><br><span class="line">        System.out.println(<span class="string">"日期类型:"</span>+date2);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//output：</span></span><br><span class="line"><span class="comment">//日期转换为字符串:2020/03/01 11:44:03</span></span><br><span class="line"><span class="comment">//日期类型:2020-03-01</span></span><br></pre></td></tr></table></figure>
-<p>如果我们将str的内容更换一下，只要format的内容一致：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.time.*;</span><br><span class="line"><span class="keyword">import</span> java.time.format.DateTimeFormatter;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">dealWithTime</span></span></span><br><span class="line"><span class="class"></span>&#123; </span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span> <span class="params">(String[] args)</span> </span></span><br><span class="line"><span class="function">	</span>&#123;</span><br><span class="line">        String str = <span class="string">"20190112120101"</span>;</span><br><span class="line"></span><br><span class="line">        DateTimeFormatter format2 = DateTimeFormatter.ofPattern(<span class="string">"yyyyMMddHHmmss"</span>);</span><br><span class="line">    <span class="comment">//字符串转日期</span></span><br><span class="line">        LocalDate date2 = LocalDate.parse(str,format2);</span><br><span class="line">        System.out.println(<span class="string">"日期类型:"</span>+date2);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//output：</span></span><br><span class="line"><span class="comment">//日期类型:2019-01-12</span></span><br></pre></td></tr></table></figure>
-<p>在这其中我们还是有很多可以去挖掘的。。。</p>
-<p>对了，最后吐槽一下</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">dealWithTime</span></span></span><br><span class="line"><span class="class"></span>&#123; </span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span> <span class="params">(String[] args)</span> </span></span><br><span class="line"><span class="function">	</span>&#123;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">long</span> t = System.currentTimeMillis();</span><br><span class="line"></span><br><span class="line">        System.out.println(t);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>这玩意返回的必须是long类型但是把现在也用不到。返回的时间是距离1970年一月一日零点零分的毫秒数。。</p>
-
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2020/03/01/java%E6%97%A5%E6%9C%9F%E5%A4%84%E7%90%86/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -1079,13 +861,13 @@ struct Node* next;
         
   
   
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
     <link itemprop="mainEntityOfPage" href="https://jefine.github.io/2020/02/29/P1023%E7%A8%8E%E6%94%B6%E4%B8%8E%E8%A1%A5%E8%B4%B4%E9%97%AE%E9%A2%98/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="image" content="/images/ava.jpg">
       <meta itemprop="name" content="jefine">
-      <meta itemprop="description" content="使每个人的生活多一份美好。">
+      <meta itemprop="description" content="Makes Better">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -1102,16 +884,16 @@ struct Node* next;
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
               </span>
-              <span class="post-meta-item-text">发表于</span>
+              <span class="post-meta-item-text">Posted on</span>
               
 
-              <time title="创建时间：2020-02-29 12:26:23 / 修改时间：12:44:02" itemprop="dateCreated datePublished" datetime="2020-02-29T12:26:23+08:00">2020-02-29</time>
+              <time title="Created: 2020-02-29 12:26:23 / Modified: 12:44:02" itemprop="dateCreated datePublished" datetime="2020-02-29T12:26:23+08:00">2020-02-29</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
               </span>
-              <span class="post-meta-item-text">分类于</span>
+              <span class="post-meta-item-text">In</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
                   <a href="/categories/%E7%BC%96%E7%A8%8B/" itemprop="url" rel="index">
                     <span itemprop="name">编程</span>
@@ -1143,31 +925,14 @@ struct Node* next;
 
       
           <h2 id="题目背景"><a href="#题目背景" class="headerlink" title="题目背景"></a>题目背景</h2><p>每样商品的价格越低，其销量就会相应增大。现已知某种商品的成本及其在若干价位上的销量（产品不会低于成本销售），并假设相邻价位间销量的变化是线性的且在价格高于给定的最高价位后，销量以某固定数值递减。（我们假设价格及销售量都是整数）</p>
-<p>对于某些特殊商品，不可能完全由市场去调节其价格。这时候就需要政府以税收或补贴的方式来控制。（所谓税收或补贴就是对于每个产品收取或给予生产厂家固定金额的货币）</p>
-<h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><p>你是某家咨询公司的项目经理，现在你已经知道政府对某种商品的预期价格，以及在各种价位上的销售情况。要求你确定政府对此商品是应收税还是补贴的最少金额（也为整数），才能使商家在这样一种政府预期的价格上，获取相对其他价位上的最大总利润。</p>
-<p>总利润=单位商品利润   × × 销量</p>
-<p>单位商品利润=单位商品价格 - 单位商品成本 （- 税金  or  + 补贴）</p>
-<h2 id="输入格式"><a href="#输入格式" class="headerlink" title="输入格式"></a>输入格式</h2><p>输入的第一行为政府对某种商品的预期价，第二行有两个整数，第一个整数为商品成本，第二个整数为以成本价销售时的销售量，以下若干行每行都有两个整数，第一个为某价位时的单价，第二个为此时的销量，以一行−1-1−1，−1-1−1表示所有已知价位及对应的销量输入完毕，输入的最后一行为一个单独的整数表示在已知的最高单价外每升高一块钱将减少的销量。</p>
-<h2 id="输出格式"><a href="#输出格式" class="headerlink" title="输出格式"></a>输出格式</h2><p>输出有两种情况：若在政府预期价上能得到最大总利润，则输出一个单独的整数，数的正负表示是补贴还是收税，数的大小表示补贴或收税的金额最小值。若有多解，取绝对值最小的输出。</p>
-<p>如在政府预期价上不能得到最大总利润，则输出“NO SOLUTION”。</p>
-<h2 id="输入输出样例"><a href="#输入输出样例" class="headerlink" title="输入输出样例"></a>输入输出样例</h2><p><strong>输入 #1</strong> </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">31</span><br><span class="line">28 130</span><br><span class="line">30 120</span><br><span class="line">31 110</span><br><span class="line">-1  -1</span><br><span class="line">15</span><br></pre></td></tr></table></figure>
-<p><strong>输出 #1</strong> </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">4</span><br></pre></td></tr></table></figure>
-<h2 id="说明-提示"><a href="#说明-提示" class="headerlink" title="说明/提示"></a>说明/提示</h2><p>所有数字均小于100000</p>
-<h1 id="解题思路："><a href="#解题思路：" class="headerlink" title="解题思路："></a>解题思路：</h1><h3 id="tips：说实话，这个题目看了很久。。。"><a href="#tips：说实话，这个题目看了很久。。。" class="headerlink" title="tips：说实话，这个题目看了很久。。。"></a>tips：说实话，这个题目看了很久。。。</h3><p>最后，发现所求的是什么了。是要求政府给定一个预期的价格，然后你去尝试不同的补贴或者税收，得到他们的利润，并<strong>看看在每种税收或补贴下总利润最高的价格是不是政府预期价</strong> 。（可以好好思考一下这句，那么我们就计算出不同补贴或税收下，利润最大的价格，再比较）</p>
-<p>（最后，好像没有不符合条件的，所以不用管。。。）</p>
-<p>那么：</p>
-<ol>
-<li><p>我们可以先将购买者的价格和所对应的销量全部存起来，但这又有两个问题：</p>
-<p>1）在题目给出的价格和销量之间，销量是随价格线性变化的，我们可通过计算得出期间的对应价格与销量，并都储存起来。（具体实施方法见代码）即 价格-销量表。 </p>
-<p>2）再输入的最后给定了之后的销量减少值，我们就可以从中得到其后，一直到销量小于0的对应关系，并储存起来。</p>
-</li>
-<li><p>最后再根据不同的补贴（税收）（用一个循环从1开始跑到10000）依次计算其最大利润，并比较在该最大利润的价格是否与政府的价格相同。</p>
-</li>
-</ol>
-<h2 id="代码："><a href="#代码：" class="headerlink" title="代码："></a>代码：</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//代码来源：https://www.luogu.com.cn/user/174034</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">int</span> a[<span class="number">100010</span>][<span class="number">3</span>];<span class="comment">//用于存放价格和销量的数组</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> i=<span class="number">1</span>,j=<span class="number">1</span>,k,expect,down,<span class="built_in">max</span>,temp,cha,xl,num,s,price,p;</span><br><span class="line">    <span class="built_in">cin</span>&gt;&gt;expect;<span class="comment">//读入预期价</span></span><br><span class="line">    <span class="keyword">while</span>(<span class="built_in">cin</span>&gt;&gt;a[i][<span class="number">1</span>]&gt;&gt;a[i][<span class="number">2</span>]&amp;&amp;a[i][<span class="number">1</span>]!=<span class="number">-1</span>&amp;&amp;a[i] [<span class="number">2</span>]!=<span class="number">-1</span>)<span class="comment">//如果输入的两个数不是-1，-1</span></span><br><span class="line">    &#123;</span><br><span class="line">        i++;<span class="comment">//循环变量i++</span></span><br><span class="line">        <span class="keyword">if</span>(i&gt;<span class="number">2</span>&amp;&amp;a[i<span class="number">-1</span>][<span class="number">1</span>]-a[i<span class="number">-2</span>][<span class="number">1</span>]&gt;<span class="number">1</span>)<span class="comment">//如果两个价格之间差大于一</span></span><br><span class="line">        &#123;</span><br><span class="line">            i--;<span class="comment">//回到上一个读入的销量</span></span><br><span class="line">            cha=(a[i<span class="number">-1</span>][<span class="number">2</span>]-a[i][<span class="number">2</span>])/(a[i][<span class="number">1</span>]-a[i<span class="number">-1</span>][<span class="number">1</span>]);<span class="comment">//求出每次销量减少多少：销量差/价格差</span></span><br><span class="line">            temp=a[i][<span class="number">1</span>];<span class="comment">//记录下价格</span></span><br><span class="line">            <span class="keyword">for</span>(j=a[i<span class="number">-1</span>][<span class="number">1</span>]+<span class="number">1</span>;j&lt;=temp;j++)<span class="comment">//按价格递增顺序依次写入</span></span><br><span class="line">            &#123;</span><br><span class="line">                a[i][<span class="number">1</span>]=j;<span class="comment">//写入价格</span></span><br><span class="line">                a[i][<span class="number">2</span>]=a[i<span class="number">-1</span>][<span class="number">2</span>]-cha;<span class="comment">//按销量差写入销量</span></span><br><span class="line">                i++;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">cin</span>&gt;&gt;down;<span class="comment">//输入超过最大价格之后每次销量降低多少</span></span><br><span class="line">    i--;<span class="comment">//因为上面的while循环最后有i++所以用i--抵消……</span></span><br><span class="line">    xl=a[i][<span class="number">2</span>];<span class="comment">//记录目前的销量</span></span><br><span class="line">    <span class="keyword">while</span>(xl&gt;<span class="number">0</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span>(xl-down&lt;<span class="number">0</span>)<span class="keyword">break</span>;<span class="comment">//如销量小于零则退出</span></span><br><span class="line">        <span class="keyword">else</span><span class="comment">//否则</span></span><br><span class="line">        &#123;</span><br><span class="line">            xl-=down;<span class="comment">//销量每次减掉down</span></span><br><span class="line">            i++;<span class="comment">//循环变量++</span></span><br><span class="line">            a[i][<span class="number">1</span>]=a[i<span class="number">-1</span>][<span class="number">1</span>]+<span class="number">1</span>;<span class="comment">//每次价格+1</span></span><br><span class="line">            a[i][<span class="number">2</span>]=xl;<span class="comment">//销量就是xl</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span>(j=<span class="number">1</span>;j&lt;=<span class="number">10000</span>;j++)<span class="comment">//该遍历了，因为收税相当于补贴*-1所以记录一下符号即可</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">max</span>=<span class="number">-99999</span>;<span class="comment">//用于存储最大的总利润</span></span><br><span class="line">        <span class="keyword">for</span>(k=<span class="number">1</span>;k&lt;=i;k++)<span class="comment">//每次扫一遍每一种价格</span></span><br><span class="line">        &#123;</span><br><span class="line">            num=(a[k][<span class="number">1</span>]-a[<span class="number">1</span>][<span class="number">1</span>]+j)*a[k][<span class="number">2</span>];<span class="comment">//套公式算出总利润</span></span><br><span class="line">            <span class="keyword">if</span>(num&gt;=<span class="built_in">max</span>)<span class="comment">//如果总利润比目前最大的大</span></span><br><span class="line">            &#123;</span><br><span class="line">                <span class="built_in">max</span>=num;<span class="comment">//更新max</span></span><br><span class="line">                price=a[k][<span class="number">1</span>];<span class="comment">//记录下价格</span></span><br><span class="line">                p=<span class="number">1</span>;<span class="comment">//记录下符号</span></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(price==expect)&#123;<span class="built_in">cout</span>&lt;&lt;j*p;<span class="keyword">return</span> <span class="number">0</span>;&#125;<span class="comment">//如果价格就是政府预期价则打印出来，因为本身就是从小到大遍历所以不用求绝对值最小的</span></span><br><span class="line">        <span class="built_in">max</span>=<span class="number">-99999</span>;<span class="comment">//后面是收税，原理同上</span></span><br><span class="line">        <span class="keyword">for</span>(k=<span class="number">1</span>;k&lt;=i;k++)</span><br><span class="line">        &#123;</span><br><span class="line">            num=(a[k][<span class="number">1</span>]-a[<span class="number">1</span>][<span class="number">1</span>]-j)*a[k][<span class="number">2</span>];</span><br><span class="line">            <span class="keyword">if</span>(num&gt;=<span class="built_in">max</span>)</span><br><span class="line">            &#123;</span><br><span class="line">               <span class="built_in">max</span>=num;</span><br><span class="line">                price=a[k][<span class="number">1</span>];  </span><br><span class="line">                p=<span class="number">-1</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(price==expect)&#123;<span class="built_in">cout</span>&lt;&lt;j*p;<span class="keyword">return</span> <span class="number">0</span>;&#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2020/02/29/P1023%E7%A8%8E%E6%94%B6%E4%B8%8E%E8%A1%A5%E8%B4%B4%E9%97%AE%E9%A2%98/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -1185,13 +950,13 @@ struct Node* next;
         
   
   
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
     <link itemprop="mainEntityOfPage" href="https://jefine.github.io/2020/02/28/%E6%A6%82%E8%BF%B0STL/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="image" content="/images/ava.jpg">
       <meta itemprop="name" content="jefine">
-      <meta itemprop="description" content="使每个人的生活多一份美好。">
+      <meta itemprop="description" content="Makes Better">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -1208,22 +973,22 @@ struct Node* next;
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
               </span>
-              <span class="post-meta-item-text">发表于</span>
+              <span class="post-meta-item-text">Posted on</span>
 
-              <time title="创建时间：2020-02-28 13:27:31" itemprop="dateCreated datePublished" datetime="2020-02-28T13:27:31+08:00">2020-02-28</time>
+              <time title="Created: 2020-02-28 13:27:31" itemprop="dateCreated datePublished" datetime="2020-02-28T13:27:31+08:00">2020-02-28</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-08-10 12:08:28" itemprop="dateModified" datetime="2020-08-10T12:08:28+08:00">2020-08-10</time>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2020-08-10 12:08:28" itemprop="dateModified" datetime="2020-08-10T12:08:28+08:00">2020-08-10</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
               </span>
-              <span class="post-meta-item-text">分类于</span>
+              <span class="post-meta-item-text">In</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
                   <a href="/categories/%E7%AE%97%E6%B3%95/" itemprop="url" rel="index">
                     <span itemprop="name">算法</span>
@@ -1258,7 +1023,7 @@ struct Node* next;
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2020/02/28/%E6%A6%82%E8%BF%B0STL/#more" rel="contents">
-                阅读全文 &raquo;
+                Read more &raquo;
               </a>
             </div>
           <!--/noindex-->
@@ -1280,13 +1045,13 @@ struct Node* next;
         
   
   
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
     <link itemprop="mainEntityOfPage" href="https://jefine.github.io/2020/02/27/stlvector/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="image" content="/images/ava.jpg">
       <meta itemprop="name" content="jefine">
-      <meta itemprop="description" content="使每个人的生活多一份美好。">
+      <meta itemprop="description" content="Makes Better">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -1303,22 +1068,22 @@ struct Node* next;
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
               </span>
-              <span class="post-meta-item-text">发表于</span>
+              <span class="post-meta-item-text">Posted on</span>
 
-              <time title="创建时间：2020-02-27 17:27:29" itemprop="dateCreated datePublished" datetime="2020-02-27T17:27:29+08:00">2020-02-27</time>
+              <time title="Created: 2020-02-27 17:27:29" itemprop="dateCreated datePublished" datetime="2020-02-27T17:27:29+08:00">2020-02-27</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-08-10 12:11:20" itemprop="dateModified" datetime="2020-08-10T12:11:20+08:00">2020-08-10</time>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2020-08-10 12:11:20" itemprop="dateModified" datetime="2020-08-10T12:11:20+08:00">2020-08-10</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
               </span>
-              <span class="post-meta-item-text">分类于</span>
+              <span class="post-meta-item-text">In</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
                   <a href="/categories/%E7%AE%97%E6%B3%95/" itemprop="url" rel="index">
                     <span itemprop="name">算法</span>
@@ -1354,7 +1119,7 @@ struct Node* next;
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2020/02/27/stlvector/#more" rel="contents">
-                阅读全文 &raquo;
+                Read more &raquo;
               </a>
             </div>
           <!--/noindex-->
@@ -1377,7 +1142,7 @@ struct Node* next;
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/3/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
+    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left" aria-label="Previous page"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/3/"><i class="fa fa-angle-right" aria-label="Next page"></i></a>
   </nav>
 
 
@@ -1399,10 +1164,10 @@ struct Node* next;
 
       <ul class="sidebar-nav motion-element">
         <li class="sidebar-nav-toc">
-          文章目录
+          Table of Contents
         </li>
         <li class="sidebar-nav-overview">
-          站点概览
+          Overview
         </li>
       </ul>
 
@@ -1414,9 +1179,9 @@ struct Node* next;
       <div class="site-overview-wrap sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
   <img class="site-author-image" itemprop="image" alt="jefine"
-    src="/images/avatar.gif">
+    src="/images/ava.jpg">
   <p class="site-author-name" itemprop="name">jefine</p>
-  <div class="site-description" itemprop="description">使每个人的生活多一份美好。</div>
+  <div class="site-description" itemprop="description">Makes Better</div>
 </div>
 <div class="site-state-wrap motion-element">
   <nav class="site-state">
@@ -1424,26 +1189,26 @@ struct Node* next;
           <a href="/archives/">
         
           <span class="site-state-item-count">49</span>
-          <span class="site-state-item-name">日志</span>
+          <span class="site-state-item-name">posts</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
         <span class="site-state-item-count">9</span>
-        <span class="site-state-item-name">分类</span></a>
+        <span class="site-state-item-name">categories</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
         <span class="site-state-item-count">23</span>
-        <span class="site-state-item-name">标签</span></a>
+        <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
 </div>
   <div class="links-of-author motion-element">
       <span class="links-of-author-item">
-        <a href="https://github.com/jefine" title="GitHub &amp;rarr; https:&#x2F;&#x2F;github.com&#x2F;jefine" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+        <a href="https://github.com/jefine" title="GitHub &amp;rarr; https:&#x2F;&#x2F;github.com&#x2F;jefine" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i></a>
       </span>
   </div>
 

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
@@ -20,11 +20,11 @@
   var NexT = window.NexT || {};
   var CONFIG = {
     root: '/',
-    scheme: 'Muse',
+    scheme: 'Mist',
     version: '7.5.0',
     exturl: false,
     sidebar: {"position":"left","display":"hide","offset":12,"onmobile":true},
-    copycode: {"enable":true,"show_result":true,"style":null},
+    copycode: {"enable":true,"show_result":true,"style":"mac"},
     back2top: {"enable":true,"sidebar":false,"scrollpercent":false},
     bookmark: {"enable":false,"color":"#222","save":"auto"},
     fancybox: false,
@@ -42,21 +42,21 @@
     path: 'search.xml',
     motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
     translation: {
-      copy_button: '复制',
-      copy_success: '复制成功',
-      copy_failure: '复制失败'
+      copy_button: 'Copy',
+      copy_success: 'Copied',
+      copy_failure: 'Copy failed'
     },
     sidebarPadding: 40
   };
 </script>
 
-  <meta name="description" content="使每个人的生活多一份美好。">
+  <meta name="description" content="Makes Better">
 <meta property="og:type" content="website">
 <meta property="og:title" content="jefine">
 <meta property="og:url" content="https:&#x2F;&#x2F;jefine.github.io&#x2F;page&#x2F;4&#x2F;index.html">
 <meta property="og:site_name" content="jefine">
-<meta property="og:description" content="使每个人的生活多一份美好。">
-<meta property="og:locale" content="zh-CN">
+<meta property="og:description" content="Makes Better">
+<meta property="og:locale" content="en">
 <meta name="twitter:card" content="summary">
 
 <link rel="canonical" href="https://jefine.github.io/page/4/">
@@ -112,7 +112,7 @@
 
     <header class="header" itemscope itemtype="http://schema.org/WPHeader">
       <div class="header-inner"><div class="site-brand-container">
-  <div class="site-meta">
+  <div class="site-meta custom-logo">
 
     <div>
       <a href="/" class="brand" rel="start">
@@ -125,7 +125,7 @@
   </div>
 
   <div class="site-nav-toggle">
-    <div class="toggle" aria-label="切换导航栏">
+    <div class="toggle" aria-label="Toggle navigation bar">
       <span class="toggle-line toggle-line-first"></span>
       <span class="toggle-line toggle-line-middle"></span>
       <span class="toggle-line toggle-line-last"></span>
@@ -139,31 +139,31 @@
   <ul id="menu" class="menu">
         <li class="menu-item menu-item-home">
 
-    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>首页</a>
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>Home</a>
 
   </li>
         <li class="menu-item menu-item-about">
 
-    <a href="/about/" rel="section"><i class="fa fa-fw fa-user"></i>关于</a>
+    <a href="/about/" rel="section"><i class="fa fa-fw fa-user"></i>About</a>
 
   </li>
         <li class="menu-item menu-item-tags">
 
-    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>标签</a>
+    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>Tags<span class="badge">23</span></a>
 
   </li>
         <li class="menu-item menu-item-categories">
 
-    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>分类</a>
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>Categories<span class="badge">9</span></a>
 
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档</a>
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>Archives<span class="badge">49</span></a>
 
   </li>
       <li class="menu-item menu-item-search">
-        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
         </a>
       </li>
   </ul>
@@ -177,7 +177,7 @@
   </span>
   <div class="search-input-container">
     <input autocomplete="off" autocorrect="off" autocapitalize="none"
-           placeholder="搜索..." spellcheck="false"
+           placeholder="Searching..." spellcheck="false"
            type="text" id="search-input">
   </div>
   <span class="popup-btn-close">
@@ -212,13 +212,13 @@
         
   
   
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
     <link itemprop="mainEntityOfPage" href="https://jefine.github.io/2020/01/19/%E5%B0%8F%E8%AE%B0%EF%BC%9A%E4%B8%80%E6%AC%A1%E6%99%AE%E9%80%9A%E5%BE%AA%E8%BF%B9%E8%BD%A6%E5%A4%A7%E8%B5%9B/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="image" content="/images/ava.jpg">
       <meta itemprop="name" content="jefine">
-      <meta itemprop="description" content="使每个人的生活多一份美好。">
+      <meta itemprop="description" content="Makes Better">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -235,22 +235,22 @@
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
               </span>
-              <span class="post-meta-item-text">发表于</span>
+              <span class="post-meta-item-text">Posted on</span>
 
-              <time title="创建时间：2020-01-19 17:42:12" itemprop="dateCreated datePublished" datetime="2020-01-19T17:42:12+08:00">2020-01-19</time>
+              <time title="Created: 2020-01-19 17:42:12" itemprop="dateCreated datePublished" datetime="2020-01-19T17:42:12+08:00">2020-01-19</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-08-10 12:09:10" itemprop="dateModified" datetime="2020-08-10T12:09:10+08:00">2020-08-10</time>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2020-08-10 12:09:10" itemprop="dateModified" datetime="2020-08-10T12:09:10+08:00">2020-08-10</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
               </span>
-              <span class="post-meta-item-text">分类于</span>
+              <span class="post-meta-item-text">In</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
                   <a href="/categories/record/" itemprop="url" rel="index">
                     <span itemprop="name">record</span>
@@ -288,7 +288,7 @@
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2020/01/19/%E5%B0%8F%E8%AE%B0%EF%BC%9A%E4%B8%80%E6%AC%A1%E6%99%AE%E9%80%9A%E5%BE%AA%E8%BF%B9%E8%BD%A6%E5%A4%A7%E8%B5%9B/#more" rel="contents">
-                阅读全文 &raquo;
+                Read more &raquo;
               </a>
             </div>
           <!--/noindex-->
@@ -310,13 +310,13 @@
         
   
   
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
     <link itemprop="mainEntityOfPage" href="https://jefine.github.io/2020/01/16/2020%E5%AD%A6%E6%A0%A1%E5%90%84%E7%9B%B8%E5%85%B3%E6%AF%94%E8%B5%9B%EF%BC%8C%E8%B5%84%E6%A0%BC%E8%AF%81%E4%B9%A6%E7%9A%84%E6%97%B6%E9%97%B4/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="image" content="/images/ava.jpg">
       <meta itemprop="name" content="jefine">
-      <meta itemprop="description" content="使每个人的生活多一份美好。">
+      <meta itemprop="description" content="Makes Better">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -333,22 +333,22 @@
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
               </span>
-              <span class="post-meta-item-text">发表于</span>
+              <span class="post-meta-item-text">Posted on</span>
 
-              <time title="创建时间：2020-01-16 21:37:08" itemprop="dateCreated datePublished" datetime="2020-01-16T21:37:08+08:00">2020-01-16</time>
+              <time title="Created: 2020-01-16 21:37:08" itemprop="dateCreated datePublished" datetime="2020-01-16T21:37:08+08:00">2020-01-16</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-08-10 12:07:53" itemprop="dateModified" datetime="2020-08-10T12:07:53+08:00">2020-08-10</time>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2020-08-10 12:07:53" itemprop="dateModified" datetime="2020-08-10T12:07:53+08:00">2020-08-10</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
               </span>
-              <span class="post-meta-item-text">分类于</span>
+              <span class="post-meta-item-text">In</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
                   <a href="/categories/record/" itemprop="url" rel="index">
                     <span itemprop="name">record</span>
@@ -383,7 +383,7 @@
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2020/01/16/2020%E5%AD%A6%E6%A0%A1%E5%90%84%E7%9B%B8%E5%85%B3%E6%AF%94%E8%B5%9B%EF%BC%8C%E8%B5%84%E6%A0%BC%E8%AF%81%E4%B9%A6%E7%9A%84%E6%97%B6%E9%97%B4/#more" rel="contents">
-                阅读全文 &raquo;
+                Read more &raquo;
               </a>
             </div>
           <!--/noindex-->
@@ -405,13 +405,13 @@
         
   
   
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
     <link itemprop="mainEntityOfPage" href="https://jefine.github.io/2020/01/06/L1-050%E5%80%92%E6%95%B0%E7%AC%ACN%E4%B8%AA%E5%AD%97%E7%AC%A6%E4%B8%B2/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="image" content="/images/ava.jpg">
       <meta itemprop="name" content="jefine">
-      <meta itemprop="description" content="使每个人的生活多一份美好。">
+      <meta itemprop="description" content="Makes Better">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -428,22 +428,22 @@
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
               </span>
-              <span class="post-meta-item-text">发表于</span>
+              <span class="post-meta-item-text">Posted on</span>
 
-              <time title="创建时间：2020-01-06 22:01:17" itemprop="dateCreated datePublished" datetime="2020-01-06T22:01:17+08:00">2020-01-06</time>
+              <time title="Created: 2020-01-06 22:01:17" itemprop="dateCreated datePublished" datetime="2020-01-06T22:01:17+08:00">2020-01-06</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-01-07 11:01:09" itemprop="dateModified" datetime="2020-01-07T11:01:09+08:00">2020-01-07</time>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2020-01-07 11:01:09" itemprop="dateModified" datetime="2020-01-07T11:01:09+08:00">2020-01-07</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
               </span>
-              <span class="post-meta-item-text">分类于</span>
+              <span class="post-meta-item-text">In</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
                   <a href="/categories/%E7%BC%96%E7%A8%8B/" itemprop="url" rel="index">
                     <span itemprop="name">编程</span>
@@ -475,29 +475,14 @@
 
       
           <p>给定一个完全由小写英文字母组成的字符串等差递增序列，该序列中的每个字符串的长度固定为 L，从 L 个 a 开始，以 1 为步长递增。例如当 L 为 3 时，序列为 { aaa, aab, aac, …, aaz, aba, abb, …, abz, …, zzz  }。这个序列的倒数第27个字符串就是 zyz。对于任意给定的 L，本题要求你给出对应序列倒数第 N 个字符串。</p>
-<h3 id="输入格式："><a href="#输入格式：" class="headerlink" title="输入格式："></a>输入格式：</h3><p>输入在一行中给出两个正整数 L（2 ≤ L ≤ 6）和 N（≤105）。</p>
-<h3 id="输出格式："><a href="#输出格式：" class="headerlink" title="输出格式："></a>输出格式：</h3><p>在一行中输出对应序列倒数第 N 个字符串。题目保证这个字符串是存在的。</p>
-<h3 id="输入样例："><a href="#输入样例：" class="headerlink" title="输入样例："></a>输入样例：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">3 7417</span><br></pre></td></tr></table></figure>
-<h3 id="输出样例："><a href="#输出样例：" class="headerlink" title="输出样例："></a>输出样例：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pat</span><br></pre></td></tr></table></figure>
-<h2 id="首先："><a href="#首先：" class="headerlink" title="首先："></a>首先：</h2><p>我们发现下图的诡异场景第50题看似准确率不算很低，但是吧，做的人少呀。顿时比其他少了一半，给这道题目布满诡异的气氛。</p>
-<p><img src="https://i.loli.net/2020/01/07/IBXFH3viYGakNlS.png" alt="6i5tGebuBCwXaoE.png"></p>
-<p>开始做题时，发觉这应该是一道类似于进制转换的题目。</p>
-<p><strong>但是！</strong>做了题才发现有这么几个坑：</p>
-<ol>
-<li>英文字母26个谢谢。<del>不是24 。</del></li>
-<li>pow()函数中;pow返回值为double。此处强制转换为int了，应该是26的转换为25了 。所以在使用pow函数时要小心了。</li>
-<li>第一个数其实是第0个数，第二个是第一个，不是么？</li>
-</ol>
-<h3 id="代码部分："><a href="#代码部分：" class="headerlink" title="代码部分："></a>代码部分：</h3><h3 id="方一：递归："><a href="#方一：递归：" class="headerlink" title="方一：递归："></a>方一：递归：</h3><p>下面的递归应该是比较好理解的进制转换方法。</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">int</span> n,l;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">f</span><span class="params">(<span class="keyword">int</span> a,<span class="keyword">int</span> b)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(a &gt; <span class="number">1</span>) f(a - <span class="number">1</span>,b / <span class="number">26</span>);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"%c"</span>,<span class="string">'z'</span> - (b % <span class="number">26</span>));</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="built_in">cin</span>&gt;&gt;n&gt;&gt;l;</span><br><span class="line">    f(n,l - <span class="number">1</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>如果我们想要使得的第二个输入的n为正序，那么我们可以将其与最大做差得到倒序的值（2333）当然，我们调一下代码也是可以的。</p>
-<p>将</p>
-<p>printf(“%c”,’z’ - (b % 26));</p>
-<p>调为</p>
-<p>printf(“%c”,’a’ + (b % 26));即可</p>
-<h3 id="方二："><a href="#方二：" class="headerlink" title="方二："></a>方二：</h3><p>当然我们也可以使用字符串将每个字符储存，最后输出即可。</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> l,n,c;</span><br><span class="line">    <span class="keyword">char</span> s[<span class="number">7</span>];</span><br><span class="line">    <span class="built_in">cin</span>&gt;&gt;l&gt;&gt;n;</span><br><span class="line">    c = l - <span class="number">1</span>;</span><br><span class="line">    s[l] = <span class="string">'\0'</span>;</span><br><span class="line">    n --;</span><br><span class="line">    <span class="keyword">while</span>(n || c &gt;= <span class="number">0</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        s[c --] = <span class="string">'z'</span> - n % <span class="number">26</span>;</span><br><span class="line">        n /= <span class="number">26</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">cout</span>&lt;&lt;s;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2020/01/06/L1-050%E5%80%92%E6%95%B0%E7%AC%ACN%E4%B8%AA%E5%AD%97%E7%AC%A6%E4%B8%B2/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -515,13 +500,13 @@
         
   
   
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
     <link itemprop="mainEntityOfPage" href="https://jefine.github.io/2020/01/06/L1-048%E7%9F%A9%E9%98%B5A%E4%B9%98%E4%BB%A5B/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="image" content="/images/ava.jpg">
       <meta itemprop="name" content="jefine">
-      <meta itemprop="description" content="使每个人的生活多一份美好。">
+      <meta itemprop="description" content="Makes Better">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -538,22 +523,22 @@
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
               </span>
-              <span class="post-meta-item-text">发表于</span>
+              <span class="post-meta-item-text">Posted on</span>
 
-              <time title="创建时间：2020-01-06 14:40:05" itemprop="dateCreated datePublished" datetime="2020-01-06T14:40:05+08:00">2020-01-06</time>
+              <time title="Created: 2020-01-06 14:40:05" itemprop="dateCreated datePublished" datetime="2020-01-06T14:40:05+08:00">2020-01-06</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-01-07 10:58:44" itemprop="dateModified" datetime="2020-01-07T10:58:44+08:00">2020-01-07</time>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2020-01-07 10:58:44" itemprop="dateModified" datetime="2020-01-07T10:58:44+08:00">2020-01-07</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
               </span>
-              <span class="post-meta-item-text">分类于</span>
+              <span class="post-meta-item-text">In</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
                   <a href="/categories/%E7%BC%96%E7%A8%8B/" itemprop="url" rel="index">
                     <span itemprop="name">编程</span>
@@ -585,24 +570,14 @@
 
       
           <p>给定两个矩阵A和B，要求你计算它们的乘积矩阵AB。需要注意的是，只有规模匹配的矩阵才可以相乘。即若A有Ra行、Ca列，B有Rb行、Cb列，则只有Ca与Rb相等时，两个矩阵才能相乘。</p>
-<h3 id="输入格式："><a href="#输入格式：" class="headerlink" title="输入格式："></a>输入格式：</h3><p>输入先后给出两个矩阵A和B。对于每个矩阵，首先在一行中给出其行数R和列数C，随后R行，每行给出C个整数，以1个空格分隔，且行首尾没有多余的空格。输入保证两个矩阵的R和C都是正数，并且所有整数的绝对值不超过100。</p>
-<h3 id="输出格式："><a href="#输出格式：" class="headerlink" title="输出格式："></a>输出格式：</h3><p>若输入的两个矩阵的规模是匹配的，则按照输入的格式输出乘积矩阵AB，否则输出<code>Error: Ca != Rb</code>，其中<code>Ca</code>是A的列数，<code>Rb</code>是B的行数。</p>
-<h3 id="输入样例1："><a href="#输入样例1：" class="headerlink" title="输入样例1："></a>输入样例1：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">2 3</span><br><span class="line">1 2 3</span><br><span class="line">4 5 6</span><br><span class="line">3 4</span><br><span class="line">7 8 9 0</span><br><span class="line">-1 -2 -3 -4</span><br><span class="line">5 6 7 8</span><br></pre></td></tr></table></figure>
-<h3 id="输出样例1："><a href="#输出样例1：" class="headerlink" title="输出样例1："></a>输出样例1：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">2 4</span><br><span class="line">20 22 24 16</span><br><span class="line">53 58 63 28</span><br></pre></td></tr></table></figure>
-<h3 id="输入样例2："><a href="#输入样例2：" class="headerlink" title="输入样例2："></a>输入样例2：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">3 2</span><br><span class="line">38 26</span><br><span class="line">43 -5</span><br><span class="line">0 17</span><br><span class="line">3 2</span><br><span class="line">-11 57</span><br><span class="line">99 68</span><br><span class="line">81 72</span><br></pre></td></tr></table></figure>
-<h3 id="输出样例2："><a href="#输出样例2：" class="headerlink" title="输出样例2："></a>输出样例2：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Error: 2 != 3</span><br></pre></td></tr></table></figure>
-<h3 id="题目思路："><a href="#题目思路：" class="headerlink" title="题目思路："></a>题目思路：</h3><p>一开始，一看题目。嗯！没有思路。。。</p>
-<p>什么是矩阵乘法呢？（此处可以百度了解以下）</p>
-<p><img src="https://i.loli.net/2020/01/07/drTUXefu1ItHyLm.png" alt="BWqSKunTFkLpziP.png"></p>
-<p>简单地说就是上述公式。百度词条中这样定义：</p>
-<p><img src="https://i.loli.net/2020/01/06/vBWcMO1TzVIKuPG.png" alt="图片.png"></p>
-<p>看完之后，我们就或许有了一点思路。</p>
-<p>于是如果符合条件，我们就依次计算输出即可。</p>
-<p>但是！！！</p>
-<p>这道题最最关键的就是各种不同的自定义字母所代表的含义。（比如上图中的是b  [1 ] [1]  其实在数组中是b [0] [0];谨慎呀！！！<del>（找这个bug找的脑壳疼）</del></p>
-<p>当然，也可以动态数组，但是这样更好理解一一些。</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">int</span> c1,c2,r1,r2; </span><br><span class="line">	<span class="keyword">int</span> i,j;</span><br><span class="line">	<span class="built_in">cin</span>&gt;&gt;r1&gt;&gt;c1;	</span><br><span class="line">	<span class="keyword">int</span> m[r1][c1];<span class="comment">//定义并得到两个数组 </span></span><br><span class="line">	<span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;r1;i++)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">for</span>( j=<span class="number">0</span>;j&lt;c1;j++)</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="built_in">cin</span>&gt;&gt;m[i][j];</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;	</span><br><span class="line">	<span class="built_in">cin</span>&gt;&gt;r2&gt;&gt;c2;	</span><br><span class="line">	<span class="keyword">int</span> n[r2][c2];</span><br><span class="line">	<span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;r2;i++)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">for</span>( j=<span class="number">0</span>;j&lt;c2;j++)</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="built_in">cin</span>&gt;&gt;n[i][j];</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">if</span>(c1==r2)</span><br><span class="line">	&#123;<span class="comment">//首先排除不相等的情况 (规模是否相等） </span></span><br><span class="line">		<span class="built_in">cout</span>&lt;&lt;r1&lt;&lt;<span class="string">" "</span>&lt;&lt;c2&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">		<span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;r1;i++)&#123;<span class="comment">//前两个for得到n个item； </span></span><br><span class="line">			<span class="keyword">for</span>(j=<span class="number">0</span>;j&lt;c2;j++)</span><br><span class="line">			&#123;<span class="comment">//输出每一行； </span></span><br><span class="line">				<span class="keyword">int</span> sum=<span class="number">0</span>;</span><br><span class="line">				<span class="keyword">for</span>(<span class="keyword">int</span> k=<span class="number">0</span>;k&lt;c1;k++)&#123;<span class="comment">//（见公式）； </span></span><br><span class="line">				sum=sum+m[i][k]*n[k][j];</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="built_in">cout</span>&lt;&lt;sum;</span><br><span class="line">			<span class="keyword">if</span>(j!=c2<span class="number">-1</span>)</span><br><span class="line">			  <span class="built_in">cout</span>&lt;&lt;<span class="string">" "</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="built_in">cout</span>&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">else</span> <span class="built_in">cout</span>&lt;&lt;<span class="string">"Error: "</span>&lt;&lt;c2&lt;&lt;<span class="string">" != "</span>&lt;&lt;r2;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;	</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2020/01/06/L1-048%E7%9F%A9%E9%98%B5A%E4%B9%98%E4%BB%A5B/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -620,13 +595,13 @@
         
   
   
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
     <link itemprop="mainEntityOfPage" href="https://jefine.github.io/2020/01/05/L1-046%E6%95%B4%E9%99%A4%E5%85%89%E6%A3%8D%EF%BC%88%E6%A8%A1%E6%8B%9F%E5%A4%A7%E6%95%B0%E9%99%A4%E6%B3%95%EF%BC%89/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="image" content="/images/ava.jpg">
       <meta itemprop="name" content="jefine">
-      <meta itemprop="description" content="使每个人的生活多一份美好。">
+      <meta itemprop="description" content="Makes Better">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -643,16 +618,16 @@
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
               </span>
-              <span class="post-meta-item-text">发表于</span>
+              <span class="post-meta-item-text">Posted on</span>
               
 
-              <time title="创建时间：2020-01-05 22:30:58 / 修改时间：22:45:35" itemprop="dateCreated datePublished" datetime="2020-01-05T22:30:58+08:00">2020-01-05</time>
+              <time title="Created: 2020-01-05 22:30:58 / Modified: 22:45:35" itemprop="dateCreated datePublished" datetime="2020-01-05T22:30:58+08:00">2020-01-05</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
               </span>
-              <span class="post-meta-item-text">分类于</span>
+              <span class="post-meta-item-text">In</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
                   <a href="/categories/%E7%BC%96%E7%A8%8B/" itemprop="url" rel="index">
                     <span itemprop="name">编程</span>
@@ -684,20 +659,14 @@
 
       
           <p>这里所谓的“光棍”，并不是指单身汪啦~ 说的是全部由1组成的数字，比如1、11、111、1111等。传说任何一个光棍都能被一个不以5结尾的奇数整除。比如，111111就可以被13整除。 现在，你的程序要读入一个整数<code>x</code>，这个整数一定是奇数并且不以5结尾。然后，经过计算，输出两个数字：第一个数字<code>s</code>，表示<code>x</code>乘以<code>s</code>是一个光棍，第二个数字<code>n</code>是这个光棍的位数。这样的解当然不是唯一的,题目要求你输出最小的解。</p>
-<p>提示：一个显然的办法是逐渐增加光棍的位数，直到可以整除<code>x</code>为止。但难点在于，<code>s</code>可能是个非常大的数 —— 比如，程序输入31，那么就输出3584229390681和15，因为31乘以3584229390681的结果是111111111111111，一共15个1。</p>
-<h3 id="输入格式："><a href="#输入格式：" class="headerlink" title="输入格式："></a>输入格式：</h3><p>输入在一行中给出一个不以5结尾的正奇数<code>x</code>（&lt;1000）。</p>
-<h3 id="输出格式："><a href="#输出格式：" class="headerlink" title="输出格式："></a>输出格式：</h3><p>在一行中输出相应的最小的<code>s</code>和<code>n</code>，其间以1个空格分隔。</p>
-<h3 id="输入样例："><a href="#输入样例：" class="headerlink" title="输入样例："></a>输入样例：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">31</span><br></pre></td></tr></table></figure>
-<h3 id="输出样例："><a href="#输出样例：" class="headerlink" title="输出样例："></a>输出样例：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">3584229390681 15</span><br></pre></td></tr></table></figure>
-<h3 id="题目思路分析："><a href="#题目思路分析：" class="headerlink" title="题目思路分析："></a>题目思路分析：</h3><p>第一次接触大数除法的模拟，在经历过一番思考后，选择了百度。。。</p>
-<p>忽然发现思路其实就是模拟人的思路：假设我们也不知道多少个1才能将31整除。那么怎么得到那个很长的数呢？</p>
-<ol>
-<li>从1，11，111，一个一个去尝试。显然，不成立。（当然，我们可以直接从比除数大的111开始除，这也是后面变成的思路）</li>
-<li>但如果我们实验过几次第一种方法后，我们会发现，其实我们只是在每一次的计算后（发现不能整除）我们就会添加一个1继续去除。之前的商就保留下来了，和我们使用竖式除法是一样的。我们只是需要每次除不尽的时候，填上一个1继续除便是了，之前的商直接输出不是更好。</li>
-</ol>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> x,s=<span class="number">0</span>,n=<span class="number">0</span>;<span class="comment">//除数，被除数，位数 </span></span><br><span class="line">	<span class="built_in">cin</span>&gt;&gt;x;</span><br><span class="line">	<span class="keyword">while</span>(s&lt;x)</span><br><span class="line">	&#123;</span><br><span class="line">		s=s*<span class="number">10</span>+<span class="number">1</span>;<span class="comment">//被除数末位添1直到不小于被除数 </span></span><br><span class="line">		n++;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">while</span>(<span class="literal">true</span>)<span class="comment">//除法 </span></span><br><span class="line">	&#123;</span><br><span class="line">		<span class="built_in">cout</span>&lt;&lt;s/x;<span class="comment">//输出商（就作为开头咯） </span></span><br><span class="line">		s%=x;<span class="comment">//被除数更改为其余数 </span></span><br><span class="line">		<span class="keyword">if</span>(s==<span class="number">0</span>)<span class="keyword">break</span>;<span class="comment">//余数为0则结束（否则加1继续） </span></span><br><span class="line">		s=s*<span class="number">10</span>+<span class="number">1</span>;<span class="comment">//被除数末位加上1</span></span><br><span class="line">		n++; </span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">cout</span>&lt;&lt;<span class="string">' '</span>&lt;&lt;n;<span class="comment">//之前已经输出了商（很大的数）</span></span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p><strong>大数模拟，在没有更好的方法下，不如试试康康如果是我们，我们是怎么做的。。。</strong></p>
-
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2020/01/05/L1-046%E6%95%B4%E9%99%A4%E5%85%89%E6%A3%8D%EF%BC%88%E6%A8%A1%E6%8B%9F%E5%A4%A7%E6%95%B0%E9%99%A4%E6%B3%95%EF%BC%89/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -715,13 +684,13 @@
         
   
   
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
     <link itemprop="mainEntityOfPage" href="https://jefine.github.io/2020/01/04/%E6%89%93%E5%8D%B0%E6%B2%99%E6%BC%8F/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="image" content="/images/ava.jpg">
       <meta itemprop="name" content="jefine">
-      <meta itemprop="description" content="使每个人的生活多一份美好。">
+      <meta itemprop="description" content="Makes Better">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -738,22 +707,22 @@
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
               </span>
-              <span class="post-meta-item-text">发表于</span>
+              <span class="post-meta-item-text">Posted on</span>
 
-              <time title="创建时间：2020-01-04 21:08:22" itemprop="dateCreated datePublished" datetime="2020-01-04T21:08:22+08:00">2020-01-04</time>
+              <time title="Created: 2020-01-04 21:08:22" itemprop="dateCreated datePublished" datetime="2020-01-04T21:08:22+08:00">2020-01-04</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-08-10 12:08:08" itemprop="dateModified" datetime="2020-08-10T12:08:08+08:00">2020-08-10</time>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2020-08-10 12:08:08" itemprop="dateModified" datetime="2020-08-10T12:08:08+08:00">2020-08-10</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
               </span>
-              <span class="post-meta-item-text">分类于</span>
+              <span class="post-meta-item-text">In</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
                   <a href="/categories/%E7%BC%96%E7%A8%8B/" itemprop="url" rel="index">
                     <span itemprop="name">编程</span>
@@ -788,7 +757,7 @@
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2020/01/04/%E6%89%93%E5%8D%B0%E6%B2%99%E6%BC%8F/#more" rel="contents">
-                阅读全文 &raquo;
+                Read more &raquo;
               </a>
             </div>
           <!--/noindex-->
@@ -810,13 +779,13 @@
         
   
   
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
     <link itemprop="mainEntityOfPage" href="https://jefine.github.io/2020/01/04/L1-033%E5%87%BA%E7%94%9F%E5%B9%B4/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="image" content="/images/ava.jpg">
       <meta itemprop="name" content="jefine">
-      <meta itemprop="description" content="使每个人的生活多一份美好。">
+      <meta itemprop="description" content="Makes Better">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -833,16 +802,16 @@
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
               </span>
-              <span class="post-meta-item-text">发表于</span>
+              <span class="post-meta-item-text">Posted on</span>
               
 
-              <time title="创建时间：2020-01-04 18:37:05 / 修改时间：18:49:16" itemprop="dateCreated datePublished" datetime="2020-01-04T18:37:05+08:00">2020-01-04</time>
+              <time title="Created: 2020-01-04 18:37:05 / Modified: 18:49:16" itemprop="dateCreated datePublished" datetime="2020-01-04T18:37:05+08:00">2020-01-04</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
               </span>
-              <span class="post-meta-item-text">分类于</span>
+              <span class="post-meta-item-text">In</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
                   <a href="/categories/%E7%BC%96%E7%A8%8B/" itemprop="url" rel="index">
                     <span itemprop="name">编程</span>
@@ -873,19 +842,15 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <p><img src="/2020/01/04/L1-033%E5%87%BA%E7%94%9F%E5%B9%B4/blog\hexo\source\_posts\jmK5wuZkEV4aCdJ.png" alt="image.png"></p>
-<p>以上是新浪微博中一奇葩贴：“我出生于1988年，直到25岁才遇到4个数字都不相同的年份。”也就是说，直到2013年才达到“4个数字都不相同”的要求。本题请你根据要求，自动填充“我出生于<code>y</code>年，直到<code>x</code>岁才遇到<code>n</code>个数字都不相同的年份”这句话。</p>
-<h3 id="输入格式："><a href="#输入格式：" class="headerlink" title="输入格式："></a>输入格式：</h3><p>输入在一行中给出出生年份<code>y</code>和目标年份中不同数字的个数<code>n</code>，其中<code>y</code>在[1, 3000]之间，<code>n</code>可以是2、或3、或4。注意不足4位的年份要在前面补零，例如公元1年被认为是0001年，有2个不同的数字0和1。</p>
-<h3 id="输出格式："><a href="#输出格式：" class="headerlink" title="输出格式："></a>输出格式：</h3><p>根据输入，输出<code>x</code>和能达到要求的年份。数字间以1个空格分隔，行首尾不得有多余空格。年份要按4位输出。注意：所谓“<code>n</code>个数字都不相同”是指不同的数字正好是<code>n</code>个。如“2013”被视为满足“4位数字都不同”的条件，但不被视为满足2位或3位数字不同的条件。</p>
-<h3 id="输入样例1："><a href="#输入样例1：" class="headerlink" title="输入样例1："></a>输入样例1：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">1988 4</span><br></pre></td></tr></table></figure>
-<h3 id="输出样例1："><a href="#输出样例1：" class="headerlink" title="输出样例1："></a>输出样例1：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">25 2013</span><br></pre></td></tr></table></figure>
-<h3 id="输入样例2："><a href="#输入样例2：" class="headerlink" title="输入样例2："></a>输入样例2：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">1 2</span><br></pre></td></tr></table></figure>
-<h3 id="输出样例2："><a href="#输出样例2：" class="headerlink" title="输出样例2："></a>输出样例2：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">0 0001</span><br></pre></td></tr></table></figure>
-<h3 id="题目思路："><a href="#题目思路：" class="headerlink" title="题目思路："></a>题目思路：</h3><p>起初打算使用int，来储存，最后使用%04的输出。但是由于分解数字等太麻烦（其实计算各个数字出现的次数才是最麻烦的）期间还使用了sort来排序，方便得到cnt（多少个不同数字）但是这样有改变了原来的年份。。。最终，还是使用了最基本的字符。</p>
-<p>在实现题目要求的时候，常常遇到没有初始化而遇到到许多问题（记得初始化呀。。。</p>
-<p>经过思考，采用a[4]来表示年份，b[10]来记录数字出现的次数。（直接赋值1）这样有几个1就有多少个不同的数字。（算是一种逆向吧，不怕数字重复了。。）</p>
-<h3 id="代码："><a href="#代码：" class="headerlink" title="代码："></a>代码：</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;<span class="comment">//调试的好麻烦。。</span></span><br><span class="line">	</span><br><span class="line">	<span class="keyword">int</span> n;</span><br><span class="line">	<span class="keyword">char</span> a[<span class="number">4</span>];</span><br><span class="line">	<span class="keyword">int</span> cnt=<span class="number">0</span>;</span><br><span class="line">	<span class="keyword">static</span> <span class="keyword">int</span> b[<span class="number">10</span>];</span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">"%s %d"</span>,&amp;a,&amp;n);</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">while</span>(<span class="built_in">strlen</span>(a)&lt;<span class="number">4</span>)&#123;<span class="comment">//将其化为四位年份 (buling)</span></span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">2</span>;i&gt;=<span class="number">0</span>;i--)&#123;<span class="comment">//from 2 to 0;</span></span><br><span class="line">			a[i+<span class="number">1</span>]=a[i];</span><br><span class="line">		&#125;a[<span class="number">0</span>]=<span class="string">'0'</span>;<span class="comment">//不是0而是‘0'</span></span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">int</span> start=(a[<span class="number">0</span>]-<span class="string">'0'</span>)*<span class="number">1000</span>+(a[<span class="number">1</span>]-<span class="string">'0'</span>)*<span class="number">100</span>+(a[<span class="number">2</span>]-<span class="string">'0'</span>)*<span class="number">10</span>+a[<span class="number">3</span>]-<span class="string">'0'</span>;</span><br><span class="line">	b[(a[<span class="number">0</span>]-<span class="string">'0'</span>)]=<span class="number">1</span>;</span><br><span class="line">	b[(a[<span class="number">1</span>]-<span class="string">'0'</span>)]=<span class="number">1</span>;</span><br><span class="line">	b[(a[<span class="number">2</span>]-<span class="string">'0'</span>)]=<span class="number">1</span>;</span><br><span class="line">	b[a[<span class="number">3</span>]-<span class="string">'0'</span>]=<span class="number">1</span>;</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;<span class="number">10</span>;i++)&#123;</span><br><span class="line">		<span class="keyword">if</span>(b[i])&#123;</span><br><span class="line">			cnt++;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">while</span>(cnt!=n)&#123;</span><br><span class="line">		cnt=<span class="number">0</span>;</span><br><span class="line">	a[<span class="number">3</span>]++;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;<span class="number">10</span>;i++)b[i]=<span class="number">0</span>;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">3</span>;j&gt;=<span class="number">1</span>;j--)&#123;<span class="comment">//进位 </span></span><br><span class="line">		<span class="keyword">if</span>(a[j]==<span class="string">':'</span>)&#123;</span><br><span class="line">			a[j]=<span class="string">'0'</span>;</span><br><span class="line">			a[j<span class="number">-1</span>]+=<span class="number">1</span>;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	b[(a[<span class="number">0</span>]-<span class="string">'0'</span>)]=<span class="number">1</span>;</span><br><span class="line">	b[(a[<span class="number">1</span>]-<span class="string">'0'</span>)]=<span class="number">1</span>;</span><br><span class="line">	b[(a[<span class="number">2</span>]-<span class="string">'0'</span>)]=<span class="number">1</span>;</span><br><span class="line">	b[a[<span class="number">3</span>]-<span class="string">'0'</span>]=<span class="number">1</span>;</span><br><span class="line"></span><br><span class="line">	</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;<span class="number">10</span>;i++)&#123;</span><br><span class="line">		<span class="keyword">if</span>(b[i])&#123;</span><br><span class="line">			cnt++;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;	</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">int</span> end=(a[<span class="number">0</span>]-<span class="string">'0'</span>)*<span class="number">1000</span>+(a[<span class="number">1</span>]-<span class="string">'0'</span>)*<span class="number">100</span>+(a[<span class="number">2</span>]-<span class="string">'0'</span>)*<span class="number">10</span>+a[<span class="number">3</span>]-<span class="string">'0'</span>;</span><br><span class="line">	<span class="built_in">cout</span>&lt;&lt;end-start&lt;&lt;<span class="string">" "</span>;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"%04d"</span>,end);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
+          <p><img src="/2020/01/04/L1-033%E5%87%BA%E7%94%9F%E5%B9%B4/blog\hexo\source\_posts\jmK5wuZkEV4aCdJ.png" alt="image.png"></p><p>以上是新浪微博中一奇葩贴：“我出生于1988年，直到25岁才遇到4个数字都不相同的年份。”也就是说，直到2013年才达到“4个数字都不相同”的要求。本题请你根据要求，自动填充“我出生于<code>y</code>年，直到<code>x</code>岁才遇到<code>n</code>个数字都不相同的年份”这句话。</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2020/01/04/L1-033%E5%87%BA%E7%94%9F%E5%B9%B4/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -903,13 +868,13 @@
         
   
   
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
     <link itemprop="mainEntityOfPage" href="https://jefine.github.io/2020/01/03/%E6%9F%A5%E9%AA%8C%E8%BA%AB%E4%BB%BD%E8%AF%81/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="image" content="/images/ava.jpg">
       <meta itemprop="name" content="jefine">
-      <meta itemprop="description" content="使每个人的生活多一份美好。">
+      <meta itemprop="description" content="Makes Better">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -926,22 +891,22 @@
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
               </span>
-              <span class="post-meta-item-text">发表于</span>
+              <span class="post-meta-item-text">Posted on</span>
 
-              <time title="创建时间：2020-01-03 16:28:34" itemprop="dateCreated datePublished" datetime="2020-01-03T16:28:34+08:00">2020-01-03</time>
+              <time title="Created: 2020-01-03 16:28:34" itemprop="dateCreated datePublished" datetime="2020-01-03T16:28:34+08:00">2020-01-03</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-01-04 18:37:35" itemprop="dateModified" datetime="2020-01-04T18:37:35+08:00">2020-01-04</time>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2020-01-04 18:37:35" itemprop="dateModified" datetime="2020-01-04T18:37:35+08:00">2020-01-04</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
               </span>
-              <span class="post-meta-item-text">分类于</span>
+              <span class="post-meta-item-text">In</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
                   <a href="/categories/%E7%BC%96%E7%A8%8B/" itemprop="url" rel="index">
                     <span itemprop="name">编程</span>
@@ -990,13 +955,13 @@
         
   
   
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
     <link itemprop="mainEntityOfPage" href="https://jefine.github.io/2020/01/02/%E8%BF%9E%E7%BB%AD%E5%9B%A0%E5%AD%90/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="image" content="/images/ava.jpg">
       <meta itemprop="name" content="jefine">
-      <meta itemprop="description" content="使每个人的生活多一份美好。">
+      <meta itemprop="description" content="Makes Better">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -1013,16 +978,16 @@
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
               </span>
-              <span class="post-meta-item-text">发表于</span>
+              <span class="post-meta-item-text">Posted on</span>
 
-              <time title="创建时间：2020-01-02 16:09:01" itemprop="dateCreated datePublished" datetime="2020-01-02T16:09:01+08:00">2020-01-02</time>
+              <time title="Created: 2020-01-02 16:09:01" itemprop="dateCreated datePublished" datetime="2020-01-02T16:09:01+08:00">2020-01-02</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-08-10 12:08:46" itemprop="dateModified" datetime="2020-08-10T12:08:46+08:00">2020-08-10</time>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2020-08-10 12:08:46" itemprop="dateModified" datetime="2020-08-10T12:08:46+08:00">2020-08-10</time>
               </span>
 
 
@@ -1052,7 +1017,7 @@
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2020/01/02/%E8%BF%9E%E7%BB%AD%E5%9B%A0%E5%AD%90/#more" rel="contents">
-                阅读全文 &raquo;
+                Read more &raquo;
               </a>
             </div>
           <!--/noindex-->
@@ -1074,13 +1039,13 @@
         
   
   
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
     <link itemprop="mainEntityOfPage" href="https://jefine.github.io/2020/01/02/2020/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="image" content="/images/ava.jpg">
       <meta itemprop="name" content="jefine">
-      <meta itemprop="description" content="使每个人的生活多一份美好。">
+      <meta itemprop="description" content="Makes Better">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -1097,22 +1062,22 @@
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
               </span>
-              <span class="post-meta-item-text">发表于</span>
+              <span class="post-meta-item-text">Posted on</span>
 
-              <time title="创建时间：2020-01-02 09:54:43" itemprop="dateCreated datePublished" datetime="2020-01-02T09:54:43+08:00">2020-01-02</time>
+              <time title="Created: 2020-01-02 09:54:43" itemprop="dateCreated datePublished" datetime="2020-01-02T09:54:43+08:00">2020-01-02</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-02-21 21:36:04" itemprop="dateModified" datetime="2020-02-21T21:36:04+08:00">2020-02-21</time>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2020-02-21 21:36:04" itemprop="dateModified" datetime="2020-02-21T21:36:04+08:00">2020-02-21</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
               </span>
-              <span class="post-meta-item-text">分类于</span>
+              <span class="post-meta-item-text">In</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
                   <a href="/categories/record/" itemprop="url" rel="index">
                     <span itemprop="name">record</span>
@@ -1144,9 +1109,14 @@
 
       
           <h3 id="2020来咯。"><a href="#2020来咯。" class="headerlink" title="2020来咯。"></a>2020来咯。</h3><p>我们一直以为出现在科幻和未来的2020年，他来了。</p>
-<p>2020更是10年的总结。当然第一批90后30岁了，结合当下的互联网形式，预计今年的35岁梗会愈发汹涌，焦虑会更快的弥漫在这个飞速发展的互联行业中。有人说2019是过去十年中最差的一年，但也是未来十年中最好的一年。曾有人说：每一个行业都有他的黄金十年，白银十年，青铜十年。最好的黄金十年由于移动互联网的爆发持续了20年，那么？互联网要进入白银十年了么？互联网会像传统行业一样逐渐的失去风头么？那么未来什么又是新的未来呢？没有人知道。5g带给我们的究竟是什么样的巨变，我们可能有一些遐想，但未来会不会出现新的增长点（5g+区块链+物联网我还是很看好的）但看未来吧！我辈必将前行。</p>
-<p>在2019跨年演讲《与时间做朋友》中罗振宇（不是罗永浩哈）给我的启发有：</p>
-<h6 id="做-做事的人；做与人交流的人；做最好的自己；"><a href="#做-做事的人；做与人交流的人；做最好的自己；" class="headerlink" title="做 做事的人；做与人交流的人；做最好的自己；"></a>做 做事的人；做与人交流的人；做最好的自己；</h6><h6 id="每个人都是一盏灯，人点亮人"><a href="#每个人都是一盏灯，人点亮人" class="headerlink" title="每个人都是一盏灯，人点亮人"></a>每个人都是一盏灯，人点亮人</h6><h6 id="未来，我来！"><a href="#未来，我来！" class="headerlink" title="未来，我来！"></a>未来，我来！</h6><h6 id><a href="#" class="headerlink" title=" "></a> </h6>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2020/01/02/2020/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -1165,7 +1135,7 @@
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/3/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/5/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
+    <a class="extend prev" rel="prev" href="/page/3/"><i class="fa fa-angle-left" aria-label="Previous page"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/5/"><i class="fa fa-angle-right" aria-label="Next page"></i></a>
   </nav>
 
 
@@ -1187,10 +1157,10 @@
 
       <ul class="sidebar-nav motion-element">
         <li class="sidebar-nav-toc">
-          文章目录
+          Table of Contents
         </li>
         <li class="sidebar-nav-overview">
-          站点概览
+          Overview
         </li>
       </ul>
 
@@ -1202,9 +1172,9 @@
       <div class="site-overview-wrap sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
   <img class="site-author-image" itemprop="image" alt="jefine"
-    src="/images/avatar.gif">
+    src="/images/ava.jpg">
   <p class="site-author-name" itemprop="name">jefine</p>
-  <div class="site-description" itemprop="description">使每个人的生活多一份美好。</div>
+  <div class="site-description" itemprop="description">Makes Better</div>
 </div>
 <div class="site-state-wrap motion-element">
   <nav class="site-state">
@@ -1212,26 +1182,26 @@
           <a href="/archives/">
         
           <span class="site-state-item-count">49</span>
-          <span class="site-state-item-name">日志</span>
+          <span class="site-state-item-name">posts</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
         <span class="site-state-item-count">9</span>
-        <span class="site-state-item-name">分类</span></a>
+        <span class="site-state-item-name">categories</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
         <span class="site-state-item-count">23</span>
-        <span class="site-state-item-name">标签</span></a>
+        <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
 </div>
   <div class="links-of-author motion-element">
       <span class="links-of-author-item">
-        <a href="https://github.com/jefine" title="GitHub &amp;rarr; https:&#x2F;&#x2F;github.com&#x2F;jefine" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+        <a href="https://github.com/jefine" title="GitHub &amp;rarr; https:&#x2F;&#x2F;github.com&#x2F;jefine" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i></a>
       </span>
   </div>
 
