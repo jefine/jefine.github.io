@@ -1,287 +1,78 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
-<meta name="theme-color" content="#222">
-<meta name="generator" content="Hexo 4.0.0">
-  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/browser32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/browser16.png">
-  <link rel="mask-icon" href="/images/logo.svg" color="#222">
-
-<link rel="stylesheet" href="/css/main.css">
-
-
-<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
-
-
-<script id="hexo-configurations">
-  var NexT = window.NexT || {};
-  var CONFIG = {
-    root: '/',
-    scheme: 'Mist',
-    version: '7.5.0',
-    exturl: false,
-    sidebar: {"position":"left","display":"hide","offset":12,"onmobile":true},
-    copycode: {"enable":true,"show_result":true,"style":"mac"},
-    back2top: {"enable":true,"sidebar":false,"scrollpercent":false},
-    bookmark: {"enable":false,"color":"#222","save":"auto"},
-    fancybox: false,
-    mediumzoom: false,
-    lazyload: false,
-    pangu: false,
-    algolia: {
-      appID: '',
-      apiKey: '',
-      indexName: '',
-      hits: {"per_page":0},
-      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
-    },
-    localsearch: {"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
-    path: 'search.xml',
-    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
-    translation: {
-      copy_button: 'Copy',
-      copy_success: 'Copied',
-      copy_failure: 'Copy failed'
-    },
-    sidebarPadding: 40
-  };
-</script>
-
-  <meta name="description" content="题目详情：在老电影“007之生死关头”（Live and Let Die）中有一个情节，007被毒贩抓到一个鳄鱼池中心的小岛上，他用了一种极为大胆的方法逃脱 —— 直接踩着池子里一系列鳄鱼的大脑袋跳上岸去！（据说当年替身演员被最后一条鳄鱼咬住了脚，幸好穿的是特别加厚的靴子才逃过一劫。）设鳄鱼池是长宽为100米的方形，中心坐标为 (0, 0)，且东北角坐标为 (50, 50)。池心岛是以 (0, 0">
-<meta name="keywords" content="pta">
-<meta property="og:type" content="article">
-<meta property="og:title" content="pta拯救007">
-<meta property="og:url" content="https:&#x2F;&#x2F;jefine.github.io&#x2F;2020&#x2F;06&#x2F;03&#x2F;pta%E6%8B%AF%E6%95%91007&#x2F;index.html">
-<meta property="og:site_name" content="jefine">
-<meta property="og:description" content="题目详情：在老电影“007之生死关头”（Live and Let Die）中有一个情节，007被毒贩抓到一个鳄鱼池中心的小岛上，他用了一种极为大胆的方法逃脱 —— 直接踩着池子里一系列鳄鱼的大脑袋跳上岸去！（据说当年替身演员被最后一条鳄鱼咬住了脚，幸好穿的是特别加厚的靴子才逃过一劫。）设鳄鱼池是长宽为100米的方形，中心坐标为 (0, 0)，且东北角坐标为 (50, 50)。池心岛是以 (0, 0">
-<meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2020-08-10T04:11:47.101Z">
-<meta name="twitter:card" content="summary">
-
-<link rel="canonical" href="https://jefine.github.io/2020/06/03/pta%E6%8B%AF%E6%95%91007/">
-
-
-<script id="page-configurations">
-  // https://hexo.io/docs/variables.html
-  CONFIG.page = {
-    sidebar: "",
-    isHome: false,
-    isPost: true,
-    isPage: false,
-    isArchive: false
-  };
-</script>
-
-  <title>pta拯救007 | jefine</title>
-  
-
-
-
-
-
-
-  <noscript>
-  <style>
-  .use-motion .brand,
-  .use-motion .menu-item,
-  .sidebar-inner,
-  .use-motion .post-block,
-  .use-motion .pagination,
-  .use-motion .comments,
-  .use-motion .post-header,
-  .use-motion .post-body,
-  .use-motion .collection-header { opacity: initial; }
-
-  .use-motion .site-title,
-  .use-motion .site-subtitle {
-    opacity: initial;
-    top: initial;
-  }
-
-  .use-motion .logo-line-before i { left: initial; }
-  .use-motion .logo-line-after i { right: initial; }
-  </style>
-</noscript>
-
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+    
+    <title>pta拯救007 - jefine</title>
+    <meta charset="utf-8">
+    
+    <meta name="title" content="pta拯救007 - jefine">
+    <meta name="description" content="">
+    <meta property="og:image" content="/favicon.png">
+    <meta property="og:image:width" content="200" />
+    <meta property="og:image:height" content="200" />
+    
+    <link href="https://fonts.googleapis.com/css2?family=Source+Serif+Pro:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Source Serif Pro', 'Source Han Serif TC', 'Noto Serif CJK TC', 'Noto Serif TC', serif;
+        }
+    </style>
+    <link rel="shortcut icon" href="/favicon.png">
+    
+    <link rel="stylesheet"
+        href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.17.1/build/styles/arduino-light.min.css">
+    <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.17.1/build/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    
+    
+    <link rel="stylesheet" href="/css/style.css">
+    <script src="/js/jquery.min.js"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 </head>
 
-<body itemscope itemtype="http://schema.org/WebPage">
-  <div class="container use-motion">
-    <div class="headband"></div>
-
-    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"><div class="site-brand-container">
-  <div class="site-meta custom-logo">
-
-    <div>
-      <a href="/" class="brand" rel="start">
-        <span class="logo-line-before"><i></i></span>
-        <span class="site-title">jefine</span>
-        <span class="logo-line-after"><i></i></span>
-      </a>
+<body>
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><header class="header">
+    <div class="blog-title">
+        <a href="/" class="logo">jefine</a>
     </div>
-        <p class="site-subtitle">小小的梦呓</p>
-  </div>
-
-  <div class="site-nav-toggle">
-    <div class="toggle" aria-label="Toggle navigation bar">
-      <span class="toggle-line toggle-line-first"></span>
-      <span class="toggle-line toggle-line-middle"></span>
-      <span class="toggle-line toggle-line-last"></span>
-    </div>
-  </div>
-</div>
-
-
-<nav class="site-nav">
-  
-  <ul id="menu" class="menu">
-        <li class="menu-item menu-item-home">
-
-    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>Home</a>
-
-  </li>
-        <li class="menu-item menu-item-about">
-
-    <a href="/about/" rel="section"><i class="fa fa-fw fa-user"></i>About</a>
-
-  </li>
-        <li class="menu-item menu-item-tags">
-
-    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>Tags<span class="badge">23</span></a>
-
-  </li>
-        <li class="menu-item menu-item-categories">
-
-    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>Categories<span class="badge">9</span></a>
-
-  </li>
-        <li class="menu-item menu-item-archives">
-
-    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>Archives<span class="badge">50</span></a>
-
-  </li>
-      <li class="menu-item menu-item-search">
-        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
-        </a>
-      </li>
-  </ul>
-
-</nav>
-  <div class="site-search">
-    <div class="popup search-popup">
-    <div class="search-header">
-  <span class="search-icon">
-    <i class="fa fa-search"></i>
-  </span>
-  <div class="search-input-container">
-    <input autocomplete="off" autocorrect="off" autocapitalize="none"
-           placeholder="Searching..." spellcheck="false"
-           type="text" id="search-input">
-  </div>
-  <span class="popup-btn-close">
-    <i class="fa fa-times-circle"></i>
-  </span>
-</div>
-<div id="search-result"></div>
-
-</div>
-<div class="search-pop-overlay"></div>
-
-  </div>
-</div>
-    </header>
-
-    
-  <div class="back-to-top">
-    <i class="fa fa-arrow-up"></i>
-    <span>0%</span>
-  </div>
-
-
-    <main class="main">
-      <div class="main-inner">
-        <div class="content-wrap">
-          
-
-          <div class="content">
+    <nav class="navbar">
+        <ul class="menu">
             
-
-  <div class="posts-expand">
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="en">
-    <link itemprop="mainEntityOfPage" href="https://jefine.github.io/2020/06/03/pta%E6%8B%AF%E6%95%91007/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/ava.jpg">
-      <meta itemprop="name" content="jefine">
-      <meta itemprop="description" content="Makes Better">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="jefine">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          pta拯救007
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2020-06-03 19:57:38" itemprop="dateCreated datePublished" datetime="2020-06-03T19:57:38+08:00">2020-06-03</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-08-10 12:11:47" itemprop="dateModified" datetime="2020-08-10T12:11:47+08:00">2020-08-10</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" itemprop="url" rel="index">
-                    <span itemprop="name">数据结构</span>
-                  </a>
-                </span>
-            </span>
-
-
-          
-             <span id="/2020/06/03/pta%E6%8B%AF%E6%95%91007/" class="leancloud_visitors" data-flag-title="pta拯救007">
-               <span class="post-meta-divider">|</span>
-               <span classs="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text"> </span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
+            
+            
+            <li class="menu-item">
+                
+                <a href="/" class="menu-item-link">Home</a>
+                
+            </li>
+            
+            
+            
+            <li class="menu-item">
+                
+                <a href="/archives" class="menu-item-link">Archives</a>
+                
+            </li>
+            
+            
+            
+            <li class="menu-item">
+                
+                <a href="/about" class="menu-item-link">About</a>
+                
+            </li>
+            
+        </ul>
+    </nav>
+</header>
+    <main class="main">
+        <article class="post">
+    <div class="post-title">
+        <h1 class="title">pta拯救007</h2>
+    </div>
+    <div class="post-content">
         <h2 id="题目详情："><a href="#题目详情：" class="headerlink" title="题目详情："></a>题目详情：</h2><p>在老电影“007之生死关头”（Live and Let Die）中有一个情节，007被毒贩抓到一个鳄鱼池中心的小岛上，他用了一种极为大胆的方法逃脱 —— 直接踩着池子里一系列鳄鱼的大脑袋跳上岸去！（据说当年替身演员被最后一条鳄鱼咬住了脚，幸好穿的是特别加厚的靴子才逃过一劫。）<br>设鳄鱼池是长宽为100米的方形，中心坐标为 (0, 0)，且东北角坐标为 (50, 50)。池心岛是以 (0, 0) 为圆心、直径15米的圆。给定池中分布的鳄鱼的坐标、以及007一次能跳跃的最大距离，你需要告诉他是否有可能逃出生天。</p>
   <a id="more"></a>
 <h2 id="输入格式："><a href="#输入格式：" class="headerlink" title="输入格式："></a>输入格式：</h2><p>首先第一行给出两个正整数：鳄鱼数量 N（≤100）和007一次能跳跃的最大距离 D。随后 N 行，每行给出一条鳄鱼的 (x,y) 坐标。注意：不会有两条鳄鱼待在同一个点上。</p>
@@ -299,285 +90,40 @@
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">int</span> n,d;</span><br><span class="line">    <span class="class"><span class="keyword">struct</span> <span class="title">node</span>//定义节点（存储<span class="title">x</span>，<span class="title">y</span>坐标）</span></span><br><span class="line"><span class="class">&#123;</span> </span><br><span class="line">    <span class="keyword">int</span> x;</span><br><span class="line">    <span class="keyword">int</span> y;</span><br><span class="line">&#125;p[<span class="number">110</span>];  </span><br><span class="line"><span class="keyword">bool</span> vis[<span class="number">110</span>];</span><br><span class="line"><span class="keyword">bool</span> flag =<span class="number">0</span>;</span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">first</span><span class="params">(<span class="keyword">int</span> i)</span></span>&#123;<span class="comment">//判断该节点是否可以在第一次可以跳出中心岛（即判断该点是否在第一次跳出的半径内）</span></span><br><span class="line">    <span class="keyword">return</span>(p[i].x*p[i].x+p[i].y*p[i].y &lt;= (d+<span class="number">7.5</span>)*(d+<span class="number">7.5</span>));</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">success</span><span class="params">(<span class="keyword">int</span> i)</span></span>&#123;<span class="comment">//判断能否在该结点处一次直接跳出（d&gt;0），分别判断x，y是否可以跳出边界(即能否一步上岸)</span></span><br><span class="line">    <span class="keyword">return</span> p[i].x-d&lt;=<span class="number">-50</span>||p[i].x+d&gt;=<span class="number">50</span>||p[i].y+d&gt;=<span class="number">50</span>||p[i].y-d&lt;=<span class="number">-50</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">isJump</span><span class="params">(<span class="keyword">int</span> i,<span class="keyword">int</span> j)</span></span>&#123;<span class="comment">//判断是否可以从一点跳到另一点</span></span><br><span class="line">    <span class="keyword">return</span> (p[i].x*p[i].x+p[i].y*p[i].y)&lt;d*d;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">dfs</span><span class="params">(<span class="keyword">int</span> i)</span></span>&#123;<span class="comment">//递归，dfs判断是否可以找到出去的路</span></span><br><span class="line">    vis[i] = <span class="number">1</span>;<span class="comment">//表示已经访问该节点</span></span><br><span class="line">    <span class="keyword">if</span>(success(i))<span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">0</span>;j&lt;n;j++)&#123;<span class="comment">//遍历寻找节点</span></span><br><span class="line">        <span class="keyword">if</span>(!vis[j]&amp;&amp;isJump(i,j))</span><br><span class="line">        &#123;<span class="comment">//如果该点访问过，那么此路就代表不通，应该放弃这个点；同时我们还要找到可以跳跃过去的点。</span></span><br><span class="line">        <span class="keyword">if</span>(dfs(j))<span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    </span><br><span class="line">    <span class="built_in">cin</span>&gt;&gt;n&gt;&gt;d;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;n;i++)&#123;</span><br><span class="line">        <span class="built_in">cin</span>&gt;&gt;p[i].x&gt;&gt;p[i].y;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span>(d&gt;=<span class="number">42.5</span>)flag = <span class="literal">true</span>;</span><br><span class="line">    <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;n;i++)&#123;<span class="comment">//应该通过遍历找到符合条件的节点</span></span><br><span class="line">            <span class="keyword">if</span>(!vis[i]&amp;&amp;first(i))<span class="comment">//如果没有访问过这个节点，且在第一次跳出的半径内。</span></span><br><span class="line">                <span class="keyword">if</span>(dfs(i))&#123;</span><br><span class="line">                    flag =<span class="number">1</span>;</span><br><span class="line">                    <span class="keyword">break</span>;<span class="comment">//跳出并不再寻找</span></span><br><span class="line">                &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span>(flag)<span class="built_in">cout</span>&lt;&lt;<span class="string">"yes"</span>;</span><br><span class="line">    <span class="keyword">else</span> <span class="built_in">cout</span>&lt;&lt;<span class="string">"no"</span>;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
     </div>
-
-    
-    
-    
-
-      <footer class="post-footer">
-          
-          <div class="post-tags">
-              <a href="/tags/pta/" rel="tag"><i class="fa fa-tag"></i> pta</a>
-          </div>
-
+    <div class="post-meta">
         
-
-          <div class="post-nav">
-            <div class="post-nav-next post-nav-item">
-                <a href="/2020/05/17/%E9%98%BF%E9%87%8C%E4%BA%91-%E8%BA%AB%E4%BB%BD%E8%AF%81%E8%AF%86%E5%88%AB%E8%B0%83%E7%94%A8/" rel="next" title="阿里云-身份证识别调用">
-                  <i class="fa fa-chevron-left"></i> 阿里云-身份证识别调用
-                </a>
-            </div>
-
-            <span class="post-nav-divider"></span>
-
-            <div class="post-nav-prev post-nav-item">
-                <a href="/2020/06/04/pta%E5%85%AD%E5%BA%A6%E7%A9%BA%E9%97%B4/" rel="prev" title="pta六度空间">
-                  pta六度空间 <i class="fa fa-chevron-right"></i>
-                </a>
-            </div>
-          </div>
-      </footer>
-    
-  </article>
-  
-  
-  
-
-  </div>
-
-
-          </div>
-          
-
-        </div>
-          
-  
-  <div class="toggle sidebar-toggle">
-    <span class="toggle-line toggle-line-first"></span>
-    <span class="toggle-line toggle-line-middle"></span>
-    <span class="toggle-line toggle-line-last"></span>
-  </div>
-
-  <aside class="sidebar">
-    <div class="sidebar-inner">
-
-      <ul class="sidebar-nav motion-element">
-        <li class="sidebar-nav-toc">
-          Table of Contents
-        </li>
-        <li class="sidebar-nav-overview">
-          Overview
-        </li>
-      </ul>
-
-      <!--noindex-->
-      <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#题目详情："><span class="nav-number">1.</span> <span class="nav-text">题目详情：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#输入格式："><span class="nav-number">2.</span> <span class="nav-text">输入格式：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#输出格式："><span class="nav-number">3.</span> <span class="nav-text">输出格式：</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#输入样例-1："><span class="nav-number">3.1.</span> <span class="nav-text">输入样例 1：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#输出样例-1："><span class="nav-number">3.2.</span> <span class="nav-text">输出样例 1：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#输入样例-2："><span class="nav-number">3.3.</span> <span class="nav-text">输入样例 2：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#输出样例-2："><span class="nav-number">3.4.</span> <span class="nav-text">输出样例 2：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#题目思路："><span class="nav-number">3.5.</span> <span class="nav-text">题目思路：</span></a></li></ol></li></ol></div>
-      </div>
-      <!--/noindex-->
-
-      <div class="site-overview-wrap sidebar-panel">
-        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-  <img class="site-author-image" itemprop="image" alt="jefine"
-    src="/images/ava.jpg">
-  <p class="site-author-name" itemprop="name">jefine</p>
-  <div class="site-description" itemprop="description">Makes Better</div>
-</div>
-<div class="site-state-wrap motion-element">
-  <nav class="site-state">
-      <div class="site-state-item site-state-posts">
-          <a href="/archives/">
-        
-          <span class="site-state-item-count">50</span>
-          <span class="site-state-item-name">posts</span>
-        </a>
-      </div>
-      <div class="site-state-item site-state-categories">
-            <a href="/categories/">
-          
-        <span class="site-state-item-count">9</span>
-        <span class="site-state-item-name">categories</span></a>
-      </div>
-      <div class="site-state-item site-state-tags">
-            <a href="/tags/">
-          
-        <span class="site-state-item-count">23</span>
-        <span class="site-state-item-name">tags</span></a>
-      </div>
-  </nav>
-</div>
-  <div class="links-of-author motion-element">
-      <span class="links-of-author-item">
-        <a href="https://github.com/jefine" title="GitHub &amp;rarr; https:&#x2F;&#x2F;github.com&#x2F;jefine" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i></a>
-      </span>
-  </div>
-
-
-
-      </div>
-
+    <span class="post-time">二〇二〇年六月三日</span>
     </div>
-  </aside>
-  <div id="sidebar-dimmer"></div>
+</article>
 
+<div class="prev_next">
+    <nav id="prev_next">
 
-      </div>
-    </main>
-
-    <footer class="footer">
-      <div class="footer-inner">
-        
-
-<div class="copyright">
-  
-  &copy; 2019 – 
-  <span itemprop="copyrightYear">2021</span>
-  <span class="with-love">
-    <i class="fa fa-user"></i>
-  </span>
-  <span class="author" itemprop="copyrightHolder">jefine</span>
+<div class="prev">
+    
+    <p>Newer</p>
+    <a href="/2020/06/04/pta六度空间/"><div class="article-nav-title">pta六度空间</div></a>
+    
+</div>
+<div class="next">
+    
+    <p>Older</p>
+    <a href="/2020/05/17/阿里云-身份证识别调用/"><div class="article-nav-title">阿里云-身份证识别调用</div></a>
+    
 </div>
 
-        
+</nav>
+</div>
+
+<div class="post-comment">
+    
 
 
 
+</div>
 
-
-
-  <script>
-  function leancloudSelector(url) {
-    return document.getElementById(url).querySelector('.leancloud-visitors-count');
-  }
-  if (CONFIG.page.isPost) {
-    function addCount(Counter) {
-      var visitors = document.querySelector('.leancloud_visitors');
-      var url = visitors.getAttribute('id').trim();
-      var title = visitors.getAttribute('data-flag-title').trim();
-
-    Counter('get', `/classes/Counter?where=${encodeURIComponent(JSON.stringify({ url }))}&limit=1`)
-        .then(response => response.json())
-        .then(({ results }) => {
-          if (results.length > 0) {
-            var counter = results[0];
-            Counter('put', '/classes/Counter/' + counter.objectId, { time: { '__op': 'Increment', 'amount': 1 } })
-              .then(response => response.json())
-              .then(() => {
-                leancloudSelector(url).innerText = counter.time + 1;
-              })
-              .catch(error => {
-                console.log('Failed to save visitor count', error);
-              })
-          } else {
-              Counter('post', '/classes/Counter', { title: title, url: url, time: 1 })
-                .then(response => response.json())
-                .then(() => {
-                  leancloudSelector(url).innerText = 1;
-                })
-                .catch(error => {
-                  console.log('Failed to create', error);
-                });
-          }
-        })
-        .catch(error => {
-          console.log('LeanCloud Counter Error', error);
-        });
-    }
-  } else {
-    function showTime(Counter) {
-      var visitors = document.querySelectorAll('.leancloud_visitors');
-      var entries = [...visitors].map(element => {
-        return element.getAttribute('id').trim();
-      });
-
-   Counter('get', `?where=${encodeURIComponent(JSON.stringify({ url: { '$in': entries } }))}`)
-        .then(response => response.json())
-        .then(({ results }) => {
-          if (results.length === 0) {
-            document.querySelectorAll('.leancloud_visitors .leancloud-visitors-count').forEach(element => {
-              element.innerText = 0;
-            });
-            return;
-          }
-          for (var i = 0; i < results.length; i++) {
-            var item = results[i];
-            var url = item.url;
-            var time = item.time;
-            leancloudSelector(url).innerText = time;
-          }
-          for (var i = 0; i < entries.length; i++) {
-            var url = entries[i];
-            var element = leancloudSelector(url);
-            if (element.innerText == '') {
-              element.innerText = 0;
-            }
-          }
-        })
-        .catch(error => {
-          console.log('LeanCloud Counter Error', error);
-        });
-    }
-  }
-
-  fetch('https://app-router.leancloud.cn/2/route?appId=P6wp1XWlawXLj33BOylRsu8k-gzGzoHsz')
-    .then(response => response.json())
-    .then(({ api_server }) => {
-      var Counter = (method, url, data) => {
-        return fetch(`https://${api_server}/1.1${url}`, {
-          method: method,
-          headers: {
-            'X-LC-Id': 'P6wp1XWlawXLj33BOylRsu8k-gzGzoHsz',
-            'X-LC-Key': '1UHlSmySq6dvSx3RUHJ60WhG',
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify(data)
-        });
-      };
-      if (CONFIG.page.isPost) {
-        const localhost = /http:\/\/(localhost|127.0.0.1|0.0.0.0)/;
-        if (localhost.test(document.URL)) return;
-        addCount(Counter);
-      } else if (document.querySelectorAll('.post-title-link').length >= 1) {
-        showTime(Counter);
-      }
-    });
-  </script>
-
-
-
-
-
-
-        
-      </div>
-    </footer>
-  </div>
-
-  
-  <script src="/lib/anime.min.js"></script>
-  <script src="/lib/velocity/velocity.min.js"></script>
-  <script src="/lib/velocity/velocity.ui.min.js"></script>
-<script src="/js/utils.js"></script><script src="/js/motion.js"></script>
-<script src="/js/schemes/muse.js"></script>
-<script src="/js/next-boot.js"></script>
-
-
-
-  
-
-
-
-
-  <script src="/js/local-search.js"></script>
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-
-  
-
-  
+    </main><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 
 </body>
+
 </html>
