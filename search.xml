@@ -4,7 +4,7 @@
     <title>2020</title>
     <url>/2020/01/02/2020/</url>
     <content><![CDATA[<h3 id="2020来咯。"><a href="#2020来咯。" class="headerlink" title="2020来咯。"></a>2020来咯。</h3><p>我们一直以为出现在科幻和未来的2020年，他来了。</p>
-<p>2020更是10年的总结。当然第一批90后30岁了，结合当下的互联网形式，预计今年的35岁梗会愈发汹涌，焦虑会更快的弥漫在这个飞速发展的互联行业中。有人说2019是过去十年中最差的一年，但也是未来十年中最好的一年。曾有人说：每一个行业都有他的黄金十年，白银十年，青铜十年。最好的黄金十年由于移动互联网的爆发持续了20年，那么？互联网要进入白银十年了么？互联网会像传统行业一样逐渐的失去风头么？那么未来什么又是新的未来呢？没有人知道。5g带给我们的究竟是什么样的巨变，我们可能有一些遐想，但未来会不会出现新的增长点（5g+区块链+物联网我还是很看好的）但看未来吧！我辈必将前行。</p>
+<p>[[2020]]更是10年的总结。当然第一批90后30岁了，结合当下的互联网形式，预计今年的35岁梗会愈发汹涌，焦虑会更快的弥漫在这个飞速发展的互联行业中。有人说2019是过去十年中最差的一年，但也是未来十年中最好的一年。曾有人说：每一个行业都有他的黄金十年，白银十年，青铜十年。最好的黄金十年由于移动互联网的爆发持续了20年，那么？互联网要进入白银十年了么？互联网会像传统行业一样逐渐的失去风头么？那么未来什么又是新的未来呢？没有人知道。5g带给我们的究竟是什么样的巨变，我们可能有一些遐想，但未来会不会出现新的增长点（5g+区块链+物联网我还是很看好的）但看未来吧！我辈必将前行。</p>
 <p>在2019跨年演讲《与时间做朋友》中罗振宇（不是罗永浩哈）给我的启发有：</p>
 <h6 id="做-做事的人；做与人交流的人；做最好的自己；"><a href="#做-做事的人；做与人交流的人；做最好的自己；" class="headerlink" title="做 做事的人；做与人交流的人；做最好的自己；"></a>做 做事的人；做与人交流的人；做最好的自己；</h6><h6 id="每个人都是一盏灯，人点亮人"><a href="#每个人都是一盏灯，人点亮人" class="headerlink" title="每个人都是一盏灯，人点亮人"></a>每个人都是一盏灯，人点亮人</h6><h6 id="未来，我来！"><a href="#未来，我来！" class="headerlink" title="未来，我来！"></a>未来，我来！</h6><h6 id><a href="#" class="headerlink" title=" "></a> </h6>]]></content>
       <categories>
@@ -17,7 +17,7 @@
   <entry>
     <title>2020学校各相关比赛，资格证书的时间</title>
     <url>/2020/01/16/2020%E5%AD%A6%E6%A0%A1%E5%90%84%E7%9B%B8%E5%85%B3%E6%AF%94%E8%B5%9B%EF%BC%8C%E8%B5%84%E6%A0%BC%E8%AF%81%E4%B9%A6%E7%9A%84%E6%97%B6%E9%97%B4/</url>
-    <content><![CDATA[<p>2020各大比赛，资格证书时间，例如蓝桥杯、挑战杯、ACM、互联网+大赛比赛报名时间，校固定的机器人大赛，学业规划大赛等时间，教资、计算机二级、四六级等职业资格证书报名时间</p>
+    <content><![CDATA[<p>[[2020]]各大比赛，资格证书时间，例如蓝桥杯、挑战杯、ACM、互联网+大赛比赛报名时间，校固定的机器人大赛，学业规划大赛等时间，教资、计算机二级、四六级等职业资格证书报名时间</p>
   <a id="more"></a>
 <ol>
 <li><p>蓝桥杯：</p>
@@ -135,7 +135,7 @@
   <entry>
     <title>2021</title>
     <url>/2021/01/01/2021/</url>
-    <content><![CDATA[<p>​                                                                    <strong>2020—-&gt;2021</strong></p>
+    <content><![CDATA[<p>​                                                                    <strong>[[2020]]</strong>—-&gt;<strong>[[2021]]</strong></p>
 <p><strong>活着</strong></p>
 <p><img src="/2021/01/01/2021/2021.jpg" alt="2021-2020"></p>
 ]]></content>
@@ -274,7 +274,7 @@
 <li>重复步骤2。</li>
 </ol>
 <p>其中重要 的就是我们需要限制的约束条件和下一个位置的可能点.</p>
-<p>当然bfs是一个思想并不拘泥于为某道题目而服务,所以我们往往需要多加练习,在面对求最短路径的时候,才能从容不迫的写出题解.</p>
+<p>当然[[bfs]]是一个思想并不拘泥于为某道题目而服务,所以我们往往需要多加练习,在面对求最短路径的时候,才能从容不迫的写出题解.</p>
 <h3 id="需要注意的几个小点点："><a href="#需要注意的几个小点点：" class="headerlink" title="需要注意的几个小点点："></a>需要注意的几个小点点：</h3><ol>
 <li><p>vis是为了防止我们将踩过的点再次踩入</p>
 <p>想象一下，我们水花的方向是四周的一圈，那么也一定会有的向着我们已经走过的路的水波方向，我们要做好辨别工作，那么就给他们加上一个vis的判断。他们的范围就是所有的可能涉及的区域集合。可能通常是数组。</p>
@@ -613,7 +613,7 @@ struct Node* next;
 <p>poj2225 亦为此题</p>
 <h2 id="题意及要求"><a href="#题意及要求" class="headerlink" title="题意及要求"></a>题意及要求</h2><p>先来说说真实的题意吧：</p>
 <p>题目给出一个三维的图，使得从一个三维的点，从起点到终点最短距离以及能否走到。多次输出题目。</p>
-<p>看似是一道很简单的bfs题目，其实他就是一道很简单的bfs题目。</p>
+<p>看似是一道很简单的[[bfs]]题目，其实他就是一道很简单的bfs题目。</p>
 <p>不信你看，本题目其中的bfs的内容就是这样正常。</p>
 <figure class="highlight cpp"><table><tr><td class="code"><pre><code class="hljs cpp"><span class="hljs-keyword">while</span> ((!q.empty()))<br>    &#123;<br>        node front = q.front();<br>        q.pop();<br><br>        <span class="hljs-keyword">if</span>((front.x== D)&amp;&amp;(front.y== E)&amp;&amp;(front.z== F))&#123;<br>            <span class="hljs-built_in">cout</span>&lt;&lt;n&lt;&lt;<span class="hljs-string">" "</span>&lt;&lt;front.cnt&lt;&lt;<span class="hljs-built_in">endl</span>;<br>            <span class="hljs-keyword">return</span>;<br>        &#125;<br>        front.cnt++;<br>        node next = front;<br>        <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i=<span class="hljs-number">0</span>;i&lt;<span class="hljs-number">6</span>;i++)&#123;<br>            next.x = front.x + move[i][<span class="hljs-number">0</span>];<br>            next.y = front.y + move[i][<span class="hljs-number">1</span>];<br>            next.z = front.z + move[i][<span class="hljs-number">2</span>];<br>          <span class="hljs-comment">//  cout&lt;&lt;"x,y,z is  "&lt;&lt;next.x&lt;&lt;" "&lt;&lt;next.y&lt;&lt;" "&lt;&lt;next.z&lt;&lt;"  val is "&lt;&lt;val[next.x][next.y][next.z]&lt;&lt;" CHECK is "&lt;&lt;CHECK(next.x,next.y,next.z)&lt;&lt;endl;</span><br>            <span class="hljs-keyword">if</span>(CHECK(next.x,next.y,next.z))&#123;<br>                vis[next.x][next.y][next.z]=<span class="hljs-number">1</span>;<br>                q.push(next);<br>            &#125;<br>        &#125;<br>    &#125;<span class="hljs-built_in">cout</span>&lt;&lt;<span class="hljs-string">"NO ROUTE"</span>&lt;&lt;<span class="hljs-built_in">endl</span>;<br></code></pre></td></tr></table></figure>
 <p><strong>但是</strong></p>
@@ -1002,7 +1002,7 @@ class GFG {
 <p>新API基于ISO标准日历系统，java.time包下的所有类都是不可变类型而且线程安全。</p>
 <p>(因为更安全，不可变了，所以就需要每一个日期搞一个变量（实例？）</p>
 <p><a href="https://mp.weixin.qq.com/s/AGkp_0l_hvMye8QVOBlxwQ" target="_blank" rel="noopener">18 个 Java8 日期处理的实践，太有用了！</a></p>
-<p><a href="https://www.notion.so/6ebff548541544f5a9ba2d6328513ee1" target="_blank" rel="noopener">java.time包</a></p>
+<p>Instant    时间戳<br>Duration    持续时间，时间差<br>LocalDate    只包含日期，比如：2018-02-05<br>LocalTime    只包含时间，比如：23:12:10<br>LocalDateTime    包含日期和时间，比如：2018-02-05 23:14:21<br>Period    时间段<br>ZoneOffset    时区偏移量，比如：+8:00<br>ZonedDateTime    带时区的时间<br>Clock    时钟，比如获取目前美国纽约的时间<br>java.time.format.DateTimeFormatter    时间格式化</p>
 <h2 id="示例1-Java-8中获取今天的日期"><a href="#示例1-Java-8中获取今天的日期" class="headerlink" title="示例1:Java 8中获取今天的日期"></a>示例1:Java 8中获取今天的日期</h2><p>Java 8 中的 LocalDate 用于表示当天日期。和java.util.Date不同，它只有日期，不包含时间。当你仅需要表示日期时就用这个类。</p>
 <figure class="highlight java"><table><tr><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">import</span> java.time.*;<br><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">dealWithTime</span><br></span>&#123; <br>	<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span> <span class="hljs-params">(String[] args)</span> <br>	</span>&#123; <br>        LocalDate today = LocalDate.now();<br>        System.out.println(<span class="hljs-string">"today is:"</span>+today);<br>  <br>    &#125;<br>&#125;<br><span class="hljs-comment">//output:</span><br><span class="hljs-comment">//today is:2020-02-29</span><br></code></pre></td></tr></table></figure>
 <p>而如果需要将年月日信息分开：那么我们可以利用上面的today继续操作；</p>
@@ -1031,7 +1031,7 @@ class GFG {
 <p>在这其中我们还是有很多可以去挖掘的。。。</p>
 <p>对了，最后吐槽一下</p>
 <figure class="highlight java"><table><tr><td class="code"><pre><code class="hljs java"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">dealWithTime</span><br></span>&#123; <br>	<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span> <span class="hljs-params">(String[] args)</span> <br>	</span>&#123;<br>        <br>        <span class="hljs-keyword">long</span> t = System.currentTimeMillis();<br><br>        System.out.println(t);<br><br><br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
-<p>这玩意返回的必须是long类型但是把现在也用不到。返回的时间是距离1970年一月一日零点零分的毫秒数。。</p>
+<p>这玩意返回的必须是long类型但是把现在也用不到。返回的时间是距离1970年一月一日零点零分的毫秒数。。 </p>
 ]]></content>
       <categories>
         <category>java</category>
@@ -1195,8 +1195,8 @@ class GFG {
 </ol>
 <p>输入abc，需要你输出当其中一个水壶的水量达到c时所用的次数与倾倒步骤打印出来；当然如果永远达不到c的话，输出impossible即可。</p>
 <p>tips：多组输入，c符合规范。</p>
-<p>emm，不妨以此题目为例，梳理一下bfs的做法好了。</p>
-<p>首先我们要判断这道题目是bfs，从题目中可以清楚看出，求最短路径，每次的操作是固定的那么基本上就可以用bfs去解决。先看一般，再看特殊的地方需要什么东西来解决（比如题目所求的cnt，步骤）</p>
+<p>emm，不妨以此题目为例，梳理一下[[bfs]]的做法好了。</p>
+<p>首先我们要判断这道题目是[[bfs]]，从题目中可以清楚看出，求最短路径，每次的操作是固定的那么基本上就可以用bfs去解决。先看一般，再看特殊的地方需要什么东西来解决（比如题目所求的cnt，步骤）</p>
 <ol>
 <li><p><strong>确定一个状态包括了什么</strong>：比如，有的题目仅仅需要该点的位置，有的题目还需要其他的东西；只能具体问题具体分析了。在此题目中，我们可以看到一个状态就是我们的a，b两个水壶的储水量。</p>
 <p>那么我们将其设定为一个struct node即可包括 两个int 代表两个水壶的储水量。</p>
@@ -1267,7 +1267,7 @@ class GFG {
 <p>采用的就是tail和last的不断更新（详见代码）</p>
 <figure class="highlight cpp"><table><tr><td class="code"><pre><code class="hljs cpp"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span><span class="hljs-meta-string">&lt;bits/stdc++.h&gt;</span></span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> <span class="hljs-built_in">std</span>;<br><span class="hljs-keyword">const</span> <span class="hljs-keyword">int</span> maxn = <span class="hljs-number">10005</span>;<br><br><span class="hljs-keyword">bool</span> vis[maxn];<span class="hljs-comment">//是否被访问过</span><br><span class="hljs-built_in">vector</span>&lt;<span class="hljs-keyword">int</span>&gt; g[maxn];<br><span class="hljs-keyword">int</span> vertices, edges;<span class="hljs-comment">//所有的顶点数和边数</span><br><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">BFS</span><span class="hljs-params">(<span class="hljs-keyword">int</span> v)</span><br><span class="hljs-comment">//返回该顶点在6度空间里的能接触到的顶点个数</span><br></span>&#123;<br>    <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i=<span class="hljs-number">0</span>;i&lt;maxn;i++)&#123;<br>        vis[i] = <span class="hljs-literal">false</span>;<span class="hljs-comment">//init vis[]</span><br>    &#125;<br>    <span class="hljs-keyword">int</span> tail;<br>    <span class="hljs-keyword">int</span> last = v;<span class="hljs-comment">//指的是每一圈的最后一个（每一个外圈的的每一个顶点都要入队，当该外圈的最后一个也出队了，那么这一层也循环完了</span><br>    <span class="hljs-keyword">int</span> count =<span class="hljs-number">1</span>;<br>    <span class="hljs-keyword">int</span> level = <span class="hljs-number">0</span>;<br>    vis[v] = <span class="hljs-literal">true</span>;<br>    <span class="hljs-built_in">queue</span>&lt;<span class="hljs-keyword">int</span>&gt;q;<br>    q.push(v);<br><br>    <span class="hljs-keyword">while</span>(!q.empty())&#123;<br>        <span class="hljs-keyword">int</span> x = q.front();<span class="hljs-comment">//get the first每一圈的每一个顶点</span><br>        q.pop();<br>        <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> j=<span class="hljs-number">0</span>;j&lt;g[x].size();j++)&#123;<span class="hljs-comment">//判断条件是与x相连的所有顶点的个数</span><br>            <span class="hljs-keyword">if</span>(!vis[g[x][j]])&#123;<br>                vis[g[x][j]] = <span class="hljs-literal">true</span>;<br>                q.push(g[x][j]);<br>                tail = g[x][j];<span class="hljs-comment">//每次都将替换更新，最后得到的是该节点的最后一个相连顶点</span><br>                count++;<br>            &#125; <br>        &#125;<br>        <span class="hljs-keyword">if</span>(x==last)&#123;<br>            <span class="hljs-comment">/*这里指的是我们将该层全部弹出时应所满足的条件<br>            注意第一次的时候是直接成立的<br>            而在第二圈（或更多）的时候，我们将<br>            第一个节点的最后一个遍历的节点作为tail<br>            然后他就成为了last即上一层的最后一个元素<br>            */</span><br>            last = tail;<br>            level++;<br>        &#125;<br>        <span class="hljs-keyword">if</span>(level==<span class="hljs-number">6</span>)<span class="hljs-keyword">break</span>;<br>         &#125;<br>    <span class="hljs-keyword">return</span> count;<br>&#125;<br><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span>&#123;<br>    <span class="hljs-keyword">int</span> x,y;<br>    <span class="hljs-built_in">cin</span>&gt;&gt;vertices&gt;&gt;edges;<br>    <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i = <span class="hljs-number">1</span>;i&lt;=edges;i++)&#123;<br>        <span class="hljs-built_in">cin</span>&gt;&gt;x&gt;&gt;y;<br>        g[x].push_back(y);<span class="hljs-comment">//建立两者之间边的关系</span><br>        g[y].push_back(x);<span class="hljs-comment">//认识是相互的，所以相互加关联</span><br>    &#125;<br><br>    <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> j=<span class="hljs-number">1</span>;j&lt;=vertices;j++)&#123;<br>        <span class="hljs-built_in">printf</span>(<span class="hljs-string">"%d: %.2f%%\n"</span>,j,BFS(j)*<span class="hljs-number">1.0</span>/vertices*<span class="hljs-number">100.0</span>);<br>&#125;<br><span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
 <hr>
-<p>下面是一个月后经过了几道bfs题目熏陶后的想法:</p>
+<p>下面是一个月后经过了几道[[bfs]]题目熏陶后的想法:</p>
 <p>首先读题，发现题目要求我们输出比例，显然总结点数已经给出，那么得到每一个节点的6层以内的节点数即可。</p>
 <p>接着题目有给定了节点之间的关系，所以我们自己可以通过一个bool类型的rel(relative)的二维数组来确定两者的关系是否连通。（这一步可以在main函数中实现）</p>
 <figure class="highlight cpp"><table><tr><td class="code"><pre><code class="hljs cpp"><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span>&#123;<br>    <span class="hljs-keyword">int</span> x,y;<br>    <span class="hljs-built_in">cin</span>&gt;&gt;vertices&gt;&gt;edges;<br>    <br>    <span class="hljs-built_in">memset</span>(ral,<span class="hljs-literal">false</span>,<span class="hljs-keyword">sizeof</span>(ral));<br>    <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i = <span class="hljs-number">1</span>;i&lt;=edges;i++)&#123;<br>        <span class="hljs-built_in">cin</span>&gt;&gt;x&gt;&gt;y;<br>        ral[x][y]=<span class="hljs-number">1</span>;<br>        ral[y][x]=<span class="hljs-number">1</span>;<br>    &#125;<br></code></pre></td></tr></table></figure>
@@ -1330,206 +1330,6 @@ class GFG {
       </categories>
       <tags>
         <tag>pta</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>sql关系代数</title>
-    <url>/2021/01/09/sql%E5%85%B3%E7%B3%BB%E4%BB%A3%E6%95%B0/</url>
-    <content><![CDATA[<p>关系代数 </p>
-<h2 id="1-Motivation"><a href="#1-Motivation" class="headerlink" title="1  Motivation"></a>1  Motivation</h2><p>In the previous notes we talked about how SQL is a declarative  programming language. This means that you specify what you want, but you don’t have to specify how to do it. This is great from a user’s  perspective as it makes the queries much easier to write. As database  engineers, however, we often want a language that is more expressive.  When we study query optimization in a few weeks we’re going to want a  way to express the many diﬀerent valid plans a database can use to  execute a query. For this we will use <strong>Relational Algebra</strong>, a procedural programming language (meaning that the query speciﬁes exactly what operators to use and in what order).</p>
-<h2 id="2-Relational-Algebra-Introduction"><a href="#2-Relational-Algebra-Introduction" class="headerlink" title="2  Relational Algebra Introduction"></a>2  Relational Algebra Introduction</h2><p>All of the operators in relational algebra take in a relation and output a diﬀerent relation. A basic query looks like this:</p>
-<p>πnames(dogs)</p>
-<p>The π operator picks only the columns that it wants to advance to the next operator (just like SQL <strong><code>SELECT</code></strong>) - more on this operator later. The operator takes the dogs relation in  as a parameter and returns a relation that only has the name column of  the dogs relation left. An important fact about relational algebra is  that the relations are sets of tuples, meaning that they cannot have  duplicates in them. If the dogs relation is initially:</p>
-<div class="table-container">
-<table>
-<thead>
-<tr>
-<th>name</th>
-<th>age</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Scooby</td>
-<td>10</td>
-</tr>
-<tr>
-<td>Buster</td>
-<td>15</td>
-</tr>
-<tr>
-<td>Buster</td>
-<td>20</td>
-</tr>
-</tbody>
-</table>
-</div>
-<p>The query above would return:</p>
-<div class="table-container">
-<table>
-<thead>
-<tr>
-<th>name</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Scooby</td>
-</tr>
-<tr>
-<td>Buster</td>
-</tr>
-</tbody>
-</table>
-</div>
-<h2 id="3-Projection-π"><a href="#3-Projection-π" class="headerlink" title="3  Projection (π)"></a>3  Projection (π)</h2><p>We have already been introduced to the <strong>projection operator</strong> which selects only the columns speciﬁed. The columns are speciﬁed in  the subscript of the operator like almost all parameters to operators.  The projection operator is relational algebra’s version of the SQL  SELECT clause.</p>
-<p>We now can express SQL queries involving just the SELECT and FROM clauses with relational algebra. For example the SQL query:</p>
-<p><strong>SELECT</strong> name <strong>FROM</strong> dogs ;</p>
-<p>Can be represented with the expression we introduced in section 2:</p>
-<p>πnames(dogs)</p>
-<p>Note that there is no operator equivalent to the FROM operator in  relational algebra because the starting tables are arguments to the  actual operators.</p>
-<h2 id="4-Selection-σ"><a href="#4-Selection-σ" class="headerlink" title="4  Selection (σ)"></a>4  Selection (σ)</h2><p>The <strong>selection operator</strong> is used to ﬁlter rows based  on a certain condition. Don’t let the name confuse you - this operator  is equivalent to SQL’s WHERE clause, <strong>not</strong> its SELECT clause. Let’s try to express the following query in terms of relational algebra:</p>
-<p><strong>SELECT</strong> name , age <strong>FROM</strong> dogs <strong>WHERE</strong> age = 12;</p>
-<p>The equivalent relational algebra expression is:</p>
-<p>σage=12(πname,age(dogs))</p>
-<p>Another correct expression for that query is:</p>
-<p>πname,age(σage=12(dogs))</p>
-<p>This illustrates the beauty of relational algebra. There is only one  (reasonable) way to write SQL for what the query is trying to  accomplish, but we can come up with multiple diﬀerent expressions in  relational algebra that get the same result. In the ﬁrst expression we  select only the columns we want ﬁrst, and then we ﬁlter out the rows we  don’t want. In the second we ﬁlter the rows ﬁrst and then select the  columns. We will soon learn ways to evaluate which of these plans is  better!</p>
-<p>The selection operator also supports compound predicates. The ∧ symbol corresponds to the AND keyword in SQL and the ∨ symbol corresponds to the OR keyword. For example,</p>
-<p><strong>SELECT</strong> name , age <strong>FROM</strong> dogs <strong>WHERE</strong> age = 12 <strong>AND</strong> name = ‘Timmy ’ ;</p>
-<p>is equivalent to</p>
-<p>πname,age(σage=12∧name=′Timmy′(dogs))</p>
-<h2 id="5-Union-∪"><a href="#5-Union-∪" class="headerlink" title="5  Union (∪)"></a>5  Union (∪)</h2><p>The ﬁrst way we will learn how to combine data from diﬀerent relations is with the <strong>union operator</strong>. Just like the UNION clause in SQL, we take all the rows from each tuple and combine them removing duplicates along the way. As an example, say  we have a dogs table:</p>
-<div class="table-container">
-<table>
-<thead>
-<tr>
-<th>name</th>
-<th>age</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Scooby</td>
-<td>10</td>
-</tr>
-<tr>
-<td>Buster</td>
-<td>15</td>
-</tr>
-<tr>
-<td>Garﬁeld</td>
-<td>20</td>
-</tr>
-</tbody>
-</table>
-</div>
-<p>and a cats table that looks like this:</p>
-<div class="table-container">
-<table>
-<thead>
-<tr>
-<th>name</th>
-<th>age</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Tom</td>
-<td>8</td>
-</tr>
-<tr>
-<td>Garﬁeld</td>
-<td>10</td>
-</tr>
-</tbody>
-</table>
-</div>
-<p>The expression:</p>
-<p>πname(dogs)∪πname(cats)</p>
-<p>would return</p>
-<div class="table-container">
-<table>
-<thead>
-<tr>
-<th>name</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Scooby</td>
-</tr>
-<tr>
-<td>Buster</td>
-</tr>
-<tr>
-<td>Tom</td>
-</tr>
-<tr>
-<td>Garﬁeld</td>
-</tr>
-</tbody>
-</table>
-</div>
-<p>Note that Garﬁeld only shows up once because of the set rules.  Additionally, note that one rule for all of these set operators is that  they must operate on relations that have the same number of attributes,  and the attributes must have the same type. It would not be legal to  union a relation with two columns with a relation that has only one  column.</p>
-<h2 id="6-Set-Diﬀerence-−"><a href="#6-Set-Diﬀerence-−" class="headerlink" title="6  Set Diﬀerence (−)"></a>6  Set Diﬀerence (−)</h2><p>Another set operator is the set diﬀerence operator. Set diﬀerence is  equivalent to the SQL clause EXCEPT. It returns every row in the ﬁrst  table except the rows that also show up in the second table. If you run:</p>
-<p>πname(dogs)−πname(cats)</p>
-<p>expression on the dogs and cats table introduced in the previous section you would get:</p>
-<div class="table-container">
-<table>
-<thead>
-<tr>
-<th>name</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Scooby</td>
-</tr>
-<tr>
-<td>Buster</td>
-</tr>
-</tbody>
-</table>
-</div>
-<p>Garﬁeld does not show up because he is in the cats table, and none of the cats’ names will show up because it is only possible for rows from  the ﬁrst relation to show up in the output.</p>
-<h2 id="7-Intersection-∩"><a href="#7-Intersection-∩" class="headerlink" title="7  Intersection (∩)"></a>7  Intersection (∩)</h2><p>Intersection is just like the INTERSECT SQL operator in that it only  keeps rows that occur in both tables in the intersection. If you run:</p>
-<p>πname(dogs)∩πname(cats)</p>
-<p>on the tables introduced in section 5 you would get:</p>
-<div class="table-container">
-<table>
-<thead>
-<tr>
-<th>name</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Garﬁeld</td>
-</tr>
-</tbody>
-</table>
-</div>
-<p>Because Garﬁeld is the only name to occur in both tables.</p>
-<h2 id="8-Joins-⋈"><a href="#8-Joins-⋈" class="headerlink" title="8  Joins (⋈)"></a>8  Joins (⋈)</h2><p>We haven’t yet discussed how to represent joins in relational algebra - let’s ﬁx that! To join two tables together, write the left table on  the left of the ⋈ operator, put the join condition in the subscript, and put the right  operator on the right side. To join together the cats table with the  dogs table on the name column, you would write:</p>
-<p>cats⋈cats.name=dogs.namedogs</p>
-<p>If you don’t specify the join condition, it becomes a natural join.  Recall from the SQL notes that a natural join joins together all columns from each table with the same name. Therefore, you could also write the same query as above like:</p>
-<p>cats⋈dogs</p>
-<p>Just like the selection operator σ, the join operator ⋈ also supports the compound predicate operators ∧ (AND) and ∨ (OR).</p>
-<h2 id="9-Rename-ρ"><a href="#9-Rename-ρ" class="headerlink" title="9  Rename (ρ)"></a>9  Rename (ρ)</h2><p>The last operator we will discuss is the <strong>rename operator</strong> which essentially accomplishes the same thing as aliasing in SQL. If  you wanted to avoid having to include the table name for the rest of the expression like you would for the expressions in the join section, you  could instead write:</p>
-<p>cats⋈name=dnameρname−&gt;dname(dogs)</p>
-<p>This expression renames the dogs relation’s name column to dname  ﬁrst, so there is no conﬂict in column names. You can no longer use a  natural join anymore because the columns do not have the same name, but  you no longer need to specify which relation the column is coming from  if you want to include other operators.</p>
-<h2 id="10-Practice-Questions"><a href="#10-Practice-Questions" class="headerlink" title="10  Practice Questions"></a>10  Practice Questions</h2><p>Given the following two relations: </p>
-<figure class="highlight stylus"><table><tr><td class="code"><pre><code class="hljs stylus"><span class="hljs-function"><span class="hljs-title">teams</span><span class="hljs-params">(teamid, name)</span></span> <br><span class="hljs-function"><span class="hljs-title">players</span><span class="hljs-params">(playerid, name, teamid, position)</span></span><br></code></pre></td></tr></table></figure>
-<p>Answer the following questions:</p>
-<ol>
-<li>Write an expression that ﬁnds the name and playerid of every player that plays the “center” position.</li>
-<li>Write an expression that ﬁnds the name of every player that plays on the “Warriors”</li>
-<li>Write an expression that ﬁnds the teamid of all teams that do not have any players.</li>
-</ol>
-]]></content>
-      <tags>
-        <tag>sql</tag>
       </tags>
   </entry>
   <entry>

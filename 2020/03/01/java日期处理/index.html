@@ -86,7 +86,7 @@
 <p>新API基于ISO标准日历系统，java.time包下的所有类都是不可变类型而且线程安全。</p>
 <p>(因为更安全，不可变了，所以就需要每一个日期搞一个变量（实例？）</p>
 <p><a href="https://mp.weixin.qq.com/s/AGkp_0l_hvMye8QVOBlxwQ" target="_blank" rel="noopener">18 个 Java8 日期处理的实践，太有用了！</a></p>
-<p><a href="https://www.notion.so/6ebff548541544f5a9ba2d6328513ee1" target="_blank" rel="noopener">java.time包</a></p>
+<p>Instant    时间戳<br>Duration    持续时间，时间差<br>LocalDate    只包含日期，比如：2018-02-05<br>LocalTime    只包含时间，比如：23:12:10<br>LocalDateTime    包含日期和时间，比如：2018-02-05 23:14:21<br>Period    时间段<br>ZoneOffset    时区偏移量，比如：+8:00<br>ZonedDateTime    带时区的时间<br>Clock    时钟，比如获取目前美国纽约的时间<br>java.time.format.DateTimeFormatter    时间格式化</p>
 <h2 id="示例1-Java-8中获取今天的日期"><a href="#示例1-Java-8中获取今天的日期" class="headerlink" title="示例1:Java 8中获取今天的日期"></a>示例1:Java 8中获取今天的日期</h2><p>Java 8 中的 LocalDate 用于表示当天日期。和java.util.Date不同，它只有日期，不包含时间。当你仅需要表示日期时就用这个类。</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">import</span> java.time.*;<br><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">dealWithTime</span><br></span>&#123; <br>	<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span> <span class="hljs-params">(String[] args)</span> <br>	</span>&#123; <br>        LocalDate today = LocalDate.now();<br>        System.out.println(<span class="hljs-string">"today is:"</span>+today);<br>  <br>    &#125;<br>&#125;<br><span class="hljs-comment">//output:</span><br><span class="hljs-comment">//today is:2020-02-29</span><br></code></pre></td></tr></table></figure>
 <p>而如果需要将年月日信息分开：那么我们可以利用上面的today继续操作；</p>
@@ -115,7 +115,7 @@
 <p>在这其中我们还是有很多可以去挖掘的。。。</p>
 <p>对了，最后吐槽一下</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">dealWithTime</span><br></span>&#123; <br>	<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span> <span class="hljs-params">(String[] args)</span> <br>	</span>&#123;<br>        <br>        <span class="hljs-keyword">long</span> t = System.currentTimeMillis();<br><br>        System.out.println(t);<br><br><br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
-<p>这玩意返回的必须是long类型但是把现在也用不到。返回的时间是距离1970年一月一日零点零分的毫秒数。。</p>
+<p>这玩意返回的必须是long类型但是把现在也用不到。返回的时间是距离1970年一月一日零点零分的毫秒数。。 </p>
 
     </div>
     <div class="post-meta">
