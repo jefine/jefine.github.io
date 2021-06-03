@@ -6,7 +6,7 @@
   <link href="https://jefine.github.io/atom.xml" rel="self"/>
   
   <link href="https://jefine.github.io/"/>
-  <updated>2021-01-24T11:26:12.218Z</updated>
+  <updated>2021-06-03T12:36:20.161Z</updated>
   <id>https://jefine.github.io/</id>
   
   <author>
@@ -15,6 +15,42 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>new_EE</title>
+    <link href="https://jefine.github.io/2021/06/03/new-EE/"/>
+    <id>https://jefine.github.io/2021/06/03/new-EE/</id>
+    <published>2021-06-03T12:34:00.000Z</published>
+    <updated>2021-06-03T12:36:20.161Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="新坑IOT方向"><a href="#新坑IOT方向" class="headerlink" title="新坑IOT方向"></a>新坑IOT方向</h2><p>陆陆续续的进行了一些相关方向的内容，今后会多分享一些项目的总结和技术分享。</p><p>加油！</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h2 id=&quot;新坑IOT方向&quot;&gt;&lt;a href=&quot;#新坑IOT方向&quot; class=&quot;headerlink&quot; title=&quot;新坑IOT方向&quot;&gt;&lt;/a&gt;新坑IOT方向&lt;/h2&gt;&lt;p&gt;陆陆续续的进行了一些相关方向的内容，今后会多分享一些项目的总结和技术分享。&lt;/p&gt;
+&lt;p&gt;加油！&lt;/</summary>
+      
+    
+    
+    
+    <category term="EE" scheme="https://jefine.github.io/categories/EE/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Untitled</title>
+    <link href="https://jefine.github.io/2021/01/25/Untitled/"/>
+    <id>https://jefine.github.io/2021/01/25/Untitled/</id>
+    <published>2021-01-25T05:08:06.040Z</published>
+    <updated>2021-01-25T05:08:06.040Z</updated>
+    
+    
+    
+    
+    
+  </entry>
   
   <entry>
     <title>2021</title>
@@ -420,51 +456,6 @@
     
     
     <category term="time" scheme="https://jefine.github.io/tags/time/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>P1023税收与补贴问题</title>
-    <link href="https://jefine.github.io/2020/02/29/P1023%E7%A8%8E%E6%94%B6%E4%B8%8E%E8%A1%A5%E8%B4%B4%E9%97%AE%E9%A2%98/"/>
-    <id>https://jefine.github.io/2020/02/29/P1023%E7%A8%8E%E6%94%B6%E4%B8%8E%E8%A1%A5%E8%B4%B4%E9%97%AE%E9%A2%98/</id>
-    <published>2020-02-29T04:26:23.000Z</published>
-    <updated>2020-02-29T04:44:02.267Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="题目背景"><a href="#题目背景" class="headerlink" title="题目背景"></a>题目背景</h2><p>每样商品的价格越低，其销量就会相应增大。现已知某种商品的成本及其在若干价位上的销量（产品不会低于成本销售），并假设相邻价位间销量的变化是线性的且在价格高于给定的最高价位后，销量以某固定数值递减。（我们假设价格及销售量都是整数）</p><p>对于某些特殊商品，不可能完全由市场去调节其价格。这时候就需要政府以税收或补贴的方式来控制。（所谓税收或补贴就是对于每个产品收取或给予生产厂家固定金额的货币）</p><h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><p>你是某家咨询公司的项目经理，现在你已经知道政府对某种商品的预期价格，以及在各种价位上的销售情况。要求你确定政府对此商品是应收税还是补贴的最少金额（也为整数），才能使商家在这样一种政府预期的价格上，获取相对其他价位上的最大总利润。</p><p>总利润=单位商品利润   × × 销量</p><p>单位商品利润=单位商品价格 - 单位商品成本 （- 税金  or  + 补贴）</p><h2 id="输入格式"><a href="#输入格式" class="headerlink" title="输入格式"></a>输入格式</h2><p>输入的第一行为政府对某种商品的预期价，第二行有两个整数，第一个整数为商品成本，第二个整数为以成本价销售时的销售量，以下若干行每行都有两个整数，第一个为某价位时的单价，第二个为此时的销量，以一行−1-1−1，−1-1−1表示所有已知价位及对应的销量输入完毕，输入的最后一行为一个单独的整数表示在已知的最高单价外每升高一块钱将减少的销量。</p><h2 id="输出格式"><a href="#输出格式" class="headerlink" title="输出格式"></a>输出格式</h2><p>输出有两种情况：若在政府预期价上能得到最大总利润，则输出一个单独的整数，数的正负表示是补贴还是收税，数的大小表示补贴或收税的金额最小值。若有多解，取绝对值最小的输出。</p><p>如在政府预期价上不能得到最大总利润，则输出“NO SOLUTION”。</p><h2 id="输入输出样例"><a href="#输入输出样例" class="headerlink" title="输入输出样例"></a>输入输出样例</h2><p><strong>输入 #1</strong> </p><figure class="highlight angelscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs angelscript"><span class="hljs-number">31</span><br><span class="hljs-number">28</span> <span class="hljs-number">130</span><br><span class="hljs-number">30</span> <span class="hljs-number">120</span><br><span class="hljs-number">31</span> <span class="hljs-number">110</span><br><span class="hljs-number">-1</span>  <span class="hljs-number">-1</span><br><span class="hljs-number">15</span><br></code></pre></td></tr></table></figure><p><strong>输出 #1</strong> </p><figure class="highlight angelscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs angelscript"><span class="hljs-number">4</span><br></code></pre></td></tr></table></figure><h2 id="说明-提示"><a href="#说明-提示" class="headerlink" title="说明/提示"></a>说明/提示</h2><p>所有数字均小于100000</p><h1 id="解题思路："><a href="#解题思路：" class="headerlink" title="解题思路："></a>解题思路：</h1><h3 id="tips：说实话，这个题目看了很久。。。"><a href="#tips：说实话，这个题目看了很久。。。" class="headerlink" title="tips：说实话，这个题目看了很久。。。"></a>tips：说实话，这个题目看了很久。。。</h3><p>最后，发现所求的是什么了。是要求政府给定一个预期的价格，然后你去尝试不同的补贴或者税收，得到他们的利润，并<strong>看看在每种税收或补贴下总利润最高的价格是不是政府预期价</strong> 。（可以好好思考一下这句，那么我们就计算出不同补贴或税收下，利润最大的价格，再比较）</p><p>（最后，好像没有不符合条件的，所以不用管。。。）</p><p>那么：</p><ol><li><p>我们可以先将购买者的价格和所对应的销量全部存起来，但这又有两个问题：</p><p>1）在题目给出的价格和销量之间，销量是随价格线性变化的，我们可通过计算得出期间的对应价格与销量，并都储存起来。（具体实施方法见代码）即 价格-销量表。 </p><p>2）再输入的最后给定了之后的销量减少值，我们就可以从中得到其后，一直到销量小于0的对应关系，并储存起来。</p></li><li><p>最后再根据不同的补贴（税收）（用一个循环从1开始跑到10000）依次计算其最大利润，并比较在该最大利润的价格是否与政府的价格相同。</p></li></ol><h2 id="代码："><a href="#代码：" class="headerlink" title="代码："></a>代码：</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br></pre></td><td class="code"><pre><code class="hljs c++"><span class="hljs-comment">//代码来源：https://www.luogu.com.cn/user/174034</span><br><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span><span class="hljs-meta-string">&lt;bits/stdc++.h&gt;</span></span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> <span class="hljs-built_in">std</span>;<br><span class="hljs-keyword">int</span> a[<span class="hljs-number">100010</span>][<span class="hljs-number">3</span>];<span class="hljs-comment">//用于存放价格和销量的数组</span><br><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span><br></span>&#123;<br>    <span class="hljs-keyword">int</span> i=<span class="hljs-number">1</span>,j=<span class="hljs-number">1</span>,k,expect,down,<span class="hljs-built_in">max</span>,temp,cha,xl,num,s,price,p;<br>    <span class="hljs-built_in">cin</span>&gt;&gt;expect;<span class="hljs-comment">//读入预期价</span><br>    <span class="hljs-keyword">while</span>(<span class="hljs-built_in">cin</span>&gt;&gt;a[i][<span class="hljs-number">1</span>]&gt;&gt;a[i][<span class="hljs-number">2</span>]&amp;&amp;a[i][<span class="hljs-number">1</span>]!=<span class="hljs-number">-1</span>&amp;&amp;a[i] [<span class="hljs-number">2</span>]!=<span class="hljs-number">-1</span>)<span class="hljs-comment">//如果输入的两个数不是-1，-1</span><br>    &#123;<br>        i++;<span class="hljs-comment">//循环变量i++</span><br>        <span class="hljs-keyword">if</span>(i&gt;<span class="hljs-number">2</span>&amp;&amp;a[i<span class="hljs-number">-1</span>][<span class="hljs-number">1</span>]-a[i<span class="hljs-number">-2</span>][<span class="hljs-number">1</span>]&gt;<span class="hljs-number">1</span>)<span class="hljs-comment">//如果两个价格之间差大于一</span><br>        &#123;<br>            i--;<span class="hljs-comment">//回到上一个读入的销量</span><br>            cha=(a[i<span class="hljs-number">-1</span>][<span class="hljs-number">2</span>]-a[i][<span class="hljs-number">2</span>])/(a[i][<span class="hljs-number">1</span>]-a[i<span class="hljs-number">-1</span>][<span class="hljs-number">1</span>]);<span class="hljs-comment">//求出每次销量减少多少：销量差/价格差</span><br>            temp=a[i][<span class="hljs-number">1</span>];<span class="hljs-comment">//记录下价格</span><br>            <span class="hljs-keyword">for</span>(j=a[i<span class="hljs-number">-1</span>][<span class="hljs-number">1</span>]+<span class="hljs-number">1</span>;j&lt;=temp;j++)<span class="hljs-comment">//按价格递增顺序依次写入</span><br>            &#123;<br>                a[i][<span class="hljs-number">1</span>]=j;<span class="hljs-comment">//写入价格</span><br>                a[i][<span class="hljs-number">2</span>]=a[i<span class="hljs-number">-1</span>][<span class="hljs-number">2</span>]-cha;<span class="hljs-comment">//按销量差写入销量</span><br>                i++;<br>            &#125;<br>        &#125;<br>    &#125;<br>    <span class="hljs-built_in">cin</span>&gt;&gt;down;<span class="hljs-comment">//输入超过最大价格之后每次销量降低多少</span><br>    i--;<span class="hljs-comment">//因为上面的while循环最后有i++所以用i--抵消……</span><br>    xl=a[i][<span class="hljs-number">2</span>];<span class="hljs-comment">//记录目前的销量</span><br>    <span class="hljs-keyword">while</span>(xl&gt;<span class="hljs-number">0</span>)<br>    &#123;<br>        <span class="hljs-keyword">if</span>(xl-down&lt;<span class="hljs-number">0</span>)<span class="hljs-keyword">break</span>;<span class="hljs-comment">//如销量小于零则退出</span><br>        <span class="hljs-keyword">else</span><span class="hljs-comment">//否则</span><br>        &#123;<br>            xl-=down;<span class="hljs-comment">//销量每次减掉down</span><br>            i++;<span class="hljs-comment">//循环变量++</span><br>            a[i][<span class="hljs-number">1</span>]=a[i<span class="hljs-number">-1</span>][<span class="hljs-number">1</span>]+<span class="hljs-number">1</span>;<span class="hljs-comment">//每次价格+1</span><br>            a[i][<span class="hljs-number">2</span>]=xl;<span class="hljs-comment">//销量就是xl</span><br>        &#125;<br>    &#125;<br>    <span class="hljs-keyword">for</span>(j=<span class="hljs-number">1</span>;j&lt;=<span class="hljs-number">10000</span>;j++)<span class="hljs-comment">//该遍历了，因为收税相当于补贴*-1所以记录一下符号即可</span><br>    &#123;<br>        <span class="hljs-built_in">max</span>=<span class="hljs-number">-99999</span>;<span class="hljs-comment">//用于存储最大的总利润</span><br>        <span class="hljs-keyword">for</span>(k=<span class="hljs-number">1</span>;k&lt;=i;k++)<span class="hljs-comment">//每次扫一遍每一种价格</span><br>        &#123;<br>            num=(a[k][<span class="hljs-number">1</span>]-a[<span class="hljs-number">1</span>][<span class="hljs-number">1</span>]+j)*a[k][<span class="hljs-number">2</span>];<span class="hljs-comment">//套公式算出总利润</span><br>            <span class="hljs-keyword">if</span>(num&gt;=<span class="hljs-built_in">max</span>)<span class="hljs-comment">//如果总利润比目前最大的大</span><br>            &#123;<br>                <span class="hljs-built_in">max</span>=num;<span class="hljs-comment">//更新max</span><br>                price=a[k][<span class="hljs-number">1</span>];<span class="hljs-comment">//记录下价格</span><br>                p=<span class="hljs-number">1</span>;<span class="hljs-comment">//记录下符号</span><br>            &#125;<br>        &#125;<br>        <span class="hljs-keyword">if</span>(price==expect)&#123;<span class="hljs-built_in">cout</span>&lt;&lt;j*p;<span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;&#125;<span class="hljs-comment">//如果价格就是政府预期价则打印出来，因为本身就是从小到大遍历所以不用求绝对值最小的</span><br>        <span class="hljs-built_in">max</span>=<span class="hljs-number">-99999</span>;<span class="hljs-comment">//后面是收税，原理同上</span><br>        <span class="hljs-keyword">for</span>(k=<span class="hljs-number">1</span>;k&lt;=i;k++)<br>        &#123;<br>            num=(a[k][<span class="hljs-number">1</span>]-a[<span class="hljs-number">1</span>][<span class="hljs-number">1</span>]-j)*a[k][<span class="hljs-number">2</span>];<br>            <span class="hljs-keyword">if</span>(num&gt;=<span class="hljs-built_in">max</span>)<br>            &#123;<br>               <span class="hljs-built_in">max</span>=num;<br>                price=a[k][<span class="hljs-number">1</span>];  <br>                p=<span class="hljs-number">-1</span>;<br>            &#125;<br>        &#125;<br>        <span class="hljs-keyword">if</span>(price==expect)&#123;<span class="hljs-built_in">cout</span>&lt;&lt;j*p;<span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;&#125;<br>    &#125;<br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></td></tr></table></figure>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;h2 id=&quot;题目背景&quot;&gt;&lt;a href=&quot;#题目背景&quot; class=&quot;headerlink&quot; title=&quot;题目背景&quot;&gt;&lt;/a&gt;题目背景&lt;/h2&gt;&lt;p&gt;每样商品的价格越低，其销量就会相应增大。现已知某种商品的成本及其在若干价位上的销量（产品不会低于成本销售），并假设相邻价位间</summary>
-      
-    
-    
-    
-    <category term="编程" scheme="https://jefine.github.io/categories/%E7%BC%96%E7%A8%8B/"/>
-    
-    
-    <category term="洛谷" scheme="https://jefine.github.io/tags/%E6%B4%9B%E8%B0%B7/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>概述STL</title>
-    <link href="https://jefine.github.io/2020/02/28/%E6%A6%82%E8%BF%B0STL/"/>
-    <id>https://jefine.github.io/2020/02/28/%E6%A6%82%E8%BF%B0STL/</id>
-    <published>2020-02-28T05:27:31.000Z</published>
-    <updated>2020-08-10T04:08:28.250Z</updated>
-    
-    <content type="html"><![CDATA[<p>使用stl可以大大提高算法设计的效率和可靠性。</p>  <a id="more"></a><ol><li>概述：</li></ol><p>STL 即Standard Template Library标准模板类库。</p><p>是标准c++库的子集</p><p>通用，强大</p><ol><li>构成：</li></ol><p>container：容器（储存元素）</p><p>algorithm：算法（操作元素）</p><p>iterator：迭代器（类似指针）</p><p>容器container:是一种数据结构</p><h2 id="顺序容器："><a href="#顺序容器：" class="headerlink" title="顺序容器："></a>顺序容器：</h2><p>1）</p><p><a href="https://jefine.github.io/2020/02/27/stlvector/">vector向量容器</a></p><p>2）</p><p>string 类似于上面的函数，有个别的例外。</p><p>3）</p><p>Dequen双端队列容器</p><p>是链表和字符串的调和产物，是多个连续的队列块。</p><p>4）list链表容器</p><p>是一个双链表类模板，只能使用++ - -来使用迭代器</p><h2 id="2-关联容器："><a href="#2-关联容器：" class="headerlink" title="2. 关联容器："></a>2. 关联容器：</h2><p>关联容器中每个元素都有一个关键字（key），通过key来储存和读取原损失，这些关键词可能于元素在容器中的位置无关，所以关联容器中不提供顺序容器中的front(),push_front(),pop_back()等操作，可以实现快速搜索（运用了分类的数据结构）</p><p>1）set（集合容器）/multiset（多重集合容器）</p><p>区别：</p><p>set中元素的关键字是唯一的，而multiset的关键字可以不唯一。<strong>默认情况下会对元素按照升序排列。</strong></p><p>而如果需要集合中的元素可以重复那么可以使用multiset。</p><p>又由于set没有重复的元素，所以如果添加的元素相同，那么不添加；而multiset可以有重复的元素，所以在删除的时候，会将其全部删除然后返回一个被删去元素个数。</p><p>特殊的函数有：</p><p>count（k）返回k在set中的次数。</p><p>find（k)如存在返回该元素的迭代器，否则返回end（）；</p><p>upper/lower_bound（k）返回关键字&gt;k或&gt;=k的第一个元素的迭代器</p><p>2）map（映射容器）/multimap（多重映射容器）</p><p>映射是实现关键字和值的各系的储存结构，可以用key来访问value</p><p>实现关键字和值关系的对应，而map是一一对应；而multimap是</p><p>同时map/multimap容器中的key和value是pair类型（不是像set一样两者都是key类型）pair是一个结构体声明如下：</p><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs c++"><span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">pair</span><br>&#123;</span> T first;<span class="hljs-comment">//对应key值</span><br>  T second;<span class="hljs-comment">//对应value值</span><br>&#125;<br></code></pre></td></tr></table></figure><p>按照key升序排列，以红黑树的形式。map支持【】；而multimap不允许【】（在使用map[key]的时侯如果不存在该key值那么就以其为关键字插入一个元素。</p><p>三种方式插入：</p><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs c++"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span><span class="hljs-meta-string">&lt;bits/stdc++.h&gt;</span></span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> <span class="hljs-built_in">std</span>;<br><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span>&#123;<br>    <span class="hljs-built_in">map</span>&lt;<span class="hljs-keyword">char</span>,<span class="hljs-keyword">int</span>&gt; mym;<br>    mym[<span class="hljs-string">'a'</span>] = <span class="hljs-number">1</span>;<br>    mym.insert(pair&lt;<span class="hljs-keyword">char</span>,<span class="hljs-keyword">int</span>&gt;(<span class="hljs-string">'b'</span>,<span class="hljs-number">2</span>));<br>    mym.insert(<span class="hljs-built_in">map</span>&lt;<span class="hljs-keyword">char</span>,<span class="hljs-keyword">int</span>&gt;::value_type(<span class="hljs-string">'c'</span>,<span class="hljs-number">2</span>));<br>    <span class="hljs-built_in">map</span>&lt;<span class="hljs-keyword">char</span>,<span class="hljs-keyword">int</span>&gt;::iterator it;<br>    <span class="hljs-keyword">for</span>(it = mym.<span class="hljs-built_in">begin</span>();it!=mym.<span class="hljs-built_in">end</span>();++it)&#123;<br>        <span class="hljs-built_in">cout</span>&lt;&lt;it-&gt;first&lt;&lt;it-&gt;second;<br>    &#125;<br><br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></td></tr></table></figure><h2 id="适配器容器："><a href="#适配器容器：" class="headerlink" title="适配器容器："></a>适配器容器：</h2><p>是基于其他的容器实现的容器，在底层容器实现适配器容器的功能，实际上可以将其作为一个一般的容器去使用。后进后出（只能从顶部出入）</p><p>1）stark 栈容器：</p><p>后进后出默认的底层容器是deque，（当然也可以指定其他的容器作为stark的底层容器）</p><p>只有简单的pop（）出栈；push（）入栈；empty（）；size（）</p><p>2）queue队列容器：先进先出。</p><p>插入的元素在队尾，pop（）出的元素在队首。</p><p>3)priority_queue(优先队列容器）</p><p>可随意顺序入队列但是一旦进入就会被排序（按照值的大小排序）</p><p>在这个里面使用pop（）来找到队伍最前面的（也是最大值的）</p>]]></content>
-    
-    
-    <summary type="html">&lt;p&gt;使用stl可以大大提高算法设计的效率和可靠性。&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="算法" scheme="https://jefine.github.io/categories/%E7%AE%97%E6%B3%95/"/>
-    
-    
-    <category term="stl" scheme="https://jefine.github.io/tags/stl/"/>
     
   </entry>
   

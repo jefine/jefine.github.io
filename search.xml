@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>Untitled</title>
+    <url>/2021/01/25/Untitled/</url>
+    <content><![CDATA[]]></content>
+  </entry>
+  <entry>
     <title>2020</title>
     <url>/2020/01/02/2020/</url>
     <content><![CDATA[<h3 id="2020来咯。"><a href="#2020来咯。" class="headerlink" title="2020来咯。"></a>2020来咯。</h3><p>我们一直以为出现在科幻和未来的2020年，他来了。</p>
@@ -102,37 +107,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Java无法仅读取一个字符</title>
-    <url>/2020/02/25/Java%E6%97%A0%E6%B3%95%E4%BB%85%E8%AF%BB%E5%8F%96%E4%B8%80%E4%B8%AA%E5%AD%97%E7%AC%A6/</url>
-    <content><![CDATA[<p>问题描述</p>
-<p>在使用java中，有时希望可以像c语言一样单单读取一个字符，但是发现并没有nextChar()的方法可供使用。</p>
-<p>解决办法</p>
-<p>方法一是最常见的方法，和方法二类似都是先得到一个String字符串，然后得到第一个字符，而方法三是根本的解决办法（虽然不好用）</p>
-<p><strong>方法一：</strong></p>
-<p>1．先创建一个Scanner对象</p>
-<p>2．调用Scanner对象的next()方法获取控制台输入，返回的是一个String类型,因为没有nextChar()方法</p>
-<p>3．调用String的charAt(0)方法获取第一个字符</p>
- <figure class="highlight java"><table><tr><td class="code"><pre><code class="hljs java"> Scanner sc = <span class="hljs-keyword">new</span> Scanner(System.in);<br><br> String s = sc.next();<br><br> <span class="hljs-keyword">char</span> c = s.charAt(<span class="hljs-number">0</span>);<br><span class="hljs-comment">//最后两条语句也可写为char c = sc.next().charAt(0);</span><br></code></pre></td></tr></table></figure>
-<p><strong>方法二：</strong></p>
-<p>使用方法，将string转换为字符数组，然后取第一个字符即可</p>
- <figure class="highlight java"><table><tr><td class="code"><pre><code class="hljs java">Scanner sc = <span class="hljs-keyword">new</span> Scanner(System.in);<br><br><span class="hljs-keyword">char</span> c = scanner.next().toCharArray()[<span class="hljs-number">0</span>];<br></code></pre></td></tr></table></figure>
-<p><strong><em>方法三：</em></strong></p>
-<p><em>需要有强制转换（因为in.read()得到的是int类型）</em></p>
-<p>需要引入.io（import java.io.*;）</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">char</span> t = <span class="hljs-number">0</span>;<br>    <span class="hljs-keyword">try</span> &#123;<br>      t = (<span class="hljs-keyword">char</span>)System.in.read();<br>    &#125; <span class="hljs-keyword">catch</span> (IOException e) &#123;<br>    e.printStackTrace();<br>  &#125;<br></code></pre></td></tr></table></figure>
-<p> <strong>或</strong></p>
-<p>2.在方法中抛出异常：public static void main(String[] args) throws IOException</p>
-<p>然后</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">char</span> t = <span class="hljs-number">0</span>;<br><br>t = (<span class="hljs-keyword">char</span>)System.in.read();<br></code></pre></td></tr></table></figure>
-<p><img src="/2020/02/25/Java%E6%97%A0%E6%B3%95%E4%BB%85%E8%AF%BB%E5%8F%96%E4%B8%80%E4%B8%AA%E5%AD%97%E7%AC%A6/1.png" alt></p>
-<p>但可以做到不影响其他的字符（真正意义上的读入一个字符）</p>
-<p><img src="/2020/02/25/Java%E6%97%A0%E6%B3%95%E4%BB%85%E8%AF%BB%E5%8F%96%E4%B8%80%E4%B8%AA%E5%AD%97%E7%AC%A6/2.png" alt></p>
-]]></content>
-      <categories>
-        <category>java</category>
-      </categories>
-  </entry>
-  <entry>
     <title>2021</title>
     <url>/2021/01/01/2021/</url>
     <content><![CDATA[<p>​                                                                    <strong>[[2020]]</strong>—-&gt;<strong>[[2021]]</strong></p>
@@ -144,83 +118,6 @@
       </categories>
       <tags>
         <tag>newyear</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>L1-033出生年</title>
-    <url>/2020/01/04/L1-033%E5%87%BA%E7%94%9F%E5%B9%B4/</url>
-    <content><![CDATA[<p><img src="/2020/01/04/L1-033%E5%87%BA%E7%94%9F%E5%B9%B4/blog\hexo\source\_posts\jmK5wuZkEV4aCdJ.png" alt="image.png"></p>
-<p>以上是新浪微博中一奇葩贴：“我出生于1988年，直到25岁才遇到4个数字都不相同的年份。”也就是说，直到2013年才达到“4个数字都不相同”的要求。本题请你根据要求，自动填充“我出生于<code>y</code>年，直到<code>x</code>岁才遇到<code>n</code>个数字都不相同的年份”这句话。</p>
-<h3 id="输入格式："><a href="#输入格式：" class="headerlink" title="输入格式："></a>输入格式：</h3><p>输入在一行中给出出生年份<code>y</code>和目标年份中不同数字的个数<code>n</code>，其中<code>y</code>在[1, 3000]之间，<code>n</code>可以是2、或3、或4。注意不足4位的年份要在前面补零，例如公元1年被认为是0001年，有2个不同的数字0和1。</p>
-<h3 id="输出格式："><a href="#输出格式：" class="headerlink" title="输出格式："></a>输出格式：</h3><p>根据输入，输出<code>x</code>和能达到要求的年份。数字间以1个空格分隔，行首尾不得有多余空格。年份要按4位输出。注意：所谓“<code>n</code>个数字都不相同”是指不同的数字正好是<code>n</code>个。如“2013”被视为满足“4位数字都不同”的条件，但不被视为满足2位或3位数字不同的条件。</p>
-<h3 id="输入样例1："><a href="#输入样例1：" class="headerlink" title="输入样例1："></a>输入样例1：</h3><figure class="highlight plain"><table><tr><td class="code"><pre><code class="hljs in">1988 4<br></code></pre></td></tr></table></figure>
-<h3 id="输出样例1："><a href="#输出样例1：" class="headerlink" title="输出样例1："></a>输出样例1：</h3><figure class="highlight plain"><table><tr><td class="code"><pre><code class="hljs out">25 2013<br></code></pre></td></tr></table></figure>
-<h3 id="输入样例2："><a href="#输入样例2：" class="headerlink" title="输入样例2："></a>输入样例2：</h3><figure class="highlight basic"><table><tr><td class="code"><pre><code class="hljs basic"><span class="hljs-symbol">1 </span><span class="hljs-number">2</span><br></code></pre></td></tr></table></figure>
-<h3 id="输出样例2："><a href="#输出样例2：" class="headerlink" title="输出样例2："></a>输出样例2：</h3><figure class="highlight basic"><table><tr><td class="code"><pre><code class="hljs basic"><span class="hljs-symbol">0 </span><span class="hljs-number">0001</span><br></code></pre></td></tr></table></figure>
-<h3 id="题目思路："><a href="#题目思路：" class="headerlink" title="题目思路："></a>题目思路：</h3><p>起初打算使用int，来储存，最后使用%04的输出。但是由于分解数字等太麻烦（其实计算各个数字出现的次数才是最麻烦的）期间还使用了sort来排序，方便得到cnt（多少个不同数字）但是这样有改变了原来的年份。。。最终，还是使用了最基本的字符。</p>
-<p>在实现题目要求的时候，常常遇到没有初始化而遇到到许多问题（记得初始化呀。。。</p>
-<p>经过思考，采用a[4]来表示年份，b[10]来记录数字出现的次数。（直接赋值1）这样有几个1就有多少个不同的数字。（算是一种逆向吧，不怕数字重复了。。）</p>
-<h3 id="代码："><a href="#代码：" class="headerlink" title="代码："></a>代码：</h3><figure class="highlight cpp"><table><tr><td class="code"><pre><code class="hljs cpp"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span><span class="hljs-meta-string">&lt;bits/stdc++.h&gt;</span></span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> <span class="hljs-built_in">std</span>;<br><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span>&#123;<span class="hljs-comment">//调试的好麻烦。。</span><br>	<br>	<span class="hljs-keyword">int</span> n;<br>	<span class="hljs-keyword">char</span> a[<span class="hljs-number">4</span>];<br>	<span class="hljs-keyword">int</span> cnt=<span class="hljs-number">0</span>;<br>	<span class="hljs-keyword">static</span> <span class="hljs-keyword">int</span> b[<span class="hljs-number">10</span>];<br>	<span class="hljs-built_in">scanf</span>(<span class="hljs-string">"%s %d"</span>,&amp;a,&amp;n);<br>	<br>	<span class="hljs-keyword">while</span>(<span class="hljs-built_in">strlen</span>(a)&lt;<span class="hljs-number">4</span>)&#123;<span class="hljs-comment">//将其化为四位年份 (buling)</span><br>		<span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i=<span class="hljs-number">2</span>;i&gt;=<span class="hljs-number">0</span>;i--)&#123;<span class="hljs-comment">//from 2 to 0;</span><br>			a[i+<span class="hljs-number">1</span>]=a[i];<br>		&#125;a[<span class="hljs-number">0</span>]=<span class="hljs-string">'0'</span>;<span class="hljs-comment">//不是0而是‘0'</span><br>	&#125;<br>	<span class="hljs-keyword">int</span> start=(a[<span class="hljs-number">0</span>]-<span class="hljs-string">'0'</span>)*<span class="hljs-number">1000</span>+(a[<span class="hljs-number">1</span>]-<span class="hljs-string">'0'</span>)*<span class="hljs-number">100</span>+(a[<span class="hljs-number">2</span>]-<span class="hljs-string">'0'</span>)*<span class="hljs-number">10</span>+a[<span class="hljs-number">3</span>]-<span class="hljs-string">'0'</span>;<br>	b[(a[<span class="hljs-number">0</span>]-<span class="hljs-string">'0'</span>)]=<span class="hljs-number">1</span>;<br>	b[(a[<span class="hljs-number">1</span>]-<span class="hljs-string">'0'</span>)]=<span class="hljs-number">1</span>;<br>	b[(a[<span class="hljs-number">2</span>]-<span class="hljs-string">'0'</span>)]=<span class="hljs-number">1</span>;<br>	b[a[<span class="hljs-number">3</span>]-<span class="hljs-string">'0'</span>]=<span class="hljs-number">1</span>;<br>	<br>	<span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i=<span class="hljs-number">0</span>;i&lt;<span class="hljs-number">10</span>;i++)&#123;<br>		<span class="hljs-keyword">if</span>(b[i])&#123;<br>			cnt++;<br>		&#125;<br>	&#125;<br>	<br>	<span class="hljs-keyword">while</span>(cnt!=n)&#123;<br>		cnt=<span class="hljs-number">0</span>;<br>	a[<span class="hljs-number">3</span>]++;<br>	<span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i=<span class="hljs-number">0</span>;i&lt;<span class="hljs-number">10</span>;i++)b[i]=<span class="hljs-number">0</span>;<br>	<span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> j=<span class="hljs-number">3</span>;j&gt;=<span class="hljs-number">1</span>;j--)&#123;<span class="hljs-comment">//进位 </span><br>		<span class="hljs-keyword">if</span>(a[j]==<span class="hljs-string">':'</span>)&#123;<br>			a[j]=<span class="hljs-string">'0'</span>;<br>			a[j<span class="hljs-number">-1</span>]+=<span class="hljs-number">1</span>;<br>		&#125;<br>	&#125;<br>	b[(a[<span class="hljs-number">0</span>]-<span class="hljs-string">'0'</span>)]=<span class="hljs-number">1</span>;<br>	b[(a[<span class="hljs-number">1</span>]-<span class="hljs-string">'0'</span>)]=<span class="hljs-number">1</span>;<br>	b[(a[<span class="hljs-number">2</span>]-<span class="hljs-string">'0'</span>)]=<span class="hljs-number">1</span>;<br>	b[a[<span class="hljs-number">3</span>]-<span class="hljs-string">'0'</span>]=<span class="hljs-number">1</span>;<br><br>	<br>	<span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i=<span class="hljs-number">0</span>;i&lt;<span class="hljs-number">10</span>;i++)&#123;<br>		<span class="hljs-keyword">if</span>(b[i])&#123;<br>			cnt++;<br>		&#125;<br>	&#125;	<br>	&#125;<br>	<span class="hljs-keyword">int</span> end=(a[<span class="hljs-number">0</span>]-<span class="hljs-string">'0'</span>)*<span class="hljs-number">1000</span>+(a[<span class="hljs-number">1</span>]-<span class="hljs-string">'0'</span>)*<span class="hljs-number">100</span>+(a[<span class="hljs-number">2</span>]-<span class="hljs-string">'0'</span>)*<span class="hljs-number">10</span>+a[<span class="hljs-number">3</span>]-<span class="hljs-string">'0'</span>;<br>	<span class="hljs-built_in">cout</span>&lt;&lt;end-start&lt;&lt;<span class="hljs-string">" "</span>;<br>	<span class="hljs-built_in">printf</span>(<span class="hljs-string">"%04d"</span>,end);<br>	<span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>编程</category>
-      </categories>
-      <tags>
-        <tag>pta</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>L1-046整除光棍（模拟大数除法）</title>
-    <url>/2020/01/05/L1-046%E6%95%B4%E9%99%A4%E5%85%89%E6%A3%8D%EF%BC%88%E6%A8%A1%E6%8B%9F%E5%A4%A7%E6%95%B0%E9%99%A4%E6%B3%95%EF%BC%89/</url>
-    <content><![CDATA[<p>这里所谓的“光棍”，并不是指单身汪啦~ 说的是全部由1组成的数字，比如1、11、111、1111等。传说任何一个光棍都能被一个不以5结尾的奇数整除。比如，111111就可以被13整除。 现在，你的程序要读入一个整数<code>x</code>，这个整数一定是奇数并且不以5结尾。然后，经过计算，输出两个数字：第一个数字<code>s</code>，表示<code>x</code>乘以<code>s</code>是一个光棍，第二个数字<code>n</code>是这个光棍的位数。这样的解当然不是唯一的,题目要求你输出最小的解。</p>
-<p>提示：一个显然的办法是逐渐增加光棍的位数，直到可以整除<code>x</code>为止。但难点在于，<code>s</code>可能是个非常大的数 —— 比如，程序输入31，那么就输出3584229390681和15，因为31乘以3584229390681的结果是111111111111111，一共15个1。</p>
-<h3 id="输入格式："><a href="#输入格式：" class="headerlink" title="输入格式："></a>输入格式：</h3><p>输入在一行中给出一个不以5结尾的正奇数<code>x</code>（&lt;1000）。</p>
-<h3 id="输出格式："><a href="#输出格式：" class="headerlink" title="输出格式："></a>输出格式：</h3><p>在一行中输出相应的最小的<code>s</code>和<code>n</code>，其间以1个空格分隔。</p>
-<h3 id="输入样例："><a href="#输入样例：" class="headerlink" title="输入样例："></a>输入样例：</h3><figure class="highlight plain"><table><tr><td class="code"><pre><code class="hljs in">31<br></code></pre></td></tr></table></figure>
-<h3 id="输出样例："><a href="#输出样例：" class="headerlink" title="输出样例："></a>输出样例：</h3><figure class="highlight plain"><table><tr><td class="code"><pre><code class="hljs out">3584229390681 15<br></code></pre></td></tr></table></figure>
-<h3 id="题目思路分析："><a href="#题目思路分析：" class="headerlink" title="题目思路分析："></a>题目思路分析：</h3><p>第一次接触大数除法的模拟，在经历过一番思考后，选择了百度。。。</p>
-<p>忽然发现思路其实就是模拟人的思路：假设我们也不知道多少个1才能将31整除。那么怎么得到那个很长的数呢？</p>
-<ol>
-<li>从1，11，111，一个一个去尝试。显然，不成立。（当然，我们可以直接从比除数大的111开始除，这也是后面变成的思路）</li>
-<li>但如果我们实验过几次第一种方法后，我们会发现，其实我们只是在每一次的计算后（发现不能整除）我们就会添加一个1继续去除。之前的商就保留下来了，和我们使用竖式除法是一样的。我们只是需要每次除不尽的时候，填上一个1继续除便是了，之前的商直接输出不是更好。</li>
-</ol>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><code class="hljs cpp"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span><span class="hljs-meta-string">&lt;bits/stdc++.h&gt;</span></span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> <span class="hljs-built_in">std</span>;<br><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span><br></span>&#123;<br>	<span class="hljs-keyword">int</span> x,s=<span class="hljs-number">0</span>,n=<span class="hljs-number">0</span>;<span class="hljs-comment">//除数，被除数，位数 </span><br>	<span class="hljs-built_in">cin</span>&gt;&gt;x;<br>	<span class="hljs-keyword">while</span>(s&lt;x)<br>	&#123;<br>		s=s*<span class="hljs-number">10</span>+<span class="hljs-number">1</span>;<span class="hljs-comment">//被除数末位添1直到不小于被除数 </span><br>		n++;<br>	&#125;<br>	<span class="hljs-keyword">while</span>(<span class="hljs-literal">true</span>)<span class="hljs-comment">//除法 </span><br>	&#123;<br>		<span class="hljs-built_in">cout</span>&lt;&lt;s/x;<span class="hljs-comment">//输出商（就作为开头咯） </span><br>		s%=x;<span class="hljs-comment">//被除数更改为其余数 </span><br>		<span class="hljs-keyword">if</span>(s==<span class="hljs-number">0</span>)<span class="hljs-keyword">break</span>;<span class="hljs-comment">//余数为0则结束（否则加1继续） </span><br>		s=s*<span class="hljs-number">10</span>+<span class="hljs-number">1</span>;<span class="hljs-comment">//被除数末位加上1</span><br>		n++; <br>	&#125;<br>	<span class="hljs-built_in">cout</span>&lt;&lt;<span class="hljs-string">' '</span>&lt;&lt;n;<span class="hljs-comment">//之前已经输出了商（很大的数）</span><br>	<span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
-<p><strong>大数模拟，在没有更好的方法下，不如试试康康如果是我们，我们是怎么做的。。。</strong></p>
-]]></content>
-      <categories>
-        <category>编程</category>
-      </categories>
-      <tags>
-        <tag>pta</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>L1-048矩阵A乘以B</title>
-    <url>/2020/01/06/L1-048%E7%9F%A9%E9%98%B5A%E4%B9%98%E4%BB%A5B/</url>
-    <content><![CDATA[<p>给定两个矩阵A和B，要求你计算它们的乘积矩阵AB。需要注意的是，只有规模匹配的矩阵才可以相乘。即若A有Ra行、Ca列，B有Rb行、Cb列，则只有Ca与Rb相等时，两个矩阵才能相乘。</p>
-<h3 id="输入格式："><a href="#输入格式：" class="headerlink" title="输入格式："></a>输入格式：</h3><p>输入先后给出两个矩阵A和B。对于每个矩阵，首先在一行中给出其行数R和列数C，随后R行，每行给出C个整数，以1个空格分隔，且行首尾没有多余的空格。输入保证两个矩阵的R和C都是正数，并且所有整数的绝对值不超过100。</p>
-<h3 id="输出格式："><a href="#输出格式：" class="headerlink" title="输出格式："></a>输出格式：</h3><p>若输入的两个矩阵的规模是匹配的，则按照输入的格式输出乘积矩阵AB，否则输出<code>Error: Ca != Rb</code>，其中<code>Ca</code>是A的列数，<code>Rb</code>是B的行数。</p>
-<h3 id="输入样例1："><a href="#输入样例1：" class="headerlink" title="输入样例1："></a>输入样例1：</h3><figure class="highlight plain"><table><tr><td class="code"><pre><code class="hljs in">2 3<br>1 2 3<br>4 5 6<br>3 4<br>7 8 9 0<br>-1 -2 -3 -4<br>5 6 7 8<br></code></pre></td></tr></table></figure>
-<h3 id="输出样例1："><a href="#输出样例1：" class="headerlink" title="输出样例1："></a>输出样例1：</h3><figure class="highlight plain"><table><tr><td class="code"><pre><code class="hljs out">2 4<br>20 22 24 16<br>53 58 63 28<br></code></pre></td></tr></table></figure>
-<h3 id="输入样例2："><a href="#输入样例2：" class="headerlink" title="输入样例2："></a>输入样例2：</h3><figure class="highlight angelscript"><table><tr><td class="code"><pre><code class="hljs angelscript"><span class="hljs-number">3</span> <span class="hljs-number">2</span><br><span class="hljs-number">38</span> <span class="hljs-number">26</span><br><span class="hljs-number">43</span> <span class="hljs-number">-5</span><br><span class="hljs-number">0</span> <span class="hljs-number">17</span><br><span class="hljs-number">3</span> <span class="hljs-number">2</span><br><span class="hljs-number">-11</span> <span class="hljs-number">57</span><br><span class="hljs-number">99</span> <span class="hljs-number">68</span><br><span class="hljs-number">81</span> <span class="hljs-number">72</span><br></code></pre></td></tr></table></figure>
-<h3 id="输出样例2："><a href="#输出样例2：" class="headerlink" title="输出样例2："></a>输出样例2：</h3><figure class="highlight subunit"><table><tr><td class="code"><pre><code class="hljs subunit"><span class="hljs-keyword">Error: </span>2 != 3<br></code></pre></td></tr></table></figure>
-<h3 id="题目思路："><a href="#题目思路：" class="headerlink" title="题目思路："></a>题目思路：</h3><p>一开始，一看题目。嗯！没有思路。。。</p>
-<p>什么是矩阵乘法呢？（此处可以百度了解以下）</p>
-<p><img src="https://i.loli.net/2020/01/07/drTUXefu1ItHyLm.png" alt="BWqSKunTFkLpziP.png"></p>
-<p>简单地说就是上述公式。百度词条中这样定义：</p>
-<p><img src="https://i.loli.net/2020/01/06/vBWcMO1TzVIKuPG.png" alt="图片.png"></p>
-<p>看完之后，我们就或许有了一点思路。</p>
-<p>于是如果符合条件，我们就依次计算输出即可。</p>
-<p>但是！！！</p>
-<p>这道题最最关键的就是各种不同的自定义字母所代表的含义。（比如上图中的是b  [1 ] [1]  其实在数组中是b [0] [0];谨慎呀！！！<del>（找这个bug找的脑壳疼）</del></p>
-<p>当然，也可以动态数组，但是这样更好理解一一些。</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><code class="hljs cpp"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span><span class="hljs-meta-string">&lt;bits/stdc++.h&gt;</span></span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> <span class="hljs-built_in">std</span>;<br><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span>&#123;<br><br>	<span class="hljs-keyword">int</span> c1,c2,r1,r2; <br>	<span class="hljs-keyword">int</span> i,j;<br>	<span class="hljs-built_in">cin</span>&gt;&gt;r1&gt;&gt;c1;	<br>	<span class="hljs-keyword">int</span> m[r1][c1];<span class="hljs-comment">//定义并得到两个数组 </span><br>	<span class="hljs-keyword">for</span>(i=<span class="hljs-number">0</span>;i&lt;r1;i++)<br>	&#123;<br>		<span class="hljs-keyword">for</span>( j=<span class="hljs-number">0</span>;j&lt;c1;j++)<br>		&#123;<br>			<span class="hljs-built_in">cin</span>&gt;&gt;m[i][j];<br>		&#125;<br>	&#125;	<br>	<span class="hljs-built_in">cin</span>&gt;&gt;r2&gt;&gt;c2;	<br>	<span class="hljs-keyword">int</span> n[r2][c2];<br>	<span class="hljs-keyword">for</span>(i=<span class="hljs-number">0</span>;i&lt;r2;i++)<br>	&#123;<br>		<span class="hljs-keyword">for</span>( j=<span class="hljs-number">0</span>;j&lt;c2;j++)<br>		&#123;<br>			<span class="hljs-built_in">cin</span>&gt;&gt;n[i][j];<br>		&#125;<br>	&#125;<br>	<span class="hljs-keyword">if</span>(c1==r2)<br>	&#123;<span class="hljs-comment">//首先排除不相等的情况 (规模是否相等） </span><br>		<span class="hljs-built_in">cout</span>&lt;&lt;r1&lt;&lt;<span class="hljs-string">" "</span>&lt;&lt;c2&lt;&lt;<span class="hljs-built_in">endl</span>;<br>		<span class="hljs-keyword">for</span>(i=<span class="hljs-number">0</span>;i&lt;r1;i++)&#123;<span class="hljs-comment">//前两个for得到n个item； </span><br>			<span class="hljs-keyword">for</span>(j=<span class="hljs-number">0</span>;j&lt;c2;j++)<br>			&#123;<span class="hljs-comment">//输出每一行； </span><br>				<span class="hljs-keyword">int</span> sum=<span class="hljs-number">0</span>;<br>				<span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> k=<span class="hljs-number">0</span>;k&lt;c1;k++)&#123;<span class="hljs-comment">//（见公式）； </span><br>				sum=sum+m[i][k]*n[k][j];<br>			&#125;<br>			<span class="hljs-built_in">cout</span>&lt;&lt;sum;<br>			<span class="hljs-keyword">if</span>(j!=c2<span class="hljs-number">-1</span>)<br>			  <span class="hljs-built_in">cout</span>&lt;&lt;<span class="hljs-string">" "</span>;<br>		&#125;<br>		<span class="hljs-built_in">cout</span>&lt;&lt;<span class="hljs-built_in">endl</span>;<br>	&#125;<br>	&#125;<br>	<br>	<span class="hljs-keyword">else</span> <span class="hljs-built_in">cout</span>&lt;&lt;<span class="hljs-string">"Error: "</span>&lt;&lt;c2&lt;&lt;<span class="hljs-string">" != "</span>&lt;&lt;r2;<br><br>	<span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;	<br>&#125;<br></code></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>编程</category>
-      </categories>
-      <tags>
-        <tag>pta</tag>
       </tags>
   </entry>
   <entry>
@@ -300,6 +197,150 @@
       </categories>
       <tags>
         <tag>bfs</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Java无法仅读取一个字符</title>
+    <url>/2020/02/25/Java%E6%97%A0%E6%B3%95%E4%BB%85%E8%AF%BB%E5%8F%96%E4%B8%80%E4%B8%AA%E5%AD%97%E7%AC%A6/</url>
+    <content><![CDATA[<p>问题描述</p>
+<p>在使用java中，有时希望可以像c语言一样单单读取一个字符，但是发现并没有nextChar()的方法可供使用。</p>
+<p>解决办法</p>
+<p>方法一是最常见的方法，和方法二类似都是先得到一个String字符串，然后得到第一个字符，而方法三是根本的解决办法（虽然不好用）</p>
+<p><strong>方法一：</strong></p>
+<p>1．先创建一个Scanner对象</p>
+<p>2．调用Scanner对象的next()方法获取控制台输入，返回的是一个String类型,因为没有nextChar()方法</p>
+<p>3．调用String的charAt(0)方法获取第一个字符</p>
+ <figure class="highlight java"><table><tr><td class="code"><pre><code class="hljs java"> Scanner sc = <span class="hljs-keyword">new</span> Scanner(System.in);<br><br> String s = sc.next();<br><br> <span class="hljs-keyword">char</span> c = s.charAt(<span class="hljs-number">0</span>);<br><span class="hljs-comment">//最后两条语句也可写为char c = sc.next().charAt(0);</span><br></code></pre></td></tr></table></figure>
+<p><strong>方法二：</strong></p>
+<p>使用方法，将string转换为字符数组，然后取第一个字符即可</p>
+ <figure class="highlight java"><table><tr><td class="code"><pre><code class="hljs java">Scanner sc = <span class="hljs-keyword">new</span> Scanner(System.in);<br><br><span class="hljs-keyword">char</span> c = scanner.next().toCharArray()[<span class="hljs-number">0</span>];<br></code></pre></td></tr></table></figure>
+<p><strong><em>方法三：</em></strong></p>
+<p><em>需要有强制转换（因为in.read()得到的是int类型）</em></p>
+<p>需要引入.io（import java.io.*;）</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">char</span> t = <span class="hljs-number">0</span>;<br>    <span class="hljs-keyword">try</span> &#123;<br>      t = (<span class="hljs-keyword">char</span>)System.in.read();<br>    &#125; <span class="hljs-keyword">catch</span> (IOException e) &#123;<br>    e.printStackTrace();<br>  &#125;<br></code></pre></td></tr></table></figure>
+<p> <strong>或</strong></p>
+<p>2.在方法中抛出异常：public static void main(String[] args) throws IOException</p>
+<p>然后</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">char</span> t = <span class="hljs-number">0</span>;<br><br>t = (<span class="hljs-keyword">char</span>)System.in.read();<br></code></pre></td></tr></table></figure>
+<p><img src="/2020/02/25/Java%E6%97%A0%E6%B3%95%E4%BB%85%E8%AF%BB%E5%8F%96%E4%B8%80%E4%B8%AA%E5%AD%97%E7%AC%A6/1.png" alt></p>
+<p>但可以做到不影响其他的字符（真正意义上的读入一个字符）</p>
+<p><img src="/2020/02/25/Java%E6%97%A0%E6%B3%95%E4%BB%85%E8%AF%BB%E5%8F%96%E4%B8%80%E4%B8%AA%E5%AD%97%E7%AC%A6/2.png" alt></p>
+]]></content>
+      <categories>
+        <category>java</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>L1-046整除光棍（模拟大数除法）</title>
+    <url>/2020/01/05/L1-046%E6%95%B4%E9%99%A4%E5%85%89%E6%A3%8D%EF%BC%88%E6%A8%A1%E6%8B%9F%E5%A4%A7%E6%95%B0%E9%99%A4%E6%B3%95%EF%BC%89/</url>
+    <content><![CDATA[<p>这里所谓的“光棍”，并不是指单身汪啦~ 说的是全部由1组成的数字，比如1、11、111、1111等。传说任何一个光棍都能被一个不以5结尾的奇数整除。比如，111111就可以被13整除。 现在，你的程序要读入一个整数<code>x</code>，这个整数一定是奇数并且不以5结尾。然后，经过计算，输出两个数字：第一个数字<code>s</code>，表示<code>x</code>乘以<code>s</code>是一个光棍，第二个数字<code>n</code>是这个光棍的位数。这样的解当然不是唯一的,题目要求你输出最小的解。</p>
+<p>提示：一个显然的办法是逐渐增加光棍的位数，直到可以整除<code>x</code>为止。但难点在于，<code>s</code>可能是个非常大的数 —— 比如，程序输入31，那么就输出3584229390681和15，因为31乘以3584229390681的结果是111111111111111，一共15个1。</p>
+<h3 id="输入格式："><a href="#输入格式：" class="headerlink" title="输入格式："></a>输入格式：</h3><p>输入在一行中给出一个不以5结尾的正奇数<code>x</code>（&lt;1000）。</p>
+<h3 id="输出格式："><a href="#输出格式：" class="headerlink" title="输出格式："></a>输出格式：</h3><p>在一行中输出相应的最小的<code>s</code>和<code>n</code>，其间以1个空格分隔。</p>
+<h3 id="输入样例："><a href="#输入样例：" class="headerlink" title="输入样例："></a>输入样例：</h3><figure class="highlight plain"><table><tr><td class="code"><pre><code class="hljs in">31<br></code></pre></td></tr></table></figure>
+<h3 id="输出样例："><a href="#输出样例：" class="headerlink" title="输出样例："></a>输出样例：</h3><figure class="highlight plain"><table><tr><td class="code"><pre><code class="hljs out">3584229390681 15<br></code></pre></td></tr></table></figure>
+<h3 id="题目思路分析："><a href="#题目思路分析：" class="headerlink" title="题目思路分析："></a>题目思路分析：</h3><p>第一次接触大数除法的模拟，在经历过一番思考后，选择了百度。。。</p>
+<p>忽然发现思路其实就是模拟人的思路：假设我们也不知道多少个1才能将31整除。那么怎么得到那个很长的数呢？</p>
+<ol>
+<li>从1，11，111，一个一个去尝试。显然，不成立。（当然，我们可以直接从比除数大的111开始除，这也是后面变成的思路）</li>
+<li>但如果我们实验过几次第一种方法后，我们会发现，其实我们只是在每一次的计算后（发现不能整除）我们就会添加一个1继续去除。之前的商就保留下来了，和我们使用竖式除法是一样的。我们只是需要每次除不尽的时候，填上一个1继续除便是了，之前的商直接输出不是更好。</li>
+</ol>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><code class="hljs cpp"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span><span class="hljs-meta-string">&lt;bits/stdc++.h&gt;</span></span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> <span class="hljs-built_in">std</span>;<br><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span><br></span>&#123;<br>	<span class="hljs-keyword">int</span> x,s=<span class="hljs-number">0</span>,n=<span class="hljs-number">0</span>;<span class="hljs-comment">//除数，被除数，位数 </span><br>	<span class="hljs-built_in">cin</span>&gt;&gt;x;<br>	<span class="hljs-keyword">while</span>(s&lt;x)<br>	&#123;<br>		s=s*<span class="hljs-number">10</span>+<span class="hljs-number">1</span>;<span class="hljs-comment">//被除数末位添1直到不小于被除数 </span><br>		n++;<br>	&#125;<br>	<span class="hljs-keyword">while</span>(<span class="hljs-literal">true</span>)<span class="hljs-comment">//除法 </span><br>	&#123;<br>		<span class="hljs-built_in">cout</span>&lt;&lt;s/x;<span class="hljs-comment">//输出商（就作为开头咯） </span><br>		s%=x;<span class="hljs-comment">//被除数更改为其余数 </span><br>		<span class="hljs-keyword">if</span>(s==<span class="hljs-number">0</span>)<span class="hljs-keyword">break</span>;<span class="hljs-comment">//余数为0则结束（否则加1继续） </span><br>		s=s*<span class="hljs-number">10</span>+<span class="hljs-number">1</span>;<span class="hljs-comment">//被除数末位加上1</span><br>		n++; <br>	&#125;<br>	<span class="hljs-built_in">cout</span>&lt;&lt;<span class="hljs-string">' '</span>&lt;&lt;n;<span class="hljs-comment">//之前已经输出了商（很大的数）</span><br>	<span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
+<p><strong>大数模拟，在没有更好的方法下，不如试试康康如果是我们，我们是怎么做的。。。</strong></p>
+]]></content>
+      <categories>
+        <category>编程</category>
+      </categories>
+      <tags>
+        <tag>pta</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>L1-033出生年</title>
+    <url>/2020/01/04/L1-033%E5%87%BA%E7%94%9F%E5%B9%B4/</url>
+    <content><![CDATA[<p><img src="/2020/01/04/L1-033%E5%87%BA%E7%94%9F%E5%B9%B4/blog\hexo\source\_posts\jmK5wuZkEV4aCdJ.png" alt="image.png"></p>
+<p>以上是新浪微博中一奇葩贴：“我出生于1988年，直到25岁才遇到4个数字都不相同的年份。”也就是说，直到2013年才达到“4个数字都不相同”的要求。本题请你根据要求，自动填充“我出生于<code>y</code>年，直到<code>x</code>岁才遇到<code>n</code>个数字都不相同的年份”这句话。</p>
+<h3 id="输入格式："><a href="#输入格式：" class="headerlink" title="输入格式："></a>输入格式：</h3><p>输入在一行中给出出生年份<code>y</code>和目标年份中不同数字的个数<code>n</code>，其中<code>y</code>在[1, 3000]之间，<code>n</code>可以是2、或3、或4。注意不足4位的年份要在前面补零，例如公元1年被认为是0001年，有2个不同的数字0和1。</p>
+<h3 id="输出格式："><a href="#输出格式：" class="headerlink" title="输出格式："></a>输出格式：</h3><p>根据输入，输出<code>x</code>和能达到要求的年份。数字间以1个空格分隔，行首尾不得有多余空格。年份要按4位输出。注意：所谓“<code>n</code>个数字都不相同”是指不同的数字正好是<code>n</code>个。如“2013”被视为满足“4位数字都不同”的条件，但不被视为满足2位或3位数字不同的条件。</p>
+<h3 id="输入样例1："><a href="#输入样例1：" class="headerlink" title="输入样例1："></a>输入样例1：</h3><figure class="highlight plain"><table><tr><td class="code"><pre><code class="hljs in">1988 4<br></code></pre></td></tr></table></figure>
+<h3 id="输出样例1："><a href="#输出样例1：" class="headerlink" title="输出样例1："></a>输出样例1：</h3><figure class="highlight plain"><table><tr><td class="code"><pre><code class="hljs out">25 2013<br></code></pre></td></tr></table></figure>
+<h3 id="输入样例2："><a href="#输入样例2：" class="headerlink" title="输入样例2："></a>输入样例2：</h3><figure class="highlight basic"><table><tr><td class="code"><pre><code class="hljs basic"><span class="hljs-symbol">1 </span><span class="hljs-number">2</span><br></code></pre></td></tr></table></figure>
+<h3 id="输出样例2："><a href="#输出样例2：" class="headerlink" title="输出样例2："></a>输出样例2：</h3><figure class="highlight basic"><table><tr><td class="code"><pre><code class="hljs basic"><span class="hljs-symbol">0 </span><span class="hljs-number">0001</span><br></code></pre></td></tr></table></figure>
+<h3 id="题目思路："><a href="#题目思路：" class="headerlink" title="题目思路："></a>题目思路：</h3><p>起初打算使用int，来储存，最后使用%04的输出。但是由于分解数字等太麻烦（其实计算各个数字出现的次数才是最麻烦的）期间还使用了sort来排序，方便得到cnt（多少个不同数字）但是这样有改变了原来的年份。。。最终，还是使用了最基本的字符。</p>
+<p>在实现题目要求的时候，常常遇到没有初始化而遇到到许多问题（记得初始化呀。。。</p>
+<p>经过思考，采用a[4]来表示年份，b[10]来记录数字出现的次数。（直接赋值1）这样有几个1就有多少个不同的数字。（算是一种逆向吧，不怕数字重复了。。）</p>
+<h3 id="代码："><a href="#代码：" class="headerlink" title="代码："></a>代码：</h3><figure class="highlight cpp"><table><tr><td class="code"><pre><code class="hljs cpp"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span><span class="hljs-meta-string">&lt;bits/stdc++.h&gt;</span></span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> <span class="hljs-built_in">std</span>;<br><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span>&#123;<span class="hljs-comment">//调试的好麻烦。。</span><br>	<br>	<span class="hljs-keyword">int</span> n;<br>	<span class="hljs-keyword">char</span> a[<span class="hljs-number">4</span>];<br>	<span class="hljs-keyword">int</span> cnt=<span class="hljs-number">0</span>;<br>	<span class="hljs-keyword">static</span> <span class="hljs-keyword">int</span> b[<span class="hljs-number">10</span>];<br>	<span class="hljs-built_in">scanf</span>(<span class="hljs-string">"%s %d"</span>,&amp;a,&amp;n);<br>	<br>	<span class="hljs-keyword">while</span>(<span class="hljs-built_in">strlen</span>(a)&lt;<span class="hljs-number">4</span>)&#123;<span class="hljs-comment">//将其化为四位年份 (buling)</span><br>		<span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i=<span class="hljs-number">2</span>;i&gt;=<span class="hljs-number">0</span>;i--)&#123;<span class="hljs-comment">//from 2 to 0;</span><br>			a[i+<span class="hljs-number">1</span>]=a[i];<br>		&#125;a[<span class="hljs-number">0</span>]=<span class="hljs-string">'0'</span>;<span class="hljs-comment">//不是0而是‘0'</span><br>	&#125;<br>	<span class="hljs-keyword">int</span> start=(a[<span class="hljs-number">0</span>]-<span class="hljs-string">'0'</span>)*<span class="hljs-number">1000</span>+(a[<span class="hljs-number">1</span>]-<span class="hljs-string">'0'</span>)*<span class="hljs-number">100</span>+(a[<span class="hljs-number">2</span>]-<span class="hljs-string">'0'</span>)*<span class="hljs-number">10</span>+a[<span class="hljs-number">3</span>]-<span class="hljs-string">'0'</span>;<br>	b[(a[<span class="hljs-number">0</span>]-<span class="hljs-string">'0'</span>)]=<span class="hljs-number">1</span>;<br>	b[(a[<span class="hljs-number">1</span>]-<span class="hljs-string">'0'</span>)]=<span class="hljs-number">1</span>;<br>	b[(a[<span class="hljs-number">2</span>]-<span class="hljs-string">'0'</span>)]=<span class="hljs-number">1</span>;<br>	b[a[<span class="hljs-number">3</span>]-<span class="hljs-string">'0'</span>]=<span class="hljs-number">1</span>;<br>	<br>	<span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i=<span class="hljs-number">0</span>;i&lt;<span class="hljs-number">10</span>;i++)&#123;<br>		<span class="hljs-keyword">if</span>(b[i])&#123;<br>			cnt++;<br>		&#125;<br>	&#125;<br>	<br>	<span class="hljs-keyword">while</span>(cnt!=n)&#123;<br>		cnt=<span class="hljs-number">0</span>;<br>	a[<span class="hljs-number">3</span>]++;<br>	<span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i=<span class="hljs-number">0</span>;i&lt;<span class="hljs-number">10</span>;i++)b[i]=<span class="hljs-number">0</span>;<br>	<span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> j=<span class="hljs-number">3</span>;j&gt;=<span class="hljs-number">1</span>;j--)&#123;<span class="hljs-comment">//进位 </span><br>		<span class="hljs-keyword">if</span>(a[j]==<span class="hljs-string">':'</span>)&#123;<br>			a[j]=<span class="hljs-string">'0'</span>;<br>			a[j<span class="hljs-number">-1</span>]+=<span class="hljs-number">1</span>;<br>		&#125;<br>	&#125;<br>	b[(a[<span class="hljs-number">0</span>]-<span class="hljs-string">'0'</span>)]=<span class="hljs-number">1</span>;<br>	b[(a[<span class="hljs-number">1</span>]-<span class="hljs-string">'0'</span>)]=<span class="hljs-number">1</span>;<br>	b[(a[<span class="hljs-number">2</span>]-<span class="hljs-string">'0'</span>)]=<span class="hljs-number">1</span>;<br>	b[a[<span class="hljs-number">3</span>]-<span class="hljs-string">'0'</span>]=<span class="hljs-number">1</span>;<br><br>	<br>	<span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i=<span class="hljs-number">0</span>;i&lt;<span class="hljs-number">10</span>;i++)&#123;<br>		<span class="hljs-keyword">if</span>(b[i])&#123;<br>			cnt++;<br>		&#125;<br>	&#125;	<br>	&#125;<br>	<span class="hljs-keyword">int</span> end=(a[<span class="hljs-number">0</span>]-<span class="hljs-string">'0'</span>)*<span class="hljs-number">1000</span>+(a[<span class="hljs-number">1</span>]-<span class="hljs-string">'0'</span>)*<span class="hljs-number">100</span>+(a[<span class="hljs-number">2</span>]-<span class="hljs-string">'0'</span>)*<span class="hljs-number">10</span>+a[<span class="hljs-number">3</span>]-<span class="hljs-string">'0'</span>;<br>	<span class="hljs-built_in">cout</span>&lt;&lt;end-start&lt;&lt;<span class="hljs-string">" "</span>;<br>	<span class="hljs-built_in">printf</span>(<span class="hljs-string">"%04d"</span>,end);<br>	<span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>编程</category>
+      </categories>
+      <tags>
+        <tag>pta</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>L1-048矩阵A乘以B</title>
+    <url>/2020/01/06/L1-048%E7%9F%A9%E9%98%B5A%E4%B9%98%E4%BB%A5B/</url>
+    <content><![CDATA[<p>给定两个矩阵A和B，要求你计算它们的乘积矩阵AB。需要注意的是，只有规模匹配的矩阵才可以相乘。即若A有Ra行、Ca列，B有Rb行、Cb列，则只有Ca与Rb相等时，两个矩阵才能相乘。</p>
+<h3 id="输入格式："><a href="#输入格式：" class="headerlink" title="输入格式："></a>输入格式：</h3><p>输入先后给出两个矩阵A和B。对于每个矩阵，首先在一行中给出其行数R和列数C，随后R行，每行给出C个整数，以1个空格分隔，且行首尾没有多余的空格。输入保证两个矩阵的R和C都是正数，并且所有整数的绝对值不超过100。</p>
+<h3 id="输出格式："><a href="#输出格式：" class="headerlink" title="输出格式："></a>输出格式：</h3><p>若输入的两个矩阵的规模是匹配的，则按照输入的格式输出乘积矩阵AB，否则输出<code>Error: Ca != Rb</code>，其中<code>Ca</code>是A的列数，<code>Rb</code>是B的行数。</p>
+<h3 id="输入样例1："><a href="#输入样例1：" class="headerlink" title="输入样例1："></a>输入样例1：</h3><figure class="highlight plain"><table><tr><td class="code"><pre><code class="hljs in">2 3<br>1 2 3<br>4 5 6<br>3 4<br>7 8 9 0<br>-1 -2 -3 -4<br>5 6 7 8<br></code></pre></td></tr></table></figure>
+<h3 id="输出样例1："><a href="#输出样例1：" class="headerlink" title="输出样例1："></a>输出样例1：</h3><figure class="highlight plain"><table><tr><td class="code"><pre><code class="hljs out">2 4<br>20 22 24 16<br>53 58 63 28<br></code></pre></td></tr></table></figure>
+<h3 id="输入样例2："><a href="#输入样例2：" class="headerlink" title="输入样例2："></a>输入样例2：</h3><figure class="highlight angelscript"><table><tr><td class="code"><pre><code class="hljs angelscript"><span class="hljs-number">3</span> <span class="hljs-number">2</span><br><span class="hljs-number">38</span> <span class="hljs-number">26</span><br><span class="hljs-number">43</span> <span class="hljs-number">-5</span><br><span class="hljs-number">0</span> <span class="hljs-number">17</span><br><span class="hljs-number">3</span> <span class="hljs-number">2</span><br><span class="hljs-number">-11</span> <span class="hljs-number">57</span><br><span class="hljs-number">99</span> <span class="hljs-number">68</span><br><span class="hljs-number">81</span> <span class="hljs-number">72</span><br></code></pre></td></tr></table></figure>
+<h3 id="输出样例2："><a href="#输出样例2：" class="headerlink" title="输出样例2："></a>输出样例2：</h3><figure class="highlight subunit"><table><tr><td class="code"><pre><code class="hljs subunit"><span class="hljs-keyword">Error: </span>2 != 3<br></code></pre></td></tr></table></figure>
+<h3 id="题目思路："><a href="#题目思路：" class="headerlink" title="题目思路："></a>题目思路：</h3><p>一开始，一看题目。嗯！没有思路。。。</p>
+<p>什么是矩阵乘法呢？（此处可以百度了解以下）</p>
+<p><img src="https://i.loli.net/2020/01/07/drTUXefu1ItHyLm.png" alt="BWqSKunTFkLpziP.png"></p>
+<p>简单地说就是上述公式。百度词条中这样定义：</p>
+<p><img src="https://i.loli.net/2020/01/06/vBWcMO1TzVIKuPG.png" alt="图片.png"></p>
+<p>看完之后，我们就或许有了一点思路。</p>
+<p>于是如果符合条件，我们就依次计算输出即可。</p>
+<p>但是！！！</p>
+<p>这道题最最关键的就是各种不同的自定义字母所代表的含义。（比如上图中的是b  [1 ] [1]  其实在数组中是b [0] [0];谨慎呀！！！<del>（找这个bug找的脑壳疼）</del></p>
+<p>当然，也可以动态数组，但是这样更好理解一一些。</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><code class="hljs cpp"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span><span class="hljs-meta-string">&lt;bits/stdc++.h&gt;</span></span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> <span class="hljs-built_in">std</span>;<br><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span>&#123;<br><br>	<span class="hljs-keyword">int</span> c1,c2,r1,r2; <br>	<span class="hljs-keyword">int</span> i,j;<br>	<span class="hljs-built_in">cin</span>&gt;&gt;r1&gt;&gt;c1;	<br>	<span class="hljs-keyword">int</span> m[r1][c1];<span class="hljs-comment">//定义并得到两个数组 </span><br>	<span class="hljs-keyword">for</span>(i=<span class="hljs-number">0</span>;i&lt;r1;i++)<br>	&#123;<br>		<span class="hljs-keyword">for</span>( j=<span class="hljs-number">0</span>;j&lt;c1;j++)<br>		&#123;<br>			<span class="hljs-built_in">cin</span>&gt;&gt;m[i][j];<br>		&#125;<br>	&#125;	<br>	<span class="hljs-built_in">cin</span>&gt;&gt;r2&gt;&gt;c2;	<br>	<span class="hljs-keyword">int</span> n[r2][c2];<br>	<span class="hljs-keyword">for</span>(i=<span class="hljs-number">0</span>;i&lt;r2;i++)<br>	&#123;<br>		<span class="hljs-keyword">for</span>( j=<span class="hljs-number">0</span>;j&lt;c2;j++)<br>		&#123;<br>			<span class="hljs-built_in">cin</span>&gt;&gt;n[i][j];<br>		&#125;<br>	&#125;<br>	<span class="hljs-keyword">if</span>(c1==r2)<br>	&#123;<span class="hljs-comment">//首先排除不相等的情况 (规模是否相等） </span><br>		<span class="hljs-built_in">cout</span>&lt;&lt;r1&lt;&lt;<span class="hljs-string">" "</span>&lt;&lt;c2&lt;&lt;<span class="hljs-built_in">endl</span>;<br>		<span class="hljs-keyword">for</span>(i=<span class="hljs-number">0</span>;i&lt;r1;i++)&#123;<span class="hljs-comment">//前两个for得到n个item； </span><br>			<span class="hljs-keyword">for</span>(j=<span class="hljs-number">0</span>;j&lt;c2;j++)<br>			&#123;<span class="hljs-comment">//输出每一行； </span><br>				<span class="hljs-keyword">int</span> sum=<span class="hljs-number">0</span>;<br>				<span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> k=<span class="hljs-number">0</span>;k&lt;c1;k++)&#123;<span class="hljs-comment">//（见公式）； </span><br>				sum=sum+m[i][k]*n[k][j];<br>			&#125;<br>			<span class="hljs-built_in">cout</span>&lt;&lt;sum;<br>			<span class="hljs-keyword">if</span>(j!=c2<span class="hljs-number">-1</span>)<br>			  <span class="hljs-built_in">cout</span>&lt;&lt;<span class="hljs-string">" "</span>;<br>		&#125;<br>		<span class="hljs-built_in">cout</span>&lt;&lt;<span class="hljs-built_in">endl</span>;<br>	&#125;<br>	&#125;<br>	<br>	<span class="hljs-keyword">else</span> <span class="hljs-built_in">cout</span>&lt;&lt;<span class="hljs-string">"Error: "</span>&lt;&lt;c2&lt;&lt;<span class="hljs-string">" != "</span>&lt;&lt;r2;<br><br>	<span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;	<br>&#125;<br></code></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>编程</category>
+      </categories>
+      <tags>
+        <tag>pta</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>P1023税收与补贴问题</title>
+    <url>/2020/02/29/P1023%E7%A8%8E%E6%94%B6%E4%B8%8E%E8%A1%A5%E8%B4%B4%E9%97%AE%E9%A2%98/</url>
+    <content><![CDATA[<h2 id="题目背景"><a href="#题目背景" class="headerlink" title="题目背景"></a>题目背景</h2><p>每样商品的价格越低，其销量就会相应增大。现已知某种商品的成本及其在若干价位上的销量（产品不会低于成本销售），并假设相邻价位间销量的变化是线性的且在价格高于给定的最高价位后，销量以某固定数值递减。（我们假设价格及销售量都是整数）</p>
+<p>对于某些特殊商品，不可能完全由市场去调节其价格。这时候就需要政府以税收或补贴的方式来控制。（所谓税收或补贴就是对于每个产品收取或给予生产厂家固定金额的货币）</p>
+<h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><p>你是某家咨询公司的项目经理，现在你已经知道政府对某种商品的预期价格，以及在各种价位上的销售情况。要求你确定政府对此商品是应收税还是补贴的最少金额（也为整数），才能使商家在这样一种政府预期的价格上，获取相对其他价位上的最大总利润。</p>
+<p>总利润=单位商品利润   × × 销量</p>
+<p>单位商品利润=单位商品价格 - 单位商品成本 （- 税金  or  + 补贴）</p>
+<h2 id="输入格式"><a href="#输入格式" class="headerlink" title="输入格式"></a>输入格式</h2><p>输入的第一行为政府对某种商品的预期价，第二行有两个整数，第一个整数为商品成本，第二个整数为以成本价销售时的销售量，以下若干行每行都有两个整数，第一个为某价位时的单价，第二个为此时的销量，以一行−1-1−1，−1-1−1表示所有已知价位及对应的销量输入完毕，输入的最后一行为一个单独的整数表示在已知的最高单价外每升高一块钱将减少的销量。</p>
+<h2 id="输出格式"><a href="#输出格式" class="headerlink" title="输出格式"></a>输出格式</h2><p>输出有两种情况：若在政府预期价上能得到最大总利润，则输出一个单独的整数，数的正负表示是补贴还是收税，数的大小表示补贴或收税的金额最小值。若有多解，取绝对值最小的输出。</p>
+<p>如在政府预期价上不能得到最大总利润，则输出“NO SOLUTION”。</p>
+<h2 id="输入输出样例"><a href="#输入输出样例" class="headerlink" title="输入输出样例"></a>输入输出样例</h2><p><strong>输入 #1</strong> </p>
+<figure class="highlight angelscript"><table><tr><td class="code"><pre><code class="hljs angelscript"><span class="hljs-number">31</span><br><span class="hljs-number">28</span> <span class="hljs-number">130</span><br><span class="hljs-number">30</span> <span class="hljs-number">120</span><br><span class="hljs-number">31</span> <span class="hljs-number">110</span><br><span class="hljs-number">-1</span>  <span class="hljs-number">-1</span><br><span class="hljs-number">15</span><br></code></pre></td></tr></table></figure>
+<p><strong>输出 #1</strong> </p>
+<figure class="highlight angelscript"><table><tr><td class="code"><pre><code class="hljs angelscript"><span class="hljs-number">4</span><br></code></pre></td></tr></table></figure>
+<h2 id="说明-提示"><a href="#说明-提示" class="headerlink" title="说明/提示"></a>说明/提示</h2><p>所有数字均小于100000</p>
+<h1 id="解题思路："><a href="#解题思路：" class="headerlink" title="解题思路："></a>解题思路：</h1><h3 id="tips：说实话，这个题目看了很久。。。"><a href="#tips：说实话，这个题目看了很久。。。" class="headerlink" title="tips：说实话，这个题目看了很久。。。"></a>tips：说实话，这个题目看了很久。。。</h3><p>最后，发现所求的是什么了。是要求政府给定一个预期的价格，然后你去尝试不同的补贴或者税收，得到他们的利润，并<strong>看看在每种税收或补贴下总利润最高的价格是不是政府预期价</strong> 。（可以好好思考一下这句，那么我们就计算出不同补贴或税收下，利润最大的价格，再比较）</p>
+<p>（最后，好像没有不符合条件的，所以不用管。。。）</p>
+<p>那么：</p>
+<ol>
+<li><p>我们可以先将购买者的价格和所对应的销量全部存起来，但这又有两个问题：</p>
+<p>1）在题目给出的价格和销量之间，销量是随价格线性变化的，我们可通过计算得出期间的对应价格与销量，并都储存起来。（具体实施方法见代码）即 价格-销量表。 </p>
+<p>2）再输入的最后给定了之后的销量减少值，我们就可以从中得到其后，一直到销量小于0的对应关系，并储存起来。</p>
+</li>
+<li><p>最后再根据不同的补贴（税收）（用一个循环从1开始跑到10000）依次计算其最大利润，并比较在该最大利润的价格是否与政府的价格相同。</p>
+</li>
+</ol>
+<h2 id="代码："><a href="#代码：" class="headerlink" title="代码："></a>代码：</h2><figure class="highlight c++"><table><tr><td class="code"><pre><code class="hljs c++"><span class="hljs-comment">//代码来源：https://www.luogu.com.cn/user/174034</span><br><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span><span class="hljs-meta-string">&lt;bits/stdc++.h&gt;</span></span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> <span class="hljs-built_in">std</span>;<br><span class="hljs-keyword">int</span> a[<span class="hljs-number">100010</span>][<span class="hljs-number">3</span>];<span class="hljs-comment">//用于存放价格和销量的数组</span><br><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span><br></span>&#123;<br>    <span class="hljs-keyword">int</span> i=<span class="hljs-number">1</span>,j=<span class="hljs-number">1</span>,k,expect,down,<span class="hljs-built_in">max</span>,temp,cha,xl,num,s,price,p;<br>    <span class="hljs-built_in">cin</span>&gt;&gt;expect;<span class="hljs-comment">//读入预期价</span><br>    <span class="hljs-keyword">while</span>(<span class="hljs-built_in">cin</span>&gt;&gt;a[i][<span class="hljs-number">1</span>]&gt;&gt;a[i][<span class="hljs-number">2</span>]&amp;&amp;a[i][<span class="hljs-number">1</span>]!=<span class="hljs-number">-1</span>&amp;&amp;a[i] [<span class="hljs-number">2</span>]!=<span class="hljs-number">-1</span>)<span class="hljs-comment">//如果输入的两个数不是-1，-1</span><br>    &#123;<br>        i++;<span class="hljs-comment">//循环变量i++</span><br>        <span class="hljs-keyword">if</span>(i&gt;<span class="hljs-number">2</span>&amp;&amp;a[i<span class="hljs-number">-1</span>][<span class="hljs-number">1</span>]-a[i<span class="hljs-number">-2</span>][<span class="hljs-number">1</span>]&gt;<span class="hljs-number">1</span>)<span class="hljs-comment">//如果两个价格之间差大于一</span><br>        &#123;<br>            i--;<span class="hljs-comment">//回到上一个读入的销量</span><br>            cha=(a[i<span class="hljs-number">-1</span>][<span class="hljs-number">2</span>]-a[i][<span class="hljs-number">2</span>])/(a[i][<span class="hljs-number">1</span>]-a[i<span class="hljs-number">-1</span>][<span class="hljs-number">1</span>]);<span class="hljs-comment">//求出每次销量减少多少：销量差/价格差</span><br>            temp=a[i][<span class="hljs-number">1</span>];<span class="hljs-comment">//记录下价格</span><br>            <span class="hljs-keyword">for</span>(j=a[i<span class="hljs-number">-1</span>][<span class="hljs-number">1</span>]+<span class="hljs-number">1</span>;j&lt;=temp;j++)<span class="hljs-comment">//按价格递增顺序依次写入</span><br>            &#123;<br>                a[i][<span class="hljs-number">1</span>]=j;<span class="hljs-comment">//写入价格</span><br>                a[i][<span class="hljs-number">2</span>]=a[i<span class="hljs-number">-1</span>][<span class="hljs-number">2</span>]-cha;<span class="hljs-comment">//按销量差写入销量</span><br>                i++;<br>            &#125;<br>        &#125;<br>    &#125;<br>    <span class="hljs-built_in">cin</span>&gt;&gt;down;<span class="hljs-comment">//输入超过最大价格之后每次销量降低多少</span><br>    i--;<span class="hljs-comment">//因为上面的while循环最后有i++所以用i--抵消……</span><br>    xl=a[i][<span class="hljs-number">2</span>];<span class="hljs-comment">//记录目前的销量</span><br>    <span class="hljs-keyword">while</span>(xl&gt;<span class="hljs-number">0</span>)<br>    &#123;<br>        <span class="hljs-keyword">if</span>(xl-down&lt;<span class="hljs-number">0</span>)<span class="hljs-keyword">break</span>;<span class="hljs-comment">//如销量小于零则退出</span><br>        <span class="hljs-keyword">else</span><span class="hljs-comment">//否则</span><br>        &#123;<br>            xl-=down;<span class="hljs-comment">//销量每次减掉down</span><br>            i++;<span class="hljs-comment">//循环变量++</span><br>            a[i][<span class="hljs-number">1</span>]=a[i<span class="hljs-number">-1</span>][<span class="hljs-number">1</span>]+<span class="hljs-number">1</span>;<span class="hljs-comment">//每次价格+1</span><br>            a[i][<span class="hljs-number">2</span>]=xl;<span class="hljs-comment">//销量就是xl</span><br>        &#125;<br>    &#125;<br>    <span class="hljs-keyword">for</span>(j=<span class="hljs-number">1</span>;j&lt;=<span class="hljs-number">10000</span>;j++)<span class="hljs-comment">//该遍历了，因为收税相当于补贴*-1所以记录一下符号即可</span><br>    &#123;<br>        <span class="hljs-built_in">max</span>=<span class="hljs-number">-99999</span>;<span class="hljs-comment">//用于存储最大的总利润</span><br>        <span class="hljs-keyword">for</span>(k=<span class="hljs-number">1</span>;k&lt;=i;k++)<span class="hljs-comment">//每次扫一遍每一种价格</span><br>        &#123;<br>            num=(a[k][<span class="hljs-number">1</span>]-a[<span class="hljs-number">1</span>][<span class="hljs-number">1</span>]+j)*a[k][<span class="hljs-number">2</span>];<span class="hljs-comment">//套公式算出总利润</span><br>            <span class="hljs-keyword">if</span>(num&gt;=<span class="hljs-built_in">max</span>)<span class="hljs-comment">//如果总利润比目前最大的大</span><br>            &#123;<br>                <span class="hljs-built_in">max</span>=num;<span class="hljs-comment">//更新max</span><br>                price=a[k][<span class="hljs-number">1</span>];<span class="hljs-comment">//记录下价格</span><br>                p=<span class="hljs-number">1</span>;<span class="hljs-comment">//记录下符号</span><br>            &#125;<br>        &#125;<br>        <span class="hljs-keyword">if</span>(price==expect)&#123;<span class="hljs-built_in">cout</span>&lt;&lt;j*p;<span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;&#125;<span class="hljs-comment">//如果价格就是政府预期价则打印出来，因为本身就是从小到大遍历所以不用求绝对值最小的</span><br>        <span class="hljs-built_in">max</span>=<span class="hljs-number">-99999</span>;<span class="hljs-comment">//后面是收税，原理同上</span><br>        <span class="hljs-keyword">for</span>(k=<span class="hljs-number">1</span>;k&lt;=i;k++)<br>        &#123;<br>            num=(a[k][<span class="hljs-number">1</span>]-a[<span class="hljs-number">1</span>][<span class="hljs-number">1</span>]-j)*a[k][<span class="hljs-number">2</span>];<br>            <span class="hljs-keyword">if</span>(num&gt;=<span class="hljs-built_in">max</span>)<br>            &#123;<br>               <span class="hljs-built_in">max</span>=num;<br>                price=a[k][<span class="hljs-number">1</span>];  <br>                p=<span class="hljs-number">-1</span>;<br>            &#125;<br>        &#125;<br>        <span class="hljs-keyword">if</span>(price==expect)&#123;<span class="hljs-built_in">cout</span>&lt;&lt;j*p;<span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;&#125;<br>    &#125;<br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>编程</category>
+      </categories>
+      <tags>
+        <tag>洛谷</tag>
       </tags>
   </entry>
   <entry>
@@ -442,42 +483,6 @@ struct Node* next;
       </categories>
       <tags>
         <tag>链表</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>P1023税收与补贴问题</title>
-    <url>/2020/02/29/P1023%E7%A8%8E%E6%94%B6%E4%B8%8E%E8%A1%A5%E8%B4%B4%E9%97%AE%E9%A2%98/</url>
-    <content><![CDATA[<h2 id="题目背景"><a href="#题目背景" class="headerlink" title="题目背景"></a>题目背景</h2><p>每样商品的价格越低，其销量就会相应增大。现已知某种商品的成本及其在若干价位上的销量（产品不会低于成本销售），并假设相邻价位间销量的变化是线性的且在价格高于给定的最高价位后，销量以某固定数值递减。（我们假设价格及销售量都是整数）</p>
-<p>对于某些特殊商品，不可能完全由市场去调节其价格。这时候就需要政府以税收或补贴的方式来控制。（所谓税收或补贴就是对于每个产品收取或给予生产厂家固定金额的货币）</p>
-<h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><p>你是某家咨询公司的项目经理，现在你已经知道政府对某种商品的预期价格，以及在各种价位上的销售情况。要求你确定政府对此商品是应收税还是补贴的最少金额（也为整数），才能使商家在这样一种政府预期的价格上，获取相对其他价位上的最大总利润。</p>
-<p>总利润=单位商品利润   × × 销量</p>
-<p>单位商品利润=单位商品价格 - 单位商品成本 （- 税金  or  + 补贴）</p>
-<h2 id="输入格式"><a href="#输入格式" class="headerlink" title="输入格式"></a>输入格式</h2><p>输入的第一行为政府对某种商品的预期价，第二行有两个整数，第一个整数为商品成本，第二个整数为以成本价销售时的销售量，以下若干行每行都有两个整数，第一个为某价位时的单价，第二个为此时的销量，以一行−1-1−1，−1-1−1表示所有已知价位及对应的销量输入完毕，输入的最后一行为一个单独的整数表示在已知的最高单价外每升高一块钱将减少的销量。</p>
-<h2 id="输出格式"><a href="#输出格式" class="headerlink" title="输出格式"></a>输出格式</h2><p>输出有两种情况：若在政府预期价上能得到最大总利润，则输出一个单独的整数，数的正负表示是补贴还是收税，数的大小表示补贴或收税的金额最小值。若有多解，取绝对值最小的输出。</p>
-<p>如在政府预期价上不能得到最大总利润，则输出“NO SOLUTION”。</p>
-<h2 id="输入输出样例"><a href="#输入输出样例" class="headerlink" title="输入输出样例"></a>输入输出样例</h2><p><strong>输入 #1</strong> </p>
-<figure class="highlight angelscript"><table><tr><td class="code"><pre><code class="hljs angelscript"><span class="hljs-number">31</span><br><span class="hljs-number">28</span> <span class="hljs-number">130</span><br><span class="hljs-number">30</span> <span class="hljs-number">120</span><br><span class="hljs-number">31</span> <span class="hljs-number">110</span><br><span class="hljs-number">-1</span>  <span class="hljs-number">-1</span><br><span class="hljs-number">15</span><br></code></pre></td></tr></table></figure>
-<p><strong>输出 #1</strong> </p>
-<figure class="highlight angelscript"><table><tr><td class="code"><pre><code class="hljs angelscript"><span class="hljs-number">4</span><br></code></pre></td></tr></table></figure>
-<h2 id="说明-提示"><a href="#说明-提示" class="headerlink" title="说明/提示"></a>说明/提示</h2><p>所有数字均小于100000</p>
-<h1 id="解题思路："><a href="#解题思路：" class="headerlink" title="解题思路："></a>解题思路：</h1><h3 id="tips：说实话，这个题目看了很久。。。"><a href="#tips：说实话，这个题目看了很久。。。" class="headerlink" title="tips：说实话，这个题目看了很久。。。"></a>tips：说实话，这个题目看了很久。。。</h3><p>最后，发现所求的是什么了。是要求政府给定一个预期的价格，然后你去尝试不同的补贴或者税收，得到他们的利润，并<strong>看看在每种税收或补贴下总利润最高的价格是不是政府预期价</strong> 。（可以好好思考一下这句，那么我们就计算出不同补贴或税收下，利润最大的价格，再比较）</p>
-<p>（最后，好像没有不符合条件的，所以不用管。。。）</p>
-<p>那么：</p>
-<ol>
-<li><p>我们可以先将购买者的价格和所对应的销量全部存起来，但这又有两个问题：</p>
-<p>1）在题目给出的价格和销量之间，销量是随价格线性变化的，我们可通过计算得出期间的对应价格与销量，并都储存起来。（具体实施方法见代码）即 价格-销量表。 </p>
-<p>2）再输入的最后给定了之后的销量减少值，我们就可以从中得到其后，一直到销量小于0的对应关系，并储存起来。</p>
-</li>
-<li><p>最后再根据不同的补贴（税收）（用一个循环从1开始跑到10000）依次计算其最大利润，并比较在该最大利润的价格是否与政府的价格相同。</p>
-</li>
-</ol>
-<h2 id="代码："><a href="#代码：" class="headerlink" title="代码："></a>代码：</h2><figure class="highlight c++"><table><tr><td class="code"><pre><code class="hljs c++"><span class="hljs-comment">//代码来源：https://www.luogu.com.cn/user/174034</span><br><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span><span class="hljs-meta-string">&lt;bits/stdc++.h&gt;</span></span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> <span class="hljs-built_in">std</span>;<br><span class="hljs-keyword">int</span> a[<span class="hljs-number">100010</span>][<span class="hljs-number">3</span>];<span class="hljs-comment">//用于存放价格和销量的数组</span><br><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span><br></span>&#123;<br>    <span class="hljs-keyword">int</span> i=<span class="hljs-number">1</span>,j=<span class="hljs-number">1</span>,k,expect,down,<span class="hljs-built_in">max</span>,temp,cha,xl,num,s,price,p;<br>    <span class="hljs-built_in">cin</span>&gt;&gt;expect;<span class="hljs-comment">//读入预期价</span><br>    <span class="hljs-keyword">while</span>(<span class="hljs-built_in">cin</span>&gt;&gt;a[i][<span class="hljs-number">1</span>]&gt;&gt;a[i][<span class="hljs-number">2</span>]&amp;&amp;a[i][<span class="hljs-number">1</span>]!=<span class="hljs-number">-1</span>&amp;&amp;a[i] [<span class="hljs-number">2</span>]!=<span class="hljs-number">-1</span>)<span class="hljs-comment">//如果输入的两个数不是-1，-1</span><br>    &#123;<br>        i++;<span class="hljs-comment">//循环变量i++</span><br>        <span class="hljs-keyword">if</span>(i&gt;<span class="hljs-number">2</span>&amp;&amp;a[i<span class="hljs-number">-1</span>][<span class="hljs-number">1</span>]-a[i<span class="hljs-number">-2</span>][<span class="hljs-number">1</span>]&gt;<span class="hljs-number">1</span>)<span class="hljs-comment">//如果两个价格之间差大于一</span><br>        &#123;<br>            i--;<span class="hljs-comment">//回到上一个读入的销量</span><br>            cha=(a[i<span class="hljs-number">-1</span>][<span class="hljs-number">2</span>]-a[i][<span class="hljs-number">2</span>])/(a[i][<span class="hljs-number">1</span>]-a[i<span class="hljs-number">-1</span>][<span class="hljs-number">1</span>]);<span class="hljs-comment">//求出每次销量减少多少：销量差/价格差</span><br>            temp=a[i][<span class="hljs-number">1</span>];<span class="hljs-comment">//记录下价格</span><br>            <span class="hljs-keyword">for</span>(j=a[i<span class="hljs-number">-1</span>][<span class="hljs-number">1</span>]+<span class="hljs-number">1</span>;j&lt;=temp;j++)<span class="hljs-comment">//按价格递增顺序依次写入</span><br>            &#123;<br>                a[i][<span class="hljs-number">1</span>]=j;<span class="hljs-comment">//写入价格</span><br>                a[i][<span class="hljs-number">2</span>]=a[i<span class="hljs-number">-1</span>][<span class="hljs-number">2</span>]-cha;<span class="hljs-comment">//按销量差写入销量</span><br>                i++;<br>            &#125;<br>        &#125;<br>    &#125;<br>    <span class="hljs-built_in">cin</span>&gt;&gt;down;<span class="hljs-comment">//输入超过最大价格之后每次销量降低多少</span><br>    i--;<span class="hljs-comment">//因为上面的while循环最后有i++所以用i--抵消……</span><br>    xl=a[i][<span class="hljs-number">2</span>];<span class="hljs-comment">//记录目前的销量</span><br>    <span class="hljs-keyword">while</span>(xl&gt;<span class="hljs-number">0</span>)<br>    &#123;<br>        <span class="hljs-keyword">if</span>(xl-down&lt;<span class="hljs-number">0</span>)<span class="hljs-keyword">break</span>;<span class="hljs-comment">//如销量小于零则退出</span><br>        <span class="hljs-keyword">else</span><span class="hljs-comment">//否则</span><br>        &#123;<br>            xl-=down;<span class="hljs-comment">//销量每次减掉down</span><br>            i++;<span class="hljs-comment">//循环变量++</span><br>            a[i][<span class="hljs-number">1</span>]=a[i<span class="hljs-number">-1</span>][<span class="hljs-number">1</span>]+<span class="hljs-number">1</span>;<span class="hljs-comment">//每次价格+1</span><br>            a[i][<span class="hljs-number">2</span>]=xl;<span class="hljs-comment">//销量就是xl</span><br>        &#125;<br>    &#125;<br>    <span class="hljs-keyword">for</span>(j=<span class="hljs-number">1</span>;j&lt;=<span class="hljs-number">10000</span>;j++)<span class="hljs-comment">//该遍历了，因为收税相当于补贴*-1所以记录一下符号即可</span><br>    &#123;<br>        <span class="hljs-built_in">max</span>=<span class="hljs-number">-99999</span>;<span class="hljs-comment">//用于存储最大的总利润</span><br>        <span class="hljs-keyword">for</span>(k=<span class="hljs-number">1</span>;k&lt;=i;k++)<span class="hljs-comment">//每次扫一遍每一种价格</span><br>        &#123;<br>            num=(a[k][<span class="hljs-number">1</span>]-a[<span class="hljs-number">1</span>][<span class="hljs-number">1</span>]+j)*a[k][<span class="hljs-number">2</span>];<span class="hljs-comment">//套公式算出总利润</span><br>            <span class="hljs-keyword">if</span>(num&gt;=<span class="hljs-built_in">max</span>)<span class="hljs-comment">//如果总利润比目前最大的大</span><br>            &#123;<br>                <span class="hljs-built_in">max</span>=num;<span class="hljs-comment">//更新max</span><br>                price=a[k][<span class="hljs-number">1</span>];<span class="hljs-comment">//记录下价格</span><br>                p=<span class="hljs-number">1</span>;<span class="hljs-comment">//记录下符号</span><br>            &#125;<br>        &#125;<br>        <span class="hljs-keyword">if</span>(price==expect)&#123;<span class="hljs-built_in">cout</span>&lt;&lt;j*p;<span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;&#125;<span class="hljs-comment">//如果价格就是政府预期价则打印出来，因为本身就是从小到大遍历所以不用求绝对值最小的</span><br>        <span class="hljs-built_in">max</span>=<span class="hljs-number">-99999</span>;<span class="hljs-comment">//后面是收税，原理同上</span><br>        <span class="hljs-keyword">for</span>(k=<span class="hljs-number">1</span>;k&lt;=i;k++)<br>        &#123;<br>            num=(a[k][<span class="hljs-number">1</span>]-a[<span class="hljs-number">1</span>][<span class="hljs-number">1</span>]-j)*a[k][<span class="hljs-number">2</span>];<br>            <span class="hljs-keyword">if</span>(num&gt;=<span class="hljs-built_in">max</span>)<br>            &#123;<br>               <span class="hljs-built_in">max</span>=num;<br>                price=a[k][<span class="hljs-number">1</span>];  <br>                p=<span class="hljs-number">-1</span>;<br>            &#125;<br>        &#125;<br>        <span class="hljs-keyword">if</span>(price==expect)&#123;<span class="hljs-built_in">cout</span>&lt;&lt;j*p;<span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;&#125;<br>    &#125;<br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>编程</category>
-      </categories>
-      <tags>
-        <tag>洛谷</tag>
       </tags>
   </entry>
   <entry>
@@ -809,52 +814,6 @@ struct Node* next;
       </categories>
   </entry>
   <entry>
-    <title>java主类，类与源文件名的简要分析</title>
-    <url>/2020/02/19/java%E4%B8%BB%E7%B1%BB%EF%BC%8C%E7%B1%BB%E4%B8%8Epublic%E7%9A%84%E7%AE%80%E8%A6%81%E5%88%86%E6%9E%90/</url>
-    <content><![CDATA[<p>有时候，我们会遇到关于主类，类和public修饰的类的辨析。刚开始，很难辨别。那么，接下来，简要地分析一下其区别：</p>
-<p><strong>1.如果文件中只有一个类，文件名必须与类名一致，有没有public修饰都可以；</strong></p>
-<p><strong>2.一个Java文件中最多只能有一个public类；</strong></p>
-<p><strong>3.如果文件中不止一个类，而且有public类，文件名必须与public类名一致；</strong></p>
-<p><strong>4.如果文件中不止一个类，而且没有public类，文件名可与任一类名一致。</strong>(相同的是主类)</p>
-<p>首先：</p>
-<p> <strong>类是Java程序的最小程序单位</strong> 。</p>
-<ul>
-<li>Java程序是一种纯粹的<strong>面向对象</strong>的程序设计语言，因此Java程序必须以<strong>类的形式</strong>存在，类是Java程序的<strong>最小程序单位</strong>。</li>
-<li>Java程序不允许可执行性语句、方法等成分独立存在，<strong>所有的程序部分都必须放在类定义里</strong>。<del>（不能像c，c++一样瞎写了）</del></li>
-</ul>
-<h2 id="主类："><a href="#主类：" class="headerlink" title="主类："></a>主类：</h2><h5 id="什么是主类？"><a href="#什么是主类？" class="headerlink" title="什么是主类？"></a>什么是主类？</h5><p>一说，类名与文件名相同，且含有main的类。</p>
-<p>一说： 是带有（总程序的）<strong>执行入口</strong>main方法的类。 （虚拟机第一个进入的类）</p>
-<p>那么：我们不妨思考一下：</p>
-<p>Q: 一个类是不是可以有多个main方法呢？</p>
-<p>A: 由于java语言的多态性，我们完全可以在一个类中含有多个main方法，但记住，main是入口，而这些main方法中只有一个才会是入口。</p>
-<blockquote>
-<p>main 方法写法固定：必须被 public static void 修饰，且其形参必须是字符串数组类型（String[] args）。<br>对于一个大型 Java 程序，往往只需要一个入口（即只一个类包含 main 方法），其他类用于被 main 方法直接或间接调用。</p>
-</blockquote>
-<h3 id="Java-源文件的命名规则"><a href="#Java-源文件的命名规则" class="headerlink" title="Java 源文件的命名规则"></a><strong>Java 源文件的命名规则</strong></h3><blockquote>
-<ul>
-<li>通常情况下，Java 程序源文件的主文件名可以任意。</li>
-<li>但如果其中定义了一个 public 类，则该源<strong>文件的主文件名必须与该 public 类的类名相同</strong>。</li>
-<li>一个Java 源文件可包含多个类定义，但最多<strong>只能包含一个public类定义</strong>。</li>
-</ul>
-</blockquote>
-<p><strong>为什么只能包含一个public类？</strong></p>
-<blockquote>
-<p> 因为 public 类可以被项目中其他包下的类访问到。只需要在使用前 import  其对应的 class 文件。将类名与文件名一一对应就可以<strong>方便虚拟机在相应的路径（包名）中找到相应的类的信息</strong>。如果不这么做的话，就很难去找，而且开销也会很大。 </p>
-</blockquote>
-<p><del>1、Java编译器在编译的时候，如果整个Java文件（编译单元）都没有public类（对外的公开接口类），类加载器就无需直接去加载该编译单元产生的所有的字节码文件（.class文件），那么也就是无需去寻找编译后字节码文件存放位置。而类名和文件名一致是为了方便虚拟机在相应的路径中找到相应的类所对应的字节码文件。所以在没有public类的Java文件中，文件名和类名都没什么联系。</del></p>
-<p>2、如果编译单元中包含了public类，那么该类对应的字节码文件需要被类加载器加载的，这时候就需要让类加载器知道该字节码文件的位置，所以就要确保该类与Java文件名称一致。同时，如果有两个public类在同一个文件中，而一个文件只能有一个名称，<strong>故两个public类的名称就不能同时和文件名一样，这就造成至少其中有一个public类在编译的时候编译不通过。</strong></p>
-<p>关于Java源文件命名，通常有以下建议：</p>
-<pre><code>一个 Java 源文件只定义一个类，不同的类使用不同的源文件定义。
-让 Java 源文件的主文件名与该源文件中定义的 pulblic 类同名。
-</code></pre><h2 id><a href="#" class="headerlink" title=" "></a> </h2>]]></content>
-      <categories>
-        <category>java</category>
-      </categories>
-      <tags>
-        <tag>class</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>java字符串string</title>
     <url>/2020/02/17/java%E5%AD%97%E7%AC%A6%E4%B8%B2string/</url>
     <content><![CDATA[<h2 id="格式："><a href="#格式：" class="headerlink" title="格式："></a>格式：</h2><p>首先：初始化样例 ：String str = “Geeks”;</p>
@@ -909,6 +868,52 @@ struct Node* next;
       </categories>
       <tags>
         <tag>string</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>java主类，类与源文件名的简要分析</title>
+    <url>/2020/02/19/java%E4%B8%BB%E7%B1%BB%EF%BC%8C%E7%B1%BB%E4%B8%8Epublic%E7%9A%84%E7%AE%80%E8%A6%81%E5%88%86%E6%9E%90/</url>
+    <content><![CDATA[<p>有时候，我们会遇到关于主类，类和public修饰的类的辨析。刚开始，很难辨别。那么，接下来，简要地分析一下其区别：</p>
+<p><strong>1.如果文件中只有一个类，文件名必须与类名一致，有没有public修饰都可以；</strong></p>
+<p><strong>2.一个Java文件中最多只能有一个public类；</strong></p>
+<p><strong>3.如果文件中不止一个类，而且有public类，文件名必须与public类名一致；</strong></p>
+<p><strong>4.如果文件中不止一个类，而且没有public类，文件名可与任一类名一致。</strong>(相同的是主类)</p>
+<p>首先：</p>
+<p> <strong>类是Java程序的最小程序单位</strong> 。</p>
+<ul>
+<li>Java程序是一种纯粹的<strong>面向对象</strong>的程序设计语言，因此Java程序必须以<strong>类的形式</strong>存在，类是Java程序的<strong>最小程序单位</strong>。</li>
+<li>Java程序不允许可执行性语句、方法等成分独立存在，<strong>所有的程序部分都必须放在类定义里</strong>。<del>（不能像c，c++一样瞎写了）</del></li>
+</ul>
+<h2 id="主类："><a href="#主类：" class="headerlink" title="主类："></a>主类：</h2><h5 id="什么是主类？"><a href="#什么是主类？" class="headerlink" title="什么是主类？"></a>什么是主类？</h5><p>一说，类名与文件名相同，且含有main的类。</p>
+<p>一说： 是带有（总程序的）<strong>执行入口</strong>main方法的类。 （虚拟机第一个进入的类）</p>
+<p>那么：我们不妨思考一下：</p>
+<p>Q: 一个类是不是可以有多个main方法呢？</p>
+<p>A: 由于java语言的多态性，我们完全可以在一个类中含有多个main方法，但记住，main是入口，而这些main方法中只有一个才会是入口。</p>
+<blockquote>
+<p>main 方法写法固定：必须被 public static void 修饰，且其形参必须是字符串数组类型（String[] args）。<br>对于一个大型 Java 程序，往往只需要一个入口（即只一个类包含 main 方法），其他类用于被 main 方法直接或间接调用。</p>
+</blockquote>
+<h3 id="Java-源文件的命名规则"><a href="#Java-源文件的命名规则" class="headerlink" title="Java 源文件的命名规则"></a><strong>Java 源文件的命名规则</strong></h3><blockquote>
+<ul>
+<li>通常情况下，Java 程序源文件的主文件名可以任意。</li>
+<li>但如果其中定义了一个 public 类，则该源<strong>文件的主文件名必须与该 public 类的类名相同</strong>。</li>
+<li>一个Java 源文件可包含多个类定义，但最多<strong>只能包含一个public类定义</strong>。</li>
+</ul>
+</blockquote>
+<p><strong>为什么只能包含一个public类？</strong></p>
+<blockquote>
+<p> 因为 public 类可以被项目中其他包下的类访问到。只需要在使用前 import  其对应的 class 文件。将类名与文件名一一对应就可以<strong>方便虚拟机在相应的路径（包名）中找到相应的类的信息</strong>。如果不这么做的话，就很难去找，而且开销也会很大。 </p>
+</blockquote>
+<p><del>1、Java编译器在编译的时候，如果整个Java文件（编译单元）都没有public类（对外的公开接口类），类加载器就无需直接去加载该编译单元产生的所有的字节码文件（.class文件），那么也就是无需去寻找编译后字节码文件存放位置。而类名和文件名一致是为了方便虚拟机在相应的路径中找到相应的类所对应的字节码文件。所以在没有public类的Java文件中，文件名和类名都没什么联系。</del></p>
+<p>2、如果编译单元中包含了public类，那么该类对应的字节码文件需要被类加载器加载的，这时候就需要让类加载器知道该字节码文件的位置，所以就要确保该类与Java文件名称一致。同时，如果有两个public类在同一个文件中，而一个文件只能有一个名称，<strong>故两个public类的名称就不能同时和文件名一样，这就造成至少其中有一个public类在编译的时候编译不通过。</strong></p>
+<p>关于Java源文件命名，通常有以下建议：</p>
+<pre><code>一个 Java 源文件只定义一个类，不同的类使用不同的源文件定义。
+让 Java 源文件的主文件名与该源文件中定义的 pulblic 类同名。
+</code></pre><h2 id><a href="#" class="headerlink" title=" "></a> </h2>]]></content>
+      <categories>
+        <category>java</category>
+      </categories>
+      <tags>
+        <tag>class</tag>
       </tags>
   </entry>
   <entry>
@@ -994,6 +999,16 @@ class GFG {
       <tags>
         <tag>methods</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>new_EE</title>
+    <url>/2021/06/03/new-EE/</url>
+    <content><![CDATA[<h2 id="新坑IOT方向"><a href="#新坑IOT方向" class="headerlink" title="新坑IOT方向"></a>新坑IOT方向</h2><p>陆陆续续的进行了一些相关方向的内容，今后会多分享一些项目的总结和技术分享。</p>
+<p>加油！</p>
+]]></content>
+      <categories>
+        <category>EE</category>
+      </categories>
   </entry>
   <entry>
     <title>java日期处理</title>
@@ -1097,45 +1112,6 @@ class GFG {
       </categories>
       <tags>
         <tag>面向对象的编程</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>p1086花生采摘</title>
-    <url>/2020/03/21/p1086%E8%8A%B1%E7%94%9F%E9%87%87%E6%91%98/</url>
-    <content><![CDATA[<h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><p>鲁宾逊先生有一只宠物猴，名叫多多。这天，他们两个正沿着乡间小路散步，突然发现路边的告示牌上贴着一张小小的纸条：“欢迎免费品尝我种的花生！――熊字”。</p>
-<p>鲁宾逊先生和多多都很开心，因为花生正是他们的最爱。在告示牌背后，路边真的有一块花生田，花生植株整齐地排列成矩形网格（如图111）。有经验的多多一眼就能看出，每棵花生植株下的花生有多少。为了训练多多的算术，鲁宾逊先生说：“你先找出花生最多的植株，去采摘它的花生；然后再找出剩下的植株里花生最多的，去采摘它的花生；依此类推，不过你一定要在我限定的时间内回到路边。”</p>
-<p><img src="/2020/03/21/p1086%E8%8A%B1%E7%94%9F%E9%87%87%E6%91%98/1182.png" alt></p>
-<p>我们假定多多在每个单位时间内，可以做下列四件事情中的一件：</p>
-<ol>
-<li>从路边跳到最靠近路边（即第一行）的某棵花生植株；</li>
-<li>从一棵植株跳到前后左右与之相邻的另一棵植株</li>
-<li>采摘一棵植株下的花生：</li>
-<li>从最靠近路边（即第一行）的某棵花生植株跳回路边</li>
-</ol>
-<p>现在给定一块花生田的大小和花生的分布，请问在限定时间内，多多最多可以采到多少个花生？注意可能只有部分植株下面长有花生，假设这些植株下的花生个数各不相同。</p>
-<p>例如在图2所示的花生田里，只有位于(2,5),(3,7),(4,2),(5,4)的植株下长有花生，个数分别为13,7,15,9。沿着图示的路线，多多在21个单位时间内，最多可以采到37个花生。</p>
-<h2 id="输入格式"><a href="#输入格式" class="headerlink" title="输入格式"></a>输入格式</h2><p>第一行包括三个整数，M,N和K，用空格隔开；表示花生田的大小为MN（1≤M,N≤20），多多采花生的限定时间为K（0≤K≤1000）个单位时间。接下来的M行，每行包括N个非负整数，也用空格隔开；第i+1行的第j个整数Pij（0≤Pij≤500）表示花生田里植株（i,j）下花生的数目，0表示该植株下没有花生。</p>
-<h2 id="输出格式"><a href="#输出格式" class="headerlink" title="输出格式"></a>输出格式</h2><p>一个整数，即在限定时间内，多多最多可以采到花生的个数。</p>
-<h2 id="输入输出样例"><a href="#输入输出样例" class="headerlink" title="输入输出样例"></a>输入输出样例</h2><p><strong>输入 #1</strong> </p>
-<figure class="highlight basic"><table><tr><td class="code"><pre><code class="hljs basic"><span class="hljs-symbol">6 </span><span class="hljs-number">7</span> <span class="hljs-number">21</span><br><span class="hljs-symbol">0 </span><span class="hljs-number">0</span> <span class="hljs-number">0</span> <span class="hljs-number">0</span> <span class="hljs-number">0</span> <span class="hljs-number">0</span> <span class="hljs-number">0</span><br><span class="hljs-symbol">0 </span><span class="hljs-number">0</span> <span class="hljs-number">0</span> <span class="hljs-number">0</span> <span class="hljs-number">13</span> <span class="hljs-number">0</span> <span class="hljs-number">0</span><br><span class="hljs-symbol">0 </span><span class="hljs-number">0</span> <span class="hljs-number">0</span> <span class="hljs-number">0</span> <span class="hljs-number">0</span> <span class="hljs-number">0</span> <span class="hljs-number">7</span><br><span class="hljs-symbol">0 </span><span class="hljs-number">15</span> <span class="hljs-number">0</span> <span class="hljs-number">0</span> <span class="hljs-number">0</span> <span class="hljs-number">0</span> <span class="hljs-number">0</span><br><span class="hljs-symbol">0 </span><span class="hljs-number">0</span> <span class="hljs-number">0</span> <span class="hljs-number">9</span> <span class="hljs-number">0</span> <span class="hljs-number">0</span> <span class="hljs-number">0</span><br><span class="hljs-symbol">0 </span><span class="hljs-number">0</span> <span class="hljs-number">0</span> <span class="hljs-number">0</span> <span class="hljs-number">0</span> <span class="hljs-number">0</span> <span class="hljs-number">0</span><br></code></pre></td></tr></table></figure>
-<p><strong>输出 #1</strong> </p>
-<figure class="highlight angelscript"><table><tr><td class="code"><pre><code class="hljs angelscript"><span class="hljs-number">37</span><br></code></pre></td></tr></table></figure>
-<p><strong>输入 #2</strong> </p>
-<figure class="highlight basic"><table><tr><td class="code"><pre><code class="hljs basic"><span class="hljs-symbol">6 </span><span class="hljs-number">7</span> <span class="hljs-number">20</span><br><span class="hljs-symbol">0 </span><span class="hljs-number">0</span> <span class="hljs-number">0</span> <span class="hljs-number">0</span> <span class="hljs-number">0</span> <span class="hljs-number">0</span> <span class="hljs-number">0</span><br><span class="hljs-symbol">0 </span><span class="hljs-number">0</span> <span class="hljs-number">0</span> <span class="hljs-number">0</span> <span class="hljs-number">13</span> <span class="hljs-number">0</span> <span class="hljs-number">0</span><br><span class="hljs-symbol">0 </span><span class="hljs-number">0</span> <span class="hljs-number">0</span> <span class="hljs-number">0</span> <span class="hljs-number">0</span> <span class="hljs-number">0</span> <span class="hljs-number">7</span><br><span class="hljs-symbol">0 </span><span class="hljs-number">15</span> <span class="hljs-number">0</span> <span class="hljs-number">0</span> <span class="hljs-number">0</span> <span class="hljs-number">0</span> <span class="hljs-number">0</span><br><span class="hljs-symbol">0 </span><span class="hljs-number">0</span> <span class="hljs-number">0</span> <span class="hljs-number">9</span> <span class="hljs-number">0</span> <span class="hljs-number">0</span> <span class="hljs-number">0</span><br><span class="hljs-symbol">0 </span><span class="hljs-number">0</span> <span class="hljs-number">0</span> <span class="hljs-number">0</span> <span class="hljs-number">0</span> <span class="hljs-number">0</span> <span class="hljs-number">0</span><br></code></pre></td></tr></table></figure>
-<p><strong>输出 #2</strong> </p>
-<figure class="highlight angelscript"><table><tr><td class="code"><pre><code class="hljs angelscript"><span class="hljs-number">28</span><br></code></pre></td></tr></table></figure>
-<h2 id="解题思路："><a href="#解题思路：" class="headerlink" title="解题思路："></a>解题思路：</h2><p>刚开始急匆匆地一看题目（然后就陷入了一阵思考：“如何在有限的时间内拿到最多的花生呢？”哎，每个花生的个数还不一样，也就是先后顺序什么的都要去更改哎，动态规划？<del>（可是其实我不会动态规划哈哈）</del>那么怎么办呢，哎呦，然后发现了一个问题，这是一道普及题目那么不会那么难的吧？！</p>
-<p>又重新审题后，发现我原来看错题目了！在那段极长的唠叨中，<strong>它规定的摘取顺序是按照从大到小的顺序区去采摘，</strong>而不是向我之前所想的那样，这样一来就大大简化了自己的步骤。</p>
-<p>之后一开始打算使用一个二维数组来储存但是发现不太对，想起来结构体于是；</p>
-<p>有了思路，使用一个结构体来储存自己的x，y，和花生的个数；然后排序，从大到小但是要记住判断下一次是不是采摘完还能回去哈哈。</p>
-<figure class="highlight c++"><table><tr><td class="code"><pre><code class="hljs c++"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span><span class="hljs-meta-string">&lt;bits/stdc++.h&gt;</span></span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> <span class="hljs-built_in">std</span>;<br><span class="hljs-keyword">typedef</span> <span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">hua</span>&#123;</span><br>    <span class="hljs-keyword">int</span> x;<br>    <span class="hljs-keyword">int</span> y;<br>    <span class="hljs-keyword">int</span> num;<br>&#125;h;<br><span class="hljs-function"><span class="hljs-keyword">bool</span> <span class="hljs-title">cmp</span><span class="hljs-params">(h a,h b)</span></span>&#123;    <br>        <span class="hljs-keyword">return</span>  a.num &gt; b.num; <br>&#125;;<br><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span>&#123;<br>    <span class="hljs-keyword">int</span> m,n,k,cnt=<span class="hljs-number">0</span>,ans=<span class="hljs-number">0</span>,real=<span class="hljs-number">0</span>;<br>    <span class="hljs-built_in">cin</span>&gt;&gt;m&gt;&gt;n&gt;&gt;k;<br>    h a[m*n];<br>    <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i=<span class="hljs-number">0</span>;i&lt;m;i++)<br>    &#123;<br>        <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> j=<span class="hljs-number">0</span>;j&lt;n;j++)&#123;<br>        a[cnt].x = i;<br>        a[cnt].y = j;<br>        <span class="hljs-built_in">cin</span>&gt;&gt;a[cnt++].num; <br>		<span class="hljs-keyword">if</span>(a[cnt<span class="hljs-number">-1</span>].num!=<span class="hljs-number">0</span>)real++;  <br>        &#125;  <br>    &#125;<br>    sort(a,a+m*n,cmp);<br>    <span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>;<br>    k--;<span class="hljs-comment">//跳入</span><br>    <span class="hljs-keyword">int</span> least = a[i].x*<span class="hljs-number">2</span>+<span class="hljs-number">2</span>;<br>    <span class="hljs-keyword">int</span> cost = a[i].x+<span class="hljs-number">1</span>;<br>   	<span class="hljs-comment">// cout&lt;&lt;real&lt;&lt;endl;</span><br>    <span class="hljs-comment">//cout&lt;&lt;"应该是：3，1"&lt;&lt;a[0].x&lt;&lt;"  "&lt;&lt;a[0].y&lt;&lt;endl;</span><br>    <span class="hljs-keyword">while</span>(k&gt;=least&amp;&amp;(i&lt;=real))&#123;<span class="hljs-comment">//省去了讨论最后一步跳出</span><br>        k-=cost;<span class="hljs-comment">//到达a[i]点所需要的步数，并加上挖出所需要的一步</span><br>       <span class="hljs-comment">// cout&lt;&lt;"least:"&lt;&lt;least&lt;&lt;"  cost:"&lt;&lt;cost;</span><br>       <span class="hljs-comment">// cout&lt;&lt;"   k:"&lt;&lt;k&lt;&lt;endl;</span><br>        ans+=a[i].num;<br>        least = <span class="hljs-built_in">abs</span>(a[i+<span class="hljs-number">1</span>].y-a[i].y)+<span class="hljs-built_in">abs</span>(a[i+<span class="hljs-number">1</span>].x-a[i].x)+a[i+<span class="hljs-number">1</span>].x+<span class="hljs-number">2</span>;<br>        <span class="hljs-comment">//假设能拿到下一个,且挖掘，并保证能够返回到第一行。</span><br>        cost = <span class="hljs-built_in">abs</span>(a[i+<span class="hljs-number">1</span>].y-a[i].y)+<span class="hljs-built_in">abs</span>(a[i+<span class="hljs-number">1</span>].x-a[i].x)+<span class="hljs-number">1</span>;<br>        i++;<br>    &#125;<br>    <span class="hljs-built_in">cout</span>&lt;&lt;ans;<br><br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
-<p>好的，这个故事告诉我们。。。审视好题目。。。</p>
-]]></content>
-      <categories>
-        <category>编程</category>
-      </categories>
-      <tags>
-        <tag>洛谷</tag>
       </tags>
   </entry>
   <entry>
@@ -1243,6 +1219,45 @@ class GFG {
       </categories>
       <tags>
         <tag>poj bfs</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>p1086花生采摘</title>
+    <url>/2020/03/21/p1086%E8%8A%B1%E7%94%9F%E9%87%87%E6%91%98/</url>
+    <content><![CDATA[<h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><p>鲁宾逊先生有一只宠物猴，名叫多多。这天，他们两个正沿着乡间小路散步，突然发现路边的告示牌上贴着一张小小的纸条：“欢迎免费品尝我种的花生！――熊字”。</p>
+<p>鲁宾逊先生和多多都很开心，因为花生正是他们的最爱。在告示牌背后，路边真的有一块花生田，花生植株整齐地排列成矩形网格（如图111）。有经验的多多一眼就能看出，每棵花生植株下的花生有多少。为了训练多多的算术，鲁宾逊先生说：“你先找出花生最多的植株，去采摘它的花生；然后再找出剩下的植株里花生最多的，去采摘它的花生；依此类推，不过你一定要在我限定的时间内回到路边。”</p>
+<p><img src="/2020/03/21/p1086%E8%8A%B1%E7%94%9F%E9%87%87%E6%91%98/1182.png" alt></p>
+<p>我们假定多多在每个单位时间内，可以做下列四件事情中的一件：</p>
+<ol>
+<li>从路边跳到最靠近路边（即第一行）的某棵花生植株；</li>
+<li>从一棵植株跳到前后左右与之相邻的另一棵植株</li>
+<li>采摘一棵植株下的花生：</li>
+<li>从最靠近路边（即第一行）的某棵花生植株跳回路边</li>
+</ol>
+<p>现在给定一块花生田的大小和花生的分布，请问在限定时间内，多多最多可以采到多少个花生？注意可能只有部分植株下面长有花生，假设这些植株下的花生个数各不相同。</p>
+<p>例如在图2所示的花生田里，只有位于(2,5),(3,7),(4,2),(5,4)的植株下长有花生，个数分别为13,7,15,9。沿着图示的路线，多多在21个单位时间内，最多可以采到37个花生。</p>
+<h2 id="输入格式"><a href="#输入格式" class="headerlink" title="输入格式"></a>输入格式</h2><p>第一行包括三个整数，M,N和K，用空格隔开；表示花生田的大小为MN（1≤M,N≤20），多多采花生的限定时间为K（0≤K≤1000）个单位时间。接下来的M行，每行包括N个非负整数，也用空格隔开；第i+1行的第j个整数Pij（0≤Pij≤500）表示花生田里植株（i,j）下花生的数目，0表示该植株下没有花生。</p>
+<h2 id="输出格式"><a href="#输出格式" class="headerlink" title="输出格式"></a>输出格式</h2><p>一个整数，即在限定时间内，多多最多可以采到花生的个数。</p>
+<h2 id="输入输出样例"><a href="#输入输出样例" class="headerlink" title="输入输出样例"></a>输入输出样例</h2><p><strong>输入 #1</strong> </p>
+<figure class="highlight basic"><table><tr><td class="code"><pre><code class="hljs basic"><span class="hljs-symbol">6 </span><span class="hljs-number">7</span> <span class="hljs-number">21</span><br><span class="hljs-symbol">0 </span><span class="hljs-number">0</span> <span class="hljs-number">0</span> <span class="hljs-number">0</span> <span class="hljs-number">0</span> <span class="hljs-number">0</span> <span class="hljs-number">0</span><br><span class="hljs-symbol">0 </span><span class="hljs-number">0</span> <span class="hljs-number">0</span> <span class="hljs-number">0</span> <span class="hljs-number">13</span> <span class="hljs-number">0</span> <span class="hljs-number">0</span><br><span class="hljs-symbol">0 </span><span class="hljs-number">0</span> <span class="hljs-number">0</span> <span class="hljs-number">0</span> <span class="hljs-number">0</span> <span class="hljs-number">0</span> <span class="hljs-number">7</span><br><span class="hljs-symbol">0 </span><span class="hljs-number">15</span> <span class="hljs-number">0</span> <span class="hljs-number">0</span> <span class="hljs-number">0</span> <span class="hljs-number">0</span> <span class="hljs-number">0</span><br><span class="hljs-symbol">0 </span><span class="hljs-number">0</span> <span class="hljs-number">0</span> <span class="hljs-number">9</span> <span class="hljs-number">0</span> <span class="hljs-number">0</span> <span class="hljs-number">0</span><br><span class="hljs-symbol">0 </span><span class="hljs-number">0</span> <span class="hljs-number">0</span> <span class="hljs-number">0</span> <span class="hljs-number">0</span> <span class="hljs-number">0</span> <span class="hljs-number">0</span><br></code></pre></td></tr></table></figure>
+<p><strong>输出 #1</strong> </p>
+<figure class="highlight angelscript"><table><tr><td class="code"><pre><code class="hljs angelscript"><span class="hljs-number">37</span><br></code></pre></td></tr></table></figure>
+<p><strong>输入 #2</strong> </p>
+<figure class="highlight basic"><table><tr><td class="code"><pre><code class="hljs basic"><span class="hljs-symbol">6 </span><span class="hljs-number">7</span> <span class="hljs-number">20</span><br><span class="hljs-symbol">0 </span><span class="hljs-number">0</span> <span class="hljs-number">0</span> <span class="hljs-number">0</span> <span class="hljs-number">0</span> <span class="hljs-number">0</span> <span class="hljs-number">0</span><br><span class="hljs-symbol">0 </span><span class="hljs-number">0</span> <span class="hljs-number">0</span> <span class="hljs-number">0</span> <span class="hljs-number">13</span> <span class="hljs-number">0</span> <span class="hljs-number">0</span><br><span class="hljs-symbol">0 </span><span class="hljs-number">0</span> <span class="hljs-number">0</span> <span class="hljs-number">0</span> <span class="hljs-number">0</span> <span class="hljs-number">0</span> <span class="hljs-number">7</span><br><span class="hljs-symbol">0 </span><span class="hljs-number">15</span> <span class="hljs-number">0</span> <span class="hljs-number">0</span> <span class="hljs-number">0</span> <span class="hljs-number">0</span> <span class="hljs-number">0</span><br><span class="hljs-symbol">0 </span><span class="hljs-number">0</span> <span class="hljs-number">0</span> <span class="hljs-number">9</span> <span class="hljs-number">0</span> <span class="hljs-number">0</span> <span class="hljs-number">0</span><br><span class="hljs-symbol">0 </span><span class="hljs-number">0</span> <span class="hljs-number">0</span> <span class="hljs-number">0</span> <span class="hljs-number">0</span> <span class="hljs-number">0</span> <span class="hljs-number">0</span><br></code></pre></td></tr></table></figure>
+<p><strong>输出 #2</strong> </p>
+<figure class="highlight angelscript"><table><tr><td class="code"><pre><code class="hljs angelscript"><span class="hljs-number">28</span><br></code></pre></td></tr></table></figure>
+<h2 id="解题思路："><a href="#解题思路：" class="headerlink" title="解题思路："></a>解题思路：</h2><p>刚开始急匆匆地一看题目（然后就陷入了一阵思考：“如何在有限的时间内拿到最多的花生呢？”哎，每个花生的个数还不一样，也就是先后顺序什么的都要去更改哎，动态规划？<del>（可是其实我不会动态规划哈哈）</del>那么怎么办呢，哎呦，然后发现了一个问题，这是一道普及题目那么不会那么难的吧？！</p>
+<p>又重新审题后，发现我原来看错题目了！在那段极长的唠叨中，<strong>它规定的摘取顺序是按照从大到小的顺序区去采摘，</strong>而不是向我之前所想的那样，这样一来就大大简化了自己的步骤。</p>
+<p>之后一开始打算使用一个二维数组来储存但是发现不太对，想起来结构体于是；</p>
+<p>有了思路，使用一个结构体来储存自己的x，y，和花生的个数；然后排序，从大到小但是要记住判断下一次是不是采摘完还能回去哈哈。</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><code class="hljs c++"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span><span class="hljs-meta-string">&lt;bits/stdc++.h&gt;</span></span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> <span class="hljs-built_in">std</span>;<br><span class="hljs-keyword">typedef</span> <span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">hua</span>&#123;</span><br>    <span class="hljs-keyword">int</span> x;<br>    <span class="hljs-keyword">int</span> y;<br>    <span class="hljs-keyword">int</span> num;<br>&#125;h;<br><span class="hljs-function"><span class="hljs-keyword">bool</span> <span class="hljs-title">cmp</span><span class="hljs-params">(h a,h b)</span></span>&#123;    <br>        <span class="hljs-keyword">return</span>  a.num &gt; b.num; <br>&#125;;<br><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span>&#123;<br>    <span class="hljs-keyword">int</span> m,n,k,cnt=<span class="hljs-number">0</span>,ans=<span class="hljs-number">0</span>,real=<span class="hljs-number">0</span>;<br>    <span class="hljs-built_in">cin</span>&gt;&gt;m&gt;&gt;n&gt;&gt;k;<br>    h a[m*n];<br>    <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i=<span class="hljs-number">0</span>;i&lt;m;i++)<br>    &#123;<br>        <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> j=<span class="hljs-number">0</span>;j&lt;n;j++)&#123;<br>        a[cnt].x = i;<br>        a[cnt].y = j;<br>        <span class="hljs-built_in">cin</span>&gt;&gt;a[cnt++].num; <br>		<span class="hljs-keyword">if</span>(a[cnt<span class="hljs-number">-1</span>].num!=<span class="hljs-number">0</span>)real++;  <br>        &#125;  <br>    &#125;<br>    sort(a,a+m*n,cmp);<br>    <span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>;<br>    k--;<span class="hljs-comment">//跳入</span><br>    <span class="hljs-keyword">int</span> least = a[i].x*<span class="hljs-number">2</span>+<span class="hljs-number">2</span>;<br>    <span class="hljs-keyword">int</span> cost = a[i].x+<span class="hljs-number">1</span>;<br>   	<span class="hljs-comment">// cout&lt;&lt;real&lt;&lt;endl;</span><br>    <span class="hljs-comment">//cout&lt;&lt;"应该是：3，1"&lt;&lt;a[0].x&lt;&lt;"  "&lt;&lt;a[0].y&lt;&lt;endl;</span><br>    <span class="hljs-keyword">while</span>(k&gt;=least&amp;&amp;(i&lt;=real))&#123;<span class="hljs-comment">//省去了讨论最后一步跳出</span><br>        k-=cost;<span class="hljs-comment">//到达a[i]点所需要的步数，并加上挖出所需要的一步</span><br>       <span class="hljs-comment">// cout&lt;&lt;"least:"&lt;&lt;least&lt;&lt;"  cost:"&lt;&lt;cost;</span><br>       <span class="hljs-comment">// cout&lt;&lt;"   k:"&lt;&lt;k&lt;&lt;endl;</span><br>        ans+=a[i].num;<br>        least = <span class="hljs-built_in">abs</span>(a[i+<span class="hljs-number">1</span>].y-a[i].y)+<span class="hljs-built_in">abs</span>(a[i+<span class="hljs-number">1</span>].x-a[i].x)+a[i+<span class="hljs-number">1</span>].x+<span class="hljs-number">2</span>;<br>        <span class="hljs-comment">//假设能拿到下一个,且挖掘，并保证能够返回到第一行。</span><br>        cost = <span class="hljs-built_in">abs</span>(a[i+<span class="hljs-number">1</span>].y-a[i].y)+<span class="hljs-built_in">abs</span>(a[i+<span class="hljs-number">1</span>].x-a[i].x)+<span class="hljs-number">1</span>;<br>        i++;<br>    &#125;<br>    <span class="hljs-built_in">cout</span>&lt;&lt;ans;<br><br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
+<p>好的，这个故事告诉我们。。。审视好题目。。。</p>
+]]></content>
+      <categories>
+        <category>编程</category>
+      </categories>
+      <tags>
+        <tag>洛谷</tag>
       </tags>
   </entry>
   <entry>
@@ -1359,6 +1374,43 @@ class GFG {
       </tags>
   </entry>
   <entry>
+    <title>pta输出指定范围内的斐波那契数列</title>
+    <url>/2019/11/07/pta%E8%BE%93%E5%87%BA%E6%8C%87%E5%AE%9A%E8%8C%83%E5%9B%B4%E5%86%85%E7%9A%84%E6%96%90%E6%B3%A2%E9%82%A3%E5%A5%91%E6%95%B0%E5%88%97/</url>
+    <content><![CDATA[<p>这是一道pta的题目，对新人有一定难度（我就是）。</p>
+  <a id="more"></a>
+<h2 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h2><p>本题要求实现一个计算Fibonacci数的简单函数，并利用其实现另一个函数，输出两正整数m和n（0&lt;m≤n≤10000）之间的所有Fibonacci数。所谓Fibonacci数列就是满足任一项数字是前两项的和（最开始两项均定义为1）的数列。<br>函数接口定义：<br>int fib( int n );<br>void PrintFN( int m, int n );<br>其中函数fib须返回第n项Fibonacci数；函数PrintFN要在一行中输出给定范围[m, n]内的所有Fibonacci数，相邻数字间有一个空格，行末不得有多余空格。如果给定区间内没有Fibonacci数，则输出一行“No Fibonacci number”。</p>
+<h2 id="题目代码"><a href="#题目代码" class="headerlink" title="题目代码"></a>题目代码</h2><figure class="highlight c"><table><tr><td class="code"><pre><code class="hljs c"><span class="hljs-comment">// #include &lt;stdio.h&gt;</span><br><br><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">fib</span><span class="hljs-params">( <span class="hljs-keyword">int</span> n )</span></span>;<br><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">PrintFN</span><span class="hljs-params">( <span class="hljs-keyword">int</span> m, <span class="hljs-keyword">int</span> n )</span></span>;<br>	<br><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span><br></span>&#123;<br>    <span class="hljs-keyword">int</span> m, n, t;<br><br>    <span class="hljs-built_in">scanf</span>(<span class="hljs-string">"%d %d %d"</span>, &amp;m, &amp;n, &amp;t);<br>    <span class="hljs-built_in">printf</span>(<span class="hljs-string">"fib(%d) = %d\n"</span>, t, fib(t));<br>    PrintFN(m, n);<br><br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br><br><span class="hljs-comment">/* 你的代码将被嵌在这里 */</span><br></code></pre></td></tr></table></figure>
+<h2 id="作业代码-后面有很多可以改进的地方）"><a href="#作业代码-后面有很多可以改进的地方）" class="headerlink" title="作业代码(后面有很多可以改进的地方）"></a>作业代码(后面有很多可以改进的地方）</h2><figure class="highlight c"><table><tr><td class="code"><pre><code class="hljs c"><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">fib</span><span class="hljs-params">(<span class="hljs-keyword">int</span> n)</span></span>&#123; <br>	<span class="hljs-keyword">int</span> i=<span class="hljs-number">0</span>,a[<span class="hljs-number">10000</span>];<span class="hljs-comment">//n==2;</span><br>	<span class="hljs-keyword">for</span>(;i&lt;=n;i++)&#123;<br>		<span class="hljs-keyword">if</span>(i==<span class="hljs-number">0</span>||i==<span class="hljs-number">1</span>)&#123;<br>		a[<span class="hljs-number">0</span>]=a[<span class="hljs-number">1</span>]=<span class="hljs-number">1</span>; <br>		&#125;<span class="hljs-keyword">else</span> a[i]=a[i<span class="hljs-number">-2</span>]+a[i<span class="hljs-number">-1</span>];<br>		<span class="hljs-keyword">if</span>(i==n<span class="hljs-number">-1</span>)&#123;<br>			<span class="hljs-keyword">return</span> a[i];	 <br>	&#125;<br><br><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">PrintFN</span><span class="hljs-params">( <span class="hljs-keyword">int</span> m, <span class="hljs-keyword">int</span> n )</span></span>&#123;<br>	<span class="hljs-keyword">int</span> i;<br>	<span class="hljs-keyword">int</span> cnt=<span class="hljs-number">0</span>;<br>	<span class="hljs-keyword">for</span>(i=<span class="hljs-number">0</span>;i&lt;=<span class="hljs-number">10000</span>;i++)&#123;<br>		<span class="hljs-keyword">if</span>(fib(i)&gt;<span class="hljs-number">10000</span>)&#123;<br>			<span class="hljs-keyword">break</span>;<br>		&#125;	<span class="hljs-keyword">if</span> (fib(i)==m)&#123;<br>			<span class="hljs-keyword">if</span>(cnt==<span class="hljs-number">1</span>)&#123;<br>			<span class="hljs-built_in">printf</span>(<span class="hljs-string">" "</span>) ;<br>			&#125;<br>			<span class="hljs-keyword">else</span> <span class="hljs-built_in">printf</span>(<span class="hljs-string">"%d"</span>,fib(i));<br>			cnt++;<br>		&#125;<span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span>(fib(i)&gt;m&amp;&amp;fib(i)&lt;=n)&#123;<br>			cnt++;<br>			<span class="hljs-keyword">if</span>(cnt==<span class="hljs-number">1</span>)<span class="hljs-built_in">printf</span>(<span class="hljs-string">"%d"</span>,fib(i));<br>			<span class="hljs-keyword">else</span> <span class="hljs-built_in">printf</span>(<span class="hljs-string">" %d"</span>,fib(i));<br>	<br>		&#125;	<br>	&#125;<br>	<span class="hljs-keyword">if</span>(cnt==<span class="hljs-number">0</span>)&#123;<br>		<span class="hljs-built_in">printf</span>(<span class="hljs-string">"No Fibonacci number"</span>);<br>	&#125;<br><br>&#125;<br></code></pre></td></tr></table></figure>
+<h2 id="分步改正并讲解"><a href="#分步改正并讲解" class="headerlink" title="分步改正并讲解"></a>分步改正并讲解</h2><h3 id="int-fib-int-n-；-返回第n项斐波那契数。"><a href="#int-fib-int-n-；-返回第n项斐波那契数。" class="headerlink" title="int fib(int n)；//返回第n项斐波那契数。"></a>int fib(int n)；//返回第n项斐波那契数。</h3><figure class="highlight c"><table><tr><td class="code"><pre><code class="hljs c"><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">fib</span><span class="hljs-params">(<span class="hljs-keyword">int</span> n)</span></span>&#123;<span class="hljs-comment">//返回第n项斐波那契数。 </span><br>	<span class="hljs-keyword">int</span> i=<span class="hljs-number">0</span>,a[<span class="hljs-number">10000</span>];<span class="hljs-comment">//n==2;</span><br>	<span class="hljs-keyword">for</span>(;i&lt;=n;i++)&#123;<br>		<span class="hljs-keyword">if</span>(i==<span class="hljs-number">0</span>||i==<span class="hljs-number">1</span>)&#123;<br>		a[<span class="hljs-number">0</span>]=a[<span class="hljs-number">1</span>]=<span class="hljs-number">1</span>; <br>		&#125;<span class="hljs-keyword">else</span> a[i]=a[i<span class="hljs-number">-2</span>]+a[i<span class="hljs-number">-1</span>];<br>		<span class="hljs-keyword">if</span>(i==n<span class="hljs-number">-1</span>)&#123;<br>			<span class="hljs-keyword">return</span> a[i];<br>		&#125;<span class="hljs-comment">//牺牲空间而下面的牺牲时间（每次都从头算一遍）</span><br>	&#125;<br>&#125;<span class="hljs-comment">/*int fib( int n )&#123;<br>    if(n==1||n==2)<br>	return 1;<br><br>	return fib(n-2)+fib(n-1);<br>&#125;*/</span><span class="hljs-comment">//可用其替换啊啊啊啊！</span><br></code></pre></td></tr></table></figure>
+<h3 id="void-PrintFN-int-m-int-n-返回【m，n】之间的斐波那契数列"><a href="#void-PrintFN-int-m-int-n-返回【m，n】之间的斐波那契数列" class="headerlink" title="void PrintFN( int m, int n )//返回【m，n】之间的斐波那契数列"></a>void PrintFN( int m, int n )//返回【m，n】之间的斐波那契数列</h3><figure class="highlight c"><table><tr><td class="code"><pre><code class="hljs c"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">PrintFN</span><span class="hljs-params">( <span class="hljs-keyword">int</span> m, <span class="hljs-keyword">int</span> n )</span></span>&#123;<span class="hljs-comment">//输出所有斐波那契数列并一直到第m项，打印出来</span><br>	<span class="hljs-keyword">int</span> i;<br>	<span class="hljs-keyword">int</span> cnt=<span class="hljs-number">0</span>;<br>	<span class="hljs-keyword">for</span>(i=<span class="hljs-number">0</span>;i&lt;=<span class="hljs-number">10000</span>;i++)&#123;<br>		<span class="hljs-keyword">if</span>(fib(i)&gt;<span class="hljs-number">10000</span>)&#123;<span class="hljs-comment">//因为会有内存溢出</span><br>			<span class="hljs-keyword">break</span>;<br>		&#125;	<span class="hljs-keyword">if</span> (fib(i)==m)&#123;<br><span class="hljs-comment">//下面我写的代码很奇怪吧，因为如果不这么做，当m==1时就会 输出三个1；所以很无奈		</span><br><span class="hljs-comment">/*int first = 1;<br>    if(m==1)&#123;<br>        printf("1 1");<br>        first = 0;<br>        m = 2;<br>    &#125;*/</span><span class="hljs-comment">//这样是一种更好的做法，直接输出1 1；</span><br>			<span class="hljs-keyword">if</span>(cnt==<span class="hljs-number">1</span>)&#123;<br>			<span class="hljs-built_in">printf</span>(<span class="hljs-string">" "</span>) ;<br>			&#125;<br>			<span class="hljs-keyword">else</span> <span class="hljs-built_in">printf</span>(<span class="hljs-string">"%d"</span>,fib(i));<br>			cnt++;<br>		&#125;<span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span>(fib(i)&gt;m&amp;&amp;fib(i)&lt;=n)&#123;<br>			cnt++;<br>			<span class="hljs-keyword">if</span>(cnt==<span class="hljs-number">1</span>)<span class="hljs-built_in">printf</span>(<span class="hljs-string">"%d"</span>,fib(i));<br>			<span class="hljs-keyword">else</span> <span class="hljs-built_in">printf</span>(<span class="hljs-string">" %d"</span>,fib(i));<br>	<br>		&#125;	<br>	&#125;<br>	<span class="hljs-keyword">if</span>(cnt==<span class="hljs-number">0</span>)&#123;<br>		<span class="hljs-built_in">printf</span>(<span class="hljs-string">"No Fibonacci number"</span>);<br>	&#125;<br><br>&#125;<br></code></pre></td></tr></table></figure>
+<p>感谢众多大神的帮助，这篇文章只是为了帮助更多的入门者更好的走下去。</p>
+<p>文中有参考<a href="https://blog.csdn.net/qq_43328781/article/details/85157414" target="_blank" rel="noopener">https://blog.csdn.net/qq_43328781/article/details/85157414</a></p>
+]]></content>
+      <categories>
+        <category>编程</category>
+      </categories>
+      <tags>
+        <tag>pta</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>一元多次多项式的加减</title>
+    <url>/2020/03/26/%E4%B8%80%E5%85%83%E5%A4%9A%E6%AC%A1%E5%A4%9A%E9%A1%B9%E5%BC%8F%E7%9A%84%E5%8A%A0%E5%87%8F/</url>
+    <content><![CDATA[<h1 id="一元多项式的加减法"><a href="#一元多项式的加减法" class="headerlink" title="一元多项式的加减法"></a>一元多项式的加减法</h1><p>tips: 三月份写过这个题解，当时确实解决了当时问题，但是方法是错的，两个月后，又做类似的题目，只是将指数由大到小的排列便错了，那么我就不（敢）再误人子弟，便删去旧的题解，写新的题解。这一次经历了两天来研究指针的问题，可以说，过程比较令人头大，但是对指针的了解也更多了一些。功不唐捐！</p>
+<p>在学习链表的过程中，了解到可以使用链表的方式来实现一元多项式的加减（还打算实现乘法和除法，但是技术有限，一时不一会写，哈哈，以后或许会悄悄更新吧）</p>
+  <a id="more"></a>
+<h2 id="如何获取到两个一元多项式"><a href="#如何获取到两个一元多项式" class="headerlink" title="如何获取到两个一元多项式"></a>如何获取到两个一元多项式</h2><p>我们可以使用到首先明确一共有多少项，输入数据应该如下示例：<br>如果希望输入的多项式是：x+2x^2+3x^3<br>那么输入的数据应该是： 3 1 1 2 2 3 3<br>第一个输入一共多少项，之后我们可以依次输入每项的底数和次方。</p>
+<h2 id="储存方式"><a href="#储存方式" class="headerlink" title="储存方式"></a>储存方式</h2><p>自然是使用链表咯！</p>
+<h2 id="代码里面见分析！"><a href="#代码里面见分析！" class="headerlink" title="代码里面见分析！"></a>代码里面见分析！</h2><p>精华应该是在于对于</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><code class="hljs c++"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span><span class="hljs-meta-string">&lt;bits/stdc++.h&gt;</span></span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> <span class="hljs-built_in">std</span>;<br><span class="hljs-keyword">typedef</span> <span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">Node</span>&#123;</span><br>	<span class="hljs-keyword">int</span> coef;<br>	<span class="hljs-keyword">int</span> index;<br>	<span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">Node</span>* <span class="hljs-title">next</span>;</span><br>&#125;node;<br><br><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span>&#123;	<br>	<span class="hljs-keyword">int</span> n;<br>	<span class="hljs-built_in">cin</span>&gt;&gt;n;<br>	<span class="hljs-keyword">int</span> coef;<br>	<span class="hljs-keyword">int</span> index;<br>	node* head1 = (node*)<span class="hljs-built_in">malloc</span>(<span class="hljs-keyword">sizeof</span>(node));<br>	node* headfirst = head1;<br>	<span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i=<span class="hljs-number">0</span>;i&lt;n;i++)&#123;<br>		node* t = (node*)<span class="hljs-built_in">malloc</span>(<span class="hljs-keyword">sizeof</span>(node));<br>		<span class="hljs-built_in">cin</span>&gt;&gt;t-&gt;coef;<br>		<span class="hljs-built_in">cin</span>&gt;&gt;t-&gt;index;<br>		head1-&gt;next = t;<br>		head1 = head1-&gt;next;			<br>	&#125;<br>	head1-&gt;next = <span class="hljs-literal">NULL</span>;<br><br>	<span class="hljs-built_in">cin</span>&gt;&gt;n;<br>	node* head2 = (node*)<span class="hljs-built_in">malloc</span>(<span class="hljs-keyword">sizeof</span>(node));<br>	node* headsecond = head2;<br>	<span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i=<span class="hljs-number">0</span>;i&lt;n;i++)&#123;<br>		node* t = (node*)<span class="hljs-built_in">malloc</span>(<span class="hljs-keyword">sizeof</span>(node));<br>		<span class="hljs-built_in">cin</span>&gt;&gt;t-&gt;coef;<br>		<span class="hljs-built_in">cin</span>&gt;&gt;t-&gt;index;<br>		head2-&gt;next = t;<br>		head2 = head2-&gt;next;			<br>	&#125;<br>	head2-&gt;next = <span class="hljs-literal">NULL</span>;<br><br><br><br>	<span class="hljs-comment">//start  </span><br>	Node* tail = headfirst;<br>	Node* p = headfirst-&gt;next;<br>	Node* q = headsecond-&gt;next;<br>	Node* t = headfirst;<span class="hljs-comment">//as the result</span><br>	<span class="hljs-keyword">while</span>(q&amp;&amp;p)&#123;<br>		<span class="hljs-keyword">if</span>(p-&gt;index &gt; q-&gt;index)&#123;<br>			tail = p;<br>			p= p-&gt;next;<br>		&#125;<br>		<span class="hljs-keyword">if</span>(p-&gt;index &lt; q-&gt;index)&#123;<br>			tail-&gt;next = q;<br>			tail = q;<br>			q = q-&gt;next; <br>		&#125;	<br>		<span class="hljs-keyword">else</span>&#123;<br>			<span class="hljs-keyword">if</span>(p-&gt;coef + q-&gt;coef==<span class="hljs-number">0</span>)&#123;<br>				tail-&gt;next = p-&gt;next;<br>				Node* temp = p;	<br>				p = p-&gt;next;<br>				<span class="hljs-built_in">free</span>(temp);<br>				temp = q;<br>				q= q-&gt;next;<br>				<span class="hljs-built_in">free</span>(temp);<br>			&#125; <br>			<span class="hljs-keyword">else</span> &#123;<span class="hljs-comment">//coef之和不为0，index相等时 </span><br>				p-&gt;coef = p-&gt;coef + q-&gt;coef;<br>				tail -&gt;next = p;<br>				p = p-&gt;next;<br>				Node* temp = q;<br>				q = q-&gt;next;		<br>				<span class="hljs-built_in">free</span>(temp);<br>			&#125;<br>		&#125;	<br>	&#125;<br>    t = t-&gt;next;<br>	<span class="hljs-keyword">while</span>(t)&#123;<br>		<span class="hljs-keyword">if</span>(t!=headfirst-&gt;next&amp;&amp;t-&gt;coef&gt;<span class="hljs-number">0</span>)<span class="hljs-built_in">cout</span>&lt;&lt;<span class="hljs-string">"+"</span>;<br>		<span class="hljs-built_in">cout</span>&lt;&lt;t-&gt;coef&lt;&lt;<span class="hljs-string">"x"</span>;<br>		<span class="hljs-keyword">if</span>(t-&gt;index!=<span class="hljs-number">1</span>)<span class="hljs-built_in">cout</span>&lt;&lt;<span class="hljs-string">"^"</span>&lt;&lt;t-&gt;index;<br>		t = t-&gt;next;<br>		<br>	&#125;<br>	<span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>	<br>&#125;<br></code></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>数据结构基础</category>
+      </categories>
+      <tags>
+        <tag>链表</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>stlvector</title>
     <url>/2020/02/27/stlvector/</url>
     <content><![CDATA[<p>Vectors are same as dynamic arrays with the ability to resize itself automatically when an element is inserted or deleted, with their storage being handled automatically by the container. Vector elements are placed in contiguous storage so that they can be accessed and traversed using iterators. In vectors, data is inserted at the end. Inserting at the end takes differential time, as sometimes there may be a need of extending the array. Removing the last element takes only constant time because no resizing happens. Inserting and erasing at the beginning or in the middle is linear in time.</p>
@@ -1427,43 +1479,6 @@ class GFG {
       </categories>
       <tags>
         <tag>stl</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>pta输出指定范围内的斐波那契数列</title>
-    <url>/2019/11/07/pta%E8%BE%93%E5%87%BA%E6%8C%87%E5%AE%9A%E8%8C%83%E5%9B%B4%E5%86%85%E7%9A%84%E6%96%90%E6%B3%A2%E9%82%A3%E5%A5%91%E6%95%B0%E5%88%97/</url>
-    <content><![CDATA[<p>这是一道pta的题目，对新人有一定难度（我就是）。</p>
-  <a id="more"></a>
-<h2 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h2><p>本题要求实现一个计算Fibonacci数的简单函数，并利用其实现另一个函数，输出两正整数m和n（0&lt;m≤n≤10000）之间的所有Fibonacci数。所谓Fibonacci数列就是满足任一项数字是前两项的和（最开始两项均定义为1）的数列。<br>函数接口定义：<br>int fib( int n );<br>void PrintFN( int m, int n );<br>其中函数fib须返回第n项Fibonacci数；函数PrintFN要在一行中输出给定范围[m, n]内的所有Fibonacci数，相邻数字间有一个空格，行末不得有多余空格。如果给定区间内没有Fibonacci数，则输出一行“No Fibonacci number”。</p>
-<h2 id="题目代码"><a href="#题目代码" class="headerlink" title="题目代码"></a>题目代码</h2><figure class="highlight c"><table><tr><td class="code"><pre><code class="hljs c"><span class="hljs-comment">// #include &lt;stdio.h&gt;</span><br><br><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">fib</span><span class="hljs-params">( <span class="hljs-keyword">int</span> n )</span></span>;<br><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">PrintFN</span><span class="hljs-params">( <span class="hljs-keyword">int</span> m, <span class="hljs-keyword">int</span> n )</span></span>;<br>	<br><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span><br></span>&#123;<br>    <span class="hljs-keyword">int</span> m, n, t;<br><br>    <span class="hljs-built_in">scanf</span>(<span class="hljs-string">"%d %d %d"</span>, &amp;m, &amp;n, &amp;t);<br>    <span class="hljs-built_in">printf</span>(<span class="hljs-string">"fib(%d) = %d\n"</span>, t, fib(t));<br>    PrintFN(m, n);<br><br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br><br><span class="hljs-comment">/* 你的代码将被嵌在这里 */</span><br></code></pre></td></tr></table></figure>
-<h2 id="作业代码-后面有很多可以改进的地方）"><a href="#作业代码-后面有很多可以改进的地方）" class="headerlink" title="作业代码(后面有很多可以改进的地方）"></a>作业代码(后面有很多可以改进的地方）</h2><figure class="highlight c"><table><tr><td class="code"><pre><code class="hljs c"><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">fib</span><span class="hljs-params">(<span class="hljs-keyword">int</span> n)</span></span>&#123; <br>	<span class="hljs-keyword">int</span> i=<span class="hljs-number">0</span>,a[<span class="hljs-number">10000</span>];<span class="hljs-comment">//n==2;</span><br>	<span class="hljs-keyword">for</span>(;i&lt;=n;i++)&#123;<br>		<span class="hljs-keyword">if</span>(i==<span class="hljs-number">0</span>||i==<span class="hljs-number">1</span>)&#123;<br>		a[<span class="hljs-number">0</span>]=a[<span class="hljs-number">1</span>]=<span class="hljs-number">1</span>; <br>		&#125;<span class="hljs-keyword">else</span> a[i]=a[i<span class="hljs-number">-2</span>]+a[i<span class="hljs-number">-1</span>];<br>		<span class="hljs-keyword">if</span>(i==n<span class="hljs-number">-1</span>)&#123;<br>			<span class="hljs-keyword">return</span> a[i];	 <br>	&#125;<br><br><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">PrintFN</span><span class="hljs-params">( <span class="hljs-keyword">int</span> m, <span class="hljs-keyword">int</span> n )</span></span>&#123;<br>	<span class="hljs-keyword">int</span> i;<br>	<span class="hljs-keyword">int</span> cnt=<span class="hljs-number">0</span>;<br>	<span class="hljs-keyword">for</span>(i=<span class="hljs-number">0</span>;i&lt;=<span class="hljs-number">10000</span>;i++)&#123;<br>		<span class="hljs-keyword">if</span>(fib(i)&gt;<span class="hljs-number">10000</span>)&#123;<br>			<span class="hljs-keyword">break</span>;<br>		&#125;	<span class="hljs-keyword">if</span> (fib(i)==m)&#123;<br>			<span class="hljs-keyword">if</span>(cnt==<span class="hljs-number">1</span>)&#123;<br>			<span class="hljs-built_in">printf</span>(<span class="hljs-string">" "</span>) ;<br>			&#125;<br>			<span class="hljs-keyword">else</span> <span class="hljs-built_in">printf</span>(<span class="hljs-string">"%d"</span>,fib(i));<br>			cnt++;<br>		&#125;<span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span>(fib(i)&gt;m&amp;&amp;fib(i)&lt;=n)&#123;<br>			cnt++;<br>			<span class="hljs-keyword">if</span>(cnt==<span class="hljs-number">1</span>)<span class="hljs-built_in">printf</span>(<span class="hljs-string">"%d"</span>,fib(i));<br>			<span class="hljs-keyword">else</span> <span class="hljs-built_in">printf</span>(<span class="hljs-string">" %d"</span>,fib(i));<br>	<br>		&#125;	<br>	&#125;<br>	<span class="hljs-keyword">if</span>(cnt==<span class="hljs-number">0</span>)&#123;<br>		<span class="hljs-built_in">printf</span>(<span class="hljs-string">"No Fibonacci number"</span>);<br>	&#125;<br><br>&#125;<br></code></pre></td></tr></table></figure>
-<h2 id="分步改正并讲解"><a href="#分步改正并讲解" class="headerlink" title="分步改正并讲解"></a>分步改正并讲解</h2><h3 id="int-fib-int-n-；-返回第n项斐波那契数。"><a href="#int-fib-int-n-；-返回第n项斐波那契数。" class="headerlink" title="int fib(int n)；//返回第n项斐波那契数。"></a>int fib(int n)；//返回第n项斐波那契数。</h3><figure class="highlight c"><table><tr><td class="code"><pre><code class="hljs c"><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">fib</span><span class="hljs-params">(<span class="hljs-keyword">int</span> n)</span></span>&#123;<span class="hljs-comment">//返回第n项斐波那契数。 </span><br>	<span class="hljs-keyword">int</span> i=<span class="hljs-number">0</span>,a[<span class="hljs-number">10000</span>];<span class="hljs-comment">//n==2;</span><br>	<span class="hljs-keyword">for</span>(;i&lt;=n;i++)&#123;<br>		<span class="hljs-keyword">if</span>(i==<span class="hljs-number">0</span>||i==<span class="hljs-number">1</span>)&#123;<br>		a[<span class="hljs-number">0</span>]=a[<span class="hljs-number">1</span>]=<span class="hljs-number">1</span>; <br>		&#125;<span class="hljs-keyword">else</span> a[i]=a[i<span class="hljs-number">-2</span>]+a[i<span class="hljs-number">-1</span>];<br>		<span class="hljs-keyword">if</span>(i==n<span class="hljs-number">-1</span>)&#123;<br>			<span class="hljs-keyword">return</span> a[i];<br>		&#125;<span class="hljs-comment">//牺牲空间而下面的牺牲时间（每次都从头算一遍）</span><br>	&#125;<br>&#125;<span class="hljs-comment">/*int fib( int n )&#123;<br>    if(n==1||n==2)<br>	return 1;<br><br>	return fib(n-2)+fib(n-1);<br>&#125;*/</span><span class="hljs-comment">//可用其替换啊啊啊啊！</span><br></code></pre></td></tr></table></figure>
-<h3 id="void-PrintFN-int-m-int-n-返回【m，n】之间的斐波那契数列"><a href="#void-PrintFN-int-m-int-n-返回【m，n】之间的斐波那契数列" class="headerlink" title="void PrintFN( int m, int n )//返回【m，n】之间的斐波那契数列"></a>void PrintFN( int m, int n )//返回【m，n】之间的斐波那契数列</h3><figure class="highlight c"><table><tr><td class="code"><pre><code class="hljs c"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">PrintFN</span><span class="hljs-params">( <span class="hljs-keyword">int</span> m, <span class="hljs-keyword">int</span> n )</span></span>&#123;<span class="hljs-comment">//输出所有斐波那契数列并一直到第m项，打印出来</span><br>	<span class="hljs-keyword">int</span> i;<br>	<span class="hljs-keyword">int</span> cnt=<span class="hljs-number">0</span>;<br>	<span class="hljs-keyword">for</span>(i=<span class="hljs-number">0</span>;i&lt;=<span class="hljs-number">10000</span>;i++)&#123;<br>		<span class="hljs-keyword">if</span>(fib(i)&gt;<span class="hljs-number">10000</span>)&#123;<span class="hljs-comment">//因为会有内存溢出</span><br>			<span class="hljs-keyword">break</span>;<br>		&#125;	<span class="hljs-keyword">if</span> (fib(i)==m)&#123;<br><span class="hljs-comment">//下面我写的代码很奇怪吧，因为如果不这么做，当m==1时就会 输出三个1；所以很无奈		</span><br><span class="hljs-comment">/*int first = 1;<br>    if(m==1)&#123;<br>        printf("1 1");<br>        first = 0;<br>        m = 2;<br>    &#125;*/</span><span class="hljs-comment">//这样是一种更好的做法，直接输出1 1；</span><br>			<span class="hljs-keyword">if</span>(cnt==<span class="hljs-number">1</span>)&#123;<br>			<span class="hljs-built_in">printf</span>(<span class="hljs-string">" "</span>) ;<br>			&#125;<br>			<span class="hljs-keyword">else</span> <span class="hljs-built_in">printf</span>(<span class="hljs-string">"%d"</span>,fib(i));<br>			cnt++;<br>		&#125;<span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span>(fib(i)&gt;m&amp;&amp;fib(i)&lt;=n)&#123;<br>			cnt++;<br>			<span class="hljs-keyword">if</span>(cnt==<span class="hljs-number">1</span>)<span class="hljs-built_in">printf</span>(<span class="hljs-string">"%d"</span>,fib(i));<br>			<span class="hljs-keyword">else</span> <span class="hljs-built_in">printf</span>(<span class="hljs-string">" %d"</span>,fib(i));<br>	<br>		&#125;	<br>	&#125;<br>	<span class="hljs-keyword">if</span>(cnt==<span class="hljs-number">0</span>)&#123;<br>		<span class="hljs-built_in">printf</span>(<span class="hljs-string">"No Fibonacci number"</span>);<br>	&#125;<br><br>&#125;<br></code></pre></td></tr></table></figure>
-<p>感谢众多大神的帮助，这篇文章只是为了帮助更多的入门者更好的走下去。</p>
-<p>文中有参考<a href="https://blog.csdn.net/qq_43328781/article/details/85157414" target="_blank" rel="noopener">https://blog.csdn.net/qq_43328781/article/details/85157414</a></p>
-]]></content>
-      <categories>
-        <category>编程</category>
-      </categories>
-      <tags>
-        <tag>pta</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>一元多次多项式的加减</title>
-    <url>/2020/03/26/%E4%B8%80%E5%85%83%E5%A4%9A%E6%AC%A1%E5%A4%9A%E9%A1%B9%E5%BC%8F%E7%9A%84%E5%8A%A0%E5%87%8F/</url>
-    <content><![CDATA[<h1 id="一元多项式的加减法"><a href="#一元多项式的加减法" class="headerlink" title="一元多项式的加减法"></a>一元多项式的加减法</h1><p>tips: 三月份写过这个题解，当时确实解决了当时问题，但是方法是错的，两个月后，又做类似的题目，只是将指数由大到小的排列便错了，那么我就不（敢）再误人子弟，便删去旧的题解，写新的题解。这一次经历了两天来研究指针的问题，可以说，过程比较令人头大，但是对指针的了解也更多了一些。功不唐捐！</p>
-<p>在学习链表的过程中，了解到可以使用链表的方式来实现一元多项式的加减（还打算实现乘法和除法，但是技术有限，一时不一会写，哈哈，以后或许会悄悄更新吧）</p>
-  <a id="more"></a>
-<h2 id="如何获取到两个一元多项式"><a href="#如何获取到两个一元多项式" class="headerlink" title="如何获取到两个一元多项式"></a>如何获取到两个一元多项式</h2><p>我们可以使用到首先明确一共有多少项，输入数据应该如下示例：<br>如果希望输入的多项式是：x+2x^2+3x^3<br>那么输入的数据应该是： 3 1 1 2 2 3 3<br>第一个输入一共多少项，之后我们可以依次输入每项的底数和次方。</p>
-<h2 id="储存方式"><a href="#储存方式" class="headerlink" title="储存方式"></a>储存方式</h2><p>自然是使用链表咯！</p>
-<h2 id="代码里面见分析！"><a href="#代码里面见分析！" class="headerlink" title="代码里面见分析！"></a>代码里面见分析！</h2><p>精华应该是在于对于</p>
-<figure class="highlight c++"><table><tr><td class="code"><pre><code class="hljs c++"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span><span class="hljs-meta-string">&lt;bits/stdc++.h&gt;</span></span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> <span class="hljs-built_in">std</span>;<br><span class="hljs-keyword">typedef</span> <span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">Node</span>&#123;</span><br>	<span class="hljs-keyword">int</span> coef;<br>	<span class="hljs-keyword">int</span> index;<br>	<span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">Node</span>* <span class="hljs-title">next</span>;</span><br>&#125;node;<br><br><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span>&#123;	<br>	<span class="hljs-keyword">int</span> n;<br>	<span class="hljs-built_in">cin</span>&gt;&gt;n;<br>	<span class="hljs-keyword">int</span> coef;<br>	<span class="hljs-keyword">int</span> index;<br>	node* head1 = (node*)<span class="hljs-built_in">malloc</span>(<span class="hljs-keyword">sizeof</span>(node));<br>	node* headfirst = head1;<br>	<span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i=<span class="hljs-number">0</span>;i&lt;n;i++)&#123;<br>		node* t = (node*)<span class="hljs-built_in">malloc</span>(<span class="hljs-keyword">sizeof</span>(node));<br>		<span class="hljs-built_in">cin</span>&gt;&gt;t-&gt;coef;<br>		<span class="hljs-built_in">cin</span>&gt;&gt;t-&gt;index;<br>		head1-&gt;next = t;<br>		head1 = head1-&gt;next;			<br>	&#125;<br>	head1-&gt;next = <span class="hljs-literal">NULL</span>;<br><br>	<span class="hljs-built_in">cin</span>&gt;&gt;n;<br>	node* head2 = (node*)<span class="hljs-built_in">malloc</span>(<span class="hljs-keyword">sizeof</span>(node));<br>	node* headsecond = head2;<br>	<span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i=<span class="hljs-number">0</span>;i&lt;n;i++)&#123;<br>		node* t = (node*)<span class="hljs-built_in">malloc</span>(<span class="hljs-keyword">sizeof</span>(node));<br>		<span class="hljs-built_in">cin</span>&gt;&gt;t-&gt;coef;<br>		<span class="hljs-built_in">cin</span>&gt;&gt;t-&gt;index;<br>		head2-&gt;next = t;<br>		head2 = head2-&gt;next;			<br>	&#125;<br>	head2-&gt;next = <span class="hljs-literal">NULL</span>;<br><br><br><br>	<span class="hljs-comment">//start  </span><br>	Node* tail = headfirst;<br>	Node* p = headfirst-&gt;next;<br>	Node* q = headsecond-&gt;next;<br>	Node* t = headfirst;<span class="hljs-comment">//as the result</span><br>	<span class="hljs-keyword">while</span>(q&amp;&amp;p)&#123;<br>		<span class="hljs-keyword">if</span>(p-&gt;index &gt; q-&gt;index)&#123;<br>			tail = p;<br>			p= p-&gt;next;<br>		&#125;<br>		<span class="hljs-keyword">if</span>(p-&gt;index &lt; q-&gt;index)&#123;<br>			tail-&gt;next = q;<br>			tail = q;<br>			q = q-&gt;next; <br>		&#125;	<br>		<span class="hljs-keyword">else</span>&#123;<br>			<span class="hljs-keyword">if</span>(p-&gt;coef + q-&gt;coef==<span class="hljs-number">0</span>)&#123;<br>				tail-&gt;next = p-&gt;next;<br>				Node* temp = p;	<br>				p = p-&gt;next;<br>				<span class="hljs-built_in">free</span>(temp);<br>				temp = q;<br>				q= q-&gt;next;<br>				<span class="hljs-built_in">free</span>(temp);<br>			&#125; <br>			<span class="hljs-keyword">else</span> &#123;<span class="hljs-comment">//coef之和不为0，index相等时 </span><br>				p-&gt;coef = p-&gt;coef + q-&gt;coef;<br>				tail -&gt;next = p;<br>				p = p-&gt;next;<br>				Node* temp = q;<br>				q = q-&gt;next;		<br>				<span class="hljs-built_in">free</span>(temp);<br>			&#125;<br>		&#125;	<br>	&#125;<br>    t = t-&gt;next;<br>	<span class="hljs-keyword">while</span>(t)&#123;<br>		<span class="hljs-keyword">if</span>(t!=headfirst-&gt;next&amp;&amp;t-&gt;coef&gt;<span class="hljs-number">0</span>)<span class="hljs-built_in">cout</span>&lt;&lt;<span class="hljs-string">"+"</span>;<br>		<span class="hljs-built_in">cout</span>&lt;&lt;t-&gt;coef&lt;&lt;<span class="hljs-string">"x"</span>;<br>		<span class="hljs-keyword">if</span>(t-&gt;index!=<span class="hljs-number">1</span>)<span class="hljs-built_in">cout</span>&lt;&lt;<span class="hljs-string">"^"</span>&lt;&lt;t-&gt;index;<br>		t = t-&gt;next;<br>		<br>	&#125;<br>	<span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>	<br>&#125;<br></code></pre></td></tr></table></figure>]]></content>
-      <categories>
-        <category>数据结构基础</category>
-      </categories>
-      <tags>
-        <tag>链表</tag>
       </tags>
   </entry>
   <entry>
@@ -1656,6 +1671,26 @@ class GFG {
       </tags>
   </entry>
   <entry>
+    <title>查找子串</title>
+    <url>/2019/12/12/%E6%9F%A5%E6%89%BE%E5%AD%90%E4%B8%B2/</url>
+    <content><![CDATA[<h2 id="6-15-查找子串-20分"><a href="#6-15-查找子串-20分" class="headerlink" title="6-15 查找子串 (20分)"></a>6-15 查找子串 (20分)</h2><p>本题要求实现一个字符串查找的简单函数。</p>
+  <a id="more"></a>
+<h1 id="函数接口定义："><a href="#函数接口定义：" class="headerlink" title="函数接口定义："></a>函数接口定义：</h1><p>char <em>search( char </em>s, char *t );<br>函数search在字符串s中查找子串t，返回子串t在s中的首地址。若未找到，则返回NULL。</p>
+<h1 id="裁判测试程序样例："><a href="#裁判测试程序样例：" class="headerlink" title="裁判测试程序样例："></a>裁判测试程序样例：</h1><figure class="highlight c"><table><tr><td class="code"><pre><code class="hljs c"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;stdio.h&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> MAXS 30</span><br><br><span class="hljs-function"><span class="hljs-keyword">char</span> *<span class="hljs-title">search</span><span class="hljs-params">(<span class="hljs-keyword">char</span> *s, <span class="hljs-keyword">char</span> *t)</span></span>;<br><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">ReadString</span><span class="hljs-params">( <span class="hljs-keyword">char</span> s[] )</span></span>; <span class="hljs-comment">/* 裁判提供，细节不表 */</span><br><br><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span><br></span>&#123;<br>    <span class="hljs-keyword">char</span> s[MAXS], t[MAXS], *pos;<br><br>    ReadString(s);<br>    ReadString(t);<br>    pos = search(s, t);<br>    <span class="hljs-keyword">if</span> ( pos != <span class="hljs-literal">NULL</span> )<br>        <span class="hljs-built_in">printf</span>(<span class="hljs-string">"%d\n"</span>, pos - s);<br>    <span class="hljs-keyword">else</span><br>        <span class="hljs-built_in">printf</span>(<span class="hljs-string">"-1\n"</span>);<br><br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br><br><span class="hljs-comment">/* 你的代码将被嵌在这里 */</span><br></code></pre></td></tr></table></figure>
+<h1 id="输入样例1："><a href="#输入样例1：" class="headerlink" title="输入样例1："></a>输入样例1：</h1><p>The C Programming Language<br>ram </p>
+<h1 id="输出样例1："><a href="#输出样例1：" class="headerlink" title="输出样例1："></a>输出样例1：</h1><p>10</p>
+<h1 id="输入样例2："><a href="#输入样例2：" class="headerlink" title="输入样例2："></a>输入样例2：</h1><p>The C Programming Language<br>bored</p>
+<h1 id="输出样例2："><a href="#输出样例2：" class="headerlink" title="输出样例2："></a>输出样例2：</h1><p>-1</p>
+<h1 id="思路："><a href="#思路：" class="headerlink" title="思路："></a>思路：</h1><p>利用循环寻找到第一个相符合的字符，然后去判断是否为子字符串。<br>但此题目不可使用string.h较为麻烦，考验我们更多的是原理部分。</p>
+<h1 id="代码如下："><a href="#代码如下：" class="headerlink" title="代码如下："></a>代码如下：</h1><figure class="highlight c"><table><tr><td class="code"><pre><code class="hljs c"><span class="hljs-function"><span class="hljs-keyword">char</span> *<span class="hljs-title">search</span><span class="hljs-params">(<span class="hljs-keyword">char</span> *s, <span class="hljs-keyword">char</span> *t)</span></span>&#123;<br>	<span class="hljs-keyword">int</span> n,i,j,m;<br>	<span class="hljs-keyword">int</span> flag = <span class="hljs-number">-1</span>;<br>	<span class="hljs-keyword">for</span>(i=<span class="hljs-number">0</span>;s[i]!=<span class="hljs-string">'\0'</span>;i++)<span class="hljs-comment">//等效n = strlen(s)</span><br>	n=i;<br>	<span class="hljs-keyword">for</span>(i=<span class="hljs-number">0</span>;t[i]!=<span class="hljs-string">'\0'</span>;i++)<span class="hljs-comment">//等效m = strlen(t)</span><br>	m=i;<br>	<span class="hljs-keyword">for</span>(i=<span class="hljs-number">0</span>;i&lt;n;i++)&#123;<span class="hljs-comment">//i控制字符串s</span><br>		<span class="hljs-keyword">if</span>(t[<span class="hljs-number">0</span>]==s[i])&#123;<span class="hljs-comment">//循环找到第一个相符合的字符</span><br>			flag = <span class="hljs-number">1</span>;<span class="hljs-comment">//1代表找到了</span><br>		&#125;<br>		<span class="hljs-keyword">if</span>(flag = <span class="hljs-number">1</span>)&#123;<span class="hljs-comment">//如果找到第一个匹配的字符</span><br>			<span class="hljs-keyword">for</span>(j=<span class="hljs-number">1</span>;j&lt;=m;j++)&#123;<span class="hljs-comment">//j控制字符串t</span><br>				<span class="hljs-keyword">if</span>(t[j]==s[i+j])&#123;<span class="hljs-comment">//从第二个开始判断（第一个已经判断成功）</span><br>					flag =<span class="hljs-number">1</span>;<br>				&#125;<span class="hljs-keyword">else</span> &#123;<br>					flag =<span class="hljs-number">-1</span>;<span class="hljs-comment">//判断不成立时</span><br>				<span class="hljs-keyword">break</span>;	<br>				&#125;<br>			&#125;<br>			<span class="hljs-keyword">if</span>(flag ==<span class="hljs-number">1</span>)<span class="hljs-keyword">return</span> &amp;s[i];<span class="hljs-comment">//（在匹配成功的情况下）</span><br>		&#125;<br>	&#125;<span class="hljs-keyword">return</span> <span class="hljs-literal">NULL</span>;<br>&#125;<br></code></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>编程</category>
+      </categories>
+      <tags>
+        <tag>pta</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>打印沙漏（代码较详细）</title>
     <url>/2020/01/04/%E6%89%93%E5%8D%B0%E6%B2%99%E6%BC%8F/</url>
     <content><![CDATA[<p>本题要求你写个程序把给定的符号打印成沙漏的形状。例如给定17个“*”，要求按下列格式打印</p>
@@ -1670,26 +1705,6 @@ class GFG {
 <h3 id="题目思路："><a href="#题目思路：" class="headerlink" title="题目思路："></a>题目思路：</h3><p>哎，一言难尽，本以为是一道水题，却在写的时候发现写了好久，静不下心来。就抄了一下别人的。后来机缘巧合下，有自己重新坐下，冷静思考。经过许多次调试，有了一些结果。简单来说：就是大而化小。</p>
 <h3 id="代码："><a href="#代码：" class="headerlink" title="代码："></a>代码：</h3><figure class="highlight cpp"><table><tr><td class="code"><pre><code class="hljs cpp"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span><span class="hljs-meta-string">&lt;bits/stdc++.h&gt;</span></span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> <span class="hljs-built_in">std</span>;<br><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span>&#123;<br>	<span class="hljs-keyword">int</span> n;<br>	<span class="hljs-built_in">cin</span>&gt;&gt;n;<br>	<span class="hljs-keyword">char</span> ch;<br>	getchar();<span class="hljs-comment">//中间的空格</span><br>	ch=getchar(); <br>	<span class="hljs-keyword">int</span> i,item=<span class="hljs-number">1</span>,sum=<span class="hljs-number">1</span>;<span class="hljs-comment">//sum为所用的符号个数，item表示最大的一行的符号个数。 </span><br>	<span class="hljs-keyword">for</span>(i=<span class="hljs-number">0</span>;sum&lt;=n;i++)<span class="hljs-comment">//这样写，最后sum一定大于n，会超出。 </span><br>	&#123;item+=<span class="hljs-number">2</span>;<br>	sum+=item*<span class="hljs-number">2</span>;<br>	&#125;<br>	sum-=item*<span class="hljs-number">2</span>;<span class="hljs-comment">//得到未超出时的所需符号个数sum，（返回上一次的sum） </span><br>	<span class="hljs-keyword">int</span> ans = n-sum;<span class="hljs-comment">//得到了最后的剩余的符号个数；（最后输出即可） </span><br>	<br>	<span class="hljs-comment">//接下来输出沙漏（首先不考虑输出下半个沙漏，先输出一半） </span><br>	<span class="hljs-keyword">int</span> t=item<span class="hljs-number">-2</span>;<br>	<span class="hljs-keyword">int</span> cnt=<span class="hljs-number">0</span>; <span class="hljs-comment">//第一次是0第二行应该时1，依次类推。 </span><br>	<span class="hljs-keyword">for</span>(i=t;i&gt;<span class="hljs-number">0</span>;i-=<span class="hljs-number">2</span>)<br>	&#123;	<br>		<span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> k=<span class="hljs-number">0</span>;k&lt;cnt;k++)<span class="hljs-built_in">cout</span>&lt;&lt;<span class="hljs-string">" "</span>;<span class="hljs-comment">//输出空格 </span><br>		<span class="hljs-comment">//cnt++如果放在这里（判断中）会出现无限死循环！</span><br>		<span class="hljs-comment">//(第二行判断的时候会陷入死循环）</span><br>		<span class="hljs-comment">//放在最后就好了。 </span><br>		<br>	<br>		<span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> j=<span class="hljs-number">0</span>;j&lt;i;j++)&#123;<span class="hljs-comment">//输出符号 </span><br>			<span class="hljs-built_in">cout</span>&lt;&lt;ch;<br>		&#125;<span class="hljs-built_in">cout</span>&lt;&lt;<span class="hljs-built_in">endl</span>;<br>		cnt++;	<br>	&#125; <br>	<br>	<span class="hljs-comment">//下半个沙漏</span><br>	cnt--;<span class="hljs-comment">//是由于最后cnt又多加了1； </span><br>	 <span class="hljs-keyword">for</span>(i=<span class="hljs-number">3</span>;i&lt;=t;i+=<span class="hljs-number">2</span>)<span class="hljs-comment">//照着上面的反过来即可（但是第一项是1) </span><br>	 &#123;<br>	 	cnt--; <br>	 	<span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> k=<span class="hljs-number">0</span>;k&lt;cnt;k++)<span class="hljs-built_in">cout</span>&lt;&lt;<span class="hljs-string">" "</span>;<span class="hljs-comment">//输出空格</span><br>		<span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> j=<span class="hljs-number">0</span>;j&lt;i;j++)&#123;<span class="hljs-comment">//输出符号 </span><br>			<span class="hljs-built_in">cout</span>&lt;&lt;ch;<br>		&#125;<span class="hljs-built_in">cout</span>&lt;&lt;<span class="hljs-built_in">endl</span>;<br>	 &#125; <br>	 <span class="hljs-built_in">cout</span>&lt;&lt;ans;<span class="hljs-comment">//还有一个剩余个数需要输出。。。 </span><br>	<span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>	<br>&#125;<br></code></pre></td></tr></table></figure>
 ]]></content>
-      <categories>
-        <category>编程</category>
-      </categories>
-      <tags>
-        <tag>pta</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>查找子串</title>
-    <url>/2019/12/12/%E6%9F%A5%E6%89%BE%E5%AD%90%E4%B8%B2/</url>
-    <content><![CDATA[<h2 id="6-15-查找子串-20分"><a href="#6-15-查找子串-20分" class="headerlink" title="6-15 查找子串 (20分)"></a>6-15 查找子串 (20分)</h2><p>本题要求实现一个字符串查找的简单函数。</p>
-  <a id="more"></a>
-<h1 id="函数接口定义："><a href="#函数接口定义：" class="headerlink" title="函数接口定义："></a>函数接口定义：</h1><p>char <em>search( char </em>s, char *t );<br>函数search在字符串s中查找子串t，返回子串t在s中的首地址。若未找到，则返回NULL。</p>
-<h1 id="裁判测试程序样例："><a href="#裁判测试程序样例：" class="headerlink" title="裁判测试程序样例："></a>裁判测试程序样例：</h1><figure class="highlight c"><table><tr><td class="code"><pre><code class="hljs c"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;stdio.h&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> MAXS 30</span><br><br><span class="hljs-function"><span class="hljs-keyword">char</span> *<span class="hljs-title">search</span><span class="hljs-params">(<span class="hljs-keyword">char</span> *s, <span class="hljs-keyword">char</span> *t)</span></span>;<br><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">ReadString</span><span class="hljs-params">( <span class="hljs-keyword">char</span> s[] )</span></span>; <span class="hljs-comment">/* 裁判提供，细节不表 */</span><br><br><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span><br></span>&#123;<br>    <span class="hljs-keyword">char</span> s[MAXS], t[MAXS], *pos;<br><br>    ReadString(s);<br>    ReadString(t);<br>    pos = search(s, t);<br>    <span class="hljs-keyword">if</span> ( pos != <span class="hljs-literal">NULL</span> )<br>        <span class="hljs-built_in">printf</span>(<span class="hljs-string">"%d\n"</span>, pos - s);<br>    <span class="hljs-keyword">else</span><br>        <span class="hljs-built_in">printf</span>(<span class="hljs-string">"-1\n"</span>);<br><br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br><br><span class="hljs-comment">/* 你的代码将被嵌在这里 */</span><br></code></pre></td></tr></table></figure>
-<h1 id="输入样例1："><a href="#输入样例1：" class="headerlink" title="输入样例1："></a>输入样例1：</h1><p>The C Programming Language<br>ram </p>
-<h1 id="输出样例1："><a href="#输出样例1：" class="headerlink" title="输出样例1："></a>输出样例1：</h1><p>10</p>
-<h1 id="输入样例2："><a href="#输入样例2：" class="headerlink" title="输入样例2："></a>输入样例2：</h1><p>The C Programming Language<br>bored</p>
-<h1 id="输出样例2："><a href="#输出样例2：" class="headerlink" title="输出样例2："></a>输出样例2：</h1><p>-1</p>
-<h1 id="思路："><a href="#思路：" class="headerlink" title="思路："></a>思路：</h1><p>利用循环寻找到第一个相符合的字符，然后去判断是否为子字符串。<br>但此题目不可使用string.h较为麻烦，考验我们更多的是原理部分。</p>
-<h1 id="代码如下："><a href="#代码如下：" class="headerlink" title="代码如下："></a>代码如下：</h1><figure class="highlight c"><table><tr><td class="code"><pre><code class="hljs c"><span class="hljs-function"><span class="hljs-keyword">char</span> *<span class="hljs-title">search</span><span class="hljs-params">(<span class="hljs-keyword">char</span> *s, <span class="hljs-keyword">char</span> *t)</span></span>&#123;<br>	<span class="hljs-keyword">int</span> n,i,j,m;<br>	<span class="hljs-keyword">int</span> flag = <span class="hljs-number">-1</span>;<br>	<span class="hljs-keyword">for</span>(i=<span class="hljs-number">0</span>;s[i]!=<span class="hljs-string">'\0'</span>;i++)<span class="hljs-comment">//等效n = strlen(s)</span><br>	n=i;<br>	<span class="hljs-keyword">for</span>(i=<span class="hljs-number">0</span>;t[i]!=<span class="hljs-string">'\0'</span>;i++)<span class="hljs-comment">//等效m = strlen(t)</span><br>	m=i;<br>	<span class="hljs-keyword">for</span>(i=<span class="hljs-number">0</span>;i&lt;n;i++)&#123;<span class="hljs-comment">//i控制字符串s</span><br>		<span class="hljs-keyword">if</span>(t[<span class="hljs-number">0</span>]==s[i])&#123;<span class="hljs-comment">//循环找到第一个相符合的字符</span><br>			flag = <span class="hljs-number">1</span>;<span class="hljs-comment">//1代表找到了</span><br>		&#125;<br>		<span class="hljs-keyword">if</span>(flag = <span class="hljs-number">1</span>)&#123;<span class="hljs-comment">//如果找到第一个匹配的字符</span><br>			<span class="hljs-keyword">for</span>(j=<span class="hljs-number">1</span>;j&lt;=m;j++)&#123;<span class="hljs-comment">//j控制字符串t</span><br>				<span class="hljs-keyword">if</span>(t[j]==s[i+j])&#123;<span class="hljs-comment">//从第二个开始判断（第一个已经判断成功）</span><br>					flag =<span class="hljs-number">1</span>;<br>				&#125;<span class="hljs-keyword">else</span> &#123;<br>					flag =<span class="hljs-number">-1</span>;<span class="hljs-comment">//判断不成立时</span><br>				<span class="hljs-keyword">break</span>;	<br>				&#125;<br>			&#125;<br>			<span class="hljs-keyword">if</span>(flag ==<span class="hljs-number">1</span>)<span class="hljs-keyword">return</span> &amp;s[i];<span class="hljs-comment">//（在匹配成功的情况下）</span><br>		&#125;<br>	&#125;<span class="hljs-keyword">return</span> <span class="hljs-literal">NULL</span>;<br>&#125;<br></code></pre></td></tr></table></figure>]]></content>
       <categories>
         <category>编程</category>
       </categories>
@@ -1716,17 +1731,6 @@ class GFG {
 <p>得出：做题要多思考其逻辑顺序，不要人云亦云，将题目分解为自己已知，与未知，将其一步一步的以案例分析，从一到一百，通过实际例子，分析其规律于变化情况，进而改变过程。不断修正。</p>
 <p>一定要搞清楚所有的过程，不能似是而非，否则一定会出现难以想象的bug。</p>
 ]]></content>
-      <categories>
-        <category>编程</category>
-      </categories>
-      <tags>
-        <tag>pta</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>查验身份证</title>
-    <url>/2020/01/03/%E6%9F%A5%E9%AA%8C%E8%BA%AB%E4%BB%BD%E8%AF%81/</url>
-    <content><![CDATA[]]></content>
       <categories>
         <category>编程</category>
       </categories>
@@ -1794,6 +1798,17 @@ class GFG {
       </categories>
       <tags>
         <tag>stl</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>查验身份证</title>
+    <url>/2020/01/03/%E6%9F%A5%E9%AA%8C%E8%BA%AB%E4%BB%BD%E8%AF%81/</url>
+    <content><![CDATA[]]></content>
+      <categories>
+        <category>编程</category>
+      </categories>
+      <tags>
+        <tag>pta</tag>
       </tags>
   </entry>
   <entry>
@@ -2012,6 +2027,66 @@ x=x+2;      }   }
       </tags>
   </entry>
   <entry>
+    <title>输出全组合二进制</title>
+    <url>/2020/07/04/%E8%BE%93%E5%87%BA%E5%85%A8%E7%BB%84%E5%90%88%E4%BA%8C%E8%BF%9B%E5%88%B6/</url>
+    <content><![CDATA[<p>这是一道挺有意思的利用二进制的性质进行打印n个数字（从0到n）的所有组合题目。</p>
+  <a id="more"></a>
+<p>首先：辨析一下排列和组合的区别。</p>
+<h3 id="排列组合"><a href="#排列组合" class="headerlink" title="排列组合"></a>排列组合</h3><p>排列： </p>
+<script type="math/tex; mode=display">
+\frac{n!}{(n-k)!}</script><p>组合：</p>
+<script type="math/tex; mode=display">
+\frac{n!}{(n-k)!*k!}</script><p>可以看出排列的数目<strong>大于等于</strong>组合的数目，以及他们的计算方式如上图。公式来源详见<a href="https://zhuanlan.zhihu.com/p/41855459" target="_blank" rel="noopener">解析链接</a>，这很快帮助你回忆如何计算。</p>
+<hr>
+<p>回归题目：</p>
+<p>n个元素的子集一共有 $2^n$个（从下面的对应关系中的二进制数也可看出的确是$2^n$)</p>
+<p>那么他们此间的对应关系是这样的：</p>
+<script type="math/tex; mode=display">
+\begin{Vmatrix}
+子集&\emptyset & a_0 & a_1  &a_1,a_0 &a_2 &a_2,a_0 & a_2,a_1 &a_2,a_1,a_0\\
+二进制数&000 & 001 & 010 & 011 & 100 & 101 & 110 & 111 \\
+对应的十进制&0 & 1  & 2 & 3 & 4 & 5 & 6 & 7  \\
+\end{Vmatrix}</script><p>这个神奇的的排列规律是我们进行下面编程的理论（可以从二进制看子集与十进制）</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><code class="hljs cpp"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span><span class="hljs-meta-string">&lt;bits/stdc++.h&gt;</span></span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> <span class="hljs-built_in">std</span>;<br><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span>&#123;<br>    <span class="hljs-keyword">int</span> n=<span class="hljs-number">3</span>;<br>   <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i=<span class="hljs-number">0</span>;i&lt;(<span class="hljs-number">1</span>&lt;&lt;n);i++)<span class="hljs-comment">//解释一下1&lt;&lt;n是位运算，结果是2^n</span><br>    &#123;<br>        <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> j=<span class="hljs-number">0</span>;j&lt;n;j++)&#123;<br>            <span class="hljs-keyword">if</span>(i&amp; (<span class="hljs-number">1</span>&lt;&lt;j))<span class="hljs-comment">//其中i只在第一次空集的时发挥作用。</span><br>            <br>            <span class="hljs-comment">//这里巧妙地运用了二进制的知识，并且运用位运算的性质，得到结果</span><br>            <br>            <span class="hljs-built_in">cout</span>&lt;&lt;j&lt;&lt;<span class="hljs-string">" "</span>;<br>        &#125;<br>        <span class="hljs-built_in">cout</span>&lt;&lt;<span class="hljs-built_in">endl</span>;<br>    &#125;<br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
+<p>输出结果：</p>
+<figure class="highlight basic"><table><tr><td class="code"><pre><code class="hljs basic"><span class="hljs-number">0</span><br><span class="hljs-number">1</span><br><span class="hljs-symbol">0 </span><span class="hljs-number">1</span><br><span class="hljs-number">2</span><br><span class="hljs-symbol">0 </span><span class="hljs-number">2</span><br><span class="hljs-symbol">1 </span><span class="hljs-number">2</span><br><span class="hljs-symbol">0 </span><span class="hljs-number">1</span> <span class="hljs-number">2</span><br></code></pre></td></tr></table></figure>
+<p>刚开始，觉得这个输出很神奇，直接输出了n个数字的所有集合（还按照一定的顺序），代码还十分简洁。</p>
+<p>其中两个for循环中的if判断可谓是亮点了。</p>
+<p>那么究竟是什么意思呢，记住这里还要会回顾一下那个表格了：</p>
+<script type="math/tex; mode=display">
+\begin{vmatrix}子集&\emptyset & a_0 & a_1  &a_1,a_0 &a_2 &a_2,a_0 & a_2,a_1 &a_2,a_1,a_0\\二进制数&000 & 001 & 010 & 011 & 100 & 101 & 110 & 111 \\对应的十进制&0 & 1  & 2 & 3 & 4 & 5 & 6 & 7  \\\end{vmatrix}</script><figure class="highlight lisp"><table><tr><td class="code"><pre><code class="hljs lisp">if (<span class="hljs-name">i</span> &amp; ( <span class="hljs-number">1</span>&lt;&lt;j ) )<br></code></pre></td></tr></table></figure>
+<p>首先明确一下 <strong>“&amp;”：<em>与</em>， 即在二进制中 </strong>同一为一（取每一位二进制的数字，两者均为1时为1）：</p>
+<p>例如 0001 &amp; 0011为 1；</p>
+<p>​        0010 &amp;  0001为0。</p>
+<p>此行代码中的’ i ‘指的是二进制数中1的个数，可以发现在二进制中第一次i==0，而二进制数中不含1的只有空集，与结果相对应；</p>
+<p>接着我们分析<strong>i==1</strong>时刻，判断条件其实可以替换为（0001 &amp; ( i&lt;&lt;j )),这是说明只有二进制数最后一位为1的才能呵前面$1_{(10)}$或者说$0001_{(2)}$相 “与&amp;” 为真。那么我们可以看出只有1 3  5 7这样的奇数才满足尾数为1，才能使得条件成立。BUT我们分析一下判断条件里的另一个变量1&lt;&lt;j，代表的是$2^n$，也就是说只有j==0的时候，才成立，这也就是第二行结果“0”的来历；</p>
+<p>同理我们可以分析出<strong>i==2</strong>，即二进制的0010的时候只有j==1的时候才成立；</p>
+<p><strong>i==3</strong>的时候，即左边为$0011_{(2)}$的时候这个时候只要是 在最后一位为一或者倒数第二位数字是一的二进制数即可，也就是说 十进制的0，1，3，5，7都可成立。但是 要注意的是 （i&lt;&lt;j)只能为十进制的$2^n$,所含的奇数只有1。所以除0，1外的j均不成立。</p>
+<p>经过上面的分析我们<del>不得不</del>对代码的正确性给予了肯定，但好像还是不太清楚为什么能够这样做。</p>
+<p>那我们不妨回首二进制。</p>
+<p>不难发现，我们最终并没有用到3，4，5，6，7这样的十进制数字（尽管他们在上表中有所对应，但那也不过是各种情况的编号罢了，），只是用了0，1，2这恰好是[0,n)的范围内的数字。大胆推测 只有当i的数字越大那么在j中二进制中的1 出现的概率越大，（tips，$0111_{(2)}$恰好是7，二进制中的1的个数是（2+1）个1 emm~）。例如$7_{(10)}$ 对应$0111_{(2)}$那么他就可以有三个数字的集合成立了（果然是012）</p>
+<p><del>上面一段有点饶头，仔细想想，都是对的，但似乎没什么用~可以无视</del>~~</p>
+<p>自己在不断探索的过程中，仍能够不断的发现二进制的奇妙用途，和神奇1 的对应。此题还需慢慢回味。</p>
+<hr>
+<p>​    数日后，再次回顾此代码，发现有着许多的新的感悟：之前不太明白的地方都一一揭开：</p>
+<p>首先就是</p>
+<script type="math/tex; mode=display">
+\begin{vmatrix}子集&\emptyset & a_0 & a_1  &a_1,a_0 &a_2 &a_2,a_0 & a_2,a_1 &a_2,a_1,a_0\\二进制数&000 & 001 & 010 & 011 & 100 & 101 & 110 & 111 \\对应的十进制(i)&0 & 1  & 2 & 3 & 4 & 5 & 6 & 7  \\\end{vmatrix}</script><p>哈哈，这个和上图的有什么区别呢？<del>并没有</del>，只是多了一个标识i</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><code class="hljs cpp"><span class="hljs-keyword">if</span> (i &amp; ( <span class="hljs-number">1</span>&lt;&lt;j ) )<br></code></pre></td></tr></table></figure>
+<p>回顾代码：不难看出其实对于作者的行为我<del>们</del>是有一些困惑的。为什么要这样做？</p>
+<p>那我们不妨解释一下i和j的作用好了</p>
+<p><strong>i</strong>  :其实对应的是上表中的对应的十进制：也就是说，我们将i循环了$n^2$次，其实就是恰好我们将这n个子集打印出来。</p>
+<p><strong>j</strong>  :其实是二进制的从低到高位依次赋值1，并判断是否&amp;，1&lt;&lt;j 其实就是 $2^j$ 次方wow，当j为0时其实就是二进制的最后一位为1，j=1时判断倒数第二位是否为1。那么判断的另一个对象是谁呢？当然是i。</p>
+<p>每一个i的二进制都不相同，我们就可以依次利用j来判断该位上是否有数字有的话就把j输出出去，j是[0,n)所以可以利用二进制完美地实现所有子集的输出。</p>
+]]></content>
+      <categories>
+        <category>算法</category>
+      </categories>
+      <tags>
+        <tag>二进制</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>负数二进制（码制与数制）</title>
     <url>/2020/06/28/%E8%B4%9F%E6%95%B0%E4%BA%8C%E8%BF%9B%E5%88%B6%EF%BC%88%E7%A0%81%E5%88%B6%E4%B8%8E%E6%95%B0%E5%88%B6%EF%BC%89/</url>
     <content><![CDATA[<p>主要讲述了模拟电路和数字电路的区别，以及数字电路的侧重点（分为电子元件的原理和<strong>应用</strong>，后者为重点）</p>
@@ -2069,66 +2144,6 @@ x=x+2;      }   }
 ]]></content>
       <categories>
         <category>数字电路</category>
-      </categories>
-      <tags>
-        <tag>二进制</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>输出全组合二进制</title>
-    <url>/2020/07/04/%E8%BE%93%E5%87%BA%E5%85%A8%E7%BB%84%E5%90%88%E4%BA%8C%E8%BF%9B%E5%88%B6/</url>
-    <content><![CDATA[<p>这是一道挺有意思的利用二进制的性质进行打印n个数字（从0到n）的所有组合题目。</p>
-  <a id="more"></a>
-<p>首先：辨析一下排列和组合的区别。</p>
-<h3 id="排列组合"><a href="#排列组合" class="headerlink" title="排列组合"></a>排列组合</h3><p>排列： </p>
-<script type="math/tex; mode=display">
-\frac{n!}{(n-k)!}</script><p>组合：</p>
-<script type="math/tex; mode=display">
-\frac{n!}{(n-k)!*k!}</script><p>可以看出排列的数目<strong>大于等于</strong>组合的数目，以及他们的计算方式如上图。公式来源详见<a href="https://zhuanlan.zhihu.com/p/41855459" target="_blank" rel="noopener">解析链接</a>，这很快帮助你回忆如何计算。</p>
-<hr>
-<p>回归题目：</p>
-<p>n个元素的子集一共有 $2^n$个（从下面的对应关系中的二进制数也可看出的确是$2^n$)</p>
-<p>那么他们此间的对应关系是这样的：</p>
-<script type="math/tex; mode=display">
-\begin{Vmatrix}
-子集&\emptyset & a_0 & a_1  &a_1,a_0 &a_2 &a_2,a_0 & a_2,a_1 &a_2,a_1,a_0\\
-二进制数&000 & 001 & 010 & 011 & 100 & 101 & 110 & 111 \\
-对应的十进制&0 & 1  & 2 & 3 & 4 & 5 & 6 & 7  \\
-\end{Vmatrix}</script><p>这个神奇的的排列规律是我们进行下面编程的理论（可以从二进制看子集与十进制）</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><code class="hljs cpp"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span><span class="hljs-meta-string">&lt;bits/stdc++.h&gt;</span></span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> <span class="hljs-built_in">std</span>;<br><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span>&#123;<br>    <span class="hljs-keyword">int</span> n=<span class="hljs-number">3</span>;<br>   <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i=<span class="hljs-number">0</span>;i&lt;(<span class="hljs-number">1</span>&lt;&lt;n);i++)<span class="hljs-comment">//解释一下1&lt;&lt;n是位运算，结果是2^n</span><br>    &#123;<br>        <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> j=<span class="hljs-number">0</span>;j&lt;n;j++)&#123;<br>            <span class="hljs-keyword">if</span>(i&amp; (<span class="hljs-number">1</span>&lt;&lt;j))<span class="hljs-comment">//其中i只在第一次空集的时发挥作用。</span><br>            <br>            <span class="hljs-comment">//这里巧妙地运用了二进制的知识，并且运用位运算的性质，得到结果</span><br>            <br>            <span class="hljs-built_in">cout</span>&lt;&lt;j&lt;&lt;<span class="hljs-string">" "</span>;<br>        &#125;<br>        <span class="hljs-built_in">cout</span>&lt;&lt;<span class="hljs-built_in">endl</span>;<br>    &#125;<br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
-<p>输出结果：</p>
-<figure class="highlight basic"><table><tr><td class="code"><pre><code class="hljs basic"><span class="hljs-number">0</span><br><span class="hljs-number">1</span><br><span class="hljs-symbol">0 </span><span class="hljs-number">1</span><br><span class="hljs-number">2</span><br><span class="hljs-symbol">0 </span><span class="hljs-number">2</span><br><span class="hljs-symbol">1 </span><span class="hljs-number">2</span><br><span class="hljs-symbol">0 </span><span class="hljs-number">1</span> <span class="hljs-number">2</span><br></code></pre></td></tr></table></figure>
-<p>刚开始，觉得这个输出很神奇，直接输出了n个数字的所有集合（还按照一定的顺序），代码还十分简洁。</p>
-<p>其中两个for循环中的if判断可谓是亮点了。</p>
-<p>那么究竟是什么意思呢，记住这里还要会回顾一下那个表格了：</p>
-<script type="math/tex; mode=display">
-\begin{vmatrix}子集&\emptyset & a_0 & a_1  &a_1,a_0 &a_2 &a_2,a_0 & a_2,a_1 &a_2,a_1,a_0\\二进制数&000 & 001 & 010 & 011 & 100 & 101 & 110 & 111 \\对应的十进制&0 & 1  & 2 & 3 & 4 & 5 & 6 & 7  \\\end{vmatrix}</script><figure class="highlight lisp"><table><tr><td class="code"><pre><code class="hljs lisp">if (<span class="hljs-name">i</span> &amp; ( <span class="hljs-number">1</span>&lt;&lt;j ) )<br></code></pre></td></tr></table></figure>
-<p>首先明确一下 <strong>“&amp;”：<em>与</em>， 即在二进制中 </strong>同一为一（取每一位二进制的数字，两者均为1时为1）：</p>
-<p>例如 0001 &amp; 0011为 1；</p>
-<p>​        0010 &amp;  0001为0。</p>
-<p>此行代码中的’ i ‘指的是二进制数中1的个数，可以发现在二进制中第一次i==0，而二进制数中不含1的只有空集，与结果相对应；</p>
-<p>接着我们分析<strong>i==1</strong>时刻，判断条件其实可以替换为（0001 &amp; ( i&lt;&lt;j )),这是说明只有二进制数最后一位为1的才能呵前面$1_{(10)}$或者说$0001_{(2)}$相 “与&amp;” 为真。那么我们可以看出只有1 3  5 7这样的奇数才满足尾数为1，才能使得条件成立。BUT我们分析一下判断条件里的另一个变量1&lt;&lt;j，代表的是$2^n$，也就是说只有j==0的时候，才成立，这也就是第二行结果“0”的来历；</p>
-<p>同理我们可以分析出<strong>i==2</strong>，即二进制的0010的时候只有j==1的时候才成立；</p>
-<p><strong>i==3</strong>的时候，即左边为$0011_{(2)}$的时候这个时候只要是 在最后一位为一或者倒数第二位数字是一的二进制数即可，也就是说 十进制的0，1，3，5，7都可成立。但是 要注意的是 （i&lt;&lt;j)只能为十进制的$2^n$,所含的奇数只有1。所以除0，1外的j均不成立。</p>
-<p>经过上面的分析我们<del>不得不</del>对代码的正确性给予了肯定，但好像还是不太清楚为什么能够这样做。</p>
-<p>那我们不妨回首二进制。</p>
-<p>不难发现，我们最终并没有用到3，4，5，6，7这样的十进制数字（尽管他们在上表中有所对应，但那也不过是各种情况的编号罢了，），只是用了0，1，2这恰好是[0,n)的范围内的数字。大胆推测 只有当i的数字越大那么在j中二进制中的1 出现的概率越大，（tips，$0111_{(2)}$恰好是7，二进制中的1的个数是（2+1）个1 emm~）。例如$7_{(10)}$ 对应$0111_{(2)}$那么他就可以有三个数字的集合成立了（果然是012）</p>
-<p><del>上面一段有点饶头，仔细想想，都是对的，但似乎没什么用~可以无视</del>~~</p>
-<p>自己在不断探索的过程中，仍能够不断的发现二进制的奇妙用途，和神奇1 的对应。此题还需慢慢回味。</p>
-<hr>
-<p>​    数日后，再次回顾此代码，发现有着许多的新的感悟：之前不太明白的地方都一一揭开：</p>
-<p>首先就是</p>
-<script type="math/tex; mode=display">
-\begin{vmatrix}子集&\emptyset & a_0 & a_1  &a_1,a_0 &a_2 &a_2,a_0 & a_2,a_1 &a_2,a_1,a_0\\二进制数&000 & 001 & 010 & 011 & 100 & 101 & 110 & 111 \\对应的十进制(i)&0 & 1  & 2 & 3 & 4 & 5 & 6 & 7  \\\end{vmatrix}</script><p>哈哈，这个和上图的有什么区别呢？<del>并没有</del>，只是多了一个标识i</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><code class="hljs cpp"><span class="hljs-keyword">if</span> (i &amp; ( <span class="hljs-number">1</span>&lt;&lt;j ) )<br></code></pre></td></tr></table></figure>
-<p>回顾代码：不难看出其实对于作者的行为我<del>们</del>是有一些困惑的。为什么要这样做？</p>
-<p>那我们不妨解释一下i和j的作用好了</p>
-<p><strong>i</strong>  :其实对应的是上表中的对应的十进制：也就是说，我们将i循环了$n^2$次，其实就是恰好我们将这n个子集打印出来。</p>
-<p><strong>j</strong>  :其实是二进制的从低到高位依次赋值1，并判断是否&amp;，1&lt;&lt;j 其实就是 $2^j$ 次方wow，当j为0时其实就是二进制的最后一位为1，j=1时判断倒数第二位是否为1。那么判断的另一个对象是谁呢？当然是i。</p>
-<p>每一个i的二进制都不相同，我们就可以依次利用j来判断该位上是否有数字有的话就把j输出出去，j是[0,n)所以可以利用二进制完美地实现所有子集的输出。</p>
-]]></content>
-      <categories>
-        <category>算法</category>
       </categories>
       <tags>
         <tag>二进制</tag>
