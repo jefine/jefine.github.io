@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+    
+    <title>蓝牙模块HC05的双设备简单配对通信 - Jefine</title>
+    <meta charset="utf-8">
+    
+    <meta name="title" content="蓝牙模块HC05的双设备简单配对通信 - Jefine">
+    <meta name="description" content="">
+    <meta property="og:image" content="/favicon.png">
+    <meta property="og:image:width" content="200" />
+    <meta property="og:image:height" content="200" />
+    
+    <link href="https://fonts.googleapis.com/css2?family=Source+Serif+Pro:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Source Serif Pro', 'Source Han Serif TC', 'Noto Serif CJK TC', 'Noto Serif TC', serif;
+        }
+    </style>
+    <link rel="shortcut icon" href="/favicon.png">
+    
+    <link rel="stylesheet"
+        href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.17.1/build/styles/arduino-light.min.css">
+    <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.17.1/build/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    
+    
+    <link rel="stylesheet" href="/css/style.css">
+    <script src="/js/jquery.min.js"></script>
+<link rel="alternate" href="/atom.xml" title="Jefine" type="application/atom+xml"><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</head>
+
+<body>
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><header class="header">
+    <div class="blog-title">
+        <a href="/" class="logo">Jefine</a>
+    </div>
+    <nav class="navbar">
+        <ul class="menu">
+            
+            
+            
+            <li class="menu-item">
+                
+                <a href="/" class="menu-item-link">Home</a>
+                
+            </li>
+            
+            
+            
+            <li class="menu-item">
+                
+                <a href="/archives" class="menu-item-link">Archives</a>
+                
+            </li>
+            
+            
+            
+            <li class="menu-item">
+                
+                <a href="/about" class="menu-item-link">About</a>
+                
+            </li>
+            
+            
+            
+            <li class="menu-item">
+                
+                <a href="/atom.xml" class="menu-item-link">Rss</a>
+                
+            </li>
+            
+        </ul>
+    </nav>
+</header>
+    <main class="main">
+        <article class="post">
+    <div class="post-title">
+        <h1 class="title">蓝牙模块HC05的双设备简单配对通信</h2>
+    </div>
+    <div class="post-content">
+        <p>HC05采用的是AT指令进行配置， 采用串口通信进行数据传输。</p>
+<p><a href="https://www.taiwaniot.com.tw/wp-content/uploads/2016/01/ADIO-HC-05-1.pdf" target="_blank" rel="noopener">指令集文档</a>可以任意在互联网中查找到。</p>
+  <a id="more"></a>
+<p><strong>注意</strong>：</p>
+<ol>
+<li>HC05，VCC接入3.3V可能没有反应，应连到5V</li>
+<li>模块和电源相连时刻，有两种方法进入AT指令状态：<ol>
+<li>提前一直按下HC-05上的按键，直到其灯闪烁为缓慢亮起，即可松开</li>
+<li>将EN引脚置高（3.3V即可），但需要注意EN为高电平是HC05不能正常工作，只有将EN调为低电平，HC05恢复</li>
+</ol>
+</li>
+<li>波特率需要一致，建议统一38400</li>
+<li>模块所有AT指令需要加上换行符号否则无效（即选择CR/LF），且尽量大写</li>
+</ol>
+<p><a href="https://combofish.github.io/2020/02/08/how-to-use-hc-05-bluetooth-module.html" target="_blank" rel="noopener">https://combofish.github.io/2020/02/08/how-to-use-hc-05-bluetooth-module.html</a></p>
+<figure class="highlight reasonml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><code class="hljs reasonml">#<span class="hljs-keyword">include</span> &lt;<span class="hljs-module-access"><span class="hljs-module"><span class="hljs-identifier">SoftwareSerial</span>.</span></span>h&gt;<br><br><span class="hljs-comment">// Pin3为RX，接HC05的TXD</span><br><span class="hljs-comment">// Pin2为TX，接HC05的RXD</span><br>SoftwareSerial <span class="hljs-constructor">BT(10, 11)</span>;<br><span class="hljs-built_in">char</span> <span class="hljs-keyword">val</span>;<br><span class="hljs-built_in">int</span> ledPin=<span class="hljs-number">13</span>;<br><br>void setup<span class="hljs-literal">()</span> &#123;<br>  <span class="hljs-module-access"><span class="hljs-module"><span class="hljs-identifier">Serial</span>.</span></span><span class="hljs-keyword">begin</span>(<span class="hljs-number">38400</span>);<br>  <span class="hljs-module-access"><span class="hljs-module"><span class="hljs-identifier">Serial</span>.</span></span>println(<span class="hljs-string">"BT is ready!"</span>);<br>  <span class="hljs-comment">// HC-05默认，38400</span><br>  <span class="hljs-module-access"><span class="hljs-module"><span class="hljs-identifier">BT</span>.</span></span><span class="hljs-keyword">begin</span>(<span class="hljs-number">38400</span>);<br>  pin<span class="hljs-constructor">Mode(<span class="hljs-params">ledPin</span>, OUTPUT)</span>;<br>  digital<span class="hljs-constructor">Write(<span class="hljs-params">ledPin</span>, HIGH)</span>;<br>  delay(<span class="hljs-number">500</span>);<br>  digital<span class="hljs-constructor">Write(<span class="hljs-params">ledPin</span>, LOW)</span>;<br>&#125;<br><br>void loop<span class="hljs-literal">()</span> &#123;<br>  <span class="hljs-keyword">if</span> (<span class="hljs-module-access"><span class="hljs-module"><span class="hljs-identifier">Serial</span>.</span></span>available<span class="hljs-literal">()</span>) &#123;<br>    <span class="hljs-keyword">val</span> = <span class="hljs-module-access"><span class="hljs-module"><span class="hljs-identifier">Serial</span>.</span></span>read<span class="hljs-literal">()</span>;<br>    <span class="hljs-module-access"><span class="hljs-module"><span class="hljs-identifier">BT</span>.</span></span>print(<span class="hljs-keyword">val</span>);<br>  &#125;<br>  <span class="hljs-keyword">if</span> (<span class="hljs-module-access"><span class="hljs-module"><span class="hljs-identifier">BT</span>.</span></span>available<span class="hljs-literal">()</span>) &#123;<br>    <span class="hljs-keyword">val</span> = <span class="hljs-module-access"><span class="hljs-module"><span class="hljs-identifier">BT</span>.</span></span>read<span class="hljs-literal">()</span>;<br>    <span class="hljs-module-access"><span class="hljs-module"><span class="hljs-identifier">Serial</span>.</span></span>print(<span class="hljs-keyword">val</span>);<br><br>    <span class="hljs-keyword">if</span> (<span class="hljs-keyword">val</span><span class="hljs-operator"> == </span><span class="hljs-character">'1'</span>)<br>      &#123;<br>    <span class="hljs-comment">// 返回到手机调试程序上</span><br>    <span class="hljs-comment">// 此时的蓝牙状态应该正常模式，而不是调试模式</span><br>    <span class="hljs-module-access"><span class="hljs-module"><span class="hljs-identifier">Serial</span>.</span></span>write(<span class="hljs-string">"Serial--ledPin--high\n"</span>);<br>    digital<span class="hljs-constructor">Write(<span class="hljs-params">ledPin</span>, HIGH)</span>;<br>      &#125;<br>    <span class="hljs-keyword">if</span> (<span class="hljs-keyword">val</span><span class="hljs-operator"> == </span><span class="hljs-character">'2'</span>)<br>      &#123;<br>    <span class="hljs-module-access"><span class="hljs-module"><span class="hljs-identifier">Serial</span>.</span></span>write(<span class="hljs-string">"Serial--ledPin--low\n"</span>);<br>    digital<span class="hljs-constructor">Write(<span class="hljs-params">ledPin</span>, LOW)</span>;<br>      &#125;<br>  &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<h3 id="双蓝牙模块连接（主从模式）"><a href="#双蓝牙模块连接（主从模式）" class="headerlink" title="双蓝牙模块连接（主从模式）"></a>双蓝牙模块连接（主从模式）</h3><p>一个通过连接PC由串口通信（模拟一个设备的指令操作）</p>
+<p>另一个采用Arduino进行点灯来作为从设备的响应动作</p>
+<p>首先需要将其配置</p>
+<p>这里首先采用较为安全的固定地址相连接：</p>
+<ol>
+<li><p>将主设备调试（测试能否正常工作）</p>
+<p>AT</p>
+<p>如果不能，可能是串口波特率问题</p>
+</li>
+</ol>
+<p><img src="/2021/08/09/%E8%93%9D%E7%89%99%E6%A8%A1%E5%9D%97HC05%E7%9A%84%E7%AE%80%E5%8D%95%E9%85%8D%E5%AF%B9%E4%BD%BF%E7%94%A8/Untitled.png" alt="Untitled"></p>
+<ol>
+<li><p>调整设备通信波特率</p>
+<p>查看波特率：</p>
+<p>AT+UART?</p>
+</li>
+</ol>
+<p><img src="/2021/08/09/%E8%93%9D%E7%89%99%E6%A8%A1%E5%9D%97HC05%E7%9A%84%E7%AE%80%E5%8D%95%E9%85%8D%E5%AF%B9%E4%BD%BF%E7%94%A8/Untitled 1.png" alt="Untitled 1"></p>
+<figure class="highlight angelscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs angelscript">发现波特率不一致为<span class="hljs-number">9600</span>时进行更改，默认状态下就是两个波特率，正常模式下就是<span class="hljs-number">9600</span>，这里我们将其更改为<span class="hljs-number">38400</span>方便调试，当然也可能会带来一定的问题。<br></code></pre></td></tr></table></figure>
+<p>更改波特率：</p>
+<p>AT+UART=38400,0,0</p>
+<ol>
+<li><p>调整主从设备模式</p>
+<p>AT+ROLE=1</p>
+</li>
+<li><p>调整连接模式：</p>
+<p>AT+CMODE=0</p>
+</li>
+<li><p>绑定从机：</p>
+<p>在获取到从机的address之后（查询从机地址指令AT+ADDR?），我们进行绑定：</p>
+</li>
+</ol>
+<p><img src="/2021/08/09/%E8%93%9D%E7%89%99%E6%A8%A1%E5%9D%97HC05%E7%9A%84%E7%AE%80%E5%8D%95%E9%85%8D%E5%AF%B9%E4%BD%BF%E7%94%A8/Untitled 2.png" alt="Untitled 2"></p>
+<p><img src="/2021/08/09/%E8%93%9D%E7%89%99%E6%A8%A1%E5%9D%97HC05%E7%9A%84%E7%AE%80%E5%8D%95%E9%85%8D%E5%AF%B9%E4%BD%BF%E7%94%A8/Untitled 3.png" alt="Untitled 3"></p>
+<p><strong>注意</strong>：此处将冒号，替换成了逗号（英文状态下的逗号）</p>
+<p>最后，（<del>莫名</del>）成功了，刚开始连接上后，无法正常通信，重启了就好了。</p>
+<p><img src="/2021/08/09/%E8%93%9D%E7%89%99%E6%A8%A1%E5%9D%97HC05%E7%9A%84%E7%AE%80%E5%8D%95%E9%85%8D%E5%AF%B9%E4%BD%BF%E7%94%A8/Untitled 5.png" alt="Untitled 5"></p>
+<p>从机代码较为简单：</p>
+<p>在对芯片作简要的波特率修正和查询addr之后采用Arduino 编程即可,代码同上不用修改。</p>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>在本次的实验中，我们通过PC端连接一个蓝牙模块作为主设备（master）来通过串口发送数据，通过另一个 HC-05 传递数据，进而使得另一边的Arduino设备实现点灯功能。</p>
+<p>主要涉及了串口收发以及对多串口应用的理解，在Arduino和PC通信（下载线）的同时又通过另一个串口和HC05通信，两串口间的数据传递以及在PC屏幕上的数据呈现，要求了我们对于不同串口的特点的理解：即该串口Print将会到何处，该串口Receive将会收到谁的，我们如何呈现到PC（即将PC和设备相连的串口进行发送或者说转发），从而进一步熟悉了数据的流动特点。 </p>
+<p>串口的首发，乃至于说数据包的收发，可以参考另一个<a href="https://github.com/jefine/51MCU_course_design" target="_blank" rel="noopener">WiFi项目的串口收发</a>，也可看出串口通信在实际的物联网通信应用中十分广泛。</p>
+
+    </div>
+    <div class="post-meta">
+        
+    <span class="post-time">二〇二一年八月九日</span>
+    </div>
+</article>
+
+<div class="prev_next">
+    <nav id="prev_next">
+
+<div class="prev">
+    
+</div>
+<div class="next">
+    
+    <p>Older</p>
+    <a href="/2021/07/08/L298N驱动电机/"><div class="article-nav-title">L298N驱动电机</div></a>
+    
+</div>
+
+</nav>
+</div>
+
+<div class="post-comment">
+    
+
+
+
+</div>
+
+    </main>
+
+    
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+          tex2jax: {
+            inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+            processEscapes: true
+          }
+        });
+      </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+            tex2jax: {
+              skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+            }
+          });
+      </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+              var all = MathJax.Hub.getAllJax(), i;
+              for(i=0; i < all.length; i += 1) {
+                  all[i].SourceElement().parentNode.className += ' has-jax';
+              }
+          });
+      </script>
+
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config("");
+</script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+      all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+  });
+</script>
+
+<script type="text/javascript" src="custom_mathjax_source">
+</script>
+<!-- End: Injected MathJax -->
+<!-- hexo-inject:end -->
+
+
+</body>
+
+</html>
