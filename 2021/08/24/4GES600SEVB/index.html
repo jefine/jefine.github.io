@@ -85,7 +85,8 @@
         <p>移远通信 ES600S开发板的Demo和一些基础的操作指南</p>
   <a id="more"></a>
 <h1 id="开始教程"><a href="#开始教程" class="headerlink" title="开始教程"></a>开始教程</h1><h2 id="配置环境与基本认识文档："><a href="#配置环境与基本认识文档：" class="headerlink" title="配置环境与基本认识文档："></a>配置环境与基本认识文档：</h2><p><a href="https://python.quectel.com/doc/doc/Quick_start/zh/index.html" target="_blank" rel="noopener">QuecPython</a></p>
-<p> <a href="4GES600SEVB\固件下载与脚本下载图解.pdf.pdf">固件下载与脚本下载图解.pdf.pdf</a> </p>
+<iframe src="./固件下载与脚本下载图解.pdf.pdf" width="100%" height="800px"></iframe>
+
 <h3 id="开发板使用几大步骤："><a href="#开发板使用几大步骤：" class="headerlink" title="开发板使用几大步骤："></a>开发板使用几大步骤：</h3><p>1.插上模组；</p>
 <p>2.模组开机（具体步骤：<a href="https://python.quectel.com/doc/doc/Quick_start/zh/Quick_start.html的4.1章节）；" target="_blank" rel="noopener">https://python.quectel.com/doc/doc/Quick_start/zh/Quick_start.html的4.1章节）；</a></p>
 <p>3.驱动安装（注意事项：<a href="https://python.quectel.com/doc/doc/Quick_start/zh/Quick_start.html的4.2章节）；" target="_blank" rel="noopener">https://python.quectel.com/doc/doc/Quick_start/zh/Quick_start.html的4.2章节）；</a></p>
@@ -94,13 +95,15 @@
 <p>具体步骤的视频连接：<a href="https://www.bilibili.com/video/BV1ci4y1w7g8/" target="_blank" rel="noopener">https://www.bilibili.com/video/BV1ci4y1w7g8/</a></p>
 <p>5.下载Demo程序（官网的下载专区<a href="https://python.quectel.com/download有个Demo的文件夹）" target="_blank" rel="noopener">https://python.quectel.com/download有个Demo的文件夹）</a></p>
 <p>6.例程无法跑通请先自查并参考官网wiki（<a href="https://python.quectel.com/wiki/#/），wiki里面包含demo里面涉及的所有API库" target="_blank" rel="noopener">https://python.quectel.com/wiki/#/），wiki里面包含demo里面涉及的所有API库</a></p>
-<h3 id="开发板需要注意的地方："><a href="#开发板需要注意的地方：" class="headerlink" title="开发板需要注意的地方："></a>开发板需要注意的地方：</h3><p> <a href="4GES600SEVB\Quectel_EC600x-CN(_QuecOpen">Quectel_EC600x-CN(_QuecOpen)兼容性设计讲稿_-0506.pdf</a>兼容性设计讲稿_-0506.pdf) </p>
+<h3 id="开发板需要注意的地方："><a href="#开发板需要注意的地方：" class="headerlink" title="开发板需要注意的地方："></a>开发板需要注意的地方：</h3><iframe src="./Quectel_EC600x-CN(_QuecOpen)兼容性设计讲稿_-0506.pdf" width="100%" height="800px"></iframe>
+
 <p>Page24</p>
 <p>EC600N-CN/EC600S-CN (QuecOpen)接喇叭则需增加外部PA设计（放大听<br>筒信号）</p>
 <p>EC600N-CN/EC600S-CN QuecOpen 复用键盘引脚（PIN 48~57）也可以复用成<br>GPIO功能使用，在不用键盘情况下可使用<br>复用成GPIO口时要注意开机默认状态和电源域，具体参考Quectel_EC600x-CN<br>QuecOpen_GPIO配置表_V1.0</p>
 <p>EC600S-CN/EC600N-CN QuecOpen 开机默认是PU，用于控灯、电机和外部电源<br>使能之类要注意模块上电时有上拉动作</p>
 <p>天线设计</p>
-<p> <a href="4GES600SEVB\Quectel_天线设计指导_V3.2.pdf.pdf">Quectel_天线设计指导_V3.2.pdf.pdf</a> </p>
+<iframe src="./Quectel_天线设计指导_V3.2.pdf.pdf" width="100%" height="800px"></iframe>
+
 <h1 id="小实验："><a href="#小实验：" class="headerlink" title="小实验："></a>小实验：</h1><h2 id="如何将软硬件结合？"><a href="#如何将软硬件结合？" class="headerlink" title="如何将软硬件结合？"></a>如何将软硬件结合？</h2><p>另外在查询开发板上的GPIO的号码时，可以看看板子中间的引脚介绍，可以解决不少问题，查找不到的可以按照下面的方法进行查找。</p>
 <p>即如何查找软件 GPIO 或 ADC 等接口与物理开发板接口的位置</p>
 <p>下面以查找KEY2所对应的GPIO号为例：</p>
