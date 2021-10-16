@@ -85,6 +85,10 @@
         <p>HC05采用的是AT指令进行配置， 采用串口通信进行数据传输。</p>
 <p><a href="https://www.taiwaniot.com.tw/wp-content/uploads/2016/01/ADIO-HC-05-1.pdf" target="_blank" rel="noopener">指令集文档</a>可以任意在互联网中查找到。</p>
   <a id="more"></a>
+<h2 id="如何完成手机蓝牙和模块通信"><a href="#如何完成手机蓝牙和模块通信" class="headerlink" title="如何完成手机蓝牙和模块通信"></a>如何完成手机蓝牙和模块通信</h2><p>电源是5V，同时采用CL/LF</p>
+<p>连接之后，先通过</p>
+<p>AT+ROLE=0</p>
+<p>将其设置为从模式（slave），即可匹配(1234)</p>
 <p><strong>注意</strong>：</p>
 <ol>
 <li>HC05，VCC接入3.3V可能没有反应，应连到5V</li>
