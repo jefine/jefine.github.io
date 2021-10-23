@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+    
+    <title>mmWave环境配置与硬件搭配 - Jefine</title>
+    <meta charset="utf-8">
+    
+    <meta name="title" content="mmWave环境配置与硬件搭配 - Jefine">
+    <meta name="description" content="">
+    <meta property="og:image" content="/favicon.png">
+    <meta property="og:image:width" content="200" />
+    <meta property="og:image:height" content="200" />
+    
+    <link href="https://fonts.googleapis.com/css2?family=Source+Serif+Pro:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Source Serif Pro', 'Source Han Serif TC', 'Noto Serif CJK TC', 'Noto Serif TC', serif;
+        }
+    </style>
+    <link rel="shortcut icon" href="/favicon.png">
+    
+    <link rel="stylesheet"
+        href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.17.1/build/styles/arduino-light.min.css">
+    <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.17.1/build/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    
+    
+    <link rel="stylesheet" href="/css/style.css">
+    <script src="/js/jquery.min.js"></script>
+<link rel="alternate" href="/atom.xml" title="Jefine" type="application/atom+xml"><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</head>
+
+<body>
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><header class="header">
+    <div class="blog-title">
+        <a href="/" class="logo">Jefine</a>
+    </div>
+    <nav class="navbar">
+        <ul class="menu">
+            
+            
+            
+            <li class="menu-item">
+                
+                <a href="/" class="menu-item-link">Home</a>
+                
+            </li>
+            
+            
+            
+            <li class="menu-item">
+                
+                <a href="/archives" class="menu-item-link">Archives</a>
+                
+            </li>
+            
+            
+            
+            <li class="menu-item">
+                
+                <a href="/about" class="menu-item-link">About</a>
+                
+            </li>
+            
+            
+            
+            <li class="menu-item">
+                
+                <a href="/atom.xml" class="menu-item-link">Rss</a>
+                
+            </li>
+            
+        </ul>
+    </nav>
+</header>
+    <main class="main">
+        <article class="post">
+    <div class="post-title">
+        <h1 class="title">mmWave环境配置与硬件搭配</h2>
+    </div>
+    <div class="post-content">
+        <p>本文主要介绍了 joybien 公司的b201 VSD毫米波雷达和树莓派配合中，出现的一些安装问题以及如何安装：<br>  <a id="more"></a></p>
+<p>官方文档 Github 地址：</p>
+<p><a href="https://github.com/bigheadG/mmWave/tree/master/VSD" target="_blank" rel="noopener">mmWave/VSD at master · bigheadG/mmWave</a></p>
+<p>在购买后，应收到如下图所示的组件：</p>
+<p><img src="/2021/10/23/mmWave%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE%E4%B8%8E%E7%A1%AC%E4%BB%B6%E6%90%AD%E9%85%8D/Untitled.png" alt="Untitled"></p>
+<p>左侧是毫米波雷达收发信号采集元器件，也是核心部件；</p>
+<p>中间是转接板，负责数据处理与转发。包括蓝牙和 Wifi 模块</p>
+<p>右边是固定转接板的螺丝等可以将其更稳定的放置。</p>
+<h3 id="组装硬件"><a href="#组装硬件" class="headerlink" title="组装硬件"></a>组装硬件</h3><p>将转接板插入树莓派，将其覆盖在树莓派上面（不要让他出去了）</p>
+<p>然后将排针插进去，这个理论上不会插反，因为有防呆设计。其中收发模块对准USB供电处。</p>
+<p>注意：</p>
+<p>其中有一个排针并不是断在里面了，而是防呆措施，这样是我们不会插反。</p>
+<p><img src="/2021/10/23/mmWave%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE%E4%B8%8E%E7%A1%AC%E4%BB%B6%E6%90%AD%E9%85%8D/Untitled 1.png" alt="[Untitled]"></p>
+<p>将他们拼装好了之后，我们一般选择的是串口，树莓派的模式，一般如下图（J9中的左两个是原始数据的输出，右侧两个是关键数据输出）。</p>
+<p><img src="/2021/10/23/mmWave%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE%E4%B8%8E%E7%A1%AC%E4%BB%B6%E6%90%AD%E9%85%8D/Untitled 2.png" alt="[Untitled]"></p>
+<p>该硬件的供电通过树莓派的USB口就可以供电。</p>
+<h2 id="配置树莓派软件环境"><a href="#配置树莓派软件环境" class="headerlink" title="配置树莓派软件环境"></a>配置树莓派软件环境</h2><p>为了使用USB转TTL 由于采用的是树莓派4B，而其支持的是树莓派2/3 ，所以我们需要进行一些设置上的更改。</p>
+<ol>
+<li>修改  /boot/config.txt</li>
+</ol>
+<p>在最下方新增以下内容：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs c">dtoverlay=pi3-miniuart-bt<br>core-freq=<span class="hljs-number">250</span><br>enable_uart=<span class="hljs-number">1</span><br></code></pre></td></tr></table></figure>
+<p><img src="/2021/10/23/mmWave%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE%E4%B8%8E%E7%A1%AC%E4%BB%B6%E6%90%AD%E9%85%8D/Untitled 3.png" alt="[Untitled]"></p>
+<ol>
+<li><p>更改  \boot\cmdline.txt </p>
+<p> 将 quiet splash 删掉，有的里面没有quiet，就不用删了。</p>
+<p> <img src="/2021/10/23/mmWave%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE%E4%B8%8E%E7%A1%AC%E4%BB%B6%E6%90%AD%E9%85%8D/Untitled 4.png" alt="[Untitled]"></p>
+<p> <img src="/2021/10/23/mmWave%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE%E4%B8%8E%E7%A1%AC%E4%BB%B6%E6%90%AD%E9%85%8D/Untitled 5.png" alt="[Untitled]"></p>
+<p> 上图这个就不用删了。</p>
+</li>
+</ol>
+<h3 id="打开树莓派-UART串口功能"><a href="#打开树莓派-UART串口功能" class="headerlink" title="打开树莓派 UART串口功能"></a>打开树莓派 UART串口功能</h3><p><img src="/2021/10/23/mmWave%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE%E4%B8%8E%E7%A1%AC%E4%BB%B6%E6%90%AD%E9%85%8D/Untitled 6.png" alt="[Untitled]"></p>
+<p>同时，需要到 raspi-config 去开启：</p>
+<p>在Interface → Serial → 先no → 然后yes</p>
+<p>否则就会出现毫米波雷达调整到Raw模式后，使得树莓派断网。</p>
+<p><img src="/2021/10/23/mmWave%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE%E4%B8%8E%E7%A1%AC%E4%BB%B6%E6%90%AD%E9%85%8D/Untitled 7.png" alt="[Untitled]"></p>
+<p><img src="/2021/10/23/mmWave%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE%E4%B8%8E%E7%A1%AC%E4%BB%B6%E6%90%AD%E9%85%8D/Untitled 8.png" alt="[Untitled]"></p>
+<h2 id="运行官方样例来测试能否正常运行"><a href="#运行官方样例来测试能否正常运行" class="headerlink" title="运行官方样例来测试能否正常运行"></a>运行官方样例来测试能否正常运行</h2><p>建议使用 Python3</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs c">#安装使用此命令<br>sudo pip3 install mmWave<br><br>#升级使用下面的命令<br>sudo pip3 install mmWave -U<br></code></pre></td></tr></table></figure>
+<p>通过 git 或者手动下载下面的官方库</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs c">git clone https:<span class="hljs-comment">//github.com/bigheadG/mmWave.git</span><br></code></pre></td></tr></table></figure>
+<p><a href="https://github.com/bigheadG/mmWave" target="_blank" rel="noopener">GitHub - bigheadG/mmWave: mmWave SDK examples based on Batman Kit mmWave Sensor module</a></p>
+<p>接着到下图的地方打开样例，后缀 KV 的是Key Value 模式</p>
+<p>运行的时候会出现port没有定义，我们树莓派的话，就是用ttyAMA0串口即可，样例中一般都有注释。</p>
+<p><img src="/2021/10/23/mmWave%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE%E4%B8%8E%E7%A1%AC%E4%BB%B6%E6%90%AD%E9%85%8D/Untitled 9.png" alt="[Untitled]"></p>
+<p>当然，由于缺乏 Python3 的一些包，会出现一些问题，会一一进行安装。</p>
+<p>比如运行 pyqtgraph_vsd_ex3.py 是出现了没有相关组件。</p>
+<p>就需要我们去安装了。</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs c">pip3 install pyqtgraph==<span class="hljs-number">0.11</span><span class="hljs-number">.1</span><br></code></pre></td></tr></table></figure>
+<p><img src="/2021/10/23/mmWave%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE%E4%B8%8E%E7%A1%AC%E4%BB%B6%E6%90%AD%E9%85%8D/Untitled 10.png" alt="[Untitled]"></p>
+<p>当然安装完成之后，还会出现pyqt5缺失的问题。</p>
+<p>pyqt5的安装需要比较特殊：</p>
+<p>安装过程中出现 continue？等的提示输入 y 或者 yes 即可</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs c">sudo apt-<span class="hljs-built_in">get</span> install python3-pyqt5<br></code></pre></td></tr></table></figure>
+<p><img src="/2021/10/23/mmWave%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE%E4%B8%8E%E7%A1%AC%E4%BB%B6%E6%90%AD%E9%85%8D/Untitled 11.png" alt="[Untitled]"></p>
+<p>当然，还有问题出现：</p>
+<p>(1)———-libf77blas.so.3————————————————————-<br>  from scipy.linalg import _fblas<br>  ImportError: libf77blas.so.3: cannot open shared object file: No such file or directory</p>
+<p>  problem solved这样解决就可以了:<br>  First of all, for libf77blas.so.3, you have to install ATLAS, something like sudo apt-get install libatlas-base-dev</p>
+<figure class="highlight cs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs cs">sudo apt-<span class="hljs-keyword">get</span> install libatlas-<span class="hljs-keyword">base</span>-dev<br></code></pre></td></tr></table></figure>
+<p>当然，还有模块没有安装完成。</p>
+<p><img src="/2021/10/23/mmWave%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE%E4%B8%8E%E7%A1%AC%E4%BB%B6%E6%90%AD%E9%85%8D/Untitled 12.png" alt="[Untitled]"></p>
+<p>可能出现的问题：</p>
+<ul>
+<li><p>插上并启动毫米波雷达板子之后出现树莓派断网</p>
+<p>  解决方案：跳帽没有配置好</p>
+</li>
+<li><p>出现 Permission Denied ‘/dev/ttyAMA0’</p>
+</li>
+</ul>
+<p><img src="/2021/10/23/mmWave%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE%E4%B8%8E%E7%A1%AC%E4%BB%B6%E6%90%AD%E9%85%8D/Untitled 13.png" alt="[Untitled]"></p>
+<pre><code>  解决方法：赋予其权限。即可
+</code></pre><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs c">sudo chmod <span class="hljs-number">666</span> /dev/ttyAMA0<br></code></pre></td></tr></table></figure>
+<ul>
+<li>port 有问题就进去 更改port就好。</li>
+</ul>
+<p><img src="/2021/10/23/mmWave%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE%E4%B8%8E%E7%A1%AC%E4%BB%B6%E6%90%AD%E9%85%8D/Untitled 14.png" alt="[Untitled]"></p>
+<ul>
+<li>如果直接安装 pyqtgraph 可能会出现qt版本号不对的情况。重新安装 pyqtgraph 的0.11.1版本。</li>
+</ul>
+<p>当然，比如运行 pyqtgraph_vsd_ex3.py 时，我们要首先将key模式转换为raw模式，也就是将转换板上的跳帽，调整至左侧，并通过重启毫米波雷达来 进行有效切换（可以按毫米波雷达上的Reset键，也可以拔掉转接板电源，再通电）</p>
+<p>参考：</p>
+<p><a href="https://www.slideshare.net/raspberrypi-tw/mmwave-sensor-evaluation-solution-kit" target="_blank" rel="noopener">mmWave Sensor Evaluation Solution Kit 簡介</a></p>
+<p><a href="https://github.com/bigheadG/mmWave" target="_blank" rel="noopener">GitHub - bigheadG/mmWave: mmWave SDK examples based on Batman Kit mmWave Sensor module</a></p>
+
+    </div>
+    <div class="post-meta">
+        
+    <span class="post-time">二〇二一年十月廿三日</span>
+    </div>
+</article>
+
+<div class="prev_next">
+    <nav id="prev_next">
+
+<div class="prev">
+    
+</div>
+<div class="next">
+    
+    <p>Older</p>
+    <a href="/2021/09/12/ESP8266快速上手及常见问题/"><div class="article-nav-title">ESP8266快速上手及常见问题</div></a>
+    
+</div>
+
+</nav>
+</div>
+
+<div class="post-comment">
+    
+
+
+
+</div>
+
+    </main><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+</body>
+
+</html>
