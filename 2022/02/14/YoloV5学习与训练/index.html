@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+    
+    <title>YoloV5 学习与训练 - Jefine</title>
+    <meta charset="utf-8">
+    
+    <meta name="title" content="YoloV5 学习与训练 - Jefine">
+    <meta name="description" content="">
+    <meta property="og:image" content="/favicon.png">
+    <meta property="og:image:width" content="200" />
+    <meta property="og:image:height" content="200" />
+    
+    <link href="https://fonts.googleapis.com/css2?family=Source+Serif+Pro:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Source Serif Pro', 'Source Han Serif TC', 'Noto Serif CJK TC', 'Noto Serif TC', serif;
+        }
+    </style>
+    <link rel="shortcut icon" href="/favicon.png">
+    
+    <link rel="stylesheet"
+        href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.17.1/build/styles/arduino-light.min.css">
+    <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.17.1/build/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    
+    
+    <link rel="stylesheet" href="/css/style.css">
+    <script src="/js/jquery.min.js"></script>
+<link rel="alternate" href="/atom.xml" title="Jefine" type="application/atom+xml"><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</head>
+
+<body>
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><header class="header">
+    <div class="blog-title">
+        <a href="/" class="logo">Jefine</a>
+    </div>
+    <nav class="navbar">
+        <ul class="menu">
+            
+            
+            
+            <li class="menu-item">
+                
+                <a href="/" class="menu-item-link">Home</a>
+                
+            </li>
+            
+            
+            
+            <li class="menu-item">
+                
+                <a href="/archives" class="menu-item-link">Archives</a>
+                
+            </li>
+            
+            
+            
+            <li class="menu-item">
+                
+                <a href="/about" class="menu-item-link">About</a>
+                
+            </li>
+            
+            
+            
+            <li class="menu-item">
+                
+                <a href="/atom.xml" class="menu-item-link">Rss</a>
+                
+            </li>
+            
+        </ul>
+    </nav>
+</header>
+    <main class="main">
+        <article class="post">
+    <div class="post-title">
+        <h1 class="title">YoloV5 学习与训练</h2>
+    </div>
+    <div class="post-content">
+        <p>简要学习 YoloV5，通过在云端训练和本地推理，初步入门 ML 的图形识别场景。实现对特定物体的检测和框选。</p>
+  <a id="more"></a>
+<p>在进行物体识别的图形应用场景下，看到 Yolo 的普遍应用，便希望自己能够用到 [[YoloV5]] 框架，同时在整个机器学习，人工智能，学习的环境下，图像类的机器学习是最为热门和具有实用性质的内容。而区别于物体分类，物体检测相对更为复杂，但是也更具有实用性和拓展性，能够在众多的场景和众多设备下进行应用与部署。因此特地进行 Yolo 的学习，希望能够尽快掌握自定义数据集的物体检测的能力。<br>积累了关于 物体识别 的相关技术栈经验。</p>
+<p>课程主要跟随 <a href="https://www.bilibili.com/video/BV1tf4y1t7ru" target="_blank" rel="noopener">Bilibili 的网课</a> 进行学习。</p>
+<h2 id="安装-YoloV5-5-0-时的问题"><a href="#安装-YoloV5-5-0-时的问题" class="headerlink" title="安装 YoloV5 5.0 时的问题"></a>安装 YoloV5 5.0 时的问题</h2><p>直接下载 <a href="https://github.com/ultralytics/yolov5/tree/v5.0" target="_blank" rel="noopener">tag 5.0 版本</a> 的源代码进行学习即可。<br>如果因为网络环境打不开，可以通过 Gitee 的 <a href="https://gitee.com/monkeycc/yolov5/tree/v5.0" target="_blank" rel="noopener">5.0 链接</a> 进行下载</p>
+<p>下载后，通过 Pycharm 打开（非要用其他的也 OK），继而在 Conda 或其他 Python 选择好的环境下，根据 requerments.txt 进行 pip install ~即可。</p>
+<h3 id="pycocotools-安装失败"><a href="#pycocotools-安装失败" class="headerlink" title="pycocotools 安装失败"></a>pycocotools 安装失败</h3><p>而对于 特殊的 pycocotools ，很难在 windows 上进行安装，目前采用的简单的方法是：</p>
+<blockquote>
+<p>GitHub 上有 windows 版 pycocotools 了。<br>pip install pycocotools-windows<br>win10+anaconda 环境亲测有效</p>
+</blockquote>
+<p>在打开 detect.py 进行运行（相当于 Hello world ）时，可能会出现一些报错提醒你有些插件没有安装，继续 pip install 即可</p>
+<p>对于 其他问题，多半通过复制最后一行代码，百度即可找到方案</p>
+<h3 id="出现-Can’t-get-attribute-SPPF-on-module-models-common"><a href="#出现-Can’t-get-attribute-SPPF-on-module-models-common" class="headerlink" title="出现 Can’t get attribute SPPF on module models.common"></a>出现 Can’t get attribute SPPF on module models.common</h3><p>运行 yolov5 下面 Tags5 的代码,出现了这个报错：<br>AttributeError: Cant get attribute SPPF on module models.common from e: \pyWorkSpace\yolov5-5.0\models\common.py</p>
+<p>解决方案是：去 Tags6 里面的 model/common.py 里面去找到这个 SPPF 的类,把它拷过来到你这个 Tags5 的 model/common.py 里面,这样你的代码就也有这个类了,还要引入一个 warnings 包就行了！</p>
+<p>有的同学找不到 SPPF 这个类，那我现在直接粘贴在这里，你们只需要复制到你们的 common.py 里面即可，记得把 import warnings 放在上面去：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">import</span> warnings<br><br><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">SPPF</span><span class="hljs-params">(nn.Module)</span>:</span><br>    <span class="hljs-comment"># Spatial Pyramid Pooling - Fast (SPPF) layer for YOLOv5 by Glenn Jocher</span><br>    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__init__</span><span class="hljs-params">(self, c1, c2, k=<span class="hljs-number">5</span>)</span>:</span>  <span class="hljs-comment"># equivalent to SPP(k=(5, 9, 13))</span><br>        super().__init__()<br>        c_ = c1 // <span class="hljs-number">2</span>  <span class="hljs-comment"># hidden channels</span><br>        self.cv1 = Conv(c1, c_, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>)<br>        self.cv2 = Conv(c_ * <span class="hljs-number">4</span>, c2, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>)<br>        self.m = nn.MaxPool2d(kernel_size=k, stride=<span class="hljs-number">1</span>, padding=k // <span class="hljs-number">2</span>)<br><br>    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">forward</span><span class="hljs-params">(self, x)</span>:</span><br>        x = self.cv1(x)<br>        <span class="hljs-keyword">with</span> warnings.catch_warnings():<br>            warnings.simplefilter(<span class="hljs-string">'ignore'</span>)  <span class="hljs-comment"># suppress torch 1.9.0 max_pool2d() warning</span><br>            y1 = self.m(x)<br>            y2 = self.m(y1)<br>            <span class="hljs-keyword">return</span> self.cv2(torch.cat([x, y1, y2, self.m(y2)], <span class="hljs-number">1</span>))<br></code></pre></td></tr></table></figure>
+<h2 id="在运行-detect-或-train-时，提示-缺少-pycocotools"><a href="#在运行-detect-或-train-时，提示-缺少-pycocotools" class="headerlink" title="在运行 detect 或 train 时，提示 缺少 pycocotools"></a>在运行 detect 或 train 时，提示 缺少 pycocotools</h2><p>这是因为在运行的时候，程序会去检测 requerments 是否完全达标，在 requerments 里面将 pycocotools 屏蔽 ‘#’ 即可，因为我们已经安装了 pycocotools-windows ，而其其意义不大。</p>
+<h2 id="运行-YoloV5"><a href="#运行-YoloV5" class="headerlink" title="运行 YoloV5"></a>运行 YoloV5</h2><p>通过 在 Terminal 运行<br><code>python detect.py</code><br>或者 Pycharm 在 detect 文件下的运行</p>
+<p>当然，我们在这个下面进行运行视频，也是可以的，但其实也是一帧一帧进行处理的。</p>
+<p>之后，在 [[Colab]] 上进行 YoloV5 的学习不仅能够快速方便地配置环境，而且能够充分利用云服务器的 GPU 进行训练。<br>Colab 的服务器上 GPU，免费的一半是 K80，12G ，粗略计算 比本人笔记本的 Cpu 推理，机器学习的速度快 30 倍。<br>之后通过 Google Driver 进行保存相关的模型数据，自己是将其作为了一个大的压缩包，给放到云盘上了，方便下次直接恢复运行的环境。</p>
+<p>当然之后又通过 <a href="https://aistudio.baidu.com/aistudio/projectdetail/2495241?channelType=0&amp;channel=0" target="_blank" rel="noopener">螺丝螺母</a> 分类的项目通过 Yolov5 进行了重新训练，主要耗费时间的就是 数据集格式的转换，通过自己的低水平 Python 代码和高水平的 GitHub AutoPiolt 的协作，写了好几个小时，才将其转换过来，好在跑起来之后 的效果不错，97% 的准确率。</p>
+
+    </div>
+    <div class="post-meta">
+        
+    <span class="post-time">二〇二二年二月十四日</span>
+    </div>
+</article>
+
+<div class="prev_next">
+    <nav id="prev_next">
+
+<div class="prev">
+    
+</div>
+<div class="next">
+    
+    <p>Older</p>
+    <a href="/2022/01/09/ESP32_IDF_VScode配置环境/"><div class="article-nav-title">ESP32_IDF_VScode配置环境</div></a>
+    
+</div>
+
+</nav>
+</div>
+
+<div class="post-comment">
+    
+
+
+
+</div>
+
+    </main><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+</body>
+
+</html>
