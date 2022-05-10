@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+    
+    <title>干饭小助手 Meal_Alter_Bot - Jefine</title>
+    <meta charset="utf-8">
+    
+    <meta name="title" content="干饭小助手 Meal_Alter_Bot - Jefine">
+    <meta name="description" content="">
+    <meta property="og:image" content="/favicon.png">
+    <meta property="og:image:width" content="200" />
+    <meta property="og:image:height" content="200" />
+    
+    <link href="https://fonts.googleapis.com/css2?family=Source+Serif+Pro:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Source Serif Pro', 'Source Han Serif TC', 'Noto Serif CJK TC', 'Noto Serif TC', serif;
+        }
+    </style>
+    <link rel="shortcut icon" href="/favicon.png">
+    
+    <link rel="stylesheet"
+        href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.17.1/build/styles/arduino-light.min.css">
+    <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.17.1/build/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    
+    
+    <link rel="stylesheet" href="/css/style.css">
+    <script src="/js/jquery.min.js"></script>
+<link rel="alternate" href="/atom.xml" title="Jefine" type="application/atom+xml"><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</head>
+
+<body>
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><header class="header">
+    <div class="blog-title">
+        <a href="/" class="logo">Jefine</a>
+    </div>
+    <nav class="navbar">
+        <ul class="menu">
+            
+            
+            
+            <li class="menu-item">
+                
+                <a href="/" class="menu-item-link">Home</a>
+                
+            </li>
+            
+            
+            
+            <li class="menu-item">
+                
+                <a href="/archives" class="menu-item-link">Archives</a>
+                
+            </li>
+            
+            
+            
+            <li class="menu-item">
+                
+                <a href="/about" class="menu-item-link">About</a>
+                
+            </li>
+            
+            
+            
+            <li class="menu-item">
+                
+                <a href="/atom.xml" class="menu-item-link">Rss</a>
+                
+            </li>
+            
+        </ul>
+    </nav>
+</header>
+    <main class="main">
+        <article class="post">
+    <div class="post-title">
+        <h1 class="title">干饭小助手 Meal_Alter_Bot</h2>
+    </div>
+    <div class="post-content">
+        <p>A bot to forward the QQ message to user,then send it to your bot.</p>
+<p>Meal_Alter_Bot 项目是基于 <a href="https://github.com/Mrs4s/go-cqhttp" target="_blank" rel="noopener"></a><a href="https://github.com/Mrs4s/go-cqhttp" target="_blank" rel="noopener">https://github.com/Mrs4s/go-cqhttp</a> 项目进行开发的QQ机器人，通过监控聊天信息，获取干饭通知，通过 ESP32 Wi-Fi 通信功能，控制设备进行蜂鸣器提醒。<br>  <a id="more"></a><br>其主要的功能实现来源于 <a href="https://github.com/Mrs4s/go-cqhttp" target="_blank" rel="noopener"></a><a href="https://github.com/Mrs4s/go-cqhttp" target="_blank" rel="noopener">https://github.com/Mrs4s/go-cqhttp</a> 项目所开发的机器人，该程序能够通过模拟登录自己的 QQ 帐号，将其作为机器人，对 QQ 的各种消息和提醒进行监控于处理，还能将其给进一步发送出去，实现了 QQ 不开源，不开放 API 状态下的开放功能。（当然，此项目可能违反 Tencent 相关用户协议，存在封号可能，不建议将大号作为机器人）</p>
+<p>在将 QQ 所获取的消息进行监控后，通过 Python 功能便携 Flask 应用，实现对于 QQ 消息的实时监控，并二次筛选处自己所需要的内容，进而通过 MQTT 协议，发送的执行器，进行设备的控制。</p>
+<h2 id="所需环境：Python3"><a href="#所需环境：Python3" class="headerlink" title="所需环境：Python3"></a>所需环境：Python3</h2><h2 id="机器人搭建"><a href="#机器人搭建" class="headerlink" title="机器人搭建"></a>机器人搭建</h2><p>指的是将自己的 QQ 作为机器人部署在服务器或个人电脑上</p>
+<p>（支持 Win/Linux ）</p>
+<p>这里采用的框架和应用是 <a href="https://github.com/Mrs4s/go-cqhttp" target="_blank" rel="noopener">go-cqhttp</a>，是当下为数不多可供使用的 QQ 机器人（Tencent封杀使其越来越封闭）</p>
+<h3 id="新建文件夹，并进入对应目录"><a href="#新建文件夹，并进入对应目录" class="headerlink" title="新建文件夹，并进入对应目录"></a>新建文件夹，并进入对应目录</h3><h3 id="下载相应文件："><a href="#下载相应文件：" class="headerlink" title="下载相应文件："></a>下载相应文件：</h3><p>Linux 下通过命令行，下载合适的安装包到自己的机器上</p>
+<p><code>wget &lt;https://github.com.cnpmjs.org/Mrs4s/go-cqhttp/releases/download/v1.0.0-beta4/go-cqhttp_linux_amd64.tar.gz</code>&gt;</p>
+<p>而 Windows 用户可以直接在浏览器上进行下载，<a href="https://github.com/Mrs4s/go-cqhttp/releases/tag/v1.0.0-rc1" target="_blank" rel="noopener">下载地址</a></p>
+<p>注意区分不同版本（Linux 也可以由用户下载好之后，直接上传到服务器上）</p>
+<h3 id="解压文件"><a href="#解压文件" class="headerlink" title="解压文件"></a>解压文件</h3><p>Linux 下命令如下</p>
+<p><code>tar -zxvf go-cqhttp_linux_amd64.tar.gz</code></p>
+<p>Win 下请按照自己的解压工具进行解压</p>
+<h3 id="授权"><a href="#授权" class="headerlink" title="授权"></a>授权</h3><p>Linux 下命令如下</p>
+<p><code>chmod +x go-cqhttp</code></p>
+<p>Win 下建议使用管理员权限 打开 go-cqhttp</p>
+<h3 id="初始化程序"><a href="#初始化程序" class="headerlink" title="初始化程序"></a>初始化程序</h3><p>当然，现在还不需要去打开运行，我们可以先打开 config.yml 文件，进行配置</p>
+<p>如果没有运行过 go-cqhttp 是没有此文件的，可采用本 Github 所提供的文件进行配置。</p>
+<p>需要配置的内容不多，本项目只更改了</p>
+<ul>
+<li>第四五行的QQ帐号（纯数字即可），密码（注意单引号）</li>
+<li>倒数第八行的 URL 地址，将端口发送到 127.0.0.1:10001 进行通信</li>
+</ul>
+<p>用户可以直接第一次运行程序后，自行进行修改上述内容进行应用。</p>
+<p>如果不添加QQ帐号和密码到 config.yml 文件中，第一次登录后 会使用扫码登录，但是我使用此选项失败了~</p>
+<p>接下来就是第一次运行程序，进行初始化了</p>
+<p>Linux 下通过该命令打开</p>
+<p><code>./go-cqhttp</code></p>
+<p>如果是第一次打开，会让你选择采用什么方式运行，这里选择 http 也就是 1 即可</p>
+<p>等待其配置完成</p>
+<p>就会自动转发 信息到接口处</p>
+<p>此时使用 Ctrl + c 便可以关闭程序。</p>
+<h3 id="运行-Python程序"><a href="#运行-Python程序" class="headerlink" title="运行 Python程序"></a>运行 Python程序</h3><p>Python 的环境要求是 Python3</p>
+<p>首先，打开 <a href="http://app.py" target="_blank" rel="noopener">app.py</a> ，进行修改</p>
+<p>这里需要修改的也就是自己的 MQTT 服务器地址和所需要修改的关键词，过滤的群号，详见文件内注释说明。</p>
+<p>在运行之前，我们还需要安装 Python 的相关库，这里用到了 paho.mqtt 和 flask</p>
+<p>首先采用</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">pip3 install paho.mqtt<br></code></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">pip3 install flask<br></code></pre></td></tr></table></figure>
+<p>配置完成后，可以使用 python3 <a href="http://app.py" target="_blank" rel="noopener">app.py</a> 即可运行，该程序便会将需要的转发的内容发送到MQTT服务器的对应主题上。</p>
+<p>在服务器上，我们往往采用 SSH 的方式进行连接，为避免关闭界面后，运行停止，我们可以采用命令nohup ~ &amp;将其挂起,</p>
+<p>即使用</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash">nohup ./go-cqhttp &amp;<br>nohup python3 app.py &amp;<br></code></pre></td></tr></table></figure>
+<p>其对应的终端输入日志将保存在.out文件中</p>
+<h3 id="配置-ESP32"><a href="#配置-ESP32" class="headerlink" title="配置 ESP32"></a>配置 ESP32</h3><p>准备一个 ESP32 开发板，正常的型号就可以，这里仅仅采用了 WiFi，运用了 MQTT 的库文件，详细代码参考 本项目中的 ESP32_Meal_Alter_Bot 文件夹中的内容即可。</p>
+<p>本 ESP32 项目采用 Vscode +platformio 进行开发</p>
+<p>用户可以自行将 ESP32_Meal_Alter_Bot/src 中的主程序复制到 Arduino 程序中进行开发，对于 ESP32 的相关环境配置，网络中已经有很多，不再赘述，请善用百度。</p>
+<p>对于 ESP32 的功能和代码修改介绍： 该开发板所控制的外部设备有且仅有一个，就是蜂鸣器，通过及其简单的高低电平使其发声，预警提醒。 在代码中，首先修改前面的 Wi-Fi 帐号密码，其次是 MQTT 服务器的地址，需要与上述一致。 在本代码中，用户可以进一步的通过 ESP32 的代码修改，进行二次过滤关键词，也可以修改不同的 MQTT 主题，进行应用。</p>
+<p>将ESP32 代码进行编译烧录后进行上传，在测试成功后，即可正常使用。</p>
+<p>因为疫情，被隔离在校，闲暇之余，手边恰好有相关的设备和单片机，于是便开始动手实践，本项目中，比较困难的是QQ机器人的项目查找，之后的数据流转相对简单。<br>然而做好项目的第二天，疫情形式严峻了，就送饭上门了~</p>
+<p>诚信而言，本次项目的许多内容都是基于互联网上的成熟模组进行搭建，极大的加速了开发者的开发速度，但次项目还有着许多的潜力可以去挖掘，不仅仅是机器人，更重要的是在每一个环节，我们都可以进行二次修改，如何应对高并发，如何形成集群？等等方向都是此项目的可升华之处，作为一个点灯项目，其到此为止吧。</p>
+
+    </div>
+    <div class="post-meta">
+        
+    <span class="post-time">二〇二二年五月十日</span>
+    </div>
+</article>
+
+<div class="prev_next">
+    <nav id="prev_next">
+
+<div class="prev">
+    
+</div>
+<div class="next">
+    
+    <p>Older</p>
+    <a href="/2022/02/14/YoloV5学习与训练/"><div class="article-nav-title">YoloV5 学习与训练</div></a>
+    
+</div>
+
+</nav>
+</div>
+
+<div class="post-comment">
+    
+
+
+
+</div>
+
+    </main>
+
+    
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+          tex2jax: {
+            inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+            processEscapes: true
+          }
+        });
+      </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+            tex2jax: {
+              skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+            }
+          });
+      </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+              var all = MathJax.Hub.getAllJax(), i;
+              for(i=0; i < all.length; i += 1) {
+                  all[i].SourceElement().parentNode.className += ' has-jax';
+              }
+          });
+      </script>
+
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config("");
+</script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+      all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+  });
+</script>
+
+<script type="text/javascript" src="custom_mathjax_source">
+</script>
+<!-- End: Injected MathJax -->
+<!-- hexo-inject:end -->
+
+
+</body>
+
+</html>
