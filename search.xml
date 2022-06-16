@@ -1,6 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>2021</title>
+    <url>/2021/01/01/2021/</url>
+    <content><![CDATA[<p>​                                                                    <strong>[[2020]]</strong>—-&gt;<strong>[[2021]]</strong></p>
+<p><strong>活着</strong></p>
+<p><img src="/2021/01/01/2021/2021.jpg" alt="2021-2020"></p>
+]]></content>
+      <categories>
+        <category>record</category>
+      </categories>
+      <tags>
+        <tag>newyear</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>2020</title>
     <url>/2020/01/02/2020/</url>
     <content><![CDATA[<h3 id="2020来咯。"><a href="#2020来咯。" class="headerlink" title="2020来咯。"></a>2020来咯。</h3><p>我们一直以为出现在科幻和未来的2020年，他来了。</p>
@@ -153,20 +167,6 @@
       </tags>
   </entry>
   <entry>
-    <title>2021</title>
-    <url>/2021/01/01/2021/</url>
-    <content><![CDATA[<p>​                                                                    <strong>[[2020]]</strong>—-&gt;<strong>[[2021]]</strong></p>
-<p><strong>活着</strong></p>
-<p><img src="/2021/01/01/2021/2021.jpg" alt="2021-2020"></p>
-]]></content>
-      <categories>
-        <category>record</category>
-      </categories>
-      <tags>
-        <tag>newyear</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>BFS小结</title>
     <url>/2020/07/15/BFS%E5%B0%8F%E7%BB%93/</url>
     <content><![CDATA[<p>BFS可以说是在搜索中十分常用的基础算法了，在这次的初学中，做一个小结，希望可以将其模块化，系统化，公式化。从而进一步提升对bfs的理解,加快自己的解题步骤, 当然,之后少不了DFS的相关文档咯.</p>
@@ -246,6 +246,47 @@
       </tags>
   </entry>
   <entry>
+    <title>ESP32_IDF_VScode配置环境</title>
+    <url>/2022/01/09/ESP32_IDF_VScode%E9%85%8D%E7%BD%AE%E7%8E%AF%E5%A2%83/</url>
+    <content><![CDATA[<p>ESP32官方推荐的IDF开发环境，可以作为插件，在VScode中进行编译烧录。<br>需要安装数G环境，如果不是必须，可以尽量使用 Arduino 方式进行编程。</p>
+  <a id="more"></a>
+<ol>
+<li>安装 vscode</li>
+<li>到<a href="https://dl.espressif.com/dl/esp-idf/?idf=4.3" target="_blank" rel="noopener">连接中</a>下载离线的 idf 安装器</li>
+</ol>
+<p><img src="/2022/01/09/ESP32_IDF_VScode%E9%85%8D%E7%BD%AE%E7%8E%AF%E5%A2%83/Untitled.png" alt="pic"></p>
+<p>一定要使用离线版本的，因为在线版本安装的时候需要下载依赖，而且由于国内网络环境问题，所以很慢，甚至还很可能发生失败。</p>
+<ol>
+<li>打开 vscode，安装插件 esp-idf<br><img src="/2022/01/09/ESP32_IDF_VScode%E9%85%8D%E7%BD%AE%E7%8E%AF%E5%A2%83/Untitled 1.png" alt="pic"></li>
+<li>配置 idf 源码的位置和 tools 的位置，这个位置就是刚开始安装 offline 这个环境时选<br>择的位置。</li>
+</ol>
+<p>具体的是 按下 ctrl+p 然后输入 &gt;ESP-IDF: configure paths 详细见箭头处<br><img src="/2022/01/09/ESP32_IDF_VScode%E9%85%8D%E7%BD%AE%E7%8E%AF%E5%A2%83/Untitled 2.png" alt="pic"></p>
+<ol>
+<li>接着就是上图的方块处，配置插件</li>
+</ol>
+<p>应该出现的红框如果没有出现，那就意味着上一步的 path 没有配置</p>
+<p><img src="/2022/01/09/ESP32_IDF_VScode%E9%85%8D%E7%BD%AE%E7%8E%AF%E5%A2%83/Untitled 3.png" alt="pic"></p>
+<ol>
+<li>接着就应该直接创建虚拟的 python 环境了，但是<strong>如果挂了代理，需要关闭</strong>，否则会出现下载失败的提示。</li>
+<li>这样就配置好了。</li>
+<li>使用例程创建一个工程<br><img src="/2022/01/09/ESP32_IDF_VScode%E9%85%8D%E7%BD%AE%E7%8E%AF%E5%A2%83/Untitled 4.png" alt="pic"></li>
+</ol>
+<p><img src="/2022/01/09/ESP32_IDF_VScode%E9%85%8D%E7%BD%AE%E7%8E%AF%E5%A2%83/Untitled 5.png" alt="pic"><br>配置 device，可以选择 ESP32 也可以选择 ESP32C3。</p>
+<p><img src="/2022/01/09/ESP32_IDF_VScode%E9%85%8D%E7%BD%AE%E7%8E%AF%E5%A2%83/Untitled 6.png" alt="pic"></p>
+<ol>
+<li>然后编译，下载，就行了（如果下载失败，就在其 connect 的时候先按下 boot，再按下 reset，松开reset，再松开boot就行了，应该是第一步reboot 到 boot模式没起到效果，这里手动就可以了） </li>
+</ol>
+<p>注意：通过 vscode 进行的编译十分缓慢 大约2min，<strong>如果使用 ESPIDF 终端，大概在30s</strong></p>
+<p>而对于Menu configure 暂时不改动（基本上不需要改动）</p>
+]]></content>
+      <categories>
+        <category>IOT</category>
+      </categories>
+      <tags>
+        <tag>ESP32</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>ESP32</title>
     <url>/2022/01/09/ESP32/</url>
     <content><![CDATA[<p>近期，多次使用了 ESP32 系列的模组，发现 ESP32 的一些优良特性，后期打算继续将其作为网络节点，特此介绍 ESP32 的可用性以及其特点。</p>
@@ -318,78 +359,6 @@
       </tags>
   </entry>
   <entry>
-    <title>ESP32_IDF_VScode配置环境</title>
-    <url>/2022/01/09/ESP32_IDF_VScode%E9%85%8D%E7%BD%AE%E7%8E%AF%E5%A2%83/</url>
-    <content><![CDATA[<p>ESP32官方推荐的IDF开发环境，可以作为插件，在VScode中进行编译烧录。<br>需要安装数G环境，如果不是必须，可以尽量使用 Arduino 方式进行编程。</p>
-  <a id="more"></a>
-<ol>
-<li>安装 vscode</li>
-<li>到<a href="https://dl.espressif.com/dl/esp-idf/?idf=4.3" target="_blank" rel="noopener">连接中</a>下载离线的 idf 安装器</li>
-</ol>
-<p><img src="/2022/01/09/ESP32_IDF_VScode%E9%85%8D%E7%BD%AE%E7%8E%AF%E5%A2%83/Untitled.png" alt="pic"></p>
-<p>一定要使用离线版本的，因为在线版本安装的时候需要下载依赖，而且由于国内网络环境问题，所以很慢，甚至还很可能发生失败。</p>
-<ol>
-<li>打开 vscode，安装插件 esp-idf<br><img src="/2022/01/09/ESP32_IDF_VScode%E9%85%8D%E7%BD%AE%E7%8E%AF%E5%A2%83/Untitled 1.png" alt="pic"></li>
-<li>配置 idf 源码的位置和 tools 的位置，这个位置就是刚开始安装 offline 这个环境时选<br>择的位置。</li>
-</ol>
-<p>具体的是 按下 ctrl+p 然后输入 &gt;ESP-IDF: configure paths 详细见箭头处<br><img src="/2022/01/09/ESP32_IDF_VScode%E9%85%8D%E7%BD%AE%E7%8E%AF%E5%A2%83/Untitled 2.png" alt="pic"></p>
-<ol>
-<li>接着就是上图的方块处，配置插件</li>
-</ol>
-<p>应该出现的红框如果没有出现，那就意味着上一步的 path 没有配置</p>
-<p><img src="/2022/01/09/ESP32_IDF_VScode%E9%85%8D%E7%BD%AE%E7%8E%AF%E5%A2%83/Untitled 3.png" alt="pic"></p>
-<ol>
-<li>接着就应该直接创建虚拟的 python 环境了，但是<strong>如果挂了代理，需要关闭</strong>，否则会出现下载失败的提示。</li>
-<li>这样就配置好了。</li>
-<li>使用例程创建一个工程<br><img src="/2022/01/09/ESP32_IDF_VScode%E9%85%8D%E7%BD%AE%E7%8E%AF%E5%A2%83/Untitled 4.png" alt="pic"></li>
-</ol>
-<p><img src="/2022/01/09/ESP32_IDF_VScode%E9%85%8D%E7%BD%AE%E7%8E%AF%E5%A2%83/Untitled 5.png" alt="pic"><br>配置 device，可以选择 ESP32 也可以选择 ESP32C3。</p>
-<p><img src="/2022/01/09/ESP32_IDF_VScode%E9%85%8D%E7%BD%AE%E7%8E%AF%E5%A2%83/Untitled 6.png" alt="pic"></p>
-<ol>
-<li>然后编译，下载，就行了（如果下载失败，就在其 connect 的时候先按下 boot，再按下 reset，松开reset，再松开boot就行了，应该是第一步reboot 到 boot模式没起到效果，这里手动就可以了） </li>
-</ol>
-<p>注意：通过 vscode 进行的编译十分缓慢 大约2min，<strong>如果使用 ESPIDF 终端，大概在30s</strong></p>
-<p>而对于Menu configure 暂时不改动（基本上不需要改动）</p>
-]]></content>
-      <categories>
-        <category>IOT</category>
-      </categories>
-      <tags>
-        <tag>ESP32</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Java无法仅读取一个字符</title>
-    <url>/2020/02/25/Java%E6%97%A0%E6%B3%95%E4%BB%85%E8%AF%BB%E5%8F%96%E4%B8%80%E4%B8%AA%E5%AD%97%E7%AC%A6/</url>
-    <content><![CDATA[<p>问题描述</p>
-<p>在使用java中，有时希望可以像c语言一样单单读取一个字符，但是发现并没有nextChar()的方法可供使用。</p>
-<p>解决办法</p>
-<p>方法一是最常见的方法，和方法二类似都是先得到一个String字符串，然后得到第一个字符，而方法三是根本的解决办法（虽然不好用）</p>
-<p><strong>方法一：</strong></p>
-<p>1．先创建一个Scanner对象</p>
-<p>2．调用Scanner对象的next()方法获取控制台输入，返回的是一个String类型,因为没有nextChar()方法</p>
-<p>3．调用String的charAt(0)方法获取第一个字符</p>
- <figure class="highlight java"><table><tr><td class="code"><pre><code class="hljs java"> Scanner sc = <span class="hljs-keyword">new</span> Scanner(System.in);<br><br> String s = sc.next();<br><br> <span class="hljs-keyword">char</span> c = s.charAt(<span class="hljs-number">0</span>);<br><span class="hljs-comment">//最后两条语句也可写为char c = sc.next().charAt(0);</span><br></code></pre></td></tr></table></figure>
-<p><strong>方法二：</strong></p>
-<p>使用方法，将string转换为字符数组，然后取第一个字符即可</p>
- <figure class="highlight java"><table><tr><td class="code"><pre><code class="hljs java">Scanner sc = <span class="hljs-keyword">new</span> Scanner(System.in);<br><br><span class="hljs-keyword">char</span> c = scanner.next().toCharArray()[<span class="hljs-number">0</span>];<br></code></pre></td></tr></table></figure>
-<p><strong><em>方法三：</em></strong></p>
-<p><em>需要有强制转换（因为in.read()得到的是int类型）</em></p>
-<p>需要引入.io（import java.io.*;）</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">char</span> t = <span class="hljs-number">0</span>;<br>    <span class="hljs-keyword">try</span> &#123;<br>      t = (<span class="hljs-keyword">char</span>)System.in.read();<br>    &#125; <span class="hljs-keyword">catch</span> (IOException e) &#123;<br>    e.printStackTrace();<br>  &#125;<br></code></pre></td></tr></table></figure>
-<p> <strong>或</strong></p>
-<p>2.在方法中抛出异常：public static void main(String[] args) throws IOException</p>
-<p>然后</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">char</span> t = <span class="hljs-number">0</span>;<br><br>t = (<span class="hljs-keyword">char</span>)System.in.read();<br></code></pre></td></tr></table></figure>
-<p><img src="/2020/02/25/Java%E6%97%A0%E6%B3%95%E4%BB%85%E8%AF%BB%E5%8F%96%E4%B8%80%E4%B8%AA%E5%AD%97%E7%AC%A6/1.png" alt></p>
-<p>但可以做到不影响其他的字符（真正意义上的读入一个字符）</p>
-<p><img src="/2020/02/25/Java%E6%97%A0%E6%B3%95%E4%BB%85%E8%AF%BB%E5%8F%96%E4%B8%80%E4%B8%AA%E5%AD%97%E7%AC%A6/2.png" alt></p>
-]]></content>
-      <categories>
-        <category>java</category>
-      </categories>
-  </entry>
-  <entry>
     <title>Flask_First_Api</title>
     <url>/2022/05/14/Flask_First_Api/</url>
     <content><![CDATA[<p>Flask 作为一个轻量级的 Python 前端网页框架，正在逐渐壮大，而在一些近期的一些项目中，也常出现其身影，作为前端和后端相互结合的框架，适合我们去快速构建一个服务器端的服务应用，同时也方便了自己的维护，更重要的是构建起较为完善的技术栈。</p>
@@ -434,6 +403,62 @@
       </categories>
       <tags>
         <tag>flask</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Java无法仅读取一个字符</title>
+    <url>/2020/02/25/Java%E6%97%A0%E6%B3%95%E4%BB%85%E8%AF%BB%E5%8F%96%E4%B8%80%E4%B8%AA%E5%AD%97%E7%AC%A6/</url>
+    <content><![CDATA[<p>问题描述</p>
+<p>在使用java中，有时希望可以像c语言一样单单读取一个字符，但是发现并没有nextChar()的方法可供使用。</p>
+<p>解决办法</p>
+<p>方法一是最常见的方法，和方法二类似都是先得到一个String字符串，然后得到第一个字符，而方法三是根本的解决办法（虽然不好用）</p>
+<p><strong>方法一：</strong></p>
+<p>1．先创建一个Scanner对象</p>
+<p>2．调用Scanner对象的next()方法获取控制台输入，返回的是一个String类型,因为没有nextChar()方法</p>
+<p>3．调用String的charAt(0)方法获取第一个字符</p>
+ <figure class="highlight java"><table><tr><td class="code"><pre><code class="hljs java"> Scanner sc = <span class="hljs-keyword">new</span> Scanner(System.in);<br><br> String s = sc.next();<br><br> <span class="hljs-keyword">char</span> c = s.charAt(<span class="hljs-number">0</span>);<br><span class="hljs-comment">//最后两条语句也可写为char c = sc.next().charAt(0);</span><br></code></pre></td></tr></table></figure>
+<p><strong>方法二：</strong></p>
+<p>使用方法，将string转换为字符数组，然后取第一个字符即可</p>
+ <figure class="highlight java"><table><tr><td class="code"><pre><code class="hljs java">Scanner sc = <span class="hljs-keyword">new</span> Scanner(System.in);<br><br><span class="hljs-keyword">char</span> c = scanner.next().toCharArray()[<span class="hljs-number">0</span>];<br></code></pre></td></tr></table></figure>
+<p><strong><em>方法三：</em></strong></p>
+<p><em>需要有强制转换（因为in.read()得到的是int类型）</em></p>
+<p>需要引入.io（import java.io.*;）</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">char</span> t = <span class="hljs-number">0</span>;<br>    <span class="hljs-keyword">try</span> &#123;<br>      t = (<span class="hljs-keyword">char</span>)System.in.read();<br>    &#125; <span class="hljs-keyword">catch</span> (IOException e) &#123;<br>    e.printStackTrace();<br>  &#125;<br></code></pre></td></tr></table></figure>
+<p> <strong>或</strong></p>
+<p>2.在方法中抛出异常：public static void main(String[] args) throws IOException</p>
+<p>然后</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">char</span> t = <span class="hljs-number">0</span>;<br><br>t = (<span class="hljs-keyword">char</span>)System.in.read();<br></code></pre></td></tr></table></figure>
+<p><img src="/2020/02/25/Java%E6%97%A0%E6%B3%95%E4%BB%85%E8%AF%BB%E5%8F%96%E4%B8%80%E4%B8%AA%E5%AD%97%E7%AC%A6/1.png" alt></p>
+<p>但可以做到不影响其他的字符（真正意义上的读入一个字符）</p>
+<p><img src="/2020/02/25/Java%E6%97%A0%E6%B3%95%E4%BB%85%E8%AF%BB%E5%8F%96%E4%B8%80%E4%B8%AA%E5%AD%97%E7%AC%A6/2.png" alt></p>
+]]></content>
+      <categories>
+        <category>java</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>L1-046整除光棍（模拟大数除法）</title>
+    <url>/2020/01/05/L1-046%E6%95%B4%E9%99%A4%E5%85%89%E6%A3%8D%EF%BC%88%E6%A8%A1%E6%8B%9F%E5%A4%A7%E6%95%B0%E9%99%A4%E6%B3%95%EF%BC%89/</url>
+    <content><![CDATA[<p>这里所谓的“光棍”，并不是指单身汪啦~ 说的是全部由1组成的数字，比如1、11、111、1111等。传说任何一个光棍都能被一个不以5结尾的奇数整除。比如，111111就可以被13整除。 现在，你的程序要读入一个整数<code>x</code>，这个整数一定是奇数并且不以5结尾。然后，经过计算，输出两个数字：第一个数字<code>s</code>，表示<code>x</code>乘以<code>s</code>是一个光棍，第二个数字<code>n</code>是这个光棍的位数。这样的解当然不是唯一的,题目要求你输出最小的解。</p>
+<p>提示：一个显然的办法是逐渐增加光棍的位数，直到可以整除<code>x</code>为止。但难点在于，<code>s</code>可能是个非常大的数 —— 比如，程序输入31，那么就输出3584229390681和15，因为31乘以3584229390681的结果是111111111111111，一共15个1。</p>
+<h3 id="输入格式："><a href="#输入格式：" class="headerlink" title="输入格式："></a>输入格式：</h3><p>输入在一行中给出一个不以5结尾的正奇数<code>x</code>（&lt;1000）。</p>
+<h3 id="输出格式："><a href="#输出格式：" class="headerlink" title="输出格式："></a>输出格式：</h3><p>在一行中输出相应的最小的<code>s</code>和<code>n</code>，其间以1个空格分隔。</p>
+<h3 id="输入样例："><a href="#输入样例：" class="headerlink" title="输入样例："></a>输入样例：</h3><figure class="highlight plain"><table><tr><td class="code"><pre><code class="hljs in">31<br></code></pre></td></tr></table></figure>
+<h3 id="输出样例："><a href="#输出样例：" class="headerlink" title="输出样例："></a>输出样例：</h3><figure class="highlight plain"><table><tr><td class="code"><pre><code class="hljs out">3584229390681 15<br></code></pre></td></tr></table></figure>
+<h3 id="题目思路分析："><a href="#题目思路分析：" class="headerlink" title="题目思路分析："></a>题目思路分析：</h3><p>第一次接触大数除法的模拟，在经历过一番思考后，选择了百度。。。</p>
+<p>忽然发现思路其实就是模拟人的思路：假设我们也不知道多少个1才能将31整除。那么怎么得到那个很长的数呢？</p>
+<ol>
+<li>从1，11，111，一个一个去尝试。显然，不成立。（当然，我们可以直接从比除数大的111开始除，这也是后面变成的思路）</li>
+<li>但如果我们实验过几次第一种方法后，我们会发现，其实我们只是在每一次的计算后（发现不能整除）我们就会添加一个1继续去除。之前的商就保留下来了，和我们使用竖式除法是一样的。我们只是需要每次除不尽的时候，填上一个1继续除便是了，之前的商直接输出不是更好。</li>
+</ol>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><code class="hljs cpp"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span><span class="hljs-meta-string">&lt;bits/stdc++.h&gt;</span></span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> <span class="hljs-built_in">std</span>;<br><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span><br></span>&#123;<br>	<span class="hljs-keyword">int</span> x,s=<span class="hljs-number">0</span>,n=<span class="hljs-number">0</span>;<span class="hljs-comment">//除数，被除数，位数 </span><br>	<span class="hljs-built_in">cin</span>&gt;&gt;x;<br>	<span class="hljs-keyword">while</span>(s&lt;x)<br>	&#123;<br>		s=s*<span class="hljs-number">10</span>+<span class="hljs-number">1</span>;<span class="hljs-comment">//被除数末位添1直到不小于被除数 </span><br>		n++;<br>	&#125;<br>	<span class="hljs-keyword">while</span>(<span class="hljs-literal">true</span>)<span class="hljs-comment">//除法 </span><br>	&#123;<br>		<span class="hljs-built_in">cout</span>&lt;&lt;s/x;<span class="hljs-comment">//输出商（就作为开头咯） </span><br>		s%=x;<span class="hljs-comment">//被除数更改为其余数 </span><br>		<span class="hljs-keyword">if</span>(s==<span class="hljs-number">0</span>)<span class="hljs-keyword">break</span>;<span class="hljs-comment">//余数为0则结束（否则加1继续） </span><br>		s=s*<span class="hljs-number">10</span>+<span class="hljs-number">1</span>;<span class="hljs-comment">//被除数末位加上1</span><br>		n++; <br>	&#125;<br>	<span class="hljs-built_in">cout</span>&lt;&lt;<span class="hljs-string">' '</span>&lt;&lt;n;<span class="hljs-comment">//之前已经输出了商（很大的数）</span><br>	<span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
+<p><strong>大数模拟，在没有更好的方法下，不如试试康康如果是我们，我们是怎么做的。。。</strong></p>
+]]></content>
+      <categories>
+        <category>编程</category>
+      </categories>
+      <tags>
+        <tag>pta</tag>
       </tags>
   </entry>
   <entry>
@@ -489,60 +514,6 @@
       </tags>
   </entry>
   <entry>
-    <title>L298N驱动电机</title>
-    <url>/2021/07/08/L298N%E9%A9%B1%E5%8A%A8%E7%94%B5%E6%9C%BA/</url>
-    <content><![CDATA[<p>简要介绍了L298N的接线方式，驱动原理及相关简要代码</p>
-  <a id="more"></a>
-<h2 id="引脚介绍"><a href="#引脚介绍" class="headerlink" title="引脚介绍"></a>引脚介绍</h2><p><img src="/2021/07/08/L298N%E9%A9%B1%E5%8A%A8%E7%94%B5%E6%9C%BA/L298N.png" alt="L298N"></p>
-<h2 id="需要注意事项："><a href="#需要注意事项：" class="headerlink" title="需要注意事项："></a>需要注意事项：</h2><p>L298N的+12V需要电压在 +7VDC to +35VDC.如果使用的电源超过了12V那么请将跳帽拔掉。</p>
-<p>同时需要 mcu 和 L298N 供地。</p>
-<p>H桥中，四个input对应四个output(Terminal)</p>
-<p><img src="/2021/07/08/L298N%E9%A9%B1%E5%8A%A8%E7%94%B5%E6%9C%BA/1.png" alt="1"></p>
-<p><img src="/2021/07/08/L298N%E9%A9%B1%E5%8A%A8%E7%94%B5%E6%9C%BA/2.png" alt="2"></p>
-<p>通过对于IN的控制就可以控制out，促使其连接到的电机正转或着反转（并可以控制速度，PWM？）</p>
-<h2 id="具体操作逻辑："><a href="#具体操作逻辑：" class="headerlink" title="具体操作逻辑："></a>具体操作逻辑：</h2><h3 id="对于普通的马达电机："><a href="#对于普通的马达电机：" class="headerlink" title="对于普通的马达电机："></a>对于普通的马达电机：</h3><p>那么只需要将其正负连接至out1，out2，通过in1，in2来控制正负就可以驱动了。</p>
-<p>对于Arduino 来说更为简单。</p>
-<p>其中ena非必需（采用跳帽，也可达到效果）</p>
-<figure class="highlight c"><table><tr><td class="code"><pre><code class="hljs c"><span class="hljs-comment">//Motor Connections</span><br><span class="hljs-comment">//Change this if you wish to use another diagram</span><br><span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> EnA 10</span><br><span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> EnB 5</span><br><span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> In1 9</span><br><span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> In2 8</span><br><span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> In3 7</span><br><span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> In4 6</span><br><br><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">setup</span><span class="hljs-params">()</span><br></span>&#123;<br>  <span class="hljs-comment">// All motor control pins are outputs</span><br>  <span class="hljs-built_in">pinMode</span>(EnA, <span class="hljs-literal">OUTPUT</span>);<br>  <span class="hljs-built_in">pinMode</span>(EnB, <span class="hljs-literal">OUTPUT</span>);<br>  <span class="hljs-built_in">pinMode</span>(In1, <span class="hljs-literal">OUTPUT</span>);<br>  <span class="hljs-built_in">pinMode</span>(In2, <span class="hljs-literal">OUTPUT</span>);<br>  <span class="hljs-built_in">pinMode</span>(In3, <span class="hljs-literal">OUTPUT</span>);<br>  <span class="hljs-built_in">pinMode</span>(In4, <span class="hljs-literal">OUTPUT</span>);<br>&#125;<br><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">goStraight</span><span class="hljs-params">()</span>   <span class="hljs-comment">//run both motors in the same direction</span><br></span>&#123;<br>  <span class="hljs-comment">// turn on motor A</span><br>  <span class="hljs-built_in">digitalWrite</span>(In1, <span class="hljs-literal">HIGH</span>);<br>  <span class="hljs-built_in">digitalWrite</span>(In2, <span class="hljs-literal">LOW</span>);<br>  <span class="hljs-comment">// set speed to 150 out 255</span><br>  <span class="hljs-built_in">analogWrite</span>(EnA, <span class="hljs-number">200</span>);<br>  <span class="hljs-comment">// turn on motor B</span><br>  <span class="hljs-built_in">digitalWrite</span>(In3, <span class="hljs-literal">HIGH</span>);<br>  <span class="hljs-built_in">digitalWrite</span>(In4, <span class="hljs-literal">LOW</span>);<br>  <span class="hljs-comment">// set speed to 150 out 255</span><br>  <span class="hljs-built_in">analogWrite</span>(EnB, <span class="hljs-number">200</span>);<br>  <span class="hljs-built_in">delay</span>(<span class="hljs-number">2000</span>);<br>  <span class="hljs-comment">// now turn off motors</span><br>  <span class="hljs-built_in">digitalWrite</span>(In1, <span class="hljs-literal">LOW</span>);<br>  <span class="hljs-built_in">digitalWrite</span>(In2, <span class="hljs-literal">LOW</span>);  <br>  <span class="hljs-built_in">digitalWrite</span>(In3, <span class="hljs-literal">LOW</span>);<br>  <span class="hljs-built_in">digitalWrite</span>(In4, <span class="hljs-literal">LOW</span>);<br>&#125;<br><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">loop</span><span class="hljs-params">()</span><br></span>&#123;<br>  goStraight();<br>  <span class="hljs-built_in">delay</span>(<span class="hljs-number">1000</span>);<br>&#125;<br></code></pre></td></tr></table></figure>
-<h3 id="驱动Step-moto-28BYJ-48"><a href="#驱动Step-moto-28BYJ-48" class="headerlink" title="驱动Step moto 28BYJ-48"></a>驱动Step moto 28BYJ-48</h3><p>该继步马达一共拥有五根线，则如果需要采用L298N来驱动，一个L298N那么只能驱动一个继步电机。</p>
-<p><img src="/2021/07/08/L298N%E9%A9%B1%E5%8A%A8%E7%94%B5%E6%9C%BA/L298n1.png" alt="1"></p>
-<p><img src="/2021/07/08/L298N%E9%A9%B1%E5%8A%A8%E7%94%B5%E6%9C%BA/L298n2.png" alt="2"></p>
-<figure class="highlight c"><table><tr><td class="code"><pre><code class="hljs c"><span class="hljs-comment">/* Example sketch to control a stepper motor with L298N motor driver, Arduino UNO and Stepper.h library. More info: &lt;https://www.makerguides.com&gt; */</span><br><br><span class="hljs-comment">// Include the Stepper library:</span><br><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;Stepper.h&gt;</span></span><br><br><span class="hljs-comment">// Define number of steps per revolution:</span><br><span class="hljs-keyword">const</span> <span class="hljs-keyword">int</span> stepsPerRevolution = <span class="hljs-number">200</span>;<br><br><span class="hljs-comment">// Initialize the stepper library on pins 8 through 11:</span><br><span class="hljs-built_in">Stepper</span> myStepper = <span class="hljs-built_in">Stepper</span>(stepsPerRevolution, <span class="hljs-number">8</span>, <span class="hljs-number">9</span>, <span class="hljs-number">10</span>, <span class="hljs-number">11</span>);<br><br><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">setup</span><span class="hljs-params">()</span> </span>&#123;<br>  <span class="hljs-comment">// Set the motor speed (RPMs):</span><br>  myStepper.<span class="hljs-built_in">setSpeed</span>(<span class="hljs-number">100</span>);<br>&#125;<br><br><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">loop</span><span class="hljs-params">()</span> </span>&#123;<br>  <span class="hljs-comment">// Step one revolution in one direction:</span><br>  myStepper.<span class="hljs-built_in">step</span>(<span class="hljs-number">500</span>);<br><br>  <span class="hljs-built_in">delay</span>(<span class="hljs-number">2000</span>);<br><br>  <span class="hljs-comment">// Step on revolution in the other direction:</span><br>  myStepper.<span class="hljs-built_in">step</span>(<span class="hljs-number">-500</span>);<br><br>  <span class="hljs-built_in">delay</span>(<span class="hljs-number">2000</span>);<br>&#125;<br></code></pre></td></tr></table></figure>
-<p>参考连接：</p>
-<p><a href="https://www.makerguides.com/l298n-stepper-motor-arduino-tutorial/" target="_blank" rel="noopener">Stepper Motor with L298N and Arduino Tutorial (4 Examples)</a></p>
-<p><a href="https://www.teachmemicro.com/use-l298n-motor-driver/" target="_blank" rel="noopener">How to Use L298N Motor Driver | Microcontroller Tutorials</a></p>
-<p><a href="https://rjdlee.com/arduino-wemos-with-l298n-controller-and-28byj-48-stepper-motor/" target="_blank" rel="noopener">Arduino WeMos with L298N Controller and 28BYJ-48 Stepper Motor</a></p>
-]]></content>
-      <categories>
-        <category>IOT</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>L1-046整除光棍（模拟大数除法）</title>
-    <url>/2020/01/05/L1-046%E6%95%B4%E9%99%A4%E5%85%89%E6%A3%8D%EF%BC%88%E6%A8%A1%E6%8B%9F%E5%A4%A7%E6%95%B0%E9%99%A4%E6%B3%95%EF%BC%89/</url>
-    <content><![CDATA[<p>这里所谓的“光棍”，并不是指单身汪啦~ 说的是全部由1组成的数字，比如1、11、111、1111等。传说任何一个光棍都能被一个不以5结尾的奇数整除。比如，111111就可以被13整除。 现在，你的程序要读入一个整数<code>x</code>，这个整数一定是奇数并且不以5结尾。然后，经过计算，输出两个数字：第一个数字<code>s</code>，表示<code>x</code>乘以<code>s</code>是一个光棍，第二个数字<code>n</code>是这个光棍的位数。这样的解当然不是唯一的,题目要求你输出最小的解。</p>
-<p>提示：一个显然的办法是逐渐增加光棍的位数，直到可以整除<code>x</code>为止。但难点在于，<code>s</code>可能是个非常大的数 —— 比如，程序输入31，那么就输出3584229390681和15，因为31乘以3584229390681的结果是111111111111111，一共15个1。</p>
-<h3 id="输入格式："><a href="#输入格式：" class="headerlink" title="输入格式："></a>输入格式：</h3><p>输入在一行中给出一个不以5结尾的正奇数<code>x</code>（&lt;1000）。</p>
-<h3 id="输出格式："><a href="#输出格式：" class="headerlink" title="输出格式："></a>输出格式：</h3><p>在一行中输出相应的最小的<code>s</code>和<code>n</code>，其间以1个空格分隔。</p>
-<h3 id="输入样例："><a href="#输入样例：" class="headerlink" title="输入样例："></a>输入样例：</h3><figure class="highlight plain"><table><tr><td class="code"><pre><code class="hljs in">31<br></code></pre></td></tr></table></figure>
-<h3 id="输出样例："><a href="#输出样例：" class="headerlink" title="输出样例："></a>输出样例：</h3><figure class="highlight plain"><table><tr><td class="code"><pre><code class="hljs out">3584229390681 15<br></code></pre></td></tr></table></figure>
-<h3 id="题目思路分析："><a href="#题目思路分析：" class="headerlink" title="题目思路分析："></a>题目思路分析：</h3><p>第一次接触大数除法的模拟，在经历过一番思考后，选择了百度。。。</p>
-<p>忽然发现思路其实就是模拟人的思路：假设我们也不知道多少个1才能将31整除。那么怎么得到那个很长的数呢？</p>
-<ol>
-<li>从1，11，111，一个一个去尝试。显然，不成立。（当然，我们可以直接从比除数大的111开始除，这也是后面变成的思路）</li>
-<li>但如果我们实验过几次第一种方法后，我们会发现，其实我们只是在每一次的计算后（发现不能整除）我们就会添加一个1继续去除。之前的商就保留下来了，和我们使用竖式除法是一样的。我们只是需要每次除不尽的时候，填上一个1继续除便是了，之前的商直接输出不是更好。</li>
-</ol>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><code class="hljs cpp"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span><span class="hljs-meta-string">&lt;bits/stdc++.h&gt;</span></span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> <span class="hljs-built_in">std</span>;<br><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span><br></span>&#123;<br>	<span class="hljs-keyword">int</span> x,s=<span class="hljs-number">0</span>,n=<span class="hljs-number">0</span>;<span class="hljs-comment">//除数，被除数，位数 </span><br>	<span class="hljs-built_in">cin</span>&gt;&gt;x;<br>	<span class="hljs-keyword">while</span>(s&lt;x)<br>	&#123;<br>		s=s*<span class="hljs-number">10</span>+<span class="hljs-number">1</span>;<span class="hljs-comment">//被除数末位添1直到不小于被除数 </span><br>		n++;<br>	&#125;<br>	<span class="hljs-keyword">while</span>(<span class="hljs-literal">true</span>)<span class="hljs-comment">//除法 </span><br>	&#123;<br>		<span class="hljs-built_in">cout</span>&lt;&lt;s/x;<span class="hljs-comment">//输出商（就作为开头咯） </span><br>		s%=x;<span class="hljs-comment">//被除数更改为其余数 </span><br>		<span class="hljs-keyword">if</span>(s==<span class="hljs-number">0</span>)<span class="hljs-keyword">break</span>;<span class="hljs-comment">//余数为0则结束（否则加1继续） </span><br>		s=s*<span class="hljs-number">10</span>+<span class="hljs-number">1</span>;<span class="hljs-comment">//被除数末位加上1</span><br>		n++; <br>	&#125;<br>	<span class="hljs-built_in">cout</span>&lt;&lt;<span class="hljs-string">' '</span>&lt;&lt;n;<span class="hljs-comment">//之前已经输出了商（很大的数）</span><br>	<span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
-<p><strong>大数模拟，在没有更好的方法下，不如试试康康如果是我们，我们是怎么做的。。。</strong></p>
-]]></content>
-      <categories>
-        <category>编程</category>
-      </categories>
-      <tags>
-        <tag>pta</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>L1-050倒数第N个字符串</title>
     <url>/2020/01/06/L1-050%E5%80%92%E6%95%B0%E7%AC%ACN%E4%B8%AA%E5%AD%97%E7%AC%A6%E4%B8%B2/</url>
     <content><![CDATA[<p>给定一个完全由小写英文字母组成的字符串等差递增序列，该序列中的每个字符串的长度固定为 L，从 L 个 a 开始，以 1 为步长递增。例如当 L 为 3 时，序列为 { aaa, aab, aac, …, aaz, aba, abb, …, abz, …, zzz  }。这个序列的倒数第27个字符串就是 zyz。对于任意给定的 L，本题要求你给出对应序列倒数第 N 个字符串。</p>
@@ -575,6 +546,35 @@
       <tags>
         <tag>pta</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>L298N驱动电机</title>
+    <url>/2021/07/08/L298N%E9%A9%B1%E5%8A%A8%E7%94%B5%E6%9C%BA/</url>
+    <content><![CDATA[<p>简要介绍了L298N的接线方式，驱动原理及相关简要代码</p>
+  <a id="more"></a>
+<h2 id="引脚介绍"><a href="#引脚介绍" class="headerlink" title="引脚介绍"></a>引脚介绍</h2><p><img src="/2021/07/08/L298N%E9%A9%B1%E5%8A%A8%E7%94%B5%E6%9C%BA/L298N.png" alt="L298N"></p>
+<h2 id="需要注意事项："><a href="#需要注意事项：" class="headerlink" title="需要注意事项："></a>需要注意事项：</h2><p>L298N的+12V需要电压在 +7VDC to +35VDC.如果使用的电源超过了12V那么请将跳帽拔掉。</p>
+<p>同时需要 mcu 和 L298N 供地。</p>
+<p>H桥中，四个input对应四个output(Terminal)</p>
+<p><img src="/2021/07/08/L298N%E9%A9%B1%E5%8A%A8%E7%94%B5%E6%9C%BA/1.png" alt="1"></p>
+<p><img src="/2021/07/08/L298N%E9%A9%B1%E5%8A%A8%E7%94%B5%E6%9C%BA/2.png" alt="2"></p>
+<p>通过对于IN的控制就可以控制out，促使其连接到的电机正转或着反转（并可以控制速度，PWM？）</p>
+<h2 id="具体操作逻辑："><a href="#具体操作逻辑：" class="headerlink" title="具体操作逻辑："></a>具体操作逻辑：</h2><h3 id="对于普通的马达电机："><a href="#对于普通的马达电机：" class="headerlink" title="对于普通的马达电机："></a>对于普通的马达电机：</h3><p>那么只需要将其正负连接至out1，out2，通过in1，in2来控制正负就可以驱动了。</p>
+<p>对于Arduino 来说更为简单。</p>
+<p>其中ena非必需（采用跳帽，也可达到效果）</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><code class="hljs c"><span class="hljs-comment">//Motor Connections</span><br><span class="hljs-comment">//Change this if you wish to use another diagram</span><br><span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> EnA 10</span><br><span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> EnB 5</span><br><span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> In1 9</span><br><span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> In2 8</span><br><span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> In3 7</span><br><span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> In4 6</span><br><br><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">setup</span><span class="hljs-params">()</span><br></span>&#123;<br>  <span class="hljs-comment">// All motor control pins are outputs</span><br>  <span class="hljs-built_in">pinMode</span>(EnA, <span class="hljs-literal">OUTPUT</span>);<br>  <span class="hljs-built_in">pinMode</span>(EnB, <span class="hljs-literal">OUTPUT</span>);<br>  <span class="hljs-built_in">pinMode</span>(In1, <span class="hljs-literal">OUTPUT</span>);<br>  <span class="hljs-built_in">pinMode</span>(In2, <span class="hljs-literal">OUTPUT</span>);<br>  <span class="hljs-built_in">pinMode</span>(In3, <span class="hljs-literal">OUTPUT</span>);<br>  <span class="hljs-built_in">pinMode</span>(In4, <span class="hljs-literal">OUTPUT</span>);<br>&#125;<br><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">goStraight</span><span class="hljs-params">()</span>   <span class="hljs-comment">//run both motors in the same direction</span><br></span>&#123;<br>  <span class="hljs-comment">// turn on motor A</span><br>  <span class="hljs-built_in">digitalWrite</span>(In1, <span class="hljs-literal">HIGH</span>);<br>  <span class="hljs-built_in">digitalWrite</span>(In2, <span class="hljs-literal">LOW</span>);<br>  <span class="hljs-comment">// set speed to 150 out 255</span><br>  <span class="hljs-built_in">analogWrite</span>(EnA, <span class="hljs-number">200</span>);<br>  <span class="hljs-comment">// turn on motor B</span><br>  <span class="hljs-built_in">digitalWrite</span>(In3, <span class="hljs-literal">HIGH</span>);<br>  <span class="hljs-built_in">digitalWrite</span>(In4, <span class="hljs-literal">LOW</span>);<br>  <span class="hljs-comment">// set speed to 150 out 255</span><br>  <span class="hljs-built_in">analogWrite</span>(EnB, <span class="hljs-number">200</span>);<br>  <span class="hljs-built_in">delay</span>(<span class="hljs-number">2000</span>);<br>  <span class="hljs-comment">// now turn off motors</span><br>  <span class="hljs-built_in">digitalWrite</span>(In1, <span class="hljs-literal">LOW</span>);<br>  <span class="hljs-built_in">digitalWrite</span>(In2, <span class="hljs-literal">LOW</span>);  <br>  <span class="hljs-built_in">digitalWrite</span>(In3, <span class="hljs-literal">LOW</span>);<br>  <span class="hljs-built_in">digitalWrite</span>(In4, <span class="hljs-literal">LOW</span>);<br>&#125;<br><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">loop</span><span class="hljs-params">()</span><br></span>&#123;<br>  goStraight();<br>  <span class="hljs-built_in">delay</span>(<span class="hljs-number">1000</span>);<br>&#125;<br></code></pre></td></tr></table></figure>
+<h3 id="驱动Step-moto-28BYJ-48"><a href="#驱动Step-moto-28BYJ-48" class="headerlink" title="驱动Step moto 28BYJ-48"></a>驱动Step moto 28BYJ-48</h3><p>该继步马达一共拥有五根线，则如果需要采用L298N来驱动，一个L298N那么只能驱动一个继步电机。</p>
+<p><img src="/2021/07/08/L298N%E9%A9%B1%E5%8A%A8%E7%94%B5%E6%9C%BA/L298n1.png" alt="1"></p>
+<p><img src="/2021/07/08/L298N%E9%A9%B1%E5%8A%A8%E7%94%B5%E6%9C%BA/L298n2.png" alt="2"></p>
+<figure class="highlight c"><table><tr><td class="code"><pre><code class="hljs c"><span class="hljs-comment">/* Example sketch to control a stepper motor with L298N motor driver, Arduino UNO and Stepper.h library. More info: &lt;https://www.makerguides.com&gt; */</span><br><br><span class="hljs-comment">// Include the Stepper library:</span><br><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;Stepper.h&gt;</span></span><br><br><span class="hljs-comment">// Define number of steps per revolution:</span><br><span class="hljs-keyword">const</span> <span class="hljs-keyword">int</span> stepsPerRevolution = <span class="hljs-number">200</span>;<br><br><span class="hljs-comment">// Initialize the stepper library on pins 8 through 11:</span><br><span class="hljs-built_in">Stepper</span> myStepper = <span class="hljs-built_in">Stepper</span>(stepsPerRevolution, <span class="hljs-number">8</span>, <span class="hljs-number">9</span>, <span class="hljs-number">10</span>, <span class="hljs-number">11</span>);<br><br><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">setup</span><span class="hljs-params">()</span> </span>&#123;<br>  <span class="hljs-comment">// Set the motor speed (RPMs):</span><br>  myStepper.<span class="hljs-built_in">setSpeed</span>(<span class="hljs-number">100</span>);<br>&#125;<br><br><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">loop</span><span class="hljs-params">()</span> </span>&#123;<br>  <span class="hljs-comment">// Step one revolution in one direction:</span><br>  myStepper.<span class="hljs-built_in">step</span>(<span class="hljs-number">500</span>);<br><br>  <span class="hljs-built_in">delay</span>(<span class="hljs-number">2000</span>);<br><br>  <span class="hljs-comment">// Step on revolution in the other direction:</span><br>  myStepper.<span class="hljs-built_in">step</span>(<span class="hljs-number">-500</span>);<br><br>  <span class="hljs-built_in">delay</span>(<span class="hljs-number">2000</span>);<br>&#125;<br></code></pre></td></tr></table></figure>
+<p>参考连接：</p>
+<p><a href="https://www.makerguides.com/l298n-stepper-motor-arduino-tutorial/" target="_blank" rel="noopener">Stepper Motor with L298N and Arduino Tutorial (4 Examples)</a></p>
+<p><a href="https://www.teachmemicro.com/use-l298n-motor-driver/" target="_blank" rel="noopener">How to Use L298N Motor Driver | Microcontroller Tutorials</a></p>
+<p><a href="https://rjdlee.com/arduino-wemos-with-l298n-controller-and-28byj-48-stepper-motor/" target="_blank" rel="noopener">Arduino WeMos with L298N Controller and 28BYJ-48 Stepper Motor</a></p>
+]]></content>
+      <categories>
+        <category>IOT</category>
+      </categories>
   </entry>
   <entry>
     <title>LinkedList链表</title>
@@ -685,6 +685,38 @@ struct Node* next;
       </tags>
   </entry>
   <entry>
+    <title>YoloV5 学习与训练</title>
+    <url>/2022/02/14/YoloV5%E5%AD%A6%E4%B9%A0%E4%B8%8E%E8%AE%AD%E7%BB%83/</url>
+    <content><![CDATA[<p>简要学习 YoloV5，通过在云端训练和本地推理，初步入门 ML 的图形识别场景。实现对特定物体的检测和框选。</p>
+  <a id="more"></a>
+<p>在进行物体识别的图形应用场景下，看到 Yolo 的普遍应用，便希望自己能够用到 [[YoloV5]] 框架，同时在整个机器学习，人工智能，学习的环境下，图像类的机器学习是最为热门和具有实用性质的内容。而区别于物体分类，物体检测相对更为复杂，但是也更具有实用性和拓展性，能够在众多的场景和众多设备下进行应用与部署。因此特地进行 Yolo 的学习，希望能够尽快掌握自定义数据集的物体检测的能力。<br>积累了关于 物体识别 的相关技术栈经验。</p>
+<p>课程主要跟随 <a href="https://www.bilibili.com/video/BV1tf4y1t7ru" target="_blank" rel="noopener">Bilibili 的网课</a> 进行学习。</p>
+<h2 id="安装-YoloV5-5-0-时的问题"><a href="#安装-YoloV5-5-0-时的问题" class="headerlink" title="安装 YoloV5 5.0 时的问题"></a>安装 YoloV5 5.0 时的问题</h2><p>直接下载 <a href="https://github.com/ultralytics/yolov5/tree/v5.0" target="_blank" rel="noopener">tag 5.0 版本</a> 的源代码进行学习即可。<br>如果因为网络环境打不开，可以通过 Gitee 的 <a href="https://gitee.com/monkeycc/yolov5/tree/v5.0" target="_blank" rel="noopener">5.0 链接</a> 进行下载</p>
+<p>下载后，通过 Pycharm 打开（非要用其他的也 OK），继而在 Conda 或其他 Python 选择好的环境下，根据 requerments.txt 进行 pip install ~即可。</p>
+<h3 id="pycocotools-安装失败"><a href="#pycocotools-安装失败" class="headerlink" title="pycocotools 安装失败"></a>pycocotools 安装失败</h3><p>而对于 特殊的 pycocotools ，很难在 windows 上进行安装，目前采用的简单的方法是：</p>
+<blockquote>
+<p>GitHub 上有 windows 版 pycocotools 了。<br>pip install pycocotools-windows<br>win10+anaconda 环境亲测有效</p>
+</blockquote>
+<p>在打开 detect.py 进行运行（相当于 Hello world ）时，可能会出现一些报错提醒你有些插件没有安装，继续 pip install 即可</p>
+<p>对于 其他问题，多半通过复制最后一行代码，百度即可找到方案</p>
+<h3 id="出现-Can’t-get-attribute-SPPF-on-module-models-common"><a href="#出现-Can’t-get-attribute-SPPF-on-module-models-common" class="headerlink" title="出现 Can’t get attribute SPPF on module models.common"></a>出现 Can’t get attribute SPPF on module models.common</h3><p>运行 yolov5 下面 Tags5 的代码,出现了这个报错：<br>AttributeError: Cant get attribute SPPF on module models.common from e: \pyWorkSpace\yolov5-5.0\models\common.py</p>
+<p>解决方案是：去 Tags6 里面的 model/common.py 里面去找到这个 SPPF 的类,把它拷过来到你这个 Tags5 的 model/common.py 里面,这样你的代码就也有这个类了,还要引入一个 warnings 包就行了！</p>
+<p>有的同学找不到 SPPF 这个类，那我现在直接粘贴在这里，你们只需要复制到你们的 common.py 里面即可，记得把 import warnings 放在上面去：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">import</span> warnings<br><br><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">SPPF</span><span class="hljs-params">(nn.Module)</span>:</span><br>    <span class="hljs-comment"># Spatial Pyramid Pooling - Fast (SPPF) layer for YOLOv5 by Glenn Jocher</span><br>    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__init__</span><span class="hljs-params">(self, c1, c2, k=<span class="hljs-number">5</span>)</span>:</span>  <span class="hljs-comment"># equivalent to SPP(k=(5, 9, 13))</span><br>        super().__init__()<br>        c_ = c1 // <span class="hljs-number">2</span>  <span class="hljs-comment"># hidden channels</span><br>        self.cv1 = Conv(c1, c_, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>)<br>        self.cv2 = Conv(c_ * <span class="hljs-number">4</span>, c2, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>)<br>        self.m = nn.MaxPool2d(kernel_size=k, stride=<span class="hljs-number">1</span>, padding=k // <span class="hljs-number">2</span>)<br><br>    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">forward</span><span class="hljs-params">(self, x)</span>:</span><br>        x = self.cv1(x)<br>        <span class="hljs-keyword">with</span> warnings.catch_warnings():<br>            warnings.simplefilter(<span class="hljs-string">'ignore'</span>)  <span class="hljs-comment"># suppress torch 1.9.0 max_pool2d() warning</span><br>            y1 = self.m(x)<br>            y2 = self.m(y1)<br>            <span class="hljs-keyword">return</span> self.cv2(torch.cat([x, y1, y2, self.m(y2)], <span class="hljs-number">1</span>))<br></code></pre></td></tr></table></figure>
+<h2 id="在运行-detect-或-train-时，提示-缺少-pycocotools"><a href="#在运行-detect-或-train-时，提示-缺少-pycocotools" class="headerlink" title="在运行 detect 或 train 时，提示 缺少 pycocotools"></a>在运行 detect 或 train 时，提示 缺少 pycocotools</h2><p>这是因为在运行的时候，程序会去检测 requerments 是否完全达标，在 requerments 里面将 pycocotools 屏蔽 ‘#’ 即可，因为我们已经安装了 pycocotools-windows ，而其其意义不大。</p>
+<h2 id="运行-YoloV5"><a href="#运行-YoloV5" class="headerlink" title="运行 YoloV5"></a>运行 YoloV5</h2><p>通过 在 Terminal 运行<br><code>python detect.py</code><br>或者 Pycharm 在 detect 文件下的运行</p>
+<p>当然，我们在这个下面进行运行视频，也是可以的，但其实也是一帧一帧进行处理的。</p>
+<p>之后，在 [[Colab]] 上进行 YoloV5 的学习不仅能够快速方便地配置环境，而且能够充分利用云服务器的 GPU 进行训练。<br>Colab 的服务器上 GPU，免费的一半是 K80，12G ，粗略计算 比本人笔记本的 Cpu 推理，机器学习的速度快 30 倍。<br>之后通过 Google Driver 进行保存相关的模型数据，自己是将其作为了一个大的压缩包，给放到云盘上了，方便下次直接恢复运行的环境。</p>
+<p>当然之后又通过 <a href="https://aistudio.baidu.com/aistudio/projectdetail/2495241?channelType=0&amp;channel=0" target="_blank" rel="noopener">螺丝螺母</a> 分类的项目通过 Yolov5 进行了重新训练，主要耗费时间的就是 数据集格式的转换，通过自己的低水平 Python 代码和高水平的 GitHub AutoPiolt 的协作，写了好几个小时，才将其转换过来，好在跑起来之后 的效果不错，97% 的准确率。</p>
+]]></content>
+      <categories>
+        <category>ML</category>
+      </categories>
+      <tags>
+        <tag>YoloV5</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>P1023税收与补贴问题</title>
     <url>/2020/02/29/P1023%E7%A8%8E%E6%94%B6%E4%B8%8E%E8%A1%A5%E8%B4%B4%E9%97%AE%E9%A2%98/</url>
     <content><![CDATA[<h2 id="题目背景"><a href="#题目背景" class="headerlink" title="题目背景"></a>题目背景</h2><p>每样商品的价格越低，其销量就会相应增大。现已知某种商品的成本及其在若干价位上的销量（产品不会低于成本销售），并假设相邻价位间销量的变化是线性的且在价格高于给定的最高价位后，销量以某固定数值递减。（我们假设价格及销售量都是整数）</p>
@@ -755,38 +787,6 @@ struct Node* next;
       </categories>
       <tags>
         <tag>洛谷</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>YoloV5 学习与训练</title>
-    <url>/2022/02/14/YoloV5%E5%AD%A6%E4%B9%A0%E4%B8%8E%E8%AE%AD%E7%BB%83/</url>
-    <content><![CDATA[<p>简要学习 YoloV5，通过在云端训练和本地推理，初步入门 ML 的图形识别场景。实现对特定物体的检测和框选。</p>
-  <a id="more"></a>
-<p>在进行物体识别的图形应用场景下，看到 Yolo 的普遍应用，便希望自己能够用到 [[YoloV5]] 框架，同时在整个机器学习，人工智能，学习的环境下，图像类的机器学习是最为热门和具有实用性质的内容。而区别于物体分类，物体检测相对更为复杂，但是也更具有实用性和拓展性，能够在众多的场景和众多设备下进行应用与部署。因此特地进行 Yolo 的学习，希望能够尽快掌握自定义数据集的物体检测的能力。<br>积累了关于 物体识别 的相关技术栈经验。</p>
-<p>课程主要跟随 <a href="https://www.bilibili.com/video/BV1tf4y1t7ru" target="_blank" rel="noopener">Bilibili 的网课</a> 进行学习。</p>
-<h2 id="安装-YoloV5-5-0-时的问题"><a href="#安装-YoloV5-5-0-时的问题" class="headerlink" title="安装 YoloV5 5.0 时的问题"></a>安装 YoloV5 5.0 时的问题</h2><p>直接下载 <a href="https://github.com/ultralytics/yolov5/tree/v5.0" target="_blank" rel="noopener">tag 5.0 版本</a> 的源代码进行学习即可。<br>如果因为网络环境打不开，可以通过 Gitee 的 <a href="https://gitee.com/monkeycc/yolov5/tree/v5.0" target="_blank" rel="noopener">5.0 链接</a> 进行下载</p>
-<p>下载后，通过 Pycharm 打开（非要用其他的也 OK），继而在 Conda 或其他 Python 选择好的环境下，根据 requerments.txt 进行 pip install ~即可。</p>
-<h3 id="pycocotools-安装失败"><a href="#pycocotools-安装失败" class="headerlink" title="pycocotools 安装失败"></a>pycocotools 安装失败</h3><p>而对于 特殊的 pycocotools ，很难在 windows 上进行安装，目前采用的简单的方法是：</p>
-<blockquote>
-<p>GitHub 上有 windows 版 pycocotools 了。<br>pip install pycocotools-windows<br>win10+anaconda 环境亲测有效</p>
-</blockquote>
-<p>在打开 detect.py 进行运行（相当于 Hello world ）时，可能会出现一些报错提醒你有些插件没有安装，继续 pip install 即可</p>
-<p>对于 其他问题，多半通过复制最后一行代码，百度即可找到方案</p>
-<h3 id="出现-Can’t-get-attribute-SPPF-on-module-models-common"><a href="#出现-Can’t-get-attribute-SPPF-on-module-models-common" class="headerlink" title="出现 Can’t get attribute SPPF on module models.common"></a>出现 Can’t get attribute SPPF on module models.common</h3><p>运行 yolov5 下面 Tags5 的代码,出现了这个报错：<br>AttributeError: Cant get attribute SPPF on module models.common from e: \pyWorkSpace\yolov5-5.0\models\common.py</p>
-<p>解决方案是：去 Tags6 里面的 model/common.py 里面去找到这个 SPPF 的类,把它拷过来到你这个 Tags5 的 model/common.py 里面,这样你的代码就也有这个类了,还要引入一个 warnings 包就行了！</p>
-<p>有的同学找不到 SPPF 这个类，那我现在直接粘贴在这里，你们只需要复制到你们的 common.py 里面即可，记得把 import warnings 放在上面去：</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">import</span> warnings<br><br><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">SPPF</span><span class="hljs-params">(nn.Module)</span>:</span><br>    <span class="hljs-comment"># Spatial Pyramid Pooling - Fast (SPPF) layer for YOLOv5 by Glenn Jocher</span><br>    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__init__</span><span class="hljs-params">(self, c1, c2, k=<span class="hljs-number">5</span>)</span>:</span>  <span class="hljs-comment"># equivalent to SPP(k=(5, 9, 13))</span><br>        super().__init__()<br>        c_ = c1 // <span class="hljs-number">2</span>  <span class="hljs-comment"># hidden channels</span><br>        self.cv1 = Conv(c1, c_, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>)<br>        self.cv2 = Conv(c_ * <span class="hljs-number">4</span>, c2, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>)<br>        self.m = nn.MaxPool2d(kernel_size=k, stride=<span class="hljs-number">1</span>, padding=k // <span class="hljs-number">2</span>)<br><br>    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">forward</span><span class="hljs-params">(self, x)</span>:</span><br>        x = self.cv1(x)<br>        <span class="hljs-keyword">with</span> warnings.catch_warnings():<br>            warnings.simplefilter(<span class="hljs-string">'ignore'</span>)  <span class="hljs-comment"># suppress torch 1.9.0 max_pool2d() warning</span><br>            y1 = self.m(x)<br>            y2 = self.m(y1)<br>            <span class="hljs-keyword">return</span> self.cv2(torch.cat([x, y1, y2, self.m(y2)], <span class="hljs-number">1</span>))<br></code></pre></td></tr></table></figure>
-<h2 id="在运行-detect-或-train-时，提示-缺少-pycocotools"><a href="#在运行-detect-或-train-时，提示-缺少-pycocotools" class="headerlink" title="在运行 detect 或 train 时，提示 缺少 pycocotools"></a>在运行 detect 或 train 时，提示 缺少 pycocotools</h2><p>这是因为在运行的时候，程序会去检测 requerments 是否完全达标，在 requerments 里面将 pycocotools 屏蔽 ‘#’ 即可，因为我们已经安装了 pycocotools-windows ，而其其意义不大。</p>
-<h2 id="运行-YoloV5"><a href="#运行-YoloV5" class="headerlink" title="运行 YoloV5"></a>运行 YoloV5</h2><p>通过 在 Terminal 运行<br><code>python detect.py</code><br>或者 Pycharm 在 detect 文件下的运行</p>
-<p>当然，我们在这个下面进行运行视频，也是可以的，但其实也是一帧一帧进行处理的。</p>
-<p>之后，在 [[Colab]] 上进行 YoloV5 的学习不仅能够快速方便地配置环境，而且能够充分利用云服务器的 GPU 进行训练。<br>Colab 的服务器上 GPU，免费的一半是 K80，12G ，粗略计算 比本人笔记本的 Cpu 推理，机器学习的速度快 30 倍。<br>之后通过 Google Driver 进行保存相关的模型数据，自己是将其作为了一个大的压缩包，给放到云盘上了，方便下次直接恢复运行的环境。</p>
-<p>当然之后又通过 <a href="https://aistudio.baidu.com/aistudio/projectdetail/2495241?channelType=0&amp;channel=0" target="_blank" rel="noopener">螺丝螺母</a> 分类的项目通过 Yolov5 进行了重新训练，主要耗费时间的就是 数据集格式的转换，通过自己的低水平 Python 代码和高水平的 GitHub AutoPiolt 的协作，写了好几个小时，才将其转换过来，好在跑起来之后 的效果不错，97% 的准确率。</p>
-]]></content>
-      <categories>
-        <category>ML</category>
-      </categories>
-      <tags>
-        <tag>YoloV5</tag>
       </tags>
   </entry>
   <entry>
@@ -905,6 +905,64 @@ struct Node* next;
       </tags>
   </entry>
   <entry>
+    <title>javaconstructors构造函数</title>
+    <url>/2020/02/11/javaconstructors%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0/</url>
+    <content><![CDATA[<blockquote>
+<p>Constructors are used to assign values to the class variables at the time of object creation, either explicitly done by the programmer or by Java itself (default constructor).</p>
+</blockquote>
+<p>在创建对象时，可以使用构造函数将值分配给类变量，这些值可以由程序员显式完成，也可以由Java本身（默认构造函数）完成。</p>
+<p><a href="https://www.geeksforgeeks.org/constructors-in-java/" target="_blank" rel="noopener">Constructors in Java - GeeksforGeeks</a></p>
+<p><strong>Rules for writing Constructor:</strong></p>
+<ul>
+<li><p>Constructor(s) of a class must has same name as the class name in which it resides.</p>
+<p>构造函数的名字和类名必须一致。</p>
+</li>
+<li><p>A constructor in Java can not be abstract, final, static and Synchronized.</p>
+<p>java中的构造函数不能是抽象的，最终的，静态的和同步的。</p>
+</li>
+<li><p>Access modifiers can be used in constructor declaration to control its access i.e which other class can call the constructor.</p>
+<p>可以在构造函数声明中使用访问修饰符来控制其访问，即哪个其他类可以调用构造函数。</p>
+</li>
+</ul>
+<h3 id="构造函数的类型："><a href="#构造函数的类型：" class="headerlink" title="构造函数的类型："></a>构造函数的类型：</h3><ol>
+<li><p><strong>无参构造函数</strong>：</p>
+<p>没有参数的构造函数被认为时默认构造函数。若我们没有在类中定义构造函数，那么编译器会自己定义一个无参数的构造函数。Default constructor provides the default values to the object like 0, null, etc. depending on the type.（默认的构造函数提供默认的值给对象0，null，等，更具他们的类型不同）</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><code class="hljs java"><span class="hljs-comment">// Java Program to illustrate calling a // no-argument constructor import [java.io](http://java.io).*;</span><br><br><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Geek</span> </span>&#123; <span class="hljs-keyword">int</span> num; String name;<br><br> <span class="hljs-comment">// this would be invoked while an object </span><br> <span class="hljs-comment">// of that class is created. </span><br> Geek() <br> &#123; <br> 	System.out.println(<span class="hljs-string">"Constructor called"</span>); <br> &#125; <br><br><br>&#125;<br><br><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">GFG</span> </span>&#123; <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span> <span class="hljs-params">(String[] args)</span> </span>&#123; <span class="hljs-comment">// this would invoke default constructor. Geek geek1 = new Geek();</span><br><br> 	<span class="hljs-comment">// Default constructor provides the default </span><br> 	<span class="hljs-comment">// values to the object like 0, null </span><br> 	System.out.println(geek1.name); <br> 	System.out.println(geek1.num); <br> &#125; <br><br><br>&#125;<br></code></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>0utput :</p>
+<figure class="highlight delphi"><table><tr><td class="code"><pre><code class="hljs delphi"><span class="hljs-function"><span class="hljs-keyword">Constructor</span> <span class="hljs-title">called</span><br><span class="hljs-title">null</span><br>0</span><br></code></pre></td></tr></table></figure>
+<p><strong>2. 有参构造函数：</strong></p>
+<p>If we want to initialize fields of the class with your own values, then use a parameterized constructor.如果我们想使用我们自己的值去给类中的变量赋值的话，那么使用参数化的构造函数（有参构造函数）。</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><code class="hljs java"><span class="hljs-comment">// Java Program to illustrate calling of </span><br><span class="hljs-comment">// parameterized constructor. </span><br><span class="hljs-keyword">import</span> java.io.*; <br><br><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Geek</span> <br></span>&#123; <br>	<span class="hljs-comment">// data members of the class. </span><br>	String name; <br>	<span class="hljs-keyword">int</span> id; <br><br>	<span class="hljs-comment">// constructor would initialize data members </span><br>	<span class="hljs-comment">// with the values of passed arguments while </span><br>	<span class="hljs-comment">// object of that class created. </span><br>	Geek(String name, <span class="hljs-keyword">int</span> id) <br>	&#123; <br>		<span class="hljs-keyword">this</span>.name = name; <br>		<span class="hljs-keyword">this</span>.id = id; <br>	&#125; <br>&#125; <br><br><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">GFG</span> <br></span>&#123; <br>	<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span> <span class="hljs-params">(String[] args)</span> <br>	</span>&#123; <br>		<span class="hljs-comment">// this would invoke the parameterized constructor. </span><br>		Geek geek1 = <span class="hljs-keyword">new</span> Geek(<span class="hljs-string">"adam"</span>, <span class="hljs-number">1</span>); <br>		System.out.println(<span class="hljs-string">"GeekName :"</span> + geek1.name + <br>						<span class="hljs-string">" and GeekId :"</span> + geek1.id); <br>	&#125; <br>&#125;<br></code></pre></td></tr></table></figure>
+<p>Output:</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><code class="hljs css"><span class="hljs-selector-tag">GeekName</span> <span class="hljs-selector-pseudo">:adam</span> <span class="hljs-selector-tag">and</span> <span class="hljs-selector-tag">GeekId</span> <span class="hljs-selector-pseudo">:1</span><br></code></pre></td></tr></table></figure>
+<p>也就是说<strong>每一个类里面都有一个构造函数用来给变量赋值</strong>。如果你自己不去写这个构造函数，那么编译器会写一个。这样就可以给你创建的所有变量默认赋值了。（如果构造函数有参数那么，就是你给定的值；如果没有参数，那么就是0或者时null)。对了，构造函数中也可以写其他的语句，可以夹带私货。</p>
+<h2 id="使用构造参数时的一些其他问题："><a href="#使用构造参数时的一些其他问题：" class="headerlink" title="使用构造参数时的一些其他问题："></a>使用构造参数时的一些其他问题：</h2><ul>
+<li><p><strong>Does constructor return any value?</strong> （有返回值么？没有，但可以写return）</p>
+<p>There are no “return value” statements in constructor, but constructor returns current class instance. We can write ‘return’ inside a constructor.</p>
+</li>
+<li><p><strong>Constructor Overloading.</strong>（我们同样将其视作函数【本来就是】，当然也可以像函数一样，通过参数的类型，数目和顺序的不同来区分不同的同名构造函数）</p>
+<p>Like methods, we can overload constructors for creating objects in different ways. Compiler differentiates constructors on the basis of numbers of parameters, types of the parameters and order of the parameters.</p>
+</li>
+</ul>
+<blockquote>
+<p><strong>How constructors are different from methods in Java?构造函数和函数的区别</strong></p>
+</blockquote>
+<ul>
+<li>Constructor(s) must have the same name as the class within which it defined while it is not necessary for the method in java.构造函数的名字只能和类名相同，而且也不是必要的。</li>
+<li>Constructor(s) do not return any type while method(s) have the return type or <strong>void</strong> if does not return any value.构造函数没有返回值</li>
+<li>Constructor is called only once at the time of Object creation while method(s) can be called any numbers of time.构造函数只有在对象被创建的时候调用一次，而函数可以无限次被调用。</li>
+</ul>
+]]></content>
+      <categories>
+        <category>java</category>
+      </categories>
+      <tags>
+        <tag>java构造函数</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>java中各种类的跳转例题分析</title>
     <url>/2020/04/01/java%E4%B8%AD%E5%90%84%E7%A7%8D%E7%B1%BB%E7%9A%84%E8%B7%B3%E8%BD%AC%E4%BE%8B%E9%A2%98%E5%88%86%E6%9E%90/</url>
     <content><![CDATA[<p>在学习java的继承的过程中遇到这样的一个分析类题目，比较有意思，在这里做出简要分析：</p>
@@ -947,6 +1005,109 @@ struct Node* next;
       </categories>
       <tags>
         <tag>class</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>java主类，类与源文件名的简要分析</title>
+    <url>/2020/02/19/java%E4%B8%BB%E7%B1%BB%EF%BC%8C%E7%B1%BB%E4%B8%8Epublic%E7%9A%84%E7%AE%80%E8%A6%81%E5%88%86%E6%9E%90/</url>
+    <content><![CDATA[<p>有时候，我们会遇到关于主类，类和public修饰的类的辨析。刚开始，很难辨别。那么，接下来，简要地分析一下其区别：</p>
+<p><strong>1.如果文件中只有一个类，文件名必须与类名一致，有没有public修饰都可以；</strong></p>
+<p><strong>2.一个Java文件中最多只能有一个public类；</strong></p>
+<p><strong>3.如果文件中不止一个类，而且有public类，文件名必须与public类名一致；</strong></p>
+<p><strong>4.如果文件中不止一个类，而且没有public类，文件名可与任一类名一致。</strong>(相同的是主类)</p>
+<p>首先：</p>
+<p> <strong>类是Java程序的最小程序单位</strong> 。</p>
+<ul>
+<li>Java程序是一种纯粹的<strong>面向对象</strong>的程序设计语言，因此Java程序必须以<strong>类的形式</strong>存在，类是Java程序的<strong>最小程序单位</strong>。</li>
+<li>Java程序不允许可执行性语句、方法等成分独立存在，<strong>所有的程序部分都必须放在类定义里</strong>。<del>（不能像c，c++一样瞎写了）</del></li>
+</ul>
+<h2 id="主类："><a href="#主类：" class="headerlink" title="主类："></a>主类：</h2><h5 id="什么是主类？"><a href="#什么是主类？" class="headerlink" title="什么是主类？"></a>什么是主类？</h5><p>一说，类名与文件名相同，且含有main的类。</p>
+<p>一说： 是带有（总程序的）<strong>执行入口</strong>main方法的类。 （虚拟机第一个进入的类）</p>
+<p>那么：我们不妨思考一下：</p>
+<p>Q: 一个类是不是可以有多个main方法呢？</p>
+<p>A: 由于java语言的多态性，我们完全可以在一个类中含有多个main方法，但记住，main是入口，而这些main方法中只有一个才会是入口。</p>
+<blockquote>
+<p>main 方法写法固定：必须被 public static void 修饰，且其形参必须是字符串数组类型（String[] args）。<br>对于一个大型 Java 程序，往往只需要一个入口（即只一个类包含 main 方法），其他类用于被 main 方法直接或间接调用。</p>
+</blockquote>
+<h3 id="Java-源文件的命名规则"><a href="#Java-源文件的命名规则" class="headerlink" title="Java 源文件的命名规则"></a><strong>Java 源文件的命名规则</strong></h3><blockquote>
+<ul>
+<li>通常情况下，Java 程序源文件的主文件名可以任意。</li>
+<li>但如果其中定义了一个 public 类，则该源<strong>文件的主文件名必须与该 public 类的类名相同</strong>。</li>
+<li>一个Java 源文件可包含多个类定义，但最多<strong>只能包含一个public类定义</strong>。</li>
+</ul>
+</blockquote>
+<p><strong>为什么只能包含一个public类？</strong></p>
+<blockquote>
+<p> 因为 public 类可以被项目中其他包下的类访问到。只需要在使用前 import  其对应的 class 文件。将类名与文件名一一对应就可以<strong>方便虚拟机在相应的路径（包名）中找到相应的类的信息</strong>。如果不这么做的话，就很难去找，而且开销也会很大。 </p>
+</blockquote>
+<p><del>1、Java编译器在编译的时候，如果整个Java文件（编译单元）都没有public类（对外的公开接口类），类加载器就无需直接去加载该编译单元产生的所有的字节码文件（.class文件），那么也就是无需去寻找编译后字节码文件存放位置。而类名和文件名一致是为了方便虚拟机在相应的路径中找到相应的类所对应的字节码文件。所以在没有public类的Java文件中，文件名和类名都没什么联系。</del></p>
+<p>2、如果编译单元中包含了public类，那么该类对应的字节码文件需要被类加载器加载的，这时候就需要让类加载器知道该字节码文件的位置，所以就要确保该类与Java文件名称一致。同时，如果有两个public类在同一个文件中，而一个文件只能有一个名称，<strong>故两个public类的名称就不能同时和文件名一样，这就造成至少其中有一个public类在编译的时候编译不通过。</strong></p>
+<p>关于Java源文件命名，通常有以下建议：</p>
+<pre><code>一个 Java 源文件只定义一个类，不同的类使用不同的源文件定义。
+让 Java 源文件的主文件名与该源文件中定义的 pulblic 类同名。
+</code></pre><h2 id><a href="#" class="headerlink" title=" "></a> </h2>]]></content>
+      <categories>
+        <category>java</category>
+      </categories>
+      <tags>
+        <tag>class</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>java字符串string</title>
+    <url>/2020/02/17/java%E5%AD%97%E7%AC%A6%E4%B8%B2string/</url>
+    <content><![CDATA[<h2 id="格式："><a href="#格式：" class="headerlink" title="格式："></a>格式：</h2><p>首先：初始化样例 ：String str = “Geeks”;</p>
+<p><strong>Creating a String</strong></p>
+<p>There are two ways to create string in Java:（两种方式）</p>
+<ul>
+<li><p><strong><em>String literal\</em></strong></p>
+<figure class="highlight ebnf"><table><tr><td class="code"><pre><code class="hljs ebnf"><span class="hljs-attribute">String s</span> = “GeeksforGeeks”;<br></code></pre></td></tr></table></figure>
+</li>
+<li><p><strong>Using *new* keyword</strong></p>
+<figure class="highlight gauss"><table><tr><td class="code"><pre><code class="hljs gauss"><span class="hljs-keyword">String</span> s = <span class="hljs-keyword">new</span> <span class="hljs-keyword">String</span> (“GeeksforGeeks”);<br></code></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="字符串背后的一些事情："><a href="#字符串背后的一些事情：" class="headerlink" title="字符串背后的一些事情："></a>字符串背后的一些事情：</h2><p>String 字符串是由字符数组（char array)所支持。</p>
+<p>Strings in Java are Objects that are backed internally by a char array.</p>
+<p>而我们知道，字符数组的大小是固定的，所以：当String发生大小变化时就会产生一个新的String。</p>
+<p>那么他是怎样变化的呢？</p>
+<p>Whenever a String Object is created, two objects will be created- one in the Heap Area and one in the String constant pool and the String object reference always points to heap area object.</p>
+<p>当一个字符串产生的时候，就会创建两个String对象，一个在堆区域，另一个在字符串常态池中<strong>，而且字符串引用总指向堆区域的对象。</strong></p>
+<p>例如：（看是该字符串引用总是指向堆区域的对象，而且是首字母，像指针一样，不过java避开了指针的概念。）</p>
+<p><img src="/2020/02/17/java%E5%AD%97%E7%AC%A6%E4%B8%B2string/Untitled.png" alt></p>
+<h2 id="接口和类在字符串中："><a href="#接口和类在字符串中：" class="headerlink" title="接口和类在字符串中："></a>接口和类在字符串中：</h2><ul>
+<li><p><a href="https://www.geeksforgeeks.org/tag/java-charbuffer/" target="_blank" rel="noopener">CharBuffer</a>: This class implements the CharSequence interface. This class is used to allow character buffers to be used in place of CharSequences. An example of such usage is the regular-expression package java.util.regex.</p>
+<p>不懂CharBuffer：此类实现CharSequence接口。 此类用于允许使用字符缓冲区代替CharSequences。 正则表达式包java.util.regex是这种用法的一个示例。</p>
+</li>
+<li><p><a href="https://www.geeksforgeeks.org/string-class-in-java/" target="_blank" rel="noopener">String</a>: String is a sequence of characters. In java, objects of String are immutable which means a constant and cannot be changed once created.（String的对象是不可改变的）</p>
+</li>
+<li><p><a href="http://www.geeksforgeeks.org/stringbuffer-class-in-java/" target="_blank" rel="noopener">StringBuffer</a>: <strong>StringBuffer</strong> is a peer class of <strong>String</strong> that provides much of the functionality of strings. String represents fixed-length, immutable character sequences while StringBuffer represents growable and writable character sequences.（又出来个String buffer，批判了String的固定长度和不可变后，称自己是可增长的，可变化的。它还是String的同级字符串类。。。）</p>
+<p><strong>Syntax:</strong></p>
+<figure class="highlight dart"><table><tr><td class="code"><pre><code class="hljs dart"><span class="hljs-built_in">StringBuffer</span> s = <span class="hljs-keyword">new</span> <span class="hljs-built_in">StringBuffer</span>(<span class="hljs-string">"GeeksforGeeks"</span>);<br></code></pre></td></tr></table></figure>
+</li>
+<li><p><a href="https://www.geeksforgeeks.org/stringbuilder-class-in-java-with-examples/" target="_blank" rel="noopener">StringBuilder</a>: The <strong>StringBuilder</strong> in Java represents a mutable sequence of characters. Since the String Class in Java creates and immutable sequence of characters, the StringBuilder class provides an alternate to String Class, as it creates a mutable sequence of characters.（又来一个StringBuilder 说自己也是可变的字符串</p>
+<p><strong>Syntax:</strong></p>
+<figure class="highlight processing"><table><tr><td class="code"><pre><code class="hljs processing">StringBuilder <span class="hljs-built_in">str</span> = <span class="hljs-keyword">new</span> StringBuilder();<br><span class="hljs-built_in">str</span>.<span class="hljs-built_in">append</span>(<span class="hljs-string">"GFG"</span>);<br></code></pre></td></tr></table></figure>
+</li>
+<li><p><a href="https://www.geeksforgeeks.org/stringtokenizer-class-java-example-set-1-constructors/" target="_blank" rel="noopener">StringTokenizer</a>: StringTokenizer class in Java is used to break a string into tokens. <strong>Example:</strong></p>
+<p><img src="/2020/02/17/java%E5%AD%97%E7%AC%A6%E4%B8%B2string/Untitled1.png" alt></p>
+<p>A StringTokenizer object internally maintains a current position within the string to be tokenized. Some operations advance this current position past the characters processed. A token is returned by taking a substring of the string that was used to create the StringTokenizer object.(用于处理过的字符串，不太懂）</p>
+</li>
+<li><p><a href="https://www.geeksforgeeks.org/java-util-stringjoiner-java8/" target="_blank" rel="noopener">StringJoiner</a>: StringJoiner is a class in <em><a href="https://www.geeksforgeeks.org/tag/java-util-package/" target="_blank" rel="noopener">java.util</a></em> package which is used to construct a sequence of characters(strings) separated by a delimiter and optionally starting with a supplied prefix and ending with a supplied suffix. Though this can also be with the help of StringBuilder class to append delimiter after each string, StringJoiner provides an easy way to do that without much code to write.（也是处理分隔符的，和上面的是一对儿）</p>
+<p><strong>Syntax:</strong></p>
+<figure class="highlight isbl"><table><tr><td class="code"><pre><code class="hljs isbl"><span class="hljs-variable">public</span> <span class="hljs-function"><span class="hljs-title">StringJoiner</span>(<span class="hljs-variable">CharSequence</span> <span class="hljs-variable">delimiter</span>)</span><br></code></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="more："><a href="#more：" class="headerlink" title="more："></a>more：</h2><p>此外，在我们要去取值的时候，比如String第二个字符的值的时候，应该用:</p>
+<figure class="highlight ebnf"><table><tr><td class="code"><pre><code class="hljs ebnf"><span class="hljs-attribute">String str</span> = <span class="hljs-string">"hello word"</span>;<br><span class="hljs-attribute">char mychar</span> =  str.charAt(1);<br></code></pre></td></tr></table></figure>
+<p>如果想要比较字符串的值是否相同的话：</p>
+<p>if（s.contentEquals(“-1”)）来比较。否则就是比较储存位置（因为String在java中是对象，不是基本类型）</p>
+]]></content>
+      <categories>
+        <category>java</category>
+      </categories>
+      <tags>
+        <tag>string</tag>
       </tags>
   </entry>
   <entry>
@@ -1021,64 +1182,6 @@ struct Node* next;
       <categories>
         <category>java</category>
       </categories>
-  </entry>
-  <entry>
-    <title>javaconstructors构造函数</title>
-    <url>/2020/02/11/javaconstructors%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0/</url>
-    <content><![CDATA[<blockquote>
-<p>Constructors are used to assign values to the class variables at the time of object creation, either explicitly done by the programmer or by Java itself (default constructor).</p>
-</blockquote>
-<p>在创建对象时，可以使用构造函数将值分配给类变量，这些值可以由程序员显式完成，也可以由Java本身（默认构造函数）完成。</p>
-<p><a href="https://www.geeksforgeeks.org/constructors-in-java/" target="_blank" rel="noopener">Constructors in Java - GeeksforGeeks</a></p>
-<p><strong>Rules for writing Constructor:</strong></p>
-<ul>
-<li><p>Constructor(s) of a class must has same name as the class name in which it resides.</p>
-<p>构造函数的名字和类名必须一致。</p>
-</li>
-<li><p>A constructor in Java can not be abstract, final, static and Synchronized.</p>
-<p>java中的构造函数不能是抽象的，最终的，静态的和同步的。</p>
-</li>
-<li><p>Access modifiers can be used in constructor declaration to control its access i.e which other class can call the constructor.</p>
-<p>可以在构造函数声明中使用访问修饰符来控制其访问，即哪个其他类可以调用构造函数。</p>
-</li>
-</ul>
-<h3 id="构造函数的类型："><a href="#构造函数的类型：" class="headerlink" title="构造函数的类型："></a>构造函数的类型：</h3><ol>
-<li><p><strong>无参构造函数</strong>：</p>
-<p>没有参数的构造函数被认为时默认构造函数。若我们没有在类中定义构造函数，那么编译器会自己定义一个无参数的构造函数。Default constructor provides the default values to the object like 0, null, etc. depending on the type.（默认的构造函数提供默认的值给对象0，null，等，更具他们的类型不同）</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><code class="hljs java"><span class="hljs-comment">// Java Program to illustrate calling a // no-argument constructor import [java.io](http://java.io).*;</span><br><br><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Geek</span> </span>&#123; <span class="hljs-keyword">int</span> num; String name;<br><br> <span class="hljs-comment">// this would be invoked while an object </span><br> <span class="hljs-comment">// of that class is created. </span><br> Geek() <br> &#123; <br> 	System.out.println(<span class="hljs-string">"Constructor called"</span>); <br> &#125; <br><br><br>&#125;<br><br><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">GFG</span> </span>&#123; <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span> <span class="hljs-params">(String[] args)</span> </span>&#123; <span class="hljs-comment">// this would invoke default constructor. Geek geek1 = new Geek();</span><br><br> 	<span class="hljs-comment">// Default constructor provides the default </span><br> 	<span class="hljs-comment">// values to the object like 0, null </span><br> 	System.out.println(geek1.name); <br> 	System.out.println(geek1.num); <br> &#125; <br><br><br>&#125;<br></code></pre></td></tr></table></figure>
-</li>
-</ol>
-<p>0utput :</p>
-<figure class="highlight delphi"><table><tr><td class="code"><pre><code class="hljs delphi"><span class="hljs-function"><span class="hljs-keyword">Constructor</span> <span class="hljs-title">called</span><br><span class="hljs-title">null</span><br>0</span><br></code></pre></td></tr></table></figure>
-<p><strong>2. 有参构造函数：</strong></p>
-<p>If we want to initialize fields of the class with your own values, then use a parameterized constructor.如果我们想使用我们自己的值去给类中的变量赋值的话，那么使用参数化的构造函数（有参构造函数）。</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><code class="hljs java"><span class="hljs-comment">// Java Program to illustrate calling of </span><br><span class="hljs-comment">// parameterized constructor. </span><br><span class="hljs-keyword">import</span> java.io.*; <br><br><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Geek</span> <br></span>&#123; <br>	<span class="hljs-comment">// data members of the class. </span><br>	String name; <br>	<span class="hljs-keyword">int</span> id; <br><br>	<span class="hljs-comment">// constructor would initialize data members </span><br>	<span class="hljs-comment">// with the values of passed arguments while </span><br>	<span class="hljs-comment">// object of that class created. </span><br>	Geek(String name, <span class="hljs-keyword">int</span> id) <br>	&#123; <br>		<span class="hljs-keyword">this</span>.name = name; <br>		<span class="hljs-keyword">this</span>.id = id; <br>	&#125; <br>&#125; <br><br><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">GFG</span> <br></span>&#123; <br>	<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span> <span class="hljs-params">(String[] args)</span> <br>	</span>&#123; <br>		<span class="hljs-comment">// this would invoke the parameterized constructor. </span><br>		Geek geek1 = <span class="hljs-keyword">new</span> Geek(<span class="hljs-string">"adam"</span>, <span class="hljs-number">1</span>); <br>		System.out.println(<span class="hljs-string">"GeekName :"</span> + geek1.name + <br>						<span class="hljs-string">" and GeekId :"</span> + geek1.id); <br>	&#125; <br>&#125;<br></code></pre></td></tr></table></figure>
-<p>Output:</p>
-<figure class="highlight css"><table><tr><td class="code"><pre><code class="hljs css"><span class="hljs-selector-tag">GeekName</span> <span class="hljs-selector-pseudo">:adam</span> <span class="hljs-selector-tag">and</span> <span class="hljs-selector-tag">GeekId</span> <span class="hljs-selector-pseudo">:1</span><br></code></pre></td></tr></table></figure>
-<p>也就是说<strong>每一个类里面都有一个构造函数用来给变量赋值</strong>。如果你自己不去写这个构造函数，那么编译器会写一个。这样就可以给你创建的所有变量默认赋值了。（如果构造函数有参数那么，就是你给定的值；如果没有参数，那么就是0或者时null)。对了，构造函数中也可以写其他的语句，可以夹带私货。</p>
-<h2 id="使用构造参数时的一些其他问题："><a href="#使用构造参数时的一些其他问题：" class="headerlink" title="使用构造参数时的一些其他问题："></a>使用构造参数时的一些其他问题：</h2><ul>
-<li><p><strong>Does constructor return any value?</strong> （有返回值么？没有，但可以写return）</p>
-<p>There are no “return value” statements in constructor, but constructor returns current class instance. We can write ‘return’ inside a constructor.</p>
-</li>
-<li><p><strong>Constructor Overloading.</strong>（我们同样将其视作函数【本来就是】，当然也可以像函数一样，通过参数的类型，数目和顺序的不同来区分不同的同名构造函数）</p>
-<p>Like methods, we can overload constructors for creating objects in different ways. Compiler differentiates constructors on the basis of numbers of parameters, types of the parameters and order of the parameters.</p>
-</li>
-</ul>
-<blockquote>
-<p><strong>How constructors are different from methods in Java?构造函数和函数的区别</strong></p>
-</blockquote>
-<ul>
-<li>Constructor(s) must have the same name as the class within which it defined while it is not necessary for the method in java.构造函数的名字只能和类名相同，而且也不是必要的。</li>
-<li>Constructor(s) do not return any type while method(s) have the return type or <strong>void</strong> if does not return any value.构造函数没有返回值</li>
-<li>Constructor is called only once at the time of Object creation while method(s) can be called any numbers of time.构造函数只有在对象被创建的时候调用一次，而函数可以无限次被调用。</li>
-</ul>
-]]></content>
-      <categories>
-        <category>java</category>
-      </categories>
-      <tags>
-        <tag>java构造函数</tag>
-      </tags>
   </entry>
   <entry>
     <title>java方法methods</title>
@@ -1162,109 +1265,6 @@ class GFG {
       </categories>
       <tags>
         <tag>methods</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>java字符串string</title>
-    <url>/2020/02/17/java%E5%AD%97%E7%AC%A6%E4%B8%B2string/</url>
-    <content><![CDATA[<h2 id="格式："><a href="#格式：" class="headerlink" title="格式："></a>格式：</h2><p>首先：初始化样例 ：String str = “Geeks”;</p>
-<p><strong>Creating a String</strong></p>
-<p>There are two ways to create string in Java:（两种方式）</p>
-<ul>
-<li><p><strong><em>String literal\</em></strong></p>
-<figure class="highlight ebnf"><table><tr><td class="code"><pre><code class="hljs ebnf"><span class="hljs-attribute">String s</span> = “GeeksforGeeks”;<br></code></pre></td></tr></table></figure>
-</li>
-<li><p><strong>Using *new* keyword</strong></p>
-<figure class="highlight gauss"><table><tr><td class="code"><pre><code class="hljs gauss"><span class="hljs-keyword">String</span> s = <span class="hljs-keyword">new</span> <span class="hljs-keyword">String</span> (“GeeksforGeeks”);<br></code></pre></td></tr></table></figure>
-</li>
-</ul>
-<h2 id="字符串背后的一些事情："><a href="#字符串背后的一些事情：" class="headerlink" title="字符串背后的一些事情："></a>字符串背后的一些事情：</h2><p>String 字符串是由字符数组（char array)所支持。</p>
-<p>Strings in Java are Objects that are backed internally by a char array.</p>
-<p>而我们知道，字符数组的大小是固定的，所以：当String发生大小变化时就会产生一个新的String。</p>
-<p>那么他是怎样变化的呢？</p>
-<p>Whenever a String Object is created, two objects will be created- one in the Heap Area and one in the String constant pool and the String object reference always points to heap area object.</p>
-<p>当一个字符串产生的时候，就会创建两个String对象，一个在堆区域，另一个在字符串常态池中<strong>，而且字符串引用总指向堆区域的对象。</strong></p>
-<p>例如：（看是该字符串引用总是指向堆区域的对象，而且是首字母，像指针一样，不过java避开了指针的概念。）</p>
-<p><img src="/2020/02/17/java%E5%AD%97%E7%AC%A6%E4%B8%B2string/Untitled.png" alt></p>
-<h2 id="接口和类在字符串中："><a href="#接口和类在字符串中：" class="headerlink" title="接口和类在字符串中："></a>接口和类在字符串中：</h2><ul>
-<li><p><a href="https://www.geeksforgeeks.org/tag/java-charbuffer/" target="_blank" rel="noopener">CharBuffer</a>: This class implements the CharSequence interface. This class is used to allow character buffers to be used in place of CharSequences. An example of such usage is the regular-expression package java.util.regex.</p>
-<p>不懂CharBuffer：此类实现CharSequence接口。 此类用于允许使用字符缓冲区代替CharSequences。 正则表达式包java.util.regex是这种用法的一个示例。</p>
-</li>
-<li><p><a href="https://www.geeksforgeeks.org/string-class-in-java/" target="_blank" rel="noopener">String</a>: String is a sequence of characters. In java, objects of String are immutable which means a constant and cannot be changed once created.（String的对象是不可改变的）</p>
-</li>
-<li><p><a href="http://www.geeksforgeeks.org/stringbuffer-class-in-java/" target="_blank" rel="noopener">StringBuffer</a>: <strong>StringBuffer</strong> is a peer class of <strong>String</strong> that provides much of the functionality of strings. String represents fixed-length, immutable character sequences while StringBuffer represents growable and writable character sequences.（又出来个String buffer，批判了String的固定长度和不可变后，称自己是可增长的，可变化的。它还是String的同级字符串类。。。）</p>
-<p><strong>Syntax:</strong></p>
-<figure class="highlight dart"><table><tr><td class="code"><pre><code class="hljs dart"><span class="hljs-built_in">StringBuffer</span> s = <span class="hljs-keyword">new</span> <span class="hljs-built_in">StringBuffer</span>(<span class="hljs-string">"GeeksforGeeks"</span>);<br></code></pre></td></tr></table></figure>
-</li>
-<li><p><a href="https://www.geeksforgeeks.org/stringbuilder-class-in-java-with-examples/" target="_blank" rel="noopener">StringBuilder</a>: The <strong>StringBuilder</strong> in Java represents a mutable sequence of characters. Since the String Class in Java creates and immutable sequence of characters, the StringBuilder class provides an alternate to String Class, as it creates a mutable sequence of characters.（又来一个StringBuilder 说自己也是可变的字符串</p>
-<p><strong>Syntax:</strong></p>
-<figure class="highlight processing"><table><tr><td class="code"><pre><code class="hljs processing">StringBuilder <span class="hljs-built_in">str</span> = <span class="hljs-keyword">new</span> StringBuilder();<br><span class="hljs-built_in">str</span>.<span class="hljs-built_in">append</span>(<span class="hljs-string">"GFG"</span>);<br></code></pre></td></tr></table></figure>
-</li>
-<li><p><a href="https://www.geeksforgeeks.org/stringtokenizer-class-java-example-set-1-constructors/" target="_blank" rel="noopener">StringTokenizer</a>: StringTokenizer class in Java is used to break a string into tokens. <strong>Example:</strong></p>
-<p><img src="/2020/02/17/java%E5%AD%97%E7%AC%A6%E4%B8%B2string/Untitled1.png" alt></p>
-<p>A StringTokenizer object internally maintains a current position within the string to be tokenized. Some operations advance this current position past the characters processed. A token is returned by taking a substring of the string that was used to create the StringTokenizer object.(用于处理过的字符串，不太懂）</p>
-</li>
-<li><p><a href="https://www.geeksforgeeks.org/java-util-stringjoiner-java8/" target="_blank" rel="noopener">StringJoiner</a>: StringJoiner is a class in <em><a href="https://www.geeksforgeeks.org/tag/java-util-package/" target="_blank" rel="noopener">java.util</a></em> package which is used to construct a sequence of characters(strings) separated by a delimiter and optionally starting with a supplied prefix and ending with a supplied suffix. Though this can also be with the help of StringBuilder class to append delimiter after each string, StringJoiner provides an easy way to do that without much code to write.（也是处理分隔符的，和上面的是一对儿）</p>
-<p><strong>Syntax:</strong></p>
-<figure class="highlight isbl"><table><tr><td class="code"><pre><code class="hljs isbl"><span class="hljs-variable">public</span> <span class="hljs-function"><span class="hljs-title">StringJoiner</span>(<span class="hljs-variable">CharSequence</span> <span class="hljs-variable">delimiter</span>)</span><br></code></pre></td></tr></table></figure>
-</li>
-</ul>
-<h2 id="more："><a href="#more：" class="headerlink" title="more："></a>more：</h2><p>此外，在我们要去取值的时候，比如String第二个字符的值的时候，应该用:</p>
-<figure class="highlight ebnf"><table><tr><td class="code"><pre><code class="hljs ebnf"><span class="hljs-attribute">String str</span> = <span class="hljs-string">"hello word"</span>;<br><span class="hljs-attribute">char mychar</span> =  str.charAt(1);<br></code></pre></td></tr></table></figure>
-<p>如果想要比较字符串的值是否相同的话：</p>
-<p>if（s.contentEquals(“-1”)）来比较。否则就是比较储存位置（因为String在java中是对象，不是基本类型）</p>
-]]></content>
-      <categories>
-        <category>java</category>
-      </categories>
-      <tags>
-        <tag>string</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>java主类，类与源文件名的简要分析</title>
-    <url>/2020/02/19/java%E4%B8%BB%E7%B1%BB%EF%BC%8C%E7%B1%BB%E4%B8%8Epublic%E7%9A%84%E7%AE%80%E8%A6%81%E5%88%86%E6%9E%90/</url>
-    <content><![CDATA[<p>有时候，我们会遇到关于主类，类和public修饰的类的辨析。刚开始，很难辨别。那么，接下来，简要地分析一下其区别：</p>
-<p><strong>1.如果文件中只有一个类，文件名必须与类名一致，有没有public修饰都可以；</strong></p>
-<p><strong>2.一个Java文件中最多只能有一个public类；</strong></p>
-<p><strong>3.如果文件中不止一个类，而且有public类，文件名必须与public类名一致；</strong></p>
-<p><strong>4.如果文件中不止一个类，而且没有public类，文件名可与任一类名一致。</strong>(相同的是主类)</p>
-<p>首先：</p>
-<p> <strong>类是Java程序的最小程序单位</strong> 。</p>
-<ul>
-<li>Java程序是一种纯粹的<strong>面向对象</strong>的程序设计语言，因此Java程序必须以<strong>类的形式</strong>存在，类是Java程序的<strong>最小程序单位</strong>。</li>
-<li>Java程序不允许可执行性语句、方法等成分独立存在，<strong>所有的程序部分都必须放在类定义里</strong>。<del>（不能像c，c++一样瞎写了）</del></li>
-</ul>
-<h2 id="主类："><a href="#主类：" class="headerlink" title="主类："></a>主类：</h2><h5 id="什么是主类？"><a href="#什么是主类？" class="headerlink" title="什么是主类？"></a>什么是主类？</h5><p>一说，类名与文件名相同，且含有main的类。</p>
-<p>一说： 是带有（总程序的）<strong>执行入口</strong>main方法的类。 （虚拟机第一个进入的类）</p>
-<p>那么：我们不妨思考一下：</p>
-<p>Q: 一个类是不是可以有多个main方法呢？</p>
-<p>A: 由于java语言的多态性，我们完全可以在一个类中含有多个main方法，但记住，main是入口，而这些main方法中只有一个才会是入口。</p>
-<blockquote>
-<p>main 方法写法固定：必须被 public static void 修饰，且其形参必须是字符串数组类型（String[] args）。<br>对于一个大型 Java 程序，往往只需要一个入口（即只一个类包含 main 方法），其他类用于被 main 方法直接或间接调用。</p>
-</blockquote>
-<h3 id="Java-源文件的命名规则"><a href="#Java-源文件的命名规则" class="headerlink" title="Java 源文件的命名规则"></a><strong>Java 源文件的命名规则</strong></h3><blockquote>
-<ul>
-<li>通常情况下，Java 程序源文件的主文件名可以任意。</li>
-<li>但如果其中定义了一个 public 类，则该源<strong>文件的主文件名必须与该 public 类的类名相同</strong>。</li>
-<li>一个Java 源文件可包含多个类定义，但最多<strong>只能包含一个public类定义</strong>。</li>
-</ul>
-</blockquote>
-<p><strong>为什么只能包含一个public类？</strong></p>
-<blockquote>
-<p> 因为 public 类可以被项目中其他包下的类访问到。只需要在使用前 import  其对应的 class 文件。将类名与文件名一一对应就可以<strong>方便虚拟机在相应的路径（包名）中找到相应的类的信息</strong>。如果不这么做的话，就很难去找，而且开销也会很大。 </p>
-</blockquote>
-<p><del>1、Java编译器在编译的时候，如果整个Java文件（编译单元）都没有public类（对外的公开接口类），类加载器就无需直接去加载该编译单元产生的所有的字节码文件（.class文件），那么也就是无需去寻找编译后字节码文件存放位置。而类名和文件名一致是为了方便虚拟机在相应的路径中找到相应的类所对应的字节码文件。所以在没有public类的Java文件中，文件名和类名都没什么联系。</del></p>
-<p>2、如果编译单元中包含了public类，那么该类对应的字节码文件需要被类加载器加载的，这时候就需要让类加载器知道该字节码文件的位置，所以就要确保该类与Java文件名称一致。同时，如果有两个public类在同一个文件中，而一个文件只能有一个名称，<strong>故两个public类的名称就不能同时和文件名一样，这就造成至少其中有一个public类在编译的时候编译不通过。</strong></p>
-<p>关于Java源文件命名，通常有以下建议：</p>
-<pre><code>一个 Java 源文件只定义一个类，不同的类使用不同的源文件定义。
-让 Java 源文件的主文件名与该源文件中定义的 pulblic 类同名。
-</code></pre><h2 id><a href="#" class="headerlink" title=" "></a> </h2>]]></content>
-      <categories>
-        <category>java</category>
-      </categories>
-      <tags>
-        <tag>class</tag>
       </tags>
   </entry>
   <entry>
@@ -1466,6 +1466,17 @@ class GFG {
       </tags>
   </entry>
   <entry>
+    <title>new_EE</title>
+    <url>/2021/06/03/new-EE/</url>
+    <content><![CDATA[<h2 id="新坑IOT方向"><a href="#新坑IOT方向" class="headerlink" title="新坑IOT方向"></a>新坑IOT方向</h2><p>陆陆续续的进行了一些相关方向的内容，今后会多分享一些项目的总结和技术分享。</p>
+<p>加油！</p>
+<p>!&lt;—more—&gt;</p>
+]]></content>
+      <categories>
+        <category>EE</category>
+      </categories>
+  </entry>
+  <entry>
     <title>p1086花生采摘</title>
     <url>/2020/03/21/p1086%E8%8A%B1%E7%94%9F%E9%87%87%E6%91%98/</url>
     <content><![CDATA[<h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><p>鲁宾逊先生有一只宠物猴，名叫多多。这天，他们两个正沿着乡间小路散步，突然发现路边的告示牌上贴着一张小小的纸条：“欢迎免费品尝我种的花生！――熊字”。</p>
@@ -1503,17 +1514,6 @@ class GFG {
       <tags>
         <tag>洛谷</tag>
       </tags>
-  </entry>
-  <entry>
-    <title>new_EE</title>
-    <url>/2021/06/03/new-EE/</url>
-    <content><![CDATA[<h2 id="新坑IOT方向"><a href="#新坑IOT方向" class="headerlink" title="新坑IOT方向"></a>新坑IOT方向</h2><p>陆陆续续的进行了一些相关方向的内容，今后会多分享一些项目的总结和技术分享。</p>
-<p>加油！</p>
-<p>!&lt;—more—&gt;</p>
-]]></content>
-      <categories>
-        <category>EE</category>
-      </categories>
   </entry>
   <entry>
     <title>pta六度空间</title>
@@ -1555,6 +1555,74 @@ class GFG {
 ]]></content>
       <categories>
         <category>数据结构</category>
+      </categories>
+      <tags>
+        <tag>pta</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>pta拯救007</title>
+    <url>/2020/06/03/pta%E6%8B%AF%E6%95%91007/</url>
+    <content><![CDATA[<h2 id="题目详情："><a href="#题目详情：" class="headerlink" title="题目详情："></a>题目详情：</h2><p>在老电影“007之生死关头”（Live and Let Die）中有一个情节，007被毒贩抓到一个鳄鱼池中心的小岛上，他用了一种极为大胆的方法逃脱 —— 直接踩着池子里一系列鳄鱼的大脑袋跳上岸去！（据说当年替身演员被最后一条鳄鱼咬住了脚，幸好穿的是特别加厚的靴子才逃过一劫。）<br>设鳄鱼池是长宽为100米的方形，中心坐标为 (0, 0)，且东北角坐标为 (50, 50)。池心岛是以 (0, 0) 为圆心、直径15米的圆。给定池中分布的鳄鱼的坐标、以及007一次能跳跃的最大距离，你需要告诉他是否有可能逃出生天。</p>
+  <a id="more"></a>
+<h2 id="输入格式："><a href="#输入格式：" class="headerlink" title="输入格式："></a>输入格式：</h2><p>首先第一行给出两个正整数：鳄鱼数量 N（≤100）和007一次能跳跃的最大距离 D。随后 N 行，每行给出一条鳄鱼的 (x,y) 坐标。注意：不会有两条鳄鱼待在同一个点上。</p>
+<h2 id="输出格式："><a href="#输出格式：" class="headerlink" title="输出格式："></a>输出格式：</h2><p>如果007有可能逃脱，就在一行中输出”Yes”，否则输出”No”。</p>
+<h3 id="输入样例-1："><a href="#输入样例-1：" class="headerlink" title="输入样例 1："></a>输入样例 1：</h3><p>14 20<br>25 -15<br>-25 28<br>8 49<br>29 15<br>-35 -2<br>5 28<br>27 -29<br>-8 -28<br>-20 -35<br>-25 -20<br>-13 29<br>-30 15<br>-35 40<br>12 12</p>
+<h3 id="输出样例-1："><a href="#输出样例-1：" class="headerlink" title="输出样例 1："></a>输出样例 1：</h3><p>Yes</p>
+<h3 id="输入样例-2："><a href="#输入样例-2：" class="headerlink" title="输入样例 2："></a>输入样例 2：</h3><p>4 13<br>-12 12<br>12 12<br>-12 -12<br>12 -12</p>
+<h3 id="输出样例-2："><a href="#输出样例-2：" class="headerlink" title="输出样例 2："></a>输出样例 2：</h3><p>No</p>
+<h3 id="题目思路："><a href="#题目思路：" class="headerlink" title="题目思路："></a>题目思路：</h3><p>这道题目的解题中使用到了dfs和图的相关知识，</p>
+<p>p[]是所输入的每个节点的数组（鳄鱼的集合）</p>
+<p>vis[]是判断是否该节点被访问：</p>
+<p>如果被访问过了，那么只有两种情况：1.找到出口，直接弹出（break）。2.没有出口~</p>
+<p>所以如果节点被访问过，就意味着该节点不是出口。</p>
+<p>另外注意我们还有对于第一次的中心岛的特殊判断，他的距离与其他的dfs过程不同。</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><code class="hljs cpp"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span><span class="hljs-meta-string">&lt;bits/stdc++.h&gt;</span></span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> <span class="hljs-built_in">std</span>;<br><span class="hljs-keyword">int</span> n,d;<br>    <span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">node</span>//定义节点（存储<span class="hljs-title">x</span>，<span class="hljs-title">y</span>坐标）<br>&#123;</span> <br>    <span class="hljs-keyword">int</span> x;<br>    <span class="hljs-keyword">int</span> y;<br>&#125;p[<span class="hljs-number">110</span>];  <br><span class="hljs-keyword">bool</span> vis[<span class="hljs-number">110</span>];<br><span class="hljs-keyword">bool</span> flag =<span class="hljs-number">0</span>;<br><span class="hljs-function"><span class="hljs-keyword">bool</span> <span class="hljs-title">first</span><span class="hljs-params">(<span class="hljs-keyword">int</span> i)</span></span>&#123;<span class="hljs-comment">//判断该节点是否可以在第一次可以跳出中心岛（即判断该点是否在第一次跳出的半径内）</span><br>    <span class="hljs-keyword">return</span>(p[i].x*p[i].x+p[i].y*p[i].y &lt;= (d+<span class="hljs-number">7.5</span>)*(d+<span class="hljs-number">7.5</span>));<br>&#125;<br><span class="hljs-function"><span class="hljs-keyword">bool</span> <span class="hljs-title">success</span><span class="hljs-params">(<span class="hljs-keyword">int</span> i)</span></span>&#123;<span class="hljs-comment">//判断能否在该结点处一次直接跳出（d&gt;0），分别判断x，y是否可以跳出边界(即能否一步上岸)</span><br>    <span class="hljs-keyword">return</span> p[i].x-d&lt;=<span class="hljs-number">-50</span>||p[i].x+d&gt;=<span class="hljs-number">50</span>||p[i].y+d&gt;=<span class="hljs-number">50</span>||p[i].y-d&lt;=<span class="hljs-number">-50</span>;<br>&#125;<br><span class="hljs-function"><span class="hljs-keyword">bool</span> <span class="hljs-title">isJump</span><span class="hljs-params">(<span class="hljs-keyword">int</span> i,<span class="hljs-keyword">int</span> j)</span></span>&#123;<span class="hljs-comment">//判断是否可以从一点跳到另一点</span><br>    <span class="hljs-keyword">return</span> (p[i].x*p[i].x+p[i].y*p[i].y)&lt;d*d;<br>&#125;<br><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">dfs</span><span class="hljs-params">(<span class="hljs-keyword">int</span> i)</span></span>&#123;<span class="hljs-comment">//递归，dfs判断是否可以找到出去的路</span><br>    vis[i] = <span class="hljs-number">1</span>;<span class="hljs-comment">//表示已经访问该节点</span><br>    <span class="hljs-keyword">if</span>(success(i))<span class="hljs-keyword">return</span> <span class="hljs-number">1</span>;<br>    <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> j=<span class="hljs-number">0</span>;j&lt;n;j++)&#123;<span class="hljs-comment">//遍历寻找节点</span><br>        <span class="hljs-keyword">if</span>(!vis[j]&amp;&amp;isJump(i,j))<br>        &#123;<span class="hljs-comment">//如果该点访问过，那么此路就代表不通，应该放弃这个点；同时我们还要找到可以跳跃过去的点。</span><br>        <span class="hljs-keyword">if</span>(dfs(j))<span class="hljs-keyword">return</span> <span class="hljs-number">1</span>;<br>        &#125;<br>    &#125;<br>    <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;<br>&#125;<br><br><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span>&#123;<br>    <br>    <span class="hljs-built_in">cin</span>&gt;&gt;n&gt;&gt;d;<br>    <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i=<span class="hljs-number">0</span>;i&lt;n;i++)&#123;<br>        <span class="hljs-built_in">cin</span>&gt;&gt;p[i].x&gt;&gt;p[i].y;<br>    &#125;<br>    <span class="hljs-keyword">if</span>(d&gt;=<span class="hljs-number">42.5</span>)flag = <span class="hljs-literal">true</span>;<br>    <span class="hljs-keyword">else</span> &#123;<br>        <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i=<span class="hljs-number">0</span>;i&lt;n;i++)&#123;<span class="hljs-comment">//应该通过遍历找到符合条件的节点</span><br>            <span class="hljs-keyword">if</span>(!vis[i]&amp;&amp;first(i))<span class="hljs-comment">//如果没有访问过这个节点，且在第一次跳出的半径内。</span><br>                <span class="hljs-keyword">if</span>(dfs(i))&#123;<br>                    flag =<span class="hljs-number">1</span>;<br>                    <span class="hljs-keyword">break</span>;<span class="hljs-comment">//跳出并不再寻找</span><br>                &#125;<br>        &#125;<br><br>    &#125;<br>    <span class="hljs-keyword">if</span>(flag)<span class="hljs-built_in">cout</span>&lt;&lt;<span class="hljs-string">"yes"</span>;<br>    <span class="hljs-keyword">else</span> <span class="hljs-built_in">cout</span>&lt;&lt;<span class="hljs-string">"no"</span>;<br><br>&#125;<br></code></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>数据结构</category>
+      </categories>
+      <tags>
+        <tag>pta</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>pta统计一行文本的单词个数</title>
+    <url>/2019/11/24/pta%E7%BB%9F%E8%AE%A1%E4%B8%80%E8%A1%8C%E6%96%87%E6%9C%AC%E7%9A%84%E5%8D%95%E8%AF%8D%E4%B8%AA%E6%95%B0/</url>
+    <content><![CDATA[<p>本题目要求编写程序统计一行字符中单词的个数。所谓“单词”是指连续不含空格的字符串，各单词之间用空格分隔，空格数可以是多个。</p>
+  <a id="more"></a>
+<h2 id="输入格式-输入给出一行字符。"><a href="#输入格式-输入给出一行字符。" class="headerlink" title="输入格式:输入给出一行字符。"></a>输入格式:输入给出一行字符。</h2><h2 id="输出格式-在一行中输出单词个数。"><a href="#输出格式-在一行中输出单词个数。" class="headerlink" title="输出格式:在一行中输出单词个数。"></a>输出格式:在一行中输出单词个数。</h2><h2 id="输入样例"><a href="#输入样例" class="headerlink" title="输入样例:"></a>输入样例:</h2><div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center">Let’s go to room 209.</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"></td>
+</tr>
+</tbody>
+</table>
+</div>
+<h2 id="输出样例"><a href="#输出样例" class="headerlink" title="输出样例:"></a>输出样例:</h2><div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center">5</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"></td>
+</tr>
+</tbody>
+</table>
+</div>
+<figure class="highlight c"><table><tr><td class="code"><pre><code class="hljs c"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span><span class="hljs-meta-string">&lt;stdio.h&gt;</span></span><br><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span>&#123;<br>	<span class="hljs-keyword">int</span> i,cnt=<span class="hljs-number">0</span>,cntword=<span class="hljs-number">0</span>;<br>	<span class="hljs-keyword">char</span> a;<br><br>	<span class="hljs-keyword">while</span>(<span class="hljs-number">1</span>)&#123;<br>	<span class="hljs-built_in">scanf</span>(<span class="hljs-string">"%c"</span>,&amp;a);<br>	<br>	<span class="hljs-keyword">if</span>(a==<span class="hljs-string">'\n'</span>)&#123;<span class="hljs-comment">//因为只是一行字符，所以遇到回车就结束。</span><br>	<span class="hljs-keyword">break</span>;	<br>	&#125;<br>	<span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span>(a!=<span class="hljs-string">' '</span>)&#123;<span class="hljs-comment">//首字母不为‘ ’时</span><br>		cntword++;<br><br>	<span class="hljs-keyword">while</span>(<span class="hljs-number">1</span>)&#123;<span class="hljs-comment">//此循环的意义在于判断该单词的位数。</span><br>	 <span class="hljs-comment">//此循环应放在 首字母不为0时的语句中。否则会使的首字母为空格时，使	之跳过下一个字母（如输入‘ 1’则会输出0） </span><br>		<span class="hljs-built_in">scanf</span>(<span class="hljs-string">"%c"</span>,&amp;a);<br>		<span class="hljs-keyword">if</span>(a==<span class="hljs-string">' '</span>||a==<span class="hljs-string">'\n'</span>)&#123;<br>		<span class="hljs-keyword">break</span>;<br>		&#125;<span class="hljs-comment">//判断该单词是否为单字母单词 ，注意该单词在扫描到第一个字母时	已经将其cntword++ </span><br>	<br>	&#125;<span class="hljs-keyword">if</span>(a==<span class="hljs-string">'\n'</span>)&#123;<br>		<span class="hljs-keyword">break</span>;<br>	&#125;<br>	&#125;<br>	<br>&#125;<span class="hljs-built_in">printf</span>(<span class="hljs-string">"%d"</span>,cntword); <br><span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
+<h4 id="希望此题可以有助于改变我们思考问题的方式。"><a href="#希望此题可以有助于改变我们思考问题的方式。" class="headerlink" title="希望此题可以有助于改变我们思考问题的方式。"></a>希望此题可以有助于改变我们思考问题的方式。</h4>]]></content>
+      <categories>
+        <category>编程</category>
       </categories>
       <tags>
         <tag>pta</tag>
@@ -1759,74 +1827,6 @@ class GFG {
       </tags>
   </entry>
   <entry>
-    <title>pta拯救007</title>
-    <url>/2020/06/03/pta%E6%8B%AF%E6%95%91007/</url>
-    <content><![CDATA[<h2 id="题目详情："><a href="#题目详情：" class="headerlink" title="题目详情："></a>题目详情：</h2><p>在老电影“007之生死关头”（Live and Let Die）中有一个情节，007被毒贩抓到一个鳄鱼池中心的小岛上，他用了一种极为大胆的方法逃脱 —— 直接踩着池子里一系列鳄鱼的大脑袋跳上岸去！（据说当年替身演员被最后一条鳄鱼咬住了脚，幸好穿的是特别加厚的靴子才逃过一劫。）<br>设鳄鱼池是长宽为100米的方形，中心坐标为 (0, 0)，且东北角坐标为 (50, 50)。池心岛是以 (0, 0) 为圆心、直径15米的圆。给定池中分布的鳄鱼的坐标、以及007一次能跳跃的最大距离，你需要告诉他是否有可能逃出生天。</p>
-  <a id="more"></a>
-<h2 id="输入格式："><a href="#输入格式：" class="headerlink" title="输入格式："></a>输入格式：</h2><p>首先第一行给出两个正整数：鳄鱼数量 N（≤100）和007一次能跳跃的最大距离 D。随后 N 行，每行给出一条鳄鱼的 (x,y) 坐标。注意：不会有两条鳄鱼待在同一个点上。</p>
-<h2 id="输出格式："><a href="#输出格式：" class="headerlink" title="输出格式："></a>输出格式：</h2><p>如果007有可能逃脱，就在一行中输出”Yes”，否则输出”No”。</p>
-<h3 id="输入样例-1："><a href="#输入样例-1：" class="headerlink" title="输入样例 1："></a>输入样例 1：</h3><p>14 20<br>25 -15<br>-25 28<br>8 49<br>29 15<br>-35 -2<br>5 28<br>27 -29<br>-8 -28<br>-20 -35<br>-25 -20<br>-13 29<br>-30 15<br>-35 40<br>12 12</p>
-<h3 id="输出样例-1："><a href="#输出样例-1：" class="headerlink" title="输出样例 1："></a>输出样例 1：</h3><p>Yes</p>
-<h3 id="输入样例-2："><a href="#输入样例-2：" class="headerlink" title="输入样例 2："></a>输入样例 2：</h3><p>4 13<br>-12 12<br>12 12<br>-12 -12<br>12 -12</p>
-<h3 id="输出样例-2："><a href="#输出样例-2：" class="headerlink" title="输出样例 2："></a>输出样例 2：</h3><p>No</p>
-<h3 id="题目思路："><a href="#题目思路：" class="headerlink" title="题目思路："></a>题目思路：</h3><p>这道题目的解题中使用到了dfs和图的相关知识，</p>
-<p>p[]是所输入的每个节点的数组（鳄鱼的集合）</p>
-<p>vis[]是判断是否该节点被访问：</p>
-<p>如果被访问过了，那么只有两种情况：1.找到出口，直接弹出（break）。2.没有出口~</p>
-<p>所以如果节点被访问过，就意味着该节点不是出口。</p>
-<p>另外注意我们还有对于第一次的中心岛的特殊判断，他的距离与其他的dfs过程不同。</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><code class="hljs cpp"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span><span class="hljs-meta-string">&lt;bits/stdc++.h&gt;</span></span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> <span class="hljs-built_in">std</span>;<br><span class="hljs-keyword">int</span> n,d;<br>    <span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">node</span>//定义节点（存储<span class="hljs-title">x</span>，<span class="hljs-title">y</span>坐标）<br>&#123;</span> <br>    <span class="hljs-keyword">int</span> x;<br>    <span class="hljs-keyword">int</span> y;<br>&#125;p[<span class="hljs-number">110</span>];  <br><span class="hljs-keyword">bool</span> vis[<span class="hljs-number">110</span>];<br><span class="hljs-keyword">bool</span> flag =<span class="hljs-number">0</span>;<br><span class="hljs-function"><span class="hljs-keyword">bool</span> <span class="hljs-title">first</span><span class="hljs-params">(<span class="hljs-keyword">int</span> i)</span></span>&#123;<span class="hljs-comment">//判断该节点是否可以在第一次可以跳出中心岛（即判断该点是否在第一次跳出的半径内）</span><br>    <span class="hljs-keyword">return</span>(p[i].x*p[i].x+p[i].y*p[i].y &lt;= (d+<span class="hljs-number">7.5</span>)*(d+<span class="hljs-number">7.5</span>));<br>&#125;<br><span class="hljs-function"><span class="hljs-keyword">bool</span> <span class="hljs-title">success</span><span class="hljs-params">(<span class="hljs-keyword">int</span> i)</span></span>&#123;<span class="hljs-comment">//判断能否在该结点处一次直接跳出（d&gt;0），分别判断x，y是否可以跳出边界(即能否一步上岸)</span><br>    <span class="hljs-keyword">return</span> p[i].x-d&lt;=<span class="hljs-number">-50</span>||p[i].x+d&gt;=<span class="hljs-number">50</span>||p[i].y+d&gt;=<span class="hljs-number">50</span>||p[i].y-d&lt;=<span class="hljs-number">-50</span>;<br>&#125;<br><span class="hljs-function"><span class="hljs-keyword">bool</span> <span class="hljs-title">isJump</span><span class="hljs-params">(<span class="hljs-keyword">int</span> i,<span class="hljs-keyword">int</span> j)</span></span>&#123;<span class="hljs-comment">//判断是否可以从一点跳到另一点</span><br>    <span class="hljs-keyword">return</span> (p[i].x*p[i].x+p[i].y*p[i].y)&lt;d*d;<br>&#125;<br><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">dfs</span><span class="hljs-params">(<span class="hljs-keyword">int</span> i)</span></span>&#123;<span class="hljs-comment">//递归，dfs判断是否可以找到出去的路</span><br>    vis[i] = <span class="hljs-number">1</span>;<span class="hljs-comment">//表示已经访问该节点</span><br>    <span class="hljs-keyword">if</span>(success(i))<span class="hljs-keyword">return</span> <span class="hljs-number">1</span>;<br>    <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> j=<span class="hljs-number">0</span>;j&lt;n;j++)&#123;<span class="hljs-comment">//遍历寻找节点</span><br>        <span class="hljs-keyword">if</span>(!vis[j]&amp;&amp;isJump(i,j))<br>        &#123;<span class="hljs-comment">//如果该点访问过，那么此路就代表不通，应该放弃这个点；同时我们还要找到可以跳跃过去的点。</span><br>        <span class="hljs-keyword">if</span>(dfs(j))<span class="hljs-keyword">return</span> <span class="hljs-number">1</span>;<br>        &#125;<br>    &#125;<br>    <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;<br>&#125;<br><br><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span>&#123;<br>    <br>    <span class="hljs-built_in">cin</span>&gt;&gt;n&gt;&gt;d;<br>    <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i=<span class="hljs-number">0</span>;i&lt;n;i++)&#123;<br>        <span class="hljs-built_in">cin</span>&gt;&gt;p[i].x&gt;&gt;p[i].y;<br>    &#125;<br>    <span class="hljs-keyword">if</span>(d&gt;=<span class="hljs-number">42.5</span>)flag = <span class="hljs-literal">true</span>;<br>    <span class="hljs-keyword">else</span> &#123;<br>        <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i=<span class="hljs-number">0</span>;i&lt;n;i++)&#123;<span class="hljs-comment">//应该通过遍历找到符合条件的节点</span><br>            <span class="hljs-keyword">if</span>(!vis[i]&amp;&amp;first(i))<span class="hljs-comment">//如果没有访问过这个节点，且在第一次跳出的半径内。</span><br>                <span class="hljs-keyword">if</span>(dfs(i))&#123;<br>                    flag =<span class="hljs-number">1</span>;<br>                    <span class="hljs-keyword">break</span>;<span class="hljs-comment">//跳出并不再寻找</span><br>                &#125;<br>        &#125;<br><br>    &#125;<br>    <span class="hljs-keyword">if</span>(flag)<span class="hljs-built_in">cout</span>&lt;&lt;<span class="hljs-string">"yes"</span>;<br>    <span class="hljs-keyword">else</span> <span class="hljs-built_in">cout</span>&lt;&lt;<span class="hljs-string">"no"</span>;<br><br>&#125;<br></code></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>数据结构</category>
-      </categories>
-      <tags>
-        <tag>pta</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>pta统计一行文本的单词个数</title>
-    <url>/2019/11/24/pta%E7%BB%9F%E8%AE%A1%E4%B8%80%E8%A1%8C%E6%96%87%E6%9C%AC%E7%9A%84%E5%8D%95%E8%AF%8D%E4%B8%AA%E6%95%B0/</url>
-    <content><![CDATA[<p>本题目要求编写程序统计一行字符中单词的个数。所谓“单词”是指连续不含空格的字符串，各单词之间用空格分隔，空格数可以是多个。</p>
-  <a id="more"></a>
-<h2 id="输入格式-输入给出一行字符。"><a href="#输入格式-输入给出一行字符。" class="headerlink" title="输入格式:输入给出一行字符。"></a>输入格式:输入给出一行字符。</h2><h2 id="输出格式-在一行中输出单词个数。"><a href="#输出格式-在一行中输出单词个数。" class="headerlink" title="输出格式:在一行中输出单词个数。"></a>输出格式:在一行中输出单词个数。</h2><h2 id="输入样例"><a href="#输入样例" class="headerlink" title="输入样例:"></a>输入样例:</h2><div class="table-container">
-<table>
-<thead>
-<tr>
-<th style="text-align:center">Let’s go to room 209.</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center"></td>
-</tr>
-</tbody>
-</table>
-</div>
-<h2 id="输出样例"><a href="#输出样例" class="headerlink" title="输出样例:"></a>输出样例:</h2><div class="table-container">
-<table>
-<thead>
-<tr>
-<th style="text-align:center">5</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center"></td>
-</tr>
-</tbody>
-</table>
-</div>
-<figure class="highlight c"><table><tr><td class="code"><pre><code class="hljs c"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span><span class="hljs-meta-string">&lt;stdio.h&gt;</span></span><br><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span>&#123;<br>	<span class="hljs-keyword">int</span> i,cnt=<span class="hljs-number">0</span>,cntword=<span class="hljs-number">0</span>;<br>	<span class="hljs-keyword">char</span> a;<br><br>	<span class="hljs-keyword">while</span>(<span class="hljs-number">1</span>)&#123;<br>	<span class="hljs-built_in">scanf</span>(<span class="hljs-string">"%c"</span>,&amp;a);<br>	<br>	<span class="hljs-keyword">if</span>(a==<span class="hljs-string">'\n'</span>)&#123;<span class="hljs-comment">//因为只是一行字符，所以遇到回车就结束。</span><br>	<span class="hljs-keyword">break</span>;	<br>	&#125;<br>	<span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span>(a!=<span class="hljs-string">' '</span>)&#123;<span class="hljs-comment">//首字母不为‘ ’时</span><br>		cntword++;<br><br>	<span class="hljs-keyword">while</span>(<span class="hljs-number">1</span>)&#123;<span class="hljs-comment">//此循环的意义在于判断该单词的位数。</span><br>	 <span class="hljs-comment">//此循环应放在 首字母不为0时的语句中。否则会使的首字母为空格时，使	之跳过下一个字母（如输入‘ 1’则会输出0） </span><br>		<span class="hljs-built_in">scanf</span>(<span class="hljs-string">"%c"</span>,&amp;a);<br>		<span class="hljs-keyword">if</span>(a==<span class="hljs-string">' '</span>||a==<span class="hljs-string">'\n'</span>)&#123;<br>		<span class="hljs-keyword">break</span>;<br>		&#125;<span class="hljs-comment">//判断该单词是否为单字母单词 ，注意该单词在扫描到第一个字母时	已经将其cntword++ </span><br>	<br>	&#125;<span class="hljs-keyword">if</span>(a==<span class="hljs-string">'\n'</span>)&#123;<br>		<span class="hljs-keyword">break</span>;<br>	&#125;<br>	&#125;<br>	<br>&#125;<span class="hljs-built_in">printf</span>(<span class="hljs-string">"%d"</span>,cntword); <br><span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
-<h4 id="希望此题可以有助于改变我们思考问题的方式。"><a href="#希望此题可以有助于改变我们思考问题的方式。" class="headerlink" title="希望此题可以有助于改变我们思考问题的方式。"></a>希望此题可以有助于改变我们思考问题的方式。</h4>]]></content>
-      <categories>
-        <category>编程</category>
-      </categories>
-      <tags>
-        <tag>pta</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>一元多次多项式的加减</title>
     <url>/2020/03/26/%E4%B8%80%E5%85%83%E5%A4%9A%E6%AC%A1%E5%A4%9A%E9%A1%B9%E5%BC%8F%E7%9A%84%E5%8A%A0%E5%87%8F/</url>
     <content><![CDATA[<h1 id="一元多项式的加减法"><a href="#一元多项式的加减法" class="headerlink" title="一元多项式的加减法"></a>一元多项式的加减法</h1><p>tips: 三月份写过这个题解，当时确实解决了当时问题，但是方法是错的，两个月后，又做类似的题目，只是将指数由大到小的排列便错了，那么我就不（敢）再误人子弟，便删去旧的题解，写新的题解。这一次经历了两天来研究指针的问题，可以说，过程比较令人头大，但是对指针的了解也更多了一些。功不唐捐！</p>
@@ -1929,6 +1929,44 @@ class GFG {
       </tags>
   </entry>
   <entry>
+    <title>大数乘法</title>
+    <url>/2020/04/30/%E5%A4%A7%E6%95%B0%E4%B9%98%E6%B3%95/</url>
+    <content><![CDATA[<p><em>使用java语言的int数组与StringBuffer来实现</em>。</p>
+<p>日常中，我们使用java来计算两数乘法时，我们会在遇到一些比较大的数字计算时，便无可奈何(int不够大)，这时一般采用<strong>BigInteger</strong>的方法进行计算，但是该方法也有一定的限制，或者说，我们是可以去尝试去使用String来实现和表示大数乘法的效果。</p>
+  <a id="more"></a>
+<h2 id="编程思路："><a href="#编程思路：" class="headerlink" title="编程思路："></a>编程思路：</h2><p>首先我们要确定使用字符串后我们如何去实现我们的乘法计算，不妨我们回归竖式计算，进行模拟然后得出结果。</p>
+<p>例如：37*46的计算过程，我们也可以这样计算：如下图。</p>
+<ol>
+<li><p><strong>先不考虑进位的问题</strong>，将两个<strong>数字</strong>相乘的结果当作一个个位数（不去进行进位，最后再依次进位，方便计算机操作，当然，方法多样，并不局限于此）</p>
+<p><img src="/2020/04/30/%E5%A4%A7%E6%95%B0%E4%B9%98%E6%B3%95/multiplyExample.png" alt></p>
+</li>
+<li><p>我们也可以发现上述规律a位数*b位数≤（a+b）位数</p>
+<p>所以我们如果需要得到最后的位数的话，可以通过这个规律进行计算。</p>
+</li>
+</ol>
+<h2 id="代码："><a href="#代码：" class="headerlink" title="代码："></a>代码：</h2><p>首先，我们采用由俭入繁的理念：从简单的开始，再到复杂：</p>
+<ol>
+<li><p>我们考虑的是两个正整数的大数乘法：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><code class="hljs java"><span class="hljs-comment">//大数乘法</span><br><span class="hljs-keyword">import</span> java.util.*;<br><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Main</span> </span>&#123;<br>		<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> </span>&#123;<br>		Scanner sc = <span class="hljs-keyword">new</span> Scanner(System.in);<br>		String a = sc.nextLine();<br>		String b = sc.nextLine();<br>		<span class="hljs-comment">//注意：这里直接将数字计算后的结果相加起来了，直接得到最后一行</span><br>		<span class="hljs-keyword">int</span>[] s = <span class="hljs-keyword">new</span> <span class="hljs-keyword">int</span>[b.length()+a.length()];<br>		System.out.print(a+<span class="hljs-string">" * "</span>+b+<span class="hljs-string">" = "</span>);<br>		<span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = b.length()-<span class="hljs-number">1</span>; i &gt;= <span class="hljs-number">0</span>; i--) &#123;<br>			<span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> k = a.length()-<span class="hljs-number">1</span>; k &gt;= <span class="hljs-number">0</span>; k--) &#123;<br>				<span class="hljs-keyword">int</span> t = (b.charAt(i)-<span class="hljs-string">'0'</span>)*(a.charAt(k)-<span class="hljs-string">'0'</span>);<br>				s[s.length-<span class="hljs-number">1</span>-(a.length()-<span class="hljs-number">1</span>-k+(b.length()-<span class="hljs-number">1</span>-i))] += t;<br>			&#125;<br>		&#125;<br>		<span class="hljs-comment">//进位计算</span><br>		<span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i=s.length-<span class="hljs-number">1</span>;i&gt;<span class="hljs-number">0</span>;i--)<br>		&#123;<br>			<span class="hljs-keyword">if</span>(s[i]&gt;=<span class="hljs-number">10</span>)&#123;<br>				s[i-<span class="hljs-number">1</span>] +=s[i]/<span class="hljs-number">10</span>;<br>				s[i]=s[i]%<span class="hljs-number">10</span>;<br>			&#125;<br>		&#125;<br>		<span class="hljs-comment">//清空前置零（int转向StringBuffer的时候可能会多0)，并使用字符串表示出答案</span><br>		StringBuffer ans = <span class="hljs-keyword">new</span> StringBuffer();<br>		<span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i : s) &#123;<br>			ans.append(i);<br>		&#125;<br>		<span class="hljs-keyword">while</span>(ans.charAt(<span class="hljs-number">0</span>)==<span class="hljs-string">'0'</span>)&#123;<br>			ans.deleteCharAt(<span class="hljs-number">0</span>);<br>		&#125;<br>		System.out.println(ans);<br>		sc.close();		<br>	&#125;<br> <br>&#125;<br></code></pre></td></tr></table></figure>
+</li>
+<li><p>好的计算成功，那么如果有负数存在呢？</p>
+<p>我们只需要加上如下的判断符号的代码即可</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><code class="hljs java"><span class="hljs-comment">//判断符号</span><br>		Boolean flag = <span class="hljs-keyword">true</span>; <br>		<span class="hljs-keyword">if</span>(a.charAt(<span class="hljs-number">0</span>)==<span class="hljs-string">'-'</span>&amp;&amp;b.charAt(<span class="hljs-number">0</span>)==<span class="hljs-string">'-'</span>)<br>			&#123;<br>				a = a.substring(<span class="hljs-number">1</span>);<br>				b = b.substring(<span class="hljs-number">1</span>);<br>				flag = <span class="hljs-keyword">true</span>;<br>			&#125;<br><br>		<span class="hljs-keyword">if</span>(a.charAt(<span class="hljs-number">0</span>)!=<span class="hljs-string">'-'</span>&amp;&amp;b.charAt(<span class="hljs-number">0</span>)!=<span class="hljs-string">'-'</span>)&#123;<br>				flag = <span class="hljs-keyword">true</span>;<br>			&#125;<br>			<br><br>		<span class="hljs-keyword">if</span>(a.charAt(<span class="hljs-number">0</span>)==<span class="hljs-string">'-'</span>&amp;&amp;b.charAt(<span class="hljs-number">0</span>)!=<span class="hljs-string">'-'</span>)<br>			&#123;<br>				a = a.substring(<span class="hljs-number">1</span>);<br>				flag =  <span class="hljs-keyword">false</span>;<br>			&#125;<br>		<span class="hljs-keyword">if</span>(a.charAt(<span class="hljs-number">0</span>)!=<span class="hljs-string">'-'</span>&amp;&amp;b.charAt(<span class="hljs-number">0</span>)==<span class="hljs-string">'-'</span>)<br>		&#123;<br>				b = b.substring(<span class="hljs-number">1</span>);<br>				flag =  <span class="hljs-keyword">false</span>;<br>		&#125;<br><br>		<span class="hljs-keyword">if</span>(!flag)System.out.print(<span class="hljs-string">"-"</span>);<br></code></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>完整的代码如下：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><code class="hljs java"><span class="hljs-comment">//大数乘法(有符号）</span><br><span class="hljs-keyword">import</span> java.util.*;<br><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Main</span> </span>&#123;<br>		<br>		<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> </span>&#123;<br>		Scanner sc = <span class="hljs-keyword">new</span> Scanner(System.in);<br>		String a = sc.nextLine();<br>		String b = sc.nextLine();<br>		System.out.print(a+<span class="hljs-string">" * "</span>+b+<span class="hljs-string">" = "</span>);<br>		<span class="hljs-comment">//判断符号</span><br>		Boolean flag = <span class="hljs-keyword">true</span>; <br>		<span class="hljs-keyword">if</span>(a.charAt(<span class="hljs-number">0</span>)==<span class="hljs-string">'-'</span>&amp;&amp;b.charAt(<span class="hljs-number">0</span>)==<span class="hljs-string">'-'</span>)<br>			&#123;<br>				a = a.substring(<span class="hljs-number">1</span>);<br>				b = b.substring(<span class="hljs-number">1</span>);<br>				flag = <span class="hljs-keyword">true</span>;<br>			&#125;<br><br>		<span class="hljs-keyword">if</span>(a.charAt(<span class="hljs-number">0</span>)!=<span class="hljs-string">'-'</span>&amp;&amp;b.charAt(<span class="hljs-number">0</span>)!=<span class="hljs-string">'-'</span>)&#123;<br>				flag = <span class="hljs-keyword">true</span>;<br>			&#125;<br>			<br><br>		<span class="hljs-keyword">if</span>(a.charAt(<span class="hljs-number">0</span>)==<span class="hljs-string">'-'</span>&amp;&amp;b.charAt(<span class="hljs-number">0</span>)!=<span class="hljs-string">'-'</span>)<br>			&#123;<br>				a = a.substring(<span class="hljs-number">1</span>);<br>				flag =  <span class="hljs-keyword">false</span>;<br>			&#125;<br>		<span class="hljs-keyword">if</span>(a.charAt(<span class="hljs-number">0</span>)!=<span class="hljs-string">'-'</span>&amp;&amp;b.charAt(<span class="hljs-number">0</span>)==<span class="hljs-string">'-'</span>)<br>		&#123;<br>				b = b.substring(<span class="hljs-number">1</span>);<br>				flag =  <span class="hljs-keyword">false</span>;<br>		&#125;<br><br>		<span class="hljs-keyword">if</span>(!flag)System.out.print(<span class="hljs-string">"-"</span>);<br><br>		<span class="hljs-comment">//注意：这里直接将数字计算后的结果相加起来了直接得到最后一行</span><br>		<span class="hljs-keyword">int</span>[] s = <span class="hljs-keyword">new</span> <span class="hljs-keyword">int</span>[b.length()+a.length()];<br>		<span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = b.length()-<span class="hljs-number">1</span>; i &gt;= <span class="hljs-number">0</span>; i--) &#123;<br>			<span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> k = a.length()-<span class="hljs-number">1</span>; k &gt;= <span class="hljs-number">0</span>; k--) &#123;<br>				<span class="hljs-keyword">int</span> t = (b.charAt(i)-<span class="hljs-string">'0'</span>)*(a.charAt(k)-<span class="hljs-string">'0'</span>);<br>				s[s.length-<span class="hljs-number">1</span>-(a.length()-<span class="hljs-number">1</span>-k+(b.length()-<span class="hljs-number">1</span>-i))] += t;<br>			&#125;<br>		&#125;<br>		<span class="hljs-comment">//进位计算</span><br>		<span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i=s.length-<span class="hljs-number">1</span>;i&gt;<span class="hljs-number">0</span>;i--)<br>		&#123;<br>			<span class="hljs-keyword">if</span>(s[i]&gt;=<span class="hljs-number">10</span>)&#123;<br>				s[i-<span class="hljs-number">1</span>] +=s[i]/<span class="hljs-number">10</span>;<br>				s[i]=s[i]%<span class="hljs-number">10</span>;<br>			&#125;<br>		&#125;<br>		<span class="hljs-comment">//清空前置零（int转向StringBuffer的时候可能会多0)，并使用字符串表示出答案</span><br>		StringBuffer ans = <span class="hljs-keyword">new</span> StringBuffer();<br>		<span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i : s) &#123;<br>			ans.append(i);<br>		&#125;<br>		<span class="hljs-keyword">while</span>(ans.charAt(<span class="hljs-number">0</span>)==<span class="hljs-string">'0'</span>)&#123;<br>			ans.deleteCharAt(<span class="hljs-number">0</span>);<br>		&#125;<br>		System.out.println(ans);<br>		sc.close();		<br>	&#125;<br> <br>&#125;<br></code></pre></td></tr></table></figure>
+<h2 id="最后：bugs："><a href="#最后：bugs：" class="headerlink" title="最后：bugs："></a>最后：bugs：</h2><p>在初步形成之后，还是有一些bug的比如乘数中含有0，那么就会报错。</p>
+<p>所以要排除这一情况。（在判断符号前加入一个判断0即可）</p>
+<h2 id="代码：-1"><a href="#代码：-1" class="headerlink" title="代码："></a>代码：</h2><figure class="highlight java"><table><tr><td class="code"><pre><code class="hljs java"><span class="hljs-comment">//大数乘法</span><br><span class="hljs-keyword">import</span> java.util.*;<br><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Main</span> </span>&#123;<br>		<br>		<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> </span>&#123;<br>		Scanner sc = <span class="hljs-keyword">new</span> Scanner(System.in);<br>		String a = sc.nextLine();<br>		String b = sc.nextLine();<br>		System.out.print(a+<span class="hljs-string">" * "</span>+b+<span class="hljs-string">" = "</span>);<br>		<span class="hljs-comment">//判断0</span><br>		<span class="hljs-keyword">if</span>(a.equals(<span class="hljs-string">"0"</span>)||b.equals(<span class="hljs-string">"0"</span>))System.out.println(<span class="hljs-string">"0"</span>);<br>		<span class="hljs-keyword">else</span> &#123;<br>		<span class="hljs-comment">//判断符号</span><br>		Boolean flag = <span class="hljs-keyword">true</span>; <br>		<span class="hljs-keyword">if</span>(a.charAt(<span class="hljs-number">0</span>)==<span class="hljs-string">'-'</span>&amp;&amp;b.charAt(<span class="hljs-number">0</span>)==<span class="hljs-string">'-'</span>)<br>			&#123;<br>				a = a.substring(<span class="hljs-number">1</span>);<br>				b = b.substring(<span class="hljs-number">1</span>);<br>				flag = <span class="hljs-keyword">true</span>;<br>			&#125;<br><br>		<span class="hljs-keyword">if</span>(a.charAt(<span class="hljs-number">0</span>)!=<span class="hljs-string">'-'</span>&amp;&amp;b.charAt(<span class="hljs-number">0</span>)!=<span class="hljs-string">'-'</span>)&#123;<br>				flag = <span class="hljs-keyword">true</span>;<br>			&#125;<br>			<br><br>		<span class="hljs-keyword">if</span>(a.charAt(<span class="hljs-number">0</span>)==<span class="hljs-string">'-'</span>&amp;&amp;b.charAt(<span class="hljs-number">0</span>)!=<span class="hljs-string">'-'</span>)<br>			&#123;<br>				a = a.substring(<span class="hljs-number">1</span>);<br>				flag =  <span class="hljs-keyword">false</span>;<br>			&#125;<br>		<span class="hljs-keyword">if</span>(a.charAt(<span class="hljs-number">0</span>)!=<span class="hljs-string">'-'</span>&amp;&amp;b.charAt(<span class="hljs-number">0</span>)==<span class="hljs-string">'-'</span>)<br>		&#123;<br>				b = b.substring(<span class="hljs-number">1</span>);<br>				flag =  <span class="hljs-keyword">false</span>;<br>		&#125;<br><br>		<span class="hljs-keyword">if</span>(!flag)System.out.print(<span class="hljs-string">"-"</span>);<br><br>		<span class="hljs-comment">//注意：这里直接将数字计算后的结果相加起来了直接得到最后一行</span><br>		<span class="hljs-keyword">int</span>[] s = <span class="hljs-keyword">new</span> <span class="hljs-keyword">int</span>[b.length()+a.length()];<br>		<span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = b.length()-<span class="hljs-number">1</span>; i &gt;= <span class="hljs-number">0</span>; i--) &#123;<br>			<span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> k = a.length()-<span class="hljs-number">1</span>; k &gt;= <span class="hljs-number">0</span>; k--) &#123;<br>				<span class="hljs-keyword">int</span> t = (b.charAt(i)-<span class="hljs-string">'0'</span>)*(a.charAt(k)-<span class="hljs-string">'0'</span>);<br>				s[s.length-<span class="hljs-number">1</span>-(a.length()-<span class="hljs-number">1</span>-k+(b.length()-<span class="hljs-number">1</span>-i))] += t;<br>			&#125;<br>		&#125;<br>		<span class="hljs-comment">//进位计算</span><br>		<span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i=s.length-<span class="hljs-number">1</span>;i&gt;<span class="hljs-number">0</span>;i--)<br>		&#123;<br>			<span class="hljs-keyword">if</span>(s[i]&gt;=<span class="hljs-number">10</span>)&#123;<br>				s[i-<span class="hljs-number">1</span>] +=s[i]/<span class="hljs-number">10</span>;<br>				s[i]=s[i]%<span class="hljs-number">10</span>;<br>			&#125;<br>		&#125;<br>		<span class="hljs-comment">//清空前置零（int转向StringBuffer的时候可能会多0)，并使用字符串表示出答案</span><br>		StringBuffer ans = <span class="hljs-keyword">new</span> StringBuffer();<br>		<span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i : s) &#123;<br>			ans.append(i);<br>		&#125;<br>		<span class="hljs-keyword">while</span>(ans.charAt(<span class="hljs-number">0</span>)==<span class="hljs-string">'0'</span>)&#123;<br>			ans.deleteCharAt(<span class="hljs-number">0</span>);<br>		&#125;<br>		System.out.println(ans);<br>		sc.close();	<br>		&#125;	<br>	&#125;<br> <br>&#125;<br></code></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>java</category>
+      </categories>
+      <tags>
+        <tag>编程</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>小记：一次普通循迹车大赛</title>
     <url>/2020/01/19/%E5%B0%8F%E8%AE%B0%EF%BC%9A%E4%B8%80%E6%AC%A1%E6%99%AE%E9%80%9A%E5%BE%AA%E8%BF%B9%E8%BD%A6%E5%A4%A7%E8%B5%9B/</url>
     <content><![CDATA[<p>记录点滴大赛。</p>
@@ -1995,41 +2033,25 @@ class GFG {
       </tags>
   </entry>
   <entry>
-    <title>大数乘法</title>
-    <url>/2020/04/30/%E5%A4%A7%E6%95%B0%E4%B9%98%E6%B3%95/</url>
-    <content><![CDATA[<p><em>使用java语言的int数组与StringBuffer来实现</em>。</p>
-<p>日常中，我们使用java来计算两数乘法时，我们会在遇到一些比较大的数字计算时，便无可奈何(int不够大)，这时一般采用<strong>BigInteger</strong>的方法进行计算，但是该方法也有一定的限制，或者说，我们是可以去尝试去使用String来实现和表示大数乘法的效果。</p>
+    <title>打印沙漏（代码较详细）</title>
+    <url>/2020/01/04/%E6%89%93%E5%8D%B0%E6%B2%99%E6%BC%8F/</url>
+    <content><![CDATA[<p>本题要求你写个程序把给定的符号打印成沙漏的形状。例如给定17个“*”，要求按下列格式打印</p>
   <a id="more"></a>
-<h2 id="编程思路："><a href="#编程思路：" class="headerlink" title="编程思路："></a>编程思路：</h2><p>首先我们要确定使用字符串后我们如何去实现我们的乘法计算，不妨我们回归竖式计算，进行模拟然后得出结果。</p>
-<p>例如：37*46的计算过程，我们也可以这样计算：如下图。</p>
-<ol>
-<li><p><strong>先不考虑进位的问题</strong>，将两个<strong>数字</strong>相乘的结果当作一个个位数（不去进行进位，最后再依次进位，方便计算机操作，当然，方法多样，并不局限于此）</p>
-<p><img src="/2020/04/30/%E5%A4%A7%E6%95%B0%E4%B9%98%E6%B3%95/multiplyExample.png" alt></p>
-</li>
-<li><p>我们也可以发现上述规律a位数*b位数≤（a+b）位数</p>
-<p>所以我们如果需要得到最后的位数的话，可以通过这个规律进行计算。</p>
-</li>
-</ol>
-<h2 id="代码："><a href="#代码：" class="headerlink" title="代码："></a>代码：</h2><p>首先，我们采用由俭入繁的理念：从简单的开始，再到复杂：</p>
-<ol>
-<li><p>我们考虑的是两个正整数的大数乘法：</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><code class="hljs java"><span class="hljs-comment">//大数乘法</span><br><span class="hljs-keyword">import</span> java.util.*;<br><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Main</span> </span>&#123;<br>		<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> </span>&#123;<br>		Scanner sc = <span class="hljs-keyword">new</span> Scanner(System.in);<br>		String a = sc.nextLine();<br>		String b = sc.nextLine();<br>		<span class="hljs-comment">//注意：这里直接将数字计算后的结果相加起来了，直接得到最后一行</span><br>		<span class="hljs-keyword">int</span>[] s = <span class="hljs-keyword">new</span> <span class="hljs-keyword">int</span>[b.length()+a.length()];<br>		System.out.print(a+<span class="hljs-string">" * "</span>+b+<span class="hljs-string">" = "</span>);<br>		<span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = b.length()-<span class="hljs-number">1</span>; i &gt;= <span class="hljs-number">0</span>; i--) &#123;<br>			<span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> k = a.length()-<span class="hljs-number">1</span>; k &gt;= <span class="hljs-number">0</span>; k--) &#123;<br>				<span class="hljs-keyword">int</span> t = (b.charAt(i)-<span class="hljs-string">'0'</span>)*(a.charAt(k)-<span class="hljs-string">'0'</span>);<br>				s[s.length-<span class="hljs-number">1</span>-(a.length()-<span class="hljs-number">1</span>-k+(b.length()-<span class="hljs-number">1</span>-i))] += t;<br>			&#125;<br>		&#125;<br>		<span class="hljs-comment">//进位计算</span><br>		<span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i=s.length-<span class="hljs-number">1</span>;i&gt;<span class="hljs-number">0</span>;i--)<br>		&#123;<br>			<span class="hljs-keyword">if</span>(s[i]&gt;=<span class="hljs-number">10</span>)&#123;<br>				s[i-<span class="hljs-number">1</span>] +=s[i]/<span class="hljs-number">10</span>;<br>				s[i]=s[i]%<span class="hljs-number">10</span>;<br>			&#125;<br>		&#125;<br>		<span class="hljs-comment">//清空前置零（int转向StringBuffer的时候可能会多0)，并使用字符串表示出答案</span><br>		StringBuffer ans = <span class="hljs-keyword">new</span> StringBuffer();<br>		<span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i : s) &#123;<br>			ans.append(i);<br>		&#125;<br>		<span class="hljs-keyword">while</span>(ans.charAt(<span class="hljs-number">0</span>)==<span class="hljs-string">'0'</span>)&#123;<br>			ans.deleteCharAt(<span class="hljs-number">0</span>);<br>		&#125;<br>		System.out.println(ans);<br>		sc.close();		<br>	&#125;<br> <br>&#125;<br></code></pre></td></tr></table></figure>
-</li>
-<li><p>好的计算成功，那么如果有负数存在呢？</p>
-<p>我们只需要加上如下的判断符号的代码即可</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><code class="hljs java"><span class="hljs-comment">//判断符号</span><br>		Boolean flag = <span class="hljs-keyword">true</span>; <br>		<span class="hljs-keyword">if</span>(a.charAt(<span class="hljs-number">0</span>)==<span class="hljs-string">'-'</span>&amp;&amp;b.charAt(<span class="hljs-number">0</span>)==<span class="hljs-string">'-'</span>)<br>			&#123;<br>				a = a.substring(<span class="hljs-number">1</span>);<br>				b = b.substring(<span class="hljs-number">1</span>);<br>				flag = <span class="hljs-keyword">true</span>;<br>			&#125;<br><br>		<span class="hljs-keyword">if</span>(a.charAt(<span class="hljs-number">0</span>)!=<span class="hljs-string">'-'</span>&amp;&amp;b.charAt(<span class="hljs-number">0</span>)!=<span class="hljs-string">'-'</span>)&#123;<br>				flag = <span class="hljs-keyword">true</span>;<br>			&#125;<br>			<br><br>		<span class="hljs-keyword">if</span>(a.charAt(<span class="hljs-number">0</span>)==<span class="hljs-string">'-'</span>&amp;&amp;b.charAt(<span class="hljs-number">0</span>)!=<span class="hljs-string">'-'</span>)<br>			&#123;<br>				a = a.substring(<span class="hljs-number">1</span>);<br>				flag =  <span class="hljs-keyword">false</span>;<br>			&#125;<br>		<span class="hljs-keyword">if</span>(a.charAt(<span class="hljs-number">0</span>)!=<span class="hljs-string">'-'</span>&amp;&amp;b.charAt(<span class="hljs-number">0</span>)==<span class="hljs-string">'-'</span>)<br>		&#123;<br>				b = b.substring(<span class="hljs-number">1</span>);<br>				flag =  <span class="hljs-keyword">false</span>;<br>		&#125;<br><br>		<span class="hljs-keyword">if</span>(!flag)System.out.print(<span class="hljs-string">"-"</span>);<br></code></pre></td></tr></table></figure>
-</li>
-</ol>
-<p>完整的代码如下：</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><code class="hljs java"><span class="hljs-comment">//大数乘法(有符号）</span><br><span class="hljs-keyword">import</span> java.util.*;<br><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Main</span> </span>&#123;<br>		<br>		<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> </span>&#123;<br>		Scanner sc = <span class="hljs-keyword">new</span> Scanner(System.in);<br>		String a = sc.nextLine();<br>		String b = sc.nextLine();<br>		System.out.print(a+<span class="hljs-string">" * "</span>+b+<span class="hljs-string">" = "</span>);<br>		<span class="hljs-comment">//判断符号</span><br>		Boolean flag = <span class="hljs-keyword">true</span>; <br>		<span class="hljs-keyword">if</span>(a.charAt(<span class="hljs-number">0</span>)==<span class="hljs-string">'-'</span>&amp;&amp;b.charAt(<span class="hljs-number">0</span>)==<span class="hljs-string">'-'</span>)<br>			&#123;<br>				a = a.substring(<span class="hljs-number">1</span>);<br>				b = b.substring(<span class="hljs-number">1</span>);<br>				flag = <span class="hljs-keyword">true</span>;<br>			&#125;<br><br>		<span class="hljs-keyword">if</span>(a.charAt(<span class="hljs-number">0</span>)!=<span class="hljs-string">'-'</span>&amp;&amp;b.charAt(<span class="hljs-number">0</span>)!=<span class="hljs-string">'-'</span>)&#123;<br>				flag = <span class="hljs-keyword">true</span>;<br>			&#125;<br>			<br><br>		<span class="hljs-keyword">if</span>(a.charAt(<span class="hljs-number">0</span>)==<span class="hljs-string">'-'</span>&amp;&amp;b.charAt(<span class="hljs-number">0</span>)!=<span class="hljs-string">'-'</span>)<br>			&#123;<br>				a = a.substring(<span class="hljs-number">1</span>);<br>				flag =  <span class="hljs-keyword">false</span>;<br>			&#125;<br>		<span class="hljs-keyword">if</span>(a.charAt(<span class="hljs-number">0</span>)!=<span class="hljs-string">'-'</span>&amp;&amp;b.charAt(<span class="hljs-number">0</span>)==<span class="hljs-string">'-'</span>)<br>		&#123;<br>				b = b.substring(<span class="hljs-number">1</span>);<br>				flag =  <span class="hljs-keyword">false</span>;<br>		&#125;<br><br>		<span class="hljs-keyword">if</span>(!flag)System.out.print(<span class="hljs-string">"-"</span>);<br><br>		<span class="hljs-comment">//注意：这里直接将数字计算后的结果相加起来了直接得到最后一行</span><br>		<span class="hljs-keyword">int</span>[] s = <span class="hljs-keyword">new</span> <span class="hljs-keyword">int</span>[b.length()+a.length()];<br>		<span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = b.length()-<span class="hljs-number">1</span>; i &gt;= <span class="hljs-number">0</span>; i--) &#123;<br>			<span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> k = a.length()-<span class="hljs-number">1</span>; k &gt;= <span class="hljs-number">0</span>; k--) &#123;<br>				<span class="hljs-keyword">int</span> t = (b.charAt(i)-<span class="hljs-string">'0'</span>)*(a.charAt(k)-<span class="hljs-string">'0'</span>);<br>				s[s.length-<span class="hljs-number">1</span>-(a.length()-<span class="hljs-number">1</span>-k+(b.length()-<span class="hljs-number">1</span>-i))] += t;<br>			&#125;<br>		&#125;<br>		<span class="hljs-comment">//进位计算</span><br>		<span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i=s.length-<span class="hljs-number">1</span>;i&gt;<span class="hljs-number">0</span>;i--)<br>		&#123;<br>			<span class="hljs-keyword">if</span>(s[i]&gt;=<span class="hljs-number">10</span>)&#123;<br>				s[i-<span class="hljs-number">1</span>] +=s[i]/<span class="hljs-number">10</span>;<br>				s[i]=s[i]%<span class="hljs-number">10</span>;<br>			&#125;<br>		&#125;<br>		<span class="hljs-comment">//清空前置零（int转向StringBuffer的时候可能会多0)，并使用字符串表示出答案</span><br>		StringBuffer ans = <span class="hljs-keyword">new</span> StringBuffer();<br>		<span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i : s) &#123;<br>			ans.append(i);<br>		&#125;<br>		<span class="hljs-keyword">while</span>(ans.charAt(<span class="hljs-number">0</span>)==<span class="hljs-string">'0'</span>)&#123;<br>			ans.deleteCharAt(<span class="hljs-number">0</span>);<br>		&#125;<br>		System.out.println(ans);<br>		sc.close();		<br>	&#125;<br> <br>&#125;<br></code></pre></td></tr></table></figure>
-<h2 id="最后：bugs："><a href="#最后：bugs：" class="headerlink" title="最后：bugs："></a>最后：bugs：</h2><p>在初步形成之后，还是有一些bug的比如乘数中含有0，那么就会报错。</p>
-<p>所以要排除这一情况。（在判断符号前加入一个判断0即可）</p>
-<h2 id="代码：-1"><a href="#代码：-1" class="headerlink" title="代码："></a>代码：</h2><figure class="highlight java"><table><tr><td class="code"><pre><code class="hljs java"><span class="hljs-comment">//大数乘法</span><br><span class="hljs-keyword">import</span> java.util.*;<br><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Main</span> </span>&#123;<br>		<br>		<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> </span>&#123;<br>		Scanner sc = <span class="hljs-keyword">new</span> Scanner(System.in);<br>		String a = sc.nextLine();<br>		String b = sc.nextLine();<br>		System.out.print(a+<span class="hljs-string">" * "</span>+b+<span class="hljs-string">" = "</span>);<br>		<span class="hljs-comment">//判断0</span><br>		<span class="hljs-keyword">if</span>(a.equals(<span class="hljs-string">"0"</span>)||b.equals(<span class="hljs-string">"0"</span>))System.out.println(<span class="hljs-string">"0"</span>);<br>		<span class="hljs-keyword">else</span> &#123;<br>		<span class="hljs-comment">//判断符号</span><br>		Boolean flag = <span class="hljs-keyword">true</span>; <br>		<span class="hljs-keyword">if</span>(a.charAt(<span class="hljs-number">0</span>)==<span class="hljs-string">'-'</span>&amp;&amp;b.charAt(<span class="hljs-number">0</span>)==<span class="hljs-string">'-'</span>)<br>			&#123;<br>				a = a.substring(<span class="hljs-number">1</span>);<br>				b = b.substring(<span class="hljs-number">1</span>);<br>				flag = <span class="hljs-keyword">true</span>;<br>			&#125;<br><br>		<span class="hljs-keyword">if</span>(a.charAt(<span class="hljs-number">0</span>)!=<span class="hljs-string">'-'</span>&amp;&amp;b.charAt(<span class="hljs-number">0</span>)!=<span class="hljs-string">'-'</span>)&#123;<br>				flag = <span class="hljs-keyword">true</span>;<br>			&#125;<br>			<br><br>		<span class="hljs-keyword">if</span>(a.charAt(<span class="hljs-number">0</span>)==<span class="hljs-string">'-'</span>&amp;&amp;b.charAt(<span class="hljs-number">0</span>)!=<span class="hljs-string">'-'</span>)<br>			&#123;<br>				a = a.substring(<span class="hljs-number">1</span>);<br>				flag =  <span class="hljs-keyword">false</span>;<br>			&#125;<br>		<span class="hljs-keyword">if</span>(a.charAt(<span class="hljs-number">0</span>)!=<span class="hljs-string">'-'</span>&amp;&amp;b.charAt(<span class="hljs-number">0</span>)==<span class="hljs-string">'-'</span>)<br>		&#123;<br>				b = b.substring(<span class="hljs-number">1</span>);<br>				flag =  <span class="hljs-keyword">false</span>;<br>		&#125;<br><br>		<span class="hljs-keyword">if</span>(!flag)System.out.print(<span class="hljs-string">"-"</span>);<br><br>		<span class="hljs-comment">//注意：这里直接将数字计算后的结果相加起来了直接得到最后一行</span><br>		<span class="hljs-keyword">int</span>[] s = <span class="hljs-keyword">new</span> <span class="hljs-keyword">int</span>[b.length()+a.length()];<br>		<span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = b.length()-<span class="hljs-number">1</span>; i &gt;= <span class="hljs-number">0</span>; i--) &#123;<br>			<span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> k = a.length()-<span class="hljs-number">1</span>; k &gt;= <span class="hljs-number">0</span>; k--) &#123;<br>				<span class="hljs-keyword">int</span> t = (b.charAt(i)-<span class="hljs-string">'0'</span>)*(a.charAt(k)-<span class="hljs-string">'0'</span>);<br>				s[s.length-<span class="hljs-number">1</span>-(a.length()-<span class="hljs-number">1</span>-k+(b.length()-<span class="hljs-number">1</span>-i))] += t;<br>			&#125;<br>		&#125;<br>		<span class="hljs-comment">//进位计算</span><br>		<span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i=s.length-<span class="hljs-number">1</span>;i&gt;<span class="hljs-number">0</span>;i--)<br>		&#123;<br>			<span class="hljs-keyword">if</span>(s[i]&gt;=<span class="hljs-number">10</span>)&#123;<br>				s[i-<span class="hljs-number">1</span>] +=s[i]/<span class="hljs-number">10</span>;<br>				s[i]=s[i]%<span class="hljs-number">10</span>;<br>			&#125;<br>		&#125;<br>		<span class="hljs-comment">//清空前置零（int转向StringBuffer的时候可能会多0)，并使用字符串表示出答案</span><br>		StringBuffer ans = <span class="hljs-keyword">new</span> StringBuffer();<br>		<span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i : s) &#123;<br>			ans.append(i);<br>		&#125;<br>		<span class="hljs-keyword">while</span>(ans.charAt(<span class="hljs-number">0</span>)==<span class="hljs-string">'0'</span>)&#123;<br>			ans.deleteCharAt(<span class="hljs-number">0</span>);<br>		&#125;<br>		System.out.println(ans);<br>		sc.close();	<br>		&#125;	<br>	&#125;<br> <br>&#125;<br></code></pre></td></tr></table></figure>]]></content>
+<figure class="highlight asciidoc"><table><tr><td class="code"><pre><code class="hljs asciidoc">*****<br> ***<br>  *<br> ***<br>*****<br></code></pre></td></tr></table></figure>
+<p>所谓“沙漏形状”，是指每行输出奇数个符号；各行符号中心对齐；相邻两行符号数差2；符号数先从大到小顺序递减到1，再从小到大顺序递增；首尾符号数相等。</p>
+<p>给定任意N个符号，不一定能正好组成一个沙漏。要求打印出的沙漏能用掉尽可能多的符号。</p>
+<h3 id="输入格式"><a href="#输入格式" class="headerlink" title="输入格式:"></a>输入格式:</h3><p>输入在一行给出1个正整数N（≤1000）和一个符号，中间以空格分隔。</p>
+<h3 id="输出格式"><a href="#输出格式" class="headerlink" title="输出格式:"></a>输出格式:</h3><p>首先打印出由给定符号组成的最大的沙漏形状，最后在一行中输出剩下没用掉的符号数。</p>
+<h3 id="输入样例"><a href="#输入样例" class="headerlink" title="输入样例:"></a>输入样例:</h3><figure class="highlight plain"><table><tr><td class="code"><pre><code class="hljs in">19 *<br></code></pre></td></tr></table></figure>
+<h3 id="输出样例"><a href="#输出样例" class="headerlink" title="输出样例:"></a>输出样例:</h3><figure class="highlight plain"><table><tr><td class="code"><pre><code class="hljs out">*****<br> ***<br>  *<br> ***<br>*****<br>2<br></code></pre></td></tr></table></figure>
+<h3 id="题目思路："><a href="#题目思路：" class="headerlink" title="题目思路："></a>题目思路：</h3><p>哎，一言难尽，本以为是一道水题，却在写的时候发现写了好久，静不下心来。就抄了一下别人的。后来机缘巧合下，有自己重新坐下，冷静思考。经过许多次调试，有了一些结果。简单来说：就是大而化小。</p>
+<h3 id="代码："><a href="#代码：" class="headerlink" title="代码："></a>代码：</h3><figure class="highlight cpp"><table><tr><td class="code"><pre><code class="hljs cpp"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span><span class="hljs-meta-string">&lt;bits/stdc++.h&gt;</span></span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> <span class="hljs-built_in">std</span>;<br><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span>&#123;<br>	<span class="hljs-keyword">int</span> n;<br>	<span class="hljs-built_in">cin</span>&gt;&gt;n;<br>	<span class="hljs-keyword">char</span> ch;<br>	getchar();<span class="hljs-comment">//中间的空格</span><br>	ch=getchar(); <br>	<span class="hljs-keyword">int</span> i,item=<span class="hljs-number">1</span>,sum=<span class="hljs-number">1</span>;<span class="hljs-comment">//sum为所用的符号个数，item表示最大的一行的符号个数。 </span><br>	<span class="hljs-keyword">for</span>(i=<span class="hljs-number">0</span>;sum&lt;=n;i++)<span class="hljs-comment">//这样写，最后sum一定大于n，会超出。 </span><br>	&#123;item+=<span class="hljs-number">2</span>;<br>	sum+=item*<span class="hljs-number">2</span>;<br>	&#125;<br>	sum-=item*<span class="hljs-number">2</span>;<span class="hljs-comment">//得到未超出时的所需符号个数sum，（返回上一次的sum） </span><br>	<span class="hljs-keyword">int</span> ans = n-sum;<span class="hljs-comment">//得到了最后的剩余的符号个数；（最后输出即可） </span><br>	<br>	<span class="hljs-comment">//接下来输出沙漏（首先不考虑输出下半个沙漏，先输出一半） </span><br>	<span class="hljs-keyword">int</span> t=item<span class="hljs-number">-2</span>;<br>	<span class="hljs-keyword">int</span> cnt=<span class="hljs-number">0</span>; <span class="hljs-comment">//第一次是0第二行应该时1，依次类推。 </span><br>	<span class="hljs-keyword">for</span>(i=t;i&gt;<span class="hljs-number">0</span>;i-=<span class="hljs-number">2</span>)<br>	&#123;	<br>		<span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> k=<span class="hljs-number">0</span>;k&lt;cnt;k++)<span class="hljs-built_in">cout</span>&lt;&lt;<span class="hljs-string">" "</span>;<span class="hljs-comment">//输出空格 </span><br>		<span class="hljs-comment">//cnt++如果放在这里（判断中）会出现无限死循环！</span><br>		<span class="hljs-comment">//(第二行判断的时候会陷入死循环）</span><br>		<span class="hljs-comment">//放在最后就好了。 </span><br>		<br>	<br>		<span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> j=<span class="hljs-number">0</span>;j&lt;i;j++)&#123;<span class="hljs-comment">//输出符号 </span><br>			<span class="hljs-built_in">cout</span>&lt;&lt;ch;<br>		&#125;<span class="hljs-built_in">cout</span>&lt;&lt;<span class="hljs-built_in">endl</span>;<br>		cnt++;	<br>	&#125; <br>	<br>	<span class="hljs-comment">//下半个沙漏</span><br>	cnt--;<span class="hljs-comment">//是由于最后cnt又多加了1； </span><br>	 <span class="hljs-keyword">for</span>(i=<span class="hljs-number">3</span>;i&lt;=t;i+=<span class="hljs-number">2</span>)<span class="hljs-comment">//照着上面的反过来即可（但是第一项是1) </span><br>	 &#123;<br>	 	cnt--; <br>	 	<span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> k=<span class="hljs-number">0</span>;k&lt;cnt;k++)<span class="hljs-built_in">cout</span>&lt;&lt;<span class="hljs-string">" "</span>;<span class="hljs-comment">//输出空格</span><br>		<span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> j=<span class="hljs-number">0</span>;j&lt;i;j++)&#123;<span class="hljs-comment">//输出符号 </span><br>			<span class="hljs-built_in">cout</span>&lt;&lt;ch;<br>		&#125;<span class="hljs-built_in">cout</span>&lt;&lt;<span class="hljs-built_in">endl</span>;<br>	 &#125; <br>	 <span class="hljs-built_in">cout</span>&lt;&lt;ans;<span class="hljs-comment">//还有一个剩余个数需要输出。。。 </span><br>	<span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>	<br>&#125;<br></code></pre></td></tr></table></figure>
+]]></content>
       <categories>
-        <category>java</category>
+        <category>编程</category>
       </categories>
       <tags>
-        <tag>编程</tag>
+        <tag>pta</tag>
       </tags>
   </entry>
   <entry>
@@ -2097,6 +2119,17 @@ class GFG {
       </tags>
   </entry>
   <entry>
+    <title>查验身份证</title>
+    <url>/2020/01/03/%E6%9F%A5%E9%AA%8C%E8%BA%AB%E4%BB%BD%E8%AF%81/</url>
+    <content><![CDATA[]]></content>
+      <categories>
+        <category>编程</category>
+      </categories>
+      <tags>
+        <tag>pta</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>方阵循环右移于其各种踩bug23333</title>
     <url>/2019/11/12/%E6%96%B9%E9%98%B5%E5%BE%AA%E7%8E%AF%E5%8F%B3%E7%A7%BB%E4%BA%8E%E5%85%B6%E5%90%84%E7%A7%8D%E8%B8%A9bug23333/</url>
     <content><![CDATA[<p>又是元气满满地踩bug。。</p>
@@ -2135,28 +2168,6 @@ class GFG {
 <h1 id="输出样例2："><a href="#输出样例2：" class="headerlink" title="输出样例2："></a>输出样例2：</h1><p>-1</p>
 <h1 id="思路："><a href="#思路：" class="headerlink" title="思路："></a>思路：</h1><p>利用循环寻找到第一个相符合的字符，然后去判断是否为子字符串。<br>但此题目不可使用string.h较为麻烦，考验我们更多的是原理部分。</p>
 <h1 id="代码如下："><a href="#代码如下：" class="headerlink" title="代码如下："></a>代码如下：</h1><figure class="highlight c"><table><tr><td class="code"><pre><code class="hljs c"><span class="hljs-function"><span class="hljs-keyword">char</span> *<span class="hljs-title">search</span><span class="hljs-params">(<span class="hljs-keyword">char</span> *s, <span class="hljs-keyword">char</span> *t)</span></span>&#123;<br>	<span class="hljs-keyword">int</span> n,i,j,m;<br>	<span class="hljs-keyword">int</span> flag = <span class="hljs-number">-1</span>;<br>	<span class="hljs-keyword">for</span>(i=<span class="hljs-number">0</span>;s[i]!=<span class="hljs-string">'\0'</span>;i++)<span class="hljs-comment">//等效n = strlen(s)</span><br>	n=i;<br>	<span class="hljs-keyword">for</span>(i=<span class="hljs-number">0</span>;t[i]!=<span class="hljs-string">'\0'</span>;i++)<span class="hljs-comment">//等效m = strlen(t)</span><br>	m=i;<br>	<span class="hljs-keyword">for</span>(i=<span class="hljs-number">0</span>;i&lt;n;i++)&#123;<span class="hljs-comment">//i控制字符串s</span><br>		<span class="hljs-keyword">if</span>(t[<span class="hljs-number">0</span>]==s[i])&#123;<span class="hljs-comment">//循环找到第一个相符合的字符</span><br>			flag = <span class="hljs-number">1</span>;<span class="hljs-comment">//1代表找到了</span><br>		&#125;<br>		<span class="hljs-keyword">if</span>(flag = <span class="hljs-number">1</span>)&#123;<span class="hljs-comment">//如果找到第一个匹配的字符</span><br>			<span class="hljs-keyword">for</span>(j=<span class="hljs-number">1</span>;j&lt;=m;j++)&#123;<span class="hljs-comment">//j控制字符串t</span><br>				<span class="hljs-keyword">if</span>(t[j]==s[i+j])&#123;<span class="hljs-comment">//从第二个开始判断（第一个已经判断成功）</span><br>					flag =<span class="hljs-number">1</span>;<br>				&#125;<span class="hljs-keyword">else</span> &#123;<br>					flag =<span class="hljs-number">-1</span>;<span class="hljs-comment">//判断不成立时</span><br>				<span class="hljs-keyword">break</span>;	<br>				&#125;<br>			&#125;<br>			<span class="hljs-keyword">if</span>(flag ==<span class="hljs-number">1</span>)<span class="hljs-keyword">return</span> &amp;s[i];<span class="hljs-comment">//（在匹配成功的情况下）</span><br>		&#125;<br>	&#125;<span class="hljs-keyword">return</span> <span class="hljs-literal">NULL</span>;<br>&#125;<br></code></pre></td></tr></table></figure>]]></content>
-      <categories>
-        <category>编程</category>
-      </categories>
-      <tags>
-        <tag>pta</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>打印沙漏（代码较详细）</title>
-    <url>/2020/01/04/%E6%89%93%E5%8D%B0%E6%B2%99%E6%BC%8F/</url>
-    <content><![CDATA[<p>本题要求你写个程序把给定的符号打印成沙漏的形状。例如给定17个“*”，要求按下列格式打印</p>
-  <a id="more"></a>
-<figure class="highlight asciidoc"><table><tr><td class="code"><pre><code class="hljs asciidoc">*****<br> ***<br>  *<br> ***<br>*****<br></code></pre></td></tr></table></figure>
-<p>所谓“沙漏形状”，是指每行输出奇数个符号；各行符号中心对齐；相邻两行符号数差2；符号数先从大到小顺序递减到1，再从小到大顺序递增；首尾符号数相等。</p>
-<p>给定任意N个符号，不一定能正好组成一个沙漏。要求打印出的沙漏能用掉尽可能多的符号。</p>
-<h3 id="输入格式"><a href="#输入格式" class="headerlink" title="输入格式:"></a>输入格式:</h3><p>输入在一行给出1个正整数N（≤1000）和一个符号，中间以空格分隔。</p>
-<h3 id="输出格式"><a href="#输出格式" class="headerlink" title="输出格式:"></a>输出格式:</h3><p>首先打印出由给定符号组成的最大的沙漏形状，最后在一行中输出剩下没用掉的符号数。</p>
-<h3 id="输入样例"><a href="#输入样例" class="headerlink" title="输入样例:"></a>输入样例:</h3><figure class="highlight plain"><table><tr><td class="code"><pre><code class="hljs in">19 *<br></code></pre></td></tr></table></figure>
-<h3 id="输出样例"><a href="#输出样例" class="headerlink" title="输出样例:"></a>输出样例:</h3><figure class="highlight plain"><table><tr><td class="code"><pre><code class="hljs out">*****<br> ***<br>  *<br> ***<br>*****<br>2<br></code></pre></td></tr></table></figure>
-<h3 id="题目思路："><a href="#题目思路：" class="headerlink" title="题目思路："></a>题目思路：</h3><p>哎，一言难尽，本以为是一道水题，却在写的时候发现写了好久，静不下心来。就抄了一下别人的。后来机缘巧合下，有自己重新坐下，冷静思考。经过许多次调试，有了一些结果。简单来说：就是大而化小。</p>
-<h3 id="代码："><a href="#代码：" class="headerlink" title="代码："></a>代码：</h3><figure class="highlight cpp"><table><tr><td class="code"><pre><code class="hljs cpp"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span><span class="hljs-meta-string">&lt;bits/stdc++.h&gt;</span></span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> <span class="hljs-built_in">std</span>;<br><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span>&#123;<br>	<span class="hljs-keyword">int</span> n;<br>	<span class="hljs-built_in">cin</span>&gt;&gt;n;<br>	<span class="hljs-keyword">char</span> ch;<br>	getchar();<span class="hljs-comment">//中间的空格</span><br>	ch=getchar(); <br>	<span class="hljs-keyword">int</span> i,item=<span class="hljs-number">1</span>,sum=<span class="hljs-number">1</span>;<span class="hljs-comment">//sum为所用的符号个数，item表示最大的一行的符号个数。 </span><br>	<span class="hljs-keyword">for</span>(i=<span class="hljs-number">0</span>;sum&lt;=n;i++)<span class="hljs-comment">//这样写，最后sum一定大于n，会超出。 </span><br>	&#123;item+=<span class="hljs-number">2</span>;<br>	sum+=item*<span class="hljs-number">2</span>;<br>	&#125;<br>	sum-=item*<span class="hljs-number">2</span>;<span class="hljs-comment">//得到未超出时的所需符号个数sum，（返回上一次的sum） </span><br>	<span class="hljs-keyword">int</span> ans = n-sum;<span class="hljs-comment">//得到了最后的剩余的符号个数；（最后输出即可） </span><br>	<br>	<span class="hljs-comment">//接下来输出沙漏（首先不考虑输出下半个沙漏，先输出一半） </span><br>	<span class="hljs-keyword">int</span> t=item<span class="hljs-number">-2</span>;<br>	<span class="hljs-keyword">int</span> cnt=<span class="hljs-number">0</span>; <span class="hljs-comment">//第一次是0第二行应该时1，依次类推。 </span><br>	<span class="hljs-keyword">for</span>(i=t;i&gt;<span class="hljs-number">0</span>;i-=<span class="hljs-number">2</span>)<br>	&#123;	<br>		<span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> k=<span class="hljs-number">0</span>;k&lt;cnt;k++)<span class="hljs-built_in">cout</span>&lt;&lt;<span class="hljs-string">" "</span>;<span class="hljs-comment">//输出空格 </span><br>		<span class="hljs-comment">//cnt++如果放在这里（判断中）会出现无限死循环！</span><br>		<span class="hljs-comment">//(第二行判断的时候会陷入死循环）</span><br>		<span class="hljs-comment">//放在最后就好了。 </span><br>		<br>	<br>		<span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> j=<span class="hljs-number">0</span>;j&lt;i;j++)&#123;<span class="hljs-comment">//输出符号 </span><br>			<span class="hljs-built_in">cout</span>&lt;&lt;ch;<br>		&#125;<span class="hljs-built_in">cout</span>&lt;&lt;<span class="hljs-built_in">endl</span>;<br>		cnt++;	<br>	&#125; <br>	<br>	<span class="hljs-comment">//下半个沙漏</span><br>	cnt--;<span class="hljs-comment">//是由于最后cnt又多加了1； </span><br>	 <span class="hljs-keyword">for</span>(i=<span class="hljs-number">3</span>;i&lt;=t;i+=<span class="hljs-number">2</span>)<span class="hljs-comment">//照着上面的反过来即可（但是第一项是1) </span><br>	 &#123;<br>	 	cnt--; <br>	 	<span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> k=<span class="hljs-number">0</span>;k&lt;cnt;k++)<span class="hljs-built_in">cout</span>&lt;&lt;<span class="hljs-string">" "</span>;<span class="hljs-comment">//输出空格</span><br>		<span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> j=<span class="hljs-number">0</span>;j&lt;i;j++)&#123;<span class="hljs-comment">//输出符号 </span><br>			<span class="hljs-built_in">cout</span>&lt;&lt;ch;<br>		&#125;<span class="hljs-built_in">cout</span>&lt;&lt;<span class="hljs-built_in">endl</span>;<br>	 &#125; <br>	 <span class="hljs-built_in">cout</span>&lt;&lt;ans;<span class="hljs-comment">//还有一个剩余个数需要输出。。。 </span><br>	<span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>	<br>&#125;<br></code></pre></td></tr></table></figure>
-]]></content>
       <categories>
         <category>编程</category>
       </categories>
@@ -2227,48 +2238,6 @@ class GFG {
       </tags>
   </entry>
   <entry>
-    <title>查验身份证</title>
-    <url>/2020/01/03/%E6%9F%A5%E9%AA%8C%E8%BA%AB%E4%BB%BD%E8%AF%81/</url>
-    <content><![CDATA[]]></content>
-      <categories>
-        <category>编程</category>
-      </categories>
-      <tags>
-        <tag>pta</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>汉诺塔的思考及解答</title>
-    <url>/2020/02/10/%E6%B1%89%E8%AF%BA%E5%A1%94%E7%9A%84%E6%80%9D%E8%80%83%E5%8F%8A%E8%A7%A3%E7%AD%94/</url>
-    <content><![CDATA[<p>其实在汉诺塔问题之前，斐波那契数列的问题是个比较好解决的问题。</p>
-<p>但是汉诺塔问题令我思考了一段时间。最后不断探索，有了一些思考。</p>
-<p>沉下心，我们需要有一个大的格局。不断分解为小的问题。</p>
-<p>递归问题么，不就是找到规律与出口么。</p>
-  <a id="more"></a>
-<p>汉诺塔（又称河内塔）问题：大梵天创造世界的时候做了三根金刚石柱子，在一根柱子上从下往上按照大小顺序摞着64片黄金圆盘。大梵天命令婆罗门把圆盘从下面开始按大小顺序重新摆放在另一根柱子上。并且规定，在小圆盘上不能放大圆盘，在三根柱子之间一次只能移动一个圆盘。</p>
-<p>我们不妨自己先试一试，如何将一个或三个盘子从a移动到c。</p>
-<p>好的，那么总结一下<strong>规律</strong>，<strong>假设有n个盘子，我们就是借助一个柱子c，把a上的n-1个盘子放到b上，再把b上的n-1个盘子通过a移动到c上即可</strong>。（下图较复杂，简单看看就好）</p>
-<p><img src="/2020/02/10/%E6%B1%89%E8%AF%BA%E5%A1%94%E7%9A%84%E6%80%9D%E8%80%83%E5%8F%8A%E8%A7%A3%E7%AD%94/Untitled.png" alt="Untitled">好的，那么这一步的代码该怎么写呢？？？</p>
-<figure class="highlight c"><table><tr><td class="code"><pre><code class="hljs c">hanoi(n<span class="hljs-number">-1</span>,a,c,b);<span class="hljs-comment">//我们就是借助一个柱子c，把a上的n-1个盘子放到b上，</span><br><span class="hljs-built_in">printf</span>(<span class="hljs-string">"将%c移动到%c\\n"</span>,a,b);<br>hanoi(n<span class="hljs-number">-1</span>,b,a,c);<span class="hljs-comment">//再把b上的n-1个盘子通过a移动到c上即可。</span><br></code></pre></td></tr></table></figure>
-<p>这样是不是就可以理解了。</p>
-<p>好的，但是我们要给这个函数一个出口不然，他就会一直跑下去。。。（并且问我怎么知道的）</p>
-<figure class="highlight c"><table><tr><td class="code"><pre><code class="hljs c"><span class="hljs-keyword">if</span>(n==<span class="hljs-number">1</span>)&#123;<span class="hljs-comment">//终止条件。</span><br><span class="hljs-built_in">printf</span>(<span class="hljs-string">"将%c移动到%c\\n"</span>,a,c);<span class="hljs-comment">//最后不就是把a上的最后一个放到c上，就可以了吧。</span><br><span class="hljs-comment">//我们不考虑别的。嘿嘿</span><br>&#125;<br></code></pre></td></tr></table></figure>
-<p>那么综合起来就是：</p>
-<figure class="highlight c"><table><tr><td class="code"><pre><code class="hljs c"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span><span class="hljs-meta-string">&lt;stdio.h&gt;</span></span><br><span class="hljs-keyword">int</span> cnt;<br><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">hanoi</span><span class="hljs-params">(<span class="hljs-keyword">int</span> n,<span class="hljs-keyword">char</span> a,<span class="hljs-keyword">char</span> b,<span class="hljs-keyword">char</span> c)</span></span>&#123;<br>cnt++;<br><span class="hljs-keyword">if</span>(n==<span class="hljs-number">1</span>)&#123;<br><span class="hljs-built_in">printf</span>(<span class="hljs-string">"将%c移动到%c\\n"</span>,a,c);<br>&#125;<br><span class="hljs-keyword">else</span> &#123;<br>hanoi(n<span class="hljs-number">-1</span>,a,c,b);<br><span class="hljs-built_in">printf</span>(<span class="hljs-string">"将%c移动到%c\\n"</span>,a,b);<br>hanoi(n<span class="hljs-number">-1</span>,b,a,c);<br>&#125;<br>&#125;<br><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span>&#123;<br><span class="hljs-keyword">int</span> n;<br><span class="hljs-keyword">char</span> a=<span class="hljs-string">'a'</span>,b=<span class="hljs-string">'b'</span>,c=<span class="hljs-string">'c'</span>;<br><span class="hljs-built_in">scanf</span>(<span class="hljs-string">"%d"</span>,&amp;n);<br>hanoi(n,a,b,c);<br><span class="hljs-built_in">printf</span>(<span class="hljs-string">"%d"</span>,cnt);<br>&#125;<br></code></pre></td></tr></table></figure>
-<p>注释可以参考上面的哦。</p>
-<p>链接：知乎上有一个有意思的答案，不妨一看：</p>
-<p><a href="https://www.zhihu.com/question/24385418/answer/257751077" target="_blank" rel="noopener">https://www.zhihu.com/question/24385418/answer/257751077</a></p>
-<p>bilibili也有一个不错的视频讲解：</p>
-<p><a href="https://www.bilibili.com/video/av9830115?from=search&amp;seid=9898738544530212324" target="_blank" rel="noopener">https://www.bilibili.com/video/av9830115?from=search&amp;seid=9898738544530212324</a></p>
-]]></content>
-      <categories>
-        <category>算法</category>
-      </categories>
-      <tags>
-        <tag>递归</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>简化的插入排序,详解附带一些基础讲解</title>
     <url>/2019/11/12/%E7%AE%80%E5%8C%96%E7%9A%84%E6%8F%92%E5%85%A5%E6%8E%92%E5%BA%8F-%E8%AF%A6%E8%A7%A3%E9%99%84%E5%B8%A6%E4%B8%80%E4%BA%9B%E5%9F%BA%E7%A1%80%E8%AE%B2%E8%A7%A3/</url>
     <content><![CDATA[<p>本题要求编写程序，将一个给定的整数插到原本有序的整数序列中，使结果序列仍然有序。</p>
@@ -2305,6 +2274,78 @@ class GFG {
       </categories>
       <tags>
         <tag>排序</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>统计单词数</title>
+    <url>/2019/12/21/%E7%BB%9F%E8%AE%A1%E5%8D%95%E8%AF%8D%E6%95%B0/</url>
+    <content><![CDATA[<h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><p>一般的文本编辑器都有查找单词的功能，该功能可以快速定位特定单词在文章中的位置，有的还能统计出特定单词在文章中出现的次数。</p>
+  <a id="more"></a>
+<p>现在，请你编程实现这一功能，具体要求是：给定一个单词，请你输出它在给定的文章中出现的次数和第一次出现的位置。注意：匹配单词时，不区分大小写，但要求完全匹配，即给定单词必须与文章中的某一独立单词在不区分大小写的情况下完全相同（参见样例1 ），如果给定单词仅是文章中某一单词的一部分则不算匹配（参见样例2 ）。</p>
+<h2 id="输入格式"><a href="#输入格式" class="headerlink" title="输入格式"></a>输入格式</h2><p>共22行。</p>
+<p>第11行为一个字符串，其中只含字母，表示给定单词；</p>
+<p>第22行为一个字符串，其中只可能包含字母和空格，表示给定的文章。</p>
+<h2 id="输出格式"><a href="#输出格式" class="headerlink" title="输出格式"></a>输出格式</h2><p>一行，如果在文章中找到给定单词则输出两个整数，两个整数之间用一个空格隔开，分别是单词在文章中出现的次数和第一次出现的位置（即在文章中第一次出现时，单词首字母在文章中的位置，位置从00 开始）；如果单词在文章中没有出现，则直接输出一个整数-1−1。</p>
+<h2 id="输入输出样例"><a href="#输入输出样例" class="headerlink" title="输入输出样例"></a>输入输出样例</h2><p><strong>输入 #1</strong></p>
+<figure class="highlight vim"><table><tr><td class="code"><pre><code class="hljs vim">To<br><span class="hljs-keyword">to</span> <span class="hljs-keyword">be</span> <span class="hljs-built_in">or</span> not <span class="hljs-keyword">to</span> <span class="hljs-keyword">be</span> <span class="hljs-keyword">is</span> <span class="hljs-keyword">a</span> question<br></code></pre></td></tr></table></figure>
+<p><strong>输出 #1</strong></p>
+<figure class="highlight basic"><table><tr><td class="code"><pre><code class="hljs basic"><span class="hljs-symbol">2 </span><span class="hljs-number">0</span><br></code></pre></td></tr></table></figure>
+<p><strong>输入 #2</strong></p>
+<figure class="highlight applescript"><table><tr><td class="code"><pre><code class="hljs applescript"><span class="hljs-keyword">to</span><br>Did <span class="hljs-keyword">the</span> Ottoman Empire lose <span class="hljs-keyword">its</span> power <span class="hljs-keyword">at</span> <span class="hljs-keyword">that</span> <span class="hljs-built_in">time</span><br></code></pre></td></tr></table></figure>
+<p><strong>输出 #2</strong></p>
+<figure class="highlight angelscript"><table><tr><td class="code"><pre><code class="hljs angelscript"><span class="hljs-number">-1</span><br></code></pre></td></tr></table></figure>
+<h2 id="说明-提示"><a href="#说明-提示" class="headerlink" title="说明/提示"></a>说明/提示</h2><p>数据范围：</p>
+<p>1≤1≤单词长度≤10≤10。</p>
+<p>1≤1≤文章长度≤1,000,000≤1,000,000。</p>
+<p>noip2011普及组第2题，洛谷新手村。</p>
+<h5 id="本题思路："><a href="#本题思路：" class="headerlink" title="本题思路："></a>本题思路：</h5><ol>
+<li><p>本来打算使用scanf(“%s”)来实现一个接着一个的单词输入，并strcmp判断。</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><code class="hljs cpp"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span><span class="hljs-meta-string">&lt;bits/stdc++.h&gt;</span></span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> <span class="hljs-built_in">std</span>;<br><br><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span><br></span>&#123;	<span class="hljs-keyword">char</span> s[<span class="hljs-number">20</span>];<br>	<span class="hljs-keyword">char</span> p[<span class="hljs-number">20</span>];<br>	<span class="hljs-keyword">char</span> t[<span class="hljs-number">20</span>];<br>	<span class="hljs-keyword">char</span> x;<br>	<span class="hljs-keyword">int</span> cnt=<span class="hljs-number">0</span>;<br>	<span class="hljs-built_in">scanf</span>(<span class="hljs-string">"%s"</span>,s);<br>	<span class="hljs-built_in">strcpy</span>(p,s);<br>	<span class="hljs-keyword">if</span>(s[<span class="hljs-number">0</span>]&gt;=<span class="hljs-string">'A'</span>&amp;&amp;s[<span class="hljs-number">0</span>]&lt;=<span class="hljs-string">'Z'</span>)<br>	p[<span class="hljs-number">0</span>]=s[<span class="hljs-number">0</span>]+<span class="hljs-number">32</span>;<br>	<span class="hljs-keyword">if</span>(s[<span class="hljs-number">0</span>]&gt;=<span class="hljs-string">'a'</span>&amp;&amp;s[<span class="hljs-number">0</span>]&lt;=<span class="hljs-string">'z'</span>)<br>	p[<span class="hljs-number">0</span>]=s[<span class="hljs-number">0</span>]<span class="hljs-number">-32</span>;<br>	<br>	<span class="hljs-keyword">int</span> i=<span class="hljs-number">0</span>;<br>	<span class="hljs-keyword">int</span> index=<span class="hljs-number">0</span>;<br>	<span class="hljs-built_in">scanf</span>(<span class="hljs-string">"%s"</span>,t);<br>	x=getchar();<br>	<span class="hljs-keyword">while</span>(x!=<span class="hljs-string">'\n'</span>)&#123;<br>	<span class="hljs-keyword">if</span>(<span class="hljs-built_in">strcmp</span>(t,s)||<span class="hljs-built_in">strcmp</span>(t,p))&#123;<br>		<span class="hljs-keyword">if</span>(cnt==<span class="hljs-number">0</span>)<br>		index=i;<br>		cnt++;<br>	&#125;i++;<br>	<span class="hljs-built_in">scanf</span>(<span class="hljs-string">"%s"</span>,t);<br>	x=getchar();<br>&#125;<br>	<span class="hljs-keyword">if</span>(cnt==<span class="hljs-number">0</span>)<span class="hljs-built_in">printf</span>(<span class="hljs-string">"-1"</span>);<br>	<span class="hljs-keyword">else</span> <span class="hljs-built_in">printf</span>(<span class="hljs-string">"%d %d"</span>,cnt,index);<br>	<span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
+<p>但是经过测试发现，%s后并不会将此单词的下一个单词计入，而是跳转到下一行，继续。与题意不符。而且单词的长度不确定。所以转变思路使用getchar一个一个判断。</p>
+</li>
+<li><p>最后采用以下思路：</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><code class="hljs c++"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span><span class="hljs-meta-string">&lt;bits/stdc++.h&gt;</span></span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> <span class="hljs-built_in">std</span>;<br><span class="hljs-built_in">string</span> sent,<span class="hljs-keyword">word</span>;<br><span class="hljs-keyword">int</span> lens,lenw,t,pos; <br><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span><br></span>&#123;<br>    getline(<span class="hljs-built_in">cin</span>,<span class="hljs-keyword">word</span>);  <br>    getline(<span class="hljs-built_in">cin</span>,sent);   <span class="hljs-comment">//字符串含有空格输入，不可以用cin，否则to me只能读到to </span><br>    lenw=<span class="hljs-keyword">word</span>.<span class="hljs-built_in">size</span>();   <br>    lens=sent.<span class="hljs-built_in">size</span>();<br>    <span class="hljs-keyword">int</span> j;<br>    <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i=<span class="hljs-number">0</span>;i&lt;lenw;i++)<br>     <span class="hljs-keyword">word</span>[i]=<span class="hljs-built_in">toupper</span>(<span class="hljs-keyword">word</span>[i]);  <span class="hljs-comment">//转成大写 </span><br>    <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i=<span class="hljs-number">0</span>;i&lt;lens;i++)<br>     sent[i]=<span class="hljs-built_in">toupper</span>(sent[i]);<br>   t=<span class="hljs-number">0</span>;<br>   <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i=<span class="hljs-number">0</span>;i&lt;=lens-lenw;i++)&#123;<br>   	<span class="hljs-keyword">for</span>( j=<span class="hljs-number">0</span>;j&lt;lenw;j++)&#123;<br>   		<span class="hljs-keyword">if</span>(sent[i+j]!=<span class="hljs-keyword">word</span>[j])<span class="hljs-keyword">break</span>;<br>   		<span class="hljs-keyword">if</span>(i&gt;<span class="hljs-number">0</span>&amp;&amp;sent[i<span class="hljs-number">-1</span>]!=<span class="hljs-string">' '</span>)<span class="hljs-keyword">break</span>;<br>   	&#125;<span class="hljs-comment">//用于判断是否为逐字符合。</span><br>	   <span class="hljs-keyword">if</span>(j==lenw&amp;&amp;(sent[i+j]==<span class="hljs-string">' '</span>||i+j==lens))<br>           <span class="hljs-comment">//判断条件是否符合</span><br>       &#123;<br>	   	t++;<br>	   	<span class="hljs-keyword">if</span>(t==<span class="hljs-number">1</span>)pos = i;<br>	   &#125; <br>   	<br>   &#125;<br>   <br>    <span class="hljs-keyword">if</span>(t==<span class="hljs-number">0</span>)<span class="hljs-built_in">cout</span>&lt;&lt;<span class="hljs-number">-1</span>;<br>    <span class="hljs-keyword">else</span> <span class="hljs-built_in">cout</span>&lt;&lt;t&lt;&lt;<span class="hljs-string">" "</span>&lt;&lt;pos;<br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
+<p>上述答案的作者为: <a href="https://www.luogu.com.cn/user/8436" target="_blank" rel="noopener">Zehra</a>  </p>
+</li>
+</ol>
+<p>以上即为解答，其中在寻找解题方案的过程中，我还发现许多大佬的许多种方案：比如状态机，根据不同的状态跑程序，但是略微有些麻烦，于是决定使用以上的方案。</p>
+]]></content>
+      <categories>
+        <category>编程</category>
+      </categories>
+      <tags>
+        <tag>pta</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>汉诺塔的思考及解答</title>
+    <url>/2020/02/10/%E6%B1%89%E8%AF%BA%E5%A1%94%E7%9A%84%E6%80%9D%E8%80%83%E5%8F%8A%E8%A7%A3%E7%AD%94/</url>
+    <content><![CDATA[<p>其实在汉诺塔问题之前，斐波那契数列的问题是个比较好解决的问题。</p>
+<p>但是汉诺塔问题令我思考了一段时间。最后不断探索，有了一些思考。</p>
+<p>沉下心，我们需要有一个大的格局。不断分解为小的问题。</p>
+<p>递归问题么，不就是找到规律与出口么。</p>
+  <a id="more"></a>
+<p>汉诺塔（又称河内塔）问题：大梵天创造世界的时候做了三根金刚石柱子，在一根柱子上从下往上按照大小顺序摞着64片黄金圆盘。大梵天命令婆罗门把圆盘从下面开始按大小顺序重新摆放在另一根柱子上。并且规定，在小圆盘上不能放大圆盘，在三根柱子之间一次只能移动一个圆盘。</p>
+<p>我们不妨自己先试一试，如何将一个或三个盘子从a移动到c。</p>
+<p>好的，那么总结一下<strong>规律</strong>，<strong>假设有n个盘子，我们就是借助一个柱子c，把a上的n-1个盘子放到b上，再把b上的n-1个盘子通过a移动到c上即可</strong>。（下图较复杂，简单看看就好）</p>
+<p><img src="/2020/02/10/%E6%B1%89%E8%AF%BA%E5%A1%94%E7%9A%84%E6%80%9D%E8%80%83%E5%8F%8A%E8%A7%A3%E7%AD%94/Untitled.png" alt="Untitled">好的，那么这一步的代码该怎么写呢？？？</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><code class="hljs c">hanoi(n<span class="hljs-number">-1</span>,a,c,b);<span class="hljs-comment">//我们就是借助一个柱子c，把a上的n-1个盘子放到b上，</span><br><span class="hljs-built_in">printf</span>(<span class="hljs-string">"将%c移动到%c\\n"</span>,a,b);<br>hanoi(n<span class="hljs-number">-1</span>,b,a,c);<span class="hljs-comment">//再把b上的n-1个盘子通过a移动到c上即可。</span><br></code></pre></td></tr></table></figure>
+<p>这样是不是就可以理解了。</p>
+<p>好的，但是我们要给这个函数一个出口不然，他就会一直跑下去。。。（并且问我怎么知道的）</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><code class="hljs c"><span class="hljs-keyword">if</span>(n==<span class="hljs-number">1</span>)&#123;<span class="hljs-comment">//终止条件。</span><br><span class="hljs-built_in">printf</span>(<span class="hljs-string">"将%c移动到%c\\n"</span>,a,c);<span class="hljs-comment">//最后不就是把a上的最后一个放到c上，就可以了吧。</span><br><span class="hljs-comment">//我们不考虑别的。嘿嘿</span><br>&#125;<br></code></pre></td></tr></table></figure>
+<p>那么综合起来就是：</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><code class="hljs c"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span><span class="hljs-meta-string">&lt;stdio.h&gt;</span></span><br><span class="hljs-keyword">int</span> cnt;<br><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">hanoi</span><span class="hljs-params">(<span class="hljs-keyword">int</span> n,<span class="hljs-keyword">char</span> a,<span class="hljs-keyword">char</span> b,<span class="hljs-keyword">char</span> c)</span></span>&#123;<br>cnt++;<br><span class="hljs-keyword">if</span>(n==<span class="hljs-number">1</span>)&#123;<br><span class="hljs-built_in">printf</span>(<span class="hljs-string">"将%c移动到%c\\n"</span>,a,c);<br>&#125;<br><span class="hljs-keyword">else</span> &#123;<br>hanoi(n<span class="hljs-number">-1</span>,a,c,b);<br><span class="hljs-built_in">printf</span>(<span class="hljs-string">"将%c移动到%c\\n"</span>,a,b);<br>hanoi(n<span class="hljs-number">-1</span>,b,a,c);<br>&#125;<br>&#125;<br><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span>&#123;<br><span class="hljs-keyword">int</span> n;<br><span class="hljs-keyword">char</span> a=<span class="hljs-string">'a'</span>,b=<span class="hljs-string">'b'</span>,c=<span class="hljs-string">'c'</span>;<br><span class="hljs-built_in">scanf</span>(<span class="hljs-string">"%d"</span>,&amp;n);<br>hanoi(n,a,b,c);<br><span class="hljs-built_in">printf</span>(<span class="hljs-string">"%d"</span>,cnt);<br>&#125;<br></code></pre></td></tr></table></figure>
+<p>注释可以参考上面的哦。</p>
+<p>链接：知乎上有一个有意思的答案，不妨一看：</p>
+<p><a href="https://www.zhihu.com/question/24385418/answer/257751077" target="_blank" rel="noopener">https://www.zhihu.com/question/24385418/answer/257751077</a></p>
+<p>bilibili也有一个不错的视频讲解：</p>
+<p><a href="https://www.bilibili.com/video/av9830115?from=search&amp;seid=9898738544530212324" target="_blank" rel="noopener">https://www.bilibili.com/video/av9830115?from=search&amp;seid=9898738544530212324</a></p>
+]]></content>
+      <categories>
+        <category>算法</category>
+      </categories>
+      <tags>
+        <tag>递归</tag>
       </tags>
   </entry>
   <entry>
@@ -2406,53 +2447,6 @@ x=x+2;      }   }
       </tags>
   </entry>
   <entry>
-    <title>统计单词数</title>
-    <url>/2019/12/21/%E7%BB%9F%E8%AE%A1%E5%8D%95%E8%AF%8D%E6%95%B0/</url>
-    <content><![CDATA[<h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><p>一般的文本编辑器都有查找单词的功能，该功能可以快速定位特定单词在文章中的位置，有的还能统计出特定单词在文章中出现的次数。</p>
-  <a id="more"></a>
-<p>现在，请你编程实现这一功能，具体要求是：给定一个单词，请你输出它在给定的文章中出现的次数和第一次出现的位置。注意：匹配单词时，不区分大小写，但要求完全匹配，即给定单词必须与文章中的某一独立单词在不区分大小写的情况下完全相同（参见样例1 ），如果给定单词仅是文章中某一单词的一部分则不算匹配（参见样例2 ）。</p>
-<h2 id="输入格式"><a href="#输入格式" class="headerlink" title="输入格式"></a>输入格式</h2><p>共22行。</p>
-<p>第11行为一个字符串，其中只含字母，表示给定单词；</p>
-<p>第22行为一个字符串，其中只可能包含字母和空格，表示给定的文章。</p>
-<h2 id="输出格式"><a href="#输出格式" class="headerlink" title="输出格式"></a>输出格式</h2><p>一行，如果在文章中找到给定单词则输出两个整数，两个整数之间用一个空格隔开，分别是单词在文章中出现的次数和第一次出现的位置（即在文章中第一次出现时，单词首字母在文章中的位置，位置从00 开始）；如果单词在文章中没有出现，则直接输出一个整数-1−1。</p>
-<h2 id="输入输出样例"><a href="#输入输出样例" class="headerlink" title="输入输出样例"></a>输入输出样例</h2><p><strong>输入 #1</strong></p>
-<figure class="highlight vim"><table><tr><td class="code"><pre><code class="hljs vim">To<br><span class="hljs-keyword">to</span> <span class="hljs-keyword">be</span> <span class="hljs-built_in">or</span> not <span class="hljs-keyword">to</span> <span class="hljs-keyword">be</span> <span class="hljs-keyword">is</span> <span class="hljs-keyword">a</span> question<br></code></pre></td></tr></table></figure>
-<p><strong>输出 #1</strong></p>
-<figure class="highlight basic"><table><tr><td class="code"><pre><code class="hljs basic"><span class="hljs-symbol">2 </span><span class="hljs-number">0</span><br></code></pre></td></tr></table></figure>
-<p><strong>输入 #2</strong></p>
-<figure class="highlight applescript"><table><tr><td class="code"><pre><code class="hljs applescript"><span class="hljs-keyword">to</span><br>Did <span class="hljs-keyword">the</span> Ottoman Empire lose <span class="hljs-keyword">its</span> power <span class="hljs-keyword">at</span> <span class="hljs-keyword">that</span> <span class="hljs-built_in">time</span><br></code></pre></td></tr></table></figure>
-<p><strong>输出 #2</strong></p>
-<figure class="highlight angelscript"><table><tr><td class="code"><pre><code class="hljs angelscript"><span class="hljs-number">-1</span><br></code></pre></td></tr></table></figure>
-<h2 id="说明-提示"><a href="#说明-提示" class="headerlink" title="说明/提示"></a>说明/提示</h2><p>数据范围：</p>
-<p>1≤1≤单词长度≤10≤10。</p>
-<p>1≤1≤文章长度≤1,000,000≤1,000,000。</p>
-<p>noip2011普及组第2题，洛谷新手村。</p>
-<h5 id="本题思路："><a href="#本题思路：" class="headerlink" title="本题思路："></a>本题思路：</h5><ol>
-<li><p>本来打算使用scanf(“%s”)来实现一个接着一个的单词输入，并strcmp判断。</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><code class="hljs cpp"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span><span class="hljs-meta-string">&lt;bits/stdc++.h&gt;</span></span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> <span class="hljs-built_in">std</span>;<br><br><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span><br></span>&#123;	<span class="hljs-keyword">char</span> s[<span class="hljs-number">20</span>];<br>	<span class="hljs-keyword">char</span> p[<span class="hljs-number">20</span>];<br>	<span class="hljs-keyword">char</span> t[<span class="hljs-number">20</span>];<br>	<span class="hljs-keyword">char</span> x;<br>	<span class="hljs-keyword">int</span> cnt=<span class="hljs-number">0</span>;<br>	<span class="hljs-built_in">scanf</span>(<span class="hljs-string">"%s"</span>,s);<br>	<span class="hljs-built_in">strcpy</span>(p,s);<br>	<span class="hljs-keyword">if</span>(s[<span class="hljs-number">0</span>]&gt;=<span class="hljs-string">'A'</span>&amp;&amp;s[<span class="hljs-number">0</span>]&lt;=<span class="hljs-string">'Z'</span>)<br>	p[<span class="hljs-number">0</span>]=s[<span class="hljs-number">0</span>]+<span class="hljs-number">32</span>;<br>	<span class="hljs-keyword">if</span>(s[<span class="hljs-number">0</span>]&gt;=<span class="hljs-string">'a'</span>&amp;&amp;s[<span class="hljs-number">0</span>]&lt;=<span class="hljs-string">'z'</span>)<br>	p[<span class="hljs-number">0</span>]=s[<span class="hljs-number">0</span>]<span class="hljs-number">-32</span>;<br>	<br>	<span class="hljs-keyword">int</span> i=<span class="hljs-number">0</span>;<br>	<span class="hljs-keyword">int</span> index=<span class="hljs-number">0</span>;<br>	<span class="hljs-built_in">scanf</span>(<span class="hljs-string">"%s"</span>,t);<br>	x=getchar();<br>	<span class="hljs-keyword">while</span>(x!=<span class="hljs-string">'\n'</span>)&#123;<br>	<span class="hljs-keyword">if</span>(<span class="hljs-built_in">strcmp</span>(t,s)||<span class="hljs-built_in">strcmp</span>(t,p))&#123;<br>		<span class="hljs-keyword">if</span>(cnt==<span class="hljs-number">0</span>)<br>		index=i;<br>		cnt++;<br>	&#125;i++;<br>	<span class="hljs-built_in">scanf</span>(<span class="hljs-string">"%s"</span>,t);<br>	x=getchar();<br>&#125;<br>	<span class="hljs-keyword">if</span>(cnt==<span class="hljs-number">0</span>)<span class="hljs-built_in">printf</span>(<span class="hljs-string">"-1"</span>);<br>	<span class="hljs-keyword">else</span> <span class="hljs-built_in">printf</span>(<span class="hljs-string">"%d %d"</span>,cnt,index);<br>	<span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
-<p>但是经过测试发现，%s后并不会将此单词的下一个单词计入，而是跳转到下一行，继续。与题意不符。而且单词的长度不确定。所以转变思路使用getchar一个一个判断。</p>
-</li>
-<li><p>最后采用以下思路：</p>
-<figure class="highlight c++"><table><tr><td class="code"><pre><code class="hljs c++"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span><span class="hljs-meta-string">&lt;bits/stdc++.h&gt;</span></span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> <span class="hljs-built_in">std</span>;<br><span class="hljs-built_in">string</span> sent,<span class="hljs-keyword">word</span>;<br><span class="hljs-keyword">int</span> lens,lenw,t,pos; <br><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span><br></span>&#123;<br>    getline(<span class="hljs-built_in">cin</span>,<span class="hljs-keyword">word</span>);  <br>    getline(<span class="hljs-built_in">cin</span>,sent);   <span class="hljs-comment">//字符串含有空格输入，不可以用cin，否则to me只能读到to </span><br>    lenw=<span class="hljs-keyword">word</span>.<span class="hljs-built_in">size</span>();   <br>    lens=sent.<span class="hljs-built_in">size</span>();<br>    <span class="hljs-keyword">int</span> j;<br>    <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i=<span class="hljs-number">0</span>;i&lt;lenw;i++)<br>     <span class="hljs-keyword">word</span>[i]=<span class="hljs-built_in">toupper</span>(<span class="hljs-keyword">word</span>[i]);  <span class="hljs-comment">//转成大写 </span><br>    <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i=<span class="hljs-number">0</span>;i&lt;lens;i++)<br>     sent[i]=<span class="hljs-built_in">toupper</span>(sent[i]);<br>   t=<span class="hljs-number">0</span>;<br>   <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i=<span class="hljs-number">0</span>;i&lt;=lens-lenw;i++)&#123;<br>   	<span class="hljs-keyword">for</span>( j=<span class="hljs-number">0</span>;j&lt;lenw;j++)&#123;<br>   		<span class="hljs-keyword">if</span>(sent[i+j]!=<span class="hljs-keyword">word</span>[j])<span class="hljs-keyword">break</span>;<br>   		<span class="hljs-keyword">if</span>(i&gt;<span class="hljs-number">0</span>&amp;&amp;sent[i<span class="hljs-number">-1</span>]!=<span class="hljs-string">' '</span>)<span class="hljs-keyword">break</span>;<br>   	&#125;<span class="hljs-comment">//用于判断是否为逐字符合。</span><br>	   <span class="hljs-keyword">if</span>(j==lenw&amp;&amp;(sent[i+j]==<span class="hljs-string">' '</span>||i+j==lens))<br>           <span class="hljs-comment">//判断条件是否符合</span><br>       &#123;<br>	   	t++;<br>	   	<span class="hljs-keyword">if</span>(t==<span class="hljs-number">1</span>)pos = i;<br>	   &#125; <br>   	<br>   &#125;<br>   <br>    <span class="hljs-keyword">if</span>(t==<span class="hljs-number">0</span>)<span class="hljs-built_in">cout</span>&lt;&lt;<span class="hljs-number">-1</span>;<br>    <span class="hljs-keyword">else</span> <span class="hljs-built_in">cout</span>&lt;&lt;t&lt;&lt;<span class="hljs-string">" "</span>&lt;&lt;pos;<br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
-<p>上述答案的作者为: <a href="https://www.luogu.com.cn/user/8436" target="_blank" rel="noopener">Zehra</a>  </p>
-</li>
-</ol>
-<p>以上即为解答，其中在寻找解题方案的过程中，我还发现许多大佬的许多种方案：比如状态机，根据不同的状态跑程序，但是略微有些麻烦，于是决定使用以上的方案。</p>
-]]></content>
-      <categories>
-        <category>编程</category>
-      </categories>
-      <tags>
-        <tag>pta</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>记录，发现</title>
-    <url>/2019/11/06/%E8%AE%B0%E5%BD%95%E4%B8%8E%E5%8F%91%E7%8E%B0/</url>
-    <content><![CDATA[<h2 id="记录与发现"><a href="#记录与发现" class="headerlink" title="记录与发现"></a>记录与发现</h2><p>pta，acm，蓝桥等。</p>
-]]></content>
-  </entry>
-  <entry>
     <title>蓝桥杯单片机手册</title>
     <url>/2022/06/16/%E8%93%9D%E6%A1%A5%E6%9D%AF%E5%8D%95%E7%89%87%E6%9C%BA%E6%89%8B%E5%86%8C/</url>
     <content><![CDATA[<p>主要是 记录下来关于蓝桥杯比赛板中的一些比较模块化和认为可在今后借鉴的内容。包括了自己的一丢丢理解和包括了广大互联网的智慧结晶。<br>2022 年<a href="蓝桥杯单片机手册/赛点资源数据包_SCM_2022.zip">第十三届单片机类赛点数据包</a>，以供下载。相关介绍可以浏览 <a href="https://baiblog.top/lq2/" target="_blank" rel="noopener">链接</a> 。<br>  <a id="more"></a></p>
@@ -2547,6 +2541,12 @@ x=x+2;      }   }
       </tags>
   </entry>
   <entry>
+    <title>记录，发现</title>
+    <url>/2019/11/06/%E8%AE%B0%E5%BD%95%E4%B8%8E%E5%8F%91%E7%8E%B0/</url>
+    <content><![CDATA[<h2 id="记录与发现"><a href="#记录与发现" class="headerlink" title="记录与发现"></a>记录与发现</h2><p>pta，acm，蓝桥等。</p>
+]]></content>
+  </entry>
+  <entry>
     <title>负数二进制（码制与数制）</title>
     <url>/2020/06/28/%E8%B4%9F%E6%95%B0%E4%BA%8C%E8%BF%9B%E5%88%B6%EF%BC%88%E7%A0%81%E5%88%B6%E4%B8%8E%E6%95%B0%E5%88%B6%EF%BC%89/</url>
     <content><![CDATA[<p>主要讲述了模拟电路和数字电路的区别，以及数字电路的侧重点（分为电子元件的原理和<strong>应用</strong>，后者为重点）</p>
@@ -2610,76 +2610,6 @@ x=x+2;      }   }
       </tags>
   </entry>
   <entry>
-    <title>L1-006 连续因子</title>
-    <url>/2020/01/02/%E8%BF%9E%E7%BB%AD%E5%9B%A0%E5%AD%90/</url>
-    <content><![CDATA[<p>一个正整数 N 的因子中可能存在若干连续的数字。例如 630 可以分解为 3×5×6×7，其中 5、6、7 就是 3 个连续的数字。给定任一正整数 N，要求编写程序求出最长连续因子的个数，并输出最小的连续因子序列。</p>
-  <a id="more"></a>
-<h3 id="输入格式："><a href="#输入格式：" class="headerlink" title="输入格式："></a>输入格式：</h3><p>输入在一行中给出一个正整数 N（1&lt;N&lt;231）。</p>
-<h3 id="输出格式："><a href="#输出格式：" class="headerlink" title="输出格式："></a>输出格式：</h3><p>首先在第 1 行输出最长连续因子的个数；然后在第 2 行中按 <code>因子1*因子2*……*因子k</code> 的格式输出最小的连续因子序列，其中因子按递增顺序输出，1 不算在内。</p>
-<h3 id="输入样例："><a href="#输入样例：" class="headerlink" title="输入样例："></a>输入样例：</h3><p>630</p>
-<h3 id="输出样例："><a href="#输出样例：" class="headerlink" title="输出样例："></a>输出样例：</h3><p>3<br>5<em>6</em>7</p>
-<p>思路为从2开始累乘（加1），紧接着就判断是否乘积是其因子<br>如果是，那么记录下来长度，开始的i；<br>一直到乘积大于n停止；<br>然后使乘积（prd）等于1；i++； </p>
-<figure class="highlight c++"><table><tr><td class="code"><pre><code class="hljs c++"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span><span class="hljs-meta-string">&lt;bits/stdc++.h&gt;</span></span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> <span class="hljs-built_in">std</span>;<br><span class="hljs-keyword">typedef</span> <span class="hljs-keyword">long</span> <span class="hljs-keyword">long</span> ll;<span class="hljs-comment">//简写 ，使用long long更好 </span><br><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span>&#123;<br>	ll n;<br>	<span class="hljs-built_in">cin</span>&gt;&gt;n;<br>	ll prd;<span class="hljs-comment">//是乘积（product） </span><br>	<span class="hljs-keyword">int</span> start=<span class="hljs-number">0</span>,len=<span class="hljs-number">0</span>;<br>	<span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i=<span class="hljs-number">2</span>;i&lt;=<span class="hljs-built_in">sqrt</span>(n);i++)&#123;<span class="hljs-comment">//sqrt是为了最后一个点过去（减少计算量） </span><br>		prd=<span class="hljs-number">1</span>;<br>		<span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> j=i;prd&lt;n;j++)&#123;<br>			prd*=j;<br>			<span class="hljs-keyword">if</span>(n%prd==<span class="hljs-number">0</span>&amp;&amp;j-i+<span class="hljs-number">1</span>&gt;len)&#123;<br>				start=i;<br>				len=j-i+<span class="hljs-number">1</span>;<br>			&#125;<br>		&#125;<br>		<br>	&#125;<br>	<span class="hljs-keyword">if</span>(start==<span class="hljs-number">0</span>)&#123;<span class="hljs-comment">//等于0的话就意味着它是一个质数！那么排去1.他的因子就只有本身了。 </span><br>		start=n;<br>		len = <span class="hljs-number">1</span>;<br>	&#125;<br>	<span class="hljs-built_in">cout</span>&lt;&lt;len&lt;&lt;<span class="hljs-built_in">endl</span>&lt;&lt;start;<br>	<span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i=start+<span class="hljs-number">1</span>;i&lt;start+len;i++)<br>	<span class="hljs-built_in">cout</span>&lt;&lt;<span class="hljs-string">"*"</span>&lt;&lt;i;<br>	<br>	<span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
-]]></content>
-      <tags>
-        <tag>pta</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>阿里云-身份证识别调用</title>
-    <url>/2020/05/17/%E9%98%BF%E9%87%8C%E4%BA%91-%E8%BA%AB%E4%BB%BD%E8%AF%81%E8%AF%86%E5%88%AB%E8%B0%83%E7%94%A8/</url>
-    <content><![CDATA[<h4 id><a href="#" class="headerlink" title=" "></a> </h4><p>首先，这里选用的sdk是java（支持本地上传版本）和python</p>
-<p>阿里云的sdk最好是通过maven来导入，而且在<strong>使用maven的时候注意将镜像设置为阿里云</strong>，否则会很慢。</p>
-  <a id="more"></a>
-<h4 id="AccessKey"><a href="#AccessKey" class="headerlink" title="AccessKey"></a>AccessKey</h4><p>记得在阿里云上申请（目前免费）accessKey 及密码。</p>
-<p>并将其放在application. properties 处</p>
-<h4 id="在线测试"><a href="#在线测试" class="headerlink" title="在线测试"></a><a href="https://help.aliyun.com/document_detail/151899.html?spm=a2c4g.11186623.6.603.46ba4dd3pI0g28" target="_blank" rel="noopener">在线测试</a></h4><p>发现可以在线测试呀！！！而且可以使用临时生成的accesskey自动进行，wow!</p>
-<p><img src="/2020/05/17/%E9%98%BF%E9%87%8C%E4%BA%91-%E8%BA%AB%E4%BB%BD%E8%AF%81%E8%AF%86%E5%88%AB%E8%B0%83%E7%94%A8/onlineTest.png" alt="onlineTest"></p>
-<h4 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h4><p><del>并不会！（嘤嘤嘤）</del>（勉强会一点点的python（借助样例））</p>
-<h5 id="java实现"><a href="#java实现" class="headerlink" title="java实现"></a>java实现</h5><p>参考了一份（java嘿嘿）</p>
-<p>主要需要编写的有：</p>
-<p><img src="/2020/05/17/%E9%98%BF%E9%87%8C%E4%BA%91-%E8%BA%AB%E4%BB%BD%E8%AF%81%E8%AF%86%E5%88%AB%E8%B0%83%E7%94%A8/pic.png" alt="pic"></p>
-<h5 id="python实现"><a href="#python实现" class="headerlink" title="python实现"></a>python实现</h5><p>首先需要使用 <code>pip install aliyun-python-sdk-core</code>  命令，安装阿里云SDK核心库 。</p>
-<p>然后执行下载文字识别包：<code>pip install aliyun-python-sdk-ocr</code> </p>
-<p>新建.py文件见下列代码cv，然后将自己的ak填入即可。之后在url的地方图片的链接（仅支持阿里云的oss，代码中给出了一个示例，可以使用）</p>
-<p>下面的set_Side就是正反面</p>
-<p>运行即可</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><code class="hljs python"><span class="hljs-comment">#!/usr/bin/env python</span><br><span class="hljs-comment">#coding=utf-8</span><br><span class="hljs-keyword">from</span> aliyunsdkcore.client <span class="hljs-keyword">import</span> AcsClient<br><span class="hljs-keyword">from</span> aliyunsdkcore.acs_exception.exceptions <span class="hljs-keyword">import</span> ClientException<br><span class="hljs-keyword">from</span> aliyunsdkcore.acs_exception.exceptions <span class="hljs-keyword">import</span> ServerException<br><span class="hljs-keyword">from</span> aliyunsdkocr.request.v20191230.RecognizeIdentityCardRequest <span class="hljs-keyword">import</span> RecognizeIdentityCardRequest<br><br>client = AcsClient(<span class="hljs-string">'&lt;accessKeyId&gt;'</span>, <span class="hljs-string">'&lt;accessSecret&gt;'</span>, <span class="hljs-string">'cn-shanghai'</span>)<br><br>request = RecognizeIdentityCardRequest()<br>request.set_accept_format(<span class="hljs-string">'json'</span>)<br><br>request.set_ImageURL(<span class="hljs-string">"http://explorer-image.oss-cn-shanghai.aliyuncs.com/1786373016143448/index.jpg?OSSAccessKeyId=LTAI4Fk9FstqSEYnqKJ5Dpeo&amp;Expires=1589709652&amp;Signature=wdCT6OMdBw2mvOdvVecgkDWtqcI%3D"</span>)<br>request.set_Side(<span class="hljs-string">"face"</span>)<br><br>response = client.do_action_with_exception(request)<br><span class="hljs-comment"># python2:  print(response) </span><br>print(str(response, encoding=<span class="hljs-string">'utf-8'</span>))<br></code></pre></td></tr></table></figure>
-<p><img src="/2020/05/17/%E9%98%BF%E9%87%8C%E4%BA%91-%E8%BA%AB%E4%BB%BD%E8%AF%81%E8%AF%86%E5%88%AB%E8%B0%83%E7%94%A8/pyresult.png" alt="pyresult"></p>
-<p>上图是python的测试结果。</p>
-<h4 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h4><p>测试图片（图源网络）</p>
-<p><img src="/2020/05/17/%E9%98%BF%E9%87%8C%E4%BA%91-%E8%BA%AB%E4%BB%BD%E8%AF%81%E8%AF%86%E5%88%AB%E8%B0%83%E7%94%A8/images.jpg" alt="images"></p>
-<p><img src="/2020/05/17/%E9%98%BF%E9%87%8C%E4%BA%91-%E8%BA%AB%E4%BB%BD%E8%AF%81%E8%AF%86%E5%88%AB%E8%B0%83%E7%94%A8/index.jpg" alt="index"></p>
-<p><img src="/2020/05/17/%E9%98%BF%E9%87%8C%E4%BA%91-%E8%BA%AB%E4%BB%BD%E8%AF%81%E8%AF%86%E5%88%AB%E8%B0%83%E7%94%A8/result.png" alt="result"></p>
-<h4 id="测试结果"><a href="#测试结果" class="headerlink" title="测试结果"></a>测试结果</h4><p>基本符号要求。（总算成功了）</p>
-<h4 id="最后"><a href="#最后" class="headerlink" title="最后"></a>最后</h4><p>基于阿里云开放平台我们可以便捷使用的工具还有很多很多， 包括人脸人体、文字识别、商品理解、内容安全、图像识别、图像生产、分割抠图、视觉搜索、目标检测、图像分析处理、视频理解、视频生产、视频分割13个类目 ，日后便去完成！</p>
-]]></content>
-      <categories>
-        <category>justForFun</category>
-      </categories>
-      <tags>
-        <tag>cloud</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>选择排序-较为详细的分析</title>
-    <url>/2019/12/26/%E9%80%89%E6%8B%A9%E6%8E%92%E5%BA%8F-%E8%BE%83%E4%B8%BA%E8%AF%A6%E7%BB%86%E7%9A%84%E5%88%86%E6%9E%90/</url>
-    <content><![CDATA[<h3 id="算法思想："><a href="#算法思想：" class="headerlink" title="算法思想："></a>算法思想：</h3><p>选择排序，从头至尾扫描序列，找出最小的一个元素，和第一个元素交换，接着从剩下的元素中继续这种选择和交换方式，最终得到一个有序序列。 </p>
-  <a id="more"></a>
-<h3 id="具体思路："><a href="#具体思路：" class="headerlink" title="具体思路："></a>具体思路：</h3><p>我们通过记录最小下标进行排序。但有几个需要注意的的地方。</p>
-<p>首先，我们将被排序的数组，分为两个部分：有序区和无序区。</p>
-<p>我们在每一轮的寻找中最小值下标后记得交换，然后一定要将最小值下标再次初始化为第二个（假设刚刚是第一轮查找）（这个初始下标也成了分界有序区和无序去的下标），并且我们每次都要寻找到新的无序区的最小的下标。</p>
-<h3 id="函数样例："><a href="#函数样例：" class="headerlink" title="函数样例："></a>函数样例：</h3><figure class="highlight c"><table><tr><td class="code"><pre><code class="hljs c"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">selectionSort</span><span class="hljs-params">(<span class="hljs-keyword">int</span> arr[], <span class="hljs-keyword">int</span> n)</span> <br></span>&#123; <br>    <span class="hljs-keyword">int</span> i, j, min_idx; <br>  <br>    <span class="hljs-comment">// 一个接着一个，将无序区的排列为有序</span><br>    <span class="hljs-keyword">for</span> (i = <span class="hljs-number">0</span>; i &lt; n<span class="hljs-number">-1</span>; i++) <br>    &#123; <br>        <span class="hljs-comment">// Find the minimum element in unsorted array </span><br>        min_idx = i; <span class="hljs-comment">//一定要记得有初始化，而且他的位置在这里哦。</span><br>        <span class="hljs-comment">//及上面提及的从新开始寻找最小值。</span><br>        <span class="hljs-keyword">for</span> (j = i+<span class="hljs-number">1</span>; j &lt; n; j++) <br>          <span class="hljs-keyword">if</span> (arr[j] &lt; arr[min_idx]) <br>            min_idx = j; <br>  <br>        <span class="hljs-comment">//交换最小值和其自己</span><br>        <span class="hljs-comment">//我们在这里可以加一个判断，来(可能)减少其交换次数</span><br>        <span class="hljs-comment">//if(i! = min_idx)//如果使用的话，记得加大括号将下面的三个都括起来哦</span><br>        <span class="hljs-keyword">int</span> t = arr[min_idx];<br>        arr[min_idx] = arr[i];<br>        arr[i] = t;<br>        <br>        <br>    &#125; <br>&#125;<br></code></pre></td></tr></table></figure>
-<p>也许我们都会陷入一个又一个的坑，希望能帮助大家，踩坑多么有意义啊。</p>
-]]></content>
-      <categories>
-        <category>算法</category>
-      </categories>
-      <tags>
-        <tag>排序</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>输出全组合二进制</title>
     <url>/2020/07/04/%E8%BE%93%E5%87%BA%E5%85%A8%E7%BB%84%E5%90%88%E4%BA%8C%E8%BF%9B%E5%88%B6/</url>
     <content><![CDATA[<p>这是一道挺有意思的利用二进制的性质进行打印n个数字（从0到n）的所有组合题目。</p>
@@ -2737,6 +2667,76 @@ x=x+2;      }   }
       </categories>
       <tags>
         <tag>二进制</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>L1-006 连续因子</title>
+    <url>/2020/01/02/%E8%BF%9E%E7%BB%AD%E5%9B%A0%E5%AD%90/</url>
+    <content><![CDATA[<p>一个正整数 N 的因子中可能存在若干连续的数字。例如 630 可以分解为 3×5×6×7，其中 5、6、7 就是 3 个连续的数字。给定任一正整数 N，要求编写程序求出最长连续因子的个数，并输出最小的连续因子序列。</p>
+  <a id="more"></a>
+<h3 id="输入格式："><a href="#输入格式：" class="headerlink" title="输入格式："></a>输入格式：</h3><p>输入在一行中给出一个正整数 N（1&lt;N&lt;231）。</p>
+<h3 id="输出格式："><a href="#输出格式：" class="headerlink" title="输出格式："></a>输出格式：</h3><p>首先在第 1 行输出最长连续因子的个数；然后在第 2 行中按 <code>因子1*因子2*……*因子k</code> 的格式输出最小的连续因子序列，其中因子按递增顺序输出，1 不算在内。</p>
+<h3 id="输入样例："><a href="#输入样例：" class="headerlink" title="输入样例："></a>输入样例：</h3><p>630</p>
+<h3 id="输出样例："><a href="#输出样例：" class="headerlink" title="输出样例："></a>输出样例：</h3><p>3<br>5<em>6</em>7</p>
+<p>思路为从2开始累乘（加1），紧接着就判断是否乘积是其因子<br>如果是，那么记录下来长度，开始的i；<br>一直到乘积大于n停止；<br>然后使乘积（prd）等于1；i++； </p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><code class="hljs c++"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span><span class="hljs-meta-string">&lt;bits/stdc++.h&gt;</span></span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> <span class="hljs-built_in">std</span>;<br><span class="hljs-keyword">typedef</span> <span class="hljs-keyword">long</span> <span class="hljs-keyword">long</span> ll;<span class="hljs-comment">//简写 ，使用long long更好 </span><br><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span>&#123;<br>	ll n;<br>	<span class="hljs-built_in">cin</span>&gt;&gt;n;<br>	ll prd;<span class="hljs-comment">//是乘积（product） </span><br>	<span class="hljs-keyword">int</span> start=<span class="hljs-number">0</span>,len=<span class="hljs-number">0</span>;<br>	<span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i=<span class="hljs-number">2</span>;i&lt;=<span class="hljs-built_in">sqrt</span>(n);i++)&#123;<span class="hljs-comment">//sqrt是为了最后一个点过去（减少计算量） </span><br>		prd=<span class="hljs-number">1</span>;<br>		<span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> j=i;prd&lt;n;j++)&#123;<br>			prd*=j;<br>			<span class="hljs-keyword">if</span>(n%prd==<span class="hljs-number">0</span>&amp;&amp;j-i+<span class="hljs-number">1</span>&gt;len)&#123;<br>				start=i;<br>				len=j-i+<span class="hljs-number">1</span>;<br>			&#125;<br>		&#125;<br>		<br>	&#125;<br>	<span class="hljs-keyword">if</span>(start==<span class="hljs-number">0</span>)&#123;<span class="hljs-comment">//等于0的话就意味着它是一个质数！那么排去1.他的因子就只有本身了。 </span><br>		start=n;<br>		len = <span class="hljs-number">1</span>;<br>	&#125;<br>	<span class="hljs-built_in">cout</span>&lt;&lt;len&lt;&lt;<span class="hljs-built_in">endl</span>&lt;&lt;start;<br>	<span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i=start+<span class="hljs-number">1</span>;i&lt;start+len;i++)<br>	<span class="hljs-built_in">cout</span>&lt;&lt;<span class="hljs-string">"*"</span>&lt;&lt;i;<br>	<br>	<span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
+]]></content>
+      <tags>
+        <tag>pta</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>选择排序-较为详细的分析</title>
+    <url>/2019/12/26/%E9%80%89%E6%8B%A9%E6%8E%92%E5%BA%8F-%E8%BE%83%E4%B8%BA%E8%AF%A6%E7%BB%86%E7%9A%84%E5%88%86%E6%9E%90/</url>
+    <content><![CDATA[<h3 id="算法思想："><a href="#算法思想：" class="headerlink" title="算法思想："></a>算法思想：</h3><p>选择排序，从头至尾扫描序列，找出最小的一个元素，和第一个元素交换，接着从剩下的元素中继续这种选择和交换方式，最终得到一个有序序列。 </p>
+  <a id="more"></a>
+<h3 id="具体思路："><a href="#具体思路：" class="headerlink" title="具体思路："></a>具体思路：</h3><p>我们通过记录最小下标进行排序。但有几个需要注意的的地方。</p>
+<p>首先，我们将被排序的数组，分为两个部分：有序区和无序区。</p>
+<p>我们在每一轮的寻找中最小值下标后记得交换，然后一定要将最小值下标再次初始化为第二个（假设刚刚是第一轮查找）（这个初始下标也成了分界有序区和无序去的下标），并且我们每次都要寻找到新的无序区的最小的下标。</p>
+<h3 id="函数样例："><a href="#函数样例：" class="headerlink" title="函数样例："></a>函数样例：</h3><figure class="highlight c"><table><tr><td class="code"><pre><code class="hljs c"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">selectionSort</span><span class="hljs-params">(<span class="hljs-keyword">int</span> arr[], <span class="hljs-keyword">int</span> n)</span> <br></span>&#123; <br>    <span class="hljs-keyword">int</span> i, j, min_idx; <br>  <br>    <span class="hljs-comment">// 一个接着一个，将无序区的排列为有序</span><br>    <span class="hljs-keyword">for</span> (i = <span class="hljs-number">0</span>; i &lt; n<span class="hljs-number">-1</span>; i++) <br>    &#123; <br>        <span class="hljs-comment">// Find the minimum element in unsorted array </span><br>        min_idx = i; <span class="hljs-comment">//一定要记得有初始化，而且他的位置在这里哦。</span><br>        <span class="hljs-comment">//及上面提及的从新开始寻找最小值。</span><br>        <span class="hljs-keyword">for</span> (j = i+<span class="hljs-number">1</span>; j &lt; n; j++) <br>          <span class="hljs-keyword">if</span> (arr[j] &lt; arr[min_idx]) <br>            min_idx = j; <br>  <br>        <span class="hljs-comment">//交换最小值和其自己</span><br>        <span class="hljs-comment">//我们在这里可以加一个判断，来(可能)减少其交换次数</span><br>        <span class="hljs-comment">//if(i! = min_idx)//如果使用的话，记得加大括号将下面的三个都括起来哦</span><br>        <span class="hljs-keyword">int</span> t = arr[min_idx];<br>        arr[min_idx] = arr[i];<br>        arr[i] = t;<br>        <br>        <br>    &#125; <br>&#125;<br></code></pre></td></tr></table></figure>
+<p>也许我们都会陷入一个又一个的坑，希望能帮助大家，踩坑多么有意义啊。</p>
+]]></content>
+      <categories>
+        <category>算法</category>
+      </categories>
+      <tags>
+        <tag>排序</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>阿里云-身份证识别调用</title>
+    <url>/2020/05/17/%E9%98%BF%E9%87%8C%E4%BA%91-%E8%BA%AB%E4%BB%BD%E8%AF%81%E8%AF%86%E5%88%AB%E8%B0%83%E7%94%A8/</url>
+    <content><![CDATA[<h4 id><a href="#" class="headerlink" title=" "></a> </h4><p>首先，这里选用的sdk是java（支持本地上传版本）和python</p>
+<p>阿里云的sdk最好是通过maven来导入，而且在<strong>使用maven的时候注意将镜像设置为阿里云</strong>，否则会很慢。</p>
+  <a id="more"></a>
+<h4 id="AccessKey"><a href="#AccessKey" class="headerlink" title="AccessKey"></a>AccessKey</h4><p>记得在阿里云上申请（目前免费）accessKey 及密码。</p>
+<p>并将其放在application. properties 处</p>
+<h4 id="在线测试"><a href="#在线测试" class="headerlink" title="在线测试"></a><a href="https://help.aliyun.com/document_detail/151899.html?spm=a2c4g.11186623.6.603.46ba4dd3pI0g28" target="_blank" rel="noopener">在线测试</a></h4><p>发现可以在线测试呀！！！而且可以使用临时生成的accesskey自动进行，wow!</p>
+<p><img src="/2020/05/17/%E9%98%BF%E9%87%8C%E4%BA%91-%E8%BA%AB%E4%BB%BD%E8%AF%81%E8%AF%86%E5%88%AB%E8%B0%83%E7%94%A8/onlineTest.png" alt="onlineTest"></p>
+<h4 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h4><p><del>并不会！（嘤嘤嘤）</del>（勉强会一点点的python（借助样例））</p>
+<h5 id="java实现"><a href="#java实现" class="headerlink" title="java实现"></a>java实现</h5><p>参考了一份（java嘿嘿）</p>
+<p>主要需要编写的有：</p>
+<p><img src="/2020/05/17/%E9%98%BF%E9%87%8C%E4%BA%91-%E8%BA%AB%E4%BB%BD%E8%AF%81%E8%AF%86%E5%88%AB%E8%B0%83%E7%94%A8/pic.png" alt="pic"></p>
+<h5 id="python实现"><a href="#python实现" class="headerlink" title="python实现"></a>python实现</h5><p>首先需要使用 <code>pip install aliyun-python-sdk-core</code>  命令，安装阿里云SDK核心库 。</p>
+<p>然后执行下载文字识别包：<code>pip install aliyun-python-sdk-ocr</code> </p>
+<p>新建.py文件见下列代码cv，然后将自己的ak填入即可。之后在url的地方图片的链接（仅支持阿里云的oss，代码中给出了一个示例，可以使用）</p>
+<p>下面的set_Side就是正反面</p>
+<p>运行即可</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><code class="hljs python"><span class="hljs-comment">#!/usr/bin/env python</span><br><span class="hljs-comment">#coding=utf-8</span><br><span class="hljs-keyword">from</span> aliyunsdkcore.client <span class="hljs-keyword">import</span> AcsClient<br><span class="hljs-keyword">from</span> aliyunsdkcore.acs_exception.exceptions <span class="hljs-keyword">import</span> ClientException<br><span class="hljs-keyword">from</span> aliyunsdkcore.acs_exception.exceptions <span class="hljs-keyword">import</span> ServerException<br><span class="hljs-keyword">from</span> aliyunsdkocr.request.v20191230.RecognizeIdentityCardRequest <span class="hljs-keyword">import</span> RecognizeIdentityCardRequest<br><br>client = AcsClient(<span class="hljs-string">'&lt;accessKeyId&gt;'</span>, <span class="hljs-string">'&lt;accessSecret&gt;'</span>, <span class="hljs-string">'cn-shanghai'</span>)<br><br>request = RecognizeIdentityCardRequest()<br>request.set_accept_format(<span class="hljs-string">'json'</span>)<br><br>request.set_ImageURL(<span class="hljs-string">"http://explorer-image.oss-cn-shanghai.aliyuncs.com/1786373016143448/index.jpg?OSSAccessKeyId=LTAI4Fk9FstqSEYnqKJ5Dpeo&amp;Expires=1589709652&amp;Signature=wdCT6OMdBw2mvOdvVecgkDWtqcI%3D"</span>)<br>request.set_Side(<span class="hljs-string">"face"</span>)<br><br>response = client.do_action_with_exception(request)<br><span class="hljs-comment"># python2:  print(response) </span><br>print(str(response, encoding=<span class="hljs-string">'utf-8'</span>))<br></code></pre></td></tr></table></figure>
+<p><img src="/2020/05/17/%E9%98%BF%E9%87%8C%E4%BA%91-%E8%BA%AB%E4%BB%BD%E8%AF%81%E8%AF%86%E5%88%AB%E8%B0%83%E7%94%A8/pyresult.png" alt="pyresult"></p>
+<p>上图是python的测试结果。</p>
+<h4 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h4><p>测试图片（图源网络）</p>
+<p><img src="/2020/05/17/%E9%98%BF%E9%87%8C%E4%BA%91-%E8%BA%AB%E4%BB%BD%E8%AF%81%E8%AF%86%E5%88%AB%E8%B0%83%E7%94%A8/images.jpg" alt="images"></p>
+<p><img src="/2020/05/17/%E9%98%BF%E9%87%8C%E4%BA%91-%E8%BA%AB%E4%BB%BD%E8%AF%81%E8%AF%86%E5%88%AB%E8%B0%83%E7%94%A8/index.jpg" alt="index"></p>
+<p><img src="/2020/05/17/%E9%98%BF%E9%87%8C%E4%BA%91-%E8%BA%AB%E4%BB%BD%E8%AF%81%E8%AF%86%E5%88%AB%E8%B0%83%E7%94%A8/result.png" alt="result"></p>
+<h4 id="测试结果"><a href="#测试结果" class="headerlink" title="测试结果"></a>测试结果</h4><p>基本符号要求。（总算成功了）</p>
+<h4 id="最后"><a href="#最后" class="headerlink" title="最后"></a>最后</h4><p>基于阿里云开放平台我们可以便捷使用的工具还有很多很多， 包括人脸人体、文字识别、商品理解、内容安全、图像识别、图像生产、分割抠图、视觉搜索、目标检测、图像分析处理、视频理解、视频生产、视频分割13个类目 ，日后便去完成！</p>
+]]></content>
+      <categories>
+        <category>justForFun</category>
+      </categories>
+      <tags>
+        <tag>cloud</tag>
       </tags>
   </entry>
 </search>
