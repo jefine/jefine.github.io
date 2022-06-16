@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+    
+    <title>蓝桥杯单片机手册 - Jefine</title>
+    <meta charset="utf-8">
+    
+    <meta name="title" content="蓝桥杯单片机手册 - Jefine">
+    <meta name="description" content="">
+    <meta property="og:image" content="/favicon.png">
+    <meta property="og:image:width" content="200" />
+    <meta property="og:image:height" content="200" />
+    
+    <link href="https://fonts.googleapis.com/css2?family=Source+Serif+Pro:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Source Serif Pro', 'Source Han Serif TC', 'Noto Serif CJK TC', 'Noto Serif TC', serif;
+        }
+    </style>
+    <link rel="shortcut icon" href="/favicon.png">
+    
+    <link rel="stylesheet"
+        href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.17.1/build/styles/arduino-light.min.css">
+    <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.17.1/build/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    
+    
+    <link rel="stylesheet" href="/css/style.css">
+    <script src="/js/jquery.min.js"></script>
+<link rel="alternate" href="/atom.xml" title="Jefine" type="application/atom+xml"><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</head>
+
+<body>
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><header class="header">
+    <div class="blog-title">
+        <a href="/" class="logo">Jefine</a>
+    </div>
+    <nav class="navbar">
+        <ul class="menu">
+            
+            
+            
+            <li class="menu-item">
+                
+                <a href="/" class="menu-item-link">Home</a>
+                
+            </li>
+            
+            
+            
+            <li class="menu-item">
+                
+                <a href="/archives" class="menu-item-link">Archives</a>
+                
+            </li>
+            
+            
+            
+            <li class="menu-item">
+                
+                <a href="/about" class="menu-item-link">About</a>
+                
+            </li>
+            
+            
+            
+            <li class="menu-item">
+                
+                <a href="/atom.xml" class="menu-item-link">Rss</a>
+                
+            </li>
+            
+        </ul>
+    </nav>
+</header>
+    <main class="main">
+        <article class="post">
+    <div class="post-title">
+        <h1 class="title">蓝桥杯单片机手册</h2>
+    </div>
+    <div class="post-content">
+        <p>主要是 记录下来关于蓝桥杯比赛板中的一些比较模块化和认为可在今后借鉴的内容。包括了自己的一丢丢理解和包括了广大互联网的智慧结晶。<br>2022 年<a href="蓝桥杯单片机手册/赛点资源数据包_SCM_2022.zip">第十三届单片机类赛点数据包</a>，以供下载。相关介绍可以浏览 <a href="https://baiblog.top/lq2/" target="_blank" rel="noopener">链接</a> 。<br>  <a id="more"></a></p>
+<p>首先是对开发板的一些介绍：</p>
+<h1 id="简介：实现多功能-IO-拓展的秘密——38-译码器-锁存器"><a href="#简介：实现多功能-IO-拓展的秘密——38-译码器-锁存器" class="headerlink" title="简介：实现多功能 IO 拓展的秘密——38 译码器 + 锁存器"></a>简介：实现多功能 IO 拓展的秘密——38 译码器 + 锁存器</h1><p>首先我们可以通过下图看到 采用开发板可以实现的功能是不少的。<br><img src="/2022/06/16/%E8%93%9D%E6%A1%A5%E6%9D%AF%E5%8D%95%E7%89%87%E6%9C%BA%E6%89%8B%E5%86%8C/image20220608215736326.png" alt><br>而开发板的模块基本上都是焊接在板子上的，51 引脚 io 资源并不像 STM32 之类的资源丰富，想要实现这些就要用到一些比较“有意思”的手段。<br><strong>38 译码器 + 锁存器</strong><br>通过不同的锁存器来将 P0 的值进行保存，这样实现了 P0 端口的复用，但因为需要不断的切换，也增添了一定的难度，需要大家去适应这样的编程方式。</p>
+<h2 id="38-译码器选择功能"><a href="#38-译码器选择功能" class="headerlink" title="38 译码器选择功能"></a>38 译码器选择功能</h2><p>输入：<br>38 译码器，通过 P2.5，P2.6，P2.7 三个引脚输入进行译码，理论上可以控制八种 功能<br>译码器打开了不同的功能，来改变不同寄存器里的值。<br>而开发板采用四组寄存器，可以保留四个不同的 P0 的状态，来供给不同的硬件模块，实现其功能。</p>
+<p>输出：<br>对于三八译码器,我们主要使用的是 Y4，Y5，Y6，Y7 这四个输出引脚。<br>以下是帮助我们记忆的方式。<br>Y4 -&gt; LED : 4-&gt;100 -&gt; 1000 0000 -&gt; 0x80<br>Y5 -&gt; BEEP : 5-&gt;101 -&gt; 1010 0000 -&gt; 0xa0<br>Y6 -&gt; 数码管位选 : 6-&gt;102 -&gt; 1100 0000 -&gt; 0xc0<br>Y7 -&gt; 数码管端选 : 7-&gt;103 -&gt; 1110 0000 -&gt; 0xe0</p>
+<p>P2 = 0xc0;//开数码管位 然后 放进去一个选管位的值，他就会保存到一个寄存器里面<br>然后在打开一个寄存器的开关（与此同时，其他的就被关闭了）<br>P2 = 0xe0;//开数码管段选锁存器<br>这样就分别存进去了位和段，他俩的值 并不是由 P0 直接给的，而是由 其各自的寄存器 进行赋值的</p>
+<h1 id="各个模块的学习"><a href="#各个模块的学习" class="headerlink" title="各个模块的学习"></a>各个模块的学习</h1><h2 id="Hello，world-点灯"><a href="#Hello，world-点灯" class="headerlink" title="Hello，world -点灯"></a>Hello，world -点灯</h2><p>快速点亮开发板，是一项可以快速验证环境的事情。<br>对于如何安装环境和配置开发板，这里因为设计的太多，就不多介绍了详细的可以采用 <a href="https://baiblog.top/lq2/" target="_blank" rel="noopener">链接中的介绍</a> 去进行操作。</p>
+<p>51 的点灯只需要寥寥几行就可以实现，在开发板上，我们也可以快速实现：<br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs c"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">"STC15F2K60S2.h"</span></span><br><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span>&#123;<br>    P0 = <span class="hljs-number">0xfd</span>; <span class="hljs-comment">//点亮了L1，若全亮为0x00,全灭为0xff。</span><br>    P2 = <span class="hljs-number">0x80</span>; <span class="hljs-comment">//开LED锁存器</span><br>    P2 = <span class="hljs-number">0</span>; <span class="hljs-comment">//关锁存器</span><br>    <span class="hljs-keyword">while</span>(<span class="hljs-number">1</span>)&#123;<br>        <br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure><br>先给 P0 赋值，这样写可以使得 led 等其他设备，在被开启锁存器之后，不会因为 P0 的值，而发生突然的变化，这种短暂波动可以被消除，对于数码管等模块，还是有一定作用的，所以建议保持这样的习惯：先赋值，再开锁存器，然后立刻关上寄存器。对于是否提前清零 P27 - P25 个人觉得用途不大~</p>
+<p>在日后，Led 模块作为一个非常常用的模块，我们如果每次都需要写这样的内容，不仅使得我们的代码比较凌乱，不便于我们查找错误，对于我们的逻辑分析也造成了困扰，同时，这样的写法，也会让我们在遇到多 LED 进行亮灭变化时，或者说有中断控制的情况下，不易编写代码控制，所以采用宏定义的方式，会利于我们的代码编写。<br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs c"><span class="hljs-comment">//以下两种宏定义都会使得没有选中的 LED 熄灭</span><br><span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> led_set(x) &#123;EA =0;P0 = ~(0x01&lt;&lt;x-1);P2 = 0x80;P2 =0;EA =1;&#125; <span class="hljs-comment">//点亮某栈灯</span></span><br><span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> led_set_all(x) &#123;EA =0;P0 = x;P2 = 0x80;P2 =0;EA =1;&#125; <span class="hljs-comment">//根据输入的十六进制数，进行点亮灯</span></span><br></code></pre></td></tr></table></figure><br>当然，我们可以对于宏定义进行修改，使其在在不同的工程和情况下，更加适合我们的代码编写。<br>第一个宏定义可能不是很好记，可以在比赛时尝试一下，在开发板上运行成功了，再进行宏定义，点灯测试也很快的~</p>
+<h1 id="致谢"><a href="#致谢" class="headerlink" title="致谢"></a>致谢</h1><p><a href="https://baiblog.top/lq1/" target="_blank" rel="noopener">https://baiblog.top/lq1/</a></p>
+
+    </div>
+    <div class="post-meta">
+        
+    <span class="post-time">二〇二二年六月十六日</span>
+    </div>
+</article>
+
+<div class="prev_next">
+    <nav id="prev_next">
+
+<div class="prev">
+    
+</div>
+<div class="next">
+    
+    <p>Older</p>
+    <a href="/2022/05/14/Flask_First_Api/"><div class="article-nav-title">Flask_First_Api</div></a>
+    
+</div>
+
+</nav>
+</div>
+
+<div class="post-comment">
+    
+
+
+
+</div>
+
+    </main>
+
+    
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+          tex2jax: {
+            inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+            processEscapes: true
+          }
+        });
+      </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+            tex2jax: {
+              skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+            }
+          });
+      </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+              var all = MathJax.Hub.getAllJax(), i;
+              for(i=0; i < all.length; i += 1) {
+                  all[i].SourceElement().parentNode.className += ' has-jax';
+              }
+          });
+      </script>
+
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config("");
+</script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+      all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+  });
+</script>
+
+<script type="text/javascript" src="custom_mathjax_source">
+</script>
+<!-- End: Injected MathJax -->
+<!-- hexo-inject:end -->
+
+
+</body>
+
+</html>
