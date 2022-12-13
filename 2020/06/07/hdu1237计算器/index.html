@@ -91,9 +91,12 @@
 <p>Output</p>
 <p>对每个测试用例输出1行，即该表达式的值，精确到小数点后2位。</p>
 <p>Sample Input</p>
-<figure class="highlight basic"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs basic"><span class="hljs-symbol">1 </span>+ <span class="hljs-number">2</span><br><span class="hljs-symbol">4 </span>+ <span class="hljs-number">2</span> * <span class="hljs-number">5</span> - <span class="hljs-number">7</span> / <span class="hljs-number">11</span><br><span class="hljs-number">0</span><br></code></pre></td></tr></table></figure>
+<pre><code class="hljs basic"><span class="hljs-symbol">1 </span>+ <span class="hljs-number">2</span>
+<span class="hljs-symbol">4 </span>+ <span class="hljs-number">2</span> * <span class="hljs-number">5</span> - <span class="hljs-number">7</span> / <span class="hljs-number">11</span>
+<span class="hljs-number">0</span></code></pre>
 <p>Sample Output</p>
-<figure class="highlight angelscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs angelscript"><span class="hljs-number">3.00</span><br><span class="hljs-number">13.36</span><br></code></pre></td></tr></table></figure>
+<pre><code class="hljs angelscript"><span class="hljs-number">3.00</span>
+<span class="hljs-number">13.36</span></code></pre>
 <p>Source</p>
 <p> <a href="http://acm.hdu.edu.cn/search.php?field=problem&amp;key=%D5%E3%B4%F3%BC%C6%CB%E3%BB%FA%D1%D0%BE%BF%C9%FA%B8%B4%CA%D4%C9%CF%BB%FA%BF%BC%CA%D4-2006%C4%EA&amp;source=1&amp;searchmode=source" target="_blank" rel="noopener"> 浙大计算机研究生复试上机考试-2006年 </a> </p>
 <p>解题思路：</p>
@@ -101,7 +104,69 @@
 <p>另外：亮点在于P(c) &lt; P(op.top())这里的优先级比较：</p>
 <p>我们可以发现通过表格或者其他的形式可以看出在运算优先级的问题上，我们只有采取这样的策略才是最好的。</p>
 <p>当前的优先级高那么压入栈，当前优先级和栈顶（上次的）的优先级相同，或小于上次的话，自然时先算上次的，同时这样的模拟也是最符合我们自己的真实的运算过程的。</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span><span class="hljs-meta-string">&lt;bits/stdc++.h&gt;</span></span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> <span class="hljs-built_in">std</span>;<br><br><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">P</span><span class="hljs-params">(<span class="hljs-keyword">char</span> c)</span><br></span>&#123;<br>    <span class="hljs-keyword">if</span> (c == <span class="hljs-string">'+'</span> || c == <span class="hljs-string">'-'</span>) <span class="hljs-keyword">return</span> <span class="hljs-number">1</span>;<br>    <span class="hljs-keyword">return</span> <span class="hljs-number">2</span>;<br>&#125;<br><br><span class="hljs-function"><span class="hljs-keyword">double</span> <span class="hljs-title">Ans</span><span class="hljs-params">(<span class="hljs-keyword">double</span> x, <span class="hljs-keyword">double</span> y, <span class="hljs-keyword">char</span> c)</span><br></span>&#123;<br>    <span class="hljs-keyword">if</span> (c == <span class="hljs-string">'+'</span>) <span class="hljs-keyword">return</span> x + y;<br>    <span class="hljs-keyword">if</span> (c == <span class="hljs-string">'-'</span>) <span class="hljs-keyword">return</span> x - y;<br>    <span class="hljs-keyword">if</span> (c == <span class="hljs-string">'*'</span>)<span class="hljs-keyword">return</span> x*y;<br>    <span class="hljs-keyword">return</span> x / y;<br><br>&#125;<br><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span> </span>&#123;<br>    <span class="hljs-keyword">int</span> n;<br>    <span class="hljs-keyword">while</span> (~<span class="hljs-built_in">scanf</span>(<span class="hljs-string">"%d"</span>,&amp;n))<br>    &#123;<br>        <span class="hljs-keyword">char</span> c = getchar();<br>        <span class="hljs-keyword">if</span> (c==<span class="hljs-string">'\n'</span>&amp;&amp;n == <span class="hljs-number">0</span>)<span class="hljs-keyword">break</span>;<br>        <span class="hljs-built_in">stack</span>&lt;<span class="hljs-keyword">char</span>&gt; op;<br>        <span class="hljs-built_in">stack</span>&lt;<span class="hljs-keyword">double</span>&gt;num;<br>        num.push(n);<br>        <span class="hljs-keyword">while</span> (<span class="hljs-literal">true</span>)<span class="hljs-comment">//开始一行的运算，之前已经获取了一个n，并压入num；</span><br>        &#123;<br>            <span class="hljs-built_in">scanf</span>(<span class="hljs-string">"%c %d"</span>, &amp;c, &amp;n);<br>            <span class="hljs-keyword">char</span> k = getchar();<br>            <span class="hljs-keyword">while</span> (!op.empty()&amp;&amp;P(c)&lt;=P(op.top()))<span class="hljs-comment">//第一次会跳过</span><br>            <span class="hljs-comment">//当操作符的栈不为空……且现在的操作符优先级小于或等于栈顶的的操作符的优先级时</span><br>            <span class="hljs-comment">//那么先将之前的进行计算</span><br>            &#123;<br>                <span class="hljs-keyword">char</span> t = op.top();<br>                op.pop();<br>                <span class="hljs-keyword">double</span> y = num.top();<br>                num.pop();<br>                <span class="hljs-keyword">double</span> x = num.top();<br>                num.pop();<br>                <span class="hljs-keyword">double</span> ans = Ans(x, y, t);<br>                num.push(ans);<br>            &#125;<br>            op.push(c);<br>            num.push(n);<br>            <span class="hljs-keyword">if</span> (k == <span class="hljs-string">'\n'</span>)<span class="hljs-keyword">break</span>;<br>            <span class="hljs-comment">//这导致了上面还有压入的数字和操作符未被操作，便有了下面的判断op栈</span><br>        &#125;<br>        <span class="hljs-keyword">while</span> (!op.empty())<br>        &#123;<br>            <span class="hljs-keyword">char</span> t = op.top();<br>            op.pop();<br>            <span class="hljs-keyword">double</span> y = num.top();<br>            num.pop();<br>            <span class="hljs-keyword">double</span> x = num.top();<br>            num.pop();<br>            <span class="hljs-keyword">double</span> ans = Ans(x, y, t);<br>            num.push(ans);<br>        &#125;<br>        <span class="hljs-built_in">printf</span>(<span class="hljs-string">"%.2f\n"</span>, num.top());<br>    &#125;<br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
+<pre><code class="hljs cpp"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span><span class="hljs-meta-string">&lt;bits/stdc++.h&gt;</span></span>
+<span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> <span class="hljs-built_in">std</span>;
+
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">P</span><span class="hljs-params">(<span class="hljs-keyword">char</span> c)</span>
+</span>&#123;
+    <span class="hljs-keyword">if</span> (c == <span class="hljs-string">'+'</span> || c == <span class="hljs-string">'-'</span>) <span class="hljs-keyword">return</span> <span class="hljs-number">1</span>;
+    <span class="hljs-keyword">return</span> <span class="hljs-number">2</span>;
+&#125;
+
+<span class="hljs-function"><span class="hljs-keyword">double</span> <span class="hljs-title">Ans</span><span class="hljs-params">(<span class="hljs-keyword">double</span> x, <span class="hljs-keyword">double</span> y, <span class="hljs-keyword">char</span> c)</span>
+</span>&#123;
+    <span class="hljs-keyword">if</span> (c == <span class="hljs-string">'+'</span>) <span class="hljs-keyword">return</span> x + y;
+    <span class="hljs-keyword">if</span> (c == <span class="hljs-string">'-'</span>) <span class="hljs-keyword">return</span> x - y;
+    <span class="hljs-keyword">if</span> (c == <span class="hljs-string">'*'</span>)<span class="hljs-keyword">return</span> x*y;
+    <span class="hljs-keyword">return</span> x / y;
+
+&#125;
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span> </span>&#123;
+    <span class="hljs-keyword">int</span> n;
+    <span class="hljs-keyword">while</span> (~<span class="hljs-built_in">scanf</span>(<span class="hljs-string">"%d"</span>,&amp;n))
+    &#123;
+        <span class="hljs-keyword">char</span> c = getchar();
+        <span class="hljs-keyword">if</span> (c==<span class="hljs-string">'\n'</span>&amp;&amp;n == <span class="hljs-number">0</span>)<span class="hljs-keyword">break</span>;
+        <span class="hljs-built_in">stack</span>&lt;<span class="hljs-keyword">char</span>&gt; op;
+        <span class="hljs-built_in">stack</span>&lt;<span class="hljs-keyword">double</span>&gt;num;
+        num.push(n);
+        <span class="hljs-keyword">while</span> (<span class="hljs-literal">true</span>)<span class="hljs-comment">//开始一行的运算，之前已经获取了一个n，并压入num；</span>
+        &#123;
+            <span class="hljs-built_in">scanf</span>(<span class="hljs-string">"%c %d"</span>, &amp;c, &amp;n);
+            <span class="hljs-keyword">char</span> k = getchar();
+            <span class="hljs-keyword">while</span> (!op.empty()&amp;&amp;P(c)&lt;=P(op.top()))<span class="hljs-comment">//第一次会跳过</span>
+            <span class="hljs-comment">//当操作符的栈不为空……且现在的操作符优先级小于或等于栈顶的的操作符的优先级时</span>
+            <span class="hljs-comment">//那么先将之前的进行计算</span>
+            &#123;
+                <span class="hljs-keyword">char</span> t = op.top();
+                op.pop();
+                <span class="hljs-keyword">double</span> y = num.top();
+                num.pop();
+                <span class="hljs-keyword">double</span> x = num.top();
+                num.pop();
+                <span class="hljs-keyword">double</span> ans = Ans(x, y, t);
+                num.push(ans);
+            &#125;
+            op.push(c);
+            num.push(n);
+            <span class="hljs-keyword">if</span> (k == <span class="hljs-string">'\n'</span>)<span class="hljs-keyword">break</span>;
+            <span class="hljs-comment">//这导致了上面还有压入的数字和操作符未被操作，便有了下面的判断op栈</span>
+        &#125;
+        <span class="hljs-keyword">while</span> (!op.empty())
+        &#123;
+            <span class="hljs-keyword">char</span> t = op.top();
+            op.pop();
+            <span class="hljs-keyword">double</span> y = num.top();
+            num.pop();
+            <span class="hljs-keyword">double</span> x = num.top();
+            num.pop();
+            <span class="hljs-keyword">double</span> ans = Ans(x, y, t);
+            num.push(ans);
+        &#125;
+        <span class="hljs-built_in">printf</span>(<span class="hljs-string">"%.2f\n"</span>, num.top());
+    &#125;
+    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;
+&#125;</code></pre>
 
     </div>
     <div class="post-meta">

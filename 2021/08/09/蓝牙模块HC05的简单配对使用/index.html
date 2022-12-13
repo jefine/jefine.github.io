@@ -101,7 +101,48 @@
 <li>模块所有AT指令需要加上换行符号否则无效（即选择CR/LF），且尽量大写</li>
 </ol>
 <p><a href="https://combofish.github.io/2020/02/08/how-to-use-hc-05-bluetooth-module.html" target="_blank" rel="noopener">https://combofish.github.io/2020/02/08/how-to-use-hc-05-bluetooth-module.html</a></p>
-<figure class="highlight reasonml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><code class="hljs reasonml">#<span class="hljs-keyword">include</span> &lt;<span class="hljs-module-access"><span class="hljs-module"><span class="hljs-identifier">SoftwareSerial</span>.</span></span>h&gt;<br><br><span class="hljs-comment">// Pin3为RX，接HC05的TXD</span><br><span class="hljs-comment">// Pin2为TX，接HC05的RXD</span><br>SoftwareSerial <span class="hljs-constructor">BT(10, 11)</span>;<br><span class="hljs-built_in">char</span> <span class="hljs-keyword">val</span>;<br><span class="hljs-built_in">int</span> ledPin=<span class="hljs-number">13</span>;<br><br>void setup<span class="hljs-literal">()</span> &#123;<br>  <span class="hljs-module-access"><span class="hljs-module"><span class="hljs-identifier">Serial</span>.</span></span><span class="hljs-keyword">begin</span>(<span class="hljs-number">38400</span>);<br>  <span class="hljs-module-access"><span class="hljs-module"><span class="hljs-identifier">Serial</span>.</span></span>println(<span class="hljs-string">"BT is ready!"</span>);<br>  <span class="hljs-comment">// HC-05默认，38400</span><br>  <span class="hljs-module-access"><span class="hljs-module"><span class="hljs-identifier">BT</span>.</span></span><span class="hljs-keyword">begin</span>(<span class="hljs-number">38400</span>);<br>  pin<span class="hljs-constructor">Mode(<span class="hljs-params">ledPin</span>, OUTPUT)</span>;<br>  digital<span class="hljs-constructor">Write(<span class="hljs-params">ledPin</span>, HIGH)</span>;<br>  delay(<span class="hljs-number">500</span>);<br>  digital<span class="hljs-constructor">Write(<span class="hljs-params">ledPin</span>, LOW)</span>;<br>&#125;<br><br>void loop<span class="hljs-literal">()</span> &#123;<br>  <span class="hljs-keyword">if</span> (<span class="hljs-module-access"><span class="hljs-module"><span class="hljs-identifier">Serial</span>.</span></span>available<span class="hljs-literal">()</span>) &#123;<br>    <span class="hljs-keyword">val</span> = <span class="hljs-module-access"><span class="hljs-module"><span class="hljs-identifier">Serial</span>.</span></span>read<span class="hljs-literal">()</span>;<br>    <span class="hljs-module-access"><span class="hljs-module"><span class="hljs-identifier">BT</span>.</span></span>print(<span class="hljs-keyword">val</span>);<br>  &#125;<br>  <span class="hljs-keyword">if</span> (<span class="hljs-module-access"><span class="hljs-module"><span class="hljs-identifier">BT</span>.</span></span>available<span class="hljs-literal">()</span>) &#123;<br>    <span class="hljs-keyword">val</span> = <span class="hljs-module-access"><span class="hljs-module"><span class="hljs-identifier">BT</span>.</span></span>read<span class="hljs-literal">()</span>;<br>    <span class="hljs-module-access"><span class="hljs-module"><span class="hljs-identifier">Serial</span>.</span></span>print(<span class="hljs-keyword">val</span>);<br><br>    <span class="hljs-keyword">if</span> (<span class="hljs-keyword">val</span><span class="hljs-operator"> == </span><span class="hljs-character">'1'</span>)<br>      &#123;<br>    <span class="hljs-comment">// 返回到手机调试程序上</span><br>    <span class="hljs-comment">// 此时的蓝牙状态应该正常模式，而不是调试模式</span><br>    <span class="hljs-module-access"><span class="hljs-module"><span class="hljs-identifier">Serial</span>.</span></span>write(<span class="hljs-string">"Serial--ledPin--high\n"</span>);<br>    digital<span class="hljs-constructor">Write(<span class="hljs-params">ledPin</span>, HIGH)</span>;<br>      &#125;<br>    <span class="hljs-keyword">if</span> (<span class="hljs-keyword">val</span><span class="hljs-operator"> == </span><span class="hljs-character">'2'</span>)<br>      &#123;<br>    <span class="hljs-module-access"><span class="hljs-module"><span class="hljs-identifier">Serial</span>.</span></span>write(<span class="hljs-string">"Serial--ledPin--low\n"</span>);<br>    digital<span class="hljs-constructor">Write(<span class="hljs-params">ledPin</span>, LOW)</span>;<br>      &#125;<br>  &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<pre><code class="hljs reasonml">#<span class="hljs-keyword">include</span> &lt;<span class="hljs-module-access"><span class="hljs-module"><span class="hljs-identifier">SoftwareSerial</span>.</span></span>h&gt;
+
+<span class="hljs-comment">// Pin3为RX，接HC05的TXD</span>
+<span class="hljs-comment">// Pin2为TX，接HC05的RXD</span>
+SoftwareSerial <span class="hljs-constructor">BT(10, 11)</span>;
+<span class="hljs-built_in">char</span> <span class="hljs-keyword">val</span>;
+<span class="hljs-built_in">int</span> ledPin=<span class="hljs-number">13</span>;
+
+void setup<span class="hljs-literal">()</span> &#123;
+  <span class="hljs-module-access"><span class="hljs-module"><span class="hljs-identifier">Serial</span>.</span></span><span class="hljs-keyword">begin</span>(<span class="hljs-number">38400</span>);
+  <span class="hljs-module-access"><span class="hljs-module"><span class="hljs-identifier">Serial</span>.</span></span>println(<span class="hljs-string">"BT is ready!"</span>);
+  <span class="hljs-comment">// HC-05默认，38400</span>
+  <span class="hljs-module-access"><span class="hljs-module"><span class="hljs-identifier">BT</span>.</span></span><span class="hljs-keyword">begin</span>(<span class="hljs-number">38400</span>);
+  pin<span class="hljs-constructor">Mode(<span class="hljs-params">ledPin</span>, OUTPUT)</span>;
+  digital<span class="hljs-constructor">Write(<span class="hljs-params">ledPin</span>, HIGH)</span>;
+  delay(<span class="hljs-number">500</span>);
+  digital<span class="hljs-constructor">Write(<span class="hljs-params">ledPin</span>, LOW)</span>;
+&#125;
+
+void loop<span class="hljs-literal">()</span> &#123;
+  <span class="hljs-keyword">if</span> (<span class="hljs-module-access"><span class="hljs-module"><span class="hljs-identifier">Serial</span>.</span></span>available<span class="hljs-literal">()</span>) &#123;
+    <span class="hljs-keyword">val</span> = <span class="hljs-module-access"><span class="hljs-module"><span class="hljs-identifier">Serial</span>.</span></span>read<span class="hljs-literal">()</span>;
+    <span class="hljs-module-access"><span class="hljs-module"><span class="hljs-identifier">BT</span>.</span></span>print(<span class="hljs-keyword">val</span>);
+  &#125;
+  <span class="hljs-keyword">if</span> (<span class="hljs-module-access"><span class="hljs-module"><span class="hljs-identifier">BT</span>.</span></span>available<span class="hljs-literal">()</span>) &#123;
+    <span class="hljs-keyword">val</span> = <span class="hljs-module-access"><span class="hljs-module"><span class="hljs-identifier">BT</span>.</span></span>read<span class="hljs-literal">()</span>;
+    <span class="hljs-module-access"><span class="hljs-module"><span class="hljs-identifier">Serial</span>.</span></span>print(<span class="hljs-keyword">val</span>);
+
+    <span class="hljs-keyword">if</span> (<span class="hljs-keyword">val</span><span class="hljs-operator"> == </span><span class="hljs-character">'1'</span>)
+      &#123;
+    <span class="hljs-comment">// 返回到手机调试程序上</span>
+    <span class="hljs-comment">// 此时的蓝牙状态应该正常模式，而不是调试模式</span>
+    <span class="hljs-module-access"><span class="hljs-module"><span class="hljs-identifier">Serial</span>.</span></span>write(<span class="hljs-string">"Serial--ledPin--high\n"</span>);
+    digital<span class="hljs-constructor">Write(<span class="hljs-params">ledPin</span>, HIGH)</span>;
+      &#125;
+    <span class="hljs-keyword">if</span> (<span class="hljs-keyword">val</span><span class="hljs-operator"> == </span><span class="hljs-character">'2'</span>)
+      &#123;
+    <span class="hljs-module-access"><span class="hljs-module"><span class="hljs-identifier">Serial</span>.</span></span>write(<span class="hljs-string">"Serial--ledPin--low\n"</span>);
+    digital<span class="hljs-constructor">Write(<span class="hljs-params">ledPin</span>, LOW)</span>;
+      &#125;
+  &#125;
+&#125;</code></pre>
 <h3 id="双蓝牙模块连接（主从模式）"><a href="#双蓝牙模块连接（主从模式）" class="headerlink" title="双蓝牙模块连接（主从模式）"></a>双蓝牙模块连接（主从模式）</h3><p>一个通过连接PC由串口通信（模拟一个设备的指令操作）</p>
 <p>另一个采用Arduino进行点灯来作为从设备的响应动作</p>
 <p>首先需要将其配置</p>
@@ -120,7 +161,7 @@
 </li>
 </ol>
 <p><img src="/2021/08/09/%E8%93%9D%E7%89%99%E6%A8%A1%E5%9D%97HC05%E7%9A%84%E7%AE%80%E5%8D%95%E9%85%8D%E5%AF%B9%E4%BD%BF%E7%94%A8/Untitled 1.png" alt="Untitled 1"></p>
-<figure class="highlight angelscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs angelscript">发现波特率不一致为<span class="hljs-number">9600</span>时进行更改，默认状态下就是两个波特率，正常模式下就是<span class="hljs-number">9600</span>，这里我们将其更改为<span class="hljs-number">38400</span>方便调试，当然也可能会带来一定的问题。<br></code></pre></td></tr></table></figure>
+<pre><code class="hljs angelscript">发现波特率不一致为<span class="hljs-number">9600</span>时进行更改，默认状态下就是两个波特率，正常模式下就是<span class="hljs-number">9600</span>，这里我们将其更改为<span class="hljs-number">38400</span>方便调试，当然也可能会带来一定的问题。</code></pre>
 <p>更改波特率：</p>
 <p>AT+UART=38400,0,0</p>
 <ol>

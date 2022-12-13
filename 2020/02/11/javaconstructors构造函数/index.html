@@ -102,16 +102,70 @@
 <h3 id="构造函数的类型："><a href="#构造函数的类型：" class="headerlink" title="构造函数的类型："></a>构造函数的类型：</h3><ol>
 <li><p><strong>无参构造函数</strong>：</p>
 <p>没有参数的构造函数被认为时默认构造函数。若我们没有在类中定义构造函数，那么编译器会自己定义一个无参数的构造函数。Default constructor provides the default values to the object like 0, null, etc. depending on the type.（默认的构造函数提供默认的值给对象0，null，等，更具他们的类型不同）</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-comment">// Java Program to illustrate calling a // no-argument constructor import [java.io](http://java.io).*;</span><br><br><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Geek</span> </span>&#123; <span class="hljs-keyword">int</span> num; String name;<br><br> <span class="hljs-comment">// this would be invoked while an object </span><br> <span class="hljs-comment">// of that class is created. </span><br> Geek() <br> &#123; <br> 	System.out.println(<span class="hljs-string">"Constructor called"</span>); <br> &#125; <br><br><br>&#125;<br><br><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">GFG</span> </span>&#123; <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span> <span class="hljs-params">(String[] args)</span> </span>&#123; <span class="hljs-comment">// this would invoke default constructor. Geek geek1 = new Geek();</span><br><br> 	<span class="hljs-comment">// Default constructor provides the default </span><br> 	<span class="hljs-comment">// values to the object like 0, null </span><br> 	System.out.println(geek1.name); <br> 	System.out.println(geek1.num); <br> &#125; <br><br><br>&#125;<br></code></pre></td></tr></table></figure>
+<pre><code class="hljs java"><span class="hljs-comment">// Java Program to illustrate calling a // no-argument constructor import [java.io](http://java.io).*;</span>
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Geek</span> </span>&#123; <span class="hljs-keyword">int</span> num; String name;
+
+ <span class="hljs-comment">// this would be invoked while an object </span>
+ <span class="hljs-comment">// of that class is created. </span>
+ Geek() 
+ &#123; 
+ 	System.out.println(<span class="hljs-string">"Constructor called"</span>); 
+ &#125; 
+
+
+&#125;
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">GFG</span> </span>&#123; <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span> <span class="hljs-params">(String[] args)</span> </span>&#123; <span class="hljs-comment">// this would invoke default constructor. Geek geek1 = new Geek();</span>
+
+ 	<span class="hljs-comment">// Default constructor provides the default </span>
+ 	<span class="hljs-comment">// values to the object like 0, null </span>
+ 	System.out.println(geek1.name); 
+ 	System.out.println(geek1.num); 
+ &#125; 
+
+
+&#125;</code></pre>
 </li>
 </ol>
 <p>0utput :</p>
-<figure class="highlight delphi"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs delphi"><span class="hljs-function"><span class="hljs-keyword">Constructor</span> <span class="hljs-title">called</span><br><span class="hljs-title">null</span><br>0</span><br></code></pre></td></tr></table></figure>
+<pre><code class="hljs delphi"><span class="hljs-function"><span class="hljs-keyword">Constructor</span> <span class="hljs-title">called</span>
+<span class="hljs-title">null</span>
+0</span></code></pre>
 <p><strong>2. 有参构造函数：</strong></p>
 <p>If we want to initialize fields of the class with your own values, then use a parameterized constructor.如果我们想使用我们自己的值去给类中的变量赋值的话，那么使用参数化的构造函数（有参构造函数）。</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-comment">// Java Program to illustrate calling of </span><br><span class="hljs-comment">// parameterized constructor. </span><br><span class="hljs-keyword">import</span> java.io.*; <br><br><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Geek</span> <br></span>&#123; <br>	<span class="hljs-comment">// data members of the class. </span><br>	String name; <br>	<span class="hljs-keyword">int</span> id; <br><br>	<span class="hljs-comment">// constructor would initialize data members </span><br>	<span class="hljs-comment">// with the values of passed arguments while </span><br>	<span class="hljs-comment">// object of that class created. </span><br>	Geek(String name, <span class="hljs-keyword">int</span> id) <br>	&#123; <br>		<span class="hljs-keyword">this</span>.name = name; <br>		<span class="hljs-keyword">this</span>.id = id; <br>	&#125; <br>&#125; <br><br><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">GFG</span> <br></span>&#123; <br>	<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span> <span class="hljs-params">(String[] args)</span> <br>	</span>&#123; <br>		<span class="hljs-comment">// this would invoke the parameterized constructor. </span><br>		Geek geek1 = <span class="hljs-keyword">new</span> Geek(<span class="hljs-string">"adam"</span>, <span class="hljs-number">1</span>); <br>		System.out.println(<span class="hljs-string">"GeekName :"</span> + geek1.name + <br>						<span class="hljs-string">" and GeekId :"</span> + geek1.id); <br>	&#125; <br>&#125;<br></code></pre></td></tr></table></figure>
+<pre><code class="hljs java"><span class="hljs-comment">// Java Program to illustrate calling of </span>
+<span class="hljs-comment">// parameterized constructor. </span>
+<span class="hljs-keyword">import</span> java.io.*; 
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Geek</span> 
+</span>&#123; 
+	<span class="hljs-comment">// data members of the class. </span>
+	String name; 
+	<span class="hljs-keyword">int</span> id; 
+
+	<span class="hljs-comment">// constructor would initialize data members </span>
+	<span class="hljs-comment">// with the values of passed arguments while </span>
+	<span class="hljs-comment">// object of that class created. </span>
+	Geek(String name, <span class="hljs-keyword">int</span> id) 
+	&#123; 
+		<span class="hljs-keyword">this</span>.name = name; 
+		<span class="hljs-keyword">this</span>.id = id; 
+	&#125; 
+&#125; 
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">GFG</span> 
+</span>&#123; 
+	<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span> <span class="hljs-params">(String[] args)</span> 
+	</span>&#123; 
+		<span class="hljs-comment">// this would invoke the parameterized constructor. </span>
+		Geek geek1 = <span class="hljs-keyword">new</span> Geek(<span class="hljs-string">"adam"</span>, <span class="hljs-number">1</span>); 
+		System.out.println(<span class="hljs-string">"GeekName :"</span> + geek1.name + 
+						<span class="hljs-string">" and GeekId :"</span> + geek1.id); 
+	&#125; 
+&#125;</code></pre>
 <p>Output:</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs css"><span class="hljs-selector-tag">GeekName</span> <span class="hljs-selector-pseudo">:adam</span> <span class="hljs-selector-tag">and</span> <span class="hljs-selector-tag">GeekId</span> <span class="hljs-selector-pseudo">:1</span><br></code></pre></td></tr></table></figure>
+<pre><code class="hljs css"><span class="hljs-selector-tag">GeekName</span> <span class="hljs-selector-pseudo">:adam</span> <span class="hljs-selector-tag">and</span> <span class="hljs-selector-tag">GeekId</span> <span class="hljs-selector-pseudo">:1</span></code></pre>
 <p>也就是说<strong>每一个类里面都有一个构造函数用来给变量赋值</strong>。如果你自己不去写这个构造函数，那么编译器会写一个。这样就可以给你创建的所有变量默认赋值了。（如果构造函数有参数那么，就是你给定的值；如果没有参数，那么就是0或者时null)。对了，构造函数中也可以写其他的语句，可以夹带私货。</p>
 <h2 id="使用构造参数时的一些其他问题："><a href="#使用构造参数时的一些其他问题：" class="headerlink" title="使用构造参数时的一些其他问题："></a>使用构造参数时的一些其他问题：</h2><ul>
 <li><p><strong>Does constructor return any value?</strong> （有返回值么？没有，但可以写return）</p>

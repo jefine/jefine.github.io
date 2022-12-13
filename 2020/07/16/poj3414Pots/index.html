@@ -122,9 +122,15 @@
 <p>Output</p>
 <p>The first line of the output must contain the length of the sequence of operations <strong>K</strong>. The following <strong>K</strong> lines must each describe one operation. If there are several sequences  of minimal length, output any one of them. If the desired result can’t  be achieved, the first and only line of the file must contain the word ‘<strong>impossible</strong>’.</p>
 <p>Sample Input</p>
-<figure class="highlight basic"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs basic"><span class="hljs-symbol">3 </span><span class="hljs-number">5</span> <span class="hljs-number">4</span><br></code></pre></td></tr></table></figure>
+<pre><code class="hljs basic"><span class="hljs-symbol">3 </span><span class="hljs-number">5</span> <span class="hljs-number">4</span></code></pre>
 <p>Sample Output</p>
-<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs stylus"><span class="hljs-number">6</span><br><span class="hljs-function"><span class="hljs-title">FILL</span><span class="hljs-params">(<span class="hljs-number">2</span>)</span></span><br><span class="hljs-function"><span class="hljs-title">POUR</span><span class="hljs-params">(<span class="hljs-number">2</span>,<span class="hljs-number">1</span>)</span></span><br><span class="hljs-function"><span class="hljs-title">DROP</span><span class="hljs-params">(<span class="hljs-number">1</span>)</span></span><br><span class="hljs-function"><span class="hljs-title">POUR</span><span class="hljs-params">(<span class="hljs-number">2</span>,<span class="hljs-number">1</span>)</span></span><br><span class="hljs-function"><span class="hljs-title">FILL</span><span class="hljs-params">(<span class="hljs-number">2</span>)</span></span><br><span class="hljs-function"><span class="hljs-title">POUR</span><span class="hljs-params">(<span class="hljs-number">2</span>,<span class="hljs-number">1</span>)</span></span><br></code></pre></td></tr></table></figure>
+<pre><code class="hljs stylus"><span class="hljs-number">6</span>
+<span class="hljs-function"><span class="hljs-title">FILL</span><span class="hljs-params">(<span class="hljs-number">2</span>)</span></span>
+<span class="hljs-function"><span class="hljs-title">POUR</span><span class="hljs-params">(<span class="hljs-number">2</span>,<span class="hljs-number">1</span>)</span></span>
+<span class="hljs-function"><span class="hljs-title">DROP</span><span class="hljs-params">(<span class="hljs-number">1</span>)</span></span>
+<span class="hljs-function"><span class="hljs-title">POUR</span><span class="hljs-params">(<span class="hljs-number">2</span>,<span class="hljs-number">1</span>)</span></span>
+<span class="hljs-function"><span class="hljs-title">FILL</span><span class="hljs-params">(<span class="hljs-number">2</span>)</span></span>
+<span class="hljs-function"><span class="hljs-title">POUR</span><span class="hljs-params">(<span class="hljs-number">2</span>,<span class="hljs-number">1</span>)</span></span></code></pre>
 <p>Source</p>
 <p><a href="http://poj.org/searchproblem?field=source&amp;key=Northeastern+Europe+2002" target="_blank" rel="noopener">Northeastern Europe 2002</a>, Western Subregion</p>
 <hr>
@@ -142,40 +148,389 @@
 <li><p><strong>确定一个状态包括了什么</strong>：比如，有的题目仅仅需要该点的位置，有的题目还需要其他的东西；只能具体问题具体分析了。在此题目中，我们可以看到一个状态就是我们的a，b两个水壶的储水量。</p>
 <p>那么我们将其设定为一个struct node即可包括 两个int 代表两个水壶的储水量。</p>
 <p>特别是考虑到本题目需要cnt和倒水的步骤，那么我们在每个状态里的的步骤都是不一样的，就用string 储存吧，然后每一个步骤添加的时候记得加上换行符号”\n”;</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">node</span><br>&#123;</span><br>    <span class="hljs-keyword">int</span> x;<br>    <span class="hljs-keyword">int</span> y;<br>    <span class="hljs-built_in">string</span> s;<br>    <span class="hljs-keyword">int</span> cnt;<br>&#125;;<br></code></pre></td></tr></table></figure>
+<pre><code class="hljs cpp"><span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">node</span>
+&#123;</span>
+    <span class="hljs-keyword">int</span> x;
+    <span class="hljs-keyword">int</span> y;
+    <span class="hljs-built_in">string</span> s;
+    <span class="hljs-keyword">int</span> cnt;
+&#125;;</code></pre>
 </li>
 </ol>
 <ol>
 <li><p><strong>寻找vis范围</strong>，确定了总的范围我们才可以利用vis来判断我们是否踩过这个点，这也是最有效的方法来避免死循环,也是迫使队列结束的好方法。有题目给出的“These are all integers in the range from 1 to 100 and <strong>C</strong>≤max(<strong>A</strong>,<strong>B</strong>).”所以我们知道a有100种可能，b也是。（小提示，如果你发现有题目似乎用不到vis那么大概也许<strong>可能</strong>他不一定需要使用bfs来解题）</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-keyword">bool</span> vis[<span class="hljs-number">101</span>][<span class="hljs-number">101</span>];<br></code></pre></td></tr></table></figure>
+<pre><code class="hljs cpp"><span class="hljs-keyword">bool</span> vis[<span class="hljs-number">101</span>][<span class="hljs-number">101</span>];</code></pre>
 <p>对了，记住此题目是多行输入，意味着如果你的vis不及时初始化就会fc</p>
 <p>在这里初始化 vis 可以使用memset，常见用法是这样。</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> CLR(x,y) memset(x,y,sizeof(x))</span><br>CLR(vis,<span class="hljs-literal">false</span>);<br></code></pre></td></tr></table></figure>
+<pre><code class="hljs cpp"><span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> CLR(x,y) memset(x,y,sizeof(x))</span>
+CLR(vis,<span class="hljs-literal">false</span>);</code></pre>
 </li>
 <li><p>找到起点和终点的状态。终点顾名思义其中有一个水壶的储水量是c的时候就代表了end，而开始我们发现他给定的是两个空的水壶，所以我们给定一个node 初始化全0,记得标记vis是1，然后将其推到队列里作为起始点。</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs cpp">  <span class="hljs-built_in">queue</span>&lt;node&gt; q;<br>   <br>   node t;<br>   t.cnt=<span class="hljs-number">0</span>;<br>   t.x=<span class="hljs-number">0</span>;<br>   t.y=<span class="hljs-number">0</span>;<br>   t.s=<span class="hljs-string">""</span>;<br>vis[<span class="hljs-number">0</span>][<span class="hljs-number">0</span>]=<span class="hljs-number">1</span>;<br>   q.push(t);<br></code></pre></td></tr></table></figure>
+<pre><code class="hljs cpp">  <span class="hljs-built_in">queue</span>&lt;node&gt; q;
+   
+   node t;
+   t.cnt=<span class="hljs-number">0</span>;
+   t.x=<span class="hljs-number">0</span>;
+   t.y=<span class="hljs-number">0</span>;
+   t.s=<span class="hljs-string">""</span>;
+vis[<span class="hljs-number">0</span>][<span class="hljs-number">0</span>]=<span class="hljs-number">1</span>;
+   q.push(t);</code></pre>
 <p>但，不难发现，第一步的走法其实只有给两个壶其中之一填满。所以我们也可以是将其设为两个初始点，添加到队列其中去，但是记得更改相关的数值，参考下code。</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs cpp">node t;<br>   t.cnt =<span class="hljs-number">1</span>;<br>   t.x = a;<br>   t.y = <span class="hljs-number">0</span>;<br>   t.s = <span class="hljs-string">"FILL(1)\n"</span>;<br>   q.push(t);<br>   <br>   vis[a][<span class="hljs-number">0</span>] =<span class="hljs-number">1</span>;<br>   t.cnt =<span class="hljs-number">1</span>;<br>   t.x = <span class="hljs-number">0</span>;<br>   t.y = b;<br>   t.s = <span class="hljs-string">"FILL(2)\n"</span>;<br>   vis[<span class="hljs-number">0</span>][b] = <span class="hljs-number">1</span>;<br>   q.push(t);<br></code></pre></td></tr></table></figure>
+<pre><code class="hljs cpp">node t;
+   t.cnt =<span class="hljs-number">1</span>;
+   t.x = a;
+   t.y = <span class="hljs-number">0</span>;
+   t.s = <span class="hljs-string">"FILL(1)\n"</span>;
+   q.push(t);
+   
+   vis[a][<span class="hljs-number">0</span>] =<span class="hljs-number">1</span>;
+   t.cnt =<span class="hljs-number">1</span>;
+   t.x = <span class="hljs-number">0</span>;
+   t.y = b;
+   t.s = <span class="hljs-string">"FILL(2)\n"</span>;
+   vis[<span class="hljs-number">0</span>][b] = <span class="hljs-number">1</span>;
+   q.push(t);</code></pre>
 <p>当然，两者的区别并不是很大，选择前者更容易理解一些，也更加符合一般的bfs的要求。</p>
 </li>
 <li><p>下面就要进入queue队列的循环中去咯~</p>
 <p>进入循环当然先把front给从队列中打捞出来。</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-keyword">while</span>(!q.empty())&#123;<br>        node front  = q.front();<br>        q.pop();<br>        t = front;<br></code></pre></td></tr></table></figure>
+<pre><code class="hljs cpp"><span class="hljs-keyword">while</span>(!q.empty())&#123;
+        node front  = q.front();
+        q.pop();
+        t = front;</code></pre>
 <p>这里的t 是借用了上面的t实际上,我们往往是重新node next  的做法往往更普遍一些。</p>
 <p>有了 此次开头的中心点，我们就要赶紧确定什么时候能结束了，万一我们直接就出去了呢哈哈。</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-keyword">if</span>(front.x ==c||front.y ==c)&#123;<br>            cnt = t.cnt;<br>            <span class="hljs-built_in">cout</span>&lt;&lt;cnt&lt;&lt;<span class="hljs-string">"\n"</span>;<br>            <span class="hljs-built_in">cout</span>&lt;&lt;front.s;<br>            <span class="hljs-keyword">break</span>;<br>        &#125;<br></code></pre></td></tr></table></figure>
+<pre><code class="hljs cpp"><span class="hljs-keyword">if</span>(front.x ==c||front.y ==c)&#123;
+            cnt = t.cnt;
+            <span class="hljs-built_in">cout</span>&lt;&lt;cnt&lt;&lt;<span class="hljs-string">"\n"</span>;
+            <span class="hljs-built_in">cout</span>&lt;&lt;front.s;
+            <span class="hljs-keyword">break</span>;
+        &#125;</code></pre>
 <p>这里有一丝丝的玄机，因为这里采用了break，所以我们在最后bfs返回的是cnt的值，所以我们要将cnt给赋值了，才能return 回去。虽然我们在这里就输出了cnt，但返回的cnt是用来判断我们是否是impossible，如果我们一直没有找到使得题目成立条件，而队列走走完了，那我们就一直没有给cnt赋过值，所以我们自然是返回的是0 那么，就可在main函数中做出特判。</p>
 </li>
 <li><p>接下来就是几种动作的出现，其实就是6种</p>
 <p> FILL(1),FILL(2),DROP(1),DROP(2),POUR(1,2),POUR(2,1) </p>
 <p>我们在对其分别进行情况的判定，然后一一进行就可以了。当然这个过程是艰苦的，如果在一些相似的地方没有思考清楚而是cv的话，容易由于没有看清而出现许多问题。所以奥里给，这一部分需要认真一些。</p>
 <p>对了，我们在前面看到我们既然进行到了这一步，一定是出不去了所以front.cnt++；</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br></pre></td><td class="code"><pre><code class="hljs cpp">front.cnt ++;<br>        <span class="hljs-comment">//fill</span><br>         t = front;<br>        <span class="hljs-keyword">if</span>((front.x!=a) &amp;&amp; (!vis[a][front.y]))&#123;<span class="hljs-comment">// </span><br>            t.x = a;<br>            t.y = front.y;<br>            t.s =front.s + <span class="hljs-string">"FILL(1)\n"</span>;<br>            <br>            q.push(t);<br>            vis[a][t.y] = <span class="hljs-number">1</span>;<br>        &#125;<br>        <span class="hljs-keyword">if</span>((front.y!=b) &amp;&amp;(!vis[front.x][b]))&#123;<br>            t.x = front.x;<br>            t.y = b;<br>            t.s =front.s + <span class="hljs-string">"FILL(2)\n"</span>;<br>            <br>            q.push(t);<br>            vis[t.x][b] = <span class="hljs-number">1</span>;<br>        &#125;<br>        <span class="hljs-comment">//pour</span><br>        <span class="hljs-keyword">if</span>((front.x) &amp;&amp; (front.y!=b))&#123;<span class="hljs-comment">//因为我们pour有两种情况，b被倒满或倒不满，所以我们最好放到里面去判断vis</span><br>            <span class="hljs-keyword">if</span>(front.x&gt;=(b-front.y)&amp;&amp;front.x)&#123;<br>                t.y = b;<br>                t.x = front.x - (b-front.y);<br>            &#125;<br>            <span class="hljs-keyword">else</span> &#123;<br>                t.y = front.y + front.x;<br>                t.x = <span class="hljs-number">0</span>;   <br>            &#125;<br>                t.s = front.s + <span class="hljs-string">"POUR(1,2)\n"</span>;<br>                <span class="hljs-keyword">if</span>(!vis[t.x][t.y])<br>                q.push(t);<br>                vis[t.x][t.y] = <span class="hljs-number">1</span>;<br>        &#125;<br>        <span class="hljs-keyword">if</span>((front.y) &amp;&amp; (front.x!=a))&#123;<span class="hljs-comment">//因为我们pour有两种情况，a被倒满或倒不满，所以我们最好放到里面去判断vis</span><br>            <span class="hljs-keyword">if</span>(front.y&gt;=(a-front.x) &amp;&amp; front.y)&#123;<br>                t.y = front.y -(a - front.x); <br>                t.x = a;<br>            &#125;<br>            <span class="hljs-keyword">else</span> &#123;<br>                t.x = front.x+ front.y;<br>                t.y = <span class="hljs-number">0</span>;<br>            &#125;<br>                t.s = front.s + <span class="hljs-string">"POUR(2,1)\n"</span>;<br>                <span class="hljs-keyword">if</span>(!vis[t.x][t.y])<br>                <br>                q.push(t);<br>                vis[t.x][t.y] = <span class="hljs-number">1</span>;<br>        &#125;<br>        <span class="hljs-comment">//drop</span><br>        <span class="hljs-keyword">if</span>((front.x)&amp;&amp;(!vis[<span class="hljs-number">0</span>][front.y]))&#123;<br>            t.x = <span class="hljs-number">0</span>;<br>            t.y = front.y;<br>            t.s = front.s + <span class="hljs-string">"DROP(1)\n"</span>;<br>            vis[<span class="hljs-number">0</span>][t.y] = <span class="hljs-number">1</span>;<br>            <br>            q.push(t);<br>        &#125;<br>        <span class="hljs-keyword">if</span>((front.y)&amp;&amp;(!vis[front.x][<span class="hljs-number">0</span>]))&#123;<br>            t.x = front.x;<span class="hljs-comment">//cv makes me forget it!!!</span><br>            t.y = <span class="hljs-number">0</span>;<br>            t.s = front.s + <span class="hljs-string">"DROP(2)\n"</span>;<br>            vis[t.x][<span class="hljs-number">0</span>] = <span class="hljs-number">1</span>;        <br>            q.push(t);<br>        &#125;     <br>    &#125;<br></code></pre></td></tr></table></figure>
+<pre><code class="hljs cpp">front.cnt ++;
+        <span class="hljs-comment">//fill</span>
+         t = front;
+        <span class="hljs-keyword">if</span>((front.x!=a) &amp;&amp; (!vis[a][front.y]))&#123;<span class="hljs-comment">// </span>
+            t.x = a;
+            t.y = front.y;
+            t.s =front.s + <span class="hljs-string">"FILL(1)\n"</span>;
+            
+            q.push(t);
+            vis[a][t.y] = <span class="hljs-number">1</span>;
+        &#125;
+        <span class="hljs-keyword">if</span>((front.y!=b) &amp;&amp;(!vis[front.x][b]))&#123;
+            t.x = front.x;
+            t.y = b;
+            t.s =front.s + <span class="hljs-string">"FILL(2)\n"</span>;
+            
+            q.push(t);
+            vis[t.x][b] = <span class="hljs-number">1</span>;
+        &#125;
+        <span class="hljs-comment">//pour</span>
+        <span class="hljs-keyword">if</span>((front.x) &amp;&amp; (front.y!=b))&#123;<span class="hljs-comment">//因为我们pour有两种情况，b被倒满或倒不满，所以我们最好放到里面去判断vis</span>
+            <span class="hljs-keyword">if</span>(front.x&gt;=(b-front.y)&amp;&amp;front.x)&#123;
+                t.y = b;
+                t.x = front.x - (b-front.y);
+            &#125;
+            <span class="hljs-keyword">else</span> &#123;
+                t.y = front.y + front.x;
+                t.x = <span class="hljs-number">0</span>;   
+            &#125;
+                t.s = front.s + <span class="hljs-string">"POUR(1,2)\n"</span>;
+                <span class="hljs-keyword">if</span>(!vis[t.x][t.y])
+                q.push(t);
+                vis[t.x][t.y] = <span class="hljs-number">1</span>;
+        &#125;
+        <span class="hljs-keyword">if</span>((front.y) &amp;&amp; (front.x!=a))&#123;<span class="hljs-comment">//因为我们pour有两种情况，a被倒满或倒不满，所以我们最好放到里面去判断vis</span>
+            <span class="hljs-keyword">if</span>(front.y&gt;=(a-front.x) &amp;&amp; front.y)&#123;
+                t.y = front.y -(a - front.x); 
+                t.x = a;
+            &#125;
+            <span class="hljs-keyword">else</span> &#123;
+                t.x = front.x+ front.y;
+                t.y = <span class="hljs-number">0</span>;
+            &#125;
+                t.s = front.s + <span class="hljs-string">"POUR(2,1)\n"</span>;
+                <span class="hljs-keyword">if</span>(!vis[t.x][t.y])
+                
+                q.push(t);
+                vis[t.x][t.y] = <span class="hljs-number">1</span>;
+        &#125;
+        <span class="hljs-comment">//drop</span>
+        <span class="hljs-keyword">if</span>((front.x)&amp;&amp;(!vis[<span class="hljs-number">0</span>][front.y]))&#123;
+            t.x = <span class="hljs-number">0</span>;
+            t.y = front.y;
+            t.s = front.s + <span class="hljs-string">"DROP(1)\n"</span>;
+            vis[<span class="hljs-number">0</span>][t.y] = <span class="hljs-number">1</span>;
+            
+            q.push(t);
+        &#125;
+        <span class="hljs-keyword">if</span>((front.y)&amp;&amp;(!vis[front.x][<span class="hljs-number">0</span>]))&#123;
+            t.x = front.x;<span class="hljs-comment">//cv makes me forget it!!!</span>
+            t.y = <span class="hljs-number">0</span>;
+            t.s = front.s + <span class="hljs-string">"DROP(2)\n"</span>;
+            vis[t.x][<span class="hljs-number">0</span>] = <span class="hljs-number">1</span>;        
+            q.push(t);
+        &#125;     
+    &#125;</code></pre>
 </li>
 </ol>
 <p>最后return cnt;就可以结束这个bfs了。小心，因为代码过长，一处很小的错误可能就会gg。</p>
 <h2 id="完整的代码"><a href="#完整的代码" class="headerlink" title="完整的代码"></a>完整的代码</h2><p>对，你没有看错，两套代码，中英双文嘿嘿，两种代码其实在一些小的方面有所不同，参考第一个即可，第二个是他人代码（出处已不可寻）</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br><span class="line">192</span><br><span class="line">193</span><br><span class="line">194</span><br><span class="line">195</span><br><span class="line">196</span><br><span class="line">197</span><br><span class="line">198</span><br><span class="line">199</span><br><span class="line">200</span><br><span class="line">201</span><br><span class="line">202</span><br><span class="line">203</span><br><span class="line">204</span><br><span class="line">205</span><br><span class="line">206</span><br><span class="line">207</span><br><span class="line">208</span><br><span class="line">209</span><br><span class="line">210</span><br><span class="line">211</span><br><span class="line">212</span><br><span class="line">213</span><br><span class="line">214</span><br><span class="line">215</span><br><span class="line">216</span><br><span class="line">217</span><br><span class="line">218</span><br><span class="line">219</span><br><span class="line">220</span><br><span class="line">221</span><br><span class="line">222</span><br><span class="line">223</span><br><span class="line">224</span><br><span class="line">225</span><br><span class="line">226</span><br><span class="line">227</span><br><span class="line">228</span><br><span class="line">229</span><br><span class="line">230</span><br><span class="line">231</span><br><span class="line">232</span><br><span class="line">233</span><br><span class="line">234</span><br><span class="line">235</span><br><span class="line">236</span><br><span class="line">237</span><br><span class="line">238</span><br><span class="line">239</span><br><span class="line">240</span><br><span class="line">241</span><br><span class="line">242</span><br><span class="line">243</span><br><span class="line">244</span><br><span class="line">245</span><br><span class="line">246</span><br><span class="line">247</span><br><span class="line">248</span><br><span class="line">249</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><br><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span><span class="hljs-meta-string">&lt;stdio.h&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span><span class="hljs-meta-string">&lt;string.h&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span><span class="hljs-meta-string">&lt;stdlib.h&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span><span class="hljs-meta-string">&lt;math.h&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span><span class="hljs-meta-string">&lt;algorithm&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span><span class="hljs-meta-string">&lt;map&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span><span class="hljs-meta-string">&lt;set&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span><span class="hljs-meta-string">&lt;queue&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span><span class="hljs-meta-string">&lt;string&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span><span class="hljs-meta-string">&lt;iostream&gt;</span></span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> <span class="hljs-built_in">std</span>;<br><span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> CLR(x,y) memset(x,y,sizeof(x))</span><br><span class="hljs-keyword">int</span> a,b,c;<br><span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">node</span><br>&#123;</span><br>    <span class="hljs-keyword">int</span> x;<br>    <span class="hljs-keyword">int</span> y;<br>    <span class="hljs-built_in">string</span> s;<br>    <span class="hljs-keyword">int</span> cnt;<br>&#125;;<br><span class="hljs-keyword">bool</span> vis[<span class="hljs-number">101</span>][<span class="hljs-number">101</span>];<br><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">bfs</span><span class="hljs-params">()</span></span>&#123;<br>    <span class="hljs-keyword">int</span> cnt =<span class="hljs-number">0</span>;<br>    CLR(vis,<span class="hljs-literal">false</span>);<br>    <span class="hljs-built_in">queue</span>&lt;node&gt; q;<br><br>    node t;<br>    t.cnt=<span class="hljs-number">0</span>;<br>    t.x=<span class="hljs-number">0</span>;<br>    t.y=<span class="hljs-number">0</span>;<br>    t.s=<span class="hljs-string">""</span>;<br>    vis[<span class="hljs-number">0</span>][<span class="hljs-number">0</span>] =<span class="hljs-number">1</span>;<br>    q.push(t);<br>    <span class="hljs-keyword">while</span>(!q.empty())&#123;<br>        node front  = q.front();<br>        q.pop();<br>        t = front;<br>        <span class="hljs-keyword">if</span>(front.x ==c||front.y ==c)&#123;<br>            cnt = t.cnt;<br>            <span class="hljs-built_in">cout</span>&lt;&lt;cnt&lt;&lt;<span class="hljs-string">"\n"</span>;<br>            <span class="hljs-built_in">cout</span>&lt;&lt;front.s;<br>            <span class="hljs-keyword">break</span>;<br>        &#125;<br>        front.cnt ++;<br>        <span class="hljs-comment">//fill</span><br>         t = front;<br>        <span class="hljs-keyword">if</span>((front.x!=a) &amp;&amp; (!vis[a][front.y]))&#123;<span class="hljs-comment">// &lt;?</span><br>            t.x = a;<br>            t.y = front.y;<br>            t.s =front.s + <span class="hljs-string">"FILL(1)\n"</span>;<br>            <br>            q.push(t);<br>            vis[a][t.y] = <span class="hljs-number">1</span>;<br>        &#125;<br>        <span class="hljs-keyword">if</span>((front.y!=b) &amp;&amp;(!vis[front.x][b]))&#123;<br>            t.x = front.x;<br>            t.y = b;<br>            t.s =front.s + <span class="hljs-string">"FILL(2)\n"</span>;<br>            <br>            q.push(t);<br>            vis[t.x][b] = <span class="hljs-number">1</span>;<br>        &#125;<br>        <span class="hljs-comment">//pour</span><br>        <span class="hljs-keyword">if</span>((front.x) &amp;&amp; (front.y!=b))&#123;<span class="hljs-comment">//因为我们pour有两种情况，b被倒满或倒不满，所以我们最好放到里面去判断vis</span><br>            <span class="hljs-keyword">if</span>(front.x&gt;=(b-front.y)&amp;&amp;front.x)&#123;<br>                t.y = b;<br>                t.x = front.x - (b-front.y);<br>            &#125;<br>            <span class="hljs-keyword">else</span> &#123;<br>                t.y = front.y + front.x;<br>                t.x = <span class="hljs-number">0</span>;   <br>            &#125;<br>                t.s = front.s + <span class="hljs-string">"POUR(1,2)\n"</span>;<br>                <span class="hljs-keyword">if</span>(!vis[t.x][t.y])<br>                q.push(t);<br>                vis[t.x][t.y] = <span class="hljs-number">1</span>;<br>        &#125;<br>        <span class="hljs-keyword">if</span>((front.y) &amp;&amp; (front.x!=a))&#123;<span class="hljs-comment">//因为我们pour有两种情况，a被倒满或倒不满，所以我们最好放到里面去判断vis</span><br>            <span class="hljs-keyword">if</span>(front.y&gt;=(a-front.x) &amp;&amp; front.y)&#123;<br>                t.y = front.y -(a - front.x); <br>                t.x = a;<br>            &#125;<br>            <span class="hljs-keyword">else</span> &#123;<br>                t.x = front.x+ front.y;<br>                t.y = <span class="hljs-number">0</span>;<br>            &#125;<br>                t.s = front.s + <span class="hljs-string">"POUR(2,1)\n"</span>;<br>                <span class="hljs-keyword">if</span>(!vis[t.x][t.y])<br>                <br>                q.push(t);<br>                vis[t.x][t.y] = <span class="hljs-number">1</span>;<br>        &#125;<br>        <span class="hljs-comment">//drop</span><br>        <span class="hljs-keyword">if</span>((front.x)&amp;&amp;(!vis[<span class="hljs-number">0</span>][front.y]))&#123;<br>            t.x = <span class="hljs-number">0</span>;<br>            t.y = front.y;<br>            t.s = front.s + <span class="hljs-string">"DROP(1)\n"</span>;<br>            vis[<span class="hljs-number">0</span>][t.y] = <span class="hljs-number">1</span>;<br>            <br>            q.push(t);<br>        &#125;<br>        <span class="hljs-keyword">if</span>((front.y)&amp;&amp;(!vis[front.x][<span class="hljs-number">0</span>]))&#123;<br>            t.x = front.x;<span class="hljs-comment">//cv makes me forget it!!!</span><br>            t.y = <span class="hljs-number">0</span>;<br>            t.s = front.s + <span class="hljs-string">"DROP(2)\n"</span>;<br>            vis[t.x][<span class="hljs-number">0</span>] = <span class="hljs-number">1</span>;        <br>            q.push(t);<br>        &#125;     <br>    &#125;<br>    <span class="hljs-keyword">return</span> cnt;<br><br>&#125;<br><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span>&#123;<br>    <span class="hljs-keyword">while</span> ((<span class="hljs-built_in">cin</span>&gt;&gt;a&gt;&gt;b&gt;&gt;c))<br>    &#123;<br>        <span class="hljs-keyword">if</span>(bfs()==<span class="hljs-number">0</span>)<span class="hljs-built_in">cout</span>&lt;&lt;<span class="hljs-string">"impossible"</span>&lt;&lt;<span class="hljs-built_in">endl</span>;<br>    &#125;<br>    <br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br><span class="hljs-comment">//personal code.</span><br><br><span class="hljs-comment">/*<br>#include&lt;stdio.h&gt;<br>#include&lt;string.h&gt;<br>#include&lt;stdlib.h&gt;<br>#include&lt;math.h&gt;<br>#include&lt;algorithm&gt;<br>#include&lt;map&gt;<br>#include&lt;set&gt;<br>#include&lt;queue&gt;<br>#include&lt;string&gt;<br>#include&lt;iostream&gt;<br>using namespace std;<br>#define CLR(arr,val) memset(arr,val,sizeof(arr))<br><br>int n , m , x;<br>bool vis[200][200];<br>//图上所有点的取值区域可用 a，b的不同的水量状态表示！<br>struct nodes&#123;<br>	int x, y;<br>	string step;<br>	int cnt;<br>&#125;;<br> <br>int bfs() &#123;<br>	int cnt = 0;<br>	CLR(vis, 0);//init<br>	queue&lt;nodes&gt; q;<br>	nodes nd1;<br><br>	nd1.x = 0;//(init)<br>	nd1.y = 0;<br>	nd1.cnt = 0;<br>    nd1.step = "";<br>	q.push(nd1);<br>	vis[0][0]=1;<br>	<br>	while(!q.empty()) &#123;<br>		nodes nd = q.front();<br>		q.pop();<br>		if (nd.x == x || nd.y == x) &#123;// end<br>			cnt = nd.cnt;<br>			cout&lt;&lt;cnt&lt;&lt;"\n";// it looks like nothing at all. However this cnt is connect to the return value!<br>                            //there is one possible thing is that we could at the last step that we find the right idea!<br>			cout&lt;&lt;nd.step;<br>			break;<br>		&#125;<br>		++nd.cnt;// every time the nd will be renew one as front;<br>		nodes nd2;//as next<br>		nd2.cnt = nd.cnt; <br>		if (nd.x &lt; n &amp;&amp; !vis[n][nd.y]) &#123;//if fronter is not full&amp;&amp; not visit the status when it is full<br>			nd2.x = n;<br>			nd2.y = nd.y;<br>			nd2.step = nd.step + "FILL(1)\n";<br>			q.push(nd2);<br>			vis[nd2.x][nd2.y] = 1;<br>		&#125;<br>		if (nd.y &lt; m &amp;&amp; !vis[nd.x][m]) &#123;<br>			nd2.x = nd.x;<br>			nd2.y = m;<br>			nd2.step = nd.step + "FILL(2)\n";<br>			q.push(nd2);<br>			vis[nd2.x][nd2.y] = 1;<br>		&#125;<br>		<br>		if (nd.x &gt; 0 &amp;&amp; nd.y != m) &#123;//when a is not a empty one &amp;&amp; b is not full<br>			if (nd.x &gt;= (m - nd.y) &amp;&amp; nd.x != 0) &#123;//if a couldn't pour it's all to b<br>				nd2.x = (nd.x - (m - nd.y));// a will pour as more as it could <br>				nd2.y = m;				<br>			&#125; <br>            else &#123;//a could pour all to b<br>				nd2.y = (nd.x + nd.y);<br>				nd2.x = 0;<br>			&#125;<br><br>			if (!vis[nd2.x][nd2.y]) &#123;<br>				nd2.step = nd.step + "POUR(1,2)\n";<br>				q.push(nd2);<br>				vis[nd2.x][nd2.y] = 1;<br>			&#125;<br>			<br>		&#125;<br>		<br>		if (nd.y &gt; 0 &amp;&amp; nd.x != n) &#123;//pour b to a<br>			if (nd.y &gt;= (n - nd.x) &amp;&amp; nd.y != 0) &#123;<br>				nd2.y = (nd.y - (n - nd.x));<br>				nd2.x = n;<br>			&#125; else &#123;<br>				<br>				nd2.x = (nd.y + nd.x);<br>				nd2.y = 0;<br>			&#125;<br>			if (!vis[nd2.x][nd2.y]) &#123;<br>				nd2.step = nd.step + "POUR(2,1)\n";<br>				q.push(nd2);<br>				vis[nd2.x][nd2.y] = 1;	<br>			&#125;<br>		&#125;<br>		<br>		if (nd.x &gt; 0 &amp;&amp; !vis[0][nd.y]) &#123;//a is not empty<br>			nd2.x = 0;<br>			nd2.y = nd.y;<br>			nd2.step = nd.step + "DROP(1)\n";<br>			q.push(nd2);<br>			vis[nd2.x][nd2.y] = 1;<br>		&#125;<br>		if (nd.y &gt; 0 &amp;&amp; !vis[nd.x][0]) &#123;<br>			nd2.x = nd.x;<br>			nd2.y = 0;<br>			nd2.step = nd.step + "DROP(2)\n";<br>			q.push(nd2);<br>			vis[nd2.x][nd2.y] = 1;<br>		&#125;<br>		<br>	&#125;<br>	return cnt;<br>&#125;<br> <br>int main()<br>&#123;<br>	while(cin&gt;&gt;n&gt;&gt;m&gt;&gt;x) &#123;<br>		if (bfs() == 0) &#123;<br>			cout&lt;&lt;"impossible"&lt;&lt;endl;<br>		&#125; <br>	&#125;<br>&#125;<br>*/</span><br></code></pre></td></tr></table></figure>
+<pre><code class="hljs cpp">
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span><span class="hljs-meta-string">&lt;stdio.h&gt;</span></span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span><span class="hljs-meta-string">&lt;string.h&gt;</span></span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span><span class="hljs-meta-string">&lt;stdlib.h&gt;</span></span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span><span class="hljs-meta-string">&lt;math.h&gt;</span></span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span><span class="hljs-meta-string">&lt;algorithm&gt;</span></span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span><span class="hljs-meta-string">&lt;map&gt;</span></span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span><span class="hljs-meta-string">&lt;set&gt;</span></span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span><span class="hljs-meta-string">&lt;queue&gt;</span></span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span><span class="hljs-meta-string">&lt;string&gt;</span></span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span><span class="hljs-meta-string">&lt;iostream&gt;</span></span>
+<span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> <span class="hljs-built_in">std</span>;
+<span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> CLR(x,y) memset(x,y,sizeof(x))</span>
+<span class="hljs-keyword">int</span> a,b,c;
+<span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">node</span>
+&#123;</span>
+    <span class="hljs-keyword">int</span> x;
+    <span class="hljs-keyword">int</span> y;
+    <span class="hljs-built_in">string</span> s;
+    <span class="hljs-keyword">int</span> cnt;
+&#125;;
+<span class="hljs-keyword">bool</span> vis[<span class="hljs-number">101</span>][<span class="hljs-number">101</span>];
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">bfs</span><span class="hljs-params">()</span></span>&#123;
+    <span class="hljs-keyword">int</span> cnt =<span class="hljs-number">0</span>;
+    CLR(vis,<span class="hljs-literal">false</span>);
+    <span class="hljs-built_in">queue</span>&lt;node&gt; q;
+
+    node t;
+    t.cnt=<span class="hljs-number">0</span>;
+    t.x=<span class="hljs-number">0</span>;
+    t.y=<span class="hljs-number">0</span>;
+    t.s=<span class="hljs-string">""</span>;
+    vis[<span class="hljs-number">0</span>][<span class="hljs-number">0</span>] =<span class="hljs-number">1</span>;
+    q.push(t);
+    <span class="hljs-keyword">while</span>(!q.empty())&#123;
+        node front  = q.front();
+        q.pop();
+        t = front;
+        <span class="hljs-keyword">if</span>(front.x ==c||front.y ==c)&#123;
+            cnt = t.cnt;
+            <span class="hljs-built_in">cout</span>&lt;&lt;cnt&lt;&lt;<span class="hljs-string">"\n"</span>;
+            <span class="hljs-built_in">cout</span>&lt;&lt;front.s;
+            <span class="hljs-keyword">break</span>;
+        &#125;
+        front.cnt ++;
+        <span class="hljs-comment">//fill</span>
+         t = front;
+        <span class="hljs-keyword">if</span>((front.x!=a) &amp;&amp; (!vis[a][front.y]))&#123;<span class="hljs-comment">// &lt;?</span>
+            t.x = a;
+            t.y = front.y;
+            t.s =front.s + <span class="hljs-string">"FILL(1)\n"</span>;
+            
+            q.push(t);
+            vis[a][t.y] = <span class="hljs-number">1</span>;
+        &#125;
+        <span class="hljs-keyword">if</span>((front.y!=b) &amp;&amp;(!vis[front.x][b]))&#123;
+            t.x = front.x;
+            t.y = b;
+            t.s =front.s + <span class="hljs-string">"FILL(2)\n"</span>;
+            
+            q.push(t);
+            vis[t.x][b] = <span class="hljs-number">1</span>;
+        &#125;
+        <span class="hljs-comment">//pour</span>
+        <span class="hljs-keyword">if</span>((front.x) &amp;&amp; (front.y!=b))&#123;<span class="hljs-comment">//因为我们pour有两种情况，b被倒满或倒不满，所以我们最好放到里面去判断vis</span>
+            <span class="hljs-keyword">if</span>(front.x&gt;=(b-front.y)&amp;&amp;front.x)&#123;
+                t.y = b;
+                t.x = front.x - (b-front.y);
+            &#125;
+            <span class="hljs-keyword">else</span> &#123;
+                t.y = front.y + front.x;
+                t.x = <span class="hljs-number">0</span>;   
+            &#125;
+                t.s = front.s + <span class="hljs-string">"POUR(1,2)\n"</span>;
+                <span class="hljs-keyword">if</span>(!vis[t.x][t.y])
+                q.push(t);
+                vis[t.x][t.y] = <span class="hljs-number">1</span>;
+        &#125;
+        <span class="hljs-keyword">if</span>((front.y) &amp;&amp; (front.x!=a))&#123;<span class="hljs-comment">//因为我们pour有两种情况，a被倒满或倒不满，所以我们最好放到里面去判断vis</span>
+            <span class="hljs-keyword">if</span>(front.y&gt;=(a-front.x) &amp;&amp; front.y)&#123;
+                t.y = front.y -(a - front.x); 
+                t.x = a;
+            &#125;
+            <span class="hljs-keyword">else</span> &#123;
+                t.x = front.x+ front.y;
+                t.y = <span class="hljs-number">0</span>;
+            &#125;
+                t.s = front.s + <span class="hljs-string">"POUR(2,1)\n"</span>;
+                <span class="hljs-keyword">if</span>(!vis[t.x][t.y])
+                
+                q.push(t);
+                vis[t.x][t.y] = <span class="hljs-number">1</span>;
+        &#125;
+        <span class="hljs-comment">//drop</span>
+        <span class="hljs-keyword">if</span>((front.x)&amp;&amp;(!vis[<span class="hljs-number">0</span>][front.y]))&#123;
+            t.x = <span class="hljs-number">0</span>;
+            t.y = front.y;
+            t.s = front.s + <span class="hljs-string">"DROP(1)\n"</span>;
+            vis[<span class="hljs-number">0</span>][t.y] = <span class="hljs-number">1</span>;
+            
+            q.push(t);
+        &#125;
+        <span class="hljs-keyword">if</span>((front.y)&amp;&amp;(!vis[front.x][<span class="hljs-number">0</span>]))&#123;
+            t.x = front.x;<span class="hljs-comment">//cv makes me forget it!!!</span>
+            t.y = <span class="hljs-number">0</span>;
+            t.s = front.s + <span class="hljs-string">"DROP(2)\n"</span>;
+            vis[t.x][<span class="hljs-number">0</span>] = <span class="hljs-number">1</span>;        
+            q.push(t);
+        &#125;     
+    &#125;
+    <span class="hljs-keyword">return</span> cnt;
+
+&#125;
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span>&#123;
+    <span class="hljs-keyword">while</span> ((<span class="hljs-built_in">cin</span>&gt;&gt;a&gt;&gt;b&gt;&gt;c))
+    &#123;
+        <span class="hljs-keyword">if</span>(bfs()==<span class="hljs-number">0</span>)<span class="hljs-built_in">cout</span>&lt;&lt;<span class="hljs-string">"impossible"</span>&lt;&lt;<span class="hljs-built_in">endl</span>;
+    &#125;
+    
+    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;
+&#125;
+<span class="hljs-comment">//personal code.</span>
+
+<span class="hljs-comment">/*
+#include&lt;stdio.h&gt;
+#include&lt;string.h&gt;
+#include&lt;stdlib.h&gt;
+#include&lt;math.h&gt;
+#include&lt;algorithm&gt;
+#include&lt;map&gt;
+#include&lt;set&gt;
+#include&lt;queue&gt;
+#include&lt;string&gt;
+#include&lt;iostream&gt;
+using namespace std;
+#define CLR(arr,val) memset(arr,val,sizeof(arr))
+
+int n , m , x;
+bool vis[200][200];
+//图上所有点的取值区域可用 a，b的不同的水量状态表示！
+struct nodes&#123;
+	int x, y;
+	string step;
+	int cnt;
+&#125;;
+ 
+int bfs() &#123;
+	int cnt = 0;
+	CLR(vis, 0);//init
+	queue&lt;nodes&gt; q;
+	nodes nd1;
+
+	nd1.x = 0;//(init)
+	nd1.y = 0;
+	nd1.cnt = 0;
+    nd1.step = "";
+	q.push(nd1);
+	vis[0][0]=1;
+	
+	while(!q.empty()) &#123;
+		nodes nd = q.front();
+		q.pop();
+		if (nd.x == x || nd.y == x) &#123;// end
+			cnt = nd.cnt;
+			cout&lt;&lt;cnt&lt;&lt;"\n";// it looks like nothing at all. However this cnt is connect to the return value!
+                            //there is one possible thing is that we could at the last step that we find the right idea!
+			cout&lt;&lt;nd.step;
+			break;
+		&#125;
+		++nd.cnt;// every time the nd will be renew one as front;
+		nodes nd2;//as next
+		nd2.cnt = nd.cnt; 
+		if (nd.x &lt; n &amp;&amp; !vis[n][nd.y]) &#123;//if fronter is not full&amp;&amp; not visit the status when it is full
+			nd2.x = n;
+			nd2.y = nd.y;
+			nd2.step = nd.step + "FILL(1)\n";
+			q.push(nd2);
+			vis[nd2.x][nd2.y] = 1;
+		&#125;
+		if (nd.y &lt; m &amp;&amp; !vis[nd.x][m]) &#123;
+			nd2.x = nd.x;
+			nd2.y = m;
+			nd2.step = nd.step + "FILL(2)\n";
+			q.push(nd2);
+			vis[nd2.x][nd2.y] = 1;
+		&#125;
+		
+		if (nd.x &gt; 0 &amp;&amp; nd.y != m) &#123;//when a is not a empty one &amp;&amp; b is not full
+			if (nd.x &gt;= (m - nd.y) &amp;&amp; nd.x != 0) &#123;//if a couldn't pour it's all to b
+				nd2.x = (nd.x - (m - nd.y));// a will pour as more as it could 
+				nd2.y = m;				
+			&#125; 
+            else &#123;//a could pour all to b
+				nd2.y = (nd.x + nd.y);
+				nd2.x = 0;
+			&#125;
+
+			if (!vis[nd2.x][nd2.y]) &#123;
+				nd2.step = nd.step + "POUR(1,2)\n";
+				q.push(nd2);
+				vis[nd2.x][nd2.y] = 1;
+			&#125;
+			
+		&#125;
+		
+		if (nd.y &gt; 0 &amp;&amp; nd.x != n) &#123;//pour b to a
+			if (nd.y &gt;= (n - nd.x) &amp;&amp; nd.y != 0) &#123;
+				nd2.y = (nd.y - (n - nd.x));
+				nd2.x = n;
+			&#125; else &#123;
+				
+				nd2.x = (nd.y + nd.x);
+				nd2.y = 0;
+			&#125;
+			if (!vis[nd2.x][nd2.y]) &#123;
+				nd2.step = nd.step + "POUR(2,1)\n";
+				q.push(nd2);
+				vis[nd2.x][nd2.y] = 1;	
+			&#125;
+		&#125;
+		
+		if (nd.x &gt; 0 &amp;&amp; !vis[0][nd.y]) &#123;//a is not empty
+			nd2.x = 0;
+			nd2.y = nd.y;
+			nd2.step = nd.step + "DROP(1)\n";
+			q.push(nd2);
+			vis[nd2.x][nd2.y] = 1;
+		&#125;
+		if (nd.y &gt; 0 &amp;&amp; !vis[nd.x][0]) &#123;
+			nd2.x = nd.x;
+			nd2.y = 0;
+			nd2.step = nd.step + "DROP(2)\n";
+			q.push(nd2);
+			vis[nd2.x][nd2.y] = 1;
+		&#125;
+		
+	&#125;
+	return cnt;
+&#125;
+ 
+int main()
+&#123;
+	while(cin&gt;&gt;n&gt;&gt;m&gt;&gt;x) &#123;
+		if (bfs() == 0) &#123;
+			cout&lt;&lt;"impossible"&lt;&lt;endl;
+		&#125; 
+	&#125;
+&#125;
+*/</span></code></pre>
 <p>当然，这道题目还见到有用其他方法去配合bfs进行解题的，</p>
 <p><a href="https://blog.csdn.net/qq_34374664/article/details/53170539" target="_blank" rel="noopener">其他方法之一</a></p>
 

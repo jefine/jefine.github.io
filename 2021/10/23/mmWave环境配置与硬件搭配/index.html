@@ -103,7 +103,9 @@
 <li>修改  /boot/config.txt</li>
 </ol>
 <p>在最下方新增以下内容：</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs c">dtoverlay=pi3-miniuart-bt<br>core-freq=<span class="hljs-number">250</span><br>enable_uart=<span class="hljs-number">1</span><br></code></pre></td></tr></table></figure>
+<pre><code class="hljs c">dtoverlay=pi3-miniuart-bt
+core-freq=<span class="hljs-number">250</span>
+enable_uart=<span class="hljs-number">1</span></code></pre>
 <p><img src="/2021/10/23/mmWave%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE%E4%B8%8E%E7%A1%AC%E4%BB%B6%E6%90%AD%E9%85%8D/Untitled 3.png" alt="[Untitled]"></p>
 <ol>
 <li><p>更改  \boot\cmdline.txt </p>
@@ -120,9 +122,13 @@
 <p><img src="/2021/10/23/mmWave%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE%E4%B8%8E%E7%A1%AC%E4%BB%B6%E6%90%AD%E9%85%8D/Untitled 7.png" alt="[Untitled]"></p>
 <p><img src="/2021/10/23/mmWave%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE%E4%B8%8E%E7%A1%AC%E4%BB%B6%E6%90%AD%E9%85%8D/Untitled 8.png" alt="[Untitled]"></p>
 <h2 id="运行官方样例来测试能否正常运行"><a href="#运行官方样例来测试能否正常运行" class="headerlink" title="运行官方样例来测试能否正常运行"></a>运行官方样例来测试能否正常运行</h2><p>建议使用 Python3</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs c">#安装使用此命令<br>sudo pip3 install mmWave<br><br>#升级使用下面的命令<br>sudo pip3 install mmWave -U<br></code></pre></td></tr></table></figure>
+<pre><code class="hljs c">#安装使用此命令
+sudo pip3 install mmWave
+
+#升级使用下面的命令
+sudo pip3 install mmWave -U</code></pre>
 <p>通过 git 或者手动下载下面的官方库</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs c">git clone https:<span class="hljs-comment">//github.com/bigheadG/mmWave.git</span><br></code></pre></td></tr></table></figure>
+<pre><code class="hljs c">git clone https:<span class="hljs-comment">//github.com/bigheadG/mmWave.git</span></code></pre>
 <p><a href="https://github.com/bigheadG/mmWave" target="_blank" rel="noopener">GitHub - bigheadG/mmWave: mmWave SDK examples based on Batman Kit mmWave Sensor module</a></p>
 <p>接着到下图的地方打开样例，后缀 KV 的是Key Value 模式</p>
 <p>运行的时候会出现port没有定义，我们树莓派的话，就是用ttyAMA0串口即可，样例中一般都有注释。</p>
@@ -130,17 +136,17 @@
 <p>当然，由于缺乏 Python3 的一些包，会出现一些问题，会一一进行安装。</p>
 <p>比如运行 pyqtgraph_vsd_ex3.py 是出现了没有相关组件。</p>
 <p>就需要我们去安装了。</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs c">pip3 install pyqtgraph==<span class="hljs-number">0.11</span><span class="hljs-number">.1</span><br></code></pre></td></tr></table></figure>
+<pre><code class="hljs c">pip3 install pyqtgraph==<span class="hljs-number">0.11</span><span class="hljs-number">.1</span></code></pre>
 <p><img src="/2021/10/23/mmWave%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE%E4%B8%8E%E7%A1%AC%E4%BB%B6%E6%90%AD%E9%85%8D/Untitled 10.png" alt="[Untitled]"></p>
 <p>当然安装完成之后，还会出现pyqt5缺失的问题。</p>
 <p>pyqt5的安装需要比较特殊：</p>
 <p>安装过程中出现 continue？等的提示输入 y 或者 yes 即可</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs c">sudo apt-<span class="hljs-built_in">get</span> install python3-pyqt5<br></code></pre></td></tr></table></figure>
+<pre><code class="hljs c">sudo apt-<span class="hljs-built_in">get</span> install python3-pyqt5</code></pre>
 <p><img src="/2021/10/23/mmWave%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE%E4%B8%8E%E7%A1%AC%E4%BB%B6%E6%90%AD%E9%85%8D/Untitled 11.png" alt="[Untitled]"></p>
 <p>当然，还有问题出现：</p>
 <p>(1)———-libf77blas.so.3————————————————————-<br>  from scipy.linalg import _fblas<br>  ImportError: libf77blas.so.3: cannot open shared object file: No such file or directory</p>
 <p>  problem solved这样解决就可以了:<br>  First of all, for libf77blas.so.3, you have to install ATLAS, something like sudo apt-get install libatlas-base-dev</p>
-<figure class="highlight cs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs cs">sudo apt-<span class="hljs-keyword">get</span> install libatlas-<span class="hljs-keyword">base</span>-dev<br></code></pre></td></tr></table></figure>
+<pre><code class="hljs cs">sudo apt-<span class="hljs-keyword">get</span> install libatlas-<span class="hljs-keyword">base</span>-dev</code></pre>
 <p>当然，还有模块没有安装完成。</p>
 <p><img src="/2021/10/23/mmWave%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE%E4%B8%8E%E7%A1%AC%E4%BB%B6%E6%90%AD%E9%85%8D/Untitled 12.png" alt="[Untitled]"></p>
 <p>可能出现的问题：</p>
@@ -153,7 +159,7 @@
 </ul>
 <p><img src="/2021/10/23/mmWave%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE%E4%B8%8E%E7%A1%AC%E4%BB%B6%E6%90%AD%E9%85%8D/Untitled 13.png" alt="[Untitled]"></p>
 <pre><code>  解决方法：赋予其权限。即可
-</code></pre><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs c">sudo chmod <span class="hljs-number">666</span> /dev/ttyAMA0<br></code></pre></td></tr></table></figure>
+</code></pre><pre><code class="hljs c">sudo chmod <span class="hljs-number">666</span> /dev/ttyAMA0</code></pre>
 <ul>
 <li>port 有问题就进去 更改port就好。</li>
 </ul>

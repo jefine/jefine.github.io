@@ -97,7 +97,7 @@
 <li><p>一个状态所需要的内容作为一个节点。（比如坐标等）</p>
 </li>
 <li><p>一个足够大的位置集合,来表示我们是否来过(可能是二维数组甚至更高维度，也可能是其他的形式，要看具体状态的要求).</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-keyword">bool</span> vis[max];<br></code></pre></td></tr></table></figure>
+<pre><code class="hljs cpp"><span class="hljs-keyword">bool</span> vis[max];</code></pre>
 </li>
 <li><p>一个队列,表示我们即将将队列中的每一个元素作为一个新的起点去重新出发.(queue).</p>
 </li>
@@ -116,7 +116,7 @@
 <p>例如，在二维的地图上，不能越界，不能进入禁止的点，没有来过此点等等。</p>
 <p>例如,小老鼠走迷宫的问题:那么我们就可以根据题目,得到我们小老鼠不能碰的那些点,每次小老鼠可以怎样走动呢?上下左右都可以走,我们就还要判断他们是否出界.进行挑选出那些<strong>从一点可以到该点所能触及的所有不违反规则的点</strong>,别忘了,我们还要判断他们是不是我们要寻找的终点.</p>
 <p>在一层一层的脱离过程中我们会发现还要根据题目要求记下一些东西,往往是所走的路程是多少,那么刚刚提及的最后一个记录步数的数组就可以起效了,我们往往这样使用:</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs cpp">step[next] = step[front]+<span class="hljs-number">1</span>;<br></code></pre></td></tr></table></figure>
+<pre><code class="hljs cpp">step[next] = step[front]+<span class="hljs-number">1</span>;</code></pre>
 <p>因为我们从一点出发往往会经过许许多多的点,然而这些点都是我们一步可以走到的点.不能将他们累加起来作为我们的实际步数.</p>
 <p>宏观上看,我们其实更像是一个池塘中的波纹,每一个波纹有小及大的向外扩散.那么看起来与BFS的算法思想是极为相似的,我们也是从一点抛下一颗小石子,然后等波纹自己寻找到终点(水中的另外一颗小石头的位置).可以想象到我们如果碰触到终点后不停止,那么水波将不断的向远处扩散,知道池塘全部被波及.但我们往往不需要那样做,那样通常是最坏的情况了(也意味着我们要踩所有的可能点呢).</p>
 <h4 id="实现步骤"><a href="#实现步骤" class="headerlink" title="实现步骤:"></a>实现步骤:</h4><ol>
@@ -141,7 +141,12 @@
 </li>
 <li><p>我们在对于一个节点进行多个动作时候，需要注意，我们要将其恢复为front的状态，或者更方便一些的，我们直接将其 cnt++；在循环的过程中，我们一直采用front来判断条件或者是对即将入队的节点进行赋值。</p>
 <p>eg：在洛谷1135的题目中我们在队列的循环过程中的front进行变动的做法：而不是对t进行改动。在其他的题目中也经常适用，不要改变t，除非即将入队，判断采用front的+-等进行操作即可。</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs cpp">t.cnt = front.cnt+<span class="hljs-number">1</span>;<br><span class="hljs-keyword">if</span>(CHECK((front.h+high[front.h])))&#123;<br>    t.h = front.h+high[front.h];<br>    vis[t.h] = <span class="hljs-number">1</span>;<br>    q.push(t);<br>&#125;<br></code></pre></td></tr></table></figure>
+<pre><code class="hljs cpp">t.cnt = front.cnt+<span class="hljs-number">1</span>;
+<span class="hljs-keyword">if</span>(CHECK((front.h+high[front.h])))&#123;
+    t.h = front.h+high[front.h];
+    vis[t.h] = <span class="hljs-number">1</span>;
+    q.push(t);
+&#125;</code></pre>
 </li>
 <li><p>我们如果需要记录可以达到多少个点，那么我们在队列中，只要 !vis 我们就可以给他count++；一般是放在动作里面的。如上面的代码情况就放在vis[t.h]=1 下面一行即可。</p>
 </li>

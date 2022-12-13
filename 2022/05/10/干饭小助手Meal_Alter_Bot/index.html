@@ -119,12 +119,13 @@
 <p>这里需要修改的也就是自己的 MQTT 服务器地址和所需要修改的关键词，过滤的群号，详见文件内注释说明。</p>
 <p>在运行之前，我们还需要安装 Python 的相关库，这里用到了 paho.mqtt 和 flask</p>
 <p>首先采用</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">pip3 install paho.mqtt<br></code></pre></td></tr></table></figure>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">pip3 install flask<br></code></pre></td></tr></table></figure>
+<pre><code class="hljs bash">pip3 install paho.mqtt</code></pre>
+<pre><code class="hljs bash">pip3 install flask</code></pre>
 <p>配置完成后，可以使用 python3 <a href="http://app.py" target="_blank" rel="noopener">app.py</a> 即可运行，该程序便会将需要的转发的内容发送到MQTT服务器的对应主题上。</p>
 <p>在服务器上，我们往往采用 SSH 的方式进行连接，为避免关闭界面后，运行停止，我们可以采用命令nohup ~ &amp;将其挂起,</p>
 <p>即使用</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash">nohup ./go-cqhttp &amp;<br>nohup python3 app.py &amp;<br></code></pre></td></tr></table></figure>
+<pre><code class="hljs bash">nohup ./go-cqhttp &amp;
+nohup python3 app.py &amp;</code></pre>
 <p>其对应的终端输入日志将保存在.out文件中</p>
 <h3 id="配置-ESP32"><a href="#配置-ESP32" class="headerlink" title="配置 ESP32"></a>配置 ESP32</h3><p>准备一个 ESP32 开发板，正常的型号就可以，这里仅仅采用了 WiFi，运用了 MQTT 的库文件，详细代码参考 本项目中的 ESP32_Meal_Alter_Bot 文件夹中的内容即可。</p>
 <p>本 ESP32 项目采用 Vscode +platformio 进行开发</p>

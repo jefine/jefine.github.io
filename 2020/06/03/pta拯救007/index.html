@@ -96,7 +96,58 @@
 <p>如果被访问过了，那么只有两种情况：1.找到出口，直接弹出（break）。2.没有出口~</p>
 <p>所以如果节点被访问过，就意味着该节点不是出口。</p>
 <p>另外注意我们还有对于第一次的中心岛的特殊判断，他的距离与其他的dfs过程不同。</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span><span class="hljs-meta-string">&lt;bits/stdc++.h&gt;</span></span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> <span class="hljs-built_in">std</span>;<br><span class="hljs-keyword">int</span> n,d;<br>    <span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">node</span>//定义节点（存储<span class="hljs-title">x</span>，<span class="hljs-title">y</span>坐标）<br>&#123;</span> <br>    <span class="hljs-keyword">int</span> x;<br>    <span class="hljs-keyword">int</span> y;<br>&#125;p[<span class="hljs-number">110</span>];  <br><span class="hljs-keyword">bool</span> vis[<span class="hljs-number">110</span>];<br><span class="hljs-keyword">bool</span> flag =<span class="hljs-number">0</span>;<br><span class="hljs-function"><span class="hljs-keyword">bool</span> <span class="hljs-title">first</span><span class="hljs-params">(<span class="hljs-keyword">int</span> i)</span></span>&#123;<span class="hljs-comment">//判断该节点是否可以在第一次可以跳出中心岛（即判断该点是否在第一次跳出的半径内）</span><br>    <span class="hljs-keyword">return</span>(p[i].x*p[i].x+p[i].y*p[i].y &lt;= (d+<span class="hljs-number">7.5</span>)*(d+<span class="hljs-number">7.5</span>));<br>&#125;<br><span class="hljs-function"><span class="hljs-keyword">bool</span> <span class="hljs-title">success</span><span class="hljs-params">(<span class="hljs-keyword">int</span> i)</span></span>&#123;<span class="hljs-comment">//判断能否在该结点处一次直接跳出（d&gt;0），分别判断x，y是否可以跳出边界(即能否一步上岸)</span><br>    <span class="hljs-keyword">return</span> p[i].x-d&lt;=<span class="hljs-number">-50</span>||p[i].x+d&gt;=<span class="hljs-number">50</span>||p[i].y+d&gt;=<span class="hljs-number">50</span>||p[i].y-d&lt;=<span class="hljs-number">-50</span>;<br>&#125;<br><span class="hljs-function"><span class="hljs-keyword">bool</span> <span class="hljs-title">isJump</span><span class="hljs-params">(<span class="hljs-keyword">int</span> i,<span class="hljs-keyword">int</span> j)</span></span>&#123;<span class="hljs-comment">//判断是否可以从一点跳到另一点</span><br>    <span class="hljs-keyword">return</span> (p[i].x*p[i].x+p[i].y*p[i].y)&lt;d*d;<br>&#125;<br><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">dfs</span><span class="hljs-params">(<span class="hljs-keyword">int</span> i)</span></span>&#123;<span class="hljs-comment">//递归，dfs判断是否可以找到出去的路</span><br>    vis[i] = <span class="hljs-number">1</span>;<span class="hljs-comment">//表示已经访问该节点</span><br>    <span class="hljs-keyword">if</span>(success(i))<span class="hljs-keyword">return</span> <span class="hljs-number">1</span>;<br>    <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> j=<span class="hljs-number">0</span>;j&lt;n;j++)&#123;<span class="hljs-comment">//遍历寻找节点</span><br>        <span class="hljs-keyword">if</span>(!vis[j]&amp;&amp;isJump(i,j))<br>        &#123;<span class="hljs-comment">//如果该点访问过，那么此路就代表不通，应该放弃这个点；同时我们还要找到可以跳跃过去的点。</span><br>        <span class="hljs-keyword">if</span>(dfs(j))<span class="hljs-keyword">return</span> <span class="hljs-number">1</span>;<br>        &#125;<br>    &#125;<br>    <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;<br>&#125;<br><br><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span>&#123;<br>    <br>    <span class="hljs-built_in">cin</span>&gt;&gt;n&gt;&gt;d;<br>    <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i=<span class="hljs-number">0</span>;i&lt;n;i++)&#123;<br>        <span class="hljs-built_in">cin</span>&gt;&gt;p[i].x&gt;&gt;p[i].y;<br>    &#125;<br>    <span class="hljs-keyword">if</span>(d&gt;=<span class="hljs-number">42.5</span>)flag = <span class="hljs-literal">true</span>;<br>    <span class="hljs-keyword">else</span> &#123;<br>        <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i=<span class="hljs-number">0</span>;i&lt;n;i++)&#123;<span class="hljs-comment">//应该通过遍历找到符合条件的节点</span><br>            <span class="hljs-keyword">if</span>(!vis[i]&amp;&amp;first(i))<span class="hljs-comment">//如果没有访问过这个节点，且在第一次跳出的半径内。</span><br>                <span class="hljs-keyword">if</span>(dfs(i))&#123;<br>                    flag =<span class="hljs-number">1</span>;<br>                    <span class="hljs-keyword">break</span>;<span class="hljs-comment">//跳出并不再寻找</span><br>                &#125;<br>        &#125;<br><br>    &#125;<br>    <span class="hljs-keyword">if</span>(flag)<span class="hljs-built_in">cout</span>&lt;&lt;<span class="hljs-string">"yes"</span>;<br>    <span class="hljs-keyword">else</span> <span class="hljs-built_in">cout</span>&lt;&lt;<span class="hljs-string">"no"</span>;<br><br>&#125;<br></code></pre></td></tr></table></figure>
+<pre><code class="hljs cpp"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span><span class="hljs-meta-string">&lt;bits/stdc++.h&gt;</span></span>
+<span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> <span class="hljs-built_in">std</span>;
+<span class="hljs-keyword">int</span> n,d;
+    <span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">node</span>//定义节点（存储<span class="hljs-title">x</span>，<span class="hljs-title">y</span>坐标）
+&#123;</span> 
+    <span class="hljs-keyword">int</span> x;
+    <span class="hljs-keyword">int</span> y;
+&#125;p[<span class="hljs-number">110</span>];  
+<span class="hljs-keyword">bool</span> vis[<span class="hljs-number">110</span>];
+<span class="hljs-keyword">bool</span> flag =<span class="hljs-number">0</span>;
+<span class="hljs-function"><span class="hljs-keyword">bool</span> <span class="hljs-title">first</span><span class="hljs-params">(<span class="hljs-keyword">int</span> i)</span></span>&#123;<span class="hljs-comment">//判断该节点是否可以在第一次可以跳出中心岛（即判断该点是否在第一次跳出的半径内）</span>
+    <span class="hljs-keyword">return</span>(p[i].x*p[i].x+p[i].y*p[i].y &lt;= (d+<span class="hljs-number">7.5</span>)*(d+<span class="hljs-number">7.5</span>));
+&#125;
+<span class="hljs-function"><span class="hljs-keyword">bool</span> <span class="hljs-title">success</span><span class="hljs-params">(<span class="hljs-keyword">int</span> i)</span></span>&#123;<span class="hljs-comment">//判断能否在该结点处一次直接跳出（d&gt;0），分别判断x，y是否可以跳出边界(即能否一步上岸)</span>
+    <span class="hljs-keyword">return</span> p[i].x-d&lt;=<span class="hljs-number">-50</span>||p[i].x+d&gt;=<span class="hljs-number">50</span>||p[i].y+d&gt;=<span class="hljs-number">50</span>||p[i].y-d&lt;=<span class="hljs-number">-50</span>;
+&#125;
+<span class="hljs-function"><span class="hljs-keyword">bool</span> <span class="hljs-title">isJump</span><span class="hljs-params">(<span class="hljs-keyword">int</span> i,<span class="hljs-keyword">int</span> j)</span></span>&#123;<span class="hljs-comment">//判断是否可以从一点跳到另一点</span>
+    <span class="hljs-keyword">return</span> (p[i].x*p[i].x+p[i].y*p[i].y)&lt;d*d;
+&#125;
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">dfs</span><span class="hljs-params">(<span class="hljs-keyword">int</span> i)</span></span>&#123;<span class="hljs-comment">//递归，dfs判断是否可以找到出去的路</span>
+    vis[i] = <span class="hljs-number">1</span>;<span class="hljs-comment">//表示已经访问该节点</span>
+    <span class="hljs-keyword">if</span>(success(i))<span class="hljs-keyword">return</span> <span class="hljs-number">1</span>;
+    <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> j=<span class="hljs-number">0</span>;j&lt;n;j++)&#123;<span class="hljs-comment">//遍历寻找节点</span>
+        <span class="hljs-keyword">if</span>(!vis[j]&amp;&amp;isJump(i,j))
+        &#123;<span class="hljs-comment">//如果该点访问过，那么此路就代表不通，应该放弃这个点；同时我们还要找到可以跳跃过去的点。</span>
+        <span class="hljs-keyword">if</span>(dfs(j))<span class="hljs-keyword">return</span> <span class="hljs-number">1</span>;
+        &#125;
+    &#125;
+    <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;
+&#125;
+
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span>&#123;
+    
+    <span class="hljs-built_in">cin</span>&gt;&gt;n&gt;&gt;d;
+    <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i=<span class="hljs-number">0</span>;i&lt;n;i++)&#123;
+        <span class="hljs-built_in">cin</span>&gt;&gt;p[i].x&gt;&gt;p[i].y;
+    &#125;
+    <span class="hljs-keyword">if</span>(d&gt;=<span class="hljs-number">42.5</span>)flag = <span class="hljs-literal">true</span>;
+    <span class="hljs-keyword">else</span> &#123;
+        <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i=<span class="hljs-number">0</span>;i&lt;n;i++)&#123;<span class="hljs-comment">//应该通过遍历找到符合条件的节点</span>
+            <span class="hljs-keyword">if</span>(!vis[i]&amp;&amp;first(i))<span class="hljs-comment">//如果没有访问过这个节点，且在第一次跳出的半径内。</span>
+                <span class="hljs-keyword">if</span>(dfs(i))&#123;
+                    flag =<span class="hljs-number">1</span>;
+                    <span class="hljs-keyword">break</span>;<span class="hljs-comment">//跳出并不再寻找</span>
+                &#125;
+        &#125;
+
+    &#125;
+    <span class="hljs-keyword">if</span>(flag)<span class="hljs-built_in">cout</span>&lt;&lt;<span class="hljs-string">"yes"</span>;
+    <span class="hljs-keyword">else</span> <span class="hljs-built_in">cout</span>&lt;&lt;<span class="hljs-string">"no"</span>;
+
+&#125;</code></pre>
 
     </div>
     <div class="post-meta">

@@ -87,7 +87,30 @@
 <h3 id="具体思路："><a href="#具体思路：" class="headerlink" title="具体思路："></a>具体思路：</h3><p>我们通过记录最小下标进行排序。但有几个需要注意的的地方。</p>
 <p>首先，我们将被排序的数组，分为两个部分：有序区和无序区。</p>
 <p>我们在每一轮的寻找中最小值下标后记得交换，然后一定要将最小值下标再次初始化为第二个（假设刚刚是第一轮查找）（这个初始下标也成了分界有序区和无序去的下标），并且我们每次都要寻找到新的无序区的最小的下标。</p>
-<h3 id="函数样例："><a href="#函数样例：" class="headerlink" title="函数样例："></a>函数样例：</h3><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><code class="hljs c"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">selectionSort</span><span class="hljs-params">(<span class="hljs-keyword">int</span> arr[], <span class="hljs-keyword">int</span> n)</span> <br></span>&#123; <br>    <span class="hljs-keyword">int</span> i, j, min_idx; <br>  <br>    <span class="hljs-comment">// 一个接着一个，将无序区的排列为有序</span><br>    <span class="hljs-keyword">for</span> (i = <span class="hljs-number">0</span>; i &lt; n<span class="hljs-number">-1</span>; i++) <br>    &#123; <br>        <span class="hljs-comment">// Find the minimum element in unsorted array </span><br>        min_idx = i; <span class="hljs-comment">//一定要记得有初始化，而且他的位置在这里哦。</span><br>        <span class="hljs-comment">//及上面提及的从新开始寻找最小值。</span><br>        <span class="hljs-keyword">for</span> (j = i+<span class="hljs-number">1</span>; j &lt; n; j++) <br>          <span class="hljs-keyword">if</span> (arr[j] &lt; arr[min_idx]) <br>            min_idx = j; <br>  <br>        <span class="hljs-comment">//交换最小值和其自己</span><br>        <span class="hljs-comment">//我们在这里可以加一个判断，来(可能)减少其交换次数</span><br>        <span class="hljs-comment">//if(i! = min_idx)//如果使用的话，记得加大括号将下面的三个都括起来哦</span><br>        <span class="hljs-keyword">int</span> t = arr[min_idx];<br>        arr[min_idx] = arr[i];<br>        arr[i] = t;<br>        <br>        <br>    &#125; <br>&#125;<br></code></pre></td></tr></table></figure>
+<h3 id="函数样例："><a href="#函数样例：" class="headerlink" title="函数样例："></a>函数样例：</h3><pre><code class="hljs c"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">selectionSort</span><span class="hljs-params">(<span class="hljs-keyword">int</span> arr[], <span class="hljs-keyword">int</span> n)</span> 
+</span>&#123; 
+    <span class="hljs-keyword">int</span> i, j, min_idx; 
+  
+    <span class="hljs-comment">// 一个接着一个，将无序区的排列为有序</span>
+    <span class="hljs-keyword">for</span> (i = <span class="hljs-number">0</span>; i &lt; n<span class="hljs-number">-1</span>; i++) 
+    &#123; 
+        <span class="hljs-comment">// Find the minimum element in unsorted array </span>
+        min_idx = i; <span class="hljs-comment">//一定要记得有初始化，而且他的位置在这里哦。</span>
+        <span class="hljs-comment">//及上面提及的从新开始寻找最小值。</span>
+        <span class="hljs-keyword">for</span> (j = i+<span class="hljs-number">1</span>; j &lt; n; j++) 
+          <span class="hljs-keyword">if</span> (arr[j] &lt; arr[min_idx]) 
+            min_idx = j; 
+  
+        <span class="hljs-comment">//交换最小值和其自己</span>
+        <span class="hljs-comment">//我们在这里可以加一个判断，来(可能)减少其交换次数</span>
+        <span class="hljs-comment">//if(i! = min_idx)//如果使用的话，记得加大括号将下面的三个都括起来哦</span>
+        <span class="hljs-keyword">int</span> t = arr[min_idx];
+        arr[min_idx] = arr[i];
+        arr[i] = t;
+        
+        
+    &#125; 
+&#125;</code></pre>
 <p>也许我们都会陷入一个又一个的坑，希望能帮助大家，踩坑多么有意义啊。</p>
 
     </div>

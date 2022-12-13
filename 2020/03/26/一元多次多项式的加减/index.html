@@ -88,7 +88,90 @@
 <h2 id="如何获取到两个一元多项式"><a href="#如何获取到两个一元多项式" class="headerlink" title="如何获取到两个一元多项式"></a>如何获取到两个一元多项式</h2><p>我们可以使用到首先明确一共有多少项，输入数据应该如下示例：<br>如果希望输入的多项式是：x+2x^2+3x^3<br>那么输入的数据应该是： 3 1 1 2 2 3 3<br>第一个输入一共多少项，之后我们可以依次输入每项的底数和次方。</p>
 <h2 id="储存方式"><a href="#储存方式" class="headerlink" title="储存方式"></a>储存方式</h2><p>自然是使用链表咯！</p>
 <h2 id="代码里面见分析！"><a href="#代码里面见分析！" class="headerlink" title="代码里面见分析！"></a>代码里面见分析！</h2><p>精华应该是在于对于</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br></pre></td><td class="code"><pre><code class="hljs c++"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span><span class="hljs-meta-string">&lt;bits/stdc++.h&gt;</span></span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> <span class="hljs-built_in">std</span>;<br><span class="hljs-keyword">typedef</span> <span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">Node</span>&#123;</span><br>	<span class="hljs-keyword">int</span> coef;<br>	<span class="hljs-keyword">int</span> index;<br>	<span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">Node</span>* <span class="hljs-title">next</span>;</span><br>&#125;node;<br><br><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span>&#123;	<br>	<span class="hljs-keyword">int</span> n;<br>	<span class="hljs-built_in">cin</span>&gt;&gt;n;<br>	<span class="hljs-keyword">int</span> coef;<br>	<span class="hljs-keyword">int</span> index;<br>	node* head1 = (node*)<span class="hljs-built_in">malloc</span>(<span class="hljs-keyword">sizeof</span>(node));<br>	node* headfirst = head1;<br>	<span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i=<span class="hljs-number">0</span>;i&lt;n;i++)&#123;<br>		node* t = (node*)<span class="hljs-built_in">malloc</span>(<span class="hljs-keyword">sizeof</span>(node));<br>		<span class="hljs-built_in">cin</span>&gt;&gt;t-&gt;coef;<br>		<span class="hljs-built_in">cin</span>&gt;&gt;t-&gt;index;<br>		head1-&gt;next = t;<br>		head1 = head1-&gt;next;			<br>	&#125;<br>	head1-&gt;next = <span class="hljs-literal">NULL</span>;<br><br>	<span class="hljs-built_in">cin</span>&gt;&gt;n;<br>	node* head2 = (node*)<span class="hljs-built_in">malloc</span>(<span class="hljs-keyword">sizeof</span>(node));<br>	node* headsecond = head2;<br>	<span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i=<span class="hljs-number">0</span>;i&lt;n;i++)&#123;<br>		node* t = (node*)<span class="hljs-built_in">malloc</span>(<span class="hljs-keyword">sizeof</span>(node));<br>		<span class="hljs-built_in">cin</span>&gt;&gt;t-&gt;coef;<br>		<span class="hljs-built_in">cin</span>&gt;&gt;t-&gt;index;<br>		head2-&gt;next = t;<br>		head2 = head2-&gt;next;			<br>	&#125;<br>	head2-&gt;next = <span class="hljs-literal">NULL</span>;<br><br><br><br>	<span class="hljs-comment">//start  </span><br>	Node* tail = headfirst;<br>	Node* p = headfirst-&gt;next;<br>	Node* q = headsecond-&gt;next;<br>	Node* t = headfirst;<span class="hljs-comment">//as the result</span><br>	<span class="hljs-keyword">while</span>(q&amp;&amp;p)&#123;<br>		<span class="hljs-keyword">if</span>(p-&gt;index &gt; q-&gt;index)&#123;<br>			tail = p;<br>			p= p-&gt;next;<br>		&#125;<br>		<span class="hljs-keyword">if</span>(p-&gt;index &lt; q-&gt;index)&#123;<br>			tail-&gt;next = q;<br>			tail = q;<br>			q = q-&gt;next; <br>		&#125;	<br>		<span class="hljs-keyword">else</span>&#123;<br>			<span class="hljs-keyword">if</span>(p-&gt;coef + q-&gt;coef==<span class="hljs-number">0</span>)&#123;<br>				tail-&gt;next = p-&gt;next;<br>				Node* temp = p;	<br>				p = p-&gt;next;<br>				<span class="hljs-built_in">free</span>(temp);<br>				temp = q;<br>				q= q-&gt;next;<br>				<span class="hljs-built_in">free</span>(temp);<br>			&#125; <br>			<span class="hljs-keyword">else</span> &#123;<span class="hljs-comment">//coef之和不为0，index相等时 </span><br>				p-&gt;coef = p-&gt;coef + q-&gt;coef;<br>				tail -&gt;next = p;<br>				p = p-&gt;next;<br>				Node* temp = q;<br>				q = q-&gt;next;		<br>				<span class="hljs-built_in">free</span>(temp);<br>			&#125;<br>		&#125;	<br>	&#125;<br>    t = t-&gt;next;<br>	<span class="hljs-keyword">while</span>(t)&#123;<br>		<span class="hljs-keyword">if</span>(t!=headfirst-&gt;next&amp;&amp;t-&gt;coef&gt;<span class="hljs-number">0</span>)<span class="hljs-built_in">cout</span>&lt;&lt;<span class="hljs-string">"+"</span>;<br>		<span class="hljs-built_in">cout</span>&lt;&lt;t-&gt;coef&lt;&lt;<span class="hljs-string">"x"</span>;<br>		<span class="hljs-keyword">if</span>(t-&gt;index!=<span class="hljs-number">1</span>)<span class="hljs-built_in">cout</span>&lt;&lt;<span class="hljs-string">"^"</span>&lt;&lt;t-&gt;index;<br>		t = t-&gt;next;<br>		<br>	&#125;<br>	<span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>	<br>&#125;<br></code></pre></td></tr></table></figure>
+<pre><code class="hljs c++"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span><span class="hljs-meta-string">&lt;bits/stdc++.h&gt;</span></span>
+<span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> <span class="hljs-built_in">std</span>;
+<span class="hljs-keyword">typedef</span> <span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">Node</span>&#123;</span>
+	<span class="hljs-keyword">int</span> coef;
+	<span class="hljs-keyword">int</span> index;
+	<span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">Node</span>* <span class="hljs-title">next</span>;</span>
+&#125;node;
+
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span>&#123;	
+	<span class="hljs-keyword">int</span> n;
+	<span class="hljs-built_in">cin</span>&gt;&gt;n;
+	<span class="hljs-keyword">int</span> coef;
+	<span class="hljs-keyword">int</span> index;
+	node* head1 = (node*)<span class="hljs-built_in">malloc</span>(<span class="hljs-keyword">sizeof</span>(node));
+	node* headfirst = head1;
+	<span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i=<span class="hljs-number">0</span>;i&lt;n;i++)&#123;
+		node* t = (node*)<span class="hljs-built_in">malloc</span>(<span class="hljs-keyword">sizeof</span>(node));
+		<span class="hljs-built_in">cin</span>&gt;&gt;t-&gt;coef;
+		<span class="hljs-built_in">cin</span>&gt;&gt;t-&gt;index;
+		head1-&gt;next = t;
+		head1 = head1-&gt;next;			
+	&#125;
+	head1-&gt;next = <span class="hljs-literal">NULL</span>;
+
+	<span class="hljs-built_in">cin</span>&gt;&gt;n;
+	node* head2 = (node*)<span class="hljs-built_in">malloc</span>(<span class="hljs-keyword">sizeof</span>(node));
+	node* headsecond = head2;
+	<span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i=<span class="hljs-number">0</span>;i&lt;n;i++)&#123;
+		node* t = (node*)<span class="hljs-built_in">malloc</span>(<span class="hljs-keyword">sizeof</span>(node));
+		<span class="hljs-built_in">cin</span>&gt;&gt;t-&gt;coef;
+		<span class="hljs-built_in">cin</span>&gt;&gt;t-&gt;index;
+		head2-&gt;next = t;
+		head2 = head2-&gt;next;			
+	&#125;
+	head2-&gt;next = <span class="hljs-literal">NULL</span>;
+
+
+
+	<span class="hljs-comment">//start  </span>
+	Node* tail = headfirst;
+	Node* p = headfirst-&gt;next;
+	Node* q = headsecond-&gt;next;
+	Node* t = headfirst;<span class="hljs-comment">//as the result</span>
+	<span class="hljs-keyword">while</span>(q&amp;&amp;p)&#123;
+		<span class="hljs-keyword">if</span>(p-&gt;index &gt; q-&gt;index)&#123;
+			tail = p;
+			p= p-&gt;next;
+		&#125;
+		<span class="hljs-keyword">if</span>(p-&gt;index &lt; q-&gt;index)&#123;
+			tail-&gt;next = q;
+			tail = q;
+			q = q-&gt;next; 
+		&#125;	
+		<span class="hljs-keyword">else</span>&#123;
+			<span class="hljs-keyword">if</span>(p-&gt;coef + q-&gt;coef==<span class="hljs-number">0</span>)&#123;
+				tail-&gt;next = p-&gt;next;
+				Node* temp = p;	
+				p = p-&gt;next;
+				<span class="hljs-built_in">free</span>(temp);
+				temp = q;
+				q= q-&gt;next;
+				<span class="hljs-built_in">free</span>(temp);
+			&#125; 
+			<span class="hljs-keyword">else</span> &#123;<span class="hljs-comment">//coef之和不为0，index相等时 </span>
+				p-&gt;coef = p-&gt;coef + q-&gt;coef;
+				tail -&gt;next = p;
+				p = p-&gt;next;
+				Node* temp = q;
+				q = q-&gt;next;		
+				<span class="hljs-built_in">free</span>(temp);
+			&#125;
+		&#125;	
+	&#125;
+    t = t-&gt;next;
+	<span class="hljs-keyword">while</span>(t)&#123;
+		<span class="hljs-keyword">if</span>(t!=headfirst-&gt;next&amp;&amp;t-&gt;coef&gt;<span class="hljs-number">0</span>)<span class="hljs-built_in">cout</span>&lt;&lt;<span class="hljs-string">"+"</span>;
+		<span class="hljs-built_in">cout</span>&lt;&lt;t-&gt;coef&lt;&lt;<span class="hljs-string">"x"</span>;
+		<span class="hljs-keyword">if</span>(t-&gt;index!=<span class="hljs-number">1</span>)<span class="hljs-built_in">cout</span>&lt;&lt;<span class="hljs-string">"^"</span>&lt;&lt;t-&gt;index;
+		t = t-&gt;next;
+		
+	&#125;
+	<span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;
+	
+&#125;</code></pre>
     </div>
     <div class="post-meta">
         

@@ -90,8 +90,26 @@
 <p>输入第1行给出两个正整数，分别表示社交网络图的结点数N （1&lt;N&lt;=104，表示人数）、边数M（&lt;=33*N，表示社交关系数）。随后的M行对应M条边，每行给出一对正整数，分别是该条边直接连通的两个结点的编号（节点从1到N编号）。</p>
 <p><strong>输出格式说明：</strong></p>
 <p>对每个结点输出与该结点距离不超过6的结点数占结点总数的百分比，精确到小数点后2位。每个结节点输出一行，格式为“结点编号:（空格）百分比%”。</p>
-<h5 id="输入样例"><a href="#输入样例" class="headerlink" title="输入样例:"></a>输入样例:</h5><figure class="highlight basic"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs basic"><span class="hljs-symbol">10 </span><span class="hljs-number">9</span><br><span class="hljs-symbol">1 </span><span class="hljs-number">2</span><br><span class="hljs-symbol">2 </span><span class="hljs-number">3</span><br><span class="hljs-symbol">3 </span><span class="hljs-number">4</span><br><span class="hljs-symbol">4 </span><span class="hljs-number">5</span><br><span class="hljs-symbol">5 </span><span class="hljs-number">6</span><br><span class="hljs-symbol">6 </span><span class="hljs-number">7</span><br><span class="hljs-symbol">7 </span><span class="hljs-number">8</span><br><span class="hljs-symbol">8 </span><span class="hljs-number">9</span><br><span class="hljs-symbol">9 </span><span class="hljs-number">10</span><br></code></pre></td></tr></table></figure>
-<h5 id="输出样例"><a href="#输出样例" class="headerlink" title="输出样例:"></a>输出样例:</h5><figure class="highlight angelscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs angelscript"><span class="hljs-number">1</span>: <span class="hljs-number">70.00</span>%<br><span class="hljs-number">2</span>: <span class="hljs-number">80.00</span>%<br><span class="hljs-number">3</span>: <span class="hljs-number">90.00</span>%<br><span class="hljs-number">4</span>: <span class="hljs-number">100.00</span>%<br><span class="hljs-number">5</span>: <span class="hljs-number">100.00</span>%<br><span class="hljs-number">6</span>: <span class="hljs-number">100.00</span>%<br><span class="hljs-number">7</span>: <span class="hljs-number">100.00</span>%<br><span class="hljs-number">8</span>: <span class="hljs-number">90.00</span>%<br><span class="hljs-number">9</span>: <span class="hljs-number">80.00</span>%<br><span class="hljs-number">10</span>: <span class="hljs-number">70.00</span>%<br></code></pre></td></tr></table></figure>
+<h5 id="输入样例"><a href="#输入样例" class="headerlink" title="输入样例:"></a>输入样例:</h5><pre><code class="hljs basic"><span class="hljs-symbol">10 </span><span class="hljs-number">9</span>
+<span class="hljs-symbol">1 </span><span class="hljs-number">2</span>
+<span class="hljs-symbol">2 </span><span class="hljs-number">3</span>
+<span class="hljs-symbol">3 </span><span class="hljs-number">4</span>
+<span class="hljs-symbol">4 </span><span class="hljs-number">5</span>
+<span class="hljs-symbol">5 </span><span class="hljs-number">6</span>
+<span class="hljs-symbol">6 </span><span class="hljs-number">7</span>
+<span class="hljs-symbol">7 </span><span class="hljs-number">8</span>
+<span class="hljs-symbol">8 </span><span class="hljs-number">9</span>
+<span class="hljs-symbol">9 </span><span class="hljs-number">10</span></code></pre>
+<h5 id="输出样例"><a href="#输出样例" class="headerlink" title="输出样例:"></a>输出样例:</h5><pre><code class="hljs angelscript"><span class="hljs-number">1</span>: <span class="hljs-number">70.00</span>%
+<span class="hljs-number">2</span>: <span class="hljs-number">80.00</span>%
+<span class="hljs-number">3</span>: <span class="hljs-number">90.00</span>%
+<span class="hljs-number">4</span>: <span class="hljs-number">100.00</span>%
+<span class="hljs-number">5</span>: <span class="hljs-number">100.00</span>%
+<span class="hljs-number">6</span>: <span class="hljs-number">100.00</span>%
+<span class="hljs-number">7</span>: <span class="hljs-number">100.00</span>%
+<span class="hljs-number">8</span>: <span class="hljs-number">90.00</span>%
+<span class="hljs-number">9</span>: <span class="hljs-number">80.00</span>%
+<span class="hljs-number">10</span>: <span class="hljs-number">70.00</span>%</code></pre>
 <h3 id="一点理解："><a href="#一点理解：" class="headerlink" title="一点理解："></a>一点理解：</h3><p>时隔一个多月，再次做到此题目，发现并不会写了（<del>并不是</del>),甚至原来的题解，也不会写了，回想起来，自己还写过题解，特此更新。。。发现原来写的题解具有一定的局限性，并不是十分好理解，所以特此更新呢。</p>
 <p>以下为原题解：</p>
 <p>乍一看题目所求有些懵，其实所求的是每个节点相邻的6层之内的节点个数与总结点的比例；</p>
@@ -99,21 +117,125 @@
 <p>在bfs中我们还需要注意一下，我们在统计个数的时候还有记得数层数，够了层数就不再去数数了。</p>
 <p>所以引申出来层数的判断，那么如何确定到那一层了呢？</p>
 <p>采用的就是tail和last的不断更新（详见代码）</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span><span class="hljs-meta-string">&lt;bits/stdc++.h&gt;</span></span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> <span class="hljs-built_in">std</span>;<br><span class="hljs-keyword">const</span> <span class="hljs-keyword">int</span> maxn = <span class="hljs-number">10005</span>;<br><br><span class="hljs-keyword">bool</span> vis[maxn];<span class="hljs-comment">//是否被访问过</span><br><span class="hljs-built_in">vector</span>&lt;<span class="hljs-keyword">int</span>&gt; g[maxn];<br><span class="hljs-keyword">int</span> vertices, edges;<span class="hljs-comment">//所有的顶点数和边数</span><br><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">BFS</span><span class="hljs-params">(<span class="hljs-keyword">int</span> v)</span><br><span class="hljs-comment">//返回该顶点在6度空间里的能接触到的顶点个数</span><br></span>&#123;<br>    <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i=<span class="hljs-number">0</span>;i&lt;maxn;i++)&#123;<br>        vis[i] = <span class="hljs-literal">false</span>;<span class="hljs-comment">//init vis[]</span><br>    &#125;<br>    <span class="hljs-keyword">int</span> tail;<br>    <span class="hljs-keyword">int</span> last = v;<span class="hljs-comment">//指的是每一圈的最后一个（每一个外圈的的每一个顶点都要入队，当该外圈的最后一个也出队了，那么这一层也循环完了</span><br>    <span class="hljs-keyword">int</span> count =<span class="hljs-number">1</span>;<br>    <span class="hljs-keyword">int</span> level = <span class="hljs-number">0</span>;<br>    vis[v] = <span class="hljs-literal">true</span>;<br>    <span class="hljs-built_in">queue</span>&lt;<span class="hljs-keyword">int</span>&gt;q;<br>    q.push(v);<br><br>    <span class="hljs-keyword">while</span>(!q.empty())&#123;<br>        <span class="hljs-keyword">int</span> x = q.front();<span class="hljs-comment">//get the first每一圈的每一个顶点</span><br>        q.pop();<br>        <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> j=<span class="hljs-number">0</span>;j&lt;g[x].size();j++)&#123;<span class="hljs-comment">//判断条件是与x相连的所有顶点的个数</span><br>            <span class="hljs-keyword">if</span>(!vis[g[x][j]])&#123;<br>                vis[g[x][j]] = <span class="hljs-literal">true</span>;<br>                q.push(g[x][j]);<br>                tail = g[x][j];<span class="hljs-comment">//每次都将替换更新，最后得到的是该节点的最后一个相连顶点</span><br>                count++;<br>            &#125; <br>        &#125;<br>        <span class="hljs-keyword">if</span>(x==last)&#123;<br>            <span class="hljs-comment">/*这里指的是我们将该层全部弹出时应所满足的条件<br>            注意第一次的时候是直接成立的<br>            而在第二圈（或更多）的时候，我们将<br>            第一个节点的最后一个遍历的节点作为tail<br>            然后他就成为了last即上一层的最后一个元素<br>            */</span><br>            last = tail;<br>            level++;<br>        &#125;<br>        <span class="hljs-keyword">if</span>(level==<span class="hljs-number">6</span>)<span class="hljs-keyword">break</span>;<br>         &#125;<br>    <span class="hljs-keyword">return</span> count;<br>&#125;<br><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span>&#123;<br>    <span class="hljs-keyword">int</span> x,y;<br>    <span class="hljs-built_in">cin</span>&gt;&gt;vertices&gt;&gt;edges;<br>    <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i = <span class="hljs-number">1</span>;i&lt;=edges;i++)&#123;<br>        <span class="hljs-built_in">cin</span>&gt;&gt;x&gt;&gt;y;<br>        g[x].push_back(y);<span class="hljs-comment">//建立两者之间边的关系</span><br>        g[y].push_back(x);<span class="hljs-comment">//认识是相互的，所以相互加关联</span><br>    &#125;<br><br>    <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> j=<span class="hljs-number">1</span>;j&lt;=vertices;j++)&#123;<br>        <span class="hljs-built_in">printf</span>(<span class="hljs-string">"%d: %.2f%%\n"</span>,j,BFS(j)*<span class="hljs-number">1.0</span>/vertices*<span class="hljs-number">100.0</span>);<br>&#125;<br><span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
+<pre><code class="hljs cpp"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span><span class="hljs-meta-string">&lt;bits/stdc++.h&gt;</span></span>
+<span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> <span class="hljs-built_in">std</span>;
+<span class="hljs-keyword">const</span> <span class="hljs-keyword">int</span> maxn = <span class="hljs-number">10005</span>;
+
+<span class="hljs-keyword">bool</span> vis[maxn];<span class="hljs-comment">//是否被访问过</span>
+<span class="hljs-built_in">vector</span>&lt;<span class="hljs-keyword">int</span>&gt; g[maxn];
+<span class="hljs-keyword">int</span> vertices, edges;<span class="hljs-comment">//所有的顶点数和边数</span>
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">BFS</span><span class="hljs-params">(<span class="hljs-keyword">int</span> v)</span>
+<span class="hljs-comment">//返回该顶点在6度空间里的能接触到的顶点个数</span>
+</span>&#123;
+    <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i=<span class="hljs-number">0</span>;i&lt;maxn;i++)&#123;
+        vis[i] = <span class="hljs-literal">false</span>;<span class="hljs-comment">//init vis[]</span>
+    &#125;
+    <span class="hljs-keyword">int</span> tail;
+    <span class="hljs-keyword">int</span> last = v;<span class="hljs-comment">//指的是每一圈的最后一个（每一个外圈的的每一个顶点都要入队，当该外圈的最后一个也出队了，那么这一层也循环完了</span>
+    <span class="hljs-keyword">int</span> count =<span class="hljs-number">1</span>;
+    <span class="hljs-keyword">int</span> level = <span class="hljs-number">0</span>;
+    vis[v] = <span class="hljs-literal">true</span>;
+    <span class="hljs-built_in">queue</span>&lt;<span class="hljs-keyword">int</span>&gt;q;
+    q.push(v);
+
+    <span class="hljs-keyword">while</span>(!q.empty())&#123;
+        <span class="hljs-keyword">int</span> x = q.front();<span class="hljs-comment">//get the first每一圈的每一个顶点</span>
+        q.pop();
+        <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> j=<span class="hljs-number">0</span>;j&lt;g[x].size();j++)&#123;<span class="hljs-comment">//判断条件是与x相连的所有顶点的个数</span>
+            <span class="hljs-keyword">if</span>(!vis[g[x][j]])&#123;
+                vis[g[x][j]] = <span class="hljs-literal">true</span>;
+                q.push(g[x][j]);
+                tail = g[x][j];<span class="hljs-comment">//每次都将替换更新，最后得到的是该节点的最后一个相连顶点</span>
+                count++;
+            &#125; 
+        &#125;
+        <span class="hljs-keyword">if</span>(x==last)&#123;
+            <span class="hljs-comment">/*这里指的是我们将该层全部弹出时应所满足的条件
+            注意第一次的时候是直接成立的
+            而在第二圈（或更多）的时候，我们将
+            第一个节点的最后一个遍历的节点作为tail
+            然后他就成为了last即上一层的最后一个元素
+            */</span>
+            last = tail;
+            level++;
+        &#125;
+        <span class="hljs-keyword">if</span>(level==<span class="hljs-number">6</span>)<span class="hljs-keyword">break</span>;
+         &#125;
+    <span class="hljs-keyword">return</span> count;
+&#125;
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span>&#123;
+    <span class="hljs-keyword">int</span> x,y;
+    <span class="hljs-built_in">cin</span>&gt;&gt;vertices&gt;&gt;edges;
+    <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i = <span class="hljs-number">1</span>;i&lt;=edges;i++)&#123;
+        <span class="hljs-built_in">cin</span>&gt;&gt;x&gt;&gt;y;
+        g[x].push_back(y);<span class="hljs-comment">//建立两者之间边的关系</span>
+        g[y].push_back(x);<span class="hljs-comment">//认识是相互的，所以相互加关联</span>
+    &#125;
+
+    <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> j=<span class="hljs-number">1</span>;j&lt;=vertices;j++)&#123;
+        <span class="hljs-built_in">printf</span>(<span class="hljs-string">"%d: %.2f%%\n"</span>,j,BFS(j)*<span class="hljs-number">1.0</span>/vertices*<span class="hljs-number">100.0</span>);
+&#125;
+<span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;
+&#125;</code></pre>
 <hr>
 <p>下面是一个月后经过了几道[[bfs]]题目熏陶后的想法:</p>
 <p>首先读题，发现题目要求我们输出比例，显然总结点数已经给出，那么得到每一个节点的6层以内的节点数即可。</p>
 <p>接着题目有给定了节点之间的关系，所以我们自己可以通过一个bool类型的rel(relative)的二维数组来确定两者的关系是否连通。（这一步可以在main函数中实现）</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span>&#123;<br>    <span class="hljs-keyword">int</span> x,y;<br>    <span class="hljs-built_in">cin</span>&gt;&gt;vertices&gt;&gt;edges;<br>    <br>    <span class="hljs-built_in">memset</span>(ral,<span class="hljs-literal">false</span>,<span class="hljs-keyword">sizeof</span>(ral));<br>    <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i = <span class="hljs-number">1</span>;i&lt;=edges;i++)&#123;<br>        <span class="hljs-built_in">cin</span>&gt;&gt;x&gt;&gt;y;<br>        ral[x][y]=<span class="hljs-number">1</span>;<br>        ral[y][x]=<span class="hljs-number">1</span>;<br>    &#125;<br></code></pre></td></tr></table></figure>
+<pre><code class="hljs cpp"><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span>&#123;
+    <span class="hljs-keyword">int</span> x,y;
+    <span class="hljs-built_in">cin</span>&gt;&gt;vertices&gt;&gt;edges;
+    
+    <span class="hljs-built_in">memset</span>(ral,<span class="hljs-literal">false</span>,<span class="hljs-keyword">sizeof</span>(ral));
+    <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i = <span class="hljs-number">1</span>;i&lt;=edges;i++)&#123;
+        <span class="hljs-built_in">cin</span>&gt;&gt;x&gt;&gt;y;
+        ral[x][y]=<span class="hljs-number">1</span>;
+        ral[y][x]=<span class="hljs-number">1</span>;
+    &#125;</code></pre>
 <p>接下来，我们就要把他传入bfs中了，然后使得bfs返回该节点符合关系的节点数目即可</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> j=<span class="hljs-number">1</span>;j&lt;=vertices;j++)&#123;<br>       <span class="hljs-built_in">printf</span>(<span class="hljs-string">"%d: %.2f%%\n"</span>,j,BFS(j)*<span class="hljs-number">1.0</span>/vertices*<span class="hljs-number">100.0</span>);<br></code></pre></td></tr></table></figure>
+<pre><code class="hljs cpp"><span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> j=<span class="hljs-number">1</span>;j&lt;=vertices;j++)&#123;
+       <span class="hljs-built_in">printf</span>(<span class="hljs-string">"%d: %.2f%%\n"</span>,j,BFS(j)*<span class="hljs-number">1.0</span>/vertices*<span class="hljs-number">100.0</span>);</code></pre>
 <p>在bfs 的函数中，我们很显然，起点就是我们给定的j，j即为起始点，由<strong>他出发寻找到在六层内不同的节点的个数。</strong></p>
 <p>从这个任务中我们也可得出一个状态的内容是它自身的节点名称（在此题目中是一个int值）还要有一个cnt来表示层数，方便我们作为层数的限制条件，这在其他的bfs题目中，层数亦十分有用。</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">node</span><br>&#123;</span><br>    <span class="hljs-keyword">int</span> cnt;<br>    <span class="hljs-keyword">int</span> val;<br>&#125;;<br></code></pre></td></tr></table></figure>
+<pre><code class="hljs cpp"><span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">node</span>
+&#123;</span>
+    <span class="hljs-keyword">int</span> cnt;
+    <span class="hljs-keyword">int</span> val;
+&#125;;</code></pre>
 <p>哦，我们不能忘我们刚刚给的要求了，不同的节点，相同的节点找他干嘛。。。所以还要有一个vis的一维数组，范围是所有节点数量，表示他们是否被访问过。</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-keyword">const</span> <span class="hljs-keyword">int</span> maxn = <span class="hljs-number">1005</span>;<br><span class="hljs-keyword">int</span> n,m;<br><br><span class="hljs-keyword">bool</span> vis[maxn];<span class="hljs-comment">//是否被访问过</span><br><span class="hljs-keyword">bool</span> ral[maxn][maxn];<br></code></pre></td></tr></table></figure>
+<pre><code class="hljs cpp"><span class="hljs-keyword">const</span> <span class="hljs-keyword">int</span> maxn = <span class="hljs-number">1005</span>;
+<span class="hljs-keyword">int</span> n,m;
+
+<span class="hljs-keyword">bool</span> vis[maxn];<span class="hljs-comment">//是否被访问过</span>
+<span class="hljs-keyword">bool</span> ral[maxn][maxn];</code></pre>
 <p>那么bfs的结束条件是？队列结束或者达到节点6层。</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">BFS</span><span class="hljs-params">(<span class="hljs-keyword">int</span> v)</span><br><span class="hljs-comment">//返回该顶点在6度空间里的能接触到的顶点个数</span><br></span>&#123;<br>    <span class="hljs-keyword">int</span> count=<span class="hljs-number">1</span>;<br>    <span class="hljs-built_in">memset</span>(vis,<span class="hljs-literal">false</span>,<span class="hljs-keyword">sizeof</span>(vis));<br>    <span class="hljs-built_in">queue</span>&lt;node&gt;q;<br>    vis[v]=<span class="hljs-number">1</span>;<br>    node t;<br>    t.cnt = <span class="hljs-number">1</span>;<br>    t.val = v;<br>    q.push(t);<br>    <span class="hljs-keyword">while</span>(!q.empty())&#123;<br>        node front = q.front();<br>        q.pop();<br>        <span class="hljs-keyword">if</span>(front.cnt&gt;<span class="hljs-number">6</span>)<span class="hljs-keyword">break</span>;<br>        t.cnt = front.cnt+<span class="hljs-number">1</span>;<br>        <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i=<span class="hljs-number">1</span>;i&lt;=vertices;i++)&#123;<br>            <span class="hljs-keyword">if</span>(ral[front.val][i]&amp;&amp;!vis[i])&#123;<br>                vis[i]=<span class="hljs-number">1</span>;<br>                count++;<br>                t.val = i; <br>                q.push(t);<br>            &#125;<br>        &#125;<br>    &#125;<br><br>    <span class="hljs-keyword">return</span> count;<br>&#125;<br></code></pre></td></tr></table></figure>
+<pre><code class="hljs cpp"><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">BFS</span><span class="hljs-params">(<span class="hljs-keyword">int</span> v)</span>
+<span class="hljs-comment">//返回该顶点在6度空间里的能接触到的顶点个数</span>
+</span>&#123;
+    <span class="hljs-keyword">int</span> count=<span class="hljs-number">1</span>;
+    <span class="hljs-built_in">memset</span>(vis,<span class="hljs-literal">false</span>,<span class="hljs-keyword">sizeof</span>(vis));
+    <span class="hljs-built_in">queue</span>&lt;node&gt;q;
+    vis[v]=<span class="hljs-number">1</span>;
+    node t;
+    t.cnt = <span class="hljs-number">1</span>;
+    t.val = v;
+    q.push(t);
+    <span class="hljs-keyword">while</span>(!q.empty())&#123;
+        node front = q.front();
+        q.pop();
+        <span class="hljs-keyword">if</span>(front.cnt&gt;<span class="hljs-number">6</span>)<span class="hljs-keyword">break</span>;
+        t.cnt = front.cnt+<span class="hljs-number">1</span>;
+        <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i=<span class="hljs-number">1</span>;i&lt;=vertices;i++)&#123;
+            <span class="hljs-keyword">if</span>(ral[front.val][i]&amp;&amp;!vis[i])&#123;
+                vis[i]=<span class="hljs-number">1</span>;
+                count++;
+                t.val = i; 
+                q.push(t);
+            &#125;
+        &#125;
+    &#125;
+
+    <span class="hljs-keyword">return</span> count;
+&#125;</code></pre>
 <p>bfs里面的cnt&gt;或是&gt;=我是猜的，可以通过数据检验，稍微改改就凑上了。。省得麻烦考虑了，不过最好还是考虑周全。</p>
 <p>在这里val的数据范围是[n] [n]或者说直接定义1001（因为题目给定的数据n&lt;=10^3)。</p>
 

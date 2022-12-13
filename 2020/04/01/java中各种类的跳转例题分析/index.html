@@ -83,7 +83,29 @@
     </div>
     <div class="post-content">
         <p>在学习java的继承的过程中遇到这样的一个分析类题目，比较有意思，在这里做出简要分析：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-comment">//请写出以下程序运行结果：</span><br><br><span class="hljs-keyword">package</span> test;<br><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Test</span> </span>&#123;<br>   <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> </span>&#123;<br>      Test t = <span class="hljs-keyword">new</span> Test();<br>      t.show(<span class="hljs-keyword">new</span> Car()&#123;<br>         <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">run</span><span class="hljs-params">()</span></span>&#123;<br>            System.out.println(<span class="hljs-string">"test run"</span>);           <br>         &#125;<br>      &#125;);<br>   &#125;<br>   <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">show</span><span class="hljs-params">(Car c)</span></span>&#123;<br>      c.run();<br>      c.show();<br>&#125;&#125;<br><span class="hljs-keyword">abstract</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Car</span></span>&#123;<br>   <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">run</span><span class="hljs-params">()</span></span>&#123;<br>      System.out.println(<span class="hljs-string">"car run"</span>);     <br>   &#125;<br>   <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">show</span><span class="hljs-params">()</span></span>&#123;<br>       System.out.println(getClass().getName());<br>&#125;&#125;<br></code></pre></td></tr></table></figure>
+<pre><code class="hljs java"><span class="hljs-comment">//请写出以下程序运行结果：</span>
+
+<span class="hljs-keyword">package</span> test;
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Test</span> </span>&#123;
+   <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> </span>&#123;
+      Test t = <span class="hljs-keyword">new</span> Test();
+      t.show(<span class="hljs-keyword">new</span> Car()&#123;
+         <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">run</span><span class="hljs-params">()</span></span>&#123;
+            System.out.println(<span class="hljs-string">"test run"</span>);           
+         &#125;
+      &#125;);
+   &#125;
+   <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">show</span><span class="hljs-params">(Car c)</span></span>&#123;
+      c.run();
+      c.show();
+&#125;&#125;
+<span class="hljs-keyword">abstract</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Car</span></span>&#123;
+   <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">run</span><span class="hljs-params">()</span></span>&#123;
+      System.out.println(<span class="hljs-string">"car run"</span>);     
+   &#125;
+   <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">show</span><span class="hljs-params">()</span></span>&#123;
+       System.out.println(getClass().getName());
+&#125;&#125;</code></pre>
 <p> 那么，我们可以通过断点的分析：</p>
 <ol>
 <li><p>首先。我们从main函数进入，发现他创建了Test类的一个对象t；</p>

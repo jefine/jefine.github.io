@@ -85,10 +85,25 @@
         <p>给定两个矩阵A和B，要求你计算它们的乘积矩阵AB。需要注意的是，只有规模匹配的矩阵才可以相乘。即若A有Ra行、Ca列，B有Rb行、Cb列，则只有Ca与Rb相等时，两个矩阵才能相乘。</p>
 <h3 id="输入格式："><a href="#输入格式：" class="headerlink" title="输入格式："></a>输入格式：</h3><p>输入先后给出两个矩阵A和B。对于每个矩阵，首先在一行中给出其行数R和列数C，随后R行，每行给出C个整数，以1个空格分隔，且行首尾没有多余的空格。输入保证两个矩阵的R和C都是正数，并且所有整数的绝对值不超过100。</p>
 <h3 id="输出格式："><a href="#输出格式：" class="headerlink" title="输出格式："></a>输出格式：</h3><p>若输入的两个矩阵的规模是匹配的，则按照输入的格式输出乘积矩阵AB，否则输出<code>Error: Ca != Rb</code>，其中<code>Ca</code>是A的列数，<code>Rb</code>是B的行数。</p>
-<h3 id="输入样例1："><a href="#输入样例1：" class="headerlink" title="输入样例1："></a>输入样例1：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs in">2 3<br>1 2 3<br>4 5 6<br>3 4<br>7 8 9 0<br>-1 -2 -3 -4<br>5 6 7 8<br></code></pre></td></tr></table></figure>
-<h3 id="输出样例1："><a href="#输出样例1：" class="headerlink" title="输出样例1："></a>输出样例1：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs out">2 4<br>20 22 24 16<br>53 58 63 28<br></code></pre></td></tr></table></figure>
-<h3 id="输入样例2："><a href="#输入样例2：" class="headerlink" title="输入样例2："></a>输入样例2：</h3><figure class="highlight angelscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs angelscript"><span class="hljs-number">3</span> <span class="hljs-number">2</span><br><span class="hljs-number">38</span> <span class="hljs-number">26</span><br><span class="hljs-number">43</span> <span class="hljs-number">-5</span><br><span class="hljs-number">0</span> <span class="hljs-number">17</span><br><span class="hljs-number">3</span> <span class="hljs-number">2</span><br><span class="hljs-number">-11</span> <span class="hljs-number">57</span><br><span class="hljs-number">99</span> <span class="hljs-number">68</span><br><span class="hljs-number">81</span> <span class="hljs-number">72</span><br></code></pre></td></tr></table></figure>
-<h3 id="输出样例2："><a href="#输出样例2：" class="headerlink" title="输出样例2："></a>输出样例2：</h3><figure class="highlight subunit"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs subunit"><span class="hljs-keyword">Error: </span>2 != 3<br></code></pre></td></tr></table></figure>
+<h3 id="输入样例1："><a href="#输入样例1：" class="headerlink" title="输入样例1："></a>输入样例1：</h3><pre><code class="hljs in">2 3
+1 2 3
+4 5 6
+3 4
+7 8 9 0
+-1 -2 -3 -4
+5 6 7 8</code></pre>
+<h3 id="输出样例1："><a href="#输出样例1：" class="headerlink" title="输出样例1："></a>输出样例1：</h3><pre><code class="hljs out">2 4
+20 22 24 16
+53 58 63 28</code></pre>
+<h3 id="输入样例2："><a href="#输入样例2：" class="headerlink" title="输入样例2："></a>输入样例2：</h3><pre><code class="hljs angelscript"><span class="hljs-number">3</span> <span class="hljs-number">2</span>
+<span class="hljs-number">38</span> <span class="hljs-number">26</span>
+<span class="hljs-number">43</span> <span class="hljs-number">-5</span>
+<span class="hljs-number">0</span> <span class="hljs-number">17</span>
+<span class="hljs-number">3</span> <span class="hljs-number">2</span>
+<span class="hljs-number">-11</span> <span class="hljs-number">57</span>
+<span class="hljs-number">99</span> <span class="hljs-number">68</span>
+<span class="hljs-number">81</span> <span class="hljs-number">72</span></code></pre>
+<h3 id="输出样例2："><a href="#输出样例2：" class="headerlink" title="输出样例2："></a>输出样例2：</h3><pre><code class="hljs subunit"><span class="hljs-keyword">Error: </span>2 != 3</code></pre>
 <h3 id="题目思路："><a href="#题目思路：" class="headerlink" title="题目思路："></a>题目思路：</h3><p>一开始，一看题目。嗯！没有思路。。。</p>
 <p>什么是矩阵乘法呢？（此处可以百度了解以下）</p>
 <p><img src="https://i.loli.net/2020/01/07/drTUXefu1ItHyLm.png" alt="BWqSKunTFkLpziP.png"></p>
@@ -99,7 +114,52 @@
 <p>但是！！！</p>
 <p>这道题最最关键的就是各种不同的自定义字母所代表的含义。（比如上图中的是b  [1 ] [1]  其实在数组中是b [0] [0];谨慎呀！！！<del>（找这个bug找的脑壳疼）</del></p>
 <p>当然，也可以动态数组，但是这样更好理解一一些。</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span><span class="hljs-meta-string">&lt;bits/stdc++.h&gt;</span></span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> <span class="hljs-built_in">std</span>;<br><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span>&#123;<br><br>	<span class="hljs-keyword">int</span> c1,c2,r1,r2; <br>	<span class="hljs-keyword">int</span> i,j;<br>	<span class="hljs-built_in">cin</span>&gt;&gt;r1&gt;&gt;c1;	<br>	<span class="hljs-keyword">int</span> m[r1][c1];<span class="hljs-comment">//定义并得到两个数组 </span><br>	<span class="hljs-keyword">for</span>(i=<span class="hljs-number">0</span>;i&lt;r1;i++)<br>	&#123;<br>		<span class="hljs-keyword">for</span>( j=<span class="hljs-number">0</span>;j&lt;c1;j++)<br>		&#123;<br>			<span class="hljs-built_in">cin</span>&gt;&gt;m[i][j];<br>		&#125;<br>	&#125;	<br>	<span class="hljs-built_in">cin</span>&gt;&gt;r2&gt;&gt;c2;	<br>	<span class="hljs-keyword">int</span> n[r2][c2];<br>	<span class="hljs-keyword">for</span>(i=<span class="hljs-number">0</span>;i&lt;r2;i++)<br>	&#123;<br>		<span class="hljs-keyword">for</span>( j=<span class="hljs-number">0</span>;j&lt;c2;j++)<br>		&#123;<br>			<span class="hljs-built_in">cin</span>&gt;&gt;n[i][j];<br>		&#125;<br>	&#125;<br>	<span class="hljs-keyword">if</span>(c1==r2)<br>	&#123;<span class="hljs-comment">//首先排除不相等的情况 (规模是否相等） </span><br>		<span class="hljs-built_in">cout</span>&lt;&lt;r1&lt;&lt;<span class="hljs-string">" "</span>&lt;&lt;c2&lt;&lt;<span class="hljs-built_in">endl</span>;<br>		<span class="hljs-keyword">for</span>(i=<span class="hljs-number">0</span>;i&lt;r1;i++)&#123;<span class="hljs-comment">//前两个for得到n个item； </span><br>			<span class="hljs-keyword">for</span>(j=<span class="hljs-number">0</span>;j&lt;c2;j++)<br>			&#123;<span class="hljs-comment">//输出每一行； </span><br>				<span class="hljs-keyword">int</span> sum=<span class="hljs-number">0</span>;<br>				<span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> k=<span class="hljs-number">0</span>;k&lt;c1;k++)&#123;<span class="hljs-comment">//（见公式）； </span><br>				sum=sum+m[i][k]*n[k][j];<br>			&#125;<br>			<span class="hljs-built_in">cout</span>&lt;&lt;sum;<br>			<span class="hljs-keyword">if</span>(j!=c2<span class="hljs-number">-1</span>)<br>			  <span class="hljs-built_in">cout</span>&lt;&lt;<span class="hljs-string">" "</span>;<br>		&#125;<br>		<span class="hljs-built_in">cout</span>&lt;&lt;<span class="hljs-built_in">endl</span>;<br>	&#125;<br>	&#125;<br>	<br>	<span class="hljs-keyword">else</span> <span class="hljs-built_in">cout</span>&lt;&lt;<span class="hljs-string">"Error: "</span>&lt;&lt;c2&lt;&lt;<span class="hljs-string">" != "</span>&lt;&lt;r2;<br><br>	<span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;	<br>&#125;<br></code></pre></td></tr></table></figure>
+<pre><code class="hljs cpp"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span><span class="hljs-meta-string">&lt;bits/stdc++.h&gt;</span></span>
+<span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> <span class="hljs-built_in">std</span>;
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span>&#123;
+
+	<span class="hljs-keyword">int</span> c1,c2,r1,r2; 
+	<span class="hljs-keyword">int</span> i,j;
+	<span class="hljs-built_in">cin</span>&gt;&gt;r1&gt;&gt;c1;	
+	<span class="hljs-keyword">int</span> m[r1][c1];<span class="hljs-comment">//定义并得到两个数组 </span>
+	<span class="hljs-keyword">for</span>(i=<span class="hljs-number">0</span>;i&lt;r1;i++)
+	&#123;
+		<span class="hljs-keyword">for</span>( j=<span class="hljs-number">0</span>;j&lt;c1;j++)
+		&#123;
+			<span class="hljs-built_in">cin</span>&gt;&gt;m[i][j];
+		&#125;
+	&#125;	
+	<span class="hljs-built_in">cin</span>&gt;&gt;r2&gt;&gt;c2;	
+	<span class="hljs-keyword">int</span> n[r2][c2];
+	<span class="hljs-keyword">for</span>(i=<span class="hljs-number">0</span>;i&lt;r2;i++)
+	&#123;
+		<span class="hljs-keyword">for</span>( j=<span class="hljs-number">0</span>;j&lt;c2;j++)
+		&#123;
+			<span class="hljs-built_in">cin</span>&gt;&gt;n[i][j];
+		&#125;
+	&#125;
+	<span class="hljs-keyword">if</span>(c1==r2)
+	&#123;<span class="hljs-comment">//首先排除不相等的情况 (规模是否相等） </span>
+		<span class="hljs-built_in">cout</span>&lt;&lt;r1&lt;&lt;<span class="hljs-string">" "</span>&lt;&lt;c2&lt;&lt;<span class="hljs-built_in">endl</span>;
+		<span class="hljs-keyword">for</span>(i=<span class="hljs-number">0</span>;i&lt;r1;i++)&#123;<span class="hljs-comment">//前两个for得到n个item； </span>
+			<span class="hljs-keyword">for</span>(j=<span class="hljs-number">0</span>;j&lt;c2;j++)
+			&#123;<span class="hljs-comment">//输出每一行； </span>
+				<span class="hljs-keyword">int</span> sum=<span class="hljs-number">0</span>;
+				<span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> k=<span class="hljs-number">0</span>;k&lt;c1;k++)&#123;<span class="hljs-comment">//（见公式）； </span>
+				sum=sum+m[i][k]*n[k][j];
+			&#125;
+			<span class="hljs-built_in">cout</span>&lt;&lt;sum;
+			<span class="hljs-keyword">if</span>(j!=c2<span class="hljs-number">-1</span>)
+			  <span class="hljs-built_in">cout</span>&lt;&lt;<span class="hljs-string">" "</span>;
+		&#125;
+		<span class="hljs-built_in">cout</span>&lt;&lt;<span class="hljs-built_in">endl</span>;
+	&#125;
+	&#125;
+	
+	<span class="hljs-keyword">else</span> <span class="hljs-built_in">cout</span>&lt;&lt;<span class="hljs-string">"Error: "</span>&lt;&lt;c2&lt;&lt;<span class="hljs-string">" != "</span>&lt;&lt;r2;
+
+	<span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;	
+&#125;</code></pre>
 
     </div>
     <div class="post-meta">

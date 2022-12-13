@@ -95,7 +95,9 @@
 <h2 id="如何解决使用-vscode-开发时出现的问题"><a href="#如何解决使用-vscode-开发时出现的问题" class="headerlink" title="如何解决使用 vscode 开发时出现的问题"></a>如何解决使用 vscode 开发时出现的问题</h2><h3 id="为什么出现很多红色波浪线？"><a href="#为什么出现很多红色波浪线？" class="headerlink" title="为什么出现很多红色波浪线？"></a>为什么出现很多红色波浪线？</h3><p>解决方案：</p>
 <p>自己在配置 VS Code Arduino 开发环境中遇到的问题，类似这种，错误显示未定义标识符。关于 VS Code 配置 Arduino 开发环境<br>主要问题是头文件索引丢失，intellisense不能自动找到需要的头文件路径。需要在用户设置中强制intellisense使用Tag Parser,递归方式检索头文件。</p>
 <p>在设置中添加如下代码：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs bash">“C_Cpp.intelliSenseEngineFallback”: “Disabled”,<br><br>“C_Cpp.intelliSenseEngine”: “Tag Parser”,<br></code></pre></td></tr></table></figure>
+<pre><code class="hljs bash">“C_Cpp.intelliSenseEngineFallback”: “Disabled”,
+
+“C_Cpp.intelliSenseEngine”: “Tag Parser”,</code></pre>
 <h3 id="为什么在编译时出现乱码？"><a href="#为什么在编译时出现乱码？" class="headerlink" title="为什么在编译时出现乱码？"></a>为什么在编译时出现乱码？</h3><p>打开文件：</p>
 <p>C:\Users\userName.vscode\extensions\vsciot-vscode.vscode-arduino-0.4.0\out\src\common\util.js</p>
 <p><img src="/2021/09/12/ESP8266%E5%BF%AB%E9%80%9F%E4%B8%8A%E6%89%8B%E5%8F%8A%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98/Untitled.png" alt="Untitled"></p>

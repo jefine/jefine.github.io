@@ -89,7 +89,35 @@
 <h3 id="输入样例："><a href="#输入样例：" class="headerlink" title="输入样例："></a>输入样例：</h3><p>630</p>
 <h3 id="输出样例："><a href="#输出样例：" class="headerlink" title="输出样例："></a>输出样例：</h3><p>3<br>5<em>6</em>7</p>
 <p>思路为从2开始累乘（加1），紧接着就判断是否乘积是其因子<br>如果是，那么记录下来长度，开始的i；<br>一直到乘积大于n停止；<br>然后使乘积（prd）等于1；i++； </p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><code class="hljs c++"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span><span class="hljs-meta-string">&lt;bits/stdc++.h&gt;</span></span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> <span class="hljs-built_in">std</span>;<br><span class="hljs-keyword">typedef</span> <span class="hljs-keyword">long</span> <span class="hljs-keyword">long</span> ll;<span class="hljs-comment">//简写 ，使用long long更好 </span><br><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span>&#123;<br>	ll n;<br>	<span class="hljs-built_in">cin</span>&gt;&gt;n;<br>	ll prd;<span class="hljs-comment">//是乘积（product） </span><br>	<span class="hljs-keyword">int</span> start=<span class="hljs-number">0</span>,len=<span class="hljs-number">0</span>;<br>	<span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i=<span class="hljs-number">2</span>;i&lt;=<span class="hljs-built_in">sqrt</span>(n);i++)&#123;<span class="hljs-comment">//sqrt是为了最后一个点过去（减少计算量） </span><br>		prd=<span class="hljs-number">1</span>;<br>		<span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> j=i;prd&lt;n;j++)&#123;<br>			prd*=j;<br>			<span class="hljs-keyword">if</span>(n%prd==<span class="hljs-number">0</span>&amp;&amp;j-i+<span class="hljs-number">1</span>&gt;len)&#123;<br>				start=i;<br>				len=j-i+<span class="hljs-number">1</span>;<br>			&#125;<br>		&#125;<br>		<br>	&#125;<br>	<span class="hljs-keyword">if</span>(start==<span class="hljs-number">0</span>)&#123;<span class="hljs-comment">//等于0的话就意味着它是一个质数！那么排去1.他的因子就只有本身了。 </span><br>		start=n;<br>		len = <span class="hljs-number">1</span>;<br>	&#125;<br>	<span class="hljs-built_in">cout</span>&lt;&lt;len&lt;&lt;<span class="hljs-built_in">endl</span>&lt;&lt;start;<br>	<span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i=start+<span class="hljs-number">1</span>;i&lt;start+len;i++)<br>	<span class="hljs-built_in">cout</span>&lt;&lt;<span class="hljs-string">"*"</span>&lt;&lt;i;<br>	<br>	<span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
+<pre><code class="hljs c++"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span><span class="hljs-meta-string">&lt;bits/stdc++.h&gt;</span></span>
+<span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> <span class="hljs-built_in">std</span>;
+<span class="hljs-keyword">typedef</span> <span class="hljs-keyword">long</span> <span class="hljs-keyword">long</span> ll;<span class="hljs-comment">//简写 ，使用long long更好 </span>
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span>&#123;
+	ll n;
+	<span class="hljs-built_in">cin</span>&gt;&gt;n;
+	ll prd;<span class="hljs-comment">//是乘积（product） </span>
+	<span class="hljs-keyword">int</span> start=<span class="hljs-number">0</span>,len=<span class="hljs-number">0</span>;
+	<span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i=<span class="hljs-number">2</span>;i&lt;=<span class="hljs-built_in">sqrt</span>(n);i++)&#123;<span class="hljs-comment">//sqrt是为了最后一个点过去（减少计算量） </span>
+		prd=<span class="hljs-number">1</span>;
+		<span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> j=i;prd&lt;n;j++)&#123;
+			prd*=j;
+			<span class="hljs-keyword">if</span>(n%prd==<span class="hljs-number">0</span>&amp;&amp;j-i+<span class="hljs-number">1</span>&gt;len)&#123;
+				start=i;
+				len=j-i+<span class="hljs-number">1</span>;
+			&#125;
+		&#125;
+		
+	&#125;
+	<span class="hljs-keyword">if</span>(start==<span class="hljs-number">0</span>)&#123;<span class="hljs-comment">//等于0的话就意味着它是一个质数！那么排去1.他的因子就只有本身了。 </span>
+		start=n;
+		len = <span class="hljs-number">1</span>;
+	&#125;
+	<span class="hljs-built_in">cout</span>&lt;&lt;len&lt;&lt;<span class="hljs-built_in">endl</span>&lt;&lt;start;
+	<span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i=start+<span class="hljs-number">1</span>;i&lt;start+len;i++)
+	<span class="hljs-built_in">cout</span>&lt;&lt;<span class="hljs-string">"*"</span>&lt;&lt;i;
+	
+	<span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;
+&#125;</code></pre>
 
     </div>
     <div class="post-meta">

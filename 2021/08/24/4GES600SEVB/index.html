@@ -114,14 +114,248 @@
 <h2 id="简单的外设Demo"><a href="#简单的外设Demo" class="headerlink" title="简单的外设Demo"></a>简单的外设Demo</h2><p><a href="https://python.quectel.com/doc/doc/little_demo/zh/QuecPythonTest/QuecPythonLED.html" target="_blank" rel="noopener">QuecPython</a></p>
 <h3 id="UART串口："><a href="#UART串口：" class="headerlink" title="UART串口："></a>UART串口：</h3><p><img src="/2021/08/24/4GES600SEVB/Untitled 2.png" alt="p1"></p>
 <p><img src="/2021/08/24/4GES600SEVB/Untitled 3.png" alt="p"></p>
-<h3 id="External-interrupt外部中断"><a href="#External-interrupt外部中断" class="headerlink" title="External_interrupt外部中断"></a>External_interrupt外部中断</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">from</span> machine <span class="hljs-keyword">import</span> ExtInt<br><br><span class="hljs-keyword">import</span> utime <span class="hljs-keyword">as</span> time<br><br><span class="hljs-comment"># 参考自 http://qpy.quectel.com/wiki/#/zh-cn/api/?id=extint</span><br><br>state = <span class="hljs-number">2</span><br><br><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">callBack</span><span class="hljs-params">(args)</span>:</span><br><br>    <span class="hljs-keyword">global</span> state<br><br>    print(<span class="hljs-string">'### interrupt  &#123;&#125; ###'</span>.format(args))<br>    <span class="hljs-comment">#传入的应该是一个List，[GPIOX,X] ,第二个参数不清楚</span><br><br>    state = state - <span class="hljs-number">1</span><br><br><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">main</span><span class="hljs-params">()</span>:</span><br><br>    <span class="hljs-comment"># 映射GPIO12的下降沿触发回调函数</span><br>    <span class="hljs-comment"># GPIO12即key2</span><br><br>    extint = ExtInt(ExtInt.GPIO12, ExtInt.IRQ_FALLING, ExtInt.PULL_PU, callBack)<br><br>    <span class="hljs-comment"># 等待按键按下，触发</span><br><br>    <span class="hljs-keyword">while</span> state:<br>        time.sleep_ms(<span class="hljs-number">10</span>)<br>        <span class="hljs-keyword">pass</span><br><br>    <span class="hljs-comment"># 停止映射外部中断</span><br><br>    extint.disable()<br><br>    print(<span class="hljs-string">"The main function has exited"</span>)<br><br><span class="hljs-keyword">if</span> __name__ == <span class="hljs-string">"__main__"</span>:<br>    main()<br></code></pre></td></tr></table></figure>
+<h3 id="External-interrupt外部中断"><a href="#External-interrupt外部中断" class="headerlink" title="External_interrupt外部中断"></a>External_interrupt外部中断</h3><pre><code class="hljs python"><span class="hljs-keyword">from</span> machine <span class="hljs-keyword">import</span> ExtInt
+
+<span class="hljs-keyword">import</span> utime <span class="hljs-keyword">as</span> time
+
+<span class="hljs-comment"># 参考自 http://qpy.quectel.com/wiki/#/zh-cn/api/?id=extint</span>
+
+state = <span class="hljs-number">2</span>
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">callBack</span><span class="hljs-params">(args)</span>:</span>
+
+    <span class="hljs-keyword">global</span> state
+
+    print(<span class="hljs-string">'### interrupt  &#123;&#125; ###'</span>.format(args))
+    <span class="hljs-comment">#传入的应该是一个List，[GPIOX,X] ,第二个参数不清楚</span>
+
+    state = state - <span class="hljs-number">1</span>
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">main</span><span class="hljs-params">()</span>:</span>
+
+    <span class="hljs-comment"># 映射GPIO12的下降沿触发回调函数</span>
+    <span class="hljs-comment"># GPIO12即key2</span>
+
+    extint = ExtInt(ExtInt.GPIO12, ExtInt.IRQ_FALLING, ExtInt.PULL_PU, callBack)
+
+    <span class="hljs-comment"># 等待按键按下，触发</span>
+
+    <span class="hljs-keyword">while</span> state:
+        time.sleep_ms(<span class="hljs-number">10</span>)
+        <span class="hljs-keyword">pass</span>
+
+    <span class="hljs-comment"># 停止映射外部中断</span>
+
+    extint.disable()
+
+    print(<span class="hljs-string">"The main function has exited"</span>)
+
+<span class="hljs-keyword">if</span> __name__ == <span class="hljs-string">"__main__"</span>:
+    main()</code></pre>
 <h3 id="WatchDog-看门狗"><a href="#WatchDog-看门狗" class="headerlink" title="WatchDog 看门狗"></a>WatchDog 看门狗</h3><p>看门狗的复位指的是<strong>重启机器</strong></p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-comment"># 实验1：	独立看门狗实验</span><br><span class="hljs-comment"># API资料参考连接：  https://python.quectel.com/wiki/#/zh-cn/api/?id=wdt</span><br><br><span class="hljs-keyword">from</span> machine <span class="hljs-keyword">import</span> WDT<br><span class="hljs-keyword">import</span> utime<br><br>wdt = <span class="hljs-literal">None</span>  <span class="hljs-comment"># 定义全部变量</span><br><br><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">Watchdog</span><span class="hljs-params">()</span>:</span>  <span class="hljs-comment"># 2秒钟内调用喂狗函数，否则系统复位</span><br>    <span class="hljs-keyword">global</span> wdt  <span class="hljs-comment"># 声明全部变量</span><br>    <span class="hljs-keyword">if</span> wdt <span class="hljs-keyword">is</span> <span class="hljs-literal">None</span>:<br>        wdt = WDT(<span class="hljs-number">2</span>)  <span class="hljs-comment"># 启动看门狗，间隔时长 单位 秒</span><br>    wdt.feed()  <span class="hljs-comment"># 喂狗</span><br><br><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">func_1</span><span class="hljs-params">()</span>:</span><br>    utime.sleep_ms(<span class="hljs-number">1000</span>)  <span class="hljs-comment"># 延时1秒</span><br>    print(<span class="hljs-string">'功能函数 1'</span>)<br><br><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">func_2</span><span class="hljs-params">()</span>:</span><br>    utime.sleep_ms(<span class="hljs-number">1000</span>)  <span class="hljs-comment"># 延时1秒</span><br>    print(<span class="hljs-string">'功能函数 2'</span>)<br><br><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">func_3</span><span class="hljs-params">()</span>:</span><br>    utime.sleep_ms(<span class="hljs-number">1000</span>)  <span class="hljs-comment"># 延时1秒</span><br>    print(<span class="hljs-string">'功能函数 3'</span>)<br>    Watchdog()  <span class="hljs-comment"># 2秒钟内调用喂狗函数</span><br>    utime.sleep_ms(<span class="hljs-number">1000</span>)  <span class="hljs-comment"># 延时1秒</span><br>    print(<span class="hljs-string">'功能函数 3_2'</span>)<br><br><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">func_4</span><span class="hljs-params">()</span>:</span><br>    utime.sleep_ms(<span class="hljs-number">1000</span>)<br>    print(<span class="hljs-string">'功能函数 4'</span>)<br>    Watchdog()  <span class="hljs-comment"># 2秒钟内调用喂狗函数</span><br>    print(<span class="hljs-string">'尝试在5s后喂狗'</span>)<br>    utime.sleep_ms(<span class="hljs-number">5000</span>)  <span class="hljs-comment"># 延时5秒</span><br>    Watchdog()<br>    print(<span class="hljs-string">'来不及喂狗，系统已经复位'</span>)<span class="hljs-comment">#此行代码不会显示因为机器已经重启了</span><br><br><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">main</span><span class="hljs-params">()</span>:</span><br>    print(<span class="hljs-string">'喂狗'</span>)<br>    Watchdog()  <span class="hljs-comment"># 2秒钟内调用喂狗函数</span><br>    func_1()  <span class="hljs-comment"># 用户程序</span><br>    print(<span class="hljs-string">'喂狗'</span>)<br>    Watchdog()  <span class="hljs-comment"># 2秒钟内调用喂狗函数</span><br>    func_2()  <span class="hljs-comment"># 用户程序</span><br>    print(<span class="hljs-string">'喂狗'</span>)<br>    Watchdog()  <span class="hljs-comment"># 2秒钟内调用喂狗函数</span><br>    func_3()  <span class="hljs-comment"># 用户程序</span><br>    print(<span class="hljs-string">'喂狗'</span>)<br>    Watchdog()  <span class="hljs-comment"># 2秒钟内调用喂狗函数</span><br>    func_4()  <span class="hljs-comment"># 用户程序</span><br><br><span class="hljs-keyword">if</span> __name__ == <span class="hljs-string">"__main__"</span>:<br>    main()<br></code></pre></td></tr></table></figure>
+<pre><code class="hljs python"><span class="hljs-comment"># 实验1：	独立看门狗实验</span>
+<span class="hljs-comment"># API资料参考连接：  https://python.quectel.com/wiki/#/zh-cn/api/?id=wdt</span>
+
+<span class="hljs-keyword">from</span> machine <span class="hljs-keyword">import</span> WDT
+<span class="hljs-keyword">import</span> utime
+
+wdt = <span class="hljs-literal">None</span>  <span class="hljs-comment"># 定义全部变量</span>
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">Watchdog</span><span class="hljs-params">()</span>:</span>  <span class="hljs-comment"># 2秒钟内调用喂狗函数，否则系统复位</span>
+    <span class="hljs-keyword">global</span> wdt  <span class="hljs-comment"># 声明全部变量</span>
+    <span class="hljs-keyword">if</span> wdt <span class="hljs-keyword">is</span> <span class="hljs-literal">None</span>:
+        wdt = WDT(<span class="hljs-number">2</span>)  <span class="hljs-comment"># 启动看门狗，间隔时长 单位 秒</span>
+    wdt.feed()  <span class="hljs-comment"># 喂狗</span>
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">func_1</span><span class="hljs-params">()</span>:</span>
+    utime.sleep_ms(<span class="hljs-number">1000</span>)  <span class="hljs-comment"># 延时1秒</span>
+    print(<span class="hljs-string">'功能函数 1'</span>)
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">func_2</span><span class="hljs-params">()</span>:</span>
+    utime.sleep_ms(<span class="hljs-number">1000</span>)  <span class="hljs-comment"># 延时1秒</span>
+    print(<span class="hljs-string">'功能函数 2'</span>)
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">func_3</span><span class="hljs-params">()</span>:</span>
+    utime.sleep_ms(<span class="hljs-number">1000</span>)  <span class="hljs-comment"># 延时1秒</span>
+    print(<span class="hljs-string">'功能函数 3'</span>)
+    Watchdog()  <span class="hljs-comment"># 2秒钟内调用喂狗函数</span>
+    utime.sleep_ms(<span class="hljs-number">1000</span>)  <span class="hljs-comment"># 延时1秒</span>
+    print(<span class="hljs-string">'功能函数 3_2'</span>)
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">func_4</span><span class="hljs-params">()</span>:</span>
+    utime.sleep_ms(<span class="hljs-number">1000</span>)
+    print(<span class="hljs-string">'功能函数 4'</span>)
+    Watchdog()  <span class="hljs-comment"># 2秒钟内调用喂狗函数</span>
+    print(<span class="hljs-string">'尝试在5s后喂狗'</span>)
+    utime.sleep_ms(<span class="hljs-number">5000</span>)  <span class="hljs-comment"># 延时5秒</span>
+    Watchdog()
+    print(<span class="hljs-string">'来不及喂狗，系统已经复位'</span>)<span class="hljs-comment">#此行代码不会显示因为机器已经重启了</span>
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">main</span><span class="hljs-params">()</span>:</span>
+    print(<span class="hljs-string">'喂狗'</span>)
+    Watchdog()  <span class="hljs-comment"># 2秒钟内调用喂狗函数</span>
+    func_1()  <span class="hljs-comment"># 用户程序</span>
+    print(<span class="hljs-string">'喂狗'</span>)
+    Watchdog()  <span class="hljs-comment"># 2秒钟内调用喂狗函数</span>
+    func_2()  <span class="hljs-comment"># 用户程序</span>
+    print(<span class="hljs-string">'喂狗'</span>)
+    Watchdog()  <span class="hljs-comment"># 2秒钟内调用喂狗函数</span>
+    func_3()  <span class="hljs-comment"># 用户程序</span>
+    print(<span class="hljs-string">'喂狗'</span>)
+    Watchdog()  <span class="hljs-comment"># 2秒钟内调用喂狗函数</span>
+    func_4()  <span class="hljs-comment"># 用户程序</span>
+
+<span class="hljs-keyword">if</span> __name__ == <span class="hljs-string">"__main__"</span>:
+    main()</code></pre>
 <h3 id="温湿度检测"><a href="#温湿度检测" class="headerlink" title="温湿度检测"></a>温湿度检测</h3><p>测得不准，勉强能看</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-string">'''<br>File: i2c_aht10.py<br>Project: i2c<br>File Created: Monday, 28th December 2020 5:17:28 pm<br>Author: chengzhu.zhou<br>-----<br>Last Modified: Tuesday, 29th December 2020 9:01:35 pm<br>Modified By: chengzhu.zhou<br>-----<br>Copyright 2020 - 2020 quectel<br>'''</span><br><br><span class="hljs-keyword">import</span> log<br><span class="hljs-keyword">from</span> machine <span class="hljs-keyword">import</span> I2C<br><span class="hljs-keyword">import</span> utime <span class="hljs-keyword">as</span> time<br><span class="hljs-string">"""<br>1. calibration<br>2. Trigger measurement<br>3. read data<br>"""</span><br><br><span class="hljs-comment"># API  手册 http://qpy.quectel.com/wiki/#/zh-cn/api/?id=i2c</span><br><span class="hljs-comment"># AHT10 说明书</span><br><span class="hljs-comment">#  https://server4.eca.ir/eshop/AHT10/Aosong_AHT10_en_draft_0c.pdf</span><br><br><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">aht10class</span><span class="hljs-params">()</span>:</span><br>    i2c_log = <span class="hljs-literal">None</span><br>    i2c_dev = <span class="hljs-literal">None</span><br>    i2c_addre = <span class="hljs-literal">None</span><br><br>    <span class="hljs-comment"># Initialization command</span><br>    AHT10_CALIBRATION_CMD = <span class="hljs-number">0xE1</span><br>    <span class="hljs-comment"># Trigger measurement</span><br>    AHT10_START_MEASURMENT_CMD = <span class="hljs-number">0xAC</span><br>    <span class="hljs-comment"># reset</span><br>    AHT10_RESET_CMD = <span class="hljs-number">0xBA</span><br><br>    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">write_data</span><span class="hljs-params">(self, data)</span>:</span><br>        self.i2c_dev.write(self.i2c_addre,<br>                           bytearray(<span class="hljs-number">0x00</span>), <span class="hljs-number">0</span>,<br>                           bytearray(data), len(data))<br>        <span class="hljs-keyword">pass</span><br><br>    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">read_data</span><span class="hljs-params">(self, length)</span>:</span><br>        r_data = [<span class="hljs-number">0x00</span> <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> range(length)]<br>        r_data = bytearray(r_data)<br>        self.i2c_dev.read(self.i2c_addre,<br>                          bytearray(<span class="hljs-number">0x00</span>), <span class="hljs-number">0</span>,<br>                          r_data, length,<br>                          <span class="hljs-number">0</span>)<br>        <span class="hljs-keyword">return</span> list(r_data)<br><br>    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">aht10_init</span><span class="hljs-params">(self, addre=<span class="hljs-number">0x38</span>, Alise=<span class="hljs-string">"Ath10"</span>)</span>:</span><br>        self.i2c_log = log.getLogger(Alise)<br>        self.i2c_dev = I2C(I2C.I2C1, I2C.STANDARD_MODE)  <span class="hljs-comment"># 返回i2c对象</span><br>        self.i2c_addre = addre<br>        self.sensor_init()<br>        <span class="hljs-keyword">pass</span><br><br>    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">aht10_transformation_temperature</span><span class="hljs-params">(self, data)</span>:</span><br>        r_data = data<br>        <span class="hljs-comment">#　根据数据手册的描述来转化温度</span><br>        humidity = (r_data[<span class="hljs-number">0</span>] &lt;&lt; <span class="hljs-number">12</span>) | (<br>            r_data[<span class="hljs-number">1</span>] &lt;&lt; <span class="hljs-number">4</span>) | ((r_data[<span class="hljs-number">2</span>] &amp; <span class="hljs-number">0xF0</span>) &gt;&gt; <span class="hljs-number">4</span>)<br>        humidity = (humidity/(<span class="hljs-number">1</span> &lt;&lt; <span class="hljs-number">20</span>)) * <span class="hljs-number">100.0</span><br>        print(<span class="hljs-string">"current humidity is &#123;0&#125;%"</span>.format(humidity))<br>        temperature = ((r_data[<span class="hljs-number">2</span>] &amp; <span class="hljs-number">0xf</span>) &lt;&lt; <span class="hljs-number">16</span>) | (<br>            r_data[<span class="hljs-number">3</span>] &lt;&lt; <span class="hljs-number">8</span>) | r_data[<span class="hljs-number">4</span>]<br>        temperature = (temperature * <span class="hljs-number">200.0</span> / (<span class="hljs-number">1</span> &lt;&lt; <span class="hljs-number">20</span>)) - <span class="hljs-number">50</span><br>        print(<span class="hljs-string">"current temperature is &#123;0&#125;°C"</span>.format(temperature))<br>        <br><br>    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">sensor_init</span><span class="hljs-params">(self)</span>:</span><br>        <span class="hljs-comment"># calibration</span><br>        self.write_data([self.AHT10_CALIBRATION_CMD, <span class="hljs-number">0x08</span>, <span class="hljs-number">0x00</span>])<br>        time.sleep_ms(<span class="hljs-number">300</span>)  <span class="hljs-comment"># at last 300ms</span><br>        <span class="hljs-keyword">pass</span><br><br>    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">ath10_reset</span><span class="hljs-params">(self)</span>:</span><br>        self.write_data([self.AHT10_RESET_CMD])<br>        time.sleep_ms(<span class="hljs-number">20</span>)  <span class="hljs-comment"># at last 20ms</span><br><br>    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">Trigger_measurement</span><span class="hljs-params">(self)</span>:</span><br>        <span class="hljs-comment"># Trigger data conversion</span><br>        self.write_data([self.AHT10_START_MEASURMENT_CMD, <span class="hljs-number">0x33</span>, <span class="hljs-number">0x00</span>])<br>        time.sleep_ms(<span class="hljs-number">200</span>)  <span class="hljs-comment"># at last delay 75ms</span><br>        <span class="hljs-comment"># check has success</span><br>        r_data = self.read_data(<span class="hljs-number">6</span>)<br>        <span class="hljs-comment"># check bit7</span><br>        <span class="hljs-keyword">if</span> (r_data[<span class="hljs-number">0</span>] &gt;&gt; <span class="hljs-number">7</span>) != <span class="hljs-number">0x0</span>:<br>            print(<span class="hljs-string">"Conversion has error"</span>)<br>        <span class="hljs-keyword">else</span>:<br>            self.aht10_transformation_temperature(r_data[<span class="hljs-number">1</span>:<span class="hljs-number">6</span>])<br><br><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">i2c_aht10_test</span><span class="hljs-params">()</span>:</span><br>    ath_dev = aht10class()<br>    ath_dev.aht10_init()<br><br>    <span class="hljs-comment"># 测试十次</span><br>    <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> range(<span class="hljs-number">10</span>):<br>        ath_dev.Trigger_measurement()<br>        time.sleep(<span class="hljs-number">1</span>)<br><br><span class="hljs-keyword">if</span> __name__ == <span class="hljs-string">"__main__"</span>:<br>    i2c_aht10_test()<br></code></pre></td></tr></table></figure>
+<pre><code class="hljs python"><span class="hljs-string">'''
+File: i2c_aht10.py
+Project: i2c
+File Created: Monday, 28th December 2020 5:17:28 pm
+Author: chengzhu.zhou
+-----
+Last Modified: Tuesday, 29th December 2020 9:01:35 pm
+Modified By: chengzhu.zhou
+-----
+Copyright 2020 - 2020 quectel
+'''</span>
+
+<span class="hljs-keyword">import</span> log
+<span class="hljs-keyword">from</span> machine <span class="hljs-keyword">import</span> I2C
+<span class="hljs-keyword">import</span> utime <span class="hljs-keyword">as</span> time
+<span class="hljs-string">"""
+1. calibration
+2. Trigger measurement
+3. read data
+"""</span>
+
+<span class="hljs-comment"># API  手册 http://qpy.quectel.com/wiki/#/zh-cn/api/?id=i2c</span>
+<span class="hljs-comment"># AHT10 说明书</span>
+<span class="hljs-comment">#  https://server4.eca.ir/eshop/AHT10/Aosong_AHT10_en_draft_0c.pdf</span>
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">aht10class</span><span class="hljs-params">()</span>:</span>
+    i2c_log = <span class="hljs-literal">None</span>
+    i2c_dev = <span class="hljs-literal">None</span>
+    i2c_addre = <span class="hljs-literal">None</span>
+
+    <span class="hljs-comment"># Initialization command</span>
+    AHT10_CALIBRATION_CMD = <span class="hljs-number">0xE1</span>
+    <span class="hljs-comment"># Trigger measurement</span>
+    AHT10_START_MEASURMENT_CMD = <span class="hljs-number">0xAC</span>
+    <span class="hljs-comment"># reset</span>
+    AHT10_RESET_CMD = <span class="hljs-number">0xBA</span>
+
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">write_data</span><span class="hljs-params">(self, data)</span>:</span>
+        self.i2c_dev.write(self.i2c_addre,
+                           bytearray(<span class="hljs-number">0x00</span>), <span class="hljs-number">0</span>,
+                           bytearray(data), len(data))
+        <span class="hljs-keyword">pass</span>
+
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">read_data</span><span class="hljs-params">(self, length)</span>:</span>
+        r_data = [<span class="hljs-number">0x00</span> <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> range(length)]
+        r_data = bytearray(r_data)
+        self.i2c_dev.read(self.i2c_addre,
+                          bytearray(<span class="hljs-number">0x00</span>), <span class="hljs-number">0</span>,
+                          r_data, length,
+                          <span class="hljs-number">0</span>)
+        <span class="hljs-keyword">return</span> list(r_data)
+
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">aht10_init</span><span class="hljs-params">(self, addre=<span class="hljs-number">0x38</span>, Alise=<span class="hljs-string">"Ath10"</span>)</span>:</span>
+        self.i2c_log = log.getLogger(Alise)
+        self.i2c_dev = I2C(I2C.I2C1, I2C.STANDARD_MODE)  <span class="hljs-comment"># 返回i2c对象</span>
+        self.i2c_addre = addre
+        self.sensor_init()
+        <span class="hljs-keyword">pass</span>
+
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">aht10_transformation_temperature</span><span class="hljs-params">(self, data)</span>:</span>
+        r_data = data
+        <span class="hljs-comment">#　根据数据手册的描述来转化温度</span>
+        humidity = (r_data[<span class="hljs-number">0</span>] &lt;&lt; <span class="hljs-number">12</span>) | (
+            r_data[<span class="hljs-number">1</span>] &lt;&lt; <span class="hljs-number">4</span>) | ((r_data[<span class="hljs-number">2</span>] &amp; <span class="hljs-number">0xF0</span>) &gt;&gt; <span class="hljs-number">4</span>)
+        humidity = (humidity/(<span class="hljs-number">1</span> &lt;&lt; <span class="hljs-number">20</span>)) * <span class="hljs-number">100.0</span>
+        print(<span class="hljs-string">"current humidity is &#123;0&#125;%"</span>.format(humidity))
+        temperature = ((r_data[<span class="hljs-number">2</span>] &amp; <span class="hljs-number">0xf</span>) &lt;&lt; <span class="hljs-number">16</span>) | (
+            r_data[<span class="hljs-number">3</span>] &lt;&lt; <span class="hljs-number">8</span>) | r_data[<span class="hljs-number">4</span>]
+        temperature = (temperature * <span class="hljs-number">200.0</span> / (<span class="hljs-number">1</span> &lt;&lt; <span class="hljs-number">20</span>)) - <span class="hljs-number">50</span>
+        print(<span class="hljs-string">"current temperature is &#123;0&#125;°C"</span>.format(temperature))
+        
+
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">sensor_init</span><span class="hljs-params">(self)</span>:</span>
+        <span class="hljs-comment"># calibration</span>
+        self.write_data([self.AHT10_CALIBRATION_CMD, <span class="hljs-number">0x08</span>, <span class="hljs-number">0x00</span>])
+        time.sleep_ms(<span class="hljs-number">300</span>)  <span class="hljs-comment"># at last 300ms</span>
+        <span class="hljs-keyword">pass</span>
+
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">ath10_reset</span><span class="hljs-params">(self)</span>:</span>
+        self.write_data([self.AHT10_RESET_CMD])
+        time.sleep_ms(<span class="hljs-number">20</span>)  <span class="hljs-comment"># at last 20ms</span>
+
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">Trigger_measurement</span><span class="hljs-params">(self)</span>:</span>
+        <span class="hljs-comment"># Trigger data conversion</span>
+        self.write_data([self.AHT10_START_MEASURMENT_CMD, <span class="hljs-number">0x33</span>, <span class="hljs-number">0x00</span>])
+        time.sleep_ms(<span class="hljs-number">200</span>)  <span class="hljs-comment"># at last delay 75ms</span>
+        <span class="hljs-comment"># check has success</span>
+        r_data = self.read_data(<span class="hljs-number">6</span>)
+        <span class="hljs-comment"># check bit7</span>
+        <span class="hljs-keyword">if</span> (r_data[<span class="hljs-number">0</span>] &gt;&gt; <span class="hljs-number">7</span>) != <span class="hljs-number">0x0</span>:
+            print(<span class="hljs-string">"Conversion has error"</span>)
+        <span class="hljs-keyword">else</span>:
+            self.aht10_transformation_temperature(r_data[<span class="hljs-number">1</span>:<span class="hljs-number">6</span>])
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">i2c_aht10_test</span><span class="hljs-params">()</span>:</span>
+    ath_dev = aht10class()
+    ath_dev.aht10_init()
+
+    <span class="hljs-comment"># 测试十次</span>
+    <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> range(<span class="hljs-number">10</span>):
+        ath_dev.Trigger_measurement()
+        time.sleep(<span class="hljs-number">1</span>)
+
+<span class="hljs-keyword">if</span> __name__ == <span class="hljs-string">"__main__"</span>:
+    i2c_aht10_test()</code></pre>
 <h3 id="Photoresistor-光敏电阻"><a href="#Photoresistor-光敏电阻" class="headerlink" title="Photoresistor 光敏电阻"></a>Photoresistor 光敏电阻</h3><p>得到的数值为ADC电压值</p>
 <p><img src="/2021/08/24/4GES600SEVB/Untitled 4.png" alt="p"></p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-string">'''<br>File: Photoresistor.py<br>Project: adc<br>File Created: Thursday, 24th December 2020 5:44:08 pm<br>Author: chengzhu.zhou<br>-----<br>Last Modified: Wednesday, 30th December 2020 10:10:33 am<br>Modified By: chengzhu.zhou<br>-----<br>Copyright 2020 - 2020 quectel<br>'''</span><br><br><span class="hljs-keyword">from</span> misc <span class="hljs-keyword">import</span> ADC<br><span class="hljs-keyword">import</span> utime <span class="hljs-keyword">as</span> time<br><span class="hljs-keyword">import</span> _thread<br><br><span class="hljs-comment"># unit as Ω</span><br><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">Voltage_to_Resistance</span><span class="hljs-params">(Volt)</span>:</span><br>    <span class="hljs-comment">#</span><br>    Va = <span class="hljs-number">2</span> * Volt<br>    resistance = (<span class="hljs-number">2</span> * <span class="hljs-number">4700</span> * <span class="hljs-number">40200</span> * Va)/(<span class="hljs-number">2</span> * <span class="hljs-number">4700</span> * (<span class="hljs-number">3300</span> - Va) - (<span class="hljs-number">40200</span> * Va))<br>    <span class="hljs-keyword">return</span> resistance<br><br><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">Photoresistor_thread</span><span class="hljs-params">(delay, retryCount)</span>:</span><br>    <span class="hljs-comment"># creat a adc device</span><br>    AdcDevice = ADC()<br>    <span class="hljs-keyword">while</span> retryCount:<br>        retryCount = retryCount - <span class="hljs-number">1</span><br>        <span class="hljs-comment"># get ADC.ADC0 value</span><br>        adcvalue = AdcDevice.read(ADC.ADC0)<br>        print(<span class="hljs-string">"get ADC.ADC0 Voltage value as &#123;0&#125;mv"</span>.format(adcvalue))<br>        <span class="hljs-comment"># Converted to resistance</span><br>        resistance = Voltage_to_Resistance(adcvalue)<br>        print(<span class="hljs-string">"Photoresistor  resistance as  &#123;0&#125;Ω"</span>.format(resistance))<br>        time.sleep(delay)<br>    <span class="hljs-keyword">pass</span><br><br><span class="hljs-keyword">if</span> __name__ == <span class="hljs-string">"__main__"</span>:<br>    <span class="hljs-comment"># creat a thread Convert ADC to Voltage</span><br>    _thread.start_new_thread(Photoresistor_thread, (<span class="hljs-number">1</span>, <span class="hljs-number">10</span>))<br>    print(<span class="hljs-string">"creent main thread has exit"</span>)<br></code></pre></td></tr></table></figure>
+<pre><code class="hljs python"><span class="hljs-string">'''
+File: Photoresistor.py
+Project: adc
+File Created: Thursday, 24th December 2020 5:44:08 pm
+Author: chengzhu.zhou
+-----
+Last Modified: Wednesday, 30th December 2020 10:10:33 am
+Modified By: chengzhu.zhou
+-----
+Copyright 2020 - 2020 quectel
+'''</span>
+
+<span class="hljs-keyword">from</span> misc <span class="hljs-keyword">import</span> ADC
+<span class="hljs-keyword">import</span> utime <span class="hljs-keyword">as</span> time
+<span class="hljs-keyword">import</span> _thread
+
+<span class="hljs-comment"># unit as Ω</span>
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">Voltage_to_Resistance</span><span class="hljs-params">(Volt)</span>:</span>
+    <span class="hljs-comment">#</span>
+    Va = <span class="hljs-number">2</span> * Volt
+    resistance = (<span class="hljs-number">2</span> * <span class="hljs-number">4700</span> * <span class="hljs-number">40200</span> * Va)/(<span class="hljs-number">2</span> * <span class="hljs-number">4700</span> * (<span class="hljs-number">3300</span> - Va) - (<span class="hljs-number">40200</span> * Va))
+    <span class="hljs-keyword">return</span> resistance
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">Photoresistor_thread</span><span class="hljs-params">(delay, retryCount)</span>:</span>
+    <span class="hljs-comment"># creat a adc device</span>
+    AdcDevice = ADC()
+    <span class="hljs-keyword">while</span> retryCount:
+        retryCount = retryCount - <span class="hljs-number">1</span>
+        <span class="hljs-comment"># get ADC.ADC0 value</span>
+        adcvalue = AdcDevice.read(ADC.ADC0)
+        print(<span class="hljs-string">"get ADC.ADC0 Voltage value as &#123;0&#125;mv"</span>.format(adcvalue))
+        <span class="hljs-comment"># Converted to resistance</span>
+        resistance = Voltage_to_Resistance(adcvalue)
+        print(<span class="hljs-string">"Photoresistor  resistance as  &#123;0&#125;Ω"</span>.format(resistance))
+        time.sleep(delay)
+    <span class="hljs-keyword">pass</span>
+
+<span class="hljs-keyword">if</span> __name__ == <span class="hljs-string">"__main__"</span>:
+    <span class="hljs-comment"># creat a thread Convert ADC to Voltage</span>
+    _thread.start_new_thread(Photoresistor_thread, (<span class="hljs-number">1</span>, <span class="hljs-number">10</span>))
+    print(<span class="hljs-string">"creent main thread has exit"</span>)</code></pre>
 
     </div>
     <div class="post-meta">

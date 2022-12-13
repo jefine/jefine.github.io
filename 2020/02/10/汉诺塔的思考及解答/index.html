@@ -91,12 +91,36 @@
 <p>我们不妨自己先试一试，如何将一个或三个盘子从a移动到c。</p>
 <p>好的，那么总结一下<strong>规律</strong>，<strong>假设有n个盘子，我们就是借助一个柱子c，把a上的n-1个盘子放到b上，再把b上的n-1个盘子通过a移动到c上即可</strong>。（下图较复杂，简单看看就好）</p>
 <p><img src="/2020/02/10/%E6%B1%89%E8%AF%BA%E5%A1%94%E7%9A%84%E6%80%9D%E8%80%83%E5%8F%8A%E8%A7%A3%E7%AD%94/Untitled.png" alt="Untitled">好的，那么这一步的代码该怎么写呢？？？</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs c">hanoi(n<span class="hljs-number">-1</span>,a,c,b);<span class="hljs-comment">//我们就是借助一个柱子c，把a上的n-1个盘子放到b上，</span><br><span class="hljs-built_in">printf</span>(<span class="hljs-string">"将%c移动到%c\\n"</span>,a,b);<br>hanoi(n<span class="hljs-number">-1</span>,b,a,c);<span class="hljs-comment">//再把b上的n-1个盘子通过a移动到c上即可。</span><br></code></pre></td></tr></table></figure>
+<pre><code class="hljs c">hanoi(n<span class="hljs-number">-1</span>,a,c,b);<span class="hljs-comment">//我们就是借助一个柱子c，把a上的n-1个盘子放到b上，</span>
+<span class="hljs-built_in">printf</span>(<span class="hljs-string">"将%c移动到%c\\n"</span>,a,b);
+hanoi(n<span class="hljs-number">-1</span>,b,a,c);<span class="hljs-comment">//再把b上的n-1个盘子通过a移动到c上即可。</span></code></pre>
 <p>这样是不是就可以理解了。</p>
 <p>好的，但是我们要给这个函数一个出口不然，他就会一直跑下去。。。（并且问我怎么知道的）</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs c"><span class="hljs-keyword">if</span>(n==<span class="hljs-number">1</span>)&#123;<span class="hljs-comment">//终止条件。</span><br><span class="hljs-built_in">printf</span>(<span class="hljs-string">"将%c移动到%c\\n"</span>,a,c);<span class="hljs-comment">//最后不就是把a上的最后一个放到c上，就可以了吧。</span><br><span class="hljs-comment">//我们不考虑别的。嘿嘿</span><br>&#125;<br></code></pre></td></tr></table></figure>
+<pre><code class="hljs c"><span class="hljs-keyword">if</span>(n==<span class="hljs-number">1</span>)&#123;<span class="hljs-comment">//终止条件。</span>
+<span class="hljs-built_in">printf</span>(<span class="hljs-string">"将%c移动到%c\\n"</span>,a,c);<span class="hljs-comment">//最后不就是把a上的最后一个放到c上，就可以了吧。</span>
+<span class="hljs-comment">//我们不考虑别的。嘿嘿</span>
+&#125;</code></pre>
 <p>那么综合起来就是：</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><code class="hljs c"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span><span class="hljs-meta-string">&lt;stdio.h&gt;</span></span><br><span class="hljs-keyword">int</span> cnt;<br><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">hanoi</span><span class="hljs-params">(<span class="hljs-keyword">int</span> n,<span class="hljs-keyword">char</span> a,<span class="hljs-keyword">char</span> b,<span class="hljs-keyword">char</span> c)</span></span>&#123;<br>cnt++;<br><span class="hljs-keyword">if</span>(n==<span class="hljs-number">1</span>)&#123;<br><span class="hljs-built_in">printf</span>(<span class="hljs-string">"将%c移动到%c\\n"</span>,a,c);<br>&#125;<br><span class="hljs-keyword">else</span> &#123;<br>hanoi(n<span class="hljs-number">-1</span>,a,c,b);<br><span class="hljs-built_in">printf</span>(<span class="hljs-string">"将%c移动到%c\\n"</span>,a,b);<br>hanoi(n<span class="hljs-number">-1</span>,b,a,c);<br>&#125;<br>&#125;<br><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span>&#123;<br><span class="hljs-keyword">int</span> n;<br><span class="hljs-keyword">char</span> a=<span class="hljs-string">'a'</span>,b=<span class="hljs-string">'b'</span>,c=<span class="hljs-string">'c'</span>;<br><span class="hljs-built_in">scanf</span>(<span class="hljs-string">"%d"</span>,&amp;n);<br>hanoi(n,a,b,c);<br><span class="hljs-built_in">printf</span>(<span class="hljs-string">"%d"</span>,cnt);<br>&#125;<br></code></pre></td></tr></table></figure>
+<pre><code class="hljs c"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span><span class="hljs-meta-string">&lt;stdio.h&gt;</span></span>
+<span class="hljs-keyword">int</span> cnt;
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">hanoi</span><span class="hljs-params">(<span class="hljs-keyword">int</span> n,<span class="hljs-keyword">char</span> a,<span class="hljs-keyword">char</span> b,<span class="hljs-keyword">char</span> c)</span></span>&#123;
+cnt++;
+<span class="hljs-keyword">if</span>(n==<span class="hljs-number">1</span>)&#123;
+<span class="hljs-built_in">printf</span>(<span class="hljs-string">"将%c移动到%c\\n"</span>,a,c);
+&#125;
+<span class="hljs-keyword">else</span> &#123;
+hanoi(n<span class="hljs-number">-1</span>,a,c,b);
+<span class="hljs-built_in">printf</span>(<span class="hljs-string">"将%c移动到%c\\n"</span>,a,b);
+hanoi(n<span class="hljs-number">-1</span>,b,a,c);
+&#125;
+&#125;
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span>&#123;
+<span class="hljs-keyword">int</span> n;
+<span class="hljs-keyword">char</span> a=<span class="hljs-string">'a'</span>,b=<span class="hljs-string">'b'</span>,c=<span class="hljs-string">'c'</span>;
+<span class="hljs-built_in">scanf</span>(<span class="hljs-string">"%d"</span>,&amp;n);
+hanoi(n,a,b,c);
+<span class="hljs-built_in">printf</span>(<span class="hljs-string">"%d"</span>,cnt);
+&#125;</code></pre>
 <p>注释可以参考上面的哦。</p>
 <p>链接：知乎上有一个有意思的答案，不妨一看：</p>
 <p><a href="https://www.zhihu.com/question/24385418/answer/257751077" target="_blank" rel="noopener">https://www.zhihu.com/question/24385418/answer/257751077</a></p>
