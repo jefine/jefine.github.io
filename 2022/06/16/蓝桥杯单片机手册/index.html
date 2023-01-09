@@ -13,11 +13,11 @@
     <meta property="og:image:width" content="200" />
     <meta property="og:image:height" content="200" />
     
-    <link href="https://fonts.googleapis.com/css2?family=Source+Serif+Pro:wght@400;700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.loli.net/css2?family=Source+Serif+Pro:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.loli.net/css2?family=Noto+Serif+TC:wght@400;700&display=swap" rel="stylesheet">
     <style>
         body {
-            font-family: 'Source Serif Pro', 'Source Han Serif TC', 'Noto Serif CJK TC', 'Noto Serif TC', serif;
+            font-family: 'Source Serif Pro', 'Source Han Serif TC', 'Noto Serif CJK TC', 'Noto Serif SC', serif;
         }
     </style>
     <link rel="shortcut icon" href="/favicon.png">
@@ -104,7 +104,7 @@
 <span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> LED_SET(x) &#123;EA = 0;P0 = ~(0x01&lt;&lt;(x-1));P2 = (P2 &amp; 0x1f)|0x80;P2 = P2 &amp; 0x1f;EA = 1;&#125; <span class="hljs-comment">//更加讲究的写法</span></span>
 <span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> led_set_all(x) &#123;EA =0;P0 = x;P2 = 0x80;P2 =0;EA =1;&#125; <span class="hljs-comment">//根据输入的十六进制数，进行点亮灯</span></span></code></pre><br>当然，我们可以对于宏定义进行修改，使其在在不同的工程和情况下，更加适合我们的代码编写。<br>第一个宏定义可能不是很好记，可以在比赛时尝试一下，在开发板上运行成功了，再进行宏定义，点灯测试也很快的~</p>
 <h2 id="数码管"><a href="#数码管" class="headerlink" title="数码管"></a>数码管</h2><p>数码管基本上和LED是同时使用的，而且相对于数码管其能容纳更多的信息量，进而也经常是一个状态展示模块，重要程度不言而喻。</p>
-<p>数码管也是有一定技巧的，比如官方虽然给了共阳数码管段码表，但是其给的是竖向的，而且只有数字，没有字母，资源不够丰富。但好在还有朴实无华的 STC-ISP 工具，在其范例程序中，我们可以轻易找到共阴级数码管的段码表（甚至还能顺走一个没有问题的位码），对于段码只需要求反就可以了。<br>![[蓝桥杯单片机手册/image20220616212149304.png]]<br>这里给出一个完整的，可运行的代码。会在屏幕上显示1 - 8 ，刷新率是1ms一个符号，即8ms一组，接近 125Hz 的超级刷新率~<br><pre><code class="hljs cpp"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">"STC15F2K60S2.H"</span></span>
+<p>数码管也是有一定技巧的，比如官方虽然给了共阳数码管段码表，但是其给的是竖向的，而且只有数字，没有字母，资源不够丰富。但好在还有朴实无华的 STC-ISP 工具，在其范例程序中，我们可以轻易找到共阴级数码管的段码表（甚至还能顺走一个没有问题的位码），对于段码只需要求反就可以了。<br><img src="/2022/06/16/%E8%93%9D%E6%A1%A5%E6%9D%AF%E5%8D%95%E7%89%87%E6%9C%BA%E6%89%8B%E5%86%8C/image20220616212149304.png" alt><br>这里给出一个完整的，可运行的代码。会在屏幕上显示1 - 8 ，刷新率是1ms一个符号，即8ms一组，接近 125Hz 的超级刷新率~<br><pre><code class="hljs cpp"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">"STC15F2K60S2.H"</span></span>
 <span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">"intrins.h"</span></span>
 
 <span class="hljs-keyword">typedef</span> <span class="hljs-keyword">unsigned</span> <span class="hljs-keyword">char</span> u8;
@@ -148,7 +148,7 @@ u8 code T_COM[]=&#123;<span class="hljs-number">0x01</span>,<span class="hljs-nu
 	&#125; <span class="hljs-keyword">while</span> (--i);
 &#125;</code></pre></p>
 <p>但是，在单片机中，尤其是裸机开发，一般都是单线程运行，我们如果采用的软件延时，在延迟的过程中，单片机大量时间消耗在延迟上，造成了资源浪费，同时影响了其他的模组运行，故我们采用下一节的定时器来定时中断，进行刷新。</p>
-<h2 id="定时器"><a href="#定时器" class="headerlink" title="定时器"></a>定时器</h2><p>定时器的配置，如果要从理论上认真了解和学习，需要对寄存器进行配置，略微有些烦琐，但如果不求甚解，那么STC-ISP依旧是不二之选。通常我会选择 1ms 进行中断，这个时间对于数码管刚好，而且可以用计数。<br>这里以定时器0作为例子，通常我也会使用它作为自己的第一个定时器，用以显示数码管。<br>![[蓝桥杯单片机手册/image20220616215412228.png]]</p>
+<h2 id="定时器"><a href="#定时器" class="headerlink" title="定时器"></a>定时器</h2><p>定时器的配置，如果要从理论上认真了解和学习，需要对寄存器进行配置，略微有些烦琐，但如果不求甚解，那么STC-ISP依旧是不二之选。通常我会选择 1ms 进行中断，这个时间对于数码管刚好，而且可以用计数。<br>这里以定时器0作为例子，通常我也会使用它作为自己的第一个定时器，用以显示数码管。<br><img src="/2022/06/16/%E8%93%9D%E6%A1%A5%E6%9D%AF%E5%8D%95%E7%89%87%E6%9C%BA%E6%89%8B%E5%86%8C/image20220616215412228.png" alt></p>
 <p>但需要注意<br>上图初始化并不完整，或者说需要我们<strong>手动打开定时器</strong>，即添加 <code>ET0 = 1;EA = 1;</code> 来打开定时器0中断和全局中断开关。通常添加到 Timer0Init() 函数的最后。<br>另，我们还需要写一个中断执行程序，来执行中断达到后的任务（也就是刷新数码管）；但是数码管的内容通常也是变化的，很少情况是单一的 1234567，故我常用一个字符数组作为数码管的内容数组，每次刷新的时候，从该数组里进行刷新。因为没有对应的表，我们在smg_buf 里保存所需要显示的字符的序号即可。<br><pre><code class="hljs cpp"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">"STC15F2K60S2.H"</span></span>
 <span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">"intrins.h"</span></span>
 
@@ -211,7 +211,7 @@ u8 code T_COM[]=&#123;<span class="hljs-number">0x01</span>,<span class="hljs-nu
 		
 	&#125;
 &#125;</code></pre></p>
-<h2 id="蜂鸣器与继电器"><a href="#蜂鸣器与继电器" class="headerlink" title="蜂鸣器与继电器"></a>蜂鸣器与继电器</h2><p>两个比较嘈杂的小玩意，所以在最新的第三代板子上特地给他们添加了开关，避免他们在烧录程序的时候滴滴滴滴，卡卡喳喳。我们也要注意，如果需要打开，就需要手动切换跳帽。<br>![[蓝桥杯单片机手册/image20220617085727539.png]]<br>从原理图中可以清晰看出他们的关系。有时候题目会要求刚上电时候，蜂鸣器不会乱叫，我们最好在最开始初始化一下他俩。<br>这里给一个简略的代码，可以方便去第一次看，稍候会给出更加合理的代码：<br><pre><code class="hljs cpp"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">"STC15F2K60S2.H"</span></span>
+<h2 id="蜂鸣器与继电器"><a href="#蜂鸣器与继电器" class="headerlink" title="蜂鸣器与继电器"></a>蜂鸣器与继电器</h2><p>两个比较嘈杂的小玩意，所以在最新的第三代板子上特地给他们添加了开关，避免他们在烧录程序的时候滴滴滴滴，卡卡喳喳。我们也要注意，如果需要打开，就需要手动切换跳帽。<br><img src="/2022/06/16/%E8%93%9D%E6%A1%A5%E6%9D%AF%E5%8D%95%E7%89%87%E6%9C%BA%E6%89%8B%E5%86%8C/image20220617085727539.png" alt><br>从原理图中可以清晰看出他们的关系。有时候题目会要求刚上电时候，蜂鸣器不会乱叫，我们最好在最开始初始化一下他俩。<br>这里给一个简略的代码，可以方便去第一次看，稍候会给出更加合理的代码：<br><pre><code class="hljs cpp"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">"STC15F2K60S2.H"</span></span>
 
 <span class="hljs-keyword">typedef</span> <span class="hljs-keyword">unsigned</span> <span class="hljs-keyword">char</span> u8;
 <span class="hljs-keyword">typedef</span> <span class="hljs-keyword">unsigned</span> <span class="hljs-keyword">int</span> u16;
@@ -489,7 +489,7 @@ u8 code T_COM[]=&#123;<span class="hljs-number">0x01</span>,<span class="hljs-nu
 	
 &#125;</code></pre></p>
 <h2 id="DS1302时钟"><a href="#DS1302时钟" class="headerlink" title="DS1302时钟"></a>DS1302时钟</h2><p>对于时钟芯片，DS1302 应用也是颇为广泛，不仅在比赛中，实际应用中也不少。<br>也是相对复杂一些的内容，需要我们好好去记住并练习，才能在比赛中，熟练运用。<br>还好官方把驱动给了出来，要不真的难搞~，但如何写入和读取时间是我们需要完成的。</p>
-<p>![[蓝桥杯单片机手册/image20220617174950298.png]]</p>
+<p><img src="/2022/06/16/%E8%93%9D%E6%A1%A5%E6%9D%AF%E5%8D%95%E7%89%87%E6%9C%BA%E6%89%8B%E5%86%8C/image20220617174950298.png" alt></p>
 <p>这个表在官方的芯片文档里面有，是需要我们打开看的，编写程序也是依托于他。</p>
 <p>其实这个也是相对简单的，只是需要我们在写入或者读出的时候，把两位数的时间，分散成高位和低位的编码方式。即高四位表示 十位，低四位表示 个位。同时注意开关写入时刻的 wp 即可。</p>
 <p>需要注意在c语言中，乘除的优先级高于 左移右移，所以在编写 读写代码时刻需要注意。<br>同时，由于定时器中断的影响，所以最好在使用DS18B20和DS1302这样的对时序有要求的模块时刻，在函数中采用中断的开启和关闭，不影响读取的完整操作。</p>
@@ -577,7 +577,7 @@ u8 code T_COM[]=&#123;<span class="hljs-number">0x01</span>,<span class="hljs-nu
 		smg_buf[<span class="hljs-number">7</span>] = SS % <span class="hljs-number">10</span>;
 	&#125;
 &#125;</code></pre></p>
-<h2 id="ADC-DAC"><a href="#ADC-DAC" class="headerlink" title="ADC / DAC"></a>ADC / DAC</h2><p>可以说，只有 DAC 模块才需要我们去使用万用表来测量一下哈哈。<br>数模转换 是单片机一个比较重要的点，是真实世界与数字世界之间交换的桥梁。<br>采用的是模块 PCF8591 ，该模块采用IIC协议进行通讯，可以进行ADC和DAC的处理。<br>IIC设备地址见下图：即0x90<br>![[蓝桥杯单片机手册/image20220617215822493.png]]</p>
+<h2 id="ADC-DAC"><a href="#ADC-DAC" class="headerlink" title="ADC / DAC"></a>ADC / DAC</h2><p>可以说，只有 DAC 模块才需要我们去使用万用表来测量一下哈哈。<br>数模转换 是单片机一个比较重要的点，是真实世界与数字世界之间交换的桥梁。<br>采用的是模块 PCF8591 ，该模块采用IIC协议进行通讯，可以进行ADC和DAC的处理。<br>IIC设备地址见下图：即0x90<br><img src="/2022/06/16/%E8%93%9D%E6%A1%A5%E6%9D%AF%E5%8D%95%E7%89%87%E6%9C%BA%E6%89%8B%E5%86%8C/image20220617215822493.png" alt></p>
 <p>要注意，如果读取出来的DAC的值是0-255，我们转换到5v既然要小数点后两位，不妨就采用500这样的范围。但是500超过了 unsigned char 的最大范围，所以最好用 u16；<br>具体的原因于精妙的地方，因为时间原因就不再补充了。如果明天国赛比完后，还有心情的话，就来补充。<br>比完赛了，么有心情。<br><pre><code class="hljs cpp"><span class="hljs-comment">//iic.c</span>
 <span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> DELAY_TIME 50</span>
 
