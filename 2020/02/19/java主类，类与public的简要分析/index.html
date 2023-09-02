@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+    
+    <title>java主类，类与源文件名的简要分析 - Jefine</title>
+    <meta charset="utf-8">
+    
+    <meta name="title" content="java主类，类与源文件名的简要分析 - Jefine">
+    <meta name="description" content="">
+    <meta property="og:image" content="/">
+    <meta property="og:image:width" content="200" />
+    <meta property="og:image:height" content="200" />
+    
+    <link href="https://fonts.proxy.ustclug.org/css2?family=Noto+Serif+SC:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.proxy.ustclug.org/css2?family=Noto+Serif+SC:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Noto Serif CJK TC', 'Noto Serif SC', serif;
+        }
+    </style>
+    <link rel="shortcut icon" href="/">
+    
+    <link rel="stylesheet"
+        href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.17.1/build/styles/arduino-light.min.css">
+    <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.17.1/build/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    
+    
+    <link rel="stylesheet" href="/css/style.css">
+    <script src="/js/jquery.min.js"></script>
+<link rel="alternate" href="/atom.xml" title="Jefine" type="application/atom+xml"><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</head>
+
+<body>
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><header class="header">
+    <div class="blog-title">
+        <a href="/" class="logo">Jefine</a>
+    </div>
+    <nav class="navbar">
+        <ul class="menu">
+            
+            
+            
+            <li class="menu-item">
+                
+                <a href="/" class="menu-item-link">Home</a>
+                
+            </li>
+            
+            
+            
+            <li class="menu-item">
+                
+                <a href="/archives" class="menu-item-link">Archives</a>
+                
+            </li>
+            
+            
+            
+            <li class="menu-item">
+                
+                <a href="/about" class="menu-item-link">About</a>
+                
+            </li>
+            
+            
+            
+            <li class="menu-item">
+                
+                <a href="/atom.xml" class="menu-item-link">Rss</a>
+                
+            </li>
+            
+        </ul>
+    </nav>
+</header>
+    <main class="main">
+        <article class="post">
+    <div class="post-title">
+        <h1 class="title">java主类，类与源文件名的简要分析</h2>
+    </div>
+    <div class="post-content">
+        <p>有时候，我们会遇到关于主类，类和public修饰的类的辨析。刚开始，很难辨别。那么，接下来，简要地分析一下其区别：</p>
+<p><strong>1.如果文件中只有一个类，文件名必须与类名一致，有没有public修饰都可以；</strong></p>
+<p><strong>2.一个Java文件中最多只能有一个public类；</strong></p>
+<p><strong>3.如果文件中不止一个类，而且有public类，文件名必须与public类名一致；</strong></p>
+<p><strong>4.如果文件中不止一个类，而且没有public类，文件名可与任一类名一致。</strong>(相同的是主类)</p>
+<p>首先：</p>
+<p> <strong>类是Java程序的最小程序单位</strong> 。</p>
+<ul>
+<li>Java程序是一种纯粹的<strong>面向对象</strong>的程序设计语言，因此Java程序必须以<strong>类的形式</strong>存在，类是Java程序的<strong>最小程序单位</strong>。</li>
+<li>Java程序不允许可执行性语句、方法等成分独立存在，<strong>所有的程序部分都必须放在类定义里</strong>。<del>（不能像c，c++一样瞎写了）</del></li>
+</ul>
+<h2 id="主类："><a href="#主类：" class="headerlink" title="主类："></a>主类：</h2><h5 id="什么是主类？"><a href="#什么是主类？" class="headerlink" title="什么是主类？"></a>什么是主类？</h5><p>一说，类名与文件名相同，且含有main的类。</p>
+<p>一说： 是带有（总程序的）<strong>执行入口</strong>main方法的类。 （虚拟机第一个进入的类）</p>
+<p>那么：我们不妨思考一下：</p>
+<p>Q: 一个类是不是可以有多个main方法呢？</p>
+<p>A: 由于java语言的多态性，我们完全可以在一个类中含有多个main方法，但记住，main是入口，而这些main方法中只有一个才会是入口。</p>
+<blockquote>
+<p>main 方法写法固定：必须被 public static void 修饰，且其形参必须是字符串数组类型（String[] args）。<br>对于一个大型 Java 程序，往往只需要一个入口（即只一个类包含 main 方法），其他类用于被 main 方法直接或间接调用。</p>
+</blockquote>
+<h3 id="Java-源文件的命名规则"><a href="#Java-源文件的命名规则" class="headerlink" title="Java 源文件的命名规则"></a><strong>Java 源文件的命名规则</strong></h3><blockquote>
+<ul>
+<li>通常情况下，Java 程序源文件的主文件名可以任意。</li>
+<li>但如果其中定义了一个 public 类，则该源<strong>文件的主文件名必须与该 public 类的类名相同</strong>。</li>
+<li>一个Java 源文件可包含多个类定义，但最多<strong>只能包含一个public类定义</strong>。</li>
+</ul>
+</blockquote>
+<p><strong>为什么只能包含一个public类？</strong></p>
+<blockquote>
+<p> 因为 public 类可以被项目中其他包下的类访问到。只需要在使用前 import  其对应的 class 文件。将类名与文件名一一对应就可以<strong>方便虚拟机在相应的路径（包名）中找到相应的类的信息</strong>。如果不这么做的话，就很难去找，而且开销也会很大。 </p>
+</blockquote>
+<p><del>1、Java编译器在编译的时候，如果整个Java文件（编译单元）都没有public类（对外的公开接口类），类加载器就无需直接去加载该编译单元产生的所有的字节码文件（.class文件），那么也就是无需去寻找编译后字节码文件存放位置。而类名和文件名一致是为了方便虚拟机在相应的路径中找到相应的类所对应的字节码文件。所以在没有public类的Java文件中，文件名和类名都没什么联系。</del></p>
+<p>2、如果编译单元中包含了public类，那么该类对应的字节码文件需要被类加载器加载的，这时候就需要让类加载器知道该字节码文件的位置，所以就要确保该类与Java文件名称一致。同时，如果有两个public类在同一个文件中，而一个文件只能有一个名称，<strong>故两个public类的名称就不能同时和文件名一样，这就造成至少其中有一个public类在编译的时候编译不通过。</strong></p>
+<p>关于Java源文件命名，通常有以下建议：</p>
+<pre><code>一个 Java 源文件只定义一个类，不同的类使用不同的源文件定义。
+让 Java 源文件的主文件名与该源文件中定义的 pulblic 类同名。
+</code></pre><h2 id><a href="#" class="headerlink" title=" "></a> </h2>
+    </div>
+    <div class="post-meta">
+        
+    <span class="post-time">二〇二〇年二月十九日</span>
+    </div>
+</article>
+
+<div class="prev_next">
+    <nav id="prev_next">
+
+<div class="prev">
+    
+    <p>Newer</p>
+    <a href="/2020/02/25/Java无法仅读取一个字符/"><div class="article-nav-title">Java无法仅读取一个字符</div></a>
+    
+</div>
+<div class="next">
+    
+    <p>Older</p>
+    <a href="/2020/02/17/java字符串string/"><div class="article-nav-title">java字符串string</div></a>
+    
+</div>
+
+</nav>
+</div>
+
+<div class="post-comment">
+    
+
+
+
+</div>
+
+    </main><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+</body>
+
+</html>

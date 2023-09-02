@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+    
+    <title>java日期处理 - Jefine</title>
+    <meta charset="utf-8">
+    
+    <meta name="title" content="java日期处理 - Jefine">
+    <meta name="description" content="">
+    <meta property="og:image" content="/">
+    <meta property="og:image:width" content="200" />
+    <meta property="og:image:height" content="200" />
+    
+    <link href="https://fonts.proxy.ustclug.org/css2?family=Noto+Serif+SC:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.proxy.ustclug.org/css2?family=Noto+Serif+SC:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Noto Serif CJK TC', 'Noto Serif SC', serif;
+        }
+    </style>
+    <link rel="shortcut icon" href="/">
+    
+    <link rel="stylesheet"
+        href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.17.1/build/styles/arduino-light.min.css">
+    <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.17.1/build/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    
+    
+    <link rel="stylesheet" href="/css/style.css">
+    <script src="/js/jquery.min.js"></script>
+<link rel="alternate" href="/atom.xml" title="Jefine" type="application/atom+xml"><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</head>
+
+<body>
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><header class="header">
+    <div class="blog-title">
+        <a href="/" class="logo">Jefine</a>
+    </div>
+    <nav class="navbar">
+        <ul class="menu">
+            
+            
+            
+            <li class="menu-item">
+                
+                <a href="/" class="menu-item-link">Home</a>
+                
+            </li>
+            
+            
+            
+            <li class="menu-item">
+                
+                <a href="/archives" class="menu-item-link">Archives</a>
+                
+            </li>
+            
+            
+            
+            <li class="menu-item">
+                
+                <a href="/about" class="menu-item-link">About</a>
+                
+            </li>
+            
+            
+            
+            <li class="menu-item">
+                
+                <a href="/atom.xml" class="menu-item-link">Rss</a>
+                
+            </li>
+            
+        </ul>
+    </nav>
+</header>
+    <main class="main">
+        <article class="post">
+    <div class="post-title">
+        <h1 class="title">java日期处理</h2>
+    </div>
+    <div class="post-content">
+        <p> Java处理日期、日历和时间的方式一直被人所诟病，将 java.util.Date设定为可变类型，以及SimpleDateFormat的非线程安全使其应用非常受限。</p>
+<p>新API基于ISO标准日历系统，java.time包下的所有类都是不可变类型而且线程安全。</p>
+<p>(因为更安全，不可变了，所以就需要每一个日期搞一个变量（实例？）</p>
+<p><a href="https://mp.weixin.qq.com/s/AGkp_0l_hvMye8QVOBlxwQ" target="_blank" rel="noopener">18 个 Java8 日期处理的实践，太有用了！</a></p>
+<p>Instant    时间戳<br>Duration    持续时间，时间差<br>LocalDate    只包含日期，比如：2018-02-05<br>LocalTime    只包含时间，比如：23:12:10<br>LocalDateTime    包含日期和时间，比如：2018-02-05 23:14:21<br>Period    时间段<br>ZoneOffset    时区偏移量，比如：+8:00<br>ZonedDateTime    带时区的时间<br>Clock    时钟，比如获取目前美国纽约的时间<br>java.time.format.DateTimeFormatter    时间格式化</p>
+<h2 id="示例1-Java-8中获取今天的日期"><a href="#示例1-Java-8中获取今天的日期" class="headerlink" title="示例1:Java 8中获取今天的日期"></a>示例1:Java 8中获取今天的日期</h2><p>Java 8 中的 LocalDate 用于表示当天日期。和java.util.Date不同，它只有日期，不包含时间。当你仅需要表示日期时就用这个类。</p>
+<pre><code class="hljs java"><span class="hljs-keyword">import</span> java.time.*;
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">dealWithTime</span>
+</span>&#123; 
+	<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span> <span class="hljs-params">(String[] args)</span> 
+	</span>&#123; 
+        LocalDate today = LocalDate.now();
+        System.out.println(<span class="hljs-string">"today is:"</span>+today);
+  
+    &#125;
+&#125;
+<span class="hljs-comment">//output:</span>
+<span class="hljs-comment">//today is:2020-02-29</span></code></pre>
+<p>而如果需要将年月日信息分开：那么我们可以利用上面的today继续操作；</p>
+<pre><code class="hljs java"><span class="hljs-keyword">import</span> java.time.*;
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">dealWithTime</span>
+</span>&#123; 
+	<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span> <span class="hljs-params">(String[] args)</span> 
+	</span>&#123; 
+        LocalDate today = LocalDate.now();
+        System.out.println(<span class="hljs-string">"today is:"</span>+today);
+        <span class="hljs-keyword">int</span> year = today.getYear();
+        <span class="hljs-keyword">int</span> month = today.getMonthValue();
+        <span class="hljs-keyword">int</span> day = today.getDayOfMonth();
+        System.out.println(<span class="hljs-string">""</span>+year+month+day);
+    &#125;
+&#125;</code></pre>
+<p>注意：其中还有getMonth()，返回的是一个枚举month里的值（是“FEBRUARY”这种）</p>
+<p>而getMonthValue（）则返回一个值（2）所以我们还能发现许多这样的用法，比如day_of_year()等</p>
+<h2 id="示例2：自定义日期："><a href="#示例2：自定义日期：" class="headerlink" title="示例2：自定义日期："></a>示例2：自定义日期：</h2><p>我们通过静态工厂方法now()非常容易地创建了当天的日期，我们还可以调用另一个有用的工厂方法<strong>LocalDate.of()</strong>创建任意日期， 该方法需要<strong>传入年、月、日做参数，返回对应的LocalDate实例。</strong>这个方法的好处是没再犯老API的设计错误（而且我们也可以使用localDate的方法了），比如年度起始于1900，月份是从0开 始等等（这些问题就不提了哎，文末可能会吐槽一下，并演示一下有多么讨厌）。</p>
+<pre><code class="hljs java"><span class="hljs-keyword">import</span> java.time.*;
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">dealWithTime</span>
+</span>&#123; 
+	<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span> <span class="hljs-params">(String[] args)</span> 
+	</span>&#123; 
+        LocalDate fakeDate = LocalDate.of(<span class="hljs-number">2020</span>,<span class="hljs-number">2</span>,<span class="hljs-number">28</span>);
+        System.out.println(<span class="hljs-string">"yesterday is:"</span>+fakeDate);
+        
+   &#125;
+&#125;
+<span class="hljs-comment">//output：</span>
+<span class="hljs-comment">//yesterday is:2020-02-28</span></code></pre>
+<h2 id="示例三：判断两个日期是否相同使用-equals"><a href="#示例三：判断两个日期是否相同使用-equals" class="headerlink" title="示例三：判断两个日期是否相同使用.equals()"></a>示例三：判断两个日期是否相同使用.equals()</h2><h2 id="示例四：检查像生日这种周期性事件：MonthDay："><a href="#示例四：检查像生日这种周期性事件：MonthDay：" class="headerlink" title="示例四：检查像生日这种周期性事件：MonthDay："></a>示例四：检查像生日这种周期性事件：MonthDay：</h2><pre><code class="hljs java"><span class="hljs-keyword">import</span> java.time.*;
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">dealWithTime</span>
+</span>&#123; 
+	<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span> <span class="hljs-params">(String[] args)</span> 
+	</span>&#123;   LocalDate date1 = LocalDate.now();
+        LocalDate date = LocalDate.of(<span class="hljs-number">2020</span>,<span class="hljs-number">2</span>,<span class="hljs-number">28</span>);
+        MonthDay birthday = MonthDay.of(date.getMonthValue(),date.getDayOfMonth());
+        MonthDay nowMonthDay = MonthDay.now();
+        <span class="hljs-keyword">if</span>(nowMonthDay.equals(birthday))
+        System.out.println(<span class="hljs-string">"yes"</span>);
+        <span class="hljs-keyword">else</span> System.out.println(<span class="hljs-string">"nonono"</span>);
+    &#125;
+&#125;
+<span class="hljs-comment">//output：</span>
+<span class="hljs-comment">//nonono</span></code></pre>
+<p>注意在这里getMonthValue（）和getMonth（）都是可以使用的。</p>
+<h1 id="说完日期，说说时间："><a href="#说完日期，说说时间：" class="headerlink" title="说完日期，说说时间："></a>说完日期，说说时间：</h1><h2 id="示例五：获取当前时间"><a href="#示例五：获取当前时间" class="headerlink" title="示例五：获取当前时间"></a>示例五：获取当前时间</h2><pre><code class="hljs java"><span class="hljs-keyword">import</span> java.time.*;
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">dealWithTime</span>
+</span>&#123; 
+	<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span> <span class="hljs-params">(String[] args)</span> 
+	</span>&#123;
+        LocalTime now = LocalTime.now();
+        System.out.println(now);
+    &#125;
+&#125;
+<span class="hljs-comment">//output：</span>
+<span class="hljs-number">19</span>:<span class="hljs-number">27</span>:<span class="hljs-number">01.708</span></code></pre>
+<p>这个时间的精度。。可以了</p>
+<h2 id="示例六：计算一段时间前-后的时间-plus-val-ChronoUnit-WEEKS"><a href="#示例六：计算一段时间前-后的时间-plus-val-ChronoUnit-WEEKS" class="headerlink" title="示例六：计算一段时间前/后的时间.plus(val,ChronoUnit.WEEKS)"></a>示例六：计算一段时间前/后的时间.plus(val,ChronoUnit.WEEKS)</h2><p>/.minus(val,ChronoUnit.WEEKS))</p>
+<pre><code class="hljs java"><span class="hljs-keyword">import</span> java.time.*;
+<span class="hljs-keyword">import</span> java.time.temporal.ChronoUnit;
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">dealWithTime</span>
+</span>&#123; 
+	<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span> <span class="hljs-params">(String[] args)</span> 
+	</span>&#123;
+        LocalDate now = LocalDate.now();
+        LocalDate after = now.plus(<span class="hljs-number">1</span>,ChronoUnit.WEEKS);
+
+        System.out.println(after);
+    &#125;
+&#125;</code></pre>
+<p>这里是日期，那么就要用localDate了</p>
+<h2 id="示例七-Java-8的Clock时钟类"><a href="#示例七-Java-8的Clock时钟类" class="headerlink" title="示例七:Java 8的Clock时钟类"></a>示例七:Java 8的Clock时钟类</h2><p>Java 8增加了一个Clock时钟类用于获取当时的时间戳，或当前时区下的日期时间信息。以前用到System.currentTimeInMillis()和TimeZone.getDefault()的地方都可用Clock替换</p>
+<pre><code class="hljs java"><span class="hljs-keyword">import</span> java.time.*;
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">dealWithTime</span>
+</span>&#123; 
+	<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span> <span class="hljs-params">(String[] args)</span> 
+	</span>&#123;
+        Clock clock = Clock.systemUTC();
+        System.out.println(<span class="hljs-string">"Clock : "</span> + clock.instant());
+        System.out.println(<span class="hljs-string">"Clock : "</span> + clock.millis());
+        <span class="hljs-comment">// Returns time based on system clock zone</span>
+        Clock defaultClock = Clock.systemDefaultZone();
+        System.out.println(<span class="hljs-string">"Clock : "</span> + defaultClock.millis());
+
+    &#125;
+&#125;
+<span class="hljs-comment">//output：</span>
+<span class="hljs-comment">//Clock : 2020-03-01T03:06:27.520Z</span>
+<span class="hljs-comment">//Clock : 1583031987647</span>
+<span class="hljs-comment">//Clock : 1583031987687</span></code></pre>
+<h2 id="示例八-如何用Java判断日期是早于还是晚于另一个日期"><a href="#示例八-如何用Java判断日期是早于还是晚于另一个日期" class="headerlink" title="示例八:如何用Java判断日期是早于还是晚于另一个日期"></a>示例八:如何用Java判断日期是早于还是晚于另一个日期</h2><p>另一个工作中常见的操作就是如何判断给定的一个日期是大于某天还是小于某天？在Java 8中，LocalDate类有两类方法isBefore()和isAfter()用于比较日期。调用isBefore()方法时，如果给定日期小于当前日期则返回true。当然也可判断是否日期相同。</p>
+<pre><code class="hljs java"><span class="hljs-keyword">import</span> java.time.*;
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">dealWithTime</span>
+</span>&#123; 
+	<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span> <span class="hljs-params">(String[] args)</span> 
+	</span>&#123;
+        LocalDate today = LocalDate.now();
+        LocalDate fakeDate = LocalDate.of(<span class="hljs-number">2019</span>, <span class="hljs-number">2</span>, <span class="hljs-number">1</span>);
+        <span class="hljs-keyword">if</span>(fakeDate.isBefore(today))
+        &#123;
+            System.out.print(<span class="hljs-string">"yes"</span>);
+        &#125;
+        <span class="hljs-keyword">else</span> System.out.print(<span class="hljs-string">"nono"</span>);
+
+    &#125;
+&#125;
+<span class="hljs-comment">//output：</span>
+<span class="hljs-comment">//yes</span></code></pre>
+<h2 id="示例九-Java-8中处理时区"><a href="#示例九-Java-8中处理时区" class="headerlink" title="示例九:Java 8中处理时区"></a>示例九:Java 8中处理时区</h2><p>Java 8不仅分离了日期和时间，也把时区分离出来了。现在有一系列单独的类如ZoneId来处理特定时区，ZoneDateTime类来表示某时区下的时间。这在Java 8以前都是 GregorianCalendar类来做的。下面这个例子展示了如何把本时区的时间转换成另一个时区的时间。</p>
+<p><strong>其他：同样也可以检查闰年，独立的年月计算两个日期之间天数（between）</strong></p>
+<h2 id="示例十：Java-8中如何使用预定义的格式化工具去解析或格式化日期"><a href="#示例十：Java-8中如何使用预定义的格式化工具去解析或格式化日期" class="headerlink" title="示例十：Java 8中如何使用预定义的格式化工具去解析或格式化日期"></a>示例十：Java 8中如何使用预定义的格式化工具去解析或格式化日期</h2><pre><code class="hljs java"><span class="hljs-keyword">import</span> java.time.*;
+<span class="hljs-keyword">import</span> java.time.format.DateTimeFormatter;
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">dealWithTime</span>
+</span>&#123; 
+	<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span> <span class="hljs-params">(String[] args)</span> 
+	</span>&#123;
+        String dayAfterTommorrow = <span class="hljs-string">"20200302"</span>;
+        LocalDate formatted = LocalDate.parse(dayAfterTommorrow,DateTimeFormatter.BASIC_ISO_DATE);
+        System.out.println(dayAfterTommorrow+<span class="hljs-string">"  格式化后的日期为:  "</span>+formatted);
+    &#125;
+&#125;
+<span class="hljs-comment">//output：</span>
+<span class="hljs-comment">//20200302  格式化后的日期为:  2020-03-02</span></code></pre>
+<h2 id="示例十一：字符串互转日期类型"><a href="#示例十一：字符串互转日期类型" class="headerlink" title="示例十一：字符串互转日期类型"></a>示例十一：字符串互转日期类型</h2><pre><code class="hljs java"><span class="hljs-keyword">import</span> java.time.*;
+<span class="hljs-keyword">import</span> java.time.format.DateTimeFormatter;
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">dealWithTime</span>
+</span>&#123; 
+	<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span> <span class="hljs-params">(String[] args)</span> 
+	</span>&#123;
+        LocalDateTime date = LocalDateTime.now();
+
+        DateTimeFormatter format1 = DateTimeFormatter.ofPattern(<span class="hljs-string">"yyyy/MM/dd hh:mm:ss"</span>);
+    <span class="hljs-comment">//日期转字符串</span>
+        String str = date.format(format1);
+
+        System.out.println(<span class="hljs-string">"日期转换为字符串:"</span>+str);
+
+        DateTimeFormatter format2 = DateTimeFormatter.ofPattern(<span class="hljs-string">"yyyy/MM/dd HH:mm:ss"</span>);
+    <span class="hljs-comment">//字符串转日期</span>
+        LocalDate date2 = LocalDate.parse(str,format2);
+        System.out.println(<span class="hljs-string">"日期类型:"</span>+date2);
+
+
+    &#125;
+&#125;
+<span class="hljs-comment">//output：</span>
+<span class="hljs-comment">//日期转换为字符串:2020/03/01 11:44:03</span>
+<span class="hljs-comment">//日期类型:2020-03-01</span></code></pre>
+<p>如果我们将str的内容更换一下，只要format的内容一致：</p>
+<pre><code class="hljs java"><span class="hljs-keyword">import</span> java.time.*;
+<span class="hljs-keyword">import</span> java.time.format.DateTimeFormatter;
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">dealWithTime</span>
+</span>&#123; 
+	<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span> <span class="hljs-params">(String[] args)</span> 
+	</span>&#123;
+        String str = <span class="hljs-string">"20190112120101"</span>;
+
+        DateTimeFormatter format2 = DateTimeFormatter.ofPattern(<span class="hljs-string">"yyyyMMddHHmmss"</span>);
+    <span class="hljs-comment">//字符串转日期</span>
+        LocalDate date2 = LocalDate.parse(str,format2);
+        System.out.println(<span class="hljs-string">"日期类型:"</span>+date2);
+
+
+    &#125;
+&#125;
+<span class="hljs-comment">//output：</span>
+<span class="hljs-comment">//日期类型:2019-01-12</span></code></pre>
+<p>在这其中我们还是有很多可以去挖掘的。。。</p>
+<p>对了，最后吐槽一下</p>
+<pre><code class="hljs java"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">dealWithTime</span>
+</span>&#123; 
+	<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span> <span class="hljs-params">(String[] args)</span> 
+	</span>&#123;
+        
+        <span class="hljs-keyword">long</span> t = System.currentTimeMillis();
+
+        System.out.println(t);
+
+
+    &#125;
+&#125;</code></pre>
+<p>这玩意返回的必须是long类型但是把现在也用不到。返回的时间是距离1970年一月一日零点零分的毫秒数。。 </p>
+
+    </div>
+    <div class="post-meta">
+        
+    <span class="post-time">二〇二〇年三月一日</span>
+    </div>
+</article>
+
+<div class="prev_next">
+    <nav id="prev_next">
+
+<div class="prev">
+    
+    <p>Newer</p>
+    <a href="/2020/03/11/java中对象的创建，初始化与引用/"><div class="article-nav-title">java中对象的创建，初始化与引用</div></a>
+    
+</div>
+<div class="next">
+    
+    <p>Older</p>
+    <a href="/2020/02/29/P1023税收与补贴问题/"><div class="article-nav-title">P1023税收与补贴问题</div></a>
+    
+</div>
+
+</nav>
+</div>
+
+<div class="post-comment">
+    
+
+
+
+</div>
+
+    </main><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+</body>
+
+</html>

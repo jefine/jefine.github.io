@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+    
+    <title>P1023税收与补贴问题 - Jefine</title>
+    <meta charset="utf-8">
+    
+    <meta name="title" content="P1023税收与补贴问题 - Jefine">
+    <meta name="description" content="">
+    <meta property="og:image" content="/">
+    <meta property="og:image:width" content="200" />
+    <meta property="og:image:height" content="200" />
+    
+    <link href="https://fonts.proxy.ustclug.org/css2?family=Noto+Serif+SC:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.proxy.ustclug.org/css2?family=Noto+Serif+SC:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Noto Serif CJK TC', 'Noto Serif SC', serif;
+        }
+    </style>
+    <link rel="shortcut icon" href="/">
+    
+    <link rel="stylesheet"
+        href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.17.1/build/styles/arduino-light.min.css">
+    <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.17.1/build/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    
+    
+    <link rel="stylesheet" href="/css/style.css">
+    <script src="/js/jquery.min.js"></script>
+<link rel="alternate" href="/atom.xml" title="Jefine" type="application/atom+xml"><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</head>
+
+<body>
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><header class="header">
+    <div class="blog-title">
+        <a href="/" class="logo">Jefine</a>
+    </div>
+    <nav class="navbar">
+        <ul class="menu">
+            
+            
+            
+            <li class="menu-item">
+                
+                <a href="/" class="menu-item-link">Home</a>
+                
+            </li>
+            
+            
+            
+            <li class="menu-item">
+                
+                <a href="/archives" class="menu-item-link">Archives</a>
+                
+            </li>
+            
+            
+            
+            <li class="menu-item">
+                
+                <a href="/about" class="menu-item-link">About</a>
+                
+            </li>
+            
+            
+            
+            <li class="menu-item">
+                
+                <a href="/atom.xml" class="menu-item-link">Rss</a>
+                
+            </li>
+            
+        </ul>
+    </nav>
+</header>
+    <main class="main">
+        <article class="post">
+    <div class="post-title">
+        <h1 class="title">P1023税收与补贴问题</h2>
+    </div>
+    <div class="post-content">
+        <h2 id="题目背景"><a href="#题目背景" class="headerlink" title="题目背景"></a>题目背景</h2><p>每样商品的价格越低，其销量就会相应增大。现已知某种商品的成本及其在若干价位上的销量（产品不会低于成本销售），并假设相邻价位间销量的变化是线性的且在价格高于给定的最高价位后，销量以某固定数值递减。（我们假设价格及销售量都是整数）</p>
+<p>对于某些特殊商品，不可能完全由市场去调节其价格。这时候就需要政府以税收或补贴的方式来控制。（所谓税收或补贴就是对于每个产品收取或给予生产厂家固定金额的货币）</p>
+<h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><p>你是某家咨询公司的项目经理，现在你已经知道政府对某种商品的预期价格，以及在各种价位上的销售情况。要求你确定政府对此商品是应收税还是补贴的最少金额（也为整数），才能使商家在这样一种政府预期的价格上，获取相对其他价位上的最大总利润。</p>
+<p>总利润=单位商品利润   × × 销量</p>
+<p>单位商品利润=单位商品价格 - 单位商品成本 （- 税金  or  + 补贴）</p>
+<h2 id="输入格式"><a href="#输入格式" class="headerlink" title="输入格式"></a>输入格式</h2><p>输入的第一行为政府对某种商品的预期价，第二行有两个整数，第一个整数为商品成本，第二个整数为以成本价销售时的销售量，以下若干行每行都有两个整数，第一个为某价位时的单价，第二个为此时的销量，以一行−1-1−1，−1-1−1表示所有已知价位及对应的销量输入完毕，输入的最后一行为一个单独的整数表示在已知的最高单价外每升高一块钱将减少的销量。</p>
+<h2 id="输出格式"><a href="#输出格式" class="headerlink" title="输出格式"></a>输出格式</h2><p>输出有两种情况：若在政府预期价上能得到最大总利润，则输出一个单独的整数，数的正负表示是补贴还是收税，数的大小表示补贴或收税的金额最小值。若有多解，取绝对值最小的输出。</p>
+<p>如在政府预期价上不能得到最大总利润，则输出“NO SOLUTION”。</p>
+<h2 id="输入输出样例"><a href="#输入输出样例" class="headerlink" title="输入输出样例"></a>输入输出样例</h2><p><strong>输入 #1</strong> </p>
+<pre><code class="hljs angelscript"><span class="hljs-number">31</span>
+<span class="hljs-number">28</span> <span class="hljs-number">130</span>
+<span class="hljs-number">30</span> <span class="hljs-number">120</span>
+<span class="hljs-number">31</span> <span class="hljs-number">110</span>
+<span class="hljs-number">-1</span>  <span class="hljs-number">-1</span>
+<span class="hljs-number">15</span></code></pre>
+<p><strong>输出 #1</strong> </p>
+<pre><code class="hljs angelscript"><span class="hljs-number">4</span></code></pre>
+<h2 id="说明-提示"><a href="#说明-提示" class="headerlink" title="说明/提示"></a>说明/提示</h2><p>所有数字均小于100000</p>
+<h1 id="解题思路："><a href="#解题思路：" class="headerlink" title="解题思路："></a>解题思路：</h1><h3 id="tips：说实话，这个题目看了很久。。。"><a href="#tips：说实话，这个题目看了很久。。。" class="headerlink" title="tips：说实话，这个题目看了很久。。。"></a>tips：说实话，这个题目看了很久。。。</h3><p>最后，发现所求的是什么了。是要求政府给定一个预期的价格，然后你去尝试不同的补贴或者税收，得到他们的利润，并<strong>看看在每种税收或补贴下总利润最高的价格是不是政府预期价</strong> 。（可以好好思考一下这句，那么我们就计算出不同补贴或税收下，利润最大的价格，再比较）</p>
+<p>（最后，好像没有不符合条件的，所以不用管。。。）</p>
+<p>那么：</p>
+<ol>
+<li><p>我们可以先将购买者的价格和所对应的销量全部存起来，但这又有两个问题：</p>
+<p>1）在题目给出的价格和销量之间，销量是随价格线性变化的，我们可通过计算得出期间的对应价格与销量，并都储存起来。（具体实施方法见代码）即 价格-销量表。 </p>
+<p>2）再输入的最后给定了之后的销量减少值，我们就可以从中得到其后，一直到销量小于0的对应关系，并储存起来。</p>
+</li>
+<li><p>最后再根据不同的补贴（税收）（用一个循环从1开始跑到10000）依次计算其最大利润，并比较在该最大利润的价格是否与政府的价格相同。</p>
+</li>
+</ol>
+<h2 id="代码："><a href="#代码：" class="headerlink" title="代码："></a>代码：</h2><pre><code class="hljs c++"><span class="hljs-comment">//代码来源：https://www.luogu.com.cn/user/174034</span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span><span class="hljs-meta-string">&lt;bits/stdc++.h&gt;</span></span>
+<span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> <span class="hljs-built_in">std</span>;
+<span class="hljs-keyword">int</span> a[<span class="hljs-number">100010</span>][<span class="hljs-number">3</span>];<span class="hljs-comment">//用于存放价格和销量的数组</span>
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span>
+</span>&#123;
+    <span class="hljs-keyword">int</span> i=<span class="hljs-number">1</span>,j=<span class="hljs-number">1</span>,k,expect,down,<span class="hljs-built_in">max</span>,temp,cha,xl,num,s,price,p;
+    <span class="hljs-built_in">cin</span>&gt;&gt;expect;<span class="hljs-comment">//读入预期价</span>
+    <span class="hljs-keyword">while</span>(<span class="hljs-built_in">cin</span>&gt;&gt;a[i][<span class="hljs-number">1</span>]&gt;&gt;a[i][<span class="hljs-number">2</span>]&amp;&amp;a[i][<span class="hljs-number">1</span>]!=<span class="hljs-number">-1</span>&amp;&amp;a[i] [<span class="hljs-number">2</span>]!=<span class="hljs-number">-1</span>)<span class="hljs-comment">//如果输入的两个数不是-1，-1</span>
+    &#123;
+        i++;<span class="hljs-comment">//循环变量i++</span>
+        <span class="hljs-keyword">if</span>(i&gt;<span class="hljs-number">2</span>&amp;&amp;a[i<span class="hljs-number">-1</span>][<span class="hljs-number">1</span>]-a[i<span class="hljs-number">-2</span>][<span class="hljs-number">1</span>]&gt;<span class="hljs-number">1</span>)<span class="hljs-comment">//如果两个价格之间差大于一</span>
+        &#123;
+            i--;<span class="hljs-comment">//回到上一个读入的销量</span>
+            cha=(a[i<span class="hljs-number">-1</span>][<span class="hljs-number">2</span>]-a[i][<span class="hljs-number">2</span>])/(a[i][<span class="hljs-number">1</span>]-a[i<span class="hljs-number">-1</span>][<span class="hljs-number">1</span>]);<span class="hljs-comment">//求出每次销量减少多少：销量差/价格差</span>
+            temp=a[i][<span class="hljs-number">1</span>];<span class="hljs-comment">//记录下价格</span>
+            <span class="hljs-keyword">for</span>(j=a[i<span class="hljs-number">-1</span>][<span class="hljs-number">1</span>]+<span class="hljs-number">1</span>;j&lt;=temp;j++)<span class="hljs-comment">//按价格递增顺序依次写入</span>
+            &#123;
+                a[i][<span class="hljs-number">1</span>]=j;<span class="hljs-comment">//写入价格</span>
+                a[i][<span class="hljs-number">2</span>]=a[i<span class="hljs-number">-1</span>][<span class="hljs-number">2</span>]-cha;<span class="hljs-comment">//按销量差写入销量</span>
+                i++;
+            &#125;
+        &#125;
+    &#125;
+    <span class="hljs-built_in">cin</span>&gt;&gt;down;<span class="hljs-comment">//输入超过最大价格之后每次销量降低多少</span>
+    i--;<span class="hljs-comment">//因为上面的while循环最后有i++所以用i--抵消……</span>
+    xl=a[i][<span class="hljs-number">2</span>];<span class="hljs-comment">//记录目前的销量</span>
+    <span class="hljs-keyword">while</span>(xl&gt;<span class="hljs-number">0</span>)
+    &#123;
+        <span class="hljs-keyword">if</span>(xl-down&lt;<span class="hljs-number">0</span>)<span class="hljs-keyword">break</span>;<span class="hljs-comment">//如销量小于零则退出</span>
+        <span class="hljs-keyword">else</span><span class="hljs-comment">//否则</span>
+        &#123;
+            xl-=down;<span class="hljs-comment">//销量每次减掉down</span>
+            i++;<span class="hljs-comment">//循环变量++</span>
+            a[i][<span class="hljs-number">1</span>]=a[i<span class="hljs-number">-1</span>][<span class="hljs-number">1</span>]+<span class="hljs-number">1</span>;<span class="hljs-comment">//每次价格+1</span>
+            a[i][<span class="hljs-number">2</span>]=xl;<span class="hljs-comment">//销量就是xl</span>
+        &#125;
+    &#125;
+    <span class="hljs-keyword">for</span>(j=<span class="hljs-number">1</span>;j&lt;=<span class="hljs-number">10000</span>;j++)<span class="hljs-comment">//该遍历了，因为收税相当于补贴*-1所以记录一下符号即可</span>
+    &#123;
+        <span class="hljs-built_in">max</span>=<span class="hljs-number">-99999</span>;<span class="hljs-comment">//用于存储最大的总利润</span>
+        <span class="hljs-keyword">for</span>(k=<span class="hljs-number">1</span>;k&lt;=i;k++)<span class="hljs-comment">//每次扫一遍每一种价格</span>
+        &#123;
+            num=(a[k][<span class="hljs-number">1</span>]-a[<span class="hljs-number">1</span>][<span class="hljs-number">1</span>]+j)*a[k][<span class="hljs-number">2</span>];<span class="hljs-comment">//套公式算出总利润</span>
+            <span class="hljs-keyword">if</span>(num&gt;=<span class="hljs-built_in">max</span>)<span class="hljs-comment">//如果总利润比目前最大的大</span>
+            &#123;
+                <span class="hljs-built_in">max</span>=num;<span class="hljs-comment">//更新max</span>
+                price=a[k][<span class="hljs-number">1</span>];<span class="hljs-comment">//记录下价格</span>
+                p=<span class="hljs-number">1</span>;<span class="hljs-comment">//记录下符号</span>
+            &#125;
+        &#125;
+        <span class="hljs-keyword">if</span>(price==expect)&#123;<span class="hljs-built_in">cout</span>&lt;&lt;j*p;<span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;&#125;<span class="hljs-comment">//如果价格就是政府预期价则打印出来，因为本身就是从小到大遍历所以不用求绝对值最小的</span>
+        <span class="hljs-built_in">max</span>=<span class="hljs-number">-99999</span>;<span class="hljs-comment">//后面是收税，原理同上</span>
+        <span class="hljs-keyword">for</span>(k=<span class="hljs-number">1</span>;k&lt;=i;k++)
+        &#123;
+            num=(a[k][<span class="hljs-number">1</span>]-a[<span class="hljs-number">1</span>][<span class="hljs-number">1</span>]-j)*a[k][<span class="hljs-number">2</span>];
+            <span class="hljs-keyword">if</span>(num&gt;=<span class="hljs-built_in">max</span>)
+            &#123;
+               <span class="hljs-built_in">max</span>=num;
+                price=a[k][<span class="hljs-number">1</span>];  
+                p=<span class="hljs-number">-1</span>;
+            &#125;
+        &#125;
+        <span class="hljs-keyword">if</span>(price==expect)&#123;<span class="hljs-built_in">cout</span>&lt;&lt;j*p;<span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;&#125;
+    &#125;
+    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;
+&#125;</code></pre>
+
+    </div>
+    <div class="post-meta">
+        
+    <span class="post-time">二〇二〇年二月廿九日</span>
+    </div>
+</article>
+
+<div class="prev_next">
+    <nav id="prev_next">
+
+<div class="prev">
+    
+    <p>Newer</p>
+    <a href="/2020/03/01/java日期处理/"><div class="article-nav-title">java日期处理</div></a>
+    
+</div>
+<div class="next">
+    
+    <p>Older</p>
+    <a href="/2020/02/28/概述STL/"><div class="article-nav-title">概述STL</div></a>
+    
+</div>
+
+</nav>
+</div>
+
+<div class="post-comment">
+    
+
+
+
+</div>
+
+    </main><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+</body>
+
+</html>

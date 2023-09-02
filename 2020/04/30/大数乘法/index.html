@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+    
+    <title>大数乘法 - Jefine</title>
+    <meta charset="utf-8">
+    
+    <meta name="title" content="大数乘法 - Jefine">
+    <meta name="description" content="">
+    <meta property="og:image" content="/">
+    <meta property="og:image:width" content="200" />
+    <meta property="og:image:height" content="200" />
+    
+    <link href="https://fonts.proxy.ustclug.org/css2?family=Noto+Serif+SC:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.proxy.ustclug.org/css2?family=Noto+Serif+SC:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Noto Serif CJK TC', 'Noto Serif SC', serif;
+        }
+    </style>
+    <link rel="shortcut icon" href="/">
+    
+    <link rel="stylesheet"
+        href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.17.1/build/styles/arduino-light.min.css">
+    <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.17.1/build/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    
+    
+    <link rel="stylesheet" href="/css/style.css">
+    <script src="/js/jquery.min.js"></script>
+<link rel="alternate" href="/atom.xml" title="Jefine" type="application/atom+xml"><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</head>
+
+<body>
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><header class="header">
+    <div class="blog-title">
+        <a href="/" class="logo">Jefine</a>
+    </div>
+    <nav class="navbar">
+        <ul class="menu">
+            
+            
+            
+            <li class="menu-item">
+                
+                <a href="/" class="menu-item-link">Home</a>
+                
+            </li>
+            
+            
+            
+            <li class="menu-item">
+                
+                <a href="/archives" class="menu-item-link">Archives</a>
+                
+            </li>
+            
+            
+            
+            <li class="menu-item">
+                
+                <a href="/about" class="menu-item-link">About</a>
+                
+            </li>
+            
+            
+            
+            <li class="menu-item">
+                
+                <a href="/atom.xml" class="menu-item-link">Rss</a>
+                
+            </li>
+            
+        </ul>
+    </nav>
+</header>
+    <main class="main">
+        <article class="post">
+    <div class="post-title">
+        <h1 class="title">大数乘法</h2>
+    </div>
+    <div class="post-content">
+        <p><em>使用java语言的int数组与StringBuffer来实现</em>。</p>
+<p>日常中，我们使用java来计算两数乘法时，我们会在遇到一些比较大的数字计算时，便无可奈何(int不够大)，这时一般采用<strong>BigInteger</strong>的方法进行计算，但是该方法也有一定的限制，或者说，我们是可以去尝试去使用String来实现和表示大数乘法的效果。</p>
+  <a id="more"></a>
+<h2 id="编程思路："><a href="#编程思路：" class="headerlink" title="编程思路："></a>编程思路：</h2><p>首先我们要确定使用字符串后我们如何去实现我们的乘法计算，不妨我们回归竖式计算，进行模拟然后得出结果。</p>
+<p>例如：37*46的计算过程，我们也可以这样计算：如下图。</p>
+<ol>
+<li><p><strong>先不考虑进位的问题</strong>，将两个<strong>数字</strong>相乘的结果当作一个个位数（不去进行进位，最后再依次进位，方便计算机操作，当然，方法多样，并不局限于此）</p>
+<p><img src="/2020/04/30/%E5%A4%A7%E6%95%B0%E4%B9%98%E6%B3%95/multiplyExample.png" alt></p>
+</li>
+<li><p>我们也可以发现上述规律a位数*b位数≤（a+b）位数</p>
+<p>所以我们如果需要得到最后的位数的话，可以通过这个规律进行计算。</p>
+</li>
+</ol>
+<h2 id="代码："><a href="#代码：" class="headerlink" title="代码："></a>代码：</h2><p>首先，我们采用由俭入繁的理念：从简单的开始，再到复杂：</p>
+<ol>
+<li><p>我们考虑的是两个正整数的大数乘法：</p>
+<pre><code class="hljs java"><span class="hljs-comment">//大数乘法</span>
+<span class="hljs-keyword">import</span> java.util.*;
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Main</span> </span>&#123;
+		<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> </span>&#123;
+		Scanner sc = <span class="hljs-keyword">new</span> Scanner(System.in);
+		String a = sc.nextLine();
+		String b = sc.nextLine();
+		<span class="hljs-comment">//注意：这里直接将数字计算后的结果相加起来了，直接得到最后一行</span>
+		<span class="hljs-keyword">int</span>[] s = <span class="hljs-keyword">new</span> <span class="hljs-keyword">int</span>[b.length()+a.length()];
+		System.out.print(a+<span class="hljs-string">" * "</span>+b+<span class="hljs-string">" = "</span>);
+		<span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = b.length()-<span class="hljs-number">1</span>; i &gt;= <span class="hljs-number">0</span>; i--) &#123;
+			<span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> k = a.length()-<span class="hljs-number">1</span>; k &gt;= <span class="hljs-number">0</span>; k--) &#123;
+				<span class="hljs-keyword">int</span> t = (b.charAt(i)-<span class="hljs-string">'0'</span>)*(a.charAt(k)-<span class="hljs-string">'0'</span>);
+				s[s.length-<span class="hljs-number">1</span>-(a.length()-<span class="hljs-number">1</span>-k+(b.length()-<span class="hljs-number">1</span>-i))] += t;
+			&#125;
+		&#125;
+		<span class="hljs-comment">//进位计算</span>
+		<span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i=s.length-<span class="hljs-number">1</span>;i&gt;<span class="hljs-number">0</span>;i--)
+		&#123;
+			<span class="hljs-keyword">if</span>(s[i]&gt;=<span class="hljs-number">10</span>)&#123;
+				s[i-<span class="hljs-number">1</span>] +=s[i]/<span class="hljs-number">10</span>;
+				s[i]=s[i]%<span class="hljs-number">10</span>;
+			&#125;
+		&#125;
+		<span class="hljs-comment">//清空前置零（int转向StringBuffer的时候可能会多0)，并使用字符串表示出答案</span>
+		StringBuffer ans = <span class="hljs-keyword">new</span> StringBuffer();
+		<span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i : s) &#123;
+			ans.append(i);
+		&#125;
+		<span class="hljs-keyword">while</span>(ans.charAt(<span class="hljs-number">0</span>)==<span class="hljs-string">'0'</span>)&#123;
+			ans.deleteCharAt(<span class="hljs-number">0</span>);
+		&#125;
+		System.out.println(ans);
+		sc.close();		
+	&#125;
+ 
+&#125;</code></pre>
+</li>
+<li><p>好的计算成功，那么如果有负数存在呢？</p>
+<p>我们只需要加上如下的判断符号的代码即可</p>
+<pre><code class="hljs java"><span class="hljs-comment">//判断符号</span>
+		Boolean flag = <span class="hljs-keyword">true</span>; 
+		<span class="hljs-keyword">if</span>(a.charAt(<span class="hljs-number">0</span>)==<span class="hljs-string">'-'</span>&amp;&amp;b.charAt(<span class="hljs-number">0</span>)==<span class="hljs-string">'-'</span>)
+			&#123;
+				a = a.substring(<span class="hljs-number">1</span>);
+				b = b.substring(<span class="hljs-number">1</span>);
+				flag = <span class="hljs-keyword">true</span>;
+			&#125;
+
+		<span class="hljs-keyword">if</span>(a.charAt(<span class="hljs-number">0</span>)!=<span class="hljs-string">'-'</span>&amp;&amp;b.charAt(<span class="hljs-number">0</span>)!=<span class="hljs-string">'-'</span>)&#123;
+				flag = <span class="hljs-keyword">true</span>;
+			&#125;
+			
+
+		<span class="hljs-keyword">if</span>(a.charAt(<span class="hljs-number">0</span>)==<span class="hljs-string">'-'</span>&amp;&amp;b.charAt(<span class="hljs-number">0</span>)!=<span class="hljs-string">'-'</span>)
+			&#123;
+				a = a.substring(<span class="hljs-number">1</span>);
+				flag =  <span class="hljs-keyword">false</span>;
+			&#125;
+		<span class="hljs-keyword">if</span>(a.charAt(<span class="hljs-number">0</span>)!=<span class="hljs-string">'-'</span>&amp;&amp;b.charAt(<span class="hljs-number">0</span>)==<span class="hljs-string">'-'</span>)
+		&#123;
+				b = b.substring(<span class="hljs-number">1</span>);
+				flag =  <span class="hljs-keyword">false</span>;
+		&#125;
+
+		<span class="hljs-keyword">if</span>(!flag)System.out.print(<span class="hljs-string">"-"</span>);</code></pre>
+</li>
+</ol>
+<p>完整的代码如下：</p>
+<pre><code class="hljs java"><span class="hljs-comment">//大数乘法(有符号）</span>
+<span class="hljs-keyword">import</span> java.util.*;
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Main</span> </span>&#123;
+		
+		<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> </span>&#123;
+		Scanner sc = <span class="hljs-keyword">new</span> Scanner(System.in);
+		String a = sc.nextLine();
+		String b = sc.nextLine();
+		System.out.print(a+<span class="hljs-string">" * "</span>+b+<span class="hljs-string">" = "</span>);
+		<span class="hljs-comment">//判断符号</span>
+		Boolean flag = <span class="hljs-keyword">true</span>; 
+		<span class="hljs-keyword">if</span>(a.charAt(<span class="hljs-number">0</span>)==<span class="hljs-string">'-'</span>&amp;&amp;b.charAt(<span class="hljs-number">0</span>)==<span class="hljs-string">'-'</span>)
+			&#123;
+				a = a.substring(<span class="hljs-number">1</span>);
+				b = b.substring(<span class="hljs-number">1</span>);
+				flag = <span class="hljs-keyword">true</span>;
+			&#125;
+
+		<span class="hljs-keyword">if</span>(a.charAt(<span class="hljs-number">0</span>)!=<span class="hljs-string">'-'</span>&amp;&amp;b.charAt(<span class="hljs-number">0</span>)!=<span class="hljs-string">'-'</span>)&#123;
+				flag = <span class="hljs-keyword">true</span>;
+			&#125;
+			
+
+		<span class="hljs-keyword">if</span>(a.charAt(<span class="hljs-number">0</span>)==<span class="hljs-string">'-'</span>&amp;&amp;b.charAt(<span class="hljs-number">0</span>)!=<span class="hljs-string">'-'</span>)
+			&#123;
+				a = a.substring(<span class="hljs-number">1</span>);
+				flag =  <span class="hljs-keyword">false</span>;
+			&#125;
+		<span class="hljs-keyword">if</span>(a.charAt(<span class="hljs-number">0</span>)!=<span class="hljs-string">'-'</span>&amp;&amp;b.charAt(<span class="hljs-number">0</span>)==<span class="hljs-string">'-'</span>)
+		&#123;
+				b = b.substring(<span class="hljs-number">1</span>);
+				flag =  <span class="hljs-keyword">false</span>;
+		&#125;
+
+		<span class="hljs-keyword">if</span>(!flag)System.out.print(<span class="hljs-string">"-"</span>);
+
+		<span class="hljs-comment">//注意：这里直接将数字计算后的结果相加起来了直接得到最后一行</span>
+		<span class="hljs-keyword">int</span>[] s = <span class="hljs-keyword">new</span> <span class="hljs-keyword">int</span>[b.length()+a.length()];
+		<span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = b.length()-<span class="hljs-number">1</span>; i &gt;= <span class="hljs-number">0</span>; i--) &#123;
+			<span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> k = a.length()-<span class="hljs-number">1</span>; k &gt;= <span class="hljs-number">0</span>; k--) &#123;
+				<span class="hljs-keyword">int</span> t = (b.charAt(i)-<span class="hljs-string">'0'</span>)*(a.charAt(k)-<span class="hljs-string">'0'</span>);
+				s[s.length-<span class="hljs-number">1</span>-(a.length()-<span class="hljs-number">1</span>-k+(b.length()-<span class="hljs-number">1</span>-i))] += t;
+			&#125;
+		&#125;
+		<span class="hljs-comment">//进位计算</span>
+		<span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i=s.length-<span class="hljs-number">1</span>;i&gt;<span class="hljs-number">0</span>;i--)
+		&#123;
+			<span class="hljs-keyword">if</span>(s[i]&gt;=<span class="hljs-number">10</span>)&#123;
+				s[i-<span class="hljs-number">1</span>] +=s[i]/<span class="hljs-number">10</span>;
+				s[i]=s[i]%<span class="hljs-number">10</span>;
+			&#125;
+		&#125;
+		<span class="hljs-comment">//清空前置零（int转向StringBuffer的时候可能会多0)，并使用字符串表示出答案</span>
+		StringBuffer ans = <span class="hljs-keyword">new</span> StringBuffer();
+		<span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i : s) &#123;
+			ans.append(i);
+		&#125;
+		<span class="hljs-keyword">while</span>(ans.charAt(<span class="hljs-number">0</span>)==<span class="hljs-string">'0'</span>)&#123;
+			ans.deleteCharAt(<span class="hljs-number">0</span>);
+		&#125;
+		System.out.println(ans);
+		sc.close();		
+	&#125;
+ 
+&#125;</code></pre>
+<h2 id="最后：bugs："><a href="#最后：bugs：" class="headerlink" title="最后：bugs："></a>最后：bugs：</h2><p>在初步形成之后，还是有一些bug的比如乘数中含有0，那么就会报错。</p>
+<p>所以要排除这一情况。（在判断符号前加入一个判断0即可）</p>
+<h2 id="代码：-1"><a href="#代码：-1" class="headerlink" title="代码："></a>代码：</h2><pre><code class="hljs java"><span class="hljs-comment">//大数乘法</span>
+<span class="hljs-keyword">import</span> java.util.*;
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Main</span> </span>&#123;
+		
+		<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> </span>&#123;
+		Scanner sc = <span class="hljs-keyword">new</span> Scanner(System.in);
+		String a = sc.nextLine();
+		String b = sc.nextLine();
+		System.out.print(a+<span class="hljs-string">" * "</span>+b+<span class="hljs-string">" = "</span>);
+		<span class="hljs-comment">//判断0</span>
+		<span class="hljs-keyword">if</span>(a.equals(<span class="hljs-string">"0"</span>)||b.equals(<span class="hljs-string">"0"</span>))System.out.println(<span class="hljs-string">"0"</span>);
+		<span class="hljs-keyword">else</span> &#123;
+		<span class="hljs-comment">//判断符号</span>
+		Boolean flag = <span class="hljs-keyword">true</span>; 
+		<span class="hljs-keyword">if</span>(a.charAt(<span class="hljs-number">0</span>)==<span class="hljs-string">'-'</span>&amp;&amp;b.charAt(<span class="hljs-number">0</span>)==<span class="hljs-string">'-'</span>)
+			&#123;
+				a = a.substring(<span class="hljs-number">1</span>);
+				b = b.substring(<span class="hljs-number">1</span>);
+				flag = <span class="hljs-keyword">true</span>;
+			&#125;
+
+		<span class="hljs-keyword">if</span>(a.charAt(<span class="hljs-number">0</span>)!=<span class="hljs-string">'-'</span>&amp;&amp;b.charAt(<span class="hljs-number">0</span>)!=<span class="hljs-string">'-'</span>)&#123;
+				flag = <span class="hljs-keyword">true</span>;
+			&#125;
+			
+
+		<span class="hljs-keyword">if</span>(a.charAt(<span class="hljs-number">0</span>)==<span class="hljs-string">'-'</span>&amp;&amp;b.charAt(<span class="hljs-number">0</span>)!=<span class="hljs-string">'-'</span>)
+			&#123;
+				a = a.substring(<span class="hljs-number">1</span>);
+				flag =  <span class="hljs-keyword">false</span>;
+			&#125;
+		<span class="hljs-keyword">if</span>(a.charAt(<span class="hljs-number">0</span>)!=<span class="hljs-string">'-'</span>&amp;&amp;b.charAt(<span class="hljs-number">0</span>)==<span class="hljs-string">'-'</span>)
+		&#123;
+				b = b.substring(<span class="hljs-number">1</span>);
+				flag =  <span class="hljs-keyword">false</span>;
+		&#125;
+
+		<span class="hljs-keyword">if</span>(!flag)System.out.print(<span class="hljs-string">"-"</span>);
+
+		<span class="hljs-comment">//注意：这里直接将数字计算后的结果相加起来了直接得到最后一行</span>
+		<span class="hljs-keyword">int</span>[] s = <span class="hljs-keyword">new</span> <span class="hljs-keyword">int</span>[b.length()+a.length()];
+		<span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = b.length()-<span class="hljs-number">1</span>; i &gt;= <span class="hljs-number">0</span>; i--) &#123;
+			<span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> k = a.length()-<span class="hljs-number">1</span>; k &gt;= <span class="hljs-number">0</span>; k--) &#123;
+				<span class="hljs-keyword">int</span> t = (b.charAt(i)-<span class="hljs-string">'0'</span>)*(a.charAt(k)-<span class="hljs-string">'0'</span>);
+				s[s.length-<span class="hljs-number">1</span>-(a.length()-<span class="hljs-number">1</span>-k+(b.length()-<span class="hljs-number">1</span>-i))] += t;
+			&#125;
+		&#125;
+		<span class="hljs-comment">//进位计算</span>
+		<span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i=s.length-<span class="hljs-number">1</span>;i&gt;<span class="hljs-number">0</span>;i--)
+		&#123;
+			<span class="hljs-keyword">if</span>(s[i]&gt;=<span class="hljs-number">10</span>)&#123;
+				s[i-<span class="hljs-number">1</span>] +=s[i]/<span class="hljs-number">10</span>;
+				s[i]=s[i]%<span class="hljs-number">10</span>;
+			&#125;
+		&#125;
+		<span class="hljs-comment">//清空前置零（int转向StringBuffer的时候可能会多0)，并使用字符串表示出答案</span>
+		StringBuffer ans = <span class="hljs-keyword">new</span> StringBuffer();
+		<span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i : s) &#123;
+			ans.append(i);
+		&#125;
+		<span class="hljs-keyword">while</span>(ans.charAt(<span class="hljs-number">0</span>)==<span class="hljs-string">'0'</span>)&#123;
+			ans.deleteCharAt(<span class="hljs-number">0</span>);
+		&#125;
+		System.out.println(ans);
+		sc.close();	
+		&#125;	
+	&#125;
+ 
+&#125;</code></pre>
+    </div>
+    <div class="post-meta">
+        
+    <span class="post-time">二〇二〇年四月三十日</span>
+    </div>
+</article>
+
+<div class="prev_next">
+    <nav id="prev_next">
+
+<div class="prev">
+    
+    <p>Newer</p>
+    <a href="/2020/05/17/阿里云-身份证识别调用/"><div class="article-nav-title">阿里云-身份证识别调用</div></a>
+    
+</div>
+<div class="next">
+    
+    <p>Older</p>
+    <a href="/2020/04/01/java中各种类的跳转例题分析/"><div class="article-nav-title">java中各种类的跳转例题分析</div></a>
+    
+</div>
+
+</nav>
+</div>
+
+<div class="post-comment">
+    
+
+
+
+</div>
+
+    </main><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+</body>
+
+</html>

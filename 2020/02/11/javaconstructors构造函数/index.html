@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+    
+    <title>javaconstructors构造函数 - Jefine</title>
+    <meta charset="utf-8">
+    
+    <meta name="title" content="javaconstructors构造函数 - Jefine">
+    <meta name="description" content="">
+    <meta property="og:image" content="/">
+    <meta property="og:image:width" content="200" />
+    <meta property="og:image:height" content="200" />
+    
+    <link href="https://fonts.proxy.ustclug.org/css2?family=Noto+Serif+SC:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.proxy.ustclug.org/css2?family=Noto+Serif+SC:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Noto Serif CJK TC', 'Noto Serif SC', serif;
+        }
+    </style>
+    <link rel="shortcut icon" href="/">
+    
+    <link rel="stylesheet"
+        href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.17.1/build/styles/arduino-light.min.css">
+    <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.17.1/build/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    
+    
+    <link rel="stylesheet" href="/css/style.css">
+    <script src="/js/jquery.min.js"></script>
+<link rel="alternate" href="/atom.xml" title="Jefine" type="application/atom+xml"><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</head>
+
+<body>
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><header class="header">
+    <div class="blog-title">
+        <a href="/" class="logo">Jefine</a>
+    </div>
+    <nav class="navbar">
+        <ul class="menu">
+            
+            
+            
+            <li class="menu-item">
+                
+                <a href="/" class="menu-item-link">Home</a>
+                
+            </li>
+            
+            
+            
+            <li class="menu-item">
+                
+                <a href="/archives" class="menu-item-link">Archives</a>
+                
+            </li>
+            
+            
+            
+            <li class="menu-item">
+                
+                <a href="/about" class="menu-item-link">About</a>
+                
+            </li>
+            
+            
+            
+            <li class="menu-item">
+                
+                <a href="/atom.xml" class="menu-item-link">Rss</a>
+                
+            </li>
+            
+        </ul>
+    </nav>
+</header>
+    <main class="main">
+        <article class="post">
+    <div class="post-title">
+        <h1 class="title">javaconstructors构造函数</h2>
+    </div>
+    <div class="post-content">
+        <blockquote>
+<p>Constructors are used to assign values to the class variables at the time of object creation, either explicitly done by the programmer or by Java itself (default constructor).</p>
+</blockquote>
+<p>在创建对象时，可以使用构造函数将值分配给类变量，这些值可以由程序员显式完成，也可以由Java本身（默认构造函数）完成。</p>
+<p><a href="https://www.geeksforgeeks.org/constructors-in-java/" target="_blank" rel="noopener">Constructors in Java - GeeksforGeeks</a></p>
+<p><strong>Rules for writing Constructor:</strong></p>
+<ul>
+<li><p>Constructor(s) of a class must has same name as the class name in which it resides.</p>
+<p>构造函数的名字和类名必须一致。</p>
+</li>
+<li><p>A constructor in Java can not be abstract, final, static and Synchronized.</p>
+<p>java中的构造函数不能是抽象的，最终的，静态的和同步的。</p>
+</li>
+<li><p>Access modifiers can be used in constructor declaration to control its access i.e which other class can call the constructor.</p>
+<p>可以在构造函数声明中使用访问修饰符来控制其访问，即哪个其他类可以调用构造函数。</p>
+</li>
+</ul>
+<h3 id="构造函数的类型："><a href="#构造函数的类型：" class="headerlink" title="构造函数的类型："></a>构造函数的类型：</h3><ol>
+<li><p><strong>无参构造函数</strong>：</p>
+<p>没有参数的构造函数被认为时默认构造函数。若我们没有在类中定义构造函数，那么编译器会自己定义一个无参数的构造函数。Default constructor provides the default values to the object like 0, null, etc. depending on the type.（默认的构造函数提供默认的值给对象0，null，等，更具他们的类型不同）</p>
+<pre><code class="hljs java"><span class="hljs-comment">// Java Program to illustrate calling a // no-argument constructor import [java.io](http://java.io).*;</span>
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Geek</span> </span>&#123; <span class="hljs-keyword">int</span> num; String name;
+
+ <span class="hljs-comment">// this would be invoked while an object </span>
+ <span class="hljs-comment">// of that class is created. </span>
+ Geek() 
+ &#123; 
+ 	System.out.println(<span class="hljs-string">"Constructor called"</span>); 
+ &#125; 
+
+
+&#125;
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">GFG</span> </span>&#123; <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span> <span class="hljs-params">(String[] args)</span> </span>&#123; <span class="hljs-comment">// this would invoke default constructor. Geek geek1 = new Geek();</span>
+
+ 	<span class="hljs-comment">// Default constructor provides the default </span>
+ 	<span class="hljs-comment">// values to the object like 0, null </span>
+ 	System.out.println(geek1.name); 
+ 	System.out.println(geek1.num); 
+ &#125; 
+
+
+&#125;</code></pre>
+</li>
+</ol>
+<p>0utput :</p>
+<pre><code class="hljs delphi"><span class="hljs-function"><span class="hljs-keyword">Constructor</span> <span class="hljs-title">called</span>
+<span class="hljs-title">null</span>
+0</span></code></pre>
+<p><strong>2. 有参构造函数：</strong></p>
+<p>If we want to initialize fields of the class with your own values, then use a parameterized constructor.如果我们想使用我们自己的值去给类中的变量赋值的话，那么使用参数化的构造函数（有参构造函数）。</p>
+<pre><code class="hljs java"><span class="hljs-comment">// Java Program to illustrate calling of </span>
+<span class="hljs-comment">// parameterized constructor. </span>
+<span class="hljs-keyword">import</span> java.io.*; 
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Geek</span> 
+</span>&#123; 
+	<span class="hljs-comment">// data members of the class. </span>
+	String name; 
+	<span class="hljs-keyword">int</span> id; 
+
+	<span class="hljs-comment">// constructor would initialize data members </span>
+	<span class="hljs-comment">// with the values of passed arguments while </span>
+	<span class="hljs-comment">// object of that class created. </span>
+	Geek(String name, <span class="hljs-keyword">int</span> id) 
+	&#123; 
+		<span class="hljs-keyword">this</span>.name = name; 
+		<span class="hljs-keyword">this</span>.id = id; 
+	&#125; 
+&#125; 
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">GFG</span> 
+</span>&#123; 
+	<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span> <span class="hljs-params">(String[] args)</span> 
+	</span>&#123; 
+		<span class="hljs-comment">// this would invoke the parameterized constructor. </span>
+		Geek geek1 = <span class="hljs-keyword">new</span> Geek(<span class="hljs-string">"adam"</span>, <span class="hljs-number">1</span>); 
+		System.out.println(<span class="hljs-string">"GeekName :"</span> + geek1.name + 
+						<span class="hljs-string">" and GeekId :"</span> + geek1.id); 
+	&#125; 
+&#125;</code></pre>
+<p>Output:</p>
+<pre><code class="hljs css"><span class="hljs-selector-tag">GeekName</span> <span class="hljs-selector-pseudo">:adam</span> <span class="hljs-selector-tag">and</span> <span class="hljs-selector-tag">GeekId</span> <span class="hljs-selector-pseudo">:1</span></code></pre>
+<p>也就是说<strong>每一个类里面都有一个构造函数用来给变量赋值</strong>。如果你自己不去写这个构造函数，那么编译器会写一个。这样就可以给你创建的所有变量默认赋值了。（如果构造函数有参数那么，就是你给定的值；如果没有参数，那么就是0或者时null)。对了，构造函数中也可以写其他的语句，可以夹带私货。</p>
+<h2 id="使用构造参数时的一些其他问题："><a href="#使用构造参数时的一些其他问题：" class="headerlink" title="使用构造参数时的一些其他问题："></a>使用构造参数时的一些其他问题：</h2><ul>
+<li><p><strong>Does constructor return any value?</strong> （有返回值么？没有，但可以写return）</p>
+<p>There are no “return value” statements in constructor, but constructor returns current class instance. We can write ‘return’ inside a constructor.</p>
+</li>
+<li><p><strong>Constructor Overloading.</strong>（我们同样将其视作函数【本来就是】，当然也可以像函数一样，通过参数的类型，数目和顺序的不同来区分不同的同名构造函数）</p>
+<p>Like methods, we can overload constructors for creating objects in different ways. Compiler differentiates constructors on the basis of numbers of parameters, types of the parameters and order of the parameters.</p>
+</li>
+</ul>
+<blockquote>
+<p><strong>How constructors are different from methods in Java?构造函数和函数的区别</strong></p>
+</blockquote>
+<ul>
+<li>Constructor(s) must have the same name as the class within which it defined while it is not necessary for the method in java.构造函数的名字只能和类名相同，而且也不是必要的。</li>
+<li>Constructor(s) do not return any type while method(s) have the return type or <strong>void</strong> if does not return any value.构造函数没有返回值</li>
+<li>Constructor is called only once at the time of Object creation while method(s) can be called any numbers of time.构造函数只有在对象被创建的时候调用一次，而函数可以无限次被调用。</li>
+</ul>
+
+    </div>
+    <div class="post-meta">
+        
+    <span class="post-time">二〇二〇年二月十一日</span>
+    </div>
+</article>
+
+<div class="prev_next">
+    <nav id="prev_next">
+
+<div class="prev">
+    
+    <p>Newer</p>
+    <a href="/2020/02/17/java方法methods/"><div class="article-nav-title">java方法methods</div></a>
+    
+</div>
+<div class="next">
+    
+    <p>Older</p>
+    <a href="/2020/02/10/汉诺塔的思考及解答/"><div class="article-nav-title">汉诺塔的思考及解答</div></a>
+    
+</div>
+
+</nav>
+</div>
+
+<div class="post-comment">
+    
+
+
+
+</div>
+
+    </main><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+</body>
+
+</html>

@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+    
+    <title>java中各种类的跳转例题分析 - Jefine</title>
+    <meta charset="utf-8">
+    
+    <meta name="title" content="java中各种类的跳转例题分析 - Jefine">
+    <meta name="description" content="">
+    <meta property="og:image" content="/">
+    <meta property="og:image:width" content="200" />
+    <meta property="og:image:height" content="200" />
+    
+    <link href="https://fonts.proxy.ustclug.org/css2?family=Noto+Serif+SC:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.proxy.ustclug.org/css2?family=Noto+Serif+SC:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Noto Serif CJK TC', 'Noto Serif SC', serif;
+        }
+    </style>
+    <link rel="shortcut icon" href="/">
+    
+    <link rel="stylesheet"
+        href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.17.1/build/styles/arduino-light.min.css">
+    <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.17.1/build/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    
+    
+    <link rel="stylesheet" href="/css/style.css">
+    <script src="/js/jquery.min.js"></script>
+<link rel="alternate" href="/atom.xml" title="Jefine" type="application/atom+xml"><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</head>
+
+<body>
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><header class="header">
+    <div class="blog-title">
+        <a href="/" class="logo">Jefine</a>
+    </div>
+    <nav class="navbar">
+        <ul class="menu">
+            
+            
+            
+            <li class="menu-item">
+                
+                <a href="/" class="menu-item-link">Home</a>
+                
+            </li>
+            
+            
+            
+            <li class="menu-item">
+                
+                <a href="/archives" class="menu-item-link">Archives</a>
+                
+            </li>
+            
+            
+            
+            <li class="menu-item">
+                
+                <a href="/about" class="menu-item-link">About</a>
+                
+            </li>
+            
+            
+            
+            <li class="menu-item">
+                
+                <a href="/atom.xml" class="menu-item-link">Rss</a>
+                
+            </li>
+            
+        </ul>
+    </nav>
+</header>
+    <main class="main">
+        <article class="post">
+    <div class="post-title">
+        <h1 class="title">java中各种类的跳转例题分析</h2>
+    </div>
+    <div class="post-content">
+        <p>在学习java的继承的过程中遇到这样的一个分析类题目，比较有意思，在这里做出简要分析：</p>
+<pre><code class="hljs java"><span class="hljs-comment">//请写出以下程序运行结果：</span>
+
+<span class="hljs-keyword">package</span> test;
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Test</span> </span>&#123;
+   <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> </span>&#123;
+      Test t = <span class="hljs-keyword">new</span> Test();
+      t.show(<span class="hljs-keyword">new</span> Car()&#123;
+         <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">run</span><span class="hljs-params">()</span></span>&#123;
+            System.out.println(<span class="hljs-string">"test run"</span>);           
+         &#125;
+      &#125;);
+   &#125;
+   <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">show</span><span class="hljs-params">(Car c)</span></span>&#123;
+      c.run();
+      c.show();
+&#125;&#125;
+<span class="hljs-keyword">abstract</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Car</span></span>&#123;
+   <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">run</span><span class="hljs-params">()</span></span>&#123;
+      System.out.println(<span class="hljs-string">"car run"</span>);     
+   &#125;
+   <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">show</span><span class="hljs-params">()</span></span>&#123;
+       System.out.println(getClass().getName());
+&#125;&#125;</code></pre>
+<p> 那么，我们可以通过断点的分析：</p>
+<ol>
+<li><p>首先。我们从main函数进入，发现他创建了Test类的一个对象t；</p>
+<p>我们在test类中并没有寻找到Test类的构造函数，所以应该是系统默认的构造器，不进行任何的行为；</p>
+</li>
+<li><p>之后，我们注意一下这一步，首先是t.show（）方法，在Test的类中有这么一个方法，不过我们看到show方法是需要传入一个car类的对象，所以他new了一个car对象，离奇的是car对象后面接着一对大括号。</p>
+</li>
+<li><p>注意到：这里有一个匿名类，用来一次性使用的创建car对象。这样抽象类car才能被以匿名类中的内容实例化。这样，我们就完成了对car类的实例化，得到了一个car类的对象。</p>
+<p><img src="/2020/04/01/java%E4%B8%AD%E5%90%84%E7%A7%8D%E7%B1%BB%E7%9A%84%E8%B7%B3%E8%BD%AC%E4%BE%8B%E9%A2%98%E5%88%86%E6%9E%90/image-20200401173415543.png" alt="image-20200401173415543"></p>
+</li>
+<li><p>接着，我们以那个新new的对象作为参数，调用了Test类中的show方法。</p>
+<p><img src="/2020/04/01/java%E4%B8%AD%E5%90%84%E7%A7%8D%E7%B1%BB%E7%9A%84%E8%B7%B3%E8%BD%AC%E4%BE%8B%E9%A2%98%E5%88%86%E6%9E%90/image-20200401174104233.png" alt="image-20200401174104233"></p>
+<p>而show方法的第一条语句是c.show();注意到我们是通过匿名类创建的对象，而我们是通过匿名类中的重新写的run（）方法，所以他又跳回了第六行，输出“test run”；</p>
+</li>
+</ol>
+<p><img src="/2020/04/01/java%E4%B8%AD%E5%90%84%E7%A7%8D%E7%B1%BB%E7%9A%84%E8%B7%B3%E8%BD%AC%E4%BE%8B%E9%A2%98%E5%88%86%E6%9E%90/image-20200401174405627.png" alt="image-20200401174405627"></p>
+<ol>
+<li><p>好的，接下来我们又回到了show方法中，继续调用c.show(),这时，我们回头看匿名类，它里面竟然没有show的方法。。。所以他就只能调用car类的show（）方法。</p>
+<p><img src="/2020/04/01/java%E4%B8%AD%E5%90%84%E7%A7%8D%E7%B1%BB%E7%9A%84%E8%B7%B3%E8%BD%AC%E4%BE%8B%E9%A2%98%E5%88%86%E6%9E%90/image-20200401174506855.png" alt="image-20200401174506855"></p>
+</li>
+</ol>
+<ol>
+<li><p>注意到了右侧返回的getName()是”test.Test$1”，好吧，test是包名，Test是类名，可以理解！</p>
+<p>但是$1就使得不少同学迷惑了。</p>
+<p><img src="/2020/04/01/java%E4%B8%AD%E5%90%84%E7%A7%8D%E7%B1%BB%E7%9A%84%E8%B7%B3%E8%BD%AC%E4%BE%8B%E9%A2%98%E5%88%86%E6%9E%90/image-20200401174856777.png" alt="image-20200401174856777"> </p>
+</li>
+<li><p>好的，我们这次打开文件管理系统，找到我们编译的文件所在，发现.java编译后多出了Test$1.class的文件，这个.class是怎么来的呢？对了是匿名类！这里的Test$1这个类名是编译器给它的名字（匿名类没有名字，但是java编译器要给他起个名，才好分辨）而命名的格式就是第一个Test类下面的匿名类的话就叫$1,第二个就是$2。</p>
+<p><img src="/2020/04/01/java%E4%B8%AD%E5%90%84%E7%A7%8D%E7%B1%BB%E7%9A%84%E8%B7%B3%E8%BD%AC%E4%BE%8B%E9%A2%98%E5%88%86%E6%9E%90/image-20200401175322331.png" alt="image-20200401175322331"></p>
+</li>
+</ol>
+<p><img src="/2020/04/01/java%E4%B8%AD%E5%90%84%E7%A7%8D%E7%B1%BB%E7%9A%84%E8%B7%B3%E8%BD%AC%E4%BE%8B%E9%A2%98%E5%88%86%E6%9E%90/image-20200401180024806.png" alt="image-20200401175322331"></p>
+<p>这样就可以了，程序就结束了！主要涉及了匿名成员类。大家有兴趣（最好可以了解一下）</p>
+
+    </div>
+    <div class="post-meta">
+        
+    <span class="post-time">二〇二〇年四月一日</span>
+    </div>
+</article>
+
+<div class="prev_next">
+    <nav id="prev_next">
+
+<div class="prev">
+    
+    <p>Newer</p>
+    <a href="/2020/04/30/大数乘法/"><div class="article-nav-title">大数乘法</div></a>
+    
+</div>
+<div class="next">
+    
+    <p>Older</p>
+    <a href="/2020/03/26/一元多次多项式的加减/"><div class="article-nav-title">一元多次多项式的加减</div></a>
+    
+</div>
+
+</nav>
+</div>
+
+<div class="post-comment">
+    
+
+
+
+</div>
+
+    </main><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config("");
+</script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+      all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+  });
+</script>
+
+<script type="text/javascript" src="custom_mathjax_source">
+</script>
+<!-- End: Injected MathJax -->
+<!-- hexo-inject:end -->
+
+</body>
+
+</html>

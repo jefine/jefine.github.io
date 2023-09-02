@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+    
+    <title>L1-046整除光棍（模拟大数除法） - Jefine</title>
+    <meta charset="utf-8">
+    
+    <meta name="title" content="L1-046整除光棍（模拟大数除法） - Jefine">
+    <meta name="description" content="">
+    <meta property="og:image" content="/">
+    <meta property="og:image:width" content="200" />
+    <meta property="og:image:height" content="200" />
+    
+    <link href="https://fonts.proxy.ustclug.org/css2?family=Noto+Serif+SC:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.proxy.ustclug.org/css2?family=Noto+Serif+SC:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Noto Serif CJK TC', 'Noto Serif SC', serif;
+        }
+    </style>
+    <link rel="shortcut icon" href="/">
+    
+    <link rel="stylesheet"
+        href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.17.1/build/styles/arduino-light.min.css">
+    <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.17.1/build/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    
+    
+    <link rel="stylesheet" href="/css/style.css">
+    <script src="/js/jquery.min.js"></script>
+<link rel="alternate" href="/atom.xml" title="Jefine" type="application/atom+xml"><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</head>
+
+<body>
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><header class="header">
+    <div class="blog-title">
+        <a href="/" class="logo">Jefine</a>
+    </div>
+    <nav class="navbar">
+        <ul class="menu">
+            
+            
+            
+            <li class="menu-item">
+                
+                <a href="/" class="menu-item-link">Home</a>
+                
+            </li>
+            
+            
+            
+            <li class="menu-item">
+                
+                <a href="/archives" class="menu-item-link">Archives</a>
+                
+            </li>
+            
+            
+            
+            <li class="menu-item">
+                
+                <a href="/about" class="menu-item-link">About</a>
+                
+            </li>
+            
+            
+            
+            <li class="menu-item">
+                
+                <a href="/atom.xml" class="menu-item-link">Rss</a>
+                
+            </li>
+            
+        </ul>
+    </nav>
+</header>
+    <main class="main">
+        <article class="post">
+    <div class="post-title">
+        <h1 class="title">L1-046整除光棍（模拟大数除法）</h2>
+    </div>
+    <div class="post-content">
+        <p>这里所谓的“光棍”，并不是指单身汪啦~ 说的是全部由1组成的数字，比如1、11、111、1111等。传说任何一个光棍都能被一个不以5结尾的奇数整除。比如，111111就可以被13整除。 现在，你的程序要读入一个整数<code>x</code>，这个整数一定是奇数并且不以5结尾。然后，经过计算，输出两个数字：第一个数字<code>s</code>，表示<code>x</code>乘以<code>s</code>是一个光棍，第二个数字<code>n</code>是这个光棍的位数。这样的解当然不是唯一的,题目要求你输出最小的解。</p>
+<p>提示：一个显然的办法是逐渐增加光棍的位数，直到可以整除<code>x</code>为止。但难点在于，<code>s</code>可能是个非常大的数 —— 比如，程序输入31，那么就输出3584229390681和15，因为31乘以3584229390681的结果是111111111111111，一共15个1。</p>
+<h3 id="输入格式："><a href="#输入格式：" class="headerlink" title="输入格式："></a>输入格式：</h3><p>输入在一行中给出一个不以5结尾的正奇数<code>x</code>（&lt;1000）。</p>
+<h3 id="输出格式："><a href="#输出格式：" class="headerlink" title="输出格式："></a>输出格式：</h3><p>在一行中输出相应的最小的<code>s</code>和<code>n</code>，其间以1个空格分隔。</p>
+<h3 id="输入样例："><a href="#输入样例：" class="headerlink" title="输入样例："></a>输入样例：</h3><pre><code class="hljs in">31</code></pre>
+<h3 id="输出样例："><a href="#输出样例：" class="headerlink" title="输出样例："></a>输出样例：</h3><pre><code class="hljs out">3584229390681 15</code></pre>
+<h3 id="题目思路分析："><a href="#题目思路分析：" class="headerlink" title="题目思路分析："></a>题目思路分析：</h3><p>第一次接触大数除法的模拟，在经历过一番思考后，选择了百度。。。</p>
+<p>忽然发现思路其实就是模拟人的思路：假设我们也不知道多少个1才能将31整除。那么怎么得到那个很长的数呢？</p>
+<ol>
+<li>从1，11，111，一个一个去尝试。显然，不成立。（当然，我们可以直接从比除数大的111开始除，这也是后面变成的思路）</li>
+<li>但如果我们实验过几次第一种方法后，我们会发现，其实我们只是在每一次的计算后（发现不能整除）我们就会添加一个1继续去除。之前的商就保留下来了，和我们使用竖式除法是一样的。我们只是需要每次除不尽的时候，填上一个1继续除便是了，之前的商直接输出不是更好。</li>
+</ol>
+<pre><code class="hljs cpp"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span><span class="hljs-meta-string">&lt;bits/stdc++.h&gt;</span></span>
+<span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> <span class="hljs-built_in">std</span>;
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span>
+</span>&#123;
+	<span class="hljs-keyword">int</span> x,s=<span class="hljs-number">0</span>,n=<span class="hljs-number">0</span>;<span class="hljs-comment">//除数，被除数，位数 </span>
+	<span class="hljs-built_in">cin</span>&gt;&gt;x;
+	<span class="hljs-keyword">while</span>(s&lt;x)
+	&#123;
+		s=s*<span class="hljs-number">10</span>+<span class="hljs-number">1</span>;<span class="hljs-comment">//被除数末位添1直到不小于被除数 </span>
+		n++;
+	&#125;
+	<span class="hljs-keyword">while</span>(<span class="hljs-literal">true</span>)<span class="hljs-comment">//除法 </span>
+	&#123;
+		<span class="hljs-built_in">cout</span>&lt;&lt;s/x;<span class="hljs-comment">//输出商（就作为开头咯） </span>
+		s%=x;<span class="hljs-comment">//被除数更改为其余数 </span>
+		<span class="hljs-keyword">if</span>(s==<span class="hljs-number">0</span>)<span class="hljs-keyword">break</span>;<span class="hljs-comment">//余数为0则结束（否则加1继续） </span>
+		s=s*<span class="hljs-number">10</span>+<span class="hljs-number">1</span>;<span class="hljs-comment">//被除数末位加上1</span>
+		n++; 
+	&#125;
+	<span class="hljs-built_in">cout</span>&lt;&lt;<span class="hljs-string">' '</span>&lt;&lt;n;<span class="hljs-comment">//之前已经输出了商（很大的数）</span>
+	<span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;
+&#125;</code></pre>
+<p><strong>大数模拟，在没有更好的方法下，不如试试康康如果是我们，我们是怎么做的。。。</strong></p>
+
+    </div>
+    <div class="post-meta">
+        
+    <span class="post-time">二〇二〇年一月五日</span>
+    </div>
+</article>
+
+<div class="prev_next">
+    <nav id="prev_next">
+
+<div class="prev">
+    
+    <p>Newer</p>
+    <a href="/2020/01/06/L1-048矩阵A乘以B/"><div class="article-nav-title">L1-048矩阵A乘以B</div></a>
+    
+</div>
+<div class="next">
+    
+    <p>Older</p>
+    <a href="/2020/01/04/打印沙漏/"><div class="article-nav-title">打印沙漏（代码较详细）</div></a>
+    
+</div>
+
+</nav>
+</div>
+
+<div class="post-comment">
+    
+
+
+
+</div>
+
+    </main><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+</body>
+
+</html>

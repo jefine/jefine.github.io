@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+    
+    <title>L298N驱动电机 - Jefine</title>
+    <meta charset="utf-8">
+    
+    <meta name="title" content="L298N驱动电机 - Jefine">
+    <meta name="description" content="">
+    <meta property="og:image" content="/">
+    <meta property="og:image:width" content="200" />
+    <meta property="og:image:height" content="200" />
+    
+    <link href="https://fonts.proxy.ustclug.org/css2?family=Noto+Serif+SC:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.proxy.ustclug.org/css2?family=Noto+Serif+SC:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Noto Serif CJK TC', 'Noto Serif SC', serif;
+        }
+    </style>
+    <link rel="shortcut icon" href="/">
+    
+    <link rel="stylesheet"
+        href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.17.1/build/styles/arduino-light.min.css">
+    <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.17.1/build/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    
+    
+    <link rel="stylesheet" href="/css/style.css">
+    <script src="/js/jquery.min.js"></script>
+<link rel="alternate" href="/atom.xml" title="Jefine" type="application/atom+xml"><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</head>
+
+<body>
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><header class="header">
+    <div class="blog-title">
+        <a href="/" class="logo">Jefine</a>
+    </div>
+    <nav class="navbar">
+        <ul class="menu">
+            
+            
+            
+            <li class="menu-item">
+                
+                <a href="/" class="menu-item-link">Home</a>
+                
+            </li>
+            
+            
+            
+            <li class="menu-item">
+                
+                <a href="/archives" class="menu-item-link">Archives</a>
+                
+            </li>
+            
+            
+            
+            <li class="menu-item">
+                
+                <a href="/about" class="menu-item-link">About</a>
+                
+            </li>
+            
+            
+            
+            <li class="menu-item">
+                
+                <a href="/atom.xml" class="menu-item-link">Rss</a>
+                
+            </li>
+            
+        </ul>
+    </nav>
+</header>
+    <main class="main">
+        <article class="post">
+    <div class="post-title">
+        <h1 class="title">L298N驱动电机</h2>
+    </div>
+    <div class="post-content">
+        <p>简要介绍了L298N的接线方式，驱动原理及相关简要代码</p>
+  <a id="more"></a>
+<h2 id="引脚介绍"><a href="#引脚介绍" class="headerlink" title="引脚介绍"></a>引脚介绍</h2><p><img src="/2021/07/08/L298N%E9%A9%B1%E5%8A%A8%E7%94%B5%E6%9C%BA/L298N.png" alt="L298N"></p>
+<h2 id="需要注意事项："><a href="#需要注意事项：" class="headerlink" title="需要注意事项："></a>需要注意事项：</h2><p>L298N的+12V需要电压在 +7VDC to +35VDC.如果使用的电源超过了12V那么请将跳帽拔掉。</p>
+<p>同时需要 mcu 和 L298N 供地。</p>
+<p>H桥中，四个input对应四个output(Terminal)</p>
+<p><img src="/2021/07/08/L298N%E9%A9%B1%E5%8A%A8%E7%94%B5%E6%9C%BA/1.png" alt="1"></p>
+<p><img src="/2021/07/08/L298N%E9%A9%B1%E5%8A%A8%E7%94%B5%E6%9C%BA/2.png" alt="2"></p>
+<p>通过对于IN的控制就可以控制out，促使其连接到的电机正转或着反转（并可以控制速度，PWM？）</p>
+<h2 id="具体操作逻辑："><a href="#具体操作逻辑：" class="headerlink" title="具体操作逻辑："></a>具体操作逻辑：</h2><h3 id="对于普通的马达电机："><a href="#对于普通的马达电机：" class="headerlink" title="对于普通的马达电机："></a>对于普通的马达电机：</h3><p>那么只需要将其正负连接至out1，out2，通过in1，in2来控制正负就可以驱动了。</p>
+<p>对于Arduino 来说更为简单。</p>
+<p>其中ena非必需（采用跳帽，也可达到效果）</p>
+<pre><code class="hljs c"><span class="hljs-comment">//Motor Connections</span>
+<span class="hljs-comment">//Change this if you wish to use another diagram</span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> EnA 10</span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> EnB 5</span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> In1 9</span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> In2 8</span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> In3 7</span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> In4 6</span>
+
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">setup</span><span class="hljs-params">()</span>
+</span>&#123;
+  <span class="hljs-comment">// All motor control pins are outputs</span>
+  <span class="hljs-built_in">pinMode</span>(EnA, <span class="hljs-literal">OUTPUT</span>);
+  <span class="hljs-built_in">pinMode</span>(EnB, <span class="hljs-literal">OUTPUT</span>);
+  <span class="hljs-built_in">pinMode</span>(In1, <span class="hljs-literal">OUTPUT</span>);
+  <span class="hljs-built_in">pinMode</span>(In2, <span class="hljs-literal">OUTPUT</span>);
+  <span class="hljs-built_in">pinMode</span>(In3, <span class="hljs-literal">OUTPUT</span>);
+  <span class="hljs-built_in">pinMode</span>(In4, <span class="hljs-literal">OUTPUT</span>);
+&#125;
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">goStraight</span><span class="hljs-params">()</span>   <span class="hljs-comment">//run both motors in the same direction</span>
+</span>&#123;
+  <span class="hljs-comment">// turn on motor A</span>
+  <span class="hljs-built_in">digitalWrite</span>(In1, <span class="hljs-literal">HIGH</span>);
+  <span class="hljs-built_in">digitalWrite</span>(In2, <span class="hljs-literal">LOW</span>);
+  <span class="hljs-comment">// set speed to 150 out 255</span>
+  <span class="hljs-built_in">analogWrite</span>(EnA, <span class="hljs-number">200</span>);
+  <span class="hljs-comment">// turn on motor B</span>
+  <span class="hljs-built_in">digitalWrite</span>(In3, <span class="hljs-literal">HIGH</span>);
+  <span class="hljs-built_in">digitalWrite</span>(In4, <span class="hljs-literal">LOW</span>);
+  <span class="hljs-comment">// set speed to 150 out 255</span>
+  <span class="hljs-built_in">analogWrite</span>(EnB, <span class="hljs-number">200</span>);
+  <span class="hljs-built_in">delay</span>(<span class="hljs-number">2000</span>);
+  <span class="hljs-comment">// now turn off motors</span>
+  <span class="hljs-built_in">digitalWrite</span>(In1, <span class="hljs-literal">LOW</span>);
+  <span class="hljs-built_in">digitalWrite</span>(In2, <span class="hljs-literal">LOW</span>);  
+  <span class="hljs-built_in">digitalWrite</span>(In3, <span class="hljs-literal">LOW</span>);
+  <span class="hljs-built_in">digitalWrite</span>(In4, <span class="hljs-literal">LOW</span>);
+&#125;
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">loop</span><span class="hljs-params">()</span>
+</span>&#123;
+  goStraight();
+  <span class="hljs-built_in">delay</span>(<span class="hljs-number">1000</span>);
+&#125;</code></pre>
+<h3 id="驱动Step-moto-28BYJ-48"><a href="#驱动Step-moto-28BYJ-48" class="headerlink" title="驱动Step moto 28BYJ-48"></a>驱动Step moto 28BYJ-48</h3><p>该继步马达一共拥有五根线，则如果需要采用L298N来驱动，一个L298N那么只能驱动一个继步电机。</p>
+<p><img src="/2021/07/08/L298N%E9%A9%B1%E5%8A%A8%E7%94%B5%E6%9C%BA/L298n1.png" alt="1"></p>
+<p><img src="/2021/07/08/L298N%E9%A9%B1%E5%8A%A8%E7%94%B5%E6%9C%BA/L298n2.png" alt="2"></p>
+<pre><code class="hljs c"><span class="hljs-comment">/* Example sketch to control a stepper motor with L298N motor driver, Arduino UNO and Stepper.h library. More info: &lt;https://www.makerguides.com&gt; */</span>
+
+<span class="hljs-comment">// Include the Stepper library:</span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;Stepper.h&gt;</span></span>
+
+<span class="hljs-comment">// Define number of steps per revolution:</span>
+<span class="hljs-keyword">const</span> <span class="hljs-keyword">int</span> stepsPerRevolution = <span class="hljs-number">200</span>;
+
+<span class="hljs-comment">// Initialize the stepper library on pins 8 through 11:</span>
+<span class="hljs-built_in">Stepper</span> myStepper = <span class="hljs-built_in">Stepper</span>(stepsPerRevolution, <span class="hljs-number">8</span>, <span class="hljs-number">9</span>, <span class="hljs-number">10</span>, <span class="hljs-number">11</span>);
+
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">setup</span><span class="hljs-params">()</span> </span>&#123;
+  <span class="hljs-comment">// Set the motor speed (RPMs):</span>
+  myStepper.<span class="hljs-built_in">setSpeed</span>(<span class="hljs-number">100</span>);
+&#125;
+
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">loop</span><span class="hljs-params">()</span> </span>&#123;
+  <span class="hljs-comment">// Step one revolution in one direction:</span>
+  myStepper.<span class="hljs-built_in">step</span>(<span class="hljs-number">500</span>);
+
+  <span class="hljs-built_in">delay</span>(<span class="hljs-number">2000</span>);
+
+  <span class="hljs-comment">// Step on revolution in the other direction:</span>
+  myStepper.<span class="hljs-built_in">step</span>(<span class="hljs-number">-500</span>);
+
+  <span class="hljs-built_in">delay</span>(<span class="hljs-number">2000</span>);
+&#125;</code></pre>
+<p>参考连接：</p>
+<p><a href="https://www.makerguides.com/l298n-stepper-motor-arduino-tutorial/" target="_blank" rel="noopener">Stepper Motor with L298N and Arduino Tutorial (4 Examples)</a></p>
+<p><a href="https://www.teachmemicro.com/use-l298n-motor-driver/" target="_blank" rel="noopener">How to Use L298N Motor Driver | Microcontroller Tutorials</a></p>
+<p><a href="https://rjdlee.com/arduino-wemos-with-l298n-controller-and-28byj-48-stepper-motor/" target="_blank" rel="noopener">Arduino WeMos with L298N Controller and 28BYJ-48 Stepper Motor</a></p>
+
+    </div>
+    <div class="post-meta">
+        
+    <span class="post-time">二〇二一年七月八日</span>
+    </div>
+</article>
+
+<div class="prev_next">
+    <nav id="prev_next">
+
+<div class="prev">
+    
+    <p>Newer</p>
+    <a href="/2021/08/09/蓝牙模块HC05的简单配对使用/"><div class="article-nav-title">蓝牙模块HC05的双设备简单配对通信</div></a>
+    
+</div>
+<div class="next">
+    
+    <p>Older</p>
+    <a href="/2021/06/03/new-EE/"><div class="article-nav-title">new_EE</div></a>
+    
+</div>
+
+</nav>
+</div>
+
+<div class="post-comment">
+    
+
+
+
+</div>
+
+    </main>
+
+    
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+          tex2jax: {
+            inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+            processEscapes: true
+          }
+        });
+      </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+            tex2jax: {
+              skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+            }
+          });
+      </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+              var all = MathJax.Hub.getAllJax(), i;
+              for(i=0; i < all.length; i += 1) {
+                  all[i].SourceElement().parentNode.className += ' has-jax';
+              }
+          });
+      </script>
+
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config("");
+</script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+      all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+  });
+</script>
+
+<script type="text/javascript" src="custom_mathjax_source">
+</script>
+<!-- End: Injected MathJax -->
+<!-- hexo-inject:end -->
+
+
+</body>
+
+</html>

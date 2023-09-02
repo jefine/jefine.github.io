@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+    
+    <title>4GES600S开发 - Jefine</title>
+    <meta charset="utf-8">
+    
+    <meta name="title" content="4GES600S开发 - Jefine">
+    <meta name="description" content="">
+    <meta property="og:image" content="/">
+    <meta property="og:image:width" content="200" />
+    <meta property="og:image:height" content="200" />
+    
+    <link href="https://fonts.proxy.ustclug.org/css2?family=Noto+Serif+SC:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.proxy.ustclug.org/css2?family=Noto+Serif+SC:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Noto Serif CJK TC', 'Noto Serif SC', serif;
+        }
+    </style>
+    <link rel="shortcut icon" href="/">
+    
+    <link rel="stylesheet"
+        href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.17.1/build/styles/arduino-light.min.css">
+    <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.17.1/build/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    
+    
+    <link rel="stylesheet" href="/css/style.css">
+    <script src="/js/jquery.min.js"></script>
+<link rel="alternate" href="/atom.xml" title="Jefine" type="application/atom+xml"><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</head>
+
+<body>
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><header class="header">
+    <div class="blog-title">
+        <a href="/" class="logo">Jefine</a>
+    </div>
+    <nav class="navbar">
+        <ul class="menu">
+            
+            
+            
+            <li class="menu-item">
+                
+                <a href="/" class="menu-item-link">Home</a>
+                
+            </li>
+            
+            
+            
+            <li class="menu-item">
+                
+                <a href="/archives" class="menu-item-link">Archives</a>
+                
+            </li>
+            
+            
+            
+            <li class="menu-item">
+                
+                <a href="/about" class="menu-item-link">About</a>
+                
+            </li>
+            
+            
+            
+            <li class="menu-item">
+                
+                <a href="/atom.xml" class="menu-item-link">Rss</a>
+                
+            </li>
+            
+        </ul>
+    </nav>
+</header>
+    <main class="main">
+        <article class="post">
+    <div class="post-title">
+        <h1 class="title">4GES600S开发</h2>
+    </div>
+    <div class="post-content">
+        <p>移远通信 ES600S开发板的Demo和一些基础的操作指南</p>
+  <a id="more"></a>
+<h1 id="开始教程"><a href="#开始教程" class="headerlink" title="开始教程"></a>开始教程</h1><h2 id="配置环境与基本认识文档："><a href="#配置环境与基本认识文档：" class="headerlink" title="配置环境与基本认识文档："></a>配置环境与基本认识文档：</h2><p><a href="https://python.quectel.com/doc/doc/Quick_start/zh/index.html" target="_blank" rel="noopener">QuecPython</a></p>
+<p><a href="固件下载与脚本下载图解.pdf">固件下载与脚本下载图解.pdf</a></p>
+<h3 id="开发板使用几大步骤："><a href="#开发板使用几大步骤：" class="headerlink" title="开发板使用几大步骤："></a>开发板使用几大步骤：</h3><p>1.插上模组；</p>
+<p>2.模组开机（具体步骤：<a href="https://python.quectel.com/doc/doc/Quick_start/zh/Quick_start.html的4.1章节）；" target="_blank" rel="noopener">https://python.quectel.com/doc/doc/Quick_start/zh/Quick_start.html的4.1章节）；</a></p>
+<p>3.驱动安装（注意事项：<a href="https://python.quectel.com/doc/doc/Quick_start/zh/Quick_start.html的4.2章节）；" target="_blank" rel="noopener">https://python.quectel.com/doc/doc/Quick_start/zh/Quick_start.html的4.2章节）；</a></p>
+<p>4.烧录QuecPython固件</p>
+<p>注意事项见：<a href="https://python.quectel.com/doc/doc/Quick_start/zh/Quick_start.html的4.3章节" target="_blank" rel="noopener">https://python.quectel.com/doc/doc/Quick_start/zh/Quick_start.html的4.3章节</a></p>
+<p>具体步骤的视频连接：<a href="https://www.bilibili.com/video/BV1ci4y1w7g8/" target="_blank" rel="noopener">https://www.bilibili.com/video/BV1ci4y1w7g8/</a></p>
+<p>5.下载Demo程序（官网的下载专区<a href="https://python.quectel.com/download有个Demo的文件夹）" target="_blank" rel="noopener">https://python.quectel.com/download有个Demo的文件夹）</a></p>
+<p>6.例程无法跑通请先自查并参考官网wiki（<a href="https://python.quectel.com/wiki/#/），wiki里面包含demo里面涉及的所有API库" target="_blank" rel="noopener">https://python.quectel.com/wiki/#/），wiki里面包含demo里面涉及的所有API库</a></p>
+<h3 id="开发板需要注意的地方："><a href="#开发板需要注意的地方：" class="headerlink" title="开发板需要注意的地方："></a>开发板需要注意的地方：</h3><p><a href="Quectel_EC600x-CN兼容性设计讲稿_-0506.pdf">Quectel_EC600x-CN(_QuecOpen)兼容性设计讲稿_-0506.pdf</a></p>
+<p>Page24</p>
+<p>EC600N-CN/EC600S-CN (QuecOpen)接喇叭则需增加外部PA设计（放大听<br>筒信号）</p>
+<p>EC600N-CN/EC600S-CN QuecOpen 复用键盘引脚（PIN 48~57）也可以复用成<br>GPIO功能使用，在不用键盘情况下可使用<br>复用成GPIO口时要注意开机默认状态和电源域，具体参考Quectel_EC600x-CN<br>QuecOpen_GPIO配置表_V1.0</p>
+<p>EC600S-CN/EC600N-CN QuecOpen 开机默认是PU，用于控灯、电机和外部电源<br>使能之类要注意模块上电时有上拉动作</p>
+<p>天线设计</p>
+<p><a href="Quectel_天线设计指导_V3.2.pdf">Quectel_天线设计指导_V3.2.pdf</a></p>
+<h1 id="小实验："><a href="#小实验：" class="headerlink" title="小实验："></a>小实验：</h1><h2 id="如何将软硬件结合？"><a href="#如何将软硬件结合？" class="headerlink" title="如何将软硬件结合？"></a>如何将软硬件结合？</h2><p>另外在查询开发板上的GPIO的号码时，可以看看板子中间的引脚介绍，可以解决不少问题，查找不到的可以按照下面的方法进行查找。</p>
+<p>即如何查找软件 GPIO 或 ADC 等接口与物理开发板接口的位置</p>
+<p>下面以查找KEY2所对应的GPIO号为例：</p>
+<p>首先打开 <a href="EC600X_QuecPython_EVB_V1.3_SCH.pdf">EC600X_QuecPython_EVB_V1.3_SCH.pdf</a> 文件</p>
+<p>然后根据需要切换到第六GPIO+UART这一页也是最经常查找的</p>
+<p><img src="/2021/08/24/4GES600SEVB/Untitled.png" alt="p"></p>
+<p> 可以看到左下角的S4,S5即是我们所要寻找的，找到引脚号PIN60后</p>
+<p>即可根据<a href="https://python.quectel.com/wiki/#/zh-cn/api/QuecPythonClasslib?id=pin" target="_blank" rel="noopener">API</a>查询到相关的GPIO号码，如图12 即为所求。</p>
+<p>有部分不易寻找到内容可以采取多种类似说法，大小写，简要内容的搜索来查找。</p>
+<p><img src="/2021/08/24/4GES600SEVB/Untitled 1.png" alt="p"></p>
+<h2 id="简单的外设Demo"><a href="#简单的外设Demo" class="headerlink" title="简单的外设Demo"></a>简单的外设Demo</h2><p><a href="https://python.quectel.com/doc/doc/little_demo/zh/QuecPythonTest/QuecPythonLED.html" target="_blank" rel="noopener">QuecPython</a></p>
+<h3 id="UART串口："><a href="#UART串口：" class="headerlink" title="UART串口："></a>UART串口：</h3><p><img src="/2021/08/24/4GES600SEVB/Untitled 2.png" alt="p1"></p>
+<p><img src="/2021/08/24/4GES600SEVB/Untitled 3.png" alt="p"></p>
+<h3 id="External-interrupt外部中断"><a href="#External-interrupt外部中断" class="headerlink" title="External_interrupt外部中断"></a>External_interrupt外部中断</h3><pre><code class="hljs python"><span class="hljs-keyword">from</span> machine <span class="hljs-keyword">import</span> ExtInt
+
+<span class="hljs-keyword">import</span> utime <span class="hljs-keyword">as</span> time
+
+<span class="hljs-comment"># 参考自 http://qpy.quectel.com/wiki/#/zh-cn/api/?id=extint</span>
+
+state = <span class="hljs-number">2</span>
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">callBack</span><span class="hljs-params">(args)</span>:</span>
+
+    <span class="hljs-keyword">global</span> state
+
+    print(<span class="hljs-string">'### interrupt  &#123;&#125; ###'</span>.format(args))
+    <span class="hljs-comment">#传入的应该是一个List，[GPIOX,X] ,第二个参数不清楚</span>
+
+    state = state - <span class="hljs-number">1</span>
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">main</span><span class="hljs-params">()</span>:</span>
+
+    <span class="hljs-comment"># 映射GPIO12的下降沿触发回调函数</span>
+    <span class="hljs-comment"># GPIO12即key2</span>
+
+    extint = ExtInt(ExtInt.GPIO12, ExtInt.IRQ_FALLING, ExtInt.PULL_PU, callBack)
+
+    <span class="hljs-comment"># 等待按键按下，触发</span>
+
+    <span class="hljs-keyword">while</span> state:
+        time.sleep_ms(<span class="hljs-number">10</span>)
+        <span class="hljs-keyword">pass</span>
+
+    <span class="hljs-comment"># 停止映射外部中断</span>
+
+    extint.disable()
+
+    print(<span class="hljs-string">"The main function has exited"</span>)
+
+<span class="hljs-keyword">if</span> __name__ == <span class="hljs-string">"__main__"</span>:
+    main()</code></pre>
+<h3 id="WatchDog-看门狗"><a href="#WatchDog-看门狗" class="headerlink" title="WatchDog 看门狗"></a>WatchDog 看门狗</h3><p>看门狗的复位指的是<strong>重启机器</strong></p>
+<pre><code class="hljs python"><span class="hljs-comment"># 实验1：	独立看门狗实验</span>
+<span class="hljs-comment"># API资料参考连接：  https://python.quectel.com/wiki/#/zh-cn/api/?id=wdt</span>
+
+<span class="hljs-keyword">from</span> machine <span class="hljs-keyword">import</span> WDT
+<span class="hljs-keyword">import</span> utime
+
+wdt = <span class="hljs-literal">None</span>  <span class="hljs-comment"># 定义全部变量</span>
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">Watchdog</span><span class="hljs-params">()</span>:</span>  <span class="hljs-comment"># 2秒钟内调用喂狗函数，否则系统复位</span>
+    <span class="hljs-keyword">global</span> wdt  <span class="hljs-comment"># 声明全部变量</span>
+    <span class="hljs-keyword">if</span> wdt <span class="hljs-keyword">is</span> <span class="hljs-literal">None</span>:
+        wdt = WDT(<span class="hljs-number">2</span>)  <span class="hljs-comment"># 启动看门狗，间隔时长 单位 秒</span>
+    wdt.feed()  <span class="hljs-comment"># 喂狗</span>
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">func_1</span><span class="hljs-params">()</span>:</span>
+    utime.sleep_ms(<span class="hljs-number">1000</span>)  <span class="hljs-comment"># 延时1秒</span>
+    print(<span class="hljs-string">'功能函数 1'</span>)
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">func_2</span><span class="hljs-params">()</span>:</span>
+    utime.sleep_ms(<span class="hljs-number">1000</span>)  <span class="hljs-comment"># 延时1秒</span>
+    print(<span class="hljs-string">'功能函数 2'</span>)
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">func_3</span><span class="hljs-params">()</span>:</span>
+    utime.sleep_ms(<span class="hljs-number">1000</span>)  <span class="hljs-comment"># 延时1秒</span>
+    print(<span class="hljs-string">'功能函数 3'</span>)
+    Watchdog()  <span class="hljs-comment"># 2秒钟内调用喂狗函数</span>
+    utime.sleep_ms(<span class="hljs-number">1000</span>)  <span class="hljs-comment"># 延时1秒</span>
+    print(<span class="hljs-string">'功能函数 3_2'</span>)
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">func_4</span><span class="hljs-params">()</span>:</span>
+    utime.sleep_ms(<span class="hljs-number">1000</span>)
+    print(<span class="hljs-string">'功能函数 4'</span>)
+    Watchdog()  <span class="hljs-comment"># 2秒钟内调用喂狗函数</span>
+    print(<span class="hljs-string">'尝试在5s后喂狗'</span>)
+    utime.sleep_ms(<span class="hljs-number">5000</span>)  <span class="hljs-comment"># 延时5秒</span>
+    Watchdog()
+    print(<span class="hljs-string">'来不及喂狗，系统已经复位'</span>)<span class="hljs-comment">#此行代码不会显示因为机器已经重启了</span>
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">main</span><span class="hljs-params">()</span>:</span>
+    print(<span class="hljs-string">'喂狗'</span>)
+    Watchdog()  <span class="hljs-comment"># 2秒钟内调用喂狗函数</span>
+    func_1()  <span class="hljs-comment"># 用户程序</span>
+    print(<span class="hljs-string">'喂狗'</span>)
+    Watchdog()  <span class="hljs-comment"># 2秒钟内调用喂狗函数</span>
+    func_2()  <span class="hljs-comment"># 用户程序</span>
+    print(<span class="hljs-string">'喂狗'</span>)
+    Watchdog()  <span class="hljs-comment"># 2秒钟内调用喂狗函数</span>
+    func_3()  <span class="hljs-comment"># 用户程序</span>
+    print(<span class="hljs-string">'喂狗'</span>)
+    Watchdog()  <span class="hljs-comment"># 2秒钟内调用喂狗函数</span>
+    func_4()  <span class="hljs-comment"># 用户程序</span>
+
+<span class="hljs-keyword">if</span> __name__ == <span class="hljs-string">"__main__"</span>:
+    main()</code></pre>
+<h3 id="温湿度检测"><a href="#温湿度检测" class="headerlink" title="温湿度检测"></a>温湿度检测</h3><p>测得不准，勉强能看</p>
+<pre><code class="hljs python"><span class="hljs-string">'''
+File: i2c_aht10.py
+Project: i2c
+File Created: Monday, 28th December 2020 5:17:28 pm
+Author: chengzhu.zhou
+-----
+Last Modified: Tuesday, 29th December 2020 9:01:35 pm
+Modified By: chengzhu.zhou
+-----
+Copyright 2020 - 2020 quectel
+'''</span>
+
+<span class="hljs-keyword">import</span> log
+<span class="hljs-keyword">from</span> machine <span class="hljs-keyword">import</span> I2C
+<span class="hljs-keyword">import</span> utime <span class="hljs-keyword">as</span> time
+<span class="hljs-string">"""
+1. calibration
+2. Trigger measurement
+3. read data
+"""</span>
+
+<span class="hljs-comment"># API  手册 http://qpy.quectel.com/wiki/#/zh-cn/api/?id=i2c</span>
+<span class="hljs-comment"># AHT10 说明书</span>
+<span class="hljs-comment">#  https://server4.eca.ir/eshop/AHT10/Aosong_AHT10_en_draft_0c.pdf</span>
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">aht10class</span><span class="hljs-params">()</span>:</span>
+    i2c_log = <span class="hljs-literal">None</span>
+    i2c_dev = <span class="hljs-literal">None</span>
+    i2c_addre = <span class="hljs-literal">None</span>
+
+    <span class="hljs-comment"># Initialization command</span>
+    AHT10_CALIBRATION_CMD = <span class="hljs-number">0xE1</span>
+    <span class="hljs-comment"># Trigger measurement</span>
+    AHT10_START_MEASURMENT_CMD = <span class="hljs-number">0xAC</span>
+    <span class="hljs-comment"># reset</span>
+    AHT10_RESET_CMD = <span class="hljs-number">0xBA</span>
+
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">write_data</span><span class="hljs-params">(self, data)</span>:</span>
+        self.i2c_dev.write(self.i2c_addre,
+                           bytearray(<span class="hljs-number">0x00</span>), <span class="hljs-number">0</span>,
+                           bytearray(data), len(data))
+        <span class="hljs-keyword">pass</span>
+
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">read_data</span><span class="hljs-params">(self, length)</span>:</span>
+        r_data = [<span class="hljs-number">0x00</span> <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> range(length)]
+        r_data = bytearray(r_data)
+        self.i2c_dev.read(self.i2c_addre,
+                          bytearray(<span class="hljs-number">0x00</span>), <span class="hljs-number">0</span>,
+                          r_data, length,
+                          <span class="hljs-number">0</span>)
+        <span class="hljs-keyword">return</span> list(r_data)
+
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">aht10_init</span><span class="hljs-params">(self, addre=<span class="hljs-number">0x38</span>, Alise=<span class="hljs-string">"Ath10"</span>)</span>:</span>
+        self.i2c_log = log.getLogger(Alise)
+        self.i2c_dev = I2C(I2C.I2C1, I2C.STANDARD_MODE)  <span class="hljs-comment"># 返回i2c对象</span>
+        self.i2c_addre = addre
+        self.sensor_init()
+        <span class="hljs-keyword">pass</span>
+
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">aht10_transformation_temperature</span><span class="hljs-params">(self, data)</span>:</span>
+        r_data = data
+        <span class="hljs-comment">#　根据数据手册的描述来转化温度</span>
+        humidity = (r_data[<span class="hljs-number">0</span>] &lt;&lt; <span class="hljs-number">12</span>) | (
+            r_data[<span class="hljs-number">1</span>] &lt;&lt; <span class="hljs-number">4</span>) | ((r_data[<span class="hljs-number">2</span>] &amp; <span class="hljs-number">0xF0</span>) &gt;&gt; <span class="hljs-number">4</span>)
+        humidity = (humidity/(<span class="hljs-number">1</span> &lt;&lt; <span class="hljs-number">20</span>)) * <span class="hljs-number">100.0</span>
+        print(<span class="hljs-string">"current humidity is &#123;0&#125;%"</span>.format(humidity))
+        temperature = ((r_data[<span class="hljs-number">2</span>] &amp; <span class="hljs-number">0xf</span>) &lt;&lt; <span class="hljs-number">16</span>) | (
+            r_data[<span class="hljs-number">3</span>] &lt;&lt; <span class="hljs-number">8</span>) | r_data[<span class="hljs-number">4</span>]
+        temperature = (temperature * <span class="hljs-number">200.0</span> / (<span class="hljs-number">1</span> &lt;&lt; <span class="hljs-number">20</span>)) - <span class="hljs-number">50</span>
+        print(<span class="hljs-string">"current temperature is &#123;0&#125;°C"</span>.format(temperature))
+        
+
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">sensor_init</span><span class="hljs-params">(self)</span>:</span>
+        <span class="hljs-comment"># calibration</span>
+        self.write_data([self.AHT10_CALIBRATION_CMD, <span class="hljs-number">0x08</span>, <span class="hljs-number">0x00</span>])
+        time.sleep_ms(<span class="hljs-number">300</span>)  <span class="hljs-comment"># at last 300ms</span>
+        <span class="hljs-keyword">pass</span>
+
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">ath10_reset</span><span class="hljs-params">(self)</span>:</span>
+        self.write_data([self.AHT10_RESET_CMD])
+        time.sleep_ms(<span class="hljs-number">20</span>)  <span class="hljs-comment"># at last 20ms</span>
+
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">Trigger_measurement</span><span class="hljs-params">(self)</span>:</span>
+        <span class="hljs-comment"># Trigger data conversion</span>
+        self.write_data([self.AHT10_START_MEASURMENT_CMD, <span class="hljs-number">0x33</span>, <span class="hljs-number">0x00</span>])
+        time.sleep_ms(<span class="hljs-number">200</span>)  <span class="hljs-comment"># at last delay 75ms</span>
+        <span class="hljs-comment"># check has success</span>
+        r_data = self.read_data(<span class="hljs-number">6</span>)
+        <span class="hljs-comment"># check bit7</span>
+        <span class="hljs-keyword">if</span> (r_data[<span class="hljs-number">0</span>] &gt;&gt; <span class="hljs-number">7</span>) != <span class="hljs-number">0x0</span>:
+            print(<span class="hljs-string">"Conversion has error"</span>)
+        <span class="hljs-keyword">else</span>:
+            self.aht10_transformation_temperature(r_data[<span class="hljs-number">1</span>:<span class="hljs-number">6</span>])
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">i2c_aht10_test</span><span class="hljs-params">()</span>:</span>
+    ath_dev = aht10class()
+    ath_dev.aht10_init()
+
+    <span class="hljs-comment"># 测试十次</span>
+    <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> range(<span class="hljs-number">10</span>):
+        ath_dev.Trigger_measurement()
+        time.sleep(<span class="hljs-number">1</span>)
+
+<span class="hljs-keyword">if</span> __name__ == <span class="hljs-string">"__main__"</span>:
+    i2c_aht10_test()</code></pre>
+<h3 id="Photoresistor-光敏电阻"><a href="#Photoresistor-光敏电阻" class="headerlink" title="Photoresistor 光敏电阻"></a>Photoresistor 光敏电阻</h3><p>得到的数值为ADC电压值</p>
+<p><img src="/2021/08/24/4GES600SEVB/Untitled 4.png" alt="p"></p>
+<pre><code class="hljs python"><span class="hljs-string">'''
+File: Photoresistor.py
+Project: adc
+File Created: Thursday, 24th December 2020 5:44:08 pm
+Author: chengzhu.zhou
+-----
+Last Modified: Wednesday, 30th December 2020 10:10:33 am
+Modified By: chengzhu.zhou
+-----
+Copyright 2020 - 2020 quectel
+'''</span>
+
+<span class="hljs-keyword">from</span> misc <span class="hljs-keyword">import</span> ADC
+<span class="hljs-keyword">import</span> utime <span class="hljs-keyword">as</span> time
+<span class="hljs-keyword">import</span> _thread
+
+<span class="hljs-comment"># unit as Ω</span>
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">Voltage_to_Resistance</span><span class="hljs-params">(Volt)</span>:</span>
+    <span class="hljs-comment">#</span>
+    Va = <span class="hljs-number">2</span> * Volt
+    resistance = (<span class="hljs-number">2</span> * <span class="hljs-number">4700</span> * <span class="hljs-number">40200</span> * Va)/(<span class="hljs-number">2</span> * <span class="hljs-number">4700</span> * (<span class="hljs-number">3300</span> - Va) - (<span class="hljs-number">40200</span> * Va))
+    <span class="hljs-keyword">return</span> resistance
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">Photoresistor_thread</span><span class="hljs-params">(delay, retryCount)</span>:</span>
+    <span class="hljs-comment"># creat a adc device</span>
+    AdcDevice = ADC()
+    <span class="hljs-keyword">while</span> retryCount:
+        retryCount = retryCount - <span class="hljs-number">1</span>
+        <span class="hljs-comment"># get ADC.ADC0 value</span>
+        adcvalue = AdcDevice.read(ADC.ADC0)
+        print(<span class="hljs-string">"get ADC.ADC0 Voltage value as &#123;0&#125;mv"</span>.format(adcvalue))
+        <span class="hljs-comment"># Converted to resistance</span>
+        resistance = Voltage_to_Resistance(adcvalue)
+        print(<span class="hljs-string">"Photoresistor  resistance as  &#123;0&#125;Ω"</span>.format(resistance))
+        time.sleep(delay)
+    <span class="hljs-keyword">pass</span>
+
+<span class="hljs-keyword">if</span> __name__ == <span class="hljs-string">"__main__"</span>:
+    <span class="hljs-comment"># creat a thread Convert ADC to Voltage</span>
+    _thread.start_new_thread(Photoresistor_thread, (<span class="hljs-number">1</span>, <span class="hljs-number">10</span>))
+    print(<span class="hljs-string">"creent main thread has exit"</span>)</code></pre>
+
+    </div>
+    <div class="post-meta">
+        
+    <span class="post-time">二〇二一年八月廿四日</span>
+    </div>
+</article>
+
+<div class="prev_next">
+    <nav id="prev_next">
+
+<div class="prev">
+    
+    <p>Newer</p>
+    <a href="/2021/09/12/ESP8266快速上手及常见问题/"><div class="article-nav-title">ESP8266快速上手及常见问题</div></a>
+    
+</div>
+<div class="next">
+    
+    <p>Older</p>
+    <a href="/2021/08/09/蓝牙模块HC05的简单配对使用/"><div class="article-nav-title">蓝牙模块HC05的双设备简单配对通信</div></a>
+    
+</div>
+
+</nav>
+</div>
+
+<div class="post-comment">
+    
+
+
+
+</div>
+
+    </main><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+</body>
+
+</html>

@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+    
+    <title>选择排序-较为详细的分析 - Jefine</title>
+    <meta charset="utf-8">
+    
+    <meta name="title" content="选择排序-较为详细的分析 - Jefine">
+    <meta name="description" content="">
+    <meta property="og:image" content="/">
+    <meta property="og:image:width" content="200" />
+    <meta property="og:image:height" content="200" />
+    
+    <link href="https://fonts.proxy.ustclug.org/css2?family=Noto+Serif+SC:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.proxy.ustclug.org/css2?family=Noto+Serif+SC:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Noto Serif CJK TC', 'Noto Serif SC', serif;
+        }
+    </style>
+    <link rel="shortcut icon" href="/">
+    
+    <link rel="stylesheet"
+        href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.17.1/build/styles/arduino-light.min.css">
+    <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.17.1/build/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    
+    
+    <link rel="stylesheet" href="/css/style.css">
+    <script src="/js/jquery.min.js"></script>
+<link rel="alternate" href="/atom.xml" title="Jefine" type="application/atom+xml"><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</head>
+
+<body>
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><header class="header">
+    <div class="blog-title">
+        <a href="/" class="logo">Jefine</a>
+    </div>
+    <nav class="navbar">
+        <ul class="menu">
+            
+            
+            
+            <li class="menu-item">
+                
+                <a href="/" class="menu-item-link">Home</a>
+                
+            </li>
+            
+            
+            
+            <li class="menu-item">
+                
+                <a href="/archives" class="menu-item-link">Archives</a>
+                
+            </li>
+            
+            
+            
+            <li class="menu-item">
+                
+                <a href="/about" class="menu-item-link">About</a>
+                
+            </li>
+            
+            
+            
+            <li class="menu-item">
+                
+                <a href="/atom.xml" class="menu-item-link">Rss</a>
+                
+            </li>
+            
+        </ul>
+    </nav>
+</header>
+    <main class="main">
+        <article class="post">
+    <div class="post-title">
+        <h1 class="title">选择排序-较为详细的分析</h2>
+    </div>
+    <div class="post-content">
+        <h3 id="算法思想："><a href="#算法思想：" class="headerlink" title="算法思想："></a>算法思想：</h3><p>选择排序，从头至尾扫描序列，找出最小的一个元素，和第一个元素交换，接着从剩下的元素中继续这种选择和交换方式，最终得到一个有序序列。 </p>
+  <a id="more"></a>
+<h3 id="具体思路："><a href="#具体思路：" class="headerlink" title="具体思路："></a>具体思路：</h3><p>我们通过记录最小下标进行排序。但有几个需要注意的的地方。</p>
+<p>首先，我们将被排序的数组，分为两个部分：有序区和无序区。</p>
+<p>我们在每一轮的寻找中最小值下标后记得交换，然后一定要将最小值下标再次初始化为第二个（假设刚刚是第一轮查找）（这个初始下标也成了分界有序区和无序去的下标），并且我们每次都要寻找到新的无序区的最小的下标。</p>
+<h3 id="函数样例："><a href="#函数样例：" class="headerlink" title="函数样例："></a>函数样例：</h3><pre><code class="hljs c"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">selectionSort</span><span class="hljs-params">(<span class="hljs-keyword">int</span> arr[], <span class="hljs-keyword">int</span> n)</span> 
+</span>&#123; 
+    <span class="hljs-keyword">int</span> i, j, min_idx; 
+  
+    <span class="hljs-comment">// 一个接着一个，将无序区的排列为有序</span>
+    <span class="hljs-keyword">for</span> (i = <span class="hljs-number">0</span>; i &lt; n<span class="hljs-number">-1</span>; i++) 
+    &#123; 
+        <span class="hljs-comment">// Find the minimum element in unsorted array </span>
+        min_idx = i; <span class="hljs-comment">//一定要记得有初始化，而且他的位置在这里哦。</span>
+        <span class="hljs-comment">//及上面提及的从新开始寻找最小值。</span>
+        <span class="hljs-keyword">for</span> (j = i+<span class="hljs-number">1</span>; j &lt; n; j++) 
+          <span class="hljs-keyword">if</span> (arr[j] &lt; arr[min_idx]) 
+            min_idx = j; 
+  
+        <span class="hljs-comment">//交换最小值和其自己</span>
+        <span class="hljs-comment">//我们在这里可以加一个判断，来(可能)减少其交换次数</span>
+        <span class="hljs-comment">//if(i! = min_idx)//如果使用的话，记得加大括号将下面的三个都括起来哦</span>
+        <span class="hljs-keyword">int</span> t = arr[min_idx];
+        arr[min_idx] = arr[i];
+        arr[i] = t;
+        
+        
+    &#125; 
+&#125;</code></pre>
+<p>也许我们都会陷入一个又一个的坑，希望能帮助大家，踩坑多么有意义啊。</p>
+
+    </div>
+    <div class="post-meta">
+        
+    <span class="post-time">二〇一九年十二月廿六日</span>
+    </div>
+</article>
+
+<div class="prev_next">
+    <nav id="prev_next">
+
+<div class="prev">
+    
+    <p>Newer</p>
+    <a href="/2020/01/02/2020/"><div class="article-nav-title">2020</div></a>
+    
+</div>
+<div class="next">
+    
+    <p>Older</p>
+    <a href="/2019/12/21/统计单词数/"><div class="article-nav-title">统计单词数</div></a>
+    
+</div>
+
+</nav>
+</div>
+
+<div class="post-comment">
+    
+
+
+
+</div>
+
+    </main><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+</body>
+
+</html>

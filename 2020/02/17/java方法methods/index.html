@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+    
+    <title>java方法methods - Jefine</title>
+    <meta charset="utf-8">
+    
+    <meta name="title" content="java方法methods - Jefine">
+    <meta name="description" content="">
+    <meta property="og:image" content="/">
+    <meta property="og:image:width" content="200" />
+    <meta property="og:image:height" content="200" />
+    
+    <link href="https://fonts.proxy.ustclug.org/css2?family=Noto+Serif+SC:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.proxy.ustclug.org/css2?family=Noto+Serif+SC:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Noto Serif CJK TC', 'Noto Serif SC', serif;
+        }
+    </style>
+    <link rel="shortcut icon" href="/">
+    
+    <link rel="stylesheet"
+        href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.17.1/build/styles/arduino-light.min.css">
+    <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.17.1/build/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    
+    
+    <link rel="stylesheet" href="/css/style.css">
+    <script src="/js/jquery.min.js"></script>
+<link rel="alternate" href="/atom.xml" title="Jefine" type="application/atom+xml"><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</head>
+
+<body>
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><header class="header">
+    <div class="blog-title">
+        <a href="/" class="logo">Jefine</a>
+    </div>
+    <nav class="navbar">
+        <ul class="menu">
+            
+            
+            
+            <li class="menu-item">
+                
+                <a href="/" class="menu-item-link">Home</a>
+                
+            </li>
+            
+            
+            
+            <li class="menu-item">
+                
+                <a href="/archives" class="menu-item-link">Archives</a>
+                
+            </li>
+            
+            
+            
+            <li class="menu-item">
+                
+                <a href="/about" class="menu-item-link">About</a>
+                
+            </li>
+            
+            
+            
+            <li class="menu-item">
+                
+                <a href="/atom.xml" class="menu-item-link">Rss</a>
+                
+            </li>
+            
+        </ul>
+    </nav>
+</header>
+    <main class="main">
+        <article class="post">
+    <div class="post-title">
+        <h1 class="title">java方法methods</h2>
+    </div>
+    <div class="post-content">
+        <p>java中还是称之为“方法”好了。</p>
+  <a id="more"></a>
+<p>In general, method declarations has six components :</p>
+<p>包括这六部分：</p>
+<ul>
+<li><strong>Modifier</strong>-（标识符）: Defines <strong>access type</strong> of the method i.e. from where it can be accessed in your application. In Java, there 4 type of the access specifiers.<ul>
+<li>public: accessible in all class in your application.</li>
+<li>protected: accessible within the class in which it is defined and in its <strong>subclass(es)</strong></li>
+<li>private: accessible only within the class in which it is defined.</li>
+<li>default (declared/defined without using any modifier) : accessible<br>within same class and package within which its class is defined.</li>
+</ul>
+</li>
+<li><strong>The return type</strong>（返回值） : The data type of the value returned by the method or void if does not return a value.</li>
+<li><strong>Method Name</strong> （方法名）: the rules for field names apply to method names as well, but the convention is a little different.</li>
+<li><strong>Parameter list</strong>  （参数列表）: Comma separated list of the input parameters are defined, preceded with their data type, within the<br>enclosed parenthesis. If there are no parameters, you must use empty<br>parentheses ().</li>
+<li><strong>Exception list</strong>  （异常列表）: The exceptions you expect by the method can throw, you can specify these exception(s).可以列出方法可能的异常会被引发，在此列表中可以指定这些异常。</li>
+<li><strong>Method body</strong>  : it is enclosed between braces. The code you need to be executed to perform your intended operations.</li>
+</ul>
+<p><img src="/2020/02/17/java%E6%96%B9%E6%B3%95methods/Untitled.png" alt="Untitled"></p>
+<p><strong>How to name a Method?</strong></p>
+<p> A method name is typically a single word that should be a <strong>verb</strong>in lowercase or multi-word, that begins with a <strong>verb</strong> in lowercase followed by <strong>adjective, noun…..</strong> After the first word, first letter of each word should be capitalized. For example, findSum, computeMax, setX and get.</p>
+<p>方法的命名通常为动词（小写）后可跟一个名词（后面的单词首字母大写）。computeMax。</p>
+<pre><code>//自己写的
+import java.util.Scanner;
+class Addition{
+    int sum;
+    public int addTwoInt(int a,int b) {
+        sum = a + b;
+        return sum;
+    }
+}
+
+public class Main {
+    public  static void main(String args[]){
+        Addition add = new Addition();
+        int s = add.addTwoInt(1,2);
+        System.out.print(s);
+    }
+
+}
+
+// 标准版本
+//Program to illustrate methodsin java 
+import java.io.*; 
+
+class Addition { 
+
+    int sum = 0; 
+
+    public int addTwoInt(int a, int b){ 
+
+        // adding two integer value. 
+        sum = a + b; 
+
+        //returning summation of two values. 
+        return sum; 
+    } 
+
+} 
+
+class GFG { 
+    public static void main (String[] args) { 
+
+        // creating an instance of Addition class 
+        Addition add = new Addition(); 
+
+        // calling addTwoInt() method to add two integer using instance created 
+        // in above step. 
+        int s = add.addTwoInt(1,2); 
+        System.out.println(&quot;Sum of two integer values :&quot;+ s); 
+
+    } 
+}
+</code></pre>
+    </div>
+    <div class="post-meta">
+        
+    <span class="post-time">二〇二〇年二月十七日</span>
+    </div>
+</article>
+
+<div class="prev_next">
+    <nav id="prev_next">
+
+<div class="prev">
+    
+    <p>Newer</p>
+    <a href="/2020/02/17/java字符串string/"><div class="article-nav-title">java字符串string</div></a>
+    
+</div>
+<div class="next">
+    
+    <p>Older</p>
+    <a href="/2020/02/11/javaconstructors构造函数/"><div class="article-nav-title">javaconstructors构造函数</div></a>
+    
+</div>
+
+</nav>
+</div>
+
+<div class="post-comment">
+    
+
+
+
+</div>
+
+    </main><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+</body>
+
+</html>

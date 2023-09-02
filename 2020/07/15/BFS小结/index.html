@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+    
+    <title>BFS小结 - Jefine</title>
+    <meta charset="utf-8">
+    
+    <meta name="title" content="BFS小结 - Jefine">
+    <meta name="description" content="">
+    <meta property="og:image" content="/">
+    <meta property="og:image:width" content="200" />
+    <meta property="og:image:height" content="200" />
+    
+    <link href="https://fonts.proxy.ustclug.org/css2?family=Noto+Serif+SC:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.proxy.ustclug.org/css2?family=Noto+Serif+SC:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Noto Serif CJK TC', 'Noto Serif SC', serif;
+        }
+    </style>
+    <link rel="shortcut icon" href="/">
+    
+    <link rel="stylesheet"
+        href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.17.1/build/styles/arduino-light.min.css">
+    <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.17.1/build/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    
+    
+    <link rel="stylesheet" href="/css/style.css">
+    <script src="/js/jquery.min.js"></script>
+<link rel="alternate" href="/atom.xml" title="Jefine" type="application/atom+xml"><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</head>
+
+<body>
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><header class="header">
+    <div class="blog-title">
+        <a href="/" class="logo">Jefine</a>
+    </div>
+    <nav class="navbar">
+        <ul class="menu">
+            
+            
+            
+            <li class="menu-item">
+                
+                <a href="/" class="menu-item-link">Home</a>
+                
+            </li>
+            
+            
+            
+            <li class="menu-item">
+                
+                <a href="/archives" class="menu-item-link">Archives</a>
+                
+            </li>
+            
+            
+            
+            <li class="menu-item">
+                
+                <a href="/about" class="menu-item-link">About</a>
+                
+            </li>
+            
+            
+            
+            <li class="menu-item">
+                
+                <a href="/atom.xml" class="menu-item-link">Rss</a>
+                
+            </li>
+            
+        </ul>
+    </nav>
+</header>
+    <main class="main">
+        <article class="post">
+    <div class="post-title">
+        <h1 class="title">BFS小结</h2>
+    </div>
+    <div class="post-content">
+        <p>BFS可以说是在搜索中十分常用的基础算法了，在这次的初学中，做一个小结，希望可以将其模块化，系统化，公式化。从而进一步提升对bfs的理解,加快自己的解题步骤, 当然,之后少不了DFS的相关文档咯.</p>
+<p>todo  ：：：：首先我们讨论的是一般的bfs并不考虑a*，贪心等（在后期会持续补充）</p>
+  <a id="more"></a>
+<h2 id="BFS是什么"><a href="#BFS是什么" class="headerlink" title="BFS是什么?"></a>BFS是什么?</h2><blockquote>
+<p> <strong>广度优先搜索算法</strong>（英语：Breadth-First Search，缩写为BFS），又译作<strong>宽度优先搜索</strong>，或<strong>横向优先搜索</strong>，是一种<a href="https://zh.wikipedia.org/w/index.php?title=圖形搜索演算法&amp;action=edit&amp;redlink=1" target="_blank" rel="noopener">图形搜索算法</a>。简单的说，BFS是从<a href="https://zh.wikipedia.org/w/index.php?title=根節點&amp;action=edit&amp;redlink=1" target="_blank" rel="noopener">根节点</a>开始，沿着树的宽度遍历树的<a href="https://zh.wikipedia.org/wiki/节点" target="_blank" rel="noopener">节点</a>。如果所有节点均被访问，则算法中止。广度优先搜索的实现一般采用open-closed表。  (<a href="https://zh.wikipedia.org/wiki/%E5%B9%BF%E5%BA%A6%E4%BC%98%E5%85%88%E6%90%9C%E7%B4%A2" target="_blank" rel="noopener">链接</a>)</p>
+</blockquote>
+<h2 id="BFS流程是"><a href="#BFS流程是" class="headerlink" title="BFS流程是?"></a>BFS流程是?</h2><p>从起点出发,将到终点之间将所有的路几乎全部走一遍。</p>
+<p>一般用来寻找最短路程.</p>
+<p>思想上来说是穷举所有的情况,踩遍所有的可能点或找到终点。</p>
+<p>我们通常是这样做的:</p>
+<p>需要: </p>
+<ul>
+<li><p>一个状态所需要的内容作为一个节点。（比如坐标等）</p>
+</li>
+<li><p>一个足够大的位置集合,来表示我们是否来过(可能是二维数组甚至更高维度，也可能是其他的形式，要看具体状态的要求).</p>
+<pre><code class="hljs cpp"><span class="hljs-keyword">bool</span> vis[max];</code></pre>
+</li>
+<li><p>一个队列,表示我们即将将队列中的每一个元素作为一个新的起点去重新出发.(queue).</p>
+</li>
+<li><p>一个起点,一个终点.</p>
+</li>
+<li><p>可能需要: 一个记录步数的数组(或其他形式),用来记录是第几步向外，一般放在节点结构里.int step[];</p>
+</li>
+</ul>
+<h4 id="什么时候开始"><a href="#什么时候开始" class="headerlink" title="什么时候开始?"></a>什么时候开始?</h4><p>我们常常从起点开始<del>(废话)</del>, 起点仅仅只有一个点, 我们先将其标记一下,表示我们来过了,然后我们将其加入队列.</p>
+<p>我们将从起点开始的每一个可能可以去的位置,都进行遍历,然后将它们添加到队列中去.</p>
+<p>上面的步骤可以说是每一道题目的必需步骤了,然后我们就要依据题目的条件进行分析咯~</p>
+<h4 id="我们什么时候结束"><a href="#我们什么时候结束" class="headerlink" title="我们什么时候结束?"></a>我们什么时候结束?</h4><p><strong>当队列为空的时候</strong>,何时队列为空呢——当我们踩扁所有的点的时候(不能踩的当然就算了).</p>
+<p>我们依据题目,在地图上的点,并不是每个点都可以踩的,<del>要不然还这么辛苦干么.</del></p>
+<p>那我们就要总结出来: 什么是往下一个点的规律(可以往那里移动?),什么点是不能踩的,约束条件是什么.</p>
+<p>所以,我们往往判断一个点可不可以踩的时候我们要对他有很多的约束条件.</p>
+<p>例如，在二维的地图上，不能越界，不能进入禁止的点，没有来过此点等等。</p>
+<p>例如,小老鼠走迷宫的问题:那么我们就可以根据题目,得到我们小老鼠不能碰的那些点,每次小老鼠可以怎样走动呢?上下左右都可以走,我们就还要判断他们是否出界.进行挑选出那些<strong>从一点可以到该点所能触及的所有不违反规则的点</strong>,别忘了,我们还要判断他们是不是我们要寻找的终点.</p>
+<p>在一层一层的脱离过程中我们会发现还要根据题目要求记下一些东西,往往是所走的路程是多少,那么刚刚提及的最后一个记录步数的数组就可以起效了,我们往往这样使用:</p>
+<pre><code class="hljs cpp">step[next] = step[front]+<span class="hljs-number">1</span>;</code></pre>
+<p>因为我们从一点出发往往会经过许许多多的点,然而这些点都是我们一步可以走到的点.不能将他们累加起来作为我们的实际步数.</p>
+<p>宏观上看,我们其实更像是一个池塘中的波纹,每一个波纹有小及大的向外扩散.那么看起来与BFS的算法思想是极为相似的,我们也是从一点抛下一颗小石子,然后等波纹自己寻找到终点(水中的另外一颗小石头的位置).可以想象到我们如果碰触到终点后不停止,那么水波将不断的向远处扩散,知道池塘全部被波及.但我们往往不需要那样做,那样通常是最坏的情况了(也意味着我们要踩所有的可能点呢).</p>
+<h4 id="实现步骤"><a href="#实现步骤" class="headerlink" title="实现步骤:"></a>实现步骤:</h4><ol>
+<li>首先将根节点放入队列中。</li>
+<li>从队列中取出第一个节点，并检验它是否为目标。 <ul>
+<li>如果找到目标，则结束搜索并回传结果。</li>
+<li>否则将它所有尚未检验过的直接子节点加入队列中。</li>
+</ul>
+</li>
+<li>若队列为空，表示整张图都检查过了——亦即图中没有欲搜索的目标。结束搜索并回传“找不到目标”。</li>
+<li>重复步骤2。</li>
+</ol>
+<p>其中重要 的就是我们需要限制的约束条件和下一个位置的可能点.</p>
+<p>当然[[bfs]]是一个思想并不拘泥于为某道题目而服务,所以我们往往需要多加练习,在面对求最短路径的时候,才能从容不迫的写出题解.</p>
+<h3 id="需要注意的几个小点点："><a href="#需要注意的几个小点点：" class="headerlink" title="需要注意的几个小点点："></a>需要注意的几个小点点：</h3><ol>
+<li><p>vis是为了防止我们将踩过的点再次踩入</p>
+<p>想象一下，我们水花的方向是四周的一圈，那么也一定会有的向着我们已经走过的路的水波方向，我们要做好辨别工作，那么就给他们加上一个vis的判断。他们的范围就是所有的可能涉及的区域集合。可能通常是数组。</p>
+<p>这样，我们不必花费过多的时间去判断该行为是否会造成逆流，我们只需要进行有效的标注即可！</p>
+<p>杜绝了同样的状态二次出现！</p>
+</li>
+<li><p>我们通常会遇到需要记录层数的时刻，那么最好是使用一个node 里面放上cnt来记录当前节点的层数。</p>
+</li>
+<li><p>我们在对于一个节点进行多个动作时候，需要注意，我们要将其恢复为front的状态，或者更方便一些的，我们直接将其 cnt++；在循环的过程中，我们一直采用front来判断条件或者是对即将入队的节点进行赋值。</p>
+<p>eg：在洛谷1135的题目中我们在队列的循环过程中的front进行变动的做法：而不是对t进行改动。在其他的题目中也经常适用，不要改变t，除非即将入队，判断采用front的+-等进行操作即可。</p>
+<pre><code class="hljs cpp">t.cnt = front.cnt+<span class="hljs-number">1</span>;
+<span class="hljs-keyword">if</span>(CHECK((front.h+high[front.h])))&#123;
+    t.h = front.h+high[front.h];
+    vis[t.h] = <span class="hljs-number">1</span>;
+    q.push(t);
+&#125;</code></pre>
+</li>
+<li><p>我们如果需要记录可以达到多少个点，那么我们在队列中，只要 !vis 我们就可以给他count++；一般是放在动作里面的。如上面的代码情况就放在vis[t.h]=1 下面一行即可。</p>
+</li>
+<li><p>如果我们需要遍历出到每一个点的最短步数，如洛谷p1443，我们最暴力的想法就是给定每一点作为终点，不断地去跑bfs，然而这样是复杂度很高的，完全没有必要这样做，我们既然目标是所有的点，那么我们再 声明一个和vis的范围相同的一个ans数组来记录一个queue的每个点（！vis）的时候的步数即可，未记录的即为无法达到，通过遍历ans数组即可获得相关内容。</p>
+</li>
+<li><p>遇到三维的状态（hdu1204）时，只需要注意输入，接着按照正常的bfs动作流程即可。</p>
+</li>
+</ol>
+
+    </div>
+    <div class="post-meta">
+        
+    <span class="post-time">二〇二〇年七月十五日</span>
+    </div>
+</article>
+
+<div class="prev_next">
+    <nav id="prev_next">
+
+<div class="prev">
+    
+    <p>Newer</p>
+    <a href="/2020/07/16/poj3414Pots/"><div class="article-nav-title">poj3414Pots</div></a>
+    
+</div>
+<div class="next">
+    
+    <p>Older</p>
+    <a href="/2020/07/04/输出全组合二进制/"><div class="article-nav-title">输出全组合二进制</div></a>
+    
+</div>
+
+</nav>
+</div>
+
+<div class="post-comment">
+    
+
+
+
+</div>
+
+    </main><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+</body>
+
+</html>

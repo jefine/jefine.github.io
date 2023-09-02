@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+    
+    <title>p1086花生采摘 - Jefine</title>
+    <meta charset="utf-8">
+    
+    <meta name="title" content="p1086花生采摘 - Jefine">
+    <meta name="description" content="">
+    <meta property="og:image" content="/">
+    <meta property="og:image:width" content="200" />
+    <meta property="og:image:height" content="200" />
+    
+    <link href="https://fonts.proxy.ustclug.org/css2?family=Noto+Serif+SC:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.proxy.ustclug.org/css2?family=Noto+Serif+SC:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Noto Serif CJK TC', 'Noto Serif SC', serif;
+        }
+    </style>
+    <link rel="shortcut icon" href="/">
+    
+    <link rel="stylesheet"
+        href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.17.1/build/styles/arduino-light.min.css">
+    <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.17.1/build/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    
+    
+    <link rel="stylesheet" href="/css/style.css">
+    <script src="/js/jquery.min.js"></script>
+<link rel="alternate" href="/atom.xml" title="Jefine" type="application/atom+xml"><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</head>
+
+<body>
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><header class="header">
+    <div class="blog-title">
+        <a href="/" class="logo">Jefine</a>
+    </div>
+    <nav class="navbar">
+        <ul class="menu">
+            
+            
+            
+            <li class="menu-item">
+                
+                <a href="/" class="menu-item-link">Home</a>
+                
+            </li>
+            
+            
+            
+            <li class="menu-item">
+                
+                <a href="/archives" class="menu-item-link">Archives</a>
+                
+            </li>
+            
+            
+            
+            <li class="menu-item">
+                
+                <a href="/about" class="menu-item-link">About</a>
+                
+            </li>
+            
+            
+            
+            <li class="menu-item">
+                
+                <a href="/atom.xml" class="menu-item-link">Rss</a>
+                
+            </li>
+            
+        </ul>
+    </nav>
+</header>
+    <main class="main">
+        <article class="post">
+    <div class="post-title">
+        <h1 class="title">p1086花生采摘</h2>
+    </div>
+    <div class="post-content">
+        <h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><p>鲁宾逊先生有一只宠物猴，名叫多多。这天，他们两个正沿着乡间小路散步，突然发现路边的告示牌上贴着一张小小的纸条：“欢迎免费品尝我种的花生！――熊字”。</p>
+<p>鲁宾逊先生和多多都很开心，因为花生正是他们的最爱。在告示牌背后，路边真的有一块花生田，花生植株整齐地排列成矩形网格（如图111）。有经验的多多一眼就能看出，每棵花生植株下的花生有多少。为了训练多多的算术，鲁宾逊先生说：“你先找出花生最多的植株，去采摘它的花生；然后再找出剩下的植株里花生最多的，去采摘它的花生；依此类推，不过你一定要在我限定的时间内回到路边。”</p>
+<p><img src="/2020/03/21/p1086%E8%8A%B1%E7%94%9F%E9%87%87%E6%91%98/1182.png" alt></p>
+<p>我们假定多多在每个单位时间内，可以做下列四件事情中的一件：</p>
+<ol>
+<li>从路边跳到最靠近路边（即第一行）的某棵花生植株；</li>
+<li>从一棵植株跳到前后左右与之相邻的另一棵植株</li>
+<li>采摘一棵植株下的花生：</li>
+<li>从最靠近路边（即第一行）的某棵花生植株跳回路边</li>
+</ol>
+<p>现在给定一块花生田的大小和花生的分布，请问在限定时间内，多多最多可以采到多少个花生？注意可能只有部分植株下面长有花生，假设这些植株下的花生个数各不相同。</p>
+<p>例如在图2所示的花生田里，只有位于(2,5),(3,7),(4,2),(5,4)的植株下长有花生，个数分别为13,7,15,9。沿着图示的路线，多多在21个单位时间内，最多可以采到37个花生。</p>
+<h2 id="输入格式"><a href="#输入格式" class="headerlink" title="输入格式"></a>输入格式</h2><p>第一行包括三个整数，M,N和K，用空格隔开；表示花生田的大小为MN（1≤M,N≤20），多多采花生的限定时间为K（0≤K≤1000）个单位时间。接下来的M行，每行包括N个非负整数，也用空格隔开；第i+1行的第j个整数Pij（0≤Pij≤500）表示花生田里植株（i,j）下花生的数目，0表示该植株下没有花生。</p>
+<h2 id="输出格式"><a href="#输出格式" class="headerlink" title="输出格式"></a>输出格式</h2><p>一个整数，即在限定时间内，多多最多可以采到花生的个数。</p>
+<h2 id="输入输出样例"><a href="#输入输出样例" class="headerlink" title="输入输出样例"></a>输入输出样例</h2><p><strong>输入 #1</strong> </p>
+<pre><code class="hljs basic"><span class="hljs-symbol">6 </span><span class="hljs-number">7</span> <span class="hljs-number">21</span>
+<span class="hljs-symbol">0 </span><span class="hljs-number">0</span> <span class="hljs-number">0</span> <span class="hljs-number">0</span> <span class="hljs-number">0</span> <span class="hljs-number">0</span> <span class="hljs-number">0</span>
+<span class="hljs-symbol">0 </span><span class="hljs-number">0</span> <span class="hljs-number">0</span> <span class="hljs-number">0</span> <span class="hljs-number">13</span> <span class="hljs-number">0</span> <span class="hljs-number">0</span>
+<span class="hljs-symbol">0 </span><span class="hljs-number">0</span> <span class="hljs-number">0</span> <span class="hljs-number">0</span> <span class="hljs-number">0</span> <span class="hljs-number">0</span> <span class="hljs-number">7</span>
+<span class="hljs-symbol">0 </span><span class="hljs-number">15</span> <span class="hljs-number">0</span> <span class="hljs-number">0</span> <span class="hljs-number">0</span> <span class="hljs-number">0</span> <span class="hljs-number">0</span>
+<span class="hljs-symbol">0 </span><span class="hljs-number">0</span> <span class="hljs-number">0</span> <span class="hljs-number">9</span> <span class="hljs-number">0</span> <span class="hljs-number">0</span> <span class="hljs-number">0</span>
+<span class="hljs-symbol">0 </span><span class="hljs-number">0</span> <span class="hljs-number">0</span> <span class="hljs-number">0</span> <span class="hljs-number">0</span> <span class="hljs-number">0</span> <span class="hljs-number">0</span></code></pre>
+<p><strong>输出 #1</strong> </p>
+<pre><code class="hljs angelscript"><span class="hljs-number">37</span></code></pre>
+<p><strong>输入 #2</strong> </p>
+<pre><code class="hljs basic"><span class="hljs-symbol">6 </span><span class="hljs-number">7</span> <span class="hljs-number">20</span>
+<span class="hljs-symbol">0 </span><span class="hljs-number">0</span> <span class="hljs-number">0</span> <span class="hljs-number">0</span> <span class="hljs-number">0</span> <span class="hljs-number">0</span> <span class="hljs-number">0</span>
+<span class="hljs-symbol">0 </span><span class="hljs-number">0</span> <span class="hljs-number">0</span> <span class="hljs-number">0</span> <span class="hljs-number">13</span> <span class="hljs-number">0</span> <span class="hljs-number">0</span>
+<span class="hljs-symbol">0 </span><span class="hljs-number">0</span> <span class="hljs-number">0</span> <span class="hljs-number">0</span> <span class="hljs-number">0</span> <span class="hljs-number">0</span> <span class="hljs-number">7</span>
+<span class="hljs-symbol">0 </span><span class="hljs-number">15</span> <span class="hljs-number">0</span> <span class="hljs-number">0</span> <span class="hljs-number">0</span> <span class="hljs-number">0</span> <span class="hljs-number">0</span>
+<span class="hljs-symbol">0 </span><span class="hljs-number">0</span> <span class="hljs-number">0</span> <span class="hljs-number">9</span> <span class="hljs-number">0</span> <span class="hljs-number">0</span> <span class="hljs-number">0</span>
+<span class="hljs-symbol">0 </span><span class="hljs-number">0</span> <span class="hljs-number">0</span> <span class="hljs-number">0</span> <span class="hljs-number">0</span> <span class="hljs-number">0</span> <span class="hljs-number">0</span></code></pre>
+<p><strong>输出 #2</strong> </p>
+<pre><code class="hljs angelscript"><span class="hljs-number">28</span></code></pre>
+<h2 id="解题思路："><a href="#解题思路：" class="headerlink" title="解题思路："></a>解题思路：</h2><p>刚开始急匆匆地一看题目（然后就陷入了一阵思考：“如何在有限的时间内拿到最多的花生呢？”哎，每个花生的个数还不一样，也就是先后顺序什么的都要去更改哎，动态规划？<del>（可是其实我不会动态规划哈哈）</del>那么怎么办呢，哎呦，然后发现了一个问题，这是一道普及题目那么不会那么难的吧？！</p>
+<p>又重新审题后，发现我原来看错题目了！在那段极长的唠叨中，<strong>它规定的摘取顺序是按照从大到小的顺序区去采摘，</strong>而不是向我之前所想的那样，这样一来就大大简化了自己的步骤。</p>
+<p>之后一开始打算使用一个二维数组来储存但是发现不太对，想起来结构体于是；</p>
+<p>有了思路，使用一个结构体来储存自己的x，y，和花生的个数；然后排序，从大到小但是要记住判断下一次是不是采摘完还能回去哈哈。</p>
+<pre><code class="hljs c++"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span><span class="hljs-meta-string">&lt;bits/stdc++.h&gt;</span></span>
+<span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> <span class="hljs-built_in">std</span>;
+<span class="hljs-keyword">typedef</span> <span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">hua</span>&#123;</span>
+    <span class="hljs-keyword">int</span> x;
+    <span class="hljs-keyword">int</span> y;
+    <span class="hljs-keyword">int</span> num;
+&#125;h;
+<span class="hljs-function"><span class="hljs-keyword">bool</span> <span class="hljs-title">cmp</span><span class="hljs-params">(h a,h b)</span></span>&#123;    
+        <span class="hljs-keyword">return</span>  a.num &gt; b.num; 
+&#125;;
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span>&#123;
+    <span class="hljs-keyword">int</span> m,n,k,cnt=<span class="hljs-number">0</span>,ans=<span class="hljs-number">0</span>,real=<span class="hljs-number">0</span>;
+    <span class="hljs-built_in">cin</span>&gt;&gt;m&gt;&gt;n&gt;&gt;k;
+    h a[m*n];
+    <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i=<span class="hljs-number">0</span>;i&lt;m;i++)
+    &#123;
+        <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> j=<span class="hljs-number">0</span>;j&lt;n;j++)&#123;
+        a[cnt].x = i;
+        a[cnt].y = j;
+        <span class="hljs-built_in">cin</span>&gt;&gt;a[cnt++].num; 
+		<span class="hljs-keyword">if</span>(a[cnt<span class="hljs-number">-1</span>].num!=<span class="hljs-number">0</span>)real++;  
+        &#125;  
+    &#125;
+    sort(a,a+m*n,cmp);
+    <span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>;
+    k--;<span class="hljs-comment">//跳入</span>
+    <span class="hljs-keyword">int</span> least = a[i].x*<span class="hljs-number">2</span>+<span class="hljs-number">2</span>;
+    <span class="hljs-keyword">int</span> cost = a[i].x+<span class="hljs-number">1</span>;
+   	<span class="hljs-comment">// cout&lt;&lt;real&lt;&lt;endl;</span>
+    <span class="hljs-comment">//cout&lt;&lt;"应该是：3，1"&lt;&lt;a[0].x&lt;&lt;"  "&lt;&lt;a[0].y&lt;&lt;endl;</span>
+    <span class="hljs-keyword">while</span>(k&gt;=least&amp;&amp;(i&lt;=real))&#123;<span class="hljs-comment">//省去了讨论最后一步跳出</span>
+        k-=cost;<span class="hljs-comment">//到达a[i]点所需要的步数，并加上挖出所需要的一步</span>
+       <span class="hljs-comment">// cout&lt;&lt;"least:"&lt;&lt;least&lt;&lt;"  cost:"&lt;&lt;cost;</span>
+       <span class="hljs-comment">// cout&lt;&lt;"   k:"&lt;&lt;k&lt;&lt;endl;</span>
+        ans+=a[i].num;
+        least = <span class="hljs-built_in">abs</span>(a[i+<span class="hljs-number">1</span>].y-a[i].y)+<span class="hljs-built_in">abs</span>(a[i+<span class="hljs-number">1</span>].x-a[i].x)+a[i+<span class="hljs-number">1</span>].x+<span class="hljs-number">2</span>;
+        <span class="hljs-comment">//假设能拿到下一个,且挖掘，并保证能够返回到第一行。</span>
+        cost = <span class="hljs-built_in">abs</span>(a[i+<span class="hljs-number">1</span>].y-a[i].y)+<span class="hljs-built_in">abs</span>(a[i+<span class="hljs-number">1</span>].x-a[i].x)+<span class="hljs-number">1</span>;
+        i++;
+    &#125;
+    <span class="hljs-built_in">cout</span>&lt;&lt;ans;
+
+    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;
+&#125;</code></pre>
+<p>好的，这个故事告诉我们。。。审视好题目。。。</p>
+
+    </div>
+    <div class="post-meta">
+        
+    <span class="post-time">二〇二〇年三月廿一日</span>
+    </div>
+</article>
+
+<div class="prev_next">
+    <nav id="prev_next">
+
+<div class="prev">
+    
+    <p>Newer</p>
+    <a href="/2020/03/26/一元多次多项式的加减/"><div class="article-nav-title">一元多次多项式的加减</div></a>
+    
+</div>
+<div class="next">
+    
+    <p>Older</p>
+    <a href="/2020/03/17/LinkedList链表/"><div class="article-nav-title">LinkedList链表</div></a>
+    
+</div>
+
+</nav>
+</div>
+
+<div class="post-comment">
+    
+
+
+
+</div>
+
+    </main><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+</body>
+
+</html>

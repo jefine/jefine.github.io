@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+    
+    <title>简化的插入排序,详解附带一些基础讲解 - Jefine</title>
+    <meta charset="utf-8">
+    
+    <meta name="title" content="简化的插入排序,详解附带一些基础讲解 - Jefine">
+    <meta name="description" content="">
+    <meta property="og:image" content="/">
+    <meta property="og:image:width" content="200" />
+    <meta property="og:image:height" content="200" />
+    
+    <link href="https://fonts.proxy.ustclug.org/css2?family=Noto+Serif+SC:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.proxy.ustclug.org/css2?family=Noto+Serif+SC:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Noto Serif CJK TC', 'Noto Serif SC', serif;
+        }
+    </style>
+    <link rel="shortcut icon" href="/">
+    
+    <link rel="stylesheet"
+        href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.17.1/build/styles/arduino-light.min.css">
+    <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.17.1/build/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    
+    
+    <link rel="stylesheet" href="/css/style.css">
+    <script src="/js/jquery.min.js"></script>
+<link rel="alternate" href="/atom.xml" title="Jefine" type="application/atom+xml"><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</head>
+
+<body>
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><header class="header">
+    <div class="blog-title">
+        <a href="/" class="logo">Jefine</a>
+    </div>
+    <nav class="navbar">
+        <ul class="menu">
+            
+            
+            
+            <li class="menu-item">
+                
+                <a href="/" class="menu-item-link">Home</a>
+                
+            </li>
+            
+            
+            
+            <li class="menu-item">
+                
+                <a href="/archives" class="menu-item-link">Archives</a>
+                
+            </li>
+            
+            
+            
+            <li class="menu-item">
+                
+                <a href="/about" class="menu-item-link">About</a>
+                
+            </li>
+            
+            
+            
+            <li class="menu-item">
+                
+                <a href="/atom.xml" class="menu-item-link">Rss</a>
+                
+            </li>
+            
+        </ul>
+    </nav>
+</header>
+    <main class="main">
+        <article class="post">
+    <div class="post-title">
+        <h1 class="title">简化的插入排序,详解附带一些基础讲解</h2>
+    </div>
+    <div class="post-content">
+        <p>本题要求编写程序，将一个给定的整数插到原本有序的整数序列中，使结果序列仍然有序。</p>
+  <a id="more"></a>
+<h3 id="输入格式："><a href="#输入格式：" class="headerlink" title="输入格式："></a>输入格式：</h3><p>输入在第一行先给出非负整数N（&lt;10）；第二行给出N个从小到大排好顺序的整数；第三行给出一个整数X。</p>
+<h3 id="输出格式："><a href="#输出格式：" class="headerlink" title="输出格式："></a>输出格式：</h3><p>在一行内输出将X插入后仍然从小到大有序的整数序列，每个数字后面有一个空格。</p>
+<h3 id="输入样例："><a href="#输入样例：" class="headerlink" title="输入样例："></a>输入样例：</h3><p> 5<br>1 2 4 5 7<br>3</p>
+<h3 id="输出样例："><a href="#输出样例：" class="headerlink" title="输出样例："></a>输出样例：</h3><p>1 2 3 4 5 7 </p>
+<h1 id="代码在最后，此处是分析（写的很基础）（更新后为两种方法）"><a href="#代码在最后，此处是分析（写的很基础）（更新后为两种方法）" class="headerlink" title="代码在最后，此处是分析（写的很基础）（更新后为两种方法）."></a>代码在最后，此处是分析（写的很基础）（更新后为两种方法）.</h1><p><em>方法一的思路：定义数组=&gt; 找到插入值的位置=&gt; 将其后面的值转换位置=&gt; 将其插入，输出数组即可。</em></p>
+<ol>
+<li>首先，我们分析这道题，不难发现其在增加一个数后<strong>数组的大小发生了变化</strong>，所以我们在定义时直接int a【n+1】即可解决.</li>
+<li>之后，我们遍历数组，将第二行输入的数字赋值到数组a【n+1】中即可。<br>接着我们就开始进行数据的调换，<del>但把大象装进冰箱的第一步是打开冰箱门</del>，即我们首先要<strong>找到x即插入值的位置</strong>应该在哪里。所以我们不难想到遍历数组，当其大于a[i]且小于a[i+1],（在此题中，保证了不重复，不会出现相等的情况）则记录下这个i，此为其位置！</li>
+<li><p>再找到其位置后，我们可以开始转换吧，采用的思想是将其错位放置，即例如原本为第五个位置的数放置在第六个位置，将第四个位置的数放在第五个位置（顺序可不能反了啊2333）。<br>那么又会出现一个最大的问题！<strong>如何合理安排其转换</strong>？理解了思路后，其实实践中，我们就会发现许多问题，比如错位放置的时候，在哪里停止？从哪里开始？<br>在数组中，其第一个数从a[0]开始的，所以其开始的顺序是与正常的逻辑有所差异（即差一位）。所以我们<strong>先熟悉正常的，常见的，for循环而了解其循环的次数与特性。</strong><br> 1.当我们输入：（以题目中给出的参考输入值为准）</p>
+ <pre><code class="hljs c"><span class="hljs-keyword">for</span>(i=<span class="hljs-number">0</span>;i&lt;n;i++)或者<span class="hljs-keyword">for</span>(i=<span class="hljs-number">1</span>;i&lt;=n;i++)</code></pre>
+<p> 那么我们会循环n（即n-0）次.由于我们使用的数组为保持一致性，我们还是使用第一种.</p>
+</li>
+</ol>
+<p>2.在此题中，我们需要交换多少次呢？我们原来一共有n个数，后来变为n+1个数，我们从一般情况来看：当满足以下条件时我们可以得到其位置（即i）</p>
+ <pre><code class="hljs c"><span class="hljs-keyword">if</span>(x&gt;a[i]&amp;&amp;x&lt;a[i+<span class="hljs-number">1</span>])</code></pre>
+<p> 但我们也应注意到（载体给定的数据中）是第3个而且其i=2；此时我们输入的数据中，最后一个是i=n-1；<br> 在这里我们使用新的变量j来计数,并实现交换数组。（保持i的不变）在此循环中我们循环了(n-1)-i+1次即在i后面我们有这么多次交换。<strong>注意：a[i]不变，a[i+1]最终会进行x的赋值实现插入（被替换）</strong>。（此处类比上述1的特性）</p>
+<pre><code class="hljs c"><span class="hljs-keyword">for</span>(j=n<span class="hljs-number">-1</span>;j&gt;i;j- -);</code></pre>
+<p>3.最后，我们考虑到将x插入，则一般情况解决，但是其中的特殊情况：比如x最小或最大在最前面或最后一个，则需要单独处理。 （有朋友指出给定的数字与有序数列中的相同时的bug，已经修复，而且我觉得题意最后要求排列后为有序数列，就不会给出这样的情况（也许是我错了，但最好加上等于号排除这种可能）。感谢提出问题并交流） </p>
+<h3 id="真的代码！"><a href="#真的代码！" class="headerlink" title="真的代码！"></a>真的代码！</h3><pre><code class="hljs c"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span><span class="hljs-meta-string">&lt;stdio.h&gt;</span></span>
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span>&#123;
+	<span class="hljs-keyword">int</span> n,j,i,t,x;
+
+	<span class="hljs-built_in">scanf</span>(<span class="hljs-string">"%d"</span>,&amp;n);
+		<span class="hljs-keyword">int</span> a[n+<span class="hljs-number">1</span>];
+
+	<span class="hljs-keyword">for</span>(i=<span class="hljs-number">0</span>;i&lt;n;i++)&#123;<span class="hljs-comment">//input</span>
+		<span class="hljs-built_in">scanf</span>(<span class="hljs-string">"%d"</span>,&amp;a[i]);
+	&#125;
+	<span class="hljs-built_in">scanf</span>(<span class="hljs-string">"%d"</span>,&amp;x);
+
+	<span class="hljs-keyword">if</span>(x&lt;a[<span class="hljs-number">0</span>])&#123;<span class="hljs-comment">//special min </span>
+		<span class="hljs-keyword">for</span>(j=n<span class="hljs-number">-1</span>;j&gt;=<span class="hljs-number">0</span>;j--)&#123;<span class="hljs-comment">//有多少个n移多少次！ </span>
+	 	a[j+<span class="hljs-number">1</span>]=a[j];
+	 	&#125;a[<span class="hljs-number">0</span>]=x;
+	&#125;
+ 	<span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span>(x&gt;a[n<span class="hljs-number">-1</span>])a[n]=x;<span class="hljs-comment">//special max </span>
+ 	
+	<span class="hljs-keyword">else</span> <span class="hljs-keyword">for</span>(i=<span class="hljs-number">0</span>;i&lt;n;i++)&#123;<span class="hljs-comment">//do</span>
+	 <span class="hljs-keyword">if</span>(x&gt;a[i]&amp;&amp;x&lt;=a[i+<span class="hljs-number">1</span>])&#123;
+	 	<span class="hljs-keyword">for</span>(j=n<span class="hljs-number">-1</span>;j&gt;i;j--)&#123;
+	 		a[j+<span class="hljs-number">1</span>]=a[j];
+	 	&#125;a[i+<span class="hljs-number">1</span>]=x;
+	 	<span class="hljs-keyword">break</span>;
+	 &#125;
+	&#125; 
+	<span class="hljs-keyword">for</span>(i=<span class="hljs-number">0</span>;i&lt;n+<span class="hljs-number">1</span>;i++)&#123;<span class="hljs-comment">//output</span>
+		
+
+	<span class="hljs-built_in">printf</span>(<span class="hljs-string">"%d "</span>,a[i]);
+	
+	&#125;
+
+	<span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;
+&#125;</code></pre>
+<p>方法二的思路：从后向前比较，如果x&gt;最后一个数字a[n-1]那么将a[n]赋值为x即可停止程序；如果x&lt;a[n-1]，那么我们将a[n-1]向后移一位，再继续循环比较。</p>
+<ul>
+<li>这样的好处是我们不必再去考虑一些特殊情况的处理</li>
+<li>更加符合我们的逻辑习惯</li>
+<li>代码也更为简单</li>
+</ul>
+<h2 id="代码如下："><a href="#代码如下：" class="headerlink" title="代码如下："></a>代码如下：</h2><pre><code class="hljs c"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span><span class="hljs-meta-string">&lt;stdio.h&gt;</span></span>
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span>&#123;
+	<span class="hljs-keyword">int</span> n,j,i,t,x;
+
+	<span class="hljs-built_in">scanf</span>(<span class="hljs-string">"%d"</span>,&amp;n);
+		<span class="hljs-keyword">int</span> a[n+<span class="hljs-number">1</span>];
+
+	<span class="hljs-keyword">for</span>(i=<span class="hljs-number">0</span>;i&lt;n;i++)&#123;<span class="hljs-comment">//input</span>
+		<span class="hljs-built_in">scanf</span>(<span class="hljs-string">"%d"</span>,&amp;a[i]);
+	&#125;
+	<span class="hljs-built_in">scanf</span>(<span class="hljs-string">"%d"</span>,&amp;x);
+
+<span class="hljs-comment">//	if(x&lt;a[0])&#123;//special min </span>
+<span class="hljs-comment">//		for(j=n-1;j&gt;=0;j--)&#123;//有多少个n移多少次！ </span>
+<span class="hljs-comment">//	 	a[j+1]=a[j];</span>
+<span class="hljs-comment">//	 	&#125;a[0]=x;</span>
+<span class="hljs-comment">//	&#125;</span>
+<span class="hljs-comment">// 	else if(x&gt;a[n-1])a[n]=x;//special max </span>
+<span class="hljs-comment">// 	</span>
+<span class="hljs-comment">//	else </span>
+	<span class="hljs-keyword">for</span>(i=n<span class="hljs-number">-1</span>;i&gt;=<span class="hljs-number">0</span>;i--)&#123;<span class="hljs-comment">//do</span>
+	 <span class="hljs-keyword">if</span>(x&gt;a[i])&#123;
+	 a[i+<span class="hljs-number">1</span>]=x;
+	 <span class="hljs-keyword">break</span>;&#125;<span class="hljs-comment">//找到x的位置并插入了</span>
+	 <span class="hljs-keyword">else</span> a[i+<span class="hljs-number">1</span>]=a[i];<span class="hljs-comment">//没找到，将大的数字向右移一位，继续比较。				 </span>
+	&#125; 
+	
+	<span class="hljs-keyword">for</span>(i=<span class="hljs-number">0</span>;i&lt;n+<span class="hljs-number">1</span>;i++)&#123;<span class="hljs-comment">//output</span>
+		
+
+	<span class="hljs-built_in">printf</span>(<span class="hljs-string">"%d "</span>,a[i]);
+	
+	&#125;
+
+	<span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;
+&#125;</code></pre>
+
+    </div>
+    <div class="post-meta">
+        
+    <span class="post-time">二〇一九年十一月十二日</span>
+    </div>
+</article>
+
+<div class="prev_next">
+    <nav id="prev_next">
+
+<div class="prev">
+    
+    <p>Newer</p>
+    <a href="/2019/11/12/方阵循环右移于其各种踩bug23333/"><div class="article-nav-title">方阵循环右移于其各种踩bug23333</div></a>
+    
+</div>
+<div class="next">
+    
+    <p>Older</p>
+    <a href="/2019/11/09/各种排序方式的汇总及学习（只写了冒泡排序）/"><div class="article-nav-title">各种排序方式的汇总及学习（只更了冒泡排序）</div></a>
+    
+</div>
+
+</nav>
+</div>
+
+<div class="post-comment">
+    
+
+
+
+</div>
+
+    </main><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+</body>
+
+</html>

@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+    
+    <title>L1-033出生年 - Jefine</title>
+    <meta charset="utf-8">
+    
+    <meta name="title" content="L1-033出生年 - Jefine">
+    <meta name="description" content="">
+    <meta property="og:image" content="/">
+    <meta property="og:image:width" content="200" />
+    <meta property="og:image:height" content="200" />
+    
+    <link href="https://fonts.proxy.ustclug.org/css2?family=Noto+Serif+SC:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.proxy.ustclug.org/css2?family=Noto+Serif+SC:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Noto Serif CJK TC', 'Noto Serif SC', serif;
+        }
+    </style>
+    <link rel="shortcut icon" href="/">
+    
+    <link rel="stylesheet"
+        href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.17.1/build/styles/arduino-light.min.css">
+    <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.17.1/build/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    
+    
+    <link rel="stylesheet" href="/css/style.css">
+    <script src="/js/jquery.min.js"></script>
+<link rel="alternate" href="/atom.xml" title="Jefine" type="application/atom+xml"><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</head>
+
+<body>
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><header class="header">
+    <div class="blog-title">
+        <a href="/" class="logo">Jefine</a>
+    </div>
+    <nav class="navbar">
+        <ul class="menu">
+            
+            
+            
+            <li class="menu-item">
+                
+                <a href="/" class="menu-item-link">Home</a>
+                
+            </li>
+            
+            
+            
+            <li class="menu-item">
+                
+                <a href="/archives" class="menu-item-link">Archives</a>
+                
+            </li>
+            
+            
+            
+            <li class="menu-item">
+                
+                <a href="/about" class="menu-item-link">About</a>
+                
+            </li>
+            
+            
+            
+            <li class="menu-item">
+                
+                <a href="/atom.xml" class="menu-item-link">Rss</a>
+                
+            </li>
+            
+        </ul>
+    </nav>
+</header>
+    <main class="main">
+        <article class="post">
+    <div class="post-title">
+        <h1 class="title">L1-033出生年</h2>
+    </div>
+    <div class="post-content">
+        <p><img src="/2020/01/04/L1-033%E5%87%BA%E7%94%9F%E5%B9%B4/blog\hexo\source\_posts\jmK5wuZkEV4aCdJ.png" alt="image.png"></p>
+<p>以上是新浪微博中一奇葩贴：“我出生于1988年，直到25岁才遇到4个数字都不相同的年份。”也就是说，直到2013年才达到“4个数字都不相同”的要求。本题请你根据要求，自动填充“我出生于<code>y</code>年，直到<code>x</code>岁才遇到<code>n</code>个数字都不相同的年份”这句话。</p>
+<h3 id="输入格式："><a href="#输入格式：" class="headerlink" title="输入格式："></a>输入格式：</h3><p>输入在一行中给出出生年份<code>y</code>和目标年份中不同数字的个数<code>n</code>，其中<code>y</code>在[1, 3000]之间，<code>n</code>可以是2、或3、或4。注意不足4位的年份要在前面补零，例如公元1年被认为是0001年，有2个不同的数字0和1。</p>
+<h3 id="输出格式："><a href="#输出格式：" class="headerlink" title="输出格式："></a>输出格式：</h3><p>根据输入，输出<code>x</code>和能达到要求的年份。数字间以1个空格分隔，行首尾不得有多余空格。年份要按4位输出。注意：所谓“<code>n</code>个数字都不相同”是指不同的数字正好是<code>n</code>个。如“2013”被视为满足“4位数字都不同”的条件，但不被视为满足2位或3位数字不同的条件。</p>
+<h3 id="输入样例1："><a href="#输入样例1：" class="headerlink" title="输入样例1："></a>输入样例1：</h3><pre><code class="hljs in">1988 4</code></pre>
+<h3 id="输出样例1："><a href="#输出样例1：" class="headerlink" title="输出样例1："></a>输出样例1：</h3><pre><code class="hljs out">25 2013</code></pre>
+<h3 id="输入样例2："><a href="#输入样例2：" class="headerlink" title="输入样例2："></a>输入样例2：</h3><pre><code class="hljs basic"><span class="hljs-symbol">1 </span><span class="hljs-number">2</span></code></pre>
+<h3 id="输出样例2："><a href="#输出样例2：" class="headerlink" title="输出样例2："></a>输出样例2：</h3><pre><code class="hljs basic"><span class="hljs-symbol">0 </span><span class="hljs-number">0001</span></code></pre>
+<h3 id="题目思路："><a href="#题目思路：" class="headerlink" title="题目思路："></a>题目思路：</h3><p>起初打算使用int，来储存，最后使用%04的输出。但是由于分解数字等太麻烦（其实计算各个数字出现的次数才是最麻烦的）期间还使用了sort来排序，方便得到cnt（多少个不同数字）但是这样有改变了原来的年份。。。最终，还是使用了最基本的字符。</p>
+<p>在实现题目要求的时候，常常遇到没有初始化而遇到到许多问题（记得初始化呀。。。</p>
+<p>经过思考，采用a[4]来表示年份，b[10]来记录数字出现的次数。（直接赋值1）这样有几个1就有多少个不同的数字。（算是一种逆向吧，不怕数字重复了。。）</p>
+<h3 id="代码："><a href="#代码：" class="headerlink" title="代码："></a>代码：</h3><pre><code class="hljs cpp"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span><span class="hljs-meta-string">&lt;bits/stdc++.h&gt;</span></span>
+<span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> <span class="hljs-built_in">std</span>;
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span>&#123;<span class="hljs-comment">//调试的好麻烦。。</span>
+	
+	<span class="hljs-keyword">int</span> n;
+	<span class="hljs-keyword">char</span> a[<span class="hljs-number">4</span>];
+	<span class="hljs-keyword">int</span> cnt=<span class="hljs-number">0</span>;
+	<span class="hljs-keyword">static</span> <span class="hljs-keyword">int</span> b[<span class="hljs-number">10</span>];
+	<span class="hljs-built_in">scanf</span>(<span class="hljs-string">"%s %d"</span>,&amp;a,&amp;n);
+	
+	<span class="hljs-keyword">while</span>(<span class="hljs-built_in">strlen</span>(a)&lt;<span class="hljs-number">4</span>)&#123;<span class="hljs-comment">//将其化为四位年份 (buling)</span>
+		<span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i=<span class="hljs-number">2</span>;i&gt;=<span class="hljs-number">0</span>;i--)&#123;<span class="hljs-comment">//from 2 to 0;</span>
+			a[i+<span class="hljs-number">1</span>]=a[i];
+		&#125;a[<span class="hljs-number">0</span>]=<span class="hljs-string">'0'</span>;<span class="hljs-comment">//不是0而是‘0'</span>
+	&#125;
+	<span class="hljs-keyword">int</span> start=(a[<span class="hljs-number">0</span>]-<span class="hljs-string">'0'</span>)*<span class="hljs-number">1000</span>+(a[<span class="hljs-number">1</span>]-<span class="hljs-string">'0'</span>)*<span class="hljs-number">100</span>+(a[<span class="hljs-number">2</span>]-<span class="hljs-string">'0'</span>)*<span class="hljs-number">10</span>+a[<span class="hljs-number">3</span>]-<span class="hljs-string">'0'</span>;
+	b[(a[<span class="hljs-number">0</span>]-<span class="hljs-string">'0'</span>)]=<span class="hljs-number">1</span>;
+	b[(a[<span class="hljs-number">1</span>]-<span class="hljs-string">'0'</span>)]=<span class="hljs-number">1</span>;
+	b[(a[<span class="hljs-number">2</span>]-<span class="hljs-string">'0'</span>)]=<span class="hljs-number">1</span>;
+	b[a[<span class="hljs-number">3</span>]-<span class="hljs-string">'0'</span>]=<span class="hljs-number">1</span>;
+	
+	<span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i=<span class="hljs-number">0</span>;i&lt;<span class="hljs-number">10</span>;i++)&#123;
+		<span class="hljs-keyword">if</span>(b[i])&#123;
+			cnt++;
+		&#125;
+	&#125;
+	
+	<span class="hljs-keyword">while</span>(cnt!=n)&#123;
+		cnt=<span class="hljs-number">0</span>;
+	a[<span class="hljs-number">3</span>]++;
+	<span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i=<span class="hljs-number">0</span>;i&lt;<span class="hljs-number">10</span>;i++)b[i]=<span class="hljs-number">0</span>;
+	<span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> j=<span class="hljs-number">3</span>;j&gt;=<span class="hljs-number">1</span>;j--)&#123;<span class="hljs-comment">//进位 </span>
+		<span class="hljs-keyword">if</span>(a[j]==<span class="hljs-string">':'</span>)&#123;
+			a[j]=<span class="hljs-string">'0'</span>;
+			a[j<span class="hljs-number">-1</span>]+=<span class="hljs-number">1</span>;
+		&#125;
+	&#125;
+	b[(a[<span class="hljs-number">0</span>]-<span class="hljs-string">'0'</span>)]=<span class="hljs-number">1</span>;
+	b[(a[<span class="hljs-number">1</span>]-<span class="hljs-string">'0'</span>)]=<span class="hljs-number">1</span>;
+	b[(a[<span class="hljs-number">2</span>]-<span class="hljs-string">'0'</span>)]=<span class="hljs-number">1</span>;
+	b[a[<span class="hljs-number">3</span>]-<span class="hljs-string">'0'</span>]=<span class="hljs-number">1</span>;
+
+	
+	<span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i=<span class="hljs-number">0</span>;i&lt;<span class="hljs-number">10</span>;i++)&#123;
+		<span class="hljs-keyword">if</span>(b[i])&#123;
+			cnt++;
+		&#125;
+	&#125;	
+	&#125;
+	<span class="hljs-keyword">int</span> end=(a[<span class="hljs-number">0</span>]-<span class="hljs-string">'0'</span>)*<span class="hljs-number">1000</span>+(a[<span class="hljs-number">1</span>]-<span class="hljs-string">'0'</span>)*<span class="hljs-number">100</span>+(a[<span class="hljs-number">2</span>]-<span class="hljs-string">'0'</span>)*<span class="hljs-number">10</span>+a[<span class="hljs-number">3</span>]-<span class="hljs-string">'0'</span>;
+	<span class="hljs-built_in">cout</span>&lt;&lt;end-start&lt;&lt;<span class="hljs-string">" "</span>;
+	<span class="hljs-built_in">printf</span>(<span class="hljs-string">"%04d"</span>,end);
+	<span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;
+&#125;</code></pre>
+
+    </div>
+    <div class="post-meta">
+        
+    <span class="post-time">二〇二〇年一月四日</span>
+    </div>
+</article>
+
+<div class="prev_next">
+    <nav id="prev_next">
+
+<div class="prev">
+    
+    <p>Newer</p>
+    <a href="/2020/01/04/打印沙漏/"><div class="article-nav-title">打印沙漏（代码较详细）</div></a>
+    
+</div>
+<div class="next">
+    
+    <p>Older</p>
+    <a href="/2020/01/03/查验身份证/"><div class="article-nav-title">查验身份证</div></a>
+    
+</div>
+
+</nav>
+</div>
+
+<div class="post-comment">
+    
+
+
+
+</div>
+
+    </main><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+</body>
+
+</html>
