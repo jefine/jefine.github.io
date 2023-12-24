@@ -6,7 +6,7 @@
   <link href="https://jefine.github.io/atom.xml" rel="self"/>
   
   <link href="https://jefine.github.io/"/>
-  <updated>2023-09-02T14:10:23.691Z</updated>
+  <updated>2023-12-24T14:50:46.592Z</updated>
   <id>https://jefine.github.io/</id>
   
   <author>
@@ -15,6 +15,27 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Linux C program cover rate test</title>
+    <link href="https://jefine.github.io/2023/12/12/Linux-C%E7%A8%8B%E5%BA%8F%E6%B5%8B%E8%AF%95%E8%A6%86%E7%9B%96%E7%8E%87%E8%AF%84%E4%BC%B0%E6%96%B9%E5%BC%8F/"/>
+    <id>https://jefine.github.io/2023/12/12/Linux-C%E7%A8%8B%E5%BA%8F%E6%B5%8B%E8%AF%95%E8%A6%86%E7%9B%96%E7%8E%87%E8%AF%84%E4%BC%B0%E6%96%B9%E5%BC%8F/</id>
+    <published>2023-12-12T03:02:38.000Z</published>
+    <updated>2023-12-24T14:50:46.592Z</updated>
+    
+    <content type="html"><![CDATA[<p>在拥有了一定的测试框架和测试用例后，如何评估测试的覆盖率，全面性就成为了一个问题，这需要一定的工具去帮助我们查看哪些内容还没有被测试到，需要我们定向的增加测试用例。<br>当然这些工具也可以帮助我们观测到更多内容，比如说每行代码的被执行次数，可以用来作为问题的排查等等。<br><a id="more"></a></p><h1 id="TLDR"><a href="#TLDR" class="headerlink" title="TLDR"></a>TLDR</h1><p>暂无法直接使用，仅为部分提示。</p><pre><code class="hljs shell">PROGRAM = _debuggcov:-g -O0CFLAGS += -fprofile-arcs -ftest-coverage  LDFLAGS += -lgcov -coverage debug:all-g cp ./$(BUILD_BIN) ./bin/$(BIN)</code></pre><h1 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h1><p>首先在拥有了一定的测试框架和测试用例后，评估测试的覆盖率，全面性就成为了一个问题，需要一定的工具去帮助我们查看哪些内容还没有被测试到，需要我们增加测试用例。<br>当然工具也可以看到其他的内容，比如说每行代码的被执行次数。</p><p>以下内容涉及 <code>gcov</code> 以及其他的工具比如 <code>lcov</code> 等等<br>同时本程序 在 <code>Linux host</code> 主机上完成交叉编译，在 <code>linux arm</code> 平台运行，如果编译运行在同一设备，则速度更快。</p><h1 id="GCOV"><a href="#GCOV" class="headerlink" title="GCOV"></a>GCOV</h1><p>GCC 官方文档中对于 GCOV 的描述详见连接 <a href="https://gcc.gnu.org/onlinedocs/gcc/Cross-profiling.html#Cross-profiling" target="_blank" rel="noopener">Cross-profiling (GCC)</a><br>在 Linux 平台软件的 测试覆盖率测试 不得不提及 <code>GCOV</code>，这也是 GCC 内置的代码执行覆盖率测试方案。</p><h2 id="运行原理"><a href="#运行原理" class="headerlink" title="运行原理"></a>运行原理</h2><ol><li>在 GCC 编译时加入了特殊的编译选项，生成可执行文件，和 <code>*.gcno</code>；</li><li>运行（测试）生成的可执行文件（非异常退出），生成了 <code>*.gcda</code> 数据文件；</li><li>通过 <code>*.gcno</code> 和 <code>*.gcda</code>，生成 <code>gcov</code> 文件，最后通过前端展示工具 <code>LCOV</code> 和 <code>GCOVR</code>  生成代码覆盖率报告。<br>当然 更详细的原理还包括了<br><code>.gcno</code> 和<code>.gcda</code> 两个文件的含义即生成他们的过程，可以在 <a href="https://gcc.gnu.org/onlinedocs/gcc/Cross-profiling.html#Cross-profiling" target="_blank" rel="noopener">Cross-profiling (GCC)</a> 看到更加详细的内容。这里简单阐述一下：</li></ol><p><code>.gcno</code> 是由增加 <code>-ftest-coverage</code> 编译参数所产生的，它包含了重建基本块图和相应的块的源码的行号的信息。<br><code>.gcda</code> 是由增加 <code>-fprofile-arcs</code> 编译参数后的二进制文件完整运行所产生的，它包含了弧跳变的次数和其他的概要信息（ gcda 只能在程序在对应平台完整运行后，才能产生）。</p><h2 id="使用方案"><a href="#使用方案" class="headerlink" title="使用方案"></a>使用方案</h2><p>目前最新的 GCC 可能只需要一个 类似于 <code>-coverage</code> 的选项 就可以实现了。不过在相对旧一些的 GCC 版本中</p><h3 id="编译"><a href="#编译" class="headerlink" title="编译"></a>编译</h3><p>GCC 编译的时候添加 <code>-fprofile-arcs -ftest-coverage -g -O0</code> 选项，链接时 添加 <code>-lgcov -coverage</code><br>两者未必需要这么多，只是这样相对全面<br>    <code>-fprofile-arcs</code> <a href="https://www.cnblogs.com/ChinaHook/p/5508660.html" target="_blank" rel="noopener">解释参考来源</a><br>    参数使 gcc 创建一个程序的流图，之后找到适合图的生成树。<br>    只有不在生成树中的弧被操纵（instrumented）：<br>    gcc 添加了代码来清点这些弧执行的次数。<br>    当这段弧是一个块的唯一出口或入口时，操纵工具代码（instrumentation code)将会添加到块中，否则创建一个基础块来包含操纵工具代码。<br>编译完成后，可以在目录中查找到 二进制可执行文件，和 <code>*.gcno</code> 文件，一一对应。</p><h3 id="执行"><a href="#执行" class="headerlink" title="执行"></a>执行</h3><p>在执行设备上进行 执行程序，对于交叉编译的方案，可以将程序传输至设备中，运行。本地方案直接运行即可。<br>注意，在下一步中，<code>gcda</code> 和 <code>gcno</code> 需要在同一个目录下，假如在编译机器上面是 test/path，编译的时候会在这个目录下生成<em>.gcno 文件,那么在执行机器上也会生成</em>.gcda 文件在 test/path 目录下，<br>交叉编译方案运行时 ，请注意 <strong>至少提前配置环境变量 <code>GCOV_PREFIX</code></strong><br>可以设定为当前目录，之后再对生成的 <code>.gcda</code> 文件（夹）进行转移。<br>因为在正常情况下，HOST 编译，运行 在同一位置，直接运行可以使得生成的 <code>.gcda</code> 文件放在了同一个文件夹下。但是如果是交叉编译，那么之前 HOST 主机上的路径在下端设备上是不存在的，故而可能会将内容放到很奇特的路径下，如果没有相关的写权限，还可能无法创建，为了确保不影响根目录和方便查找，我们提前设置为当前目录或其他方便的目录，给生成的文件（夹）增加一个前缀，相当于 指定输出路径。<br><pre><code class="hljs bash"><span class="hljs-built_in">export</span> GCOV_PREFIX=<span class="hljs-variable">$PWD</span></code></pre><br>而我们 也可以指定 <code>GCOV_PREFIX_STRIP</code> 环境变量，<code>GCOV_PREFIX_STRIP</code> 消除<br><a href="https://www.cnblogs.com/vaughnhuang/p/16224069.html" target="_blank" rel="noopener">Linux 交叉编译使用代码覆盖GCOV及LCOV</a><br><pre><code class="hljs bash"><span class="hljs-built_in">export</span> GCOV_PREFIX_STRIP=8</code></pre><br><code>.gcda</code> 存放目录层次（从顶级目录开始消除）。这个可以在生成相关信息后，我们通过查看路径层次，然后再去优化。</p><h3 id="展示"><a href="#展示" class="headerlink" title="展示"></a>展示</h3><p>接下来我们就需要将 下端生成的 <code>.gcda</code> 文件复制到 host 设备的原路径下，注意 <code>.gcda</code> 和 同名的 <code>.gcno</code> 文件应该在同一目录。并且有源代码，且源代码的目录和编译时的目录一样，否则不能生成。<br>也可以直接将 整个目录的内容给进行覆盖。<br>接下来就需要用到 <code>LCOV</code> 和 <code>GCOVR</code> 进行可视化，数据化展示了。</p><h3 id="LCOV"><a href="#LCOV" class="headerlink" title="LCOV"></a>LCOV</h3><pre><code class="hljs bash"><span class="hljs-comment"># 安装lcov，包含 genhtml</span>sudo apt install lcov</code></pre><pre><code class="hljs sh">lcov -c -d ./ -o all.info --gcov-tool=/opt/crossCompileTools/arm-2008q1/bin/arm-none-linux-gnueabi-gcov</code></pre><p>标识 生成以当前目录下的 所有内容（附带递归） 通过 交叉编译器的 GCOV 进行整合生成 <code>all.info</code> 文件。可以通过使用多个<code>-d</code>以添加多个目录</p><blockquote><p>—directory 或者-d 表示的是目录，也就是 gcno 和 gcda 目录<br>　—capture 或者 -c 表示获取覆盖率信息<br>　—output-file 或者 -o 表示输出文件</p></blockquote><p>接下来，我们可以 进行过滤 相关内容（当然也可以不过滤）<a href="https://www.cnblogs.com/ChinaHook/p/5508660.html" target="_blank" rel="noopener">lcov收集覆盖率过滤内容</a><br><pre><code class="hljs bash"><span class="hljs-comment"># 过滤掉不需要统计的目录</span>lcov -r all.info <span class="hljs-string">"/usr/include/*"</span> <span class="hljs-string">"gtest_utils*"</span> -o result.info</code></pre><br>在某些情况下，比如三方库不需要统计覆盖率信息，则需要屏蔽，或者只需要某些文件的覆盖率，就需要对文件进行筛选<br>a)移除指定目录<br><code>lcov --remove all.info &#39;/src/include/*&#39; &#39;/user/bin/*&#39; -o result.info</code><br>　　此命令表示生成的覆盖率信息，屏蔽<code>&#39;/src/include/*&#39; &#39;/user/bin/*&#39;</code> 两个目录的覆盖率信息<br>　　all.info  总的覆盖率信息<br>　　result.info 筛选后的覆盖率信息<br>b)只要固定目录<br><code>lcov  --extract all.info &#39;*/src/*&#39; &#39;*/lib/*&#39; -o result.info</code><br>　　此命令表示生成的覆盖率信息只要src和lib目录下文件的覆盖率信息<br>　　<code>all.info</code> 总的覆盖率信息<br>　　<code>result.info</code> 筛选后的覆盖率信息</p><p>最后，通过 <code>genhtml</code> 生成可视化的 HTML 文件<br><code>genhtml -o results app.info</code><br>results 是一个目录。</p><h3 id="GCOVR"><a href="#GCOVR" class="headerlink" title="GCOVR"></a>GCOVR</h3><p>GCOVR 是一个简短的通过 Python 完成的程序，因此我们可以通过 pip 进行安装。<br>但是 在一些老旧的设备上 Python 版本过低，可能无法运行，因此可以使用<br><code>sudo apt install gcovr</code> 进行安装（环境 Ubuntu）</p><pre><code class="hljs sh">gcovr -r . --gcov-executable=/opt/crossCompileTools/arm-2008q1/bin/arm-none-linux-gnueabi-gcov --html-details -o ./gcovr/gcovdetail.html</code></pre><p>指定了 交叉编译的 <code>gcov</code> 版本，表示在 . 路径下，递归生成详细的 HTML 文件，通过-o 指定 输出结果位置。<br>还可以追加 -s 进行展示一个简短的结果。</p><p>两者虽然都不错，GCOVR 似乎更加简洁，生成的界面增加了 branch 的统计，但是看代码样式并不是很完美。而 LCOV 虽然复杂了一点点，但是界面相对美观，同时能够将代码展示在一行中，也是很不错的工具。<br>两者可以交叉使用。</p><h2 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h2><p>如果没有生成 <code>*.gcda</code> 数据文件，可能是程序异常（手动）终止，<br>或 <code>gcov</code> 版本和编译器的不一致。<br>因此在测试时，请及时退出程序或增加 <code>__gcov_flush()</code> 函数<br>如果程序为异常退出，则不会生成文件，此时需要在代码适当位置插入 <code>__gcov_flush()</code> 函数，将文件进行保存（未测试此方案，建议单元测试结束后，直接结束程序）。</p><p><a href="https://www.cnblogs.com/ChinaHook/p/5508660.html" target="_blank" rel="noopener">lcov收集覆盖率相关</a></p>]]></content>
+    
+    
+    <summary type="html">&lt;p&gt;在拥有了一定的测试框架和测试用例后，如何评估测试的覆盖率，全面性就成为了一个问题，这需要一定的工具去帮助我们查看哪些内容还没有被测试到，需要我们定向的增加测试用例。&lt;br&gt;当然这些工具也可以帮助我们观测到更多内容，比如说每行代码的被执行次数，可以用来作为问题的排查等等。&lt;br&gt;&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="tools" scheme="https://jefine.github.io/categories/tools/"/>
+    
+    
+    <category term="Linux" scheme="https://jefine.github.io/tags/Linux/"/>
+    
+  </entry>
   
   <entry>
     <title>Linux_shell_tricks</title>
@@ -423,27 +444,6 @@
     
     
     <category term="算法" scheme="https://jefine.github.io/categories/%E7%AE%97%E6%B3%95/"/>
-    
-    
-    <category term="二进制" scheme="https://jefine.github.io/tags/%E4%BA%8C%E8%BF%9B%E5%88%B6/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>负数二进制（码制与数制）</title>
-    <link href="https://jefine.github.io/2020/06/28/%E8%B4%9F%E6%95%B0%E4%BA%8C%E8%BF%9B%E5%88%B6%EF%BC%88%E7%A0%81%E5%88%B6%E4%B8%8E%E6%95%B0%E5%88%B6%EF%BC%89/"/>
-    <id>https://jefine.github.io/2020/06/28/%E8%B4%9F%E6%95%B0%E4%BA%8C%E8%BF%9B%E5%88%B6%EF%BC%88%E7%A0%81%E5%88%B6%E4%B8%8E%E6%95%B0%E5%88%B6%EF%BC%89/</id>
-    <published>2020-06-28T06:56:31.000Z</published>
-    <updated>2021-01-24T11:21:02.340Z</updated>
-    
-    <content type="html"><![CDATA[<p>主要讲述了模拟电路和数字电路的区别，以及数字电路的侧重点（分为电子元件的原理和<strong>应用</strong>，后者为重点）</p>  <a id="more"></a><h2 id="二进制的计算"><a href="#二进制的计算" class="headerlink" title="二进制的计算"></a>二进制的计算</h2><p>在此次的课程中在开始便讲述了二进制的计算：</p><p>但其均为正数的时候，计算较为简单和一般的十进制的计算无异（竖式）</p><p>但是当其为负数的时候我们就要多加一个步骤了</p><p>在这里，先补充以下编码：</p><p><strong>编码：</strong></p><p>我们常常将信息通过编码储存起来。</p><blockquote><p>信息编码（Information Coding）是为了方便信息的存储、检索和使用，在进行信息处理时赋予信息元素以代码的过程。即用不同的代码与各种信息中的基本单位组成部分建立一一对应的关系。信息编码必须标准、系统化，设计合理的编码系统是关系信息管理系统生命力的重要因素。</p><p>信息编码的目的　信息编码的目的在于为计算机中的数据与实际处理的信息之间建立联系，提高信息处理的效率。</p></blockquote><p>我们在小学（可能，大雾）的时候，就已经学过如何将十进制和二进制进行相互的转化。</p><p>但是，在当时，出于年纪小，我们并没有学会如何实现负数的运算。</p><p>那么，首先我们康一下：<strong>负数二进制是如何表示的</strong>。</p><p>有人说：在最前添加一bit（一位）：1代表负数，0代表正数。</p><p>那么在计算的时候我们是不是就可以直接去计算了呢？</p><p>并不是这样的我们这样去计算的话就犯下一个错误：</p><p>将<strong>数制和码制混淆。</strong></p><p><strong>数制：</strong>即<strong>计数制，数数的方法。</strong>是指十进制二进制，八进制此类的进制。</p><p><strong>码制</strong>（用编码的方式表示信息<strong>,即用不同数码表示不同事物时遵循的规则。</strong>例如：学号，身份证号，车牌号）:与前者不同的是，码制表示的并不真的只是一个数字，而是一个信息。人们通过编码的方式将他们转化为数字（不同进制均可）。这就涉及到了 信息→数字 的转换。同样不同的编码方式，所得出的结果自然是不同的。所以也可以用来加密。常用的有：BCD，ASCII等。</p><p>目前，数字电路中都采用二进制。</p><ol><li><p>表示数量时称二进制</p></li><li><p>表示事物时称<strong>二值逻辑</strong></p><p>好了，回归正题~</p><hr></li></ol><p>其实按照我们正常的思路我们自己是希望能够按照十进制的方式（竖式）去进行计算的。</p><p>在有了前面的基础之后，我们自己对于码制和数制有了一定的了解。那么我们是不是可以计算负数二进制了呢?</p><p>并不是，首先我们要将负数的二进制标识出来吧。</p><p>假设我们向上面所说的添加一个负号，</p><p>那么是不是我们可以推出呢:</p><script type="math/tex; mode=display">-13_{(10)} = -1101_{(2)}</script><p>To be honest:</p><p>我们很想让它成为这样的但是并不可行。</p><p>这里可以去随意尝试一个例子即可（例如 -13+10）</p><p>我们会发现计算的结果转化为10进制之后是错的。</p><p>为什么呢，<strong>就是码制和数制之间，我们搞混了</strong>。负数的二进制的第一个1是码制，代表的是一个含义：负数，而我们在计算的时候将其作为一个数值进行了计算，自然错误。那么有解决的方法么？</p><p>当然，那么我们应该在哪里修改呢？</p><p>在二级制的负数表达上进行修改！</p><p>事实上，如果我们去计算器（高级计算器）上实行进制转换。我们会发现-13，并不是单纯的将13的二进制前一位添加了一个1，而是添加在最前1之后，将13的<strong>二进制取反，然后将这个二进制+1.</strong></p><p>那么我们怎么去理解这个二进制的意思呢？</p><p>举个例子： </p><script type="math/tex; mode=display">-13_{(10)} = 10011_{(2)}</script><p>是指 第一个数字作为 负数，其余仍为正数：</p><script type="math/tex; mode=display">\begin{array}{cc} 1&0&0& 1& 1 \\ -16*1&8*0&4*0&2*1&1*1\\\end{array}</script><h2 id="综上"><a href="#综上" class="headerlink" title="综上"></a>综上</h2><p>二进制的负数的运算既在我们的意料之中，又在我们的意料之外。惊喜连连~</p>]]></content>
-    
-    
-    <summary type="html">&lt;p&gt;主要讲述了模拟电路和数字电路的区别，以及数字电路的侧重点（分为电子元件的原理和&lt;strong&gt;应用&lt;/strong&gt;，后者为重点）&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="数字电路" scheme="https://jefine.github.io/categories/%E6%95%B0%E5%AD%97%E7%94%B5%E8%B7%AF/"/>
     
     
     <category term="二进制" scheme="https://jefine.github.io/tags/%E4%BA%8C%E8%BF%9B%E5%88%B6/"/>
